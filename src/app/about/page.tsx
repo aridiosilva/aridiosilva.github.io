@@ -1,34 +1,59 @@
 export default function About() {
   return (
     <div className="space-y-8 text-slate-300 leading-relaxed">
-      <h1 className="text-3xl font-bold tracking-tight text-slate-100">About</h1>
+      <h1 className="text-3xl font-bold tracking-tight text-slate-100">About & Research Background</h1>
 
       <section className="space-y-4">
         <p>
-          Sou pesquisador e engenheiro focado no desenvolvimento de <strong className="text-white">sistemas de Inteligência Artificial confiáveis, auditáveis e úteis</strong>. Minha investigação atual concentra-se em arquiteturas de agentes autônomos, governança de modelos em produção e integração de memória de longo prazo.
+          My professional career in software development began in <strong className="text-white">1977</strong>, providing a long-term perspective on the architectural evolution of distributed systems, security engineering, and Artificial Intelligence.
         </p>
         <p>
-          Adoto a filosofia de <em>"Building in Public"</em> — unindo rigor técnico, ensaios conceituais e protótipos open-source para abordar a segurança e o alinhamento de sistemas agente-mínimos e multiagentes operando em cenários complexos.
+          I am an independent researcher based in Brazil. My current work explores the convergence of <strong className="text-white">Agentic AI, Multi-Agent Systems, Edge AI, Zero-Trust Architecture, AI Security, Governance, Risk and Compliance (GRC)</strong>, and <strong className="text-white">Security-by-Design</strong>.
         </p>
       </section>
 
       <section className="space-y-3 pt-4 border-t border-slate-800">
-        <h2 className="text-xl font-semibold text-slate-100">Interesses de Pesquisa</h2>
-        <ul className="list-disc list-inside space-y-2 text-sm text-slate-400">
-          <li><strong className="text-slate-200">Governança de Agentes Autônomos:</strong> Mecanismos de contenção, auditabilidade e observabilidade.</li>
-          <li><strong className="text-slate-200">Memória de Longo Prazo & Contexto:</strong> Integração de Knowledge Graphs e busca vetorial.</li>
-          <li><strong className="text-slate-200">Model Context Protocol (MCP):</strong> Padronização de interfaces de contexto e chamadas de ferramentas.</li>
-          <li><strong className="text-slate-200">Avaliação & Benchmarks:</strong> Métricas de alinhamento e robustez funcional para LLMs.</li>
-        </ul>
+        <h2 className="text-xl font-semibold text-slate-100">Open Research Philosophy</h2>
+        <p className="text-sm">
+          Security and governance should be treated as fundamental architectural properties of autonomous AI systems rather than controls added post-deployment. My work follows an open research and reproducible engineering approach, combining conceptual architectures, formal specifications, threat models, security invariants, executable evidence, and reference implementations.
+        </p>
       </section>
 
-      <section className="space-y-3 pt-4 border-t border-slate-800 font-mono text-sm">
-        <h2 className="text-xl font-semibold text-slate-100 font-sans">Links & Contato</h2>
-        <ul className="space-y-2 text-slate-400">
-          <li>Email: <a href="mailto:contact@aridiosilva.com" className="text-blue-400 hover:underline">contact@aridiosilva.com</a></li>
-          <li>GitHub: <a href="https://github.com/aridiosilva" target="_blank" className="text-blue-400 hover:underline">github.com/aridiosilva</a></li>
-          <li>LinkedIn: <a href="https://linkedin.com" target="_blank" className="text-blue-400 hover:underline">linkedin.com/in/aridiosilva</a></li>
-        </ul>
+      {/* Research Profiles & IDs */}
+      <section className="space-y-4 pt-4 border-t border-slate-800">
+        <h2 className="text-xl font-semibold text-slate-100">Research Profiles & Artifacts</h2>
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-3 text-sm font-mono">
+          <a href="https://orcid.org/0009-0008-2411-6995" target="_blank" className="p-3 rounded border border-slate-800 hover:border-slate-700 bg-slate-900/30 flex justify-between items-center">
+            <span className="text-slate-400">ORCID</span>
+            <span className="text-blue-400">0009-0008-2411-6995</span>
+          </a>
+
+          <a href="https://doi.org/10.5281/zenodo.22557796" target="_blank" className="p-3 rounded border border-slate-800 hover:border-slate-700 bg-slate-900/30 flex justify-between items-center">
+            <span className="text-slate-400">Zenodo DOI</span>
+            <span className="text-blue-400">10.5281/zenodo.22557796</span>
+          </a>
+
+          <a href="https://scholar.google.com/citations?user=rPn5O48AAAAJ" target="_blank" className="p-3 rounded border border-slate-800 hover:border-slate-700 bg-slate-900/30 flex justify-between items-center">
+            <span className="text-slate-400">Google Scholar</span>
+            <span className="text-blue-400">rPn5O48AAAAJ</span>
+          </a>
+
+          <a href="https://github.com/aridiosilva" target="_blank" className="p-3 rounded border border-slate-800 hover:border-slate-700 bg-slate-900/30 flex justify-between items-center">
+            <span className="text-slate-400">GitHub</span>
+            <span className="text-blue-400">@aridiosilva</span>
+          </a>
+
+          <a href="https://www.linkedin.com/in/aridio-silva-74997111/" target="_blank" className="p-3 rounded border border-slate-800 hover:border-slate-700 bg-slate-900/30 flex justify-between items-center">
+            <span className="text-slate-400">LinkedIn</span>
+            <span className="text-blue-400">aridio-silva</span>
+          </a>
+
+          <a href="https://medium.com/@aridiosilva" target="_blank" className="p-3 rounded border border-slate-800 hover:border-slate-700 bg-slate-900/30 flex justify-between items-center">
+            <span className="text-slate-400">Medium</span>
+            <span className="text-blue-400">@aridiosilva</span>
+          </a>
+        </div>
       </section>
     </div>
   );
