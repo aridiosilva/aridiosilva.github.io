@@ -1,0 +1,1036 @@
+<!DOCTYPE html>
+<!-- Build: index-v2 2026-09-16 r3-language-fix -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light">
+<meta name="theme-color" content="#e3ded3">
+<title>Aridio Silva — Independent Researcher | AI Systems Architecture</title>
+<meta name="description" content="Aridio Silva is an independent researcher working on the architecture, security, and governance of autonomous and distributed AI systems, and creator of SGAEIA.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600;8..60,700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #efece5;
+    --paper-soft: #f6f3ed;
+    --paper-header: #e3ded3;
+    --paper-warm: #eadfd7;
+    --paper-sage: #dfe7e1;
+    --ink: #1c1c1a;
+    --ink-soft: #3e403c;
+    --muted: #666760;
+    --rule: #cdc9c0;
+    --research: #17464d;
+    --research-deep: #10363c;
+    --research-soft: #cbded9;
+    --terracotta: #8c4939;
+    --focus: #9a4b34;
+    --font-serif: "Source Serif 4", Georgia, "Times New Roman", serif;
+    --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    --font-scale: 1;
+    --content: 1140px;
+    --reading: 720px;
+  }
+
+  * { box-sizing: border-box; }
+  html { font-size: calc(16px * var(--font-scale)); scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--font-sans);
+    line-height: 1.58;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  body[data-easy-read="true"] {
+    --font-serif: "Atkinson Hyperlegible", "Inter", sans-serif;
+    --font-sans: "Atkinson Hyperlegible", sans-serif;
+    letter-spacing: .012em;
+    line-height: 1.76;
+  }
+  body[data-easy-read="true"] p,
+  body[data-easy-read="true"] li { line-height: 1.82; }
+
+  /* Easy Read is a typography mode, not bionic reading.
+     Keep prose visually uniform even if an older/cached version inserted
+     <b>/<strong> wrappers inside words or phrases. */
+  body[data-easy-read="true"] .hero-lead,
+  body[data-easy-read="true"] .hero-aside p,
+  body[data-easy-read="true"] .section-intro,
+  body[data-easy-read="true"] .research-item p,
+  body[data-easy-read="true"] .principle span,
+  body[data-easy-read="true"] .editorial-main p,
+  body[data-easy-read="true"] .about-copy p,
+  body[data-easy-read="true"] .footer-note {
+    font-weight: 400 !important;
+  }
+  body[data-easy-read="true"] .hero-lead *,
+  body[data-easy-read="true"] .hero-aside p *,
+  body[data-easy-read="true"] .section-intro *,
+  body[data-easy-read="true"] .research-item p *,
+  body[data-easy-read="true"] .principle span *,
+  body[data-easy-read="true"] .editorial-main p *,
+  body[data-easy-read="true"] .about-copy p *,
+  body[data-easy-read="true"] .footer-note * {
+    font-weight: 400 !important;
+  }
+
+  a { color: inherit; }
+  a:focus-visible, button:focus-visible, select:focus-visible {
+    outline: 3px solid var(--focus);
+    outline-offset: 3px;
+  }
+  button, select { font: inherit; }
+
+  .skip-link {
+    position: fixed;
+    left: 16px;
+    top: -80px;
+    z-index: 100;
+    background: var(--ink);
+    color: #fff;
+    padding: 10px 14px;
+    text-decoration: none;
+  }
+  .skip-link:focus { top: 12px; }
+
+  .shell { width: min(calc(100% - 48px), var(--content)); margin-inline: auto; }
+  .reading { max-width: var(--reading); }
+
+  /* Header */
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 30;
+    background: color-mix(in srgb, var(--paper-warm) 96%, transparent);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--rule);
+  }
+  .header-main {
+    min-height: 76px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 28px;
+  }
+  .identity { text-decoration: none; white-space: nowrap; }
+  .identity strong {
+    display: block;
+    font-family: var(--font-serif);
+    font-size: 1.28rem;
+    line-height: 1.05;
+    font-weight: 650;
+    letter-spacing: -.015em;
+  }
+  .identity span {
+    display: block;
+    margin-top: 4px;
+    color: var(--muted);
+    font-size: .72rem;
+    letter-spacing: .055em;
+    text-transform: uppercase;
+  }
+  .header-right { display: flex; align-items: center; justify-content: flex-end; gap: 22px; }
+  .site-nav { display: flex; gap: 20px; align-items: center; }
+  .site-nav a {
+    color: var(--ink-soft);
+    font-size: .82rem;
+    font-weight: 550;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    padding: 6px 0;
+  }
+  .site-nav a:hover { color: var(--research); border-bottom-color: var(--research); }
+
+  .utility-bar { display: flex; gap: 6px; align-items: center; }
+  .utility-bar button,
+  .lang-switch select {
+    min-height: 32px;
+    border: 1px solid var(--rule);
+    background: var(--paper-soft);
+    color: var(--ink-soft);
+    border-radius: 2px;
+    font-size: .72rem;
+    padding: 5px 8px;
+    cursor: pointer;
+  }
+  .utility-bar button:hover,
+  .lang-switch select:hover { border-color: var(--research); color: var(--research); }
+  .utility-bar button[aria-pressed="true"] {
+    color: #fff;
+    background: var(--research);
+    border-color: var(--research);
+  }
+  .utility-sep { height: 18px; width: 1px; background: var(--rule); margin-inline: 2px; }
+
+  /* Hero */
+  .hero { padding: clamp(68px, 8vw, 108px) 0 clamp(64px, 7vw, 96px); }
+  .hero-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 260px;
+    gap: clamp(44px, 7vw, 92px);
+    align-items: end;
+  }
+  .eyebrow {
+    margin: 0 0 18px;
+    color: var(--research);
+    font-size: .76rem;
+    font-weight: 700;
+    letter-spacing: .115em;
+    text-transform: uppercase;
+  }
+  .hero h1 {
+    max-width: 19ch;
+    margin: 0;
+    font-family: var(--font-serif);
+    font-size: clamp(2.65rem, 5.2vw, 4.7rem);
+    line-height: .99;
+    font-weight: 600;
+    letter-spacing: -.035em;
+  }
+  .hero-lead {
+    max-width: 680px;
+    margin: 30px 0 0;
+    color: var(--ink-soft);
+    font-family: var(--font-serif);
+    font-size: clamp(1.12rem, 1.6vw, 1.34rem);
+    line-height: 1.5;
+  }
+  .hero-meta {
+    margin-top: 30px;
+    display: flex;
+    gap: 10px 18px;
+    flex-wrap: wrap;
+    color: var(--muted);
+    font-size: .78rem;
+  }
+  .hero-actions { margin-top: 34px; display: flex; gap: 10px; flex-wrap: wrap; }
+  .button-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    min-height: 42px;
+    padding: 9px 14px;
+    border: 1px solid var(--research);
+    text-decoration: none;
+    color: var(--research);
+    font-size: .8rem;
+    font-weight: 650;
+  }
+  .button-link.primary { background: var(--research); color: #fff; }
+  .button-link:hover { background: var(--research-deep); color: #fff; }
+  .hero-aside {
+    border-top: 1px solid var(--rule);
+    padding-top: 18px;
+    color: var(--muted);
+    font-size: .8rem;
+  }
+  .hero-aside strong { color: var(--ink); font-weight: 650; }
+  .hero-aside .motto {
+    margin-top: 20px;
+    color: var(--research);
+    font-size: .72rem;
+    line-height: 1.55;
+    font-weight: 700;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+  }
+
+  /* Sections */
+  .section { border-top: 1px solid var(--rule); padding: clamp(62px, 7vw, 94px) 0; scroll-margin-top: 88px; }
+  .section-grid { display: grid; grid-template-columns: 150px minmax(0, 1fr); gap: clamp(32px, 6vw, 76px); }
+  .section-kicker {
+    color: var(--muted);
+    font-size: .72rem;
+    font-weight: 650;
+    letter-spacing: .09em;
+    text-transform: uppercase;
+    padding-top: 6px;
+  }
+  .section-kicker span { color: var(--terracotta); margin-right: 7px; }
+  .section h2 {
+    margin: 0;
+    font-family: var(--font-serif);
+    font-size: clamp(2rem, 3.3vw, 3.15rem);
+    font-weight: 600;
+    line-height: 1.08;
+    letter-spacing: -.025em;
+  }
+  .section-intro {
+    max-width: 720px;
+    margin: 18px 0 0;
+    color: var(--ink-soft);
+    font-family: var(--font-serif);
+    font-size: 1.08rem;
+    line-height: 1.58;
+  }
+
+  .research-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0 42px;
+    margin-top: 40px;
+    border-top: 1px solid var(--rule);
+  }
+  .research-item { padding: 24px 0 26px; border-bottom: 1px solid var(--rule); }
+  .research-item .mini-num { display: block; color: var(--terracotta); font-size: .68rem; font-weight: 700; margin-bottom: 10px; }
+  .research-item h3 { margin: 0 0 8px; font-family: var(--font-serif); font-size: 1.24rem; line-height: 1.25; font-weight: 600; }
+  .research-item p { margin: 0; color: var(--ink-soft); font-size: .88rem; line-height: 1.66; }
+
+  /* SGAEIA */
+  .sgaeia-band { background: var(--paper-sage); border-top: 1px solid #b7c7bf; border-bottom: 1px solid #b7c7bf; }
+  .sgaeia-band .section { border-top: 0; }
+  .sgaeia-name { color: var(--research); }
+  .principles { display: grid; grid-template-columns: repeat(3, 1fr); margin-top: 38px; border-top: 1px solid #b7c7bf; border-left: 1px solid #b7c7bf; }
+  .principle { min-height: 120px; padding: 20px; border-right: 1px solid #b7c7bf; border-bottom: 1px solid #b7c7bf; }
+  .principle > strong { display: block; font-family: var(--font-serif); font-size: 1.03rem; font-weight: 600; margin-bottom: 5px; }
+  .principle span { color: #53625c; font-size: .77rem; line-height: 1.5; }
+  .section-actions { margin-top: 28px; display: flex; flex-wrap: wrap; gap: 10px; }
+
+  .writing-band { background: var(--paper-sage); border-top: 1px solid #b7c7bf; border-bottom: 1px solid #b7c7bf; }
+  .writing-band + .section { border-top: 0; }
+
+  /* Editorial lists */
+  .editorial-list { margin-top: 38px; border-top: 1px solid var(--rule); }
+  .editorial-row {
+    display: grid;
+    grid-template-columns: 92px minmax(0, 1fr) 132px;
+    gap: 22px;
+    padding: 23px 0;
+    border-bottom: 1px solid var(--rule);
+    align-items: start;
+  }
+  .editorial-year { color: var(--muted); font-size: .75rem; padding-top: 3px; }
+  .editorial-main h3 { margin: 0; font-family: var(--font-serif); font-size: 1.12rem; line-height: 1.33; font-weight: 600; }
+  .editorial-main h3 a { text-decoration-thickness: 1px; text-decoration-color: color-mix(in srgb, var(--research) 45%, transparent); text-underline-offset: 3px; }
+  .editorial-main h3 a:hover { color: var(--research); }
+  .editorial-main p { margin: 7px 0 0; color: var(--ink-soft); font-size: .82rem; line-height: 1.55; }
+  .editorial-meta { text-align: right; color: var(--muted); font-size: .7rem; line-height: 1.55; }
+  .editorial-meta a { color: var(--research); text-decoration: none; }
+  .editorial-meta a:hover { text-decoration: underline; }
+  .text-link { display: inline-block; margin-top: 24px; color: var(--research); font-size: .8rem; font-weight: 650; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+
+  /* About */
+  .about-panel {
+    display: grid;
+    grid-template-columns: minmax(0, 1.4fr) minmax(240px, .6fr);
+    gap: clamp(36px, 7vw, 86px);
+    align-items: start;
+  }
+  .about-copy p { max-width: 68ch; margin: 0 0 16px; color: var(--ink-soft); font-size: .95rem; }
+  .about-facts { border-top: 1px solid var(--rule); }
+  .fact { padding: 14px 0; border-bottom: 1px solid var(--rule); }
+  .fact span { display: block; color: var(--muted); font-size: .67rem; text-transform: uppercase; letter-spacing: .08em; }
+  .fact strong { display: block; margin-top: 3px; font-family: var(--font-serif); font-size: .98rem; font-weight: 600; }
+
+  /* Footer */
+  .site-footer { background: var(--paper-warm); border-top: 1px solid #d4c4ba; padding: 44px 0 30px; }
+  .footer-head { display: flex; align-items: end; justify-content: space-between; gap: 28px; }
+  .footer-wordmark { font-family: var(--font-serif); font-size: clamp(2rem, 4vw, 3.7rem); line-height: 1; font-weight: 600; letter-spacing: -.025em; }
+  .footer-note { max-width: 500px; color: #665d57; font-size: .76rem; text-align: right; }
+  .brand-links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin: 38px 0 30px;
+    padding: 20px 0;
+    border-top: 1px solid #d4c4ba;
+    border-bottom: 1px solid #d4c4ba;
+  }
+  .brand-link {
+    position: relative;
+    width: 44px;
+    height: 44px;
+    display: grid;
+    place-items: center;
+    border: 1px solid #cdbbb0;
+    background: rgba(255,255,255,.28);
+    text-decoration: none;
+    transition: transform .16s ease, background .16s ease, border-color .16s ease;
+  }
+  .brand-link:hover { transform: translateY(-2px); background: var(--paper-soft); border-color: var(--research); }
+  .brand-link img { width: 23px; height: 23px; object-fit: contain; }
+  .fallback-icon {
+    display: none;
+    width: 100%; height: 100%;
+    place-items: center;
+    font-size: .66rem;
+    font-weight: 800;
+    color: var(--research);
+    letter-spacing: -.02em;
+  }
+  .brand-link[data-badge]::after {
+    content: attr(data-badge);
+    position: absolute;
+    right: -4px;
+    bottom: -4px;
+    min-width: 17px;
+    height: 17px;
+    padding: 0 3px;
+    display: grid;
+    place-items: center;
+    border-radius: 9px;
+    background: var(--research);
+    color: #fff;
+    font-size: .55rem;
+    font-weight: 800;
+    border: 2px solid var(--paper-warm);
+  }
+  .brand-link::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 50%; bottom: calc(100% + 10px);
+    transform: translateX(-50%);
+    width: max-content;
+    max-width: 180px;
+    padding: 5px 7px;
+    background: var(--ink);
+    color: #fff;
+    font-size: .62rem;
+    line-height: 1.2;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .12s ease;
+  }
+  .brand-link:hover::before, .brand-link:focus-visible::before { opacity: 1; }
+  .footer-bottom { display: flex; justify-content: space-between; gap: 20px; color: #766b64; font-size: .7rem; }
+
+  /* Responsive */
+  @media (max-width: 980px) {
+    .header-main { align-items: flex-start; padding: 15px 0; flex-direction: column; gap: 12px; }
+    .header-right { width: 100%; justify-content: space-between; gap: 14px; flex-wrap: wrap; }
+    .hero-grid { grid-template-columns: 1fr; }
+    .hero-aside { max-width: 560px; }
+    .section-grid { grid-template-columns: 120px minmax(0,1fr); }
+  }
+
+  @media (max-width: 760px) {
+    :root { --content: 100%; --reading: 100%; }
+    .shell { width: min(calc(100% - 34px), var(--content)); }
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 30;
+      background: var(--paper-warm);
+      -webkit-backdrop-filter: blur(10px);
+      backdrop-filter: blur(10px);
+    }
+    .header-main {
+      align-items: center;
+      text-align: center;
+      padding-top: max(15px, env(safe-area-inset-top));
+    }
+    .header-right { flex-direction: column; align-items: center; }
+    .site-nav { width: 100%; justify-content: center; gap: 12px 16px; flex-wrap: wrap; }
+    .site-nav a { font-size: .78rem; }
+    .utility-bar { justify-content: center; flex-wrap: wrap; }
+    .hero { padding: 54px 0 60px; }
+    .hero h1 { font-size: clamp(2.35rem, 11vw, 3.7rem); line-height: 1.02; }
+    .hero-lead { margin-top: 24px; font-size: 1.07rem; }
+    .hero-meta { display: block; line-height: 1.8; }
+    .hero-actions { margin-top: 26px; }
+    .section { padding: 58px 0; scroll-margin-top: 190px; }
+    .section-grid { grid-template-columns: 1fr; gap: 18px; }
+    .section-kicker { padding-top: 0; }
+    .research-list { grid-template-columns: 1fr; gap: 0; margin-top: 32px; }
+    .principles { grid-template-columns: 1fr 1fr; }
+    .editorial-row { grid-template-columns: 64px minmax(0,1fr); gap: 16px; }
+    .editorial-meta { grid-column: 2; text-align: left; margin-top: -10px; }
+    .about-panel { grid-template-columns: 1fr; gap: 34px; }
+    .footer-head { flex-direction: column; align-items: flex-start; }
+    .footer-note { text-align: left; }
+    .footer-bottom { flex-direction: column; align-items: center; text-align: center; }
+  }
+
+  @media (max-width: 430px) {
+    .shell { width: min(calc(100% - 28px), var(--content)); }
+    .identity strong { font-size: 1.18rem; }
+    .identity span { font-size: .65rem; }
+    .utility-bar button, .lang-switch select { font-size: .69rem; }
+    .hero h1 { font-size: 2.42rem; }
+    .button-link { width: 100%; justify-content: center; }
+    .principles { grid-template-columns: 1fr; }
+    .editorial-row { grid-template-columns: 1fr; gap: 5px; padding: 20px 0; }
+    .editorial-year { padding-top: 0; }
+    .editorial-meta { grid-column: 1; margin-top: 4px; }
+    .brand-links { gap: 9px; }
+    .brand-link { width: 42px; height: 42px; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after { transition-duration: .001ms !important; animation-duration: .001ms !important; animation-iteration-count: 1 !important; }
+  }
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main" data-i18n="skip">Skip to main content</a>
+
+<header class="site-header">
+  <div class="shell header-main">
+    <a class="identity" href="#top" aria-label="Aridio Silva home">
+      <strong>Aridio Silva</strong>
+      <span data-i18n="identity_role">Independent Researcher · AI Systems Architecture</span>
+    </a>
+
+    <div class="header-right">
+      <nav class="site-nav" aria-label="Primary navigation">
+        <a href="#research" data-i18n="nav_research">Research</a>
+        <a href="#sgaeia">SGAEIA</a>
+        <a href="#publications" data-i18n="nav_publications">Publications</a>
+        <a href="#writing" data-i18n="nav_writing">Writing</a>
+        <a href="#about" data-i18n="nav_about">About</a>
+      </nav>
+      <div class="utility-bar" role="group" aria-label="Reading and language controls">
+        <div class="lang-switch">
+          <select id="langSelect" aria-label="Language">
+            <option value="en">EN</option><option value="pt">PT</option><option value="es">ES</option><option value="fr">FR</option><option value="de">DE</option>
+          </select>
+        </div>
+        <span class="utility-sep" aria-hidden="true"></span>
+        <button type="button" id="fontDecrease" aria-label="Decrease text size">A−</button>
+        <button type="button" id="fontIncrease" aria-label="Increase text size">A+</button>
+        <button type="button" id="easyReadToggle" aria-pressed="false" data-i18n="easy">Easy read</button>
+        <button type="button" id="readAloudToggle" aria-pressed="false" data-i18n="listen">🔊 Listen</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+  <section class="hero" id="top">
+    <div class="shell hero-grid">
+      <div>
+        <p class="eyebrow" data-i18n="hero_eyebrow">Research focus · Governed autonomous AI</p>
+        <h1 data-i18n="hero_title">How much authority can an autonomous agent hold while remaining auditable, verifiable, and revocable?</h1>
+        <p class="hero-lead" data-i18n="hero_lead">I research the architecture, security, and governance of autonomous and distributed AI systems — with a focus on Agentic AI, multi-agent systems, Edge AI, Zero Trust, Continuous GRC, and Evidence-as-Code.</p>
+        <div class="hero-meta">
+          <span data-i18n="hero_meta_1">Independent Researcher · Brazil</span>
+          <span>ORCID 0009-0008-2411-6995</span>
+          <span data-i18n="hero_meta_2">Software &amp; systems career since 1977</span>
+        </div>
+        <div class="hero-actions">
+          <a class="button-link primary" href="#research"><span data-i18n="explore_research">Explore research</span> ↓</a>
+          <a class="button-link" href="sgaeia.html"><span data-i18n="explore_sgaeia">Explore SGAEIA</span> ↗</a>
+        </div>
+      </div>
+      <aside class="hero-aside" aria-label="Research statement">
+        <strong data-i18n="aside_title">Current research question</strong>
+        <p data-i18n="aside_text">How can autonomous systems act at machine speed while keeping authority, delegation, and accountability bounded and verifiable?</p>
+        <div class="motto">Autonomous AI.<br>Governed by Design.<br>Trusted by Evidence.</div>
+      </aside>
+    </div>
+  </section>
+
+  <section class="section" id="research">
+    <div class="shell section-grid">
+      <div class="section-kicker"><span>01</span><span data-i18n="nav_research">Research</span></div>
+      <div>
+        <h2 data-i18n="research_title">Governed autonomous intelligence</h2>
+        <p class="section-intro" data-i18n="research_intro">My work examines the control problem that emerges when AI systems move from recommendation to action: they acquire identities, tools, credentials, delegation paths, and the ability to affect external systems. The objective is useful autonomy under explicit, enforceable, auditable, and revocable limits.</p>
+
+        <div class="research-list">
+          <article class="research-item">
+            <span class="mini-num">01.1</span>
+            <h3 data-i18n="r1_title">Agentic AI &amp; Multi-Agent Systems</h3>
+            <p data-i18n="r1_text">Architectures for agents that plan, delegate, collaborate, and act across distributed environments while preserving traceable chains of authority.</p>
+          </article>
+          <article class="research-item">
+            <span class="mini-num">01.2</span>
+            <h3 data-i18n="r2_title">AI Security &amp; Zero Trust</h3>
+            <p data-i18n="r2_text">Identity, authenticated delegation, runtime policy enforcement, bounded authority, revocation, and explicit trust boundaries between autonomous components.</p>
+          </article>
+          <article class="research-item">
+            <span class="mini-num">01.3</span>
+            <h3 data-i18n="r3_title">Governed Autonomous Edge Intelligence</h3>
+            <p data-i18n="r3_text">Autonomous intelligence operating across hybrid edge–cloud infrastructures where latency, intermittent connectivity, and local action complicate centralized control.</p>
+          </article>
+          <article class="research-item">
+            <span class="mini-num">01.4</span>
+            <h3 data-i18n="r4_title">Continuous GRC &amp; Evidence-as-Code</h3>
+            <p data-i18n="r4_text">Governance, risk, compliance, and assurance evaluated continuously as properties of the system rather than treated as periodic administrative activities.</p>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="sgaeia-band" id="sgaeia">
+    <section class="section">
+      <div class="shell section-grid">
+        <div class="section-kicker"><span>02</span>SGAEIA</div>
+        <div>
+          <h2 class="sgaeia-name">Secure Governed Autonomous Edge Intelligence Architecture</h2>
+          <p class="section-intro" data-i18n="sgaeia_intro">SGAEIA is an open reference architecture and research program for autonomous and distributed AI systems. It investigates how bounded and revocable authority, authenticated delegation, Zero Trust, Continuous GRC, and Evidence-as-Code can make autonomous operation auditable and governable by design.</p>
+
+          <div class="principles" aria-label="SGAEIA research principles">
+            <div class="principle"><strong data-i18n="p1">Bounded Authority</strong><span data-i18n="p1_text">Useful autonomy requires explicit limits on authority.</span></div>
+            <div class="principle"><strong data-i18n="p2">Authenticated Delegation</strong><span data-i18n="p2_text">Delegated authority remains attributable, constrained, and traceable.</span></div>
+            <div class="principle"><strong>Zero Trust</strong><span data-i18n="p3_text">Consequential interactions are explicitly verified rather than implicitly trusted.</span></div>
+            <div class="principle"><strong data-i18n="p4">Revocation by Design</strong><span data-i18n="p4_text">Authority can be withdrawn as deliberately as it is granted.</span></div>
+            <div class="principle"><strong data-i18n="p5">Continuous GRC</strong><span data-i18n="p5_text">Governance, risk, and compliance remain active at runtime.</span></div>
+            <div class="principle"><strong>Evidence-as-Code</strong><span data-i18n="p6_text">Governed operation produces machine-verifiable evidence.</span></div>
+          </div>
+
+          <div class="section-actions">
+            <a class="button-link primary" href="sgaeia.html"><span data-i18n="sgaeia_page">SGAEIA research page</span> ↗</a>
+            <a class="button-link" href="https://doi.org/10.5281/zenodo.22557796" target="_blank" rel="noopener">DOI 10.5281/zenodo.22557796 ↗</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <section class="section" id="publications">
+    <div class="shell section-grid">
+      <div class="section-kicker"><span>03</span><span data-i18n="nav_publications">Publications</span></div>
+      <div>
+        <h2 data-i18n="pub_title">Selected research publications &amp; artifacts</h2>
+        <p class="section-intro" data-i18n="pub_intro">A selection of archival research records and artifacts. Zenodo records provide persistent identifiers for citation and long-term access.</p>
+
+        <div class="editorial-list">
+          <article class="editorial-row">
+            <div class="editorial-year">2026</div>
+            <div class="editorial-main">
+              <h3><a href="https://doi.org/10.5281/zenodo.22796900" target="_blank" rel="noopener">Rogue AI Agents: When Autonomous Systems Become a Collective</a></h3>
+              <p data-i18n="pub_rogue_desc">What the OpenAI–Hugging Face incident reveals about emergent coordination, security boundaries, and the future of AI governance.</p>
+            </div>
+            <div class="editorial-meta">SGAEIA Research Series — Article 10<br>2026-09-16<br><a href="https://doi.org/10.5281/zenodo.22796900" target="_blank" rel="noopener">Zenodo DOI ↗</a><br><a href="https://medium.com/@aridiosilva/rogue-ai-agents-when-autonomous-systems-become-a-collective-75ddaf685938" target="_blank" rel="noopener">Medium ↗</a></div>
+          </article>
+          <article class="editorial-row">
+            <div class="editorial-year">2026</div>
+            <div class="editorial-main">
+              <h3><a href="https://doi.org/10.5281/zenodo.22736488" target="_blank" rel="noopener">Evidence-as-Code: Making AI Governance Verifiable</a></h3>
+              <p data-i18n="pub_eac_desc">Research article on Evidence-as-Code and machine-verifiable governance evidence for autonomous AI systems.</p>
+            </div>
+            <div class="editorial-meta">SGAEIA Research Series — Article 6<br><a href="https://doi.org/10.5281/zenodo.22736488" target="_blank" rel="noopener">Zenodo DOI ↗</a></div>
+          </article>
+          <article class="editorial-row">
+            <div class="editorial-year">2026</div>
+            <div class="editorial-main">
+              <h3><a href="https://doi.org/10.5281/zenodo.22728227" target="_blank" rel="noopener">Continuous GRC for Agentic AI</a></h3>
+              <p data-i18n="pub_grc_desc">Research article on continuous governance, risk, and compliance for autonomous AI agents operating in dynamic environments.</p>
+            </div>
+            <div class="editorial-meta">SGAEIA Research Series — Article 5<br><a href="https://doi.org/10.5281/zenodo.22728227" target="_blank" rel="noopener">Zenodo DOI ↗</a></div>
+          </article>
+          <article class="editorial-row">
+            <div class="editorial-year">2026</div>
+            <div class="editorial-main">
+              <h3><a href="https://doi.org/10.5281/zenodo.22727194" target="_blank" rel="noopener">Authenticated Delegation Between Autonomous AI Agents</a></h3>
+              <p data-i18n="pub_delegation_desc">Research article on authenticated, attributable, bounded, and traceable delegation of authority between autonomous agents.</p>
+            </div>
+            <div class="editorial-meta">SGAEIA Research Series — Article 4<br><a href="https://doi.org/10.5281/zenodo.22727194" target="_blank" rel="noopener">Zenodo DOI ↗</a></div>
+          </article>
+          <article class="editorial-row">
+            <div class="editorial-year">2026</div>
+            <div class="editorial-main">
+              <h3><a href="https://doi.org/10.5281/zenodo.22715664" target="_blank" rel="noopener">Why Autonomous AI Agents Need Bounded and Revocable Authority</a></h3>
+              <p data-i18n="pub_authority_desc">Research article on why useful autonomy requires authority that is explicitly bounded, verifiable, and revocable.</p>
+            </div>
+            <div class="editorial-meta">SGAEIA Research Series — Article 2<br><a href="https://doi.org/10.5281/zenodo.22715664" target="_blank" rel="noopener">Zenodo DOI ↗</a></div>
+          </article>
+          <article class="editorial-row">
+            <div class="editorial-year">2026</div>
+            <div class="editorial-main">
+              <h3><a href="https://doi.org/10.5281/zenodo.22715250" target="_blank" rel="noopener">From Edge AI to Governed Autonomous Edge Intelligence</a></h3>
+              <p data-i18n="pub_edge_desc">Research article introducing the shift from conventional Edge AI toward governed autonomous intelligence operating under explicit architectural constraints.</p>
+            </div>
+            <div class="editorial-meta">SGAEIA Research Series — Article 1<br><a href="https://doi.org/10.5281/zenodo.22715250" target="_blank" rel="noopener">Zenodo DOI ↗</a></div>
+          </article>
+          <article class="editorial-row">
+            <div class="editorial-year">2026</div>
+            <div class="editorial-main">
+              <h3><a href="https://doi.org/10.5281/zenodo.22557796" target="_blank" rel="noopener">SGAEIA: Secure Governed Autonomous Edge Intelligence Architecture</a></h3>
+              <p data-i18n="pub_sgaeia_desc">Versioned research software artifact and open reference architecture.</p>
+            </div>
+            <div class="editorial-meta">Software artifact<br><a href="https://doi.org/10.5281/zenodo.22557796" target="_blank" rel="noopener">Zenodo DOI ↗</a></div>
+          </article>
+          <article class="editorial-row">
+            <div class="editorial-year">2026</div>
+            <div class="editorial-main">
+              <h3><a href="https://doi.org/10.5281/zenodo.22681646" target="_blank" rel="noopener">When AI Begins to Build Itself: Progress Toward Recursive Self-Improvement and Its Implications</a></h3>
+              <p data-i18n="pub_rsi_desc">Preprint examining progress toward recursive self-improvement and its implications for security and governance.</p>
+            </div>
+            <div class="editorial-meta">Preprint<br><a href="https://doi.org/10.5281/zenodo.22681646" target="_blank" rel="noopener">Zenodo DOI ↗</a></div>
+          </article>
+        </div>
+        <a class="text-link" href="https://zenodo.org/communities/sgaeia" target="_blank" rel="noopener"><span data-i18n="all_zenodo">Explore the SGAEIA Zenodo Community</span> ↗</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section writing-band" id="writing">
+    <div class="shell section-grid">
+      <div class="section-kicker"><span>04</span><span data-i18n="nav_writing">Writing</span></div>
+      <div>
+        <h2 data-i18n="writing_title">Research notes &amp; essays</h2>
+        <p class="section-intro" data-i18n="writing_intro">Selected research essays and technical notes on autonomous AI, AI security, governance, multi-agent systems, and the SGAEIA research program.</p>
+
+        <div class="editorial-list">
+          <article class="editorial-row">
+            <div class="editorial-year">2026</div>
+            <div class="editorial-main"><h3><a href="https://medium.com/@aridiosilva/rogue-ai-agents-when-autonomous-systems-become-a-collective-75ddaf685938" target="_blank" rel="noopener">Rogue AI Agents: When Autonomous Systems Become a Collective</a></h3><p data-i18n="w_rogue">What the OpenAI–Hugging Face incident reveals about emergent coordination, security boundaries, and the future of AI governance.</p></div>
+            <div class="editorial-meta">Medium<br>SGAEIA Research Series — Article 10<br>2026-09-16</div>
+          </article>
+          <article class="editorial-row">
+            <div class="editorial-year">2026</div>
+            <div class="editorial-main"><h3><a href="https://medium.com/@aridiosilva/evidence-as-code-making-ai-governance-verifiable-db89e3105b87" target="_blank" rel="noopener">Evidence-as-Code: Making AI Governance Verifiable</a></h3><p data-i18n="w_eac">Why autonomous systems must produce verifiable evidence of governed behavior.</p></div>
+            <div class="editorial-meta">Medium<br>SGAEIA Research Series</div>
+          </article>
+          <article class="editorial-row">
+            <div class="editorial-year">2026</div>
+            <div class="editorial-main"><h3><a href="https://medium.com/@aridiosilva/continuous-grc-for-agentic-ai-ada11c2974d0" target="_blank" rel="noopener">Continuous GRC for Agentic AI</a></h3><p data-i18n="w_grc">Governance, risk, and compliance as continuous runtime processes for autonomous agents.</p></div>
+            <div class="editorial-meta">Medium<br>SGAEIA Research Series</div>
+          </article>
+          <article class="editorial-row">
+            <div class="editorial-year">2026</div>
+            <div class="editorial-main"><h3><a href="https://medium.com/@aridiosilva/authenticated-delegation-between-autonomous-ai-agents-4c1281cd9e14" target="_blank" rel="noopener">Authenticated Delegation Between Autonomous AI Agents</a></h3><p data-i18n="w_delegation">Why delegating a task is not the same as delegating authority.</p></div>
+            <div class="editorial-meta">Medium<br>SGAEIA Research Series</div>
+          </article>
+          <article class="editorial-row">
+            <div class="editorial-year">2026</div>
+            <div class="editorial-main"><h3><a href="https://medium.com/@aridiosilva/why-autonomous-ai-agents-need-bounded-and-revocable-authority-da75656098f7" target="_blank" rel="noopener">Why Autonomous AI Agents Need Bounded and Revocable Authority</a></h3><p data-i18n="w_authority">The authority problem at the center of useful but governable autonomy.</p></div>
+            <div class="editorial-meta">Medium<br>SGAEIA Research Series</div>
+          </article>
+          <article class="editorial-row">
+            <div class="editorial-year">2026</div>
+            <div class="editorial-main"><h3><a href="https://medium.com/@aridiosilva/from-edge-ai-to-governed-autonomous-edge-intelligence-9cbe487d853a" target="_blank" rel="noopener">From Edge AI to Governed Autonomous Edge Intelligence</a></h3><p data-i18n="w_edge">Why the next generation of Edge AI requires explicit governance limits.</p></div>
+            <div class="editorial-meta">Medium<br>SGAEIA Research Series</div>
+          </article>
+        </div>
+        <a class="text-link" href="https://medium.com/@aridiosilva" target="_blank" rel="noopener"><span data-i18n="all_medium">See all writing on Medium</span> ↗</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="about">
+    <div class="shell section-grid">
+      <div class="section-kicker"><span>05</span><span data-i18n="nav_about">About</span></div>
+      <div>
+        <h2 data-i18n="about_title">A long view of software systems — informing research on autonomous AI</h2>
+        <div class="about-panel" style="margin-top: 32px;">
+          <div class="about-copy">
+            <p data-i18n="about_p1">My career in software and information systems began in 1977. It has spanned embedded software, mainframe environments, distributed computing, enterprise systems, web and e-commerce platforms, IT infrastructure, and modern software architecture.</p>
+            <p data-i18n="about_p2">Across that trajectory, I have worked in software development, systems architecture, technology management, project management, and strategic transformation, including large-scale ERP/MRP, e-government, industrial IT, LAN/WAN infrastructure, and enterprise modernization.</p>
+            <p data-i18n="about_p3">I am the author or co-author of four books in Portuguese: <em>Bug do Milênio — Antes, Durante e Depois</em>; <em>Dominando a Tecnologia de Objetos</em>; <em>Desvendando o Pregão Eletrônico</em>; and <em>Sistemas de Informação na Administração Pública</em>.</p>
+            <p data-i18n="about_p4">That long view — from centralized systems to distributed and increasingly autonomous architectures — directly informs my current research on Agentic AI, multi-agent systems, AI security, Zero Trust, Continuous GRC, and SGAEIA. This site documents that work, its archival publications, and related technical writing.</p>
+          </div>
+          <aside class="about-facts" aria-label="Research profile">
+            <div class="fact"><span data-i18n="fact_role">Current role</span><strong data-i18n="fact_role_value">Independent Researcher</strong></div>
+            <div class="fact"><span data-i18n="fact_focus">Research focus</span><strong>Agentic AI · AI Security · Governance</strong></div>
+            <div class="fact"><span data-i18n="fact_project">Research program &amp; architecture</span><strong>SGAEIA</strong></div>
+            <div class="fact"><span>ORCID</span><strong>0009-0008-2411-6995</strong></div>
+          </aside>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="shell">
+    <div class="footer-head">
+      <div class="footer-wordmark">Aridio Silva</div>
+      <div class="footer-note" data-i18n="footer_note">Independent research on the architecture, security, and governance of autonomous and distributed AI systems.</div>
+    </div>
+
+    <nav class="brand-links" aria-label="Research profiles and project links">
+      <a class="brand-link" data-label="GitHub" aria-label="GitHub" title="GitHub" href="https://github.com/aridiosilva" target="_blank" rel="noopener">
+        <img src="https://cdn.simpleicons.org/github" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'"><span class="fallback-icon">GH</span>
+      </a>
+      <a class="brand-link" data-label="ORCID" aria-label="ORCID" title="ORCID" href="https://orcid.org/0009-0008-2411-6995" target="_blank" rel="me noopener">
+        <img src="https://cdn.simpleicons.org/orcid" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'"><span class="fallback-icon">iD</span>
+      </a>
+      <a class="brand-link" data-label="Google Scholar" aria-label="Google Scholar" title="Google Scholar" href="https://scholar.google.com/citations?user=rPn5O48AAAAJ" target="_blank" rel="noopener">
+        <img src="https://cdn.simpleicons.org/googlescholar" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'"><span class="fallback-icon">GS</span>
+      </a>
+      <a class="brand-link" data-label="Zenodo" aria-label="Zenodo author records" title="Zenodo" href="https://zenodo.org/search?q=metadata.creators.person_or_org.name%3A%22Silva%2C%20Aridio%22" target="_blank" rel="noopener">
+        <img src="https://cdn.simpleicons.org/zenodo" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'"><span class="fallback-icon">Z</span>
+      </a>
+      <a class="brand-link" data-badge="C" data-label="SGAEIA · Zenodo Community" aria-label="SGAEIA Zenodo Community" title="SGAEIA — Zenodo Community" href="https://zenodo.org/communities/sgaeia" target="_blank" rel="noopener">
+        <img src="https://cdn.simpleicons.org/zenodo" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'"><span class="fallback-icon">Z</span>
+      </a>
+      <a class="brand-link" data-label="OpenAIRE" aria-label="OpenAIRE" title="OpenAIRE" href="https://explore.openaire.eu/search/find?fv0=Aridio%20Silva&amp;f0=q" target="_blank" rel="noopener">
+        <img src="https://cdn.simpleicons.org/openaire" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'"><span class="fallback-icon">OA</span>
+      </a>
+      <a class="brand-link" data-label="Medium" aria-label="Medium" title="Medium" href="https://medium.com/@aridiosilva" target="_blank" rel="noopener">
+        <img src="https://cdn.simpleicons.org/medium" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'"><span class="fallback-icon">M</span>
+      </a>
+      <a class="brand-link" data-label="LinkedIn" aria-label="LinkedIn" title="LinkedIn" href="https://www.linkedin.com/in/aridio-silva-74997111/" target="_blank" rel="noopener">
+        <img src="https://cdn.simpleicons.org/linkedin" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'"><span class="fallback-icon">in</span>
+      </a>
+      <a class="brand-link" data-badge="S" data-label="SGAEIA Repository" aria-label="SGAEIA GitHub Repository" title="SGAEIA Repository" href="https://github.com/aridiosilva/SGAEIA" target="_blank" rel="noopener">
+        <img src="https://cdn.simpleicons.org/github" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'"><span class="fallback-icon">GH</span>
+      </a>
+      <a class="brand-link" data-label="SGAEIA DOI" aria-label="SGAEIA research artifact DOI" title="SGAEIA Research Artifact / DOI" href="https://doi.org/10.5281/zenodo.22557796" target="_blank" rel="noopener">
+        <img src="https://cdn.simpleicons.org/doi" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'"><span class="fallback-icon">DOI</span>
+      </a>
+    </nav>
+
+    <div class="footer-bottom">
+      <span>© 2026 Aridio Silva</span>
+      <span data-i18n="footer_motto">Autonomous AI. Governed by Design. Trusted by Evidence.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  const translations = {
+    en: {
+      skip:"Skip to main content", identity_role:"Independent Researcher · AI Systems Architecture", nav_research:"Research", nav_publications:"Publications", nav_writing:"Writing", nav_about:"About", easy:"Easy read", listen:"🔊 Listen", stop:"⏹ Stop",
+      hero_eyebrow:"Research focus · Governed autonomous AI", hero_title:"How much authority can an autonomous agent hold while remaining auditable, verifiable, and revocable?", hero_lead:"I research the architecture, security, and governance of autonomous and distributed AI systems — with a focus on Agentic AI, multi-agent systems, Edge AI, Zero Trust, Continuous GRC, and Evidence-as-Code.", hero_meta_1:"Independent Researcher · Brazil", hero_meta_2:"Software & systems career since 1977", explore_research:"Explore research", explore_sgaeia:"Explore SGAEIA", aside_title:"Current research question", aside_text:"How can autonomous systems act at machine speed while keeping authority, delegation, and accountability bounded and verifiable?",
+      research_title:"Governed autonomous intelligence", research_intro:"My work examines the control problem that emerges when AI systems move from recommendation to action: they acquire identities, tools, credentials, delegation paths, and the ability to affect external systems. The objective is useful autonomy under explicit, enforceable, auditable, and revocable limits.",
+      r1_title:"Agentic AI & Multi-Agent Systems", r1_text:"Architectures for agents that plan, delegate, collaborate, and act across distributed environments while preserving traceable chains of authority.", r2_title:"AI Security & Zero Trust", r2_text:"Identity, authenticated delegation, runtime policy enforcement, bounded authority, revocation, and explicit trust boundaries between autonomous components.", r3_title:"Governed Autonomous Edge Intelligence", r3_text:"Autonomous intelligence operating across hybrid edge–cloud infrastructures where latency, intermittent connectivity, and local action complicate centralized control.", r4_title:"Continuous GRC & Evidence-as-Code", r4_text:"Governance, risk, compliance, and assurance evaluated continuously as properties of the system rather than treated as periodic administrative activities.",
+      sgaeia_intro:"SGAEIA is an open reference architecture and research program for autonomous and distributed AI systems. It investigates how bounded and revocable authority, authenticated delegation, Zero Trust, Continuous GRC, and Evidence-as-Code can make autonomous operation auditable and governable by design.", p1:"Bounded Authority", p1_text:"Useful autonomy requires explicit limits on authority.", p2:"Authenticated Delegation", p2_text:"Delegated authority remains attributable, constrained, and traceable.", p3_text:"Consequential interactions are explicitly verified rather than implicitly trusted.", p4:"Revocation by Design", p4_text:"Authority can be withdrawn as deliberately as it is granted.", p5:"Continuous GRC", p5_text:"Governance, risk, and compliance remain active at runtime.", p6_text:"Governed operation produces machine-verifiable evidence.", sgaeia_page:"SGAEIA research page",
+      pub_title:"Selected research publications & artifacts", pub_intro:"A selection of archival research records and artifacts. Zenodo records provide persistent identifiers for citation and long-term access.", pub_sgaeia_desc:"Versioned research software artifact and open reference architecture.", pub_rogue_desc:"What the OpenAI–Hugging Face incident reveals about emergent coordination, security boundaries, and the future of AI governance.", pub_eac_desc:"Research article on Evidence-as-Code and machine-verifiable governance evidence for autonomous AI systems.", pub_grc_desc:"Research article on continuous governance, risk, and compliance for autonomous AI agents operating in dynamic environments.", pub_delegation_desc:"Research article on authenticated, attributable, bounded, and traceable delegation of authority between autonomous agents.", pub_authority_desc:"Research article on why useful autonomy requires authority that is explicitly bounded, verifiable, and revocable.", pub_edge_desc:"Research article introducing the shift from conventional Edge AI toward governed autonomous intelligence operating under explicit architectural constraints.", pub_rsi_desc:"Preprint examining progress toward recursive self-improvement and its implications for security and governance.", all_zenodo:"Explore the SGAEIA Zenodo Community",
+      writing_title:"Research notes & essays", writing_intro:"Selected research essays and technical notes on autonomous AI, AI security, governance, multi-agent systems, and the SGAEIA research program.", w_rogue:"What the OpenAI–Hugging Face incident reveals about emergent coordination, security boundaries, and the future of AI governance.", w_eac:"Why autonomous systems must produce verifiable evidence of governed behavior.", w_grc:"Governance, risk, and compliance as continuous runtime processes for autonomous agents.", w_delegation:"Why delegating a task is not the same as delegating authority.", w_authority:"The authority problem at the center of useful but governable autonomy.", w_edge:"Why the next generation of Edge AI requires explicit governance limits.", all_medium:"See all writing on Medium",
+      about_title:"A long view of software systems — informing research on autonomous AI", about_p1:"My career in software and information systems began in 1977. It has spanned embedded software, mainframe environments, distributed computing, enterprise systems, web and e-commerce platforms, IT infrastructure, and modern software architecture.", about_p2:"Across that trajectory, I have worked in software development, systems architecture, technology management, project management, and strategic transformation, including large-scale ERP/MRP, e-government, industrial IT, LAN/WAN infrastructure, and enterprise modernization.", about_p3:"I am the author or co-author of four books in Portuguese: <em>Bug do Milênio — Antes, Durante e Depois</em>; <em>Dominando a Tecnologia de Objetos</em>; <em>Desvendando o Pregão Eletrônico</em>; and <em>Sistemas de Informação na Administração Pública</em>.", about_p4:"That long view — from centralized systems to distributed and increasingly autonomous architectures — directly informs my current research on Agentic AI, multi-agent systems, AI security, Zero Trust, Continuous GRC, and SGAEIA. This site documents that work, its archival publications, and related technical writing.", fact_role:"Current role", fact_role_value:"Independent Researcher", fact_focus:"Research focus", fact_project:"Research program & architecture", footer_note:"Independent research on the architecture, security, and governance of autonomous and distributed AI systems.", footer_motto:"Autonomous AI. Governed by Design. Trusted by Evidence."
+    },
+    pt: {
+      skip:"Ir para o conteúdo principal", identity_role:"Pesquisador Independente · Arquitetura de Sistemas de IA", nav_research:"Pesquisa", nav_publications:"Publicações", nav_writing:"Textos", nav_about:"Sobre", easy:"Leitura fácil", listen:"🔊 Ouvir", stop:"⏹ Parar",
+      hero_eyebrow:"Foco de pesquisa · IA autônoma governada", hero_title:"Quanta autoridade um agente autônomo pode receber e continuar auditável, verificável e revogável?", hero_lead:"Pesquiso a arquitetura, a segurança e a governança de sistemas de IA autônomos e distribuídos — com foco em Agentic AI, sistemas multiagente, Edge AI, Zero Trust, GRC Contínuo e Evidence-as-Code.", hero_meta_1:"Pesquisador Independente · Brasil", hero_meta_2:"Carreira em software e sistemas desde 1977", explore_research:"Explorar pesquisa", explore_sgaeia:"Explorar SGAEIA", aside_title:"Questão de pesquisa atual", aside_text:"Como sistemas autônomos podem agir à velocidade de máquina mantendo autoridade, delegação e responsabilização sob limites verificáveis?",
+      research_title:"Inteligência autônoma governada", research_intro:"Meu trabalho examina o problema de controle que surge quando sistemas de IA passam da recomendação à ação: eles adquirem identidades, ferramentas, credenciais, caminhos de delegação e capacidade de afetar sistemas externos. O objetivo é permitir autonomia útil sob limites explícitos, aplicáveis, auditáveis e revogáveis.",
+      r1_title:"Agentic AI e Sistemas Multiagente", r1_text:"Arquiteturas para agentes que planejam, delegam, colaboram e agem em ambientes distribuídos, preservando cadeias rastreáveis de autoridade.", r2_title:"Segurança de IA e Zero Trust", r2_text:"Identidade, delegação autenticada, aplicação de políticas em tempo de execução, autoridade limitada, revogação e fronteiras explícitas de confiança entre componentes autônomos.", r3_title:"Inteligência Autônoma Governada na Borda", r3_text:"Inteligência autônoma em infraestruturas híbridas de borda e nuvem, nas quais latência, conectividade intermitente e ação local tornam o controle centralizado mais complexo.", r4_title:"GRC Contínuo e Evidence-as-Code", r4_text:"Governança, risco, conformidade e assurance avaliados continuamente como propriedades do sistema, em vez de tratados como atividades administrativas periódicas.",
+      sgaeia_intro:"SGAEIA é uma arquitetura de referência aberta e um programa de pesquisa para sistemas de IA autônomos e distribuídos. O projeto investiga como autoridade limitada e revogável, delegação autenticada, Zero Trust, GRC Contínuo e Evidence-as-Code podem tornar a operação autônoma auditável e governável desde o design.", p1:"Autoridade Limitada", p1_text:"Autonomia útil exige limites explícitos de autoridade.", p2:"Delegação Autenticada", p2_text:"A autoridade delegada permanece atribuível, restrita e rastreável.", p3_text:"Interações relevantes são verificadas explicitamente, e não presumidas como confiáveis.", p4:"Revogação por Design", p4_text:"A autoridade pode ser retirada com a mesma intencionalidade com que é concedida.", p5:"GRC Contínuo", p5_text:"Governança, risco e conformidade permanecem ativos em tempo de execução.", p6_text:"A operação sob governança produz evidências verificáveis por máquina.", sgaeia_page:"Página de pesquisa SGAEIA",
+      pub_title:"Publicações e artefatos de pesquisa selecionados", pub_intro:"Uma seleção de registros e artefatos de pesquisa arquivados. Os registros Zenodo fornecem identificadores persistentes para citação e acesso de longo prazo.", pub_sgaeia_desc:"Artefato versionado de software de pesquisa e arquitetura de referência aberta.", pub_rogue_desc:"O que o incidente OpenAI–Hugging Face revela sobre coordenação emergente, fronteiras de segurança e o futuro da governança de IA.", pub_eac_desc:"Artigo de pesquisa sobre Evidence-as-Code e evidências de governança verificáveis por máquina para sistemas autônomos de IA.", pub_grc_desc:"Artigo de pesquisa sobre governança, risco e conformidade contínuos para agentes autônomos de IA que operam em ambientes dinâmicos.", pub_delegation_desc:"Artigo de pesquisa sobre delegação de autoridade autenticada, atribuível, limitada e rastreável entre agentes autônomos.", pub_authority_desc:"Artigo de pesquisa sobre por que a autonomia útil exige autoridade explicitamente limitada, verificável e revogável.", pub_edge_desc:"Artigo de pesquisa que apresenta a transição da Edge AI convencional para uma inteligência autônoma governada sob restrições arquiteturais explícitas.", pub_rsi_desc:"Preprint sobre o progresso em direção ao autoaperfeiçoamento recursivo e suas implicações para segurança e governança.", all_zenodo:"Explorar a comunidade SGAEIA no Zenodo",
+      writing_title:"Notas de pesquisa e ensaios", writing_intro:"Seleção de ensaios de pesquisa e notas técnicas sobre IA autônoma, segurança de IA, governança, sistemas multiagente e o programa de pesquisa SGAEIA.", w_rogue:"O que o incidente OpenAI–Hugging Face revela sobre coordenação emergente, fronteiras de segurança e o futuro da governança de IA.", w_eac:"Por que sistemas autônomos devem produzir evidência verificável de comportamento governado.", w_grc:"Governança, risco e conformidade como processos contínuos em tempo de execução para agentes autônomos.", w_delegation:"Por que delegar uma tarefa não é o mesmo que delegar autoridade.", w_authority:"O problema da autoridade no centro de uma autonomia útil e governável.", w_edge:"Por que a próxima geração de Edge AI exige limites explícitos de governança.", all_medium:"Ver todos os textos no Medium",
+      about_title:"Uma perspectiva de longo prazo sobre sistemas de software — aplicada à pesquisa em IA autônoma", about_p1:"Minha carreira em software e sistemas de informação começou em 1977. Desde então, passou por software embarcado, ambientes mainframe, computação distribuída, sistemas corporativos, plataformas web e e-commerce, infraestrutura de TI e arquitetura moderna de software.", about_p2:"Ao longo dessa trajetória, atuei em desenvolvimento de software, arquitetura de sistemas, gestão de tecnologia, gestão de projetos e transformação estratégica, incluindo ERP/MRP de grande porte, governo eletrônico, TI industrial, infraestrutura LAN/WAN e modernização de sistemas corporativos.", about_p3:"Sou autor ou coautor de quatro livros em português: <em>Bug do Milênio — Antes, Durante e Depois</em>; <em>Dominando a Tecnologia de Objetos</em>; <em>Desvendando o Pregão Eletrônico</em>; e <em>Sistemas de Informação na Administração Pública</em>.", about_p4:"Essa perspectiva — de sistemas centralizados a arquiteturas distribuídas e cada vez mais autônomas — orienta diretamente minha pesquisa atual em Agentic AI, sistemas multiagente, segurança de IA, Zero Trust, GRC Contínuo e SGAEIA. Este site documenta esse trabalho, suas publicações arquivadas e a produção técnica relacionada.", fact_role:"Atuação atual", fact_role_value:"Pesquisador Independente", fact_focus:"Foco de pesquisa", fact_project:"Programa e arquitetura de pesquisa", footer_note:"Pesquisa independente sobre arquitetura, segurança e governança de sistemas de IA autônomos e distribuídos.", footer_motto:"Autonomous AI. Governed by Design. Trusted by Evidence."
+    },
+    es: {
+      skip:"Ir al contenido principal", identity_role:"Investigador Independiente · Arquitectura de Sistemas de IA", nav_research:"Investigación", nav_publications:"Publicaciones", nav_writing:"Textos", nav_about:"Sobre mí", easy:"Lectura fácil", listen:"🔊 Escuchar", stop:"⏹ Detener",
+      hero_eyebrow:"Foco de investigación · IA autónoma gobernada", hero_title:"¿Cuánta autoridad puede recibir un agente autónomo sin dejar de ser auditable, verificable y revocable?", hero_lead:"Investigo la arquitectura, la seguridad y la gobernanza de sistemas de IA autónomos y distribuidos, con foco en Agentic AI, sistemas multiagente, Edge AI, Zero Trust, GRC Continuo y Evidence-as-Code.", hero_meta_1:"Investigador Independiente · Brasil", hero_meta_2:"Carrera en software y sistemas desde 1977", explore_research:"Explorar investigación", explore_sgaeia:"Explorar SGAEIA", aside_title:"Pregunta de investigación actual", aside_text:"¿Cómo pueden los sistemas autónomos actuar a velocidad de máquina manteniendo la autoridad, la delegación y la responsabilidad dentro de límites verificables?",
+      research_title:"Inteligencia autónoma gobernada", research_intro:"Mi trabajo examina el problema de control que surge cuando los sistemas de IA pasan de la recomendación a la acción: adquieren identidades, herramientas, credenciales, rutas de delegación y capacidad para afectar sistemas externos. El objetivo es una autonomía útil bajo límites explícitos, exigibles, auditables y revocables.", r1_title:"Agentic AI y Sistemas Multiagente", r1_text:"Arquitecturas para agentes que planifican, delegan, colaboran y actúan en entornos distribuidos preservando cadenas trazables de autoridad.", r2_title:"Seguridad de IA y Zero Trust", r2_text:"Identidad, delegación autenticada, aplicación de políticas en tiempo de ejecución, autoridad limitada, revocación y fronteras explícitas de confianza entre componentes autónomos.", r3_title:"Inteligencia Autónoma Gobernada en el Borde", r3_text:"Inteligencia autónoma en infraestructuras híbridas de borde y nube, donde la latencia, la conectividad intermitente y la acción local hacen más complejo el control centralizado.", r4_title:"GRC Continuo y Evidence-as-Code", r4_text:"Gobernanza, riesgo, cumplimiento y assurance evaluados continuamente como propiedades del sistema, en lugar de tratarse como actividades administrativas periódicas.", sgaeia_intro:"SGAEIA es una arquitectura de referencia abierta y un programa de investigación para sistemas de IA autónomos y distribuidos. Investiga cómo la autoridad limitada y revocable, la delegación autenticada, Zero Trust, GRC Continuo y Evidence-as-Code pueden hacer que la operación autónoma sea auditable y gobernable desde el diseño.", p1:"Autoridad Limitada", p1_text:"La autonomía útil requiere límites explícitos de autoridad.", p2:"Delegación Autenticada", p2_text:"La autoridad delegada permanece atribuible, limitada y trazable.", p3_text:"Las interacciones relevantes se verifican explícitamente en lugar de confiarse de forma implícita.", p4:"Revocación por Diseño", p4_text:"La autoridad puede retirarse con la misma deliberación con la que se concede.", p5:"GRC Continuo", p5_text:"La gobernanza, el riesgo y el cumplimiento permanecen activos en tiempo de ejecución.", p6_text:"La operación gobernada produce evidencia verificable por máquina.", sgaeia_page:"Página de investigación SGAEIA", pub_title:"Publicaciones y artefactos de investigación seleccionados", pub_intro:"Una selección de registros y artefactos de investigación archivados. Los registros de Zenodo proporcionan identificadores persistentes para cita y acceso a largo plazo.", pub_sgaeia_desc:"Artefacto versionado de software de investigación y arquitectura de referencia abierta.", pub_rogue_desc:"Lo que el incidente OpenAI–Hugging Face revela sobre la coordinación emergente, los límites de seguridad y el futuro de la gobernanza de la IA.", pub_eac_desc:"Artículo de investigación sobre Evidence-as-Code y evidencia de gobernanza verificable por máquina para sistemas autónomos de IA.", pub_grc_desc:"Artículo de investigación sobre gobernanza, riesgo y cumplimiento continuos para agentes autónomos de IA que operan en entornos dinámicos.", pub_delegation_desc:"Artículo de investigación sobre delegación de autoridad autenticada, atribuible, limitada y trazable entre agentes autónomos.", pub_authority_desc:"Artículo de investigación sobre por qué una autonomía útil exige autoridad explícitamente limitada, verificable y revocable.", pub_edge_desc:"Artículo de investigación que presenta la transición de la Edge AI convencional hacia una inteligencia autónoma gobernada bajo restricciones arquitectónicas explícitas.", pub_rsi_desc:"Preprint sobre el progreso hacia la auto-mejora recursiva y sus implicaciones.", all_zenodo:"Explorar la comunidad SGAEIA en Zenodo", writing_title:"Notas de investigación y ensayos", writing_intro:"Selección de ensayos de investigación y notas técnicas sobre IA autónoma, seguridad de IA, gobernanza, sistemas multiagente y el programa de investigación SGAEIA.", w_rogue:"Lo que el incidente OpenAI–Hugging Face revela sobre la coordinación emergente, los límites de seguridad y el futuro de la gobernanza de la IA.", w_eac:"Por qué los sistemas autónomos deben producir evidencia verificable de comportamiento gobernado.", w_grc:"Gobernanza, riesgo y cumplimiento como procesos continuos en tiempo de ejecución para agentes autónomos.", w_delegation:"Por qué delegar una tarea no equivale a delegar autoridad.", w_authority:"El problema de autoridad en el centro de una autonomía útil y gobernable.", w_edge:"Por qué la próxima generación de Edge AI necesita límites explícitos de gobernanza.", all_medium:"Ver todos los textos en Medium", about_title:"Una visión de largo plazo de los sistemas de software — aplicada a la investigación en IA autónoma", about_p1:"Mi carrera en software y sistemas de información comenzó en 1977. Desde entonces ha abarcado software embebido, entornos mainframe, computación distribuida, sistemas empresariales, plataformas web y de comercio electrónico, infraestructura de TI y arquitectura moderna de software.", about_p2:"A lo largo de esa trayectoria he trabajado en desarrollo de software, arquitectura de sistemas, gestión de tecnología, gestión de proyectos y transformación estratégica, incluidos ERP/MRP de gran escala, gobierno electrónico, TI industrial, infraestructura LAN/WAN y modernización de sistemas empresariales.", about_p3:"Soy autor o coautor de cuatro libros en portugués: <em>Bug do Milênio — Antes, Durante e Depois</em>; <em>Dominando a Tecnologia de Objetos</em>; <em>Desvendando o Pregão Eletrônico</em>; y <em>Sistemas de Informação na Administração Pública</em>.", about_p4:"Esa perspectiva — desde sistemas centralizados hasta arquitecturas distribuidas y cada vez más autónomas — orienta directamente mi investigación actual en Agentic AI, sistemas multiagente, seguridad de IA, Zero Trust, GRC Continuo y SGAEIA. Este sitio documenta ese trabajo, sus publicaciones archivadas y la producción técnica relacionada.", fact_role:"Rol actual", fact_role_value:"Investigador Independiente", fact_focus:"Foco de investigación", fact_project:"Programa y arquitectura de investigación", footer_note:"Investigación independiente sobre arquitectura, seguridad y gobernanza de sistemas de IA autónomos y distribuidos.", footer_motto:"Autonomous AI. Governed by Design. Trusted by Evidence."
+    },
+    fr: {
+      skip:"Aller au contenu principal", identity_role:"Chercheur Indépendant · Architecture des Systèmes d’IA", nav_research:"Recherche", nav_publications:"Publications", nav_writing:"Écrits", nav_about:"À propos", easy:"Lecture facile", listen:"🔊 Écouter", stop:"⏹ Arrêter",
+      hero_eyebrow:"Axe de recherche · IA autonome gouvernée", hero_title:"Quelle autorité un agent autonome peut-il recevoir tout en restant auditable, vérifiable et révocable ?", hero_lead:"J’étudie l’architecture, la sécurité et la gouvernance des systèmes d’IA autonomes et distribués, avec un accent sur Agentic AI, les systèmes multi-agents, Edge AI, Zero Trust, la GRC continue et Evidence-as-Code.", hero_meta_1:"Chercheur Indépendant · Brésil", hero_meta_2:"Carrière en logiciel et systèmes depuis 1977", explore_research:"Explorer la recherche", explore_sgaeia:"Explorer SGAEIA", aside_title:"Question de recherche actuelle", aside_text:"Comment des systèmes autonomes peuvent-ils agir à la vitesse machine tout en maintenant l’autorité, la délégation et la responsabilité dans des limites vérifiables ?",
+      research_title:"Intelligence autonome gouvernée", research_intro:"Mes travaux étudient le problème de contrôle qui apparaît lorsque les systèmes d’IA passent de la recommandation à l’action : ils acquièrent des identités, des outils, des identifiants, des chemins de délégation et la capacité d’agir sur des systèmes externes. L’objectif est une autonomie utile sous des limites explicites, applicables, auditables et révocables.", r1_title:"IA agentique & Systèmes multi-agents", r1_text:"Architectures pour des agents qui planifient, délèguent, collaborent et agissent dans des environnements distribués tout en préservant des chaînes d’autorité traçables.", r2_title:"Sécurité de l’IA & Zero Trust", r2_text:"Identité, délégation authentifiée, application de politiques à l’exécution, autorité limitée, révocation et frontières de confiance explicites.", r3_title:"Intelligence Autonome Gouvernée en Périphérie", r3_text:"Intelligence autonome dans des infrastructures hybrides périphérie–cloud, où la latence, la connectivité intermittente et l’action locale rendent le contrôle centralisé plus complexe.", r4_title:"GRC Continue & Evidence-as-Code", r4_text:"Gouvernance, risque, conformité et assurance évalués en continu comme propriétés du système, plutôt que traités comme des activités administratives périodiques.", sgaeia_intro:"SGAEIA est une architecture de référence ouverte et un programme de recherche pour les systèmes d’IA autonomes et distribués. Le projet étudie comment une autorité limitée et révocable, une délégation authentifiée, Zero Trust, la GRC continue et Evidence-as-Code peuvent rendre l’opération autonome auditable et gouvernable dès la conception.", p1:"Autorité Limitée", p1_text:"Une autonomie utile exige des limites explicites d’autorité.", p2:"Délégation Authentifiée", p2_text:"L’autorité déléguée reste attribuable, contrainte et traçable.", p3_text:"Les interactions importantes sont explicitement vérifiées plutôt que supposées fiables.", p4:"Révocation par Conception", p4_text:"L’autorité peut être retirée aussi délibérément qu’elle est accordée.", p5:"GRC Continue", p5_text:"La gouvernance, le risque et la conformité restent actifs à l’exécution.", p6_text:"L’opération gouvernée produit des preuves vérifiables par machine.", sgaeia_page:"Page de recherche SGAEIA", pub_title:"Publications et artefacts de recherche sélectionnés", pub_intro:"Une sélection d’archives et d’artefacts de recherche. Les notices Zenodo fournissent des identifiants persistants pour la citation et l’accès à long terme.", pub_sgaeia_desc:"Artefact logiciel de recherche versionné et architecture de référence ouverte.", pub_rogue_desc:"Ce que l’incident OpenAI–Hugging Face révèle sur la coordination émergente, les frontières de sécurité et l’avenir de la gouvernance de l’IA.", pub_eac_desc:"Article de recherche sur Evidence-as-Code et les preuves de gouvernance vérifiables par machine pour les systèmes d’IA autonomes.", pub_grc_desc:"Article de recherche sur la gouvernance, le risque et la conformité continus pour des agents d’IA autonomes opérant dans des environnements dynamiques.", pub_delegation_desc:"Article de recherche sur la délégation d’autorité authentifiée, attribuable, limitée et traçable entre agents autonomes.", pub_authority_desc:"Article de recherche sur la nécessité d’une autorité explicitement limitée, vérifiable et révocable pour une autonomie utile.", pub_edge_desc:"Article de recherche présentant le passage de l’Edge AI conventionnelle à une intelligence autonome gouvernée sous contraintes architecturales explicites.", pub_rsi_desc:"Prépublication sur les progrès vers l’auto-amélioration récursive et leurs implications.", all_zenodo:"Explorer la communauté SGAEIA sur Zenodo", writing_title:"Notes de recherche & essais", writing_intro:"Sélection d’essais de recherche et de notes techniques sur l’IA autonome, la sécurité de l’IA, la gouvernance, les systèmes multi-agents et le programme de recherche SGAEIA.", w_rogue:"Ce que l’incident OpenAI–Hugging Face révèle sur la coordination émergente, les frontières de sécurité et l’avenir de la gouvernance de l’IA.", w_eac:"Pourquoi les systèmes autonomes doivent produire des preuves vérifiables d’un comportement gouverné.", w_grc:"Gouvernance, risque et conformité comme processus continus à l’exécution.", w_delegation:"Pourquoi déléguer une tâche n’est pas déléguer l’autorité.", w_authority:"Le problème d’autorité au cœur d’une autonomie utile mais gouvernable.", w_edge:"Pourquoi la prochaine génération d’Edge AI exige des limites de gouvernance explicites.", all_medium:"Voir tous les écrits sur Medium", about_title:"Une vision de long terme des systèmes logiciels — appliquée à la recherche sur l’IA autonome", about_p1:"Ma carrière dans le logiciel et les systèmes d’information a commencé en 1977. Elle a couvert les logiciels embarqués, les environnements mainframe, l’informatique distribuée, les systèmes d’entreprise, les plateformes web et e-commerce, l’infrastructure informatique et l’architecture logicielle moderne.", about_p2:"Au cours de ce parcours, j’ai travaillé dans le développement logiciel, l’architecture des systèmes, la gestion technologique, la gestion de projets et la transformation stratégique, notamment sur des ERP/MRP à grande échelle, l’e-gouvernement, l’informatique industrielle, les infrastructures LAN/WAN et la modernisation des systèmes d’entreprise.", about_p3:"Je suis l’auteur ou le coauteur de quatre livres en portugais : <em>Bug do Milênio — Antes, Durante e Depois</em> ; <em>Dominando a Tecnologia de Objetos</em> ; <em>Desvendando o Pregão Eletrônico</em> ; et <em>Sistemas de Informação na Administração Pública</em>.", about_p4:"Cette perspective — des systèmes centralisés aux architectures distribuées et de plus en plus autonomes — éclaire directement mes recherches actuelles sur Agentic AI, les systèmes multi-agents, la sécurité de l’IA, Zero Trust, la GRC continue et SGAEIA. Ce site documente ce travail, ses publications archivées et les écrits techniques associés.", fact_role:"Rôle actuel", fact_role_value:"Chercheur Indépendant", fact_focus:"Axe de recherche", fact_project:"Programme et architecture de recherche", footer_note:"Recherche indépendante sur l’architecture, la sécurité et la gouvernance des systèmes d’IA autonomes et distribués.", footer_motto:"Autonomous AI. Governed by Design. Trusted by Evidence."
+    },
+    de: {
+      skip:"Zum Hauptinhalt springen", identity_role:"Unabhängiger Forscher · Architektur von KI-Systemen", nav_research:"Forschung", nav_publications:"Publikationen", nav_writing:"Texte", nav_about:"Über mich", easy:"Leichtes Lesen", listen:"🔊 Anhören", stop:"⏹ Stopp",
+      hero_eyebrow:"Forschungsschwerpunkt · Gesteuerte autonome KI", hero_title:"Wie viel Autorität kann ein autonomer Agent erhalten und dabei auditierbar, verifizierbar und widerrufbar bleiben?", hero_lead:"Ich erforsche Architektur, Sicherheit und Governance autonomer und verteilter KI-Systeme — mit Schwerpunkt auf Agentic AI, Multi-Agenten-Systemen, Edge AI, Zero Trust, Continuous GRC und Evidence-as-Code.", hero_meta_1:"Unabhängiger Forscher · Brasilien", hero_meta_2:"Software- und Systemkarriere seit 1977", explore_research:"Forschung erkunden", explore_sgaeia:"SGAEIA erkunden", aside_title:"Aktuelle Forschungsfrage", aside_text:"Wie können autonome Systeme mit Maschinengeschwindigkeit handeln und dabei Autorität, Delegation und Verantwortlichkeit innerhalb überprüfbarer Grenzen halten?",
+      research_title:"Gesteuerte autonome Intelligenz", research_intro:"Meine Arbeit untersucht das Kontrollproblem, das entsteht, wenn KI-Systeme von Empfehlungen zu Handlungen übergehen: Sie erhalten Identitäten, Werkzeuge, Zugangsdaten, Delegationspfade und die Fähigkeit, externe Systeme zu beeinflussen. Ziel ist nützliche Autonomie unter expliziten, durchsetzbaren, auditierbaren und widerrufbaren Grenzen.", r1_title:"Agentic AI & Multi-Agenten-Systeme", r1_text:"Architekturen für Agenten, die in verteilten Umgebungen planen, delegieren, zusammenarbeiten und handeln und dabei nachvollziehbare Autoritätsketten bewahren.", r2_title:"KI-Sicherheit & Zero Trust", r2_text:"Identität, authentifizierte Delegation, Richtliniendurchsetzung zur Laufzeit, begrenzte Autorität, Widerruf und explizite Vertrauensgrenzen zwischen autonomen Komponenten.", r3_title:"Gesteuerte Autonome Edge-Intelligenz", r3_text:"Autonome Intelligenz in hybriden Edge-Cloud-Infrastrukturen, in denen Latenz, instabile Konnektivität und lokale Aktionen zentrale Kontrolle erschweren.", r4_title:"Continuous GRC & Evidence-as-Code", r4_text:"Governance, Risiko, Compliance und Assurance werden kontinuierlich als Systemeigenschaften bewertet, statt als periodische Verwaltungsaktivitäten behandelt zu werden.", sgaeia_intro:"SGAEIA ist eine offene Referenzarchitektur und ein Forschungsprogramm für autonome und verteilte KI-Systeme. Untersucht wird, wie begrenzte und widerrufbare Autorität, authentifizierte Delegation, Zero Trust, Continuous GRC und Evidence-as-Code autonomen Betrieb auditierbar und by Design steuerbar machen können.", p1:"Begrenzte Autorität", p1_text:"Nützliche Autonomie erfordert explizite Grenzen der Autorität.", p2:"Authentifizierte Delegation", p2_text:"Delegierte Autorität bleibt zuordenbar, begrenzt und nachvollziehbar.", p3_text:"Relevante Interaktionen werden explizit verifiziert, statt implizit als vertrauenswürdig zu gelten.", p4:"Widerruf by Design", p4_text:"Autorität kann ebenso gezielt entzogen werden, wie sie erteilt wird.", p5:"Continuous GRC", p5_text:"Governance, Risiko und Compliance bleiben zur Laufzeit aktiv.", p6_text:"Governed Operation erzeugt maschinenverifizierbare Evidenz.", sgaeia_page:"SGAEIA-Forschungsseite", pub_title:"Ausgewählte Forschungspublikationen & Artefakte", pub_intro:"Eine Auswahl archivierter Forschungsdatensätze und Artefakte. Zenodo bietet persistente Identifikatoren für Zitation und langfristigen Zugriff.", pub_sgaeia_desc:"Versioniertes Forschungssoftware-Artefakt und offene Referenzarchitektur.", pub_rogue_desc:"Was der OpenAI–Hugging-Face-Vorfall über emergente Koordination, Sicherheitsgrenzen und die Zukunft der KI-Governance zeigt.", pub_eac_desc:"Forschungsartikel zu Evidence-as-Code und maschinenverifizierbarer Governance-Evidenz für autonome KI-Systeme.", pub_grc_desc:"Forschungsartikel zu kontinuierlicher Governance, Risiko- und Compliance-Steuerung für autonome KI-Agenten in dynamischen Umgebungen.", pub_delegation_desc:"Forschungsartikel über authentifizierte, zurechenbare, begrenzte und nachvollziehbare Delegation von Autorität zwischen autonomen Agenten.", pub_authority_desc:"Forschungsartikel darüber, warum nützliche Autonomie ausdrücklich begrenzte, überprüfbare und widerrufbare Autorität erfordert.", pub_edge_desc:"Forschungsartikel über den Übergang von konventioneller Edge AI zu gesteuerter autonomer Intelligenz unter expliziten architektonischen Grenzen.", pub_rsi_desc:"Preprint zum Fortschritt in Richtung rekursiver Selbstverbesserung und den Folgen für Sicherheit und Governance.", all_zenodo:"SGAEIA Zenodo Community erkunden", writing_title:"Forschungsnotizen & Essays", writing_intro:"Ausgewählte Forschungsessays und technische Notizen zu autonomer KI, KI-Sicherheit, Governance, Multi-Agenten-Systemen und dem SGAEIA-Forschungsprogramm.", w_rogue:"Was der OpenAI–Hugging-Face-Vorfall über emergente Koordination, Sicherheitsgrenzen und die Zukunft der KI-Governance zeigt.", w_eac:"Warum autonome Systeme überprüfbare Evidenz für gesteuertes Verhalten erzeugen müssen.", w_grc:"Governance, Risiko und Compliance als kontinuierliche Laufzeitprozesse.", w_delegation:"Warum die Delegation einer Aufgabe nicht der Delegation von Autorität entspricht.", w_authority:"Das Autoritätsproblem im Zentrum nützlicher, aber steuerbarer Autonomie.", w_edge:"Warum die nächste Generation von Edge AI explizite Governance-Grenzen benötigt.", all_medium:"Alle Texte auf Medium", about_title:"Ein langfristiger Blick auf Softwaresysteme — angewandt auf die Forschung zu autonomer KI", about_p1:"Meine Karriere in Software und Informationssystemen begann 1977. Sie umfasst Embedded Software, Mainframe-Umgebungen, verteiltes Computing, Unternehmenssysteme, Web- und E-Commerce-Plattformen, IT-Infrastruktur und moderne Softwarearchitektur.", about_p2:"Im Verlauf dieser Karriere war ich in Softwareentwicklung, Systemarchitektur, Technologiemanagement, Projektmanagement und strategischer Transformation tätig, unter anderem in großen ERP/MRP-Systemen, E-Government, industrieller IT, LAN/WAN-Infrastruktur und der Modernisierung von Unternehmenssystemen.", about_p3:"Ich bin Autor oder Mitautor von vier portugiesischsprachigen Büchern: <em>Bug do Milênio — Antes, Durante e Depois</em>; <em>Dominando a Tecnologia de Objetos</em>; <em>Desvendando o Pregão Eletrônico</em>; und <em>Sistemas de Informação na Administração Pública</em>.", about_p4:"Diese Perspektive — von zentralisierten Systemen zu verteilten und zunehmend autonomen Architekturen — prägt unmittelbar meine aktuelle Forschung zu Agentic AI, Multi-Agenten-Systemen, KI-Sicherheit, Zero Trust, Continuous GRC und SGAEIA. Diese Website dokumentiert diese Arbeit, ihre archivierten Publikationen und die zugehörigen technischen Texte.", fact_role:"Aktuelle Rolle", fact_role_value:"Unabhängiger Forscher", fact_focus:"Forschungsschwerpunkt", fact_project:"Forschungsprogramm & Architektur", footer_note:"Unabhängige Forschung zu Architektur, Sicherheit und Governance autonomer und verteilter KI-Systeme.", footer_motto:"Autonomous AI. Governed by Design. Trusted by Evidence."
+    }
+  };
+
+  let currentLanguage = 'en';
+  let easyOn = false;
+  const scales = [1, 1.08, 1.16, 1.26, 1.38];
+  let scaleIndex = 0;
+
+  function normalizeProseEmphasis() {
+    // Defensive cleanup: prose should never use word-by-word or partial-word bolding.
+    // This also neutralizes markup left behind by an older downloaded V2.
+    const proseSelectors = [
+      '.hero-lead', '.hero-aside p', '.section-intro', '.research-item p',
+      '.principle span', '.editorial-main p', '.about-copy p', '.footer-note'
+    ];
+    document.querySelectorAll(proseSelectors.join(',')).forEach(container => {
+      container.querySelectorAll('strong, b').forEach(node => node.replaceWith(...node.childNodes));
+      container.querySelectorAll('[style]').forEach(node => {
+        if (/font-weight\s*:/i.test(node.getAttribute('style') || '')) {
+          node.style.removeProperty('font-weight');
+          if (!node.getAttribute('style')) node.removeAttribute('style');
+        }
+      });
+    });
+  }
+
+  function applyEasyRead() {
+    normalizeProseEmphasis();
+    document.body.setAttribute('data-easy-read', easyOn ? 'true' : 'false');
+    const btn = document.getElementById('easyReadToggle');
+    if (btn) btn.setAttribute('aria-pressed', easyOn ? 'true' : 'false');
+    try { localStorage.setItem('site-easy-read', easyOn); } catch(e) {}
+  }
+
+  function applyLang(lang) {
+    if (!translations[lang]) lang = 'en';
+    currentLanguage = lang;
+    document.documentElement.lang = lang;
+    document.querySelectorAll('[data-i18n]').forEach(node => {
+      const key = node.getAttribute('data-i18n');
+      if (translations[lang][key] !== undefined) node.innerHTML = translations[lang][key];
+    });
+    const sel = document.getElementById('langSelect');
+    if (sel) sel.value = lang;
+    try { localStorage.setItem('site-lang', lang); } catch(e) {}
+    normalizeProseEmphasis();
+    if (easyOn) applyEasyRead();
+  }
+
+  function applyScale() {
+    document.documentElement.style.setProperty('--font-scale', scales[scaleIndex]);
+    try { localStorage.setItem('site-font-scale', scales[scaleIndex]); } catch(e) {}
+  }
+
+  document.addEventListener('DOMContentLoaded', function () {
+    try {
+      const savedLang = localStorage.getItem('site-lang'); if (savedLang && translations[savedLang]) currentLanguage = savedLang;
+      easyOn = localStorage.getItem('site-easy-read') === 'true';
+      const savedScale = parseFloat(localStorage.getItem('site-font-scale'));
+      const idx = scales.indexOf(savedScale); if (idx >= 0) scaleIndex = idx;
+    } catch(e) {}
+
+    applyLang(currentLanguage); applyScale(); applyEasyRead();
+
+    const sel = document.getElementById('langSelect');
+    sel && sel.addEventListener('change', e => { stopReading(); applyLang(e.target.value); });
+    document.getElementById('fontIncrease').addEventListener('click', () => { if (scaleIndex < scales.length - 1) { scaleIndex++; applyScale(); } });
+    document.getElementById('fontDecrease').addEventListener('click', () => { if (scaleIndex > 0) { scaleIndex--; applyScale(); } });
+    document.getElementById('easyReadToggle').addEventListener('click', () => { easyOn = !easyOn; applyEasyRead(); });
+
+    const readBtn = document.getElementById('readAloudToggle');
+    const speechLangMap = { en:'en-US', pt:'pt-BR', es:'es-ES', fr:'fr-FR', de:'de-DE' };
+    let speechChunks = [];
+    let speechIndex = 0;
+    let isReading = false;
+    let availableVoices = [];
+
+    function loadVoices() {
+      if (!window.speechSynthesis) return;
+      availableVoices = window.speechSynthesis.getVoices() || [];
+    }
+
+    function readableText() {
+      const nodes = document.querySelectorAll('.hero h1, .hero-lead, .hero-aside p, .section h2, .section-intro, .research-item h3, .research-item p, .principle strong, .principle span, .editorial-main h3, .editorial-main p, .about-copy p');
+      return Array.from(nodes).map(n => n.textContent.trim()).filter(Boolean).join('. ');
+    }
+
+    // Mobile Safari/Chrome are more reliable when long text is spoken in short chunks.
+    function chunkSpeechText(text, maxLength = 180) {
+      const sentences = text.match(/[^.!?]+[.!?]+|[^.!?]+$/g) || [text];
+      const chunks = [];
+      let current = '';
+
+      sentences.forEach(sentence => {
+        const clean = sentence.trim();
+        if (!clean) return;
+        if ((current + ' ' + clean).trim().length <= maxLength) {
+          current = (current + ' ' + clean).trim();
+          return;
+        }
+        if (current) chunks.push(current);
+
+        if (clean.length <= maxLength) {
+          current = clean;
+        } else {
+          const words = clean.split(/\s+/);
+          current = '';
+          words.forEach(word => {
+            if ((current + ' ' + word).trim().length > maxLength && current) {
+              chunks.push(current);
+              current = word;
+            } else {
+              current = (current + ' ' + word).trim();
+            }
+          });
+        }
+      });
+      if (current) chunks.push(current);
+      return chunks;
+    }
+
+    function chooseVoice(lang) {
+      loadVoices();
+      if (!availableVoices.length) return null;
+      const exact = availableVoices.find(v => (v.lang || '').toLowerCase() === lang.toLowerCase());
+      if (exact) return exact;
+      const base = lang.split('-')[0].toLowerCase();
+      return availableVoices.find(v => (v.lang || '').toLowerCase().startsWith(base)) || null;
+    }
+
+    function resetReadButton() {
+      if (!readBtn) return;
+      readBtn.setAttribute('aria-pressed','false');
+      readBtn.textContent = translations[currentLanguage].listen;
+    }
+
+    window.stopReading = function () {
+      isReading = false;
+      speechChunks = [];
+      speechIndex = 0;
+      if (window.speechSynthesis) window.speechSynthesis.cancel();
+      resetReadButton();
+    };
+
+    function speakNextChunk() {
+      if (!isReading || !window.speechSynthesis) return;
+      if (speechIndex >= speechChunks.length) {
+        stopReading();
+        return;
+      }
+
+      const lang = speechLangMap[currentLanguage] || 'en-US';
+      const utterance = new SpeechSynthesisUtterance(speechChunks[speechIndex]);
+      utterance.lang = lang;
+      utterance.rate = .94;
+      utterance.pitch = 1;
+      utterance.volume = 1;
+      const voice = chooseVoice(lang);
+      if (voice) utterance.voice = voice;
+
+      utterance.onend = function () {
+        if (!isReading) return;
+        speechIndex += 1;
+        // A tiny gap improves reliability on iOS between queued utterances.
+        window.setTimeout(speakNextChunk, 40);
+      };
+
+      utterance.onerror = function (event) {
+        // "interrupted" and "canceled" are expected when the user presses Stop.
+        if (!isReading || event.error === 'interrupted' || event.error === 'canceled') return;
+        stopReading();
+      };
+
+      window.speechSynthesis.speak(utterance);
+    }
+
+    if (readBtn && window.speechSynthesis && 'SpeechSynthesisUtterance' in window) {
+      loadVoices();
+      if (typeof window.speechSynthesis.addEventListener === 'function') {
+        window.speechSynthesis.addEventListener('voiceschanged', loadVoices);
+      }
+
+      readBtn.addEventListener('click', function () {
+        if (isReading) {
+          stopReading();
+          return;
+        }
+
+        // cancel() first clears stale mobile speech queues left by the browser.
+        window.speechSynthesis.cancel();
+        loadVoices();
+        speechChunks = chunkSpeechText(readableText());
+        speechIndex = 0;
+        isReading = speechChunks.length > 0;
+        if (!isReading) return;
+
+        readBtn.setAttribute('aria-pressed','true');
+        readBtn.textContent = translations[currentLanguage].stop;
+
+        // Keep speak() in the same user-click task; required by some mobile browsers.
+        speakNextChunk();
+      });
+
+      // Mobile browsers can leave synthesis paused after interruptions or app switching.
+      document.addEventListener('visibilitychange', function () {
+        if (!document.hidden && isReading && window.speechSynthesis.paused) {
+          window.speechSynthesis.resume();
+        }
+      });
+    } else if (readBtn) {
+      readBtn.hidden = true;
+    }
+  });
+})();
+</script>
+</body>
+</html>
