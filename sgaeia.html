@@ -1,0 +1,1291 @@
+<!DOCTYPE html>
+<!-- Build: sgaeia-v1 2026-09-17 -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light">
+<meta name="theme-color" content="#eadfd7">
+<title>SGAEIA — Secure Governed Autonomous Edge Intelligence Architecture</title>
+<meta name="description" content="SGAEIA is an open reference architecture and research program for governed autonomous and distributed AI systems, created by independent researcher Aridio Silva.">
+<link rel="canonical" href="https://aridiosilva.com/sgaeia.html">
+<meta property="og:title" content="SGAEIA — Secure Governed Autonomous Edge Intelligence Architecture">
+<meta property="og:description" content="Research on bounded authority, authenticated delegation, Zero Trust, Continuous GRC, revocation, and Evidence-as-Code for autonomous AI systems.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://aridiosilva.com/sgaeia.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600;8..60,700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #efece5;
+    --paper-soft: #f6f3ed;
+    --paper-header: #e3ded3;
+    --paper-warm: #eadfd7;
+    --paper-sage: #dfe7e1;
+    --ink: #1c1c1a;
+    --ink-soft: #3e403c;
+    --muted: #666760;
+    --rule: #cdc9c0;
+    --research: #17464d;
+    --research-deep: #10363c;
+    --research-soft: #cbded9;
+    --terracotta: #8c4939;
+    --focus: #9a4b34;
+    --font-serif: "Source Serif 4", Georgia, "Times New Roman", serif;
+    --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    --font-scale: 1;
+    --content: 1140px;
+    --reading: 720px;
+  }
+
+  * { box-sizing: border-box; }
+  html { font-size: calc(16px * var(--font-scale)); scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--font-sans);
+    line-height: 1.58;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  body[data-easy-read="true"] {
+    --font-serif: "Atkinson Hyperlegible", "Inter", sans-serif;
+    --font-sans: "Atkinson Hyperlegible", sans-serif;
+    letter-spacing: .012em;
+    line-height: 1.76;
+  }
+  body[data-easy-read="true"] p,
+  body[data-easy-read="true"] li { line-height: 1.82; }
+
+  /* Easy Read is a typography mode, not bionic reading.
+     Keep prose visually uniform even if an older/cached version inserted
+     <b>/<strong> wrappers inside words or phrases. */
+  body[data-easy-read="true"] .hero-lead,
+  body[data-easy-read="true"] .hero-aside p,
+  body[data-easy-read="true"] .section-intro,
+  body[data-easy-read="true"] .research-item p,
+  body[data-easy-read="true"] .principle span,
+  body[data-easy-read="true"] .editorial-main p,
+  body[data-easy-read="true"] .about-copy p,
+  body[data-easy-read="true"] .footer-note {
+    font-weight: 400 !important;
+  }
+  body[data-easy-read="true"] .hero-lead *,
+  body[data-easy-read="true"] .hero-aside p *,
+  body[data-easy-read="true"] .section-intro *,
+  body[data-easy-read="true"] .research-item p *,
+  body[data-easy-read="true"] .principle span *,
+  body[data-easy-read="true"] .editorial-main p *,
+  body[data-easy-read="true"] .about-copy p *,
+  body[data-easy-read="true"] .footer-note * {
+    font-weight: 400 !important;
+  }
+
+  a { color: inherit; }
+  a:focus-visible, button:focus-visible, select:focus-visible {
+    outline: 3px solid var(--focus);
+    outline-offset: 3px;
+  }
+  button, select { font: inherit; }
+
+  .skip-link {
+    position: fixed;
+    left: 16px;
+    top: -80px;
+    z-index: 100;
+    background: var(--ink);
+    color: #fff;
+    padding: 10px 14px;
+    text-decoration: none;
+  }
+  .skip-link:focus { top: 12px; }
+
+  .shell { width: min(calc(100% - 48px), var(--content)); margin-inline: auto; }
+  .reading { max-width: var(--reading); }
+
+  /* Header */
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 30;
+    background: color-mix(in srgb, var(--paper-warm) 96%, transparent);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--rule);
+  }
+  .header-main {
+    min-height: 76px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 28px;
+  }
+   .identity { text-decoration: none; white-space: nowrap; }
+  .mobile-role-break { display: none; }
+  .identity .role-sep { display: inline; margin: 0; color: inherit; font: inherit; letter-spacing: inherit; text-transform: none; }
+  .identity strong {
+    display: block;
+    font-family: var(--font-serif);
+    font-size: 1.28rem;
+    line-height: 1.05;
+    font-weight: 650;
+    letter-spacing: -.015em;
+  }
+  .identity span {
+    display: block;
+    margin-top: 4px;
+    color: var(--muted);
+    font-size: .72rem;
+    letter-spacing: .055em;
+    text-transform: uppercase;
+  }
+  .header-right { display: flex; align-items: center; justify-content: flex-end; gap: 22px; }
+  .site-nav { display: flex; gap: 20px; align-items: center; }
+  .site-nav a {
+    color: var(--ink-soft);
+    font-size: .82rem;
+    font-weight: 550;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    padding: 6px 0;
+  }
+  .site-nav a:hover { color: var(--research); border-bottom-color: var(--research); }
+
+  .utility-bar { display: flex; gap: 6px; align-items: center; }
+  .utility-bar button,
+  .lang-switch select {
+    min-height: 32px;
+    border: 1px solid var(--rule);
+    background: var(--paper-soft);
+    color: var(--ink-soft);
+    border-radius: 2px;
+    font-size: .72rem;
+    padding: 5px 8px;
+    cursor: pointer;
+  }
+  .utility-bar button:hover,
+  .lang-switch select:hover { border-color: var(--research); color: var(--research); }
+  .utility-bar button[aria-pressed="true"] {
+    color: #fff;
+    background: var(--research);
+    border-color: var(--research);
+  }
+  .utility-sep { height: 18px; width: 1px; background: var(--rule); margin-inline: 2px; }
+
+  /* Hero */
+  .hero { padding: clamp(68px, 8vw, 108px) 0 clamp(64px, 7vw, 96px); }
+  .hero-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 260px;
+    gap: clamp(44px, 7vw, 92px);
+    align-items: end;
+  }
+  .eyebrow {
+    margin: 0 0 18px;
+    color: var(--research);
+    font-size: .76rem;
+    font-weight: 700;
+    letter-spacing: .115em;
+    text-transform: uppercase;
+  }
+  .hero h1 {
+    max-width: 19ch;
+    margin: 0;
+    font-family: var(--font-serif);
+    font-size: clamp(2.65rem, 5.2vw, 4.7rem);
+    line-height: .99;
+    font-weight: 600;
+    letter-spacing: -.035em;
+  }
+  .hero-lead {
+    max-width: 680px;
+    margin: 30px 0 0;
+    color: var(--ink-soft);
+    font-family: var(--font-serif);
+    font-size: clamp(1.12rem, 1.6vw, 1.34rem);
+    line-height: 1.5;
+  }
+  .hero-meta {
+    margin-top: 30px;
+    display: flex;
+    gap: 10px 18px;
+    flex-wrap: wrap;
+    color: var(--muted);
+    font-size: .78rem;
+  }
+  .hero-actions { margin-top: 34px; display: flex; gap: 10px; flex-wrap: wrap; }
+  .button-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    min-height: 42px;
+    padding: 9px 14px;
+    border: 1px solid var(--research);
+    text-decoration: none;
+    color: var(--research);
+    font-size: .8rem;
+    font-weight: 650;
+  }
+  .button-link.primary { background: var(--research); color: #fff; }
+  .button-link:hover { background: var(--research-deep); color: #fff; }
+  .hero-aside {
+    border-top: 1px solid var(--rule);
+    padding-top: 18px;
+    color: var(--muted);
+    font-size: .8rem;
+  }
+  .hero-aside strong { color: var(--ink); font-weight: 650; }
+  .hero-aside .motto {
+    margin-top: 20px;
+    color: var(--research);
+    font-size: .72rem;
+    line-height: 1.55;
+    font-weight: 700;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+  }
+
+  /* Sections */
+  .section { border-top: 1px solid var(--rule); padding: clamp(62px, 7vw, 94px) 0; scroll-margin-top: 88px; }
+  .section-grid { display: grid; grid-template-columns: 150px minmax(0, 1fr); gap: clamp(32px, 6vw, 76px); }
+  .section-kicker {
+    color: var(--muted);
+    font-size: .72rem;
+    font-weight: 650;
+    letter-spacing: .09em;
+    text-transform: uppercase;
+    padding-top: 6px;
+  }
+  .section-kicker span { color: var(--terracotta); margin-right: 7px; }
+  .section h2 {
+    margin: 0;
+    font-family: var(--font-serif);
+    font-size: clamp(2rem, 3.3vw, 3.15rem);
+    font-weight: 600;
+    line-height: 1.08;
+    letter-spacing: -.025em;
+  }
+  .section-intro {
+    max-width: 720px;
+    margin: 18px 0 0;
+    color: var(--ink-soft);
+    font-family: var(--font-serif);
+    font-size: 1.08rem;
+    line-height: 1.58;
+  }
+
+  .research-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0 42px;
+    margin-top: 40px;
+    border-top: 1px solid var(--rule);
+  }
+  .research-item { padding: 24px 0 26px; border-bottom: 1px solid var(--rule); }
+  .research-item .mini-num { display: block; color: var(--terracotta); font-size: .68rem; font-weight: 700; margin-bottom: 10px; }
+  .research-item h3 { margin: 0 0 8px; font-family: var(--font-serif); font-size: 1.24rem; line-height: 1.25; font-weight: 600; }
+  .research-item p { margin: 0; color: var(--ink-soft); font-size: .88rem; line-height: 1.66; }
+
+  /* SGAEIA */
+  .sgaeia-band { background: var(--paper-sage); border-top: 1px solid #b7c7bf; border-bottom: 1px solid #b7c7bf; }
+  .sgaeia-band .section { border-top: 0; }
+  .sgaeia-name { color: var(--research); }
+  .principles { display: grid; grid-template-columns: repeat(3, 1fr); margin-top: 38px; border-top: 1px solid #b7c7bf; border-left: 1px solid #b7c7bf; }
+  .principle { min-height: 120px; padding: 20px; border-right: 1px solid #b7c7bf; border-bottom: 1px solid #b7c7bf; }
+  .principle > strong { display: block; font-family: var(--font-serif); font-size: 1.03rem; font-weight: 600; margin-bottom: 5px; }
+  .principle span { color: #53625c; font-size: .77rem; line-height: 1.5; }
+  .section-actions { margin-top: 28px; display: flex; flex-wrap: wrap; gap: 10px; }
+
+  .writing-band { background: var(--paper-sage); border-top: 1px solid #b7c7bf; border-bottom: 1px solid #b7c7bf; }
+  .writing-band + .section { border-top: 0; }
+
+  /* Editorial lists */
+  .editorial-list { margin-top: 38px; border-top: 1px solid var(--rule); }
+  .editorial-row {
+    display: grid;
+    grid-template-columns: 92px minmax(0, 1fr) 132px;
+    gap: 22px;
+    padding: 23px 0;
+    border-bottom: 1px solid var(--rule);
+    align-items: start;
+  }
+  .editorial-year { color: var(--muted); font-size: .75rem; padding-top: 3px; }
+  .editorial-main h3 { margin: 0; font-family: var(--font-serif); font-size: 1.12rem; line-height: 1.33; font-weight: 600; }
+  .editorial-main h3 a { text-decoration-thickness: 1px; text-decoration-color: color-mix(in srgb, var(--research) 45%, transparent); text-underline-offset: 3px; }
+  .editorial-main h3 a:hover { color: var(--research); }
+  .editorial-main p { margin: 7px 0 0; color: var(--ink-soft); font-size: .82rem; line-height: 1.55; }
+  .editorial-meta { text-align: right; color: var(--muted); font-size: .7rem; line-height: 1.55; }
+  .editorial-meta a { color: var(--research); text-decoration: none; }
+  .editorial-meta a:hover { text-decoration: underline; }
+  .text-link { display: inline-block; margin-top: 24px; color: var(--research); font-size: .8rem; font-weight: 650; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+
+  /* About */
+  .about-panel {
+    display: grid;
+    grid-template-columns: minmax(0, 1.4fr) minmax(240px, .6fr);
+    gap: clamp(36px, 7vw, 86px);
+    align-items: start;
+  }
+  .about-copy p { max-width: 68ch; margin: 0 0 16px; color: var(--ink-soft); font-size: .95rem; }
+  .about-facts { border-top: 1px solid var(--rule); }
+  .fact { padding: 14px 0; border-bottom: 1px solid var(--rule); }
+  .fact span { display: block; color: var(--muted); font-size: .67rem; text-transform: uppercase; letter-spacing: .08em; }
+  .fact strong { display: block; margin-top: 3px; font-family: var(--font-serif); font-size: .98rem; font-weight: 600; }
+
+  /* Footer */
+  .site-footer { background: var(--paper-warm); border-top: 1px solid #d4c4ba; padding: 44px 0 30px; }
+  .footer-head { display: flex; align-items: end; justify-content: space-between; gap: 28px; }
+  .footer-wordmark { font-family: var(--font-serif); font-size: clamp(2rem, 4vw, 3.7rem); line-height: 1; font-weight: 600; letter-spacing: -.025em; }
+  .footer-note { max-width: 500px; color: #665d57; font-size: .76rem; text-align: right; }
+  .brand-links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin: 38px 0 30px;
+    padding: 20px 0;
+    border-top: 1px solid #d4c4ba;
+    border-bottom: 1px solid #d4c4ba;
+  }
+  .brand-link {
+    position: relative;
+    width: 44px;
+    height: 44px;
+    display: grid;
+    place-items: center;
+    border: 1px solid #cdbbb0;
+    background: rgba(255,255,255,.28);
+    text-decoration: none;
+    transition: transform .16s ease, background .16s ease, border-color .16s ease;
+  }
+  .brand-link:hover { transform: translateY(-2px); background: var(--paper-soft); border-color: var(--research); }
+  .brand-link img { width: 23px; height: 23px; object-fit: contain; }
+  .fallback-icon {
+    display: none;
+    width: 100%; height: 100%;
+    place-items: center;
+    font-size: .66rem;
+    font-weight: 800;
+    color: var(--research);
+    letter-spacing: -.02em;
+  }
+  .brand-link[data-badge]::after {
+    content: attr(data-badge);
+    position: absolute;
+    right: -4px;
+    bottom: -4px;
+    min-width: 17px;
+    height: 17px;
+    padding: 0 3px;
+    display: grid;
+    place-items: center;
+    border-radius: 9px;
+    background: var(--research);
+    color: #fff;
+    font-size: .55rem;
+    font-weight: 800;
+    border: 2px solid var(--paper-warm);
+  }
+  .brand-link::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 50%; bottom: calc(100% + 10px);
+    transform: translateX(-50%);
+    width: max-content;
+    max-width: 180px;
+    padding: 5px 7px;
+    background: var(--ink);
+    color: #fff;
+    font-size: .62rem;
+    line-height: 1.2;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .12s ease;
+  }
+  .brand-link:hover::before, .brand-link:focus-visible::before { opacity: 1; }
+  .footer-bottom { display: flex; justify-content: space-between; gap: 20px; color: #766b64; font-size: .7rem; }
+
+  /* Responsive */
+  @media (max-width: 980px) {
+    .header-main { align-items: flex-start; padding: 15px 0; flex-direction: column; gap: 12px; }
+    .header-right { width: 100%; justify-content: space-between; gap: 14px; flex-wrap: wrap; }
+    .hero-grid { grid-template-columns: 1fr; }
+    .hero-aside { max-width: 560px; }
+    .section-grid { grid-template-columns: 120px minmax(0,1fr); }
+  }
+
+  @media (max-width: 760px) {
+    :root { --content: 100%; --reading: 100%; }
+    .shell { width: min(calc(100% - 34px), var(--content)); }
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 30;
+      background: var(--paper-warm);
+      -webkit-backdrop-filter: blur(10px);
+      backdrop-filter: blur(10px);
+    }
+    .header-main {
+      align-items: center;
+      text-align: center;
+      padding-top: max(15px, env(safe-area-inset-top));
+    }
+    .header-right { flex-direction: column; align-items: center; }
+    .site-nav { width: 100%; justify-content: center; gap: 12px 16px; flex-wrap: wrap; }
+    .site-nav a { font-size: .78rem; }
+    .utility-bar { justify-content: center; flex-wrap: wrap; }
+    .hero { padding: 54px 0 60px; }
+    .hero h1 { font-size: clamp(2.35rem, 11vw, 3.7rem); line-height: 1.02; }
+    .hero-lead { margin-top: 24px; font-size: 1.07rem; }
+    .hero-meta { display: block; line-height: 1.8; }
+    .hero-actions { margin-top: 26px; }
+    .section { padding: 58px 0; scroll-margin-top: 190px; }
+    .section-grid { grid-template-columns: 1fr; gap: 18px; }
+    .section-kicker { padding-top: 0; }
+    .research-list { grid-template-columns: 1fr; gap: 0; margin-top: 32px; }
+    .principles { grid-template-columns: 1fr 1fr; }
+    .editorial-row { grid-template-columns: 64px minmax(0,1fr); gap: 16px; }
+    .editorial-meta { grid-column: 2; text-align: left; margin-top: -10px; }
+    .about-panel { grid-template-columns: 1fr; gap: 34px; }
+    .footer-head { flex-direction: column; align-items: flex-start; }
+    .footer-note { text-align: left; }
+    .footer-bottom { flex-direction: column; align-items: center; text-align: center; }
+  }
+
+  @media (max-width: 430px) {
+    .shell { width: min(calc(100% - 28px), var(--content)); }
+    .identity { width: 100%; max-width: 100%; white-space: normal; }
+    .identity strong { font-size: 1.18rem; }
+    .identity span { font-size: .65rem; }
+    .identity .role-sep { display: none; }
+    .identity .mobile-role-break { display: block; }
+    .utility-bar button, .lang-switch select { font-size: .69rem; }
+    .hero h1 { font-size: 2.42rem; }
+    .button-link { width: 100%; justify-content: center; }
+    .principles { grid-template-columns: 1fr; }
+    .editorial-row { grid-template-columns: 1fr; gap: 5px; padding: 20px 0; }
+    .editorial-year { padding-top: 0; }
+    .editorial-meta { grid-column: 1; margin-top: 4px; }
+    .brand-links { gap: 9px; }
+    .brand-link { width: 42px; height: 42px; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after { transition-duration: .001ms !important; animation-duration: .001ms !important; animation-iteration-count: 1 !important; }
+  }
+
+
+  /* SGAEIA page extensions */
+  .page-mark { color: var(--research); }
+  .problem-grid, .property-grid, .agenda-grid, .resource-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0,1fr));
+    gap: 0 42px;
+    margin-top: 40px;
+    border-top: 1px solid var(--rule);
+  }
+  .problem-card, .property-card, .agenda-card, .resource-card {
+    padding: 24px 0 26px;
+    border-bottom: 1px solid var(--rule);
+  }
+  .problem-card h3, .property-card h3, .agenda-card h3, .resource-card h3 {
+    margin: 0 0 8px;
+    font-family: var(--font-serif);
+    font-size: 1.2rem;
+    line-height: 1.25;
+    font-weight: 600;
+  }
+  .problem-card p, .property-card p, .agenda-card p, .resource-card p {
+    margin: 0;
+    color: var(--ink-soft);
+    font-size: .88rem;
+    line-height: 1.66;
+  }
+  .resource-card a { color: var(--research); font-weight: 650; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+  .resource-card-wide { grid-column: 1 / -1; }
+  .series-band { background: var(--paper-sage); border-top: 1px solid #b7c7bf; border-bottom: 1px solid #b7c7bf; }
+  .series-band .section { border-top: 0; }
+  .citation-box {
+    margin-top: 28px;
+    border: 1px solid var(--rule);
+    background: var(--paper-soft);
+    padding: 22px;
+  }
+  .citation-box code {
+    display: block;
+    white-space: normal;
+    color: var(--ink-soft);
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    font-size: .82rem;
+    line-height: 1.7;
+  }
+  .copy-row { margin-top: 14px; display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+  .copy-button { min-height: 36px; border: 1px solid var(--research); background: transparent; color: var(--research); padding: 7px 11px; cursor: pointer; font-size: .76rem; font-weight: 650; }
+  .copy-button:hover { background: var(--research); color: #fff; }
+  .license-note { color: var(--muted); font-size: .76rem; margin-top: 18px; }
+  .mini-label { display:block; color:var(--terracotta); font-size:.68rem; font-weight:700; margin-bottom:10px; }
+  @media (max-width: 760px) {
+    .problem-grid, .property-grid, .agenda-grid, .resource-grid { grid-template-columns: 1fr; gap: 0; }
+    .resource-card-wide { grid-column: auto; }
+  }
+
+  /* SGAEIA visual identity: institutional banner + transparent logo */
+  .brand-banner {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(110deg, #d7e2dc 0%, #e4e9e2 58%, #eadfd7 100%);
+    border-bottom: 1px solid #b9c6bf;
+  }
+  .brand-banner-inner {
+    position: relative;
+    min-height: 178px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 36px;
+    padding-top: 28px;
+    padding-bottom: 28px;
+  }
+  .brand-banner-lockup {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    min-width: 0;
+  }
+  .sgaeia-mark {
+    flex: 0 0 auto;
+    display: grid;
+    place-items: center;
+    color: var(--research);
+  }
+  .sgaeia-mark img { display: block; width: 100%; height: 100%; object-fit: contain; }
+  .sgaeia-mark-large { width: 92px; height: 92px; }
+  .sgaeia-mark-small { width: 42px; height: 42px; }
+  .sgaeia-mark-large img { filter: drop-shadow(0 5px 10px rgba(16,54,60,.16)); }
+  .sgaeia-mark-small img { filter: drop-shadow(0 2px 5px rgba(16,54,60,.12)); }
+  .brand-banner-copy { min-width: 0; }
+  .brand-banner-name {
+    margin: 0;
+    font-family: var(--font-serif);
+    font-size: clamp(2.15rem, 4vw, 3.65rem);
+    line-height: .95;
+    font-weight: 650;
+    letter-spacing: -.035em;
+    color: var(--research-deep);
+  }
+  .brand-banner-sub {
+    margin-top: 9px;
+    color: #425952;
+    font-size: .76rem;
+    font-weight: 700;
+    letter-spacing: .09em;
+    text-transform: uppercase;
+  }
+  .brand-banner-motto {
+    margin-top: 10px;
+    color: var(--research);
+    font-size: .72rem;
+    font-weight: 650;
+    letter-spacing: .055em;
+  }
+  .brand-banner-art {
+    position: absolute;
+    z-index: 1;
+    right: -24px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: min(48vw, 560px);
+    height: 190px;
+    color: var(--research);
+    opacity: .18;
+    pointer-events: none;
+  }
+  .footer-brand-lockup {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+  }
+  @media (max-width: 760px) {
+    .brand-banner-inner { min-height: 150px; padding-top: 22px; padding-bottom: 22px; }
+    .brand-banner-lockup { gap: 16px; }
+    .sgaeia-mark-large { width: 66px; height: 66px; }
+    .brand-banner-name { font-size: clamp(2rem, 10vw, 2.8rem); }
+    .brand-banner-sub { max-width: 28ch; font-size: .67rem; line-height: 1.45; }
+    .brand-banner-motto { font-size: .67rem; }
+    .brand-banner-art { right: -150px; width: 430px; opacity: .11; }
+  }
+  @media (max-width: 430px) {
+    .brand-banner-inner { min-height: 136px; }
+    .sgaeia-mark-large { width: 58px; height: 58px; }
+    .brand-banner-lockup { gap: 13px; }
+    .brand-banner-name { font-size: 2.15rem; }
+    .brand-banner-sub { font-size: .61rem; letter-spacing: .07em; }
+    .brand-banner-motto { display: none; }
+    .brand-banner-art { right: -200px; }
+  }
+
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main" data-i18n="skip">Skip to main content</a>
+<header class="site-header">
+  <div class="shell header-main">
+    <a class="identity" href="index.html" aria-label="Aridio Silva home"><strong>Aridio Silva</strong><span data-i18n="identity_role">Independent Researcher <span class="role-sep">·</span><br class="mobile-role-break"> AI Systems Architecture</span></a>
+    <div class="header-right">
+      <nav class="site-nav" aria-label="Primary navigation">
+        <a href="index.html" data-i18n="nav_home">Home</a>
+        <a href="#problem" data-i18n="nav_problem">Problem</a>
+        <a href="#principles" data-i18n="nav_principles">Principles</a>
+        <a href="#series" data-i18n="nav_series">Research Series</a>
+        <a href="#artifacts" data-i18n="nav_artifacts">Artifacts</a>
+      </nav>
+      <div class="utility-bar" role="group" aria-label="Reading and language controls">
+        <div class="lang-switch"><select id="langSelect" aria-label="Language"><option value="en">EN</option><option value="pt">PT</option><option value="es">ES</option><option value="fr">FR</option><option value="de">DE</option></select></div>
+        <span class="utility-sep" aria-hidden="true"></span>
+        <button type="button" id="fontDecrease" aria-label="Decrease text size">A−</button>
+        <button type="button" id="fontIncrease" aria-label="Increase text size">A+</button>
+        <button type="button" id="easyReadToggle" aria-pressed="false" data-i18n="easy">Easy read</button>
+        <button type="button" id="readAloudToggle" aria-pressed="false" data-i18n="listen">🔊 Listen</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section class="brand-banner" aria-label="SGAEIA visual identity">
+  <div class="shell brand-banner-inner">
+    <div class="brand-banner-lockup">
+      <div class="sgaeia-mark sgaeia-mark-large"><img src="assets/sgaeia-logo-transparent.png" alt="SGAEIA logo" width="1254" height="1254"></div>
+      <div class="brand-banner-copy">
+        <div class="brand-banner-name">SGAEIA</div>
+        <div class="brand-banner-sub" data-i18n="hero_eyebrow">SGAEIA · Research program &amp; open reference architecture</div>
+        <div class="brand-banner-motto">Autonomous AI. Governed by Design. Trusted by Evidence.</div>
+      </div>
+    </div>
+    <svg class="brand-banner-art" viewBox="0 0 620 210" aria-hidden="true">
+      <path d="M35 106 C120 35 215 35 300 106 S480 177 585 92" fill="none" stroke="currentColor" stroke-width="2"/>
+      <path d="M88 45 C190 154 270 160 382 70 S536 34 600 112" fill="none" stroke="currentColor" stroke-width="1.5"/>
+      <path d="M85 157 165 88 246 136 333 61 425 126 516 77" fill="none" stroke="currentColor" stroke-width="1.5"/>
+      <g fill="currentColor">
+        <circle cx="35" cy="106" r="6"/><circle cx="88" cy="45" r="5"/><circle cx="85" cy="157" r="4"/>
+        <circle cx="165" cy="88" r="5"/><circle cx="246" cy="136" r="6"/><circle cx="300" cy="106" r="7"/>
+        <circle cx="333" cy="61" r="5"/><circle cx="382" cy="70" r="4"/><circle cx="425" cy="126" r="6"/>
+        <circle cx="516" cy="77" r="5"/><circle cx="585" cy="92" r="6"/><circle cx="600" cy="112" r="4"/>
+      </g>
+    </svg>
+  </div>
+</section>
+<main id="main">
+  <section class="hero" id="top">
+    <div class="shell hero-grid">
+      <div>
+        <p class="eyebrow" data-i18n="hero_eyebrow">SGAEIA · Research program &amp; open reference architecture</p>
+        <h1 class="page-mark" data-i18n="hero_title">Secure Governed Autonomous Edge Intelligence Architecture</h1>
+        <p class="hero-lead" data-i18n="hero_lead">SGAEIA investigates how autonomous and distributed AI systems can operate with useful autonomy while authority remains bounded, attributable, auditable, continuously governed, and revocable.</p>
+        <div class="hero-meta"><span data-i18n="hero_meta_1">Created by Aridio Silva · Independent Researcher · Brazil</span><span data-i18n="hero_meta_2">Software artifact · Version 0.3.4</span><span>DOI 10.5281/zenodo.22557796</span></div>
+        <div class="hero-actions"><a class="button-link primary" href="#problem"><span data-i18n="explore_problem">Explore the research problem</span> ↓</a><a class="button-link" href="https://doi.org/10.5281/zenodo.22557796" target="_blank" rel="noopener"><span data-i18n="explore_artifact">Open research artifact</span> ↗</a></div>
+      </div>
+      <aside class="hero-aside" aria-label="Research proposition"><strong data-i18n="aside_title">Research proposition</strong><p data-i18n="aside_text">Autonomy becomes governable only when authority, delegation, trust, revocation, and evidence are architectural properties rather than after-the-fact controls.</p><div class="motto">Autonomous AI.<br>Governed by Design.<br>Trusted by Evidence.</div></aside>
+    </div>
+  </section>
+
+  <section class="section" id="problem">
+    <div class="shell section-grid"><div class="section-kicker"><span>01</span><span data-i18n="nav_problem">Problem</span></div><div>
+      <h2 data-i18n="problem_title">From capability to authority</h2><p class="section-intro" data-i18n="problem_intro">The security problem changes when AI systems move from generating recommendations to taking consequential action. Autonomous agents may hold identities, credentials, tools, permissions, and delegation paths that let them affect external systems. SGAEIA treats that shift as an authority problem, not only a model-safety problem.</p>
+      <div class="problem-grid">
+        <article class="problem-card"><span class="mini-label">01.1</span><h3 data-i18n="pr1_title">Authority</h3><p data-i18n="pr1_text">What may an autonomous agent do, under which conditions, for how long, and within which scope?</p></article>
+        <article class="problem-card"><span class="mini-label">01.2</span><h3 data-i18n="pr2_title">Delegation</h3><p data-i18n="pr2_text">How can one agent delegate authority to another without losing attribution, constraints, provenance, or accountability?</p></article>
+        <article class="problem-card"><span class="mini-label">01.3</span><h3 data-i18n="pr3_title">Distribution</h3><p data-i18n="pr3_text">How can governance survive edge–cloud distribution, local action, intermittent connectivity, and multiple administrative boundaries?</p></article>
+        <article class="problem-card"><span class="mini-label">01.4</span><h3 data-i18n="pr4_title">Evidence</h3><p data-i18n="pr4_text">How can a system prove what authority existed, which policies applied, what actions occurred, and whether governance remained effective?</p></article>
+      </div>
+    </div></div>
+  </section>
+
+  <div class="sgaeia-band" id="principles"><section class="section"><div class="shell section-grid"><div class="section-kicker"><span>02</span><span data-i18n="nav_principles">Principles</span></div><div>
+    <h2 class="sgaeia-name" data-i18n="thesis_title">Governance must be architectural</h2><p class="section-intro" data-i18n="thesis_intro">SGAEIA is an open reference architecture and research program built around a simple thesis: useful autonomy should not depend on implicit trust or static approval. Authority must be explicit, constrained, continuously evaluated, and capable of being withdrawn.</p>
+    <div class="principles" aria-label="SGAEIA research principles">
+      <div class="principle"><strong data-i18n="p1">Bounded Authority</strong><span data-i18n="p1_text">Useful autonomy requires explicit limits on scope, duration, permissions, and consequential action.</span></div>
+      <div class="principle"><strong data-i18n="p2">Authenticated Delegation</strong><span data-i18n="p2_text">Delegated authority remains attributable, constrained, traceable, and connected to its source.</span></div>
+      <div class="principle"><strong>Zero Trust</strong><span data-i18n="p3_text">Consequential interactions are explicitly verified rather than implicitly trusted.</span></div>
+      <div class="principle"><strong data-i18n="p4">Revocation by Design</strong><span data-i18n="p4_text">Authority can be withdrawn as deliberately as it is granted, including after conditions change.</span></div>
+      <div class="principle"><strong data-i18n="p5">Continuous GRC</strong><span data-i18n="p5_text">Governance, risk, compliance, and assurance remain active during operation rather than only at audit time.</span></div>
+      <div class="principle"><strong>Evidence-as-Code</strong><span data-i18n="p6_text">Governed operation produces machine-verifiable evidence suitable for continuous assurance and independent review.</span></div>
+    </div>
+  </div></div></section></div>
+
+  <section class="section" id="properties"><div class="shell section-grid"><div class="section-kicker"><span>03</span><span data-i18n="nav_properties">Properties</span></div><div>
+    <h2 data-i18n="properties_title">Security &amp; governance properties</h2><p class="section-intro" data-i18n="properties_intro">The public SGAEIA model is expressed through properties and invariants rather than implementation-specific protocols. The objective is to make governance testable without tying the research to one agent framework, model vendor, or deployment stack.</p>
+    <div class="property-grid">
+      <article class="property-card"><span class="mini-label">03.1</span><h3 data-i18n="prop1_title">Explicit authority boundaries</h3><p data-i18n="prop1_text">No autonomous component should acquire open-ended authority merely because it can perform a task.</p></article>
+      <article class="property-card"><span class="mini-label">03.2</span><h3 data-i18n="prop2_title">Traceable chains of authority</h3><p data-i18n="prop2_text">Authority should remain attributable across delegation, collaboration, and multi-agent coordination.</p></article>
+      <article class="property-card"><span class="mini-label">03.3</span><h3 data-i18n="prop3_title">Security-preserving substitution</h3><p data-i18n="prop3_text">Replacing an agent, model, or implementation component should not silently weaken the governing security properties.</p></article>
+      <article class="property-card"><span class="mini-label">03.4</span><h3 data-i18n="prop4_title">Continuous verifiability</h3><p data-i18n="prop4_text">The system should continuously produce evidence that governance controls remain effective during operation.</p></article>
+    </div>
+  </div></div></section>
+
+  <section class="section" id="agenda"><div class="shell section-grid"><div class="section-kicker"><span>04</span><span data-i18n="nav_agenda">Agenda</span></div><div>
+    <h2 data-i18n="agenda_title">Research agenda</h2><p class="section-intro" data-i18n="agenda_intro">SGAEIA provides a common frame for a broader research agenda on governed autonomous intelligence.</p>
+    <div class="agenda-grid">
+      <article class="agenda-card"><span class="mini-label">04.1</span><h3 data-i18n="a1_title">Governed multi-agent coordination</h3><p data-i18n="a1_text">How should authority be represented and constrained when autonomous agents coordinate, negotiate, or form temporary collectives?</p></article>
+      <article class="agenda-card"><span class="mini-label">04.2</span><h3 data-i18n="a2_title">Governed edge autonomy</h3><p data-i18n="a2_text">How should governance behave when decisions must occur locally, with latency constraints or intermittent connectivity to centralized services?</p></article>
+      <article class="agenda-card"><span class="mini-label">04.3</span><h3 data-i18n="a3_title">Continuous assurance</h3><p data-i18n="a3_text">How can policy enforcement and evidence generation support continuous GRC instead of periodic compliance snapshots?</p></article>
+      <article class="agenda-card"><span class="mini-label">04.4</span><h3 data-i18n="a4_title">Verifiable delegation</h3><p data-i18n="a4_text">How can delegation remain authenticated, bounded, revocable, and reconstructable across complex chains of autonomous action?</p></article>
+    </div>
+  </div></div></section>
+
+  <div class="series-band" id="series"><section class="section"><div class="shell section-grid"><div class="section-kicker"><span>05</span><span data-i18n="nav_series">Research Series</span></div><div>
+    <h2 data-i18n="series_title">SGAEIA Research Series</h2><p class="section-intro" data-i18n="series_intro">The research series develops the architecture incrementally through problems, principles, security properties, governance concepts, and emerging risks. Archival versions are preserved on Zenodo and public essays are published on Medium.</p>
+    <div class="editorial-list"><article class="editorial-row">
+  <div class="editorial-year">2026-09-16</div>
+  <div class="editorial-main"><h3><a href="https://doi.org/10.5281/zenodo.22796900" target="_blank" rel="noopener">Rogue AI Agents: When Autonomous Systems Become a Collective</a></h3><p>SGAEIA Research Series — Article 10</p></div>
+  <div class="editorial-meta">Article 10<br><a href="https://doi.org/10.5281/zenodo.22796900" target="_blank" rel="noopener"><span data-i18n="doi_label">Zenodo DOI</span> ↗</a><br><a href="https://medium.com/@aridiosilva/rogue-ai-agents-when-autonomous-systems-become-a-collective-75ddaf685938" target="_blank" rel="noopener"><span data-i18n="medium_label">Medium</span> ↗</a></div>
+</article>
+<article class="editorial-row">
+  <div class="editorial-year">2026</div>
+  <div class="editorial-main"><h3><a href="https://doi.org/10.5281/zenodo.22736488" target="_blank" rel="noopener">Evidence-as-Code: Making AI Governance Verifiable</a></h3><p>SGAEIA Research Series — Article 6</p></div>
+  <div class="editorial-meta">Article 6<br><a href="https://doi.org/10.5281/zenodo.22736488" target="_blank" rel="noopener"><span data-i18n="doi_label">Zenodo DOI</span> ↗</a><br><a href="https://medium.com/@aridiosilva/evidence-as-code-making-ai-governance-verifiable-db89e3105b87" target="_blank" rel="noopener"><span data-i18n="medium_label">Medium</span> ↗</a></div>
+</article>
+<article class="editorial-row">
+  <div class="editorial-year">2026</div>
+  <div class="editorial-main"><h3><a href="https://doi.org/10.5281/zenodo.22728227" target="_blank" rel="noopener">Continuous GRC for Agentic AI</a></h3><p>SGAEIA Research Series — Article 5</p></div>
+  <div class="editorial-meta">Article 5<br><a href="https://doi.org/10.5281/zenodo.22728227" target="_blank" rel="noopener"><span data-i18n="doi_label">Zenodo DOI</span> ↗</a><br><a href="https://medium.com/@aridiosilva/continuous-grc-for-agentic-ai-ada11c2974d0" target="_blank" rel="noopener"><span data-i18n="medium_label">Medium</span> ↗</a></div>
+</article>
+<article class="editorial-row">
+  <div class="editorial-year">2026</div>
+  <div class="editorial-main"><h3><a href="https://doi.org/10.5281/zenodo.22727194" target="_blank" rel="noopener">Authenticated Delegation Between Autonomous AI Agents</a></h3><p>SGAEIA Research Series — Article 4</p></div>
+  <div class="editorial-meta">Article 4<br><a href="https://doi.org/10.5281/zenodo.22727194" target="_blank" rel="noopener"><span data-i18n="doi_label">Zenodo DOI</span> ↗</a><br><a href="https://medium.com/@aridiosilva/authenticated-delegation-between-autonomous-ai-agents-4c1281cd9e14" target="_blank" rel="noopener"><span data-i18n="medium_label">Medium</span> ↗</a></div>
+</article>
+<article class="editorial-row">
+  <div class="editorial-year">2026</div>
+  <div class="editorial-main"><h3><a href="https://doi.org/10.5281/zenodo.22715664" target="_blank" rel="noopener">Why Autonomous AI Agents Need Bounded and Revocable Authority</a></h3><p>SGAEIA Research Series — Article 2</p></div>
+  <div class="editorial-meta">Article 2<br><a href="https://doi.org/10.5281/zenodo.22715664" target="_blank" rel="noopener"><span data-i18n="doi_label">Zenodo DOI</span> ↗</a><br><a href="https://medium.com/@aridiosilva/why-autonomous-ai-agents-need-bounded-and-revocable-authority-da75656098f7" target="_blank" rel="noopener"><span data-i18n="medium_label">Medium</span> ↗</a></div>
+</article>
+<article class="editorial-row">
+  <div class="editorial-year">2026</div>
+  <div class="editorial-main"><h3><a href="https://doi.org/10.5281/zenodo.22715250" target="_blank" rel="noopener">From Edge AI to Governed Autonomous Edge Intelligence</a></h3><p>SGAEIA Research Series — Article 1</p></div>
+  <div class="editorial-meta">Article 1<br><a href="https://doi.org/10.5281/zenodo.22715250" target="_blank" rel="noopener"><span data-i18n="doi_label">Zenodo DOI</span> ↗</a><br><a href="https://medium.com/@aridiosilva/from-edge-ai-to-governed-autonomous-edge-intelligence-9cbe487d853a" target="_blank" rel="noopener"><span data-i18n="medium_label">Medium</span> ↗</a></div>
+</article></div>
+  </div></div></section></div>
+
+  <section class="section" id="artifacts"><div class="shell section-grid"><div class="section-kicker"><span>06</span><span data-i18n="nav_artifacts">Artifacts</span></div><div>
+    <h2 data-i18n="artifacts_title">Research artifacts &amp; persistent records</h2><p class="section-intro" data-i18n="artifacts_intro">SGAEIA is published as a versioned research software artifact and supported by persistent archival records, a dedicated Zenodo community, and public research writing.</p>
+    <div class="resource-grid">
+      <article class="resource-card"><h3 data-i18n="artifact_software">SGAEIA software artifact</h3><p data-i18n="artifact_software_text">Versioned research software artifact and public reference architecture.</p><p style="margin-top:10px"><a href="https://doi.org/10.5281/zenodo.22557796" target="_blank" rel="noopener"><span data-i18n="open_link">Open</span> DOI ↗</a></p></article>
+      <article class="resource-card"><h3 data-i18n="artifact_community">SGAEIA Zenodo Community</h3><p data-i18n="artifact_community_text">Archival collection for SGAEIA research outputs and related publications.</p><p style="margin-top:10px"><a href="https://zenodo.org/communities/sgaeia" target="_blank" rel="noopener"><span data-i18n="open_link">Open</span> Zenodo ↗</a></p></article>
+      <article class="resource-card"><h3 data-i18n="artifact_repo">SGAEIA GitHub repository</h3><p data-i18n="artifact_repo_text">Public repository for the software artifact and research-facing project materials.</p><p style="margin-top:10px"><a href="https://github.com/aridiosilva/SGAEIA" target="_blank" rel="noopener"><span data-i18n="open_link">Open</span> GitHub ↗</a></p></article>
+      <article class="resource-card"><h3 data-i18n="artifact_medium">SGAEIA Research Series on Medium</h3><p data-i18n="artifact_medium_text">Public essays and research notes developing the SGAEIA research program.</p><p style="margin-top:10px"><a href="https://medium.com/@aridiosilva" target="_blank" rel="noopener"><span data-i18n="open_link">Open</span> Medium ↗</a></p></article>
+      <article class="resource-card resource-card-wide"><h3 data-i18n="artifact_linkedin">SGAEIA on LinkedIn</h3><p data-i18n="artifact_linkedin_text">Institutional page for SGAEIA research updates, publication announcements, and project communication.</p><p style="margin-top:10px"><a href="https://www.linkedin.com/company/sgaeia/" target="_blank" rel="noopener"><span data-i18n="open_link">Open</span> LinkedIn ↗</a></p></article>
+    </div>
+  </div></div></section>
+
+  <section class="section" id="citation"><div class="shell section-grid"><div class="section-kicker"><span>07</span><span data-i18n="citation_title">Citation</span></div><div>
+    <h2 data-i18n="citation_title">Citation</h2><p class="section-intro" data-i18n="citation_intro">For the SGAEIA software artifact, use the following citation:</p>
+    <div class="citation-box"><code id="citationText">Silva, Aridio. (2026). SGAEIA: Secure Governed Autonomous Edge Intelligence Architecture (Version 0.3.4). Zenodo. https://doi.org/10.5281/zenodo.22557796</code><div class="copy-row"><button class="copy-button" type="button" id="copyCitation" data-i18n="copy_citation">Copy citation</button></div><div class="license-note" data-i18n="license_note">Software license: Apache-2.0. Research articles are archived separately under their published record licenses.</div></div>
+  </div></div></section>
+</main>
+<footer class="site-footer">
+  <div class="shell">
+    <div class="footer-head"><div class="footer-brand-lockup"><div class="sgaeia-mark sgaeia-mark-small"><img src="assets/sgaeia-logo-transparent.png" alt="" width="1254" height="1254" aria-hidden="true"></div><div class="footer-wordmark">SGAEIA</div></div><div class="footer-note" data-i18n="footer_note">SGAEIA · Research on governed autonomous and distributed AI systems.</div></div>
+    <nav class="brand-links" aria-label="Research profiles and project links">
+      <a class="brand-link" data-label="GitHub" aria-label="GitHub" title="GitHub" href="https://github.com/aridiosilva" target="_blank" rel="noopener"><img src="https://cdn.simpleicons.org/github" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'"><span class="fallback-icon">GH</span></a>
+      <a class="brand-link" data-label="ORCID" aria-label="ORCID" title="ORCID" href="https://orcid.org/0009-0008-2411-6995" target="_blank" rel="me noopener"><img src="https://cdn.simpleicons.org/orcid" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'"><span class="fallback-icon">iD</span></a>
+      <a class="brand-link" data-label="Google Scholar" aria-label="Google Scholar" title="Google Scholar" href="https://scholar.google.com/citations?user=rPn5O48AAAAJ" target="_blank" rel="noopener"><img src="https://cdn.simpleicons.org/googlescholar" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'"><span class="fallback-icon">GS</span></a>
+      <a class="brand-link" data-label="Zenodo" aria-label="Zenodo" title="Zenodo" href="https://zenodo.org/search?q=metadata.creators.person_or_org.name%3A%22Silva%2C%20Aridio%22" target="_blank" rel="noopener"><img src="https://cdn.simpleicons.org/zenodo" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'"><span class="fallback-icon">Z</span></a>
+      <a class="brand-link" data-badge="C" data-label="SGAEIA · Zenodo Community" aria-label="SGAEIA Zenodo Community" title="SGAEIA — Zenodo Community" href="https://zenodo.org/communities/sgaeia" target="_blank" rel="noopener"><img src="https://cdn.simpleicons.org/zenodo" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'"><span class="fallback-icon">Z</span></a>
+      <a class="brand-link" data-label="OpenAIRE" aria-label="OpenAIRE" title="OpenAIRE" href="https://explore.openaire.eu/search/find?fv0=Aridio%20Silva&amp;f0=q" target="_blank" rel="noopener"><img src="https://cdn.simpleicons.org/openaire" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'"><span class="fallback-icon">OA</span></a>
+      <a class="brand-link" data-label="Medium" aria-label="Medium" title="Medium" href="https://medium.com/@aridiosilva" target="_blank" rel="noopener"><img src="https://cdn.simpleicons.org/medium" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'"><span class="fallback-icon">M</span></a>
+      <a class="brand-link" data-label="LinkedIn" aria-label="LinkedIn" title="LinkedIn" href="https://www.linkedin.com/in/aridio-silva-74997111/" target="_blank" rel="noopener"><img src="https://cdn.simpleicons.org/linkedin" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'"><span class="fallback-icon">in</span></a>
+      <a class="brand-link" data-badge="S" data-label="SGAEIA LinkedIn" aria-label="SGAEIA LinkedIn" title="SGAEIA LinkedIn" href="https://www.linkedin.com/company/sgaeia/" target="_blank" rel="noopener"><img src="https://cdn.simpleicons.org/linkedin" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'"><span class="fallback-icon">in</span></a>
+      <a class="brand-link" data-badge="S" data-label="SGAEIA Repository" aria-label="SGAEIA GitHub Repository" title="SGAEIA Repository" href="https://github.com/aridiosilva/SGAEIA" target="_blank" rel="noopener"><img src="https://cdn.simpleicons.org/github" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'"><span class="fallback-icon">GH</span></a>
+      <a class="brand-link" data-label="SGAEIA DOI" aria-label="SGAEIA research artifact DOI" title="SGAEIA Research Artifact / DOI" href="https://doi.org/10.5281/zenodo.22557796" target="_blank" rel="noopener"><img src="https://cdn.simpleicons.org/doi" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'"><span class="fallback-icon">DOI</span></a>
+    </nav>
+    <div class="footer-bottom"><span>© 2026 Aridio Silva</span><span data-i18n="footer_motto">Autonomous AI. Governed by Design. Trusted by Evidence.</span></div>
+  </div>
+</footer>
+<script>
+(function() {
+  const translations = {
+  "en": {
+    "skip": "Skip to main content",
+    "identity_role": "Independent Researcher <span class='role-sep'>·</span><br class='mobile-role-break'> AI Systems Architecture",
+    "nav_home": "Home",
+    "nav_problem": "Problem",
+    "nav_principles": "Principles",
+    "nav_series": "Research Series",
+    "nav_artifacts": "Artifacts",
+    "nav_properties": "Properties",
+    "nav_agenda": "Agenda",
+    "easy": "Easy read",
+    "listen": "🔊 Listen",
+    "stop": "⏹ Stop",
+    "hero_eyebrow": "SGAEIA · Research program & open reference architecture",
+    "hero_title": "Secure Governed Autonomous Edge Intelligence Architecture",
+    "hero_lead": "SGAEIA investigates how autonomous and distributed AI systems can operate with useful autonomy while authority remains bounded, attributable, auditable, continuously governed, and revocable.",
+    "hero_meta_1": "Created by Aridio Silva · Independent Researcher · Brazil",
+    "hero_meta_2": "Software artifact · Version 0.3.4",
+    "explore_problem": "Explore the research problem",
+    "explore_artifact": "Open research artifact",
+    "aside_title": "Research proposition",
+    "aside_text": "Autonomy becomes governable only when authority, delegation, trust, revocation, and evidence are architectural properties rather than after-the-fact controls.",
+    "problem_title": "From capability to authority",
+    "problem_intro": "The security problem changes when AI systems move from generating recommendations to taking consequential action. Autonomous agents may hold identities, credentials, tools, permissions, and delegation paths that let them affect external systems. SGAEIA treats that shift as an authority problem, not only a model-safety problem.",
+    "pr1_title": "Authority",
+    "pr1_text": "What may an autonomous agent do, under which conditions, for how long, and within which scope?",
+    "pr2_title": "Delegation",
+    "pr2_text": "How can one agent delegate authority to another without losing attribution, constraints, provenance, or accountability?",
+    "pr3_title": "Distribution",
+    "pr3_text": "How can governance survive edge–cloud distribution, local action, intermittent connectivity, and multiple administrative boundaries?",
+    "pr4_title": "Evidence",
+    "pr4_text": "How can a system prove what authority existed, which policies applied, what actions occurred, and whether governance remained effective?",
+    "thesis_title": "Governance must be architectural",
+    "thesis_intro": "SGAEIA is an open reference architecture and research program built around a simple thesis: useful autonomy should not depend on implicit trust or static approval. Authority must be explicit, constrained, continuously evaluated, and capable of being withdrawn.",
+    "p1": "Bounded Authority",
+    "p1_text": "Useful autonomy requires explicit limits on scope, duration, permissions, and consequential action.",
+    "p2": "Authenticated Delegation",
+    "p2_text": "Delegated authority remains attributable, constrained, traceable, and connected to its source.",
+    "p3_text": "Consequential interactions are explicitly verified rather than implicitly trusted.",
+    "p4": "Revocation by Design",
+    "p4_text": "Authority can be withdrawn as deliberately as it is granted, including after conditions change.",
+    "p5": "Continuous GRC",
+    "p5_text": "Governance, risk, compliance, and assurance remain active during operation rather than only at audit time.",
+    "p6_text": "Governed operation produces machine-verifiable evidence suitable for continuous assurance and independent review.",
+    "properties_title": "Security & governance properties",
+    "properties_intro": "The public SGAEIA model is expressed through properties and invariants rather than implementation-specific protocols. The objective is to make governance testable without tying the research to one agent framework, model vendor, or deployment stack.",
+    "prop1_title": "Explicit authority boundaries",
+    "prop1_text": "No autonomous component should acquire open-ended authority merely because it can perform a task.",
+    "prop2_title": "Traceable chains of authority",
+    "prop2_text": "Authority should remain attributable across delegation, collaboration, and multi-agent coordination.",
+    "prop3_title": "Security-preserving substitution",
+    "prop3_text": "Replacing an agent, model, or implementation component should not silently weaken the governing security properties.",
+    "prop4_title": "Continuous verifiability",
+    "prop4_text": "The system should continuously produce evidence that governance controls remain effective during operation.",
+    "agenda_title": "Research agenda",
+    "agenda_intro": "SGAEIA provides a common frame for a broader research agenda on governed autonomous intelligence.",
+    "a1_title": "Governed multi-agent coordination",
+    "a1_text": "How should authority be represented and constrained when autonomous agents coordinate, negotiate, or form temporary collectives?",
+    "a2_title": "Governed edge autonomy",
+    "a2_text": "How should governance behave when decisions must occur locally, with latency constraints or intermittent connectivity to centralized services?",
+    "a3_title": "Continuous assurance",
+    "a3_text": "How can policy enforcement and evidence generation support continuous GRC instead of periodic compliance snapshots?",
+    "a4_title": "Verifiable delegation",
+    "a4_text": "How can delegation remain authenticated, bounded, revocable, and reconstructable across complex chains of autonomous action?",
+    "series_title": "SGAEIA Research Series",
+    "series_intro": "The research series develops the architecture incrementally through problems, principles, security properties, governance concepts, and emerging risks. Archival versions are preserved on Zenodo and public essays are published on Medium.",
+    "medium_label": "Medium",
+    "doi_label": "Zenodo DOI",
+    "artifacts_title": "Research artifacts & persistent records",
+    "artifacts_intro": "SGAEIA is published as a versioned research software artifact and supported by persistent archival records, a dedicated Zenodo community, and public research writing.",
+    "artifact_software": "SGAEIA software artifact",
+    "artifact_software_text": "Versioned research software artifact and public reference architecture.",
+    "artifact_community": "SGAEIA Zenodo Community",
+    "artifact_community_text": "Archival collection for SGAEIA research outputs and related publications.",
+    "artifact_repo": "SGAEIA GitHub repository",
+    "artifact_repo_text": "Public repository for the software artifact and research-facing project materials.",
+    "artifact_medium": "SGAEIA Research Series on Medium",
+    "artifact_medium_text": "Public essays and research notes developing the SGAEIA research program.",
+    "artifact_linkedin": "SGAEIA on LinkedIn",
+    "artifact_linkedin_text": "Institutional page for SGAEIA research updates, publication announcements, and project communication.",
+    "open_link": "Open",
+    "citation_title": "Citation",
+    "citation_intro": "For the SGAEIA software artifact, use the following citation:",
+    "copy_citation": "Copy citation",
+    "copied": "Copied",
+    "license_note": "Software license: Apache-2.0. Research articles are archived separately under their published record licenses.",
+    "footer_note": "SGAEIA · Research on governed autonomous and distributed AI systems.",
+    "footer_motto": "Autonomous AI. Governed by Design. Trusted by Evidence."
+  },
+  "pt": {
+    "skip": "Ir para o conteúdo principal",
+    "identity_role": "Pesquisador Independente <span class='role-sep'>·</span><br class='mobile-role-break'> Arquitetura de Sistemas de IA",
+    "nav_home": "Início",
+    "nav_problem": "Problema",
+    "nav_principles": "Princípios",
+    "nav_series": "Série de Pesquisa",
+    "nav_artifacts": "Artefatos",
+    "nav_properties": "Propriedades",
+    "nav_agenda": "Agenda",
+    "easy": "Leitura fácil",
+    "listen": "🔊 Ouvir",
+    "stop": "⏹ Parar",
+    "hero_eyebrow": "SGAEIA · Programa de pesquisa e arquitetura de referência aberta",
+    "hero_title": "Arquitetura Segura de Inteligência Autônoma Governada na Borda",
+    "hero_lead": "O SGAEIA investiga como sistemas de IA autônomos e distribuídos podem operar com autonomia útil enquanto a autoridade permanece limitada, atribuível, auditável, continuamente governada e revogável.",
+    "hero_meta_1": "Criado por Aridio Silva · Pesquisador Independente · Brasil",
+    "hero_meta_2": "Artefato de software · Versão 0.3.4",
+    "explore_problem": "Explorar o problema de pesquisa",
+    "explore_artifact": "Abrir artefato de pesquisa",
+    "aside_title": "Proposição de pesquisa",
+    "aside_text": "A autonomia só se torna governável quando autoridade, delegação, confiança, revogação e evidência são propriedades arquiteturais, e não controles adicionados posteriormente.",
+    "problem_title": "Da capacidade à autoridade",
+    "problem_intro": "O problema de segurança muda quando sistemas de IA deixam de apenas produzir recomendações e passam a executar ações com consequências. Agentes autônomos podem possuir identidades, credenciais, ferramentas, permissões e caminhos de delegação que lhes permitem afetar sistemas externos. O SGAEIA trata essa mudança como um problema de autoridade, e não apenas de segurança de modelos.",
+    "pr1_title": "Autoridade",
+    "pr1_text": "O que um agente autônomo pode fazer, sob quais condições, por quanto tempo e dentro de qual escopo?",
+    "pr2_title": "Delegação",
+    "pr2_text": "Como um agente pode delegar autoridade a outro sem perder atribuição, restrições, proveniência ou responsabilização?",
+    "pr3_title": "Distribuição",
+    "pr3_text": "Como preservar a governança em ambientes edge–cloud, diante de ação local, conectividade intermitente e múltiplas fronteiras administrativas?",
+    "pr4_title": "Evidência",
+    "pr4_text": "Como o sistema pode demonstrar qual autoridade existia, quais políticas se aplicavam, quais ações ocorreram e se a governança permaneceu efetiva?",
+    "thesis_title": "A governança deve ser arquitetural",
+    "thesis_intro": "O SGAEIA é uma arquitetura de referência aberta e um programa de pesquisa construído sobre uma tese simples: autonomia útil não deve depender de confiança implícita nem de aprovações estáticas. A autoridade deve ser explícita, limitada, continuamente avaliada e passível de revogação.",
+    "p1": "Autoridade Limitada",
+    "p1_text": "Autonomia útil exige limites explícitos de escopo, duração, permissões e ações com consequências.",
+    "p2": "Delegação Autenticada",
+    "p2_text": "A autoridade delegada permanece atribuível, limitada, rastreável e vinculada à sua origem.",
+    "p3_text": "Interações com consequências são verificadas explicitamente em vez de receberem confiança implícita.",
+    "p4": "Revogação por Design",
+    "p4_text": "A autoridade pode ser retirada com a mesma intencionalidade com que é concedida, inclusive após mudanças de condição.",
+    "p5": "GRC Contínuo",
+    "p5_text": "Governança, risco, conformidade e assurance permanecem ativos durante a operação, e não apenas no momento da auditoria.",
+    "p6_text": "A operação governada produz evidências verificáveis por máquina para assurance contínuo e revisão independente.",
+    "properties_title": "Propriedades de segurança e governança",
+    "properties_intro": "O modelo público do SGAEIA é expresso por propriedades e invariantes, e não por protocolos específicos de implementação. O objetivo é tornar a governança verificável sem vincular a pesquisa a um único framework de agentes, fornecedor de modelos ou stack de implantação.",
+    "prop1_title": "Fronteiras explícitas de autoridade",
+    "prop1_text": "Nenhum componente autônomo deve adquirir autoridade ilimitada apenas porque é capaz de executar uma tarefa.",
+    "prop2_title": "Cadeias rastreáveis de autoridade",
+    "prop2_text": "A autoridade deve permanecer atribuível ao longo de delegação, colaboração e coordenação multiagente.",
+    "prop3_title": "Substituição que preserva segurança",
+    "prop3_text": "Substituir um agente, modelo ou componente de implementação não deve enfraquecer silenciosamente as propriedades de segurança que governam o sistema.",
+    "prop4_title": "Verificabilidade contínua",
+    "prop4_text": "O sistema deve produzir continuamente evidências de que os controles de governança permanecem efetivos durante a operação.",
+    "agenda_title": "Agenda de pesquisa",
+    "agenda_intro": "O SGAEIA oferece uma estrutura comum para uma agenda de pesquisa mais ampla sobre inteligência autônoma governada.",
+    "a1_title": "Coordenação multiagente governada",
+    "a1_text": "Como representar e limitar autoridade quando agentes autônomos coordenam, negociam ou formam coletivos temporários?",
+    "a2_title": "Autonomia governada na borda",
+    "a2_text": "Como a governança deve funcionar quando decisões precisam ocorrer localmente, sob restrições de latência ou conectividade intermitente com serviços centralizados?",
+    "a3_title": "Assurance contínuo",
+    "a3_text": "Como aplicação de políticas e geração de evidências podem sustentar GRC contínuo em vez de fotografias periódicas de conformidade?",
+    "a4_title": "Delegação verificável",
+    "a4_text": "Como manter a delegação autenticada, limitada, revogável e reconstruível ao longo de cadeias complexas de ação autônoma?",
+    "series_title": "Série de Pesquisa SGAEIA",
+    "series_intro": "A série de pesquisa desenvolve a arquitetura progressivamente por meio de problemas, princípios, propriedades de segurança, conceitos de governança e riscos emergentes. Versões arquivísticas são preservadas no Zenodo e os ensaios públicos são publicados no Medium.",
+    "medium_label": "Medium",
+    "doi_label": "DOI Zenodo",
+    "artifacts_title": "Artefatos de pesquisa e registros persistentes",
+    "artifacts_intro": "O SGAEIA é publicado como artefato de software de pesquisa versionado e apoiado por registros arquivísticos persistentes, uma comunidade dedicada no Zenodo e produção pública de pesquisa.",
+    "artifact_software": "Artefato de software SGAEIA",
+    "artifact_software_text": "Artefato de software de pesquisa versionado e arquitetura de referência pública.",
+    "artifact_community": "Comunidade SGAEIA no Zenodo",
+    "artifact_community_text": "Coleção arquivística para resultados de pesquisa do SGAEIA e publicações relacionadas.",
+    "artifact_repo": "Repositório SGAEIA no GitHub",
+    "artifact_repo_text": "Repositório público do artefato de software e dos materiais do projeto voltados à pesquisa.",
+    "artifact_medium": "Série de Pesquisa SGAEIA no Medium",
+    "artifact_medium_text": "Ensaios públicos e notas de pesquisa que desenvolvem o programa de pesquisa SGAEIA.",
+    "artifact_linkedin": "SGAEIA no LinkedIn",
+    "artifact_linkedin_text": "Página institucional do SGAEIA para atualizações de pesquisa, anúncios de publicações e comunicação do projeto.",
+    "open_link": "Abrir",
+    "citation_title": "Citação",
+    "citation_intro": "Para o artefato de software SGAEIA, utilize a seguinte citação:",
+    "copy_citation": "Copiar citação",
+    "copied": "Copiado",
+    "license_note": "Licença do software: Apache-2.0. Os artigos de pesquisa são arquivados separadamente sob as licenças de seus respectivos registros publicados.",
+    "footer_note": "SGAEIA · Pesquisa sobre sistemas de IA autônomos, distribuídos e governados.",
+    "footer_motto": "Autonomous AI. Governed by Design. Trusted by Evidence."
+  },
+  "es": {
+    "skip": "Ir al contenido principal",
+    "identity_role": "Investigador Independiente <span class='role-sep'>·</span><br class='mobile-role-break'> Arquitectura de Sistemas de IA",
+    "nav_home": "Inicio",
+    "nav_problem": "Problema",
+    "nav_principles": "Principios",
+    "nav_series": "Serie de Investigación",
+    "nav_artifacts": "Artefactos",
+    "nav_properties": "Propiedades",
+    "nav_agenda": "Agenda",
+    "easy": "Lectura fácil",
+    "listen": "🔊 Escuchar",
+    "stop": "⏹ Detener",
+    "hero_eyebrow": "SGAEIA · Programa de investigación y arquitectura de referencia abierta",
+    "hero_title": "Arquitectura Segura de Inteligencia Autónoma Gobernada en el Borde",
+    "hero_lead": "SGAEIA investiga cómo los sistemas de IA autónomos y distribuidos pueden operar con autonomía útil mientras la autoridad permanece limitada, atribuible, auditable, gobernada continuamente y revocable.",
+    "hero_meta_1": "Creado por Aridio Silva · Investigador Independiente · Brasil",
+    "hero_meta_2": "Artefacto de software · Versión 0.3.4",
+    "explore_problem": "Explorar el problema de investigación",
+    "explore_artifact": "Abrir artefacto de investigación",
+    "aside_title": "Proposición de investigación",
+    "aside_text": "La autonomía solo es gobernable cuando la autoridad, la delegación, la confianza, la revocación y la evidencia son propiedades arquitectónicas y no controles añadidos posteriormente.",
+    "problem_title": "De la capacidad a la autoridad",
+    "problem_intro": "El problema de seguridad cambia cuando los sistemas de IA pasan de generar recomendaciones a ejecutar acciones con consecuencias. Los agentes autónomos pueden disponer de identidades, credenciales, herramientas, permisos y rutas de delegación que les permiten afectar sistemas externos. SGAEIA trata este cambio como un problema de autoridad, no solo de seguridad del modelo.",
+    "pr1_title": "Autoridad",
+    "pr1_text": "¿Qué puede hacer un agente autónomo, bajo qué condiciones, durante cuánto tiempo y dentro de qué alcance?",
+    "pr2_title": "Delegación",
+    "pr2_text": "¿Cómo puede un agente delegar autoridad en otro sin perder atribución, restricciones, procedencia ni responsabilidad?",
+    "pr3_title": "Distribución",
+    "pr3_text": "¿Cómo preservar la gobernanza en entornos edge–cloud con acción local, conectividad intermitente y múltiples fronteras administrativas?",
+    "pr4_title": "Evidencia",
+    "pr4_text": "¿Cómo puede el sistema demostrar qué autoridad existía, qué políticas se aplicaban, qué acciones ocurrieron y si la gobernanza siguió siendo efectiva?",
+    "thesis_title": "La gobernanza debe ser arquitectónica",
+    "thesis_intro": "SGAEIA es una arquitectura de referencia abierta y un programa de investigación basado en una tesis simple: la autonomía útil no debe depender de confianza implícita ni de aprobaciones estáticas. La autoridad debe ser explícita, limitada, evaluada continuamente y revocable.",
+    "p1": "Autoridad Limitada",
+    "p1_text": "La autonomía útil requiere límites explícitos de alcance, duración, permisos y acciones con consecuencias.",
+    "p2": "Delegación Autenticada",
+    "p2_text": "La autoridad delegada permanece atribuible, limitada, trazable y vinculada a su origen.",
+    "p3_text": "Las interacciones con consecuencias se verifican explícitamente en lugar de confiarse implícitamente.",
+    "p4": "Revocación por Diseño",
+    "p4_text": "La autoridad puede retirarse con la misma deliberación con la que se concede, incluso cuando cambian las condiciones.",
+    "p5": "GRC Continuo",
+    "p5_text": "Gobernanza, riesgo, cumplimiento y assurance permanecen activos durante la operación, no solo durante una auditoría.",
+    "p6_text": "La operación gobernada produce evidencia verificable por máquina para assurance continuo y revisión independiente.",
+    "properties_title": "Propiedades de seguridad y gobernanza",
+    "properties_intro": "El modelo público de SGAEIA se expresa mediante propiedades e invariantes, no mediante protocolos específicos de implementación. El objetivo es hacer verificable la gobernanza sin vincular la investigación a un único framework de agentes, proveedor de modelos o stack de despliegue.",
+    "prop1_title": "Límites explícitos de autoridad",
+    "prop1_text": "Ningún componente autónomo debería adquirir autoridad abierta solo porque puede realizar una tarea.",
+    "prop2_title": "Cadenas trazables de autoridad",
+    "prop2_text": "La autoridad debe seguir siendo atribuible a través de delegación, colaboración y coordinación multiagente.",
+    "prop3_title": "Sustitución que preserva seguridad",
+    "prop3_text": "Sustituir un agente, modelo o componente de implementación no debe debilitar silenciosamente las propiedades de seguridad que gobiernan el sistema.",
+    "prop4_title": "Verificabilidad continua",
+    "prop4_text": "El sistema debe producir continuamente evidencia de que los controles de gobernanza siguen siendo efectivos durante la operación.",
+    "agenda_title": "Agenda de investigación",
+    "agenda_intro": "SGAEIA proporciona un marco común para una agenda de investigación más amplia sobre inteligencia autónoma gobernada.",
+    "a1_title": "Coordinación multiagente gobernada",
+    "a1_text": "¿Cómo representar y limitar la autoridad cuando agentes autónomos coordinan, negocian o forman colectivos temporales?",
+    "a2_title": "Autonomía gobernada en el borde",
+    "a2_text": "¿Cómo debe comportarse la gobernanza cuando las decisiones deben ocurrir localmente, con restricciones de latencia o conectividad intermitente con servicios centralizados?",
+    "a3_title": "Assurance continuo",
+    "a3_text": "¿Cómo pueden la aplicación de políticas y la generación de evidencia sostener un GRC continuo en lugar de instantáneas periódicas de cumplimiento?",
+    "a4_title": "Delegación verificable",
+    "a4_text": "¿Cómo mantener la delegación autenticada, limitada, revocable y reconstruible a través de cadenas complejas de acción autónoma?",
+    "series_title": "Serie de Investigación SGAEIA",
+    "series_intro": "La serie desarrolla la arquitectura progresivamente mediante problemas, principios, propiedades de seguridad, conceptos de gobernanza y riesgos emergentes. Las versiones archivadas se preservan en Zenodo y los ensayos públicos se publican en Medium.",
+    "medium_label": "Medium",
+    "doi_label": "DOI Zenodo",
+    "artifacts_title": "Artefactos de investigación y registros persistentes",
+    "artifacts_intro": "SGAEIA se publica como un artefacto versionado de software de investigación y se apoya en registros archivísticos persistentes, una comunidad dedicada en Zenodo y escritura pública de investigación.",
+    "artifact_software": "Artefacto de software SGAEIA",
+    "artifact_software_text": "Artefacto versionado de software de investigación y arquitectura de referencia pública.",
+    "artifact_community": "Comunidad SGAEIA en Zenodo",
+    "artifact_community_text": "Colección archivística para resultados de investigación de SGAEIA y publicaciones relacionadas.",
+    "artifact_repo": "Repositorio SGAEIA en GitHub",
+    "artifact_repo_text": "Repositorio público del artefacto de software y materiales del proyecto orientados a la investigación.",
+    "artifact_medium": "Serie de Investigación SGAEIA en Medium",
+    "artifact_medium_text": "Ensayos públicos y notas de investigación que desarrollan el programa de investigación SGAEIA.",
+    "artifact_linkedin": "SGAEIA en LinkedIn",
+    "artifact_linkedin_text": "Página institucional de SGAEIA para actualizaciones de investigación, anuncios de publicaciones y comunicación del proyecto.",
+    "open_link": "Abrir",
+    "citation_title": "Cita",
+    "citation_intro": "Para el artefacto de software SGAEIA, utilice la siguiente cita:",
+    "copy_citation": "Copiar cita",
+    "copied": "Copiado",
+    "license_note": "Licencia del software: Apache-2.0. Los artículos de investigación se archivan por separado bajo las licencias de sus registros publicados.",
+    "footer_note": "SGAEIA · Investigación sobre sistemas de IA autónomos, distribuidos y gobernados.",
+    "footer_motto": "Autonomous AI. Governed by Design. Trusted by Evidence."
+  },
+  "fr": {
+    "skip": "Aller au contenu principal",
+    "identity_role": "Chercheur Indépendant <span class='role-sep'>·</span><br class='mobile-role-break'> Architecture des Systèmes d’IA",
+    "nav_home": "Accueil",
+    "nav_problem": "Problème",
+    "nav_principles": "Principes",
+    "nav_series": "Série de Recherche",
+    "nav_artifacts": "Artefacts",
+    "nav_properties": "Propriétés",
+    "nav_agenda": "Agenda",
+    "easy": "Lecture facile",
+    "listen": "🔊 Écouter",
+    "stop": "⏹ Arrêter",
+    "hero_eyebrow": "SGAEIA · Programme de recherche et architecture de référence ouverte",
+    "hero_title": "Architecture Sécurisée d’Intelligence Autonome Gouvernée en Périphérie",
+    "hero_lead": "SGAEIA étudie comment des systèmes d’IA autonomes et distribués peuvent fonctionner avec une autonomie utile tout en maintenant une autorité limitée, attribuable, auditable, gouvernée en continu et révocable.",
+    "hero_meta_1": "Créé par Aridio Silva · Chercheur Indépendant · Brésil",
+    "hero_meta_2": "Artefact logiciel · Version 0.3.4",
+    "explore_problem": "Explorer le problème de recherche",
+    "explore_artifact": "Ouvrir l’artefact de recherche",
+    "aside_title": "Proposition de recherche",
+    "aside_text": "L’autonomie ne devient gouvernable que lorsque l’autorité, la délégation, la confiance, la révocation et les preuves sont des propriétés architecturales plutôt que des contrôles ajoutés après coup.",
+    "problem_title": "De la capacité à l’autorité",
+    "problem_intro": "Le problème de sécurité change lorsque les systèmes d’IA passent de la recommandation à l’action ayant des conséquences. Les agents autonomes peuvent détenir des identités, des identifiants, des outils, des permissions et des chemins de délégation leur permettant d’affecter des systèmes externes. SGAEIA traite ce changement comme un problème d’autorité, et pas seulement de sécurité du modèle.",
+    "pr1_title": "Autorité",
+    "pr1_text": "Que peut faire un agent autonome, dans quelles conditions, pendant combien de temps et dans quel périmètre ?",
+    "pr2_title": "Délégation",
+    "pr2_text": "Comment un agent peut-il déléguer une autorité à un autre sans perdre attribution, contraintes, provenance ou responsabilité ?",
+    "pr3_title": "Distribution",
+    "pr3_text": "Comment préserver la gouvernance dans des environnements edge–cloud, avec action locale, connectivité intermittente et multiples frontières administratives ?",
+    "pr4_title": "Preuve",
+    "pr4_text": "Comment le système peut-il démontrer quelle autorité existait, quelles politiques s’appliquaient, quelles actions ont eu lieu et si la gouvernance est restée effective ?",
+    "thesis_title": "La gouvernance doit être architecturale",
+    "thesis_intro": "SGAEIA est une architecture de référence ouverte et un programme de recherche fondé sur une thèse simple : une autonomie utile ne doit dépendre ni d’une confiance implicite ni d’autorisations statiques. L’autorité doit être explicite, limitée, évaluée en continu et révocable.",
+    "p1": "Autorité Limitée",
+    "p1_text": "Une autonomie utile exige des limites explicites de périmètre, durée, permissions et actions à conséquences.",
+    "p2": "Délégation Authentifiée",
+    "p2_text": "L’autorité déléguée reste attribuable, limitée, traçable et reliée à sa source.",
+    "p3_text": "Les interactions à conséquences sont vérifiées explicitement plutôt que supposées dignes de confiance.",
+    "p4": "Révocation par Conception",
+    "p4_text": "L’autorité peut être retirée aussi délibérément qu’elle est accordée, y compris lorsque les conditions changent.",
+    "p5": "GRC Continu",
+    "p5_text": "Gouvernance, risque, conformité et assurance restent actifs pendant l’exécution, pas seulement lors d’un audit.",
+    "p6_text": "L’exploitation gouvernée produit des preuves vérifiables par machine pour l’assurance continue et l’examen indépendant.",
+    "properties_title": "Propriétés de sécurité et de gouvernance",
+    "properties_intro": "Le modèle public de SGAEIA est exprimé par des propriétés et invariants plutôt que par des protocoles spécifiques d’implémentation. L’objectif est de rendre la gouvernance vérifiable sans lier la recherche à un unique framework d’agents, fournisseur de modèles ou stack de déploiement.",
+    "prop1_title": "Frontières explicites d’autorité",
+    "prop1_text": "Aucun composant autonome ne devrait acquérir une autorité ouverte simplement parce qu’il peut accomplir une tâche.",
+    "prop2_title": "Chaînes d’autorité traçables",
+    "prop2_text": "L’autorité doit rester attribuable à travers la délégation, la collaboration et la coordination multi-agents.",
+    "prop3_title": "Substitution préservant la sécurité",
+    "prop3_text": "Remplacer un agent, un modèle ou un composant d’implémentation ne doit pas affaiblir silencieusement les propriétés de sécurité qui gouvernent le système.",
+    "prop4_title": "Vérifiabilité continue",
+    "prop4_text": "Le système doit produire en continu des preuves que les contrôles de gouvernance restent effectifs pendant l’exploitation.",
+    "agenda_title": "Agenda de recherche",
+    "agenda_intro": "SGAEIA fournit un cadre commun à un agenda de recherche plus large sur l’intelligence autonome gouvernée.",
+    "a1_title": "Coordination multi-agents gouvernée",
+    "a1_text": "Comment représenter et limiter l’autorité lorsque des agents autonomes se coordonnent, négocient ou forment des collectifs temporaires ?",
+    "a2_title": "Autonomie gouvernée en périphérie",
+    "a2_text": "Comment la gouvernance doit-elle fonctionner lorsque les décisions doivent être prises localement, avec des contraintes de latence ou une connectivité intermittente ?",
+    "a3_title": "Assurance continue",
+    "a3_text": "Comment l’application des politiques et la génération de preuves peuvent-elles soutenir un GRC continu plutôt que des instantanés périodiques de conformité ?",
+    "a4_title": "Délégation vérifiable",
+    "a4_text": "Comment maintenir la délégation authentifiée, limitée, révocable et reconstructible à travers des chaînes complexes d’action autonome ?",
+    "series_title": "Série de Recherche SGAEIA",
+    "series_intro": "La série développe progressivement l’architecture à travers des problèmes, principes, propriétés de sécurité, concepts de gouvernance et risques émergents. Les versions archivées sont conservées sur Zenodo et les essais publics sont publiés sur Medium.",
+    "medium_label": "Medium",
+    "doi_label": "DOI Zenodo",
+    "artifacts_title": "Artefacts de recherche et enregistrements persistants",
+    "artifacts_intro": "SGAEIA est publié comme artefact logiciel de recherche versionné et soutenu par des enregistrements archivistiques persistants, une communauté Zenodo dédiée et des écrits publics de recherche.",
+    "artifact_software": "Artefact logiciel SGAEIA",
+    "artifact_software_text": "Artefact logiciel de recherche versionné et architecture de référence publique.",
+    "artifact_community": "Communauté SGAEIA sur Zenodo",
+    "artifact_community_text": "Collection archivistique pour les résultats de recherche SGAEIA et les publications associées.",
+    "artifact_repo": "Dépôt SGAEIA sur GitHub",
+    "artifact_repo_text": "Dépôt public pour l’artefact logiciel et les matériaux du projet orientés recherche.",
+    "artifact_medium": "Série de Recherche SGAEIA sur Medium",
+    "artifact_medium_text": "Essais publics et notes de recherche développant le programme SGAEIA.",
+    "artifact_linkedin": "SGAEIA sur LinkedIn",
+    "artifact_linkedin_text": "Page institutionnelle de SGAEIA pour les actualités de recherche, les annonces de publications et la communication du projet.",
+    "open_link": "Ouvrir",
+    "citation_title": "Citation",
+    "citation_intro": "Pour l’artefact logiciel SGAEIA, utilisez la citation suivante :",
+    "copy_citation": "Copier la citation",
+    "copied": "Copié",
+    "license_note": "Licence du logiciel : Apache-2.0. Les articles de recherche sont archivés séparément selon les licences de leurs enregistrements publiés.",
+    "footer_note": "SGAEIA · Recherche sur les systèmes d’IA autonomes, distribués et gouvernés.",
+    "footer_motto": "Autonomous AI. Governed by Design. Trusted by Evidence."
+  },
+  "de": {
+    "skip": "Zum Hauptinhalt springen",
+    "identity_role": "Unabhängiger Forscher <span class='role-sep'>·</span><br class='mobile-role-break'> Architektur von KI-Systemen",
+    "nav_home": "Start",
+    "nav_problem": "Problem",
+    "nav_principles": "Prinzipien",
+    "nav_series": "Forschungsreihe",
+    "nav_artifacts": "Artefakte",
+    "nav_properties": "Eigenschaften",
+    "nav_agenda": "Agenda",
+    "easy": "Leichtes Lesen",
+    "listen": "🔊 Anhören",
+    "stop": "⏹ Stopp",
+    "hero_eyebrow": "SGAEIA · Forschungsprogramm und offene Referenzarchitektur",
+    "hero_title": "Sichere Architektur für gesteuerte autonome Edge-Intelligenz",
+    "hero_lead": "SGAEIA untersucht, wie autonome und verteilte KI-Systeme mit nützlicher Autonomie arbeiten können, während Autorität begrenzt, zurechenbar, auditierbar, kontinuierlich gesteuert und widerrufbar bleibt.",
+    "hero_meta_1": "Erstellt von Aridio Silva · Unabhängiger Forscher · Brasilien",
+    "hero_meta_2": "Software-Artefakt · Version 0.3.4",
+    "explore_problem": "Forschungsproblem erkunden",
+    "explore_artifact": "Forschungsartefakt öffnen",
+    "aside_title": "Forschungsthese",
+    "aside_text": "Autonomie wird nur dann steuerbar, wenn Autorität, Delegation, Vertrauen, Widerruf und Evidenz architektonische Eigenschaften sind und nicht nachträglich hinzugefügte Kontrollen.",
+    "problem_title": "Von Fähigkeit zu Autorität",
+    "problem_intro": "Das Sicherheitsproblem verändert sich, wenn KI-Systeme von Empfehlungen zu folgenreichen Handlungen übergehen. Autonome Agenten können Identitäten, Zugangsdaten, Werkzeuge, Berechtigungen und Delegationspfade besitzen, mit denen sie externe Systeme beeinflussen. SGAEIA behandelt diesen Übergang als Autoritätsproblem und nicht nur als Modellsicherheitsproblem.",
+    "pr1_title": "Autorität",
+    "pr1_text": "Was darf ein autonomer Agent tun, unter welchen Bedingungen, wie lange und in welchem Umfang?",
+    "pr2_title": "Delegation",
+    "pr2_text": "Wie kann ein Agent Autorität an einen anderen delegieren, ohne Zuordnung, Einschränkungen, Provenienz oder Verantwortlichkeit zu verlieren?",
+    "pr3_title": "Verteilung",
+    "pr3_text": "Wie bleibt Governance in Edge–Cloud-Umgebungen mit lokaler Aktion, intermittierender Konnektivität und mehreren administrativen Grenzen erhalten?",
+    "pr4_title": "Evidenz",
+    "pr4_text": "Wie kann das System nachweisen, welche Autorität bestand, welche Richtlinien galten, welche Handlungen erfolgten und ob Governance wirksam blieb?",
+    "thesis_title": "Governance muss architektonisch sein",
+    "thesis_intro": "SGAEIA ist eine offene Referenzarchitektur und ein Forschungsprogramm mit einer einfachen These: Nützliche Autonomie darf weder von implizitem Vertrauen noch von statischen Freigaben abhängen. Autorität muss explizit, begrenzt, kontinuierlich bewertet und widerrufbar sein.",
+    "p1": "Begrenzte Autorität",
+    "p1_text": "Nützliche Autonomie erfordert explizite Grenzen für Umfang, Dauer, Berechtigungen und folgenreiche Handlungen.",
+    "p2": "Authentifizierte Delegation",
+    "p2_text": "Delegierte Autorität bleibt zurechenbar, begrenzt, nachvollziehbar und mit ihrer Quelle verbunden.",
+    "p3_text": "Folgenreiche Interaktionen werden explizit verifiziert, anstatt implizit als vertrauenswürdig zu gelten.",
+    "p4": "Widerruf by Design",
+    "p4_text": "Autorität kann ebenso gezielt entzogen wie erteilt werden, auch wenn sich Bedingungen ändern.",
+    "p5": "Continuous GRC",
+    "p5_text": "Governance, Risiko, Compliance und Assurance bleiben während des Betriebs aktiv und nicht nur zum Auditzeitpunkt.",
+    "p6_text": "Gesteuerter Betrieb erzeugt maschinenverifizierbare Evidenz für kontinuierliche Assurance und unabhängige Prüfung.",
+    "properties_title": "Sicherheits- und Governance-Eigenschaften",
+    "properties_intro": "Das öffentliche SGAEIA-Modell wird durch Eigenschaften und Invarianten ausgedrückt, nicht durch implementierungsspezifische Protokolle. Ziel ist überprüfbare Governance ohne Bindung an ein einzelnes Agenten-Framework, einen Modellanbieter oder einen Deployment-Stack.",
+    "prop1_title": "Explizite Autoritätsgrenzen",
+    "prop1_text": "Keine autonome Komponente sollte offene Autorität erhalten, nur weil sie eine Aufgabe ausführen kann.",
+    "prop2_title": "Nachvollziehbare Autoritätsketten",
+    "prop2_text": "Autorität sollte über Delegation, Zusammenarbeit und Multi-Agenten-Koordination hinweg zurechenbar bleiben.",
+    "prop3_title": "Sicherheitswahrende Substitution",
+    "prop3_text": "Der Austausch eines Agenten, Modells oder Implementierungskomponenten darf die geltenden Sicherheitseigenschaften nicht stillschweigend schwächen.",
+    "prop4_title": "Kontinuierliche Überprüfbarkeit",
+    "prop4_text": "Das System sollte fortlaufend Evidenz erzeugen, dass Governance-Kontrollen während des Betriebs wirksam bleiben.",
+    "agenda_title": "Forschungsagenda",
+    "agenda_intro": "SGAEIA bietet einen gemeinsamen Rahmen für eine breitere Forschungsagenda zu gesteuerter autonomer Intelligenz.",
+    "a1_title": "Gesteuerte Multi-Agenten-Koordination",
+    "a1_text": "Wie sollte Autorität dargestellt und begrenzt werden, wenn autonome Agenten koordinieren, verhandeln oder temporäre Kollektive bilden?",
+    "a2_title": "Gesteuerte Edge-Autonomie",
+    "a2_text": "Wie sollte Governance funktionieren, wenn Entscheidungen lokal unter Latenzbeschränkungen oder intermittierender Konnektivität zu zentralen Diensten getroffen werden müssen?",
+    "a3_title": "Kontinuierliche Assurance",
+    "a3_text": "Wie können Richtliniendurchsetzung und Evidenzerzeugung Continuous GRC statt periodischer Compliance-Snapshots unterstützen?",
+    "a4_title": "Überprüfbare Delegation",
+    "a4_text": "Wie kann Delegation über komplexe Ketten autonomer Handlungen hinweg authentifiziert, begrenzt, widerrufbar und rekonstruierbar bleiben?",
+    "series_title": "SGAEIA-Forschungsreihe",
+    "series_intro": "Die Forschungsreihe entwickelt die Architektur schrittweise anhand von Problemen, Prinzipien, Sicherheitseigenschaften, Governance-Konzepten und aufkommenden Risiken. Archivversionen werden auf Zenodo bewahrt und öffentliche Essays auf Medium veröffentlicht.",
+    "medium_label": "Medium",
+    "doi_label": "Zenodo DOI",
+    "artifacts_title": "Forschungsartefakte & persistente Datensätze",
+    "artifacts_intro": "SGAEIA wird als versioniertes Forschungssoftware-Artefakt veröffentlicht und durch persistente Archivdatensätze, eine eigene Zenodo-Community und öffentliche Forschungstexte unterstützt.",
+    "artifact_software": "SGAEIA Software-Artefakt",
+    "artifact_software_text": "Versioniertes Forschungssoftware-Artefakt und öffentliche Referenzarchitektur.",
+    "artifact_community": "SGAEIA Zenodo Community",
+    "artifact_community_text": "Archivsammlung für SGAEIA-Forschungsergebnisse und zugehörige Publikationen.",
+    "artifact_repo": "SGAEIA GitHub Repository",
+    "artifact_repo_text": "Öffentliches Repository für das Software-Artefakt und forschungsorientierte Projektmaterialien.",
+    "artifact_medium": "SGAEIA Research Series auf Medium",
+    "artifact_medium_text": "Öffentliche Essays und Forschungsnotizen zur Weiterentwicklung des SGAEIA-Forschungsprogramms.",
+    "artifact_linkedin": "SGAEIA auf LinkedIn",
+    "artifact_linkedin_text": "Institutionelle SGAEIA-Seite für Forschungsupdates, Publikationsankündigungen und Projektkommunikation.",
+    "open_link": "Öffnen",
+    "citation_title": "Zitation",
+    "citation_intro": "Für das SGAEIA-Software-Artefakt verwenden Sie folgende Zitation:",
+    "copy_citation": "Zitation kopieren",
+    "copied": "Kopiert",
+    "license_note": "Softwarelizenz: Apache-2.0. Forschungsartikel werden separat unter den Lizenzen ihrer veröffentlichten Datensätze archiviert.",
+    "footer_note": "SGAEIA · Forschung zu gesteuerten autonomen und verteilten KI-Systemen.",
+    "footer_motto": "Autonomous AI. Governed by Design. Trusted by Evidence."
+  }
+};
+  let currentLanguage='en', easyOn=false;
+  const scales=[1,1.08,1.16,1.26,1.38]; let scaleIndex=0;
+  function normalizeProseEmphasis() {
+    const selectors=['.hero-lead','.hero-aside p','.section-intro','.problem-card p','.principle span','.property-card p','.agenda-card p','.editorial-main p','.resource-card p','.footer-note','.license-note'];
+    document.querySelectorAll(selectors.join(',')).forEach(container=>{container.querySelectorAll('strong,b').forEach(node=>node.replaceWith(...node.childNodes));});
+  }
+  function applyEasyRead() { normalizeProseEmphasis(); document.body.setAttribute('data-easy-read',easyOn?'true':'false'); const b=document.getElementById('easyReadToggle'); if(b)b.setAttribute('aria-pressed',easyOn?'true':'false'); try{localStorage.setItem('site-easy-read',easyOn)}catch(e){} }
+  function applyLang(lang) { if(!translations[lang])lang='en'; currentLanguage=lang; document.documentElement.lang=lang; document.querySelectorAll('[data-i18n]').forEach(node=>{const k=node.getAttribute('data-i18n'); if(translations[lang][k]!==undefined)node.innerHTML=translations[lang][k];}); const s=document.getElementById('langSelect'); if(s)s.value=lang; try{localStorage.setItem('site-lang',lang)}catch(e){} normalizeProseEmphasis(); if(easyOn)applyEasyRead(); }
+  function applyScale() { document.documentElement.style.setProperty('--font-scale',scales[scaleIndex]); try{localStorage.setItem('site-font-scale',scales[scaleIndex])}catch(e){} }
+  let speechChunks=[],speechIndex=0,isReading=false,availableVoices=[];
+  const speechLangMap={en:'en-US',pt:'pt-BR',es:'es-ES',fr:'fr-FR',de:'de-DE'};
+  function loadVoices(){if(window.speechSynthesis)availableVoices=window.speechSynthesis.getVoices()||[];}
+  function readableText(){const nodes=document.querySelectorAll('.hero h1,.hero-lead,.hero-aside p,.section h2,.section-intro,.problem-card h3,.problem-card p,.principle strong,.principle span,.property-card h3,.property-card p,.agenda-card h3,.agenda-card p,.editorial-main h3,.editorial-main p,.resource-card h3,.resource-card p,.citation-box code'); return Array.from(nodes).map(n=>n.textContent.trim()).filter(Boolean).join('. ');}
+  function chunkSpeechText(text,maxLength=180){const sentences=text.match(/[^.!?]+[.!?]+|[^.!?]+$/g)||[text],chunks=[];let current='';sentences.forEach(sentence=>{const clean=sentence.trim();if(!clean)return;if((current+' '+clean).trim().length<=maxLength){current=(current+' '+clean).trim();return;}if(current)chunks.push(current);if(clean.length<=maxLength)current=clean;else{const words=clean.split(/\s+/);current='';words.forEach(word=>{if((current+' '+word).trim().length>maxLength&&current){chunks.push(current);current=word;}else current=(current+' '+word).trim();});}});if(current)chunks.push(current);return chunks;}
+  function chooseVoice(lang){loadVoices();if(!availableVoices.length)return null;const exact=availableVoices.find(v=>(v.lang||'').toLowerCase()===lang.toLowerCase());if(exact)return exact;const base=lang.split('-')[0].toLowerCase();return availableVoices.find(v=>(v.lang||'').toLowerCase().startsWith(base))||null;}
+  function resetReadButton(){const b=document.getElementById('readAloudToggle');if(!b)return;b.setAttribute('aria-pressed','false');b.textContent=translations[currentLanguage].listen;}
+  window.stopReading=function(){isReading=false;speechChunks=[];speechIndex=0;if(window.speechSynthesis)window.speechSynthesis.cancel();resetReadButton();};
+  function speakNextChunk(){if(!isReading||!window.speechSynthesis)return;if(speechIndex>=speechChunks.length){stopReading();return;}const lang=speechLangMap[currentLanguage]||'en-US';const u=new SpeechSynthesisUtterance(speechChunks[speechIndex]);u.lang=lang;u.rate=.94;const voice=chooseVoice(lang);if(voice)u.voice=voice;u.onend=()=>{if(!isReading)return;speechIndex++;setTimeout(speakNextChunk,40);};u.onerror=(e)=>{if(!isReading||e.error==='interrupted'||e.error==='canceled')return;stopReading();};window.speechSynthesis.speak(u);}
+  document.addEventListener('DOMContentLoaded',function(){
+    try{const l=localStorage.getItem('site-lang');if(l&&translations[l])currentLanguage=l;easyOn=localStorage.getItem('site-easy-read')==='true';const ss=parseFloat(localStorage.getItem('site-font-scale'));const idx=scales.indexOf(ss);if(idx>=0)scaleIndex=idx;}catch(e){}
+    applyLang(currentLanguage);applyScale();applyEasyRead();
+    const sel=document.getElementById('langSelect');sel&&sel.addEventListener('change',e=>{stopReading();applyLang(e.target.value);});
+    document.getElementById('fontIncrease').addEventListener('click',()=>{if(scaleIndex<scales.length-1){scaleIndex++;applyScale();}});
+    document.getElementById('fontDecrease').addEventListener('click',()=>{if(scaleIndex>0){scaleIndex--;applyScale();}});
+    document.getElementById('easyReadToggle').addEventListener('click',()=>{easyOn=!easyOn;applyEasyRead();});
+    const readBtn=document.getElementById('readAloudToggle');
+    if(readBtn&&window.speechSynthesis&&'SpeechSynthesisUtterance' in window){loadVoices();if(typeof window.speechSynthesis.addEventListener==='function')window.speechSynthesis.addEventListener('voiceschanged',loadVoices);readBtn.addEventListener('click',function(){if(isReading){stopReading();return;}window.speechSynthesis.cancel();loadVoices();speechChunks=chunkSpeechText(readableText());speechIndex=0;isReading=speechChunks.length>0;if(!isReading)return;readBtn.setAttribute('aria-pressed','true');readBtn.textContent=translations[currentLanguage].stop;speakNextChunk();});document.addEventListener('visibilitychange',()=>{if(!document.hidden&&isReading&&window.speechSynthesis.paused)window.speechSynthesis.resume();});} else if(readBtn)readBtn.hidden=true;
+    const copy=document.getElementById('copyCitation');copy&&copy.addEventListener('click',async()=>{const text=document.getElementById('citationText').textContent.trim();try{await navigator.clipboard.writeText(text);copy.textContent=translations[currentLanguage].copied;setTimeout(()=>copy.textContent=translations[currentLanguage].copy_citation,1600);}catch(e){}});
+  });
+})();
+</script>
+</body>
+</html>
