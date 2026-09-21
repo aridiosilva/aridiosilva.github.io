@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- Build: sgaeia-v1 2026-09-20 r3-article-12 -->
+<!-- Build: sgaeia-v1 2026-09-21 r5-article-12-alternating-sections-corrected -->
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -18,20 +18,20 @@
 <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600;8..60,700&display=swap" rel="stylesheet">
 <style>
   :root {
-    --paper: #efece5;
-    --paper-soft: #f6f3ed;
-    --paper-header: #e3ded3;
-    --paper-warm: #eadfd7;
-    --paper-sage: #dfe7e1;
+    --paper: #ffffff;
+    --paper-soft: #ffffff;
+    --paper-header: #e4edeb;
+    --paper-warm: #e6eef1;
+    --paper-sage: #ffffff;
     --ink: #1c1c1a;
     --ink-soft: #3e403c;
     --muted: #666760;
-    --rule: #cdc9c0;
+    --rule: #c5d2cf;
     --research: #17464d;
     --research-deep: #10363c;
-    --research-soft: #cbded9;
-    --terracotta: #8c4939;
-    --focus: #9a4b34;
+    --research-soft: #c6dcd7;
+    --terracotta: #4c7379;
+    --focus: #2f6b72;
     --font-serif: "Source Serif 4", Georgia, "Times New Roman", serif;
     --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     --font-scale: 1;
@@ -111,7 +111,7 @@
     position: sticky;
     top: 0;
     z-index: 30;
-    background: color-mix(in srgb, var(--paper-warm) 96%, transparent);
+    background: color-mix(in srgb, var(--paper-header) 96%, transparent);
     backdrop-filter: blur(10px);
     border-bottom: 1px solid var(--rule);
   }
@@ -151,7 +151,14 @@
     border-bottom: 1px solid transparent;
     padding: 6px 0;
   }
-  .site-nav a:hover { color: var(--research); border-bottom-color: var(--research); }
+  .site-nav a:hover { color: var(--research-deep); border-bottom-color: var(--research-deep); }
+
+  .site-nav a:focus-visible {
+    color: var(--research-deep);
+    border-bottom-color: var(--research-deep);
+    outline-color: var(--research-deep);
+  }
+
 
   .utility-bar { display: flex; gap: 6px; align-items: center; }
   .utility-bar button,
@@ -249,6 +256,12 @@
 
   /* Sections */
   .section { border-top: 1px solid var(--rule); padding: clamp(62px, 7vw, 94px) 0; scroll-margin-top: 88px; }
+  /* Section 04 (Agenda) and the final Citation section — match the darker cream used by the page header. */
+  #problem { background: var(--paper-warm); }
+  #agenda { background: #ffffff; }
+  #citation { background: var(--paper-warm); }
+  #properties { background: var(--paper-warm); }
+  #artifacts { background: #ffffff; }
   .section-grid { display: grid; grid-template-columns: 150px minmax(0, 1fr); gap: clamp(32px, 6vw, 76px); }
   .section-kicker {
     color: var(--muted);
@@ -289,16 +302,16 @@
   .research-item p { margin: 0; color: var(--ink-soft); font-size: .88rem; line-height: 1.66; }
 
   /* SGAEIA */
-  .sgaeia-band { background: var(--paper-sage); border-top: 1px solid #b7c7bf; border-bottom: 1px solid #b7c7bf; }
+  .sgaeia-band { background: #ffffff; border-top: 1px solid #c8d8d5; border-bottom: 1px solid #c8d8d5; }
   .sgaeia-band .section { border-top: 0; }
   .sgaeia-name { color: var(--research); }
-  .principles { display: grid; grid-template-columns: repeat(3, 1fr); margin-top: 38px; border-top: 1px solid #b7c7bf; border-left: 1px solid #b7c7bf; }
-  .principle { min-height: 120px; padding: 20px; border-right: 1px solid #b7c7bf; border-bottom: 1px solid #b7c7bf; }
+  .principles { display: grid; grid-template-columns: repeat(3, 1fr); margin-top: 38px; border-top: 1px solid #c8d8d5; border-left: 1px solid #c8d8d5; }
+  .principle { min-height: 120px; padding: 20px; border-right: 1px solid #c8d8d5; border-bottom: 1px solid #c8d8d5; }
   .principle > strong { display: block; font-family: var(--font-serif); font-size: 1.03rem; font-weight: 600; margin-bottom: 5px; }
-  .principle span { color: #53625c; font-size: .77rem; line-height: 1.5; }
+  .principle span { color: #4c6366; font-size: .77rem; line-height: 1.5; }
   .section-actions { margin-top: 28px; display: flex; flex-wrap: wrap; gap: 10px; }
 
-  .writing-band { background: var(--paper-sage); border-top: 1px solid #b7c7bf; border-bottom: 1px solid #b7c7bf; }
+  .writing-band { background: var(--paper-sage); border-top: 1px solid #c8d8d5; border-bottom: 1px solid #c8d8d5; }
   .writing-band + .section { border-top: 0; }
 
   /* Editorial lists */
@@ -335,10 +348,10 @@
   .fact strong { display: block; margin-top: 3px; font-family: var(--font-serif); font-size: .98rem; font-weight: 600; }
 
   /* Footer */
-  .site-footer { background: var(--paper-warm); border-top: 1px solid #d4c4ba; padding: 44px 0 30px; }
+  .site-footer { background: #ffffff; border-top: 1px solid #c8d8d5; padding: 44px 0 30px; }
   .footer-head { display: flex; align-items: end; justify-content: space-between; gap: 28px; }
   .footer-wordmark { font-family: var(--font-serif); font-size: clamp(2rem, 4vw, 3.7rem); line-height: 1; font-weight: 600; letter-spacing: -.025em; }
-  .footer-note { max-width: 500px; color: #665d57; font-size: .76rem; text-align: right; }
+  .footer-note { max-width: 500px; color: #c8d7d4; font-size: .76rem; text-align: right; }
   .brand-links {
     display: flex;
     align-items: center;
@@ -347,8 +360,8 @@
     flex-wrap: wrap;
     margin: 38px 0 30px;
     padding: 20px 0;
-    border-top: 1px solid #d4c4ba;
-    border-bottom: 1px solid #d4c4ba;
+    border-top: 1px solid #c8d8d5;
+    border-bottom: 1px solid #c8d8d5;
   }
   .brand-link {
     position: relative;
@@ -356,12 +369,12 @@
     height: 44px;
     display: grid;
     place-items: center;
-    border: 1px solid #cdbbb0;
-    background: rgba(255,255,255,.28);
+    border: 1px solid #b8cac7;
+    background: rgba(255,255,255,.34);
     text-decoration: none;
     transition: transform .16s ease, background .16s ease, border-color .16s ease;
   }
-  .brand-link:hover { transform: translateY(-2px); background: var(--paper-soft); border-color: var(--research); }
+  .brand-link:hover { transform: translateY(-2px); background: #ffffff; border-color: var(--research); }
   .brand-link img { width: 23px; height: 23px; object-fit: contain; }
   .fallback-icon {
     display: none;
@@ -387,7 +400,7 @@
     color: #fff;
     font-size: .55rem;
     font-weight: 800;
-    border: 2px solid var(--paper-warm);
+    border: 2px solid var(--paper-header);
   }
   .brand-link::before {
     content: attr(data-label);
@@ -424,7 +437,7 @@
       position: sticky;
       top: 0;
       z-index: 30;
-      background: var(--paper-warm);
+      background: var(--paper-header);
       -webkit-backdrop-filter: blur(10px);
       backdrop-filter: blur(10px);
     }
@@ -507,7 +520,7 @@
   }
   .resource-card a { color: var(--research); font-weight: 650; text-decoration-thickness: 1px; text-underline-offset: 3px; }
   .resource-card-wide { grid-column: 1 / -1; }
-  .series-band { background: var(--paper-sage); border-top: 1px solid #b7c7bf; border-bottom: 1px solid #b7c7bf; }
+  .series-band { background: var(--paper-warm); border-top: 1px solid #c8d8d5; border-bottom: 1px solid #c8d8d5; }
   .series-band .section { border-top: 0; }
   .citation-box {
     margin-top: 28px;
@@ -537,7 +550,7 @@
   .brand-banner {
     position: relative;
     overflow: hidden;
-    background: linear-gradient(110deg, #d7e2dc 0%, #e4e9e2 58%, #eadfd7 100%);
+    background: #ffffff;
     border-bottom: 1px solid #b9c6bf;
   }
   .brand-banner-inner {
@@ -628,6 +641,59 @@
     .brand-banner-sub { font-size: .61rem; letter-spacing: .07em; }
     .brand-banner-motto { display: none; }
     .brand-banner-art { right: -200px; }
+  }
+
+  /* Palette Experiment 03 — footer matches Section 05 Research Series exactly */
+  .site-footer .footer-wordmark { color: var(--research-deep); }
+  .site-footer .footer-note { color: #4c6366; }
+  .site-footer .footer-bottom { color: #60777a; }
+  .site-footer .brand-links {
+    border-top-color: #c8d8d5;
+    border-bottom-color: #c8d8d5;
+  }
+  .site-footer .brand-link {
+    background: rgba(255,255,255,.34);
+    border-color: #b8cac7;
+    color: var(--research);
+  }
+  .site-footer .brand-link:hover {
+    background: #ffffff;
+    border-color: var(--research);
+    color: var(--research-deep);
+  }
+  .site-footer .fallback-icon { color: var(--research); }
+  .site-footer .brand-link::before { background: var(--research-deep); color: #ffffff; }
+  .site-footer .brand-link[data-badge]::after {
+    background: var(--research);
+    color: #ffffff;
+    border-color: var(--paper-sage);
+  }
+
+
+  /* SGAEIA alternating-section correction — footer on white */
+  .site-footer .footer-wordmark { color: var(--research-deep); }
+  .site-footer .footer-note { color: #4c6366; }
+  .site-footer .footer-bottom { color: #60777a; }
+  .site-footer .brand-links {
+    border-top-color: #c8d8d5;
+    border-bottom-color: #c8d8d5;
+  }
+  .site-footer .brand-link {
+    background: #ffffff;
+    border-color: #b8cac7;
+    color: var(--research);
+  }
+  .site-footer .brand-link:hover {
+    background: var(--paper-header);
+    border-color: var(--research-deep);
+    color: var(--research-deep);
+  }
+  .site-footer .fallback-icon { color: var(--research); }
+  .site-footer .brand-link::before { background: var(--research-deep); color: #ffffff; }
+  .site-footer .brand-link[data-badge]::after {
+    background: var(--research);
+    color: #ffffff;
+    border-color: #ffffff;
   }
 
 </style>
@@ -746,14 +812,24 @@
   <div class="editorial-meta">Article 12<br><a href="https://doi.org/10.5281/zenodo.22864340" target="_blank" rel="noopener"><span data-i18n="doi_label">Zenodo DOI</span> ↗</a><br><a href="https://medium.com/@aridiosilva/ten-days-that-exposed-the-governance-gap-in-frontier-ai-07fbd2c278d4" target="_blank" rel="noopener"><span data-i18n="medium_label">Medium</span> ↗</a></div>
 </article>
 <article class="editorial-row">
-  <div class="editorial-year">2026-09-17</div>
-  <div class="editorial-main"><h3><a href="https://doi.org/10.5281/zenodo.22816239" target="_blank" rel="noopener">Security-by-Design for Distributed Agentic AI</a></h3><p>SGAEIA Research Series — Article 7</p></div>
-  <div class="editorial-meta">Article 7<br><a href="https://doi.org/10.5281/zenodo.22816239" target="_blank" rel="noopener"><span data-i18n="doi_label">Zenodo DOI</span> ↗</a><br><a href="https://medium.com/@aridiosilva/security-by-design-for-distributed-agentic-ai-d8a00dfe1acd" target="_blank" rel="noopener"><span data-i18n="medium_label">Medium</span> ↗</a></div>
+  <div class="editorial-year">2026-09-18</div>
+  <div class="editorial-main"><h3><a href="https://doi.org/10.5281/zenodo.22837908" target="_blank" rel="noopener">From Model Capability to Governed Action: An Architecture for Secure Agentic AI</a></h3><p>SGAEIA Research Series — Article 11</p></div>
+  <div class="editorial-meta">Article 11<br><a href="https://doi.org/10.5281/zenodo.22837908" target="_blank" rel="noopener"><span data-i18n="doi_label">Zenodo DOI</span> ↗</a><br><a href="https://medium.com/@aridiosilva/from-model-capability-to-governed-action-an-architecture-for-secure-agentic-ai-de0bf29d0cdc" target="_blank" rel="noopener"><span data-i18n="medium_label">Medium</span> ↗</a></div>
 </article>
 <article class="editorial-row">
   <div class="editorial-year">2026-09-16</div>
   <div class="editorial-main"><h3><a href="https://doi.org/10.5281/zenodo.22796900" target="_blank" rel="noopener">Rogue AI Agents: When Autonomous Systems Become a Collective</a></h3><p>SGAEIA Research Series — Article 10</p></div>
   <div class="editorial-meta">Article 10<br><a href="https://doi.org/10.5281/zenodo.22796900" target="_blank" rel="noopener"><span data-i18n="doi_label">Zenodo DOI</span> ↗</a><br><a href="https://medium.com/@aridiosilva/rogue-ai-agents-when-autonomous-systems-become-a-collective-75ddaf685938" target="_blank" rel="noopener"><span data-i18n="medium_label">Medium</span> ↗</a></div>
+</article>
+<article class="editorial-row">
+  <div class="editorial-year">2026-09-14</div>
+  <div class="editorial-main"><h3><a href="https://doi.org/10.5281/zenodo.22754885" target="_blank" rel="noopener">When AI Begins to Build AI</a></h3><p>SGAEIA Research Series — Article 9</p></div>
+  <div class="editorial-meta">Article 9<br><a href="https://doi.org/10.5281/zenodo.22754885" target="_blank" rel="noopener"><span data-i18n="doi_label">Zenodo DOI</span> ↗</a><br><a href="https://medium.com/@aridiosilva/when-ai-begins-to-build-ai-f762df34afec" target="_blank" rel="noopener"><span data-i18n="medium_label">Medium</span> ↗</a></div>
+</article>
+<article class="editorial-row">
+  <div class="editorial-year">2026-09-17</div>
+  <div class="editorial-main"><h3><a href="https://doi.org/10.5281/zenodo.22816239" target="_blank" rel="noopener">Security-by-Design for Distributed Agentic AI</a></h3><p>SGAEIA Research Series — Article 7</p></div>
+  <div class="editorial-meta">Article 7<br><a href="https://doi.org/10.5281/zenodo.22816239" target="_blank" rel="noopener"><span data-i18n="doi_label">Zenodo DOI</span> ↗</a><br><a href="https://medium.com/@aridiosilva/security-by-design-for-distributed-agentic-ai-d8a00dfe1acd" target="_blank" rel="noopener"><span data-i18n="medium_label">Medium</span> ↗</a></div>
 </article>
 <article class="editorial-row">
   <div class="editorial-year">2026</div>
@@ -814,7 +890,7 @@
       <a class="brand-link" data-badge="S" data-label="SGAEIA Repository" aria-label="SGAEIA GitHub Repository" title="SGAEIA Repository" href="https://github.com/aridiosilva/SGAEIA" target="_blank" rel="noopener"><img src="https://cdn.simpleicons.org/github" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'"><span class="fallback-icon">GH</span></a>
       <a class="brand-link" data-label="SGAEIA DOI" aria-label="SGAEIA research artifact DOI" title="SGAEIA Research Artifact / DOI" href="https://doi.org/10.5281/zenodo.22557796" target="_blank" rel="noopener"><img src="https://cdn.simpleicons.org/doi" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'"><span class="fallback-icon">DOI</span></a>
     </nav>
-    <div class="footer-bottom"><span>© 2026 Aridio Silva</span><span data-i18n="last_updated">Last updated: 17 September 2026</span><span data-i18n="footer_motto">Autonomous AI. Governed by Design. Trusted by Evidence.</span></div>
+    <div class="footer-bottom"><span>© 2026 Aridio Silva</span><span data-i18n="last_updated">Last updated: 21 September 2026</span><span data-i18n="footer_motto">Autonomous AI. Governed by Design. Trusted by Evidence.</span></div>
   </div>
 </footer>
 <script>
@@ -907,7 +983,7 @@
     "copied": "Copied",
     "license_note": "Software license: Apache-2.0. Research articles are archived separately under their published record licenses.",
     "footer_note": "SGAEIA · Research on governed autonomous and distributed AI systems.",
-    "last_updated": "Last updated: 17 September 2026",
+    "last_updated": "Last updated: 21 September 2026",
     "footer_motto": "Autonomous AI. Governed by Design. Trusted by Evidence."
   },
   "pt": {
@@ -997,7 +1073,7 @@
     "copied": "Copiado",
     "license_note": "Licença do software: Apache-2.0. Os artigos de pesquisa são arquivados separadamente sob as licenças de seus respectivos registros publicados.",
     "footer_note": "SGAEIA · Pesquisa sobre sistemas de IA autônomos, distribuídos e governados.",
-    "last_updated": "Última atualização: 17 de setembro de 2026",
+    "last_updated": "Última atualização: 21 de setembro de 2026",
     "footer_motto": "Autonomous AI. Governed by Design. Trusted by Evidence."
   },
   "es": {
@@ -1087,7 +1163,7 @@
     "copied": "Copiado",
     "license_note": "Licencia del software: Apache-2.0. Los artículos de investigación se archivan por separado bajo las licencias de sus registros publicados.",
     "footer_note": "SGAEIA · Investigación sobre sistemas de IA autónomos, distribuidos y gobernados.",
-    "last_updated": "Última actualización: 17 de septiembre de 2026",
+    "last_updated": "Última actualización: 21 de septiembre de 2026",
     "footer_motto": "Autonomous AI. Governed by Design. Trusted by Evidence."
   },
   "fr": {
@@ -1177,7 +1253,7 @@
     "copied": "Copié",
     "license_note": "Licence du logiciel : Apache-2.0. Les articles de recherche sont archivés séparément selon les licences de leurs enregistrements publiés.",
     "footer_note": "SGAEIA · Recherche sur les systèmes d’IA autonomes, distribués et gouvernés.",
-    "last_updated": "Dernière mise à jour : 17 septembre 2026",
+    "last_updated": "Dernière mise à jour : 21 septembre 2026",
     "footer_motto": "Autonomous AI. Governed by Design. Trusted by Evidence."
   },
   "de": {
@@ -1267,7 +1343,7 @@
     "copied": "Kopiert",
     "license_note": "Softwarelizenz: Apache-2.0. Forschungsartikel werden separat unter den Lizenzen ihrer veröffentlichten Datensätze archiviert.",
     "footer_note": "SGAEIA · Forschung zu gesteuerten autonomen und verteilten KI-Systemen.",
-    "last_updated": "Zuletzt aktualisiert: 17. September 2026",
+    "last_updated": "Zuletzt aktualisiert: 21. September 2026",
     "footer_motto": "Autonomous AI. Governed by Design. Trusted by Evidence."
   }
 };
