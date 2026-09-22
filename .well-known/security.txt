@@ -1,0 +1,5 @@
+Contact: https://github.com/aridiosilva/aridiosilva.github.io/security/advisories/new
+Canonical: https://aridiosilva.com/.well-known/security.txt
+Policy: https://github.com/aridiosilva/aridiosilva.github.io/security/policy
+Preferred-Languages: en, pt-BR
+Expires: 2027-09-22T23:59:59Z
