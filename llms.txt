@@ -9,6 +9,10 @@ The primary research themes are Agentic AI, multi-agent systems, AI security, Ze
 - [Aridio Silva — Research homepage](https://aridiosilva.com/): Research profile, selected publications, public writing, academic profiles, and links to the SGAEIA program.
 - [SGAEIA — Research program](https://aridiosilva.com/sgaeia.html): Public overview of the architecture, research principles, publication series, roadmap, and research artifacts.
 
+## Publication index
+
+- [Academic publication index](https://aridiosilva.com/publications.html): Individual publication pages with author-written abstracts, dates, DOIs, and archival links.
+
 ## Research archives and profiles
 
 - [SGAEIA Zenodo Community](https://zenodo.org/communities/sgaeia): Versioned, citable research records and persistent identifiers.
