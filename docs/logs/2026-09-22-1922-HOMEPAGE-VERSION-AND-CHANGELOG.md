@@ -6,7 +6,7 @@
 **Owner:** Aridio Silva  
 **Date covered:** 2026-09-22  
 **Created:** 2026-09-22 19:22 BRT  
-**Last Updated:** 2026-09-25 12:26 BRT  
+**Last Updated:** 2026-09-25 12:46 BRT
 **Timezone:** America/Sao_Paulo (UTC−03:00)  
 **Document Status:** HOMEPAGE VERSION RECORD — COMPLETE FOR DEPLOYED SCOPE  
 **Public/private classification:** PUBLIC TECHNICAL CHANGELOG; no secret, credential or private mechanism is included  
@@ -312,12 +312,19 @@ The local website source was extended for *When AI Hallucination Becomes Action*
 
 The individual page follows the existing Scholar-oriented pattern: one canonical URL, visible author-written abstract, `Silva, Aridio` authorship, publication date, DOI, language, required `citation_*` fields, direct Zenodo and Medium links, and a suggested citation. Its CSP retains the strict publication-page policy without inline-script permission. These local discovery measures do not guarantee Google or Google Scholar indexing. No deployment, commit, or push is asserted by this update.
 
+
+## 13. New-page link behavior — 25 September 2026
+
+By owner decision, every HTML link in `index.html` and `sgaeia.html` now opens in a new browsing context through `target="_blank"`. Every affected anchor also carries `rel="noopener noreferrer"` to prevent the opened page from receiving an opener reference and to limit referrer disclosure. The rule includes navigation, internal publication records, profile links, DOI links, Medium links, email links and same-page controls implemented as anchors.
+
+Static validation confirmed that all 68 anchors in `index.html` and all 62 anchors in `sgaeia.html` contain the required target and relationship tokens. This is an owner-selected navigation behavior and should be preserved in future homepage additions unless the owner revises the rule.
+
 ---
 
 ## Document Record
 
 **Created:** 2026-09-22 19:22 BRT  
-**Last Updated:** 2026-09-25 12:26 BRT  
+**Last Updated:** 2026-09-25 12:46 BRT
 **Timezone:** America/Sao_Paulo (UTC−03:00)  
 **Document Status:** HOMEPAGE VERSION RECORD — COMPLETE FOR DEPLOYED SCOPE  
 **Repository Path:** `docs/logs/2026-09-22-1922-HOMEPAGE-VERSION-AND-CHANGELOG.md`  
