@@ -331,3 +331,10 @@ Static validation confirmed that all 68 anchors in `index.html` and all 62 ancho
 **Version identifier:** `e1ff892c369489bc35004df36cdc0a19ca11bdde`  
 **Previous baseline:** `a0a565ebd17216f084cbb3813d432416907ddf72`  
 **Public verification:** `https://aridiosilva.com/publications.html`  
+
+
+## 13. Article 14 discovery update — 25 September 2026
+
+The local website source was extended for *AI's Alien Mind*, SGAEIA Research Series Article 14. The change adds the article to `index.html`, `sgaeia.html`, and `publications.html`; creates `publications/ais-alien-mind/index.html`; adds the canonical record to `sitemap.xml`; and updates `llms.txt` with the individual publication page, Zenodo Version 1.0 DOI `10.5281/zenodo.22964672`, and Medium reading URL.
+
+The individual page contains the author-written abstract, required citation metadata, suggested citation, strict CSP, analytics-consent controller, and persistent links. New links open in a separate page with `noopener noreferrer`. Local validation covers HTML structure, citation-field uniqueness, metadata consistency, link resolution, sitemap uniqueness, public-disclosure boundaries, and `git diff --check`. No deployment, commit, push, Search Console submission, or indexing claim was performed.

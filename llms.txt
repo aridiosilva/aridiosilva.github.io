@@ -23,9 +23,9 @@ The primary research themes are Agentic AI, multi-agent systems, AI security, Ze
 
 ## Featured publication
 
-- [When AI Hallucination Becomes Action — publication page](https://aridiosilva.com/publications/when-ai-hallucination-becomes-action/): Abstract, citation metadata, and links for SGAEIA Research Series Article 13.
-- [When AI Hallucination Becomes Action — Zenodo](https://doi.org/10.5281/zenodo.22946209): Citable Version 1.0 archival record, published on 24 September 2026.
-- [When AI Hallucination Becomes Action — Medium](https://medium.com/@aridiosilva/when-ai-hallucination-becomes-action-f04cc100b76a): Web-reading edition of the article.
+- [AI's Alien Mind — publication page](https://aridiosilva.com/publications/ais-alien-mind/): Abstract, citation metadata, and links for SGAEIA Research Series Article 14.
+- [AI's Alien Mind — Zenodo](https://doi.org/10.5281/zenodo.22964672): Citable Version 1.0 archival record, published on 25 September 2026.
+- [AI's Alien Mind — Medium](https://medium.com/@aridiosilva/ais-alien-mind-0c228fc0d320): Web-reading edition of the article.
 
 ## SGAEIA resources
 
