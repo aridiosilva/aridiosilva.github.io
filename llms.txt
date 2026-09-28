@@ -23,6 +23,14 @@ The primary research themes are Agentic AI, multi-agent systems, AI security, Ze
 
 ## Featured publication
 
+- [When AI Agents Form Societies — publication page](https://aridiosilva.com/publications/when-ai-agents-form-societies/): Abstract, citation metadata, and links for SGAEIA Research Series Article 15.
+- [When AI Agents Form Societies — Zenodo](https://zenodo.org/records/23022525): Citable Version 1.0 archival record, published on 28 September 2026. DOI: 10.5281/zenodo.23022525.
+- [When AI Agents Form Societies — Medium](https://medium.com/@aridiosilva/when-ai-agents-form-societies-448a8d06d411): English web-reading edition of SGAEIA Research Series Article 15.
+- [Aridio Silva — ORCID](https://orcid.org/0009-0008-2411-6995): Author identity and works record.
+- [Aridio Silva — Google Scholar](https://scholar.google.com/citations?user=rPn5O48AAAAJ): Author publication and citation profile.
+- [Aridio Silva — OpenAIRE](https://explore.openaire.eu/search/find?fv0=Aridio%20Silva&f0=q): Author research profile and works discovery.
+- [Aridio Silva — Kaggle](https://www.kaggle.com/aridiosilva2): Author data-science and research profile.
+- [SGAEIA Research Artifact](https://doi.org/10.5281/zenodo.22557796): Persistent DOI for the SGAEIA reference artifact.
 - [AI's Alien Mind — publication page](https://aridiosilva.com/publications/ais-alien-mind/): Abstract, citation metadata, and links for SGAEIA Research Series Article 14.
 - [AI's Alien Mind — Zenodo](https://doi.org/10.5281/zenodo.22964672): Citable Version 1.0 archival record, published on 25 September 2026.
 - [AI's Alien Mind — Medium](https://medium.com/@aridiosilva/ais-alien-mind-0c228fc0d320): Web-reading edition of the article.
