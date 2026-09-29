@@ -23,6 +23,9 @@ The primary research themes are Agentic AI, multi-agent systems, AI security, Ze
 
 ## Featured publication
 
+- [When AI Improves AI — publication page](https://aridiosilva.com/publications/when-ai-improves-ai/): Abstract, citation metadata, and links for SGAEIA Research Series Article 16.
+- [When AI Improves AI — Zenodo](https://zenodo.org/records/23045620): Citable Version 1.0 archival record, published on 29 September 2026. DOI: 10.5281/zenodo.23045620.
+- [When AI Improves AI — Medium](https://medium.com/@aridiosilva/when-ai-improves-ai-governing-recursive-intelligence-acceleration-6eb951abdbaf): English web-reading edition of SGAEIA Research Series Article 16.
 - [When AI Agents Form Societies — publication page](https://aridiosilva.com/publications/when-ai-agents-form-societies/): Abstract, citation metadata, and links for SGAEIA Research Series Article 15.
 - [When AI Agents Form Societies — Zenodo](https://zenodo.org/records/23022525): Citable Version 1.0 archival record, published on 28 September 2026. DOI: 10.5281/zenodo.23022525.
 - [When AI Agents Form Societies — Medium](https://medium.com/@aridiosilva/when-ai-agents-form-societies-448a8d06d411): English web-reading edition of SGAEIA Research Series Article 15.
