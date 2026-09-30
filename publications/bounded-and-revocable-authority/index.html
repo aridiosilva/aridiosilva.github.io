@@ -46,7 +46,7 @@
 <p>This leads to the first SGAEIA principle:</p>
 <blockquote><p><strong>SGAEIA Principle 1 — Capability MUST NOT imply authority.</strong></p></blockquote>
 <p>A governed agentic system must distinguish between the actions technically available to an agent and the subset legitimately authorized within the current execution context.</p>
-<figure><img src="assets/sgaeia-article2-figure1-capability-vs-authority.png" alt="Figure 1 - Capability Is Not Authority."><figcaption>Figure 1 - Capability Is Not Authority.</figcaption></figure>
+<figure><img src="assets/sgaeia-article2-figure1-capability-vs-authority.png" alt="Figure 1 - Capability Is Not Authority."></figure>
 <blockquote><p><strong>Figure 1 — Capability Is Not Authority.</strong> <em>Technical capability represents what an agent can do; bounded authority defines the subset of actions the agent is legitimately permitted to perform.</em></p></blockquote>
 <h3>2. Why Traditional Authorization Is Not Enough</h3>
 <p>Traditional Identity and Access Management systems were largely designed around human users, applications, services, and comparatively stable roles.</p>
@@ -100,7 +100,7 @@
 <p>into a substantially more precise statement:</p>
 <blockquote><p>“Agent A may execute Action Y against Resource Z, within Scope S, under Context C, until Time T, and may delegate only subset D under defined constraints.”</p></blockquote>
 <p>That difference is the essence of <strong>bounded authority</strong>.</p>
-<figure><img src="assets/sgaeia-article2-figure2-anatomy-bounded-authority.png" alt="Figure 2 - The Anatomy of Bounded Agent Authority."><figcaption>Figure 2 - The Anatomy of Bounded Agent Authority.</figcaption></figure>
+<figure><img src="assets/sgaeia-article2-figure2-anatomy-bounded-authority.png" alt="Figure 2 - The Anatomy of Bounded Agent Authority."></figure>
 <blockquote><p><strong>Figure 2 — The Anatomy of Bounded Agent Authority.</strong> <em>SGAEIA models authority as a multidimensional construct jointly constrained by identity, scope, resource, action, context, time, and delegation constraints.</em></p></blockquote>
 <h3>4. Authority Must Be Contextual and Time-Bounded</h3>
 <p>An authorization decision valid yesterday may not be valid now.</p>
@@ -138,7 +138,7 @@
 <p>If Agent A has authorization valid for ten minutes, a dependent Agent B should not receive a derived grant valid for a day.</p>
 <p>If Agent A cannot export data, delegation should not become a path for Agent B to bypass that restriction.</p>
 <p>Delegation must preserve the boundaries from which the delegated authority derives.</p>
-<figure><img src="assets/sgaeia-article2-figure3-delegation-narrowing.png" alt="Figure 3 - Authority Must Narrow Through Delegation."><figcaption>Figure 3 - Authority Must Narrow Through Delegation.</figcaption></figure>
+<figure><img src="assets/sgaeia-article2-figure3-delegation-narrowing.png" alt="Figure 3 - Authority Must Narrow Through Delegation."></figure>
 <blockquote><p><strong>Figure 3 — Authority Must Narrow Through Delegation.</strong> <em>Each downstream grant must remain equal to or narrower than the effective authority from which it derives. In SGAEIA, delegation must not amplify authority.</em></p></blockquote>
 <h3>6. The Authority Amplification Problem</h3>
 <p>Authority may also expand through <strong>composition</strong>.</p>
@@ -209,7 +209,7 @@
 <p>This lifecycle transforms authorization from a one-time gateway decision into a <strong>continuously governable security process</strong>.</p>
 <p>The model is a SGAEIA architectural construct, but it aligns with the NIST AI Risk Management Framework’s broader treatment of AI risk management as an ongoing process across the AI lifecycle. NIST AI RMF 1.0 defines the GOVERN, MAP, MEASURE, and MANAGE functions as the core of its risk-management structure. [7]</p>
 <p>SGAEIA applies this continuous-governance perspective specifically to the operational authority exercised by autonomous agents.</p>
-<figure><img src="assets/sgaeia-article2-figure4-authority-lifecycle-revocation.png" alt="Figure 4 - Authority Lifecycle and Revocation."><figcaption>Figure 4 - Authority Lifecycle and Revocation.</figcaption></figure>
+<figure><img src="assets/sgaeia-article2-figure4-authority-lifecycle-revocation.png" alt="Figure 4 - Authority Lifecycle and Revocation."></figure>
 <blockquote><p><strong>Figure 4 — Authority Lifecycle and Revocation.</strong> <em>SGAEIA treats authorization as a governable runtime lifecycle: Request → Evaluate → Grant → Enforce → Monitor → Re-evaluate → Revoke/Expire. Revocation may propagate through exclusively derived authority.</em></p></blockquote>
 <h3>10. Enforcement Must Be Independent of Agent Intent</h3>
 <p>A crucial architectural consequence follows:</p>
