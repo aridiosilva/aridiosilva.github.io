@@ -129,7 +129,7 @@
 <blockquote><p><strong>Human → Agent 1 → Agent 2 → Agent 3</strong></p></blockquote>
 <p>A secure delegation model should prevent authority from expanding merely because another agent entered the chain.</p>
 <p>SGAEIA therefore proposes the invariant:</p>
-<blockquote><p><strong>Delegation MUST NOT amplify authority.</strong></p></blockquote>
+
 <p>Rather than representing authority as a simple mathematical set, SGAEIA uses a <strong>no-broader-than</strong> relation:</p>
 <blockquote><p><strong>A_delegated ≼ A_delegator</strong></p></blockquote>
 <p>where <strong>≼</strong> means that the delegated authority is <strong>no broader than</strong> the delegator’s effective authority across the governed authority dimensions.</p>
@@ -234,17 +234,17 @@
 <h3>11. Every Exercise of Authority Should Leave Evidence</h3>
 <p>A secure authority model should answer more than whether an operation succeeded.</p>
 <p>It should be possible to reconstruct:</p>
-<p><strong>Who acted?</strong></p>
-<p><strong>On whose behalf?</strong></p>
-<p><strong>Under which authority?</strong></p>
-<p><strong>Against which resource?</strong></p>
-<p><strong>Which action was performed?</strong></p>
-<p><strong>Which policy authorized it?</strong></p>
-<p><strong>What was the runtime context?</strong></p>
-<p><strong>Was authority delegated?</strong></p>
-<p><strong>From whom?</strong></p>
-<p><strong>What evidence demonstrates that the action remained within its authorized boundary?</strong></p>
-<p>This connects bounded authority directly to another SGAEIA concept:</p>
+
+
+
+
+
+
+
+
+
+
+<ul class="evidence-questions"><li><strong>Who acted?</strong></li><li><strong>On whose behalf?</strong></li><li><strong>Under which authority?</strong></li><li><strong>Against which resource?</strong></li><li><strong>Which action was performed?</strong></li><li><strong>Which policy authorized it?</strong></li><li><strong>What was the runtime context?</strong></li><li><strong>Was authority delegated?</strong></li><li><strong>From whom?</strong></li><li><strong>What evidence demonstrates that the action remained within its authorized boundary?</strong></li></ul><p>This connects bounded authority directly to another SGAEIA concept:</p>
 <blockquote><p><strong>Evidence-as-Code.</strong> [3]</p></blockquote>
 <p>A governed runtime should produce machine-verifiable evidence associated with security-relevant actions rather than relying only on retrospective explanations.</p>
 <p>Recent agent-security guidance recommends end-to-end auditability sufficient to reconstruct what happened, under which identity and effective permissions, against which resources, and with what downstream effects. [4]</p>
@@ -268,18 +268,18 @@
 <h3>13. Security Invariants for Agent Authority</h3>
 <p>The concepts developed above can be summarized as a set of architectural propositions and invariants.</p>
 <p>Within SGAEIA, a governed autonomous agent should satisfy the following properties:</p>
-<blockquote><p><strong>Capability MUST NOT imply authority.</strong></p></blockquote>
-<blockquote><p><strong>Authority MUST have explicit boundaries.</strong></p></blockquote>
+
+
 <blockquote><p><strong>Delegation MUST NOT amplify authority.</strong></p></blockquote>
-<blockquote><p><strong>Delegated authority MUST be no broader than the authority from which it derives.</strong></p></blockquote>
-<blockquote><p><strong>Authority SHOULD be contextual and time-bounded.</strong></p></blockquote>
-<blockquote><p><strong>Effective authority SHOULD be evaluated compositionally across action chains.</strong></p></blockquote>
-<blockquote><p><strong>Authority boundaries MUST be externally enforceable.</strong></p></blockquote>
-<blockquote><p><strong>Authority SHOULD be revocable.</strong></p></blockquote>
-<blockquote><p><strong>Revocation SHOULD propagate through exclusively derived authority.</strong></p></blockquote>
-<blockquote><p><strong>Authority provenance SHOULD remain traceable.</strong></p></blockquote>
-<blockquote><p><strong>Security-relevant exercises of authority SHOULD produce verifiable evidence.</strong></p></blockquote>
-<p>These are <strong>SGAEIA architectural propositions</strong>, not quotations from the referenced standards or papers.</p>
+
+
+
+
+
+
+
+
+<ul class="invariants"><li><strong>Capability MUST NOT imply authority.</strong></li><li><strong>Authority MUST have explicit boundaries.</strong></li><li><strong>Delegation MUST NOT amplify authority.</strong></li><li><strong>Delegated authority MUST be no broader than the authority from which it derives.</strong></li><li><strong>Authority SHOULD be contextual and time-bounded.</strong></li><li><strong>Effective authority SHOULD be evaluated compositionally across action chains.</strong></li><li><strong>Authority boundaries MUST be externally enforceable.</strong></li><li><strong>Authority SHOULD be revocable.</strong></li><li><strong>Revocation SHOULD propagate through exclusively derived authority.</strong></li><li><strong>Authority provenance SHOULD remain traceable.</strong></li><li><strong>Security-relevant exercises of authority SHOULD produce verifiable evidence.</strong></li></ul><p>These are <strong>SGAEIA architectural propositions</strong>, not quotations from the referenced standards or papers.</p>
 <p>They synthesize established security principles—least privilege, Zero Trust, authenticated delegation, runtime enforcement, auditability, and continuous risk management—into a model intended specifically for autonomous distributed multi-agent systems. [1], [3], [5], [6], [7]</p>
 <h3>14. From Bounded Authority to Authenticated Delegation</h3>
 <p>Bounding authority solves only part of the problem.</p>
