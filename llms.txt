@@ -49,3 +49,5 @@ The primary research themes are Agentic AI, multi-agent systems, AI security, Ze
 ## Optional
 
 - [All Zenodo records by Aridio Silva](https://zenodo.org/search?q=metadata.creators.person_or_org.name%3A%22Silva%2C%20Aridio%22): Search view of public records by the author.
+
+- Why Autonomous AI Agents Need Bounded and Revocable Authority: https://aridiosilva.com/publications/bounded-and-revocable-authority/ | DOI: https://doi.org/10.5281/zenodo.22715664
