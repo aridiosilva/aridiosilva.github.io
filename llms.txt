@@ -23,6 +23,9 @@ The primary research themes are Agentic AI, multi-agent systems, AI security, Ze
 
 ## Featured publication
 
+- [From Edge AI to Governed Autonomous Edge Intelligence — full publication page](https://aridiosilva.com/publications/from-edge-ai-to-governed-autonomous-edge-intelligence/): Complete English web-reading edition of SGAEIA Research Series Article 1, with citation metadata and archival links.
+- [From Edge AI to Governed Autonomous Edge Intelligence — Zenodo](https://doi.org/10.5281/zenodo.22715250): Persistent archival record and DOI.
+
 - [When AI Improves AI — publication page](https://aridiosilva.com/publications/when-ai-improves-ai/): Abstract, citation metadata, and links for SGAEIA Research Series Article 16.
 - [When AI Improves AI — Zenodo](https://zenodo.org/records/23045620): Citable Version 1.0 archival record, published on 29 September 2026. DOI: 10.5281/zenodo.23045620.
 - [When AI Improves AI — Medium](https://medium.com/@aridiosilva/when-ai-improves-ai-governing-recursive-intelligence-acceleration-6eb951abdbaf): English web-reading edition of SGAEIA Research Series Article 16.
