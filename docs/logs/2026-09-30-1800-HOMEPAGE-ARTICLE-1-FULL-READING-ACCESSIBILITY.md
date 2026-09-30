@@ -69,3 +69,15 @@ The article page now separates the closing material into the requested sections:
 
 **Autonomous AI. Governed by Design. Trusted by Evidence.**
 
+
+## 7. Final correction — Medium reading link and English-only preference
+
+- The Article 1 page remains exclusively in English, including browser speech reading configured for `en-US`.
+- The language selector was removed; font controls, Easy Read, and Listen/Stop remain available.
+- The Medium link is presented only below `Suggested citation`, with visual spacing:
+  - **Full article on Medium:** https://medium.com/@aridiosilva/from-edge-ai-to-governed-autonomous-edge-intelligence-9cbe487d853a
+- The additional Medium button previously shown near the opening action links was removed so the requested placement is unambiguous.
+- The final source was checked with `git diff --check`.
+
+**Last Updated:** 2026-09-30 16:00 BRT
+
