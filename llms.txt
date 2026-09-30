@@ -12,6 +12,7 @@ The primary research themes are Agentic AI, multi-agent systems, AI security, Ze
 ## Publication index
 
 - [Academic publication index](https://aridiosilva.com/publications.html): Individual publication pages with author-written abstracts, dates, DOIs, and archival links.
+- [From Edge AI to Governed Autonomous Edge Intelligence — complete publication](https://aridiosilva.com/publications/from-edge-ai-to-governed-autonomous-edge-intelligence/): Complete English article, figures, PDF, citation metadata, and archival links for SGAEIA Research Series Article 1.
 
 ## Research archives and profiles
 
