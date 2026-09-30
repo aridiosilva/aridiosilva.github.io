@@ -2,7 +2,11 @@
 
 **Projeto:** SGAEIA — Secure Governed Autonomous Edge Intelligence Architecture  
 **Data:** 2026-09-30 · **Timezone:** America/Sao_Paulo  
-**Escopo:** processar somente um artigo público por execução manual.
+**Escopo:** processar somente um artigo público por execução manual, aplicando este padrão aos 16 artigos da série, conforme cada um seja incluído.
+
+## Preferência editorial permanente
+
+Esta regra vale para o Artigo 1 e para os 15 artigos restantes que venham a ser incluídos: a página integral e a leitura em voz alta devem permanecer exclusivamente em inglês. Não incluir seletor multilíngue nem traduções automáticas. Cada artigo deve manter A−, A+, Easy read e Listen/Stop, com a leitura configurada para `en-US`.
 
 ## Objetivo
 
@@ -75,6 +79,8 @@ Depois do push, limpar o cache e testar idioma, fonte, Easy Read, leitura em voz
 ---
 
 **Autonomous AI. Governed by Design. Trusted by Evidence.**
+
+
 
 
 
