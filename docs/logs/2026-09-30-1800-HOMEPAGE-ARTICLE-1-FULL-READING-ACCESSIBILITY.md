@@ -33,7 +33,7 @@ This version replaces the Article 1 abstract-only publication page with a comple
 - Images resize dynamically to the available device width while preserving aspect ratio.
 - Images align with the left edge of the article text.
 - The article title follows the homepage editorial serif typography pattern.
-- The reading toolbar provides EN, PT, FR, ES, and DE controls, with EN as the default.
+- The reading toolbar provides English-only reading controls; EN is the only supported article language.
 - Font decrease/increase controls and Easy Read mode are available to visitors.
 - Browser speech synthesis can read the displayed article content using the selected language code.
 - Accessibility behavior is implemented in external local assets so the page Content Security Policy is not weakened with `unsafe-inline`.
@@ -68,3 +68,4 @@ The article page now separates the closing material into the requested sections:
 ---
 
 **Autonomous AI. Governed by Design. Trusted by Evidence.**
+
