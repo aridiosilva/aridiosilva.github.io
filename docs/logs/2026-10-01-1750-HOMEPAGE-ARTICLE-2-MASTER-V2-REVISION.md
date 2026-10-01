@@ -17,3 +17,9 @@
 - **Remaining limitation:** Visual browser review and external deployment verification remain pending.
 
 © 2026 Aridio Silva | Project SGAEIA | CC BY 4.0
+
+- **Follow-up correction:** After owner review, removed a duplicated ORCID label/identifier from the article author block. The block now presents the author, affiliation, SGAEIA creator role, and one linked ORCID. HTML nesting and the author-block check passed.
+
+- **Author-block formatting follow-up:** Matched the owner-provided reference layout: name, affiliation, creator line with spaced em dash, and one ORCID on separate lines. The displayed ORCID uses the master’s en-dash grouping; its link resolves to the canonical hyphenated ORCID URL.
+
+- **Figure-caption formatting follow-up:** For Figures 1–4, merged each descriptive master caption and visible CC BY attribution into one `figcaption` below its image. Removed the duplicated standalone caption paragraph. The cover image caption remains unchanged.
