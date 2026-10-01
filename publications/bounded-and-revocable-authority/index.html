@@ -7,335 +7,183 @@
 <link rel="sitemap" type="application/xml" href="/sitemap.xml"><link rel="describedby" href="/llms.txt" type="text/markdown"><link rel="stylesheet" href="/assets/publications.css"><link rel="stylesheet" href="/assets/analytics-consent.css"><link rel="stylesheet" href="/assets/article-accessibility.css"><script defer src="/assets/article-accessibility.js"></script>
 <style>.article{width:min(calc(100% - 40px),820px);margin-inline:auto}.article h1{font-family:"Source Serif 4",Georgia,serif;font-size:clamp(2.65rem,5.2vw,4.7rem);line-height:.99;letter-spacing:-.035em;font-weight:600;max-width:19ch}.article-body{min-width:0;overflow-wrap:anywhere}.article-body p{font-size:clamp(1rem,1.4vw,1.08rem);line-height:1.82}.article-body h2{margin-top:2.4rem}.article-body figure{width:100%;max-width:100%;margin:2rem 0;text-align:left;overflow:hidden}.article-body figure img{display:block;width:100%;max-width:100%;height:auto;object-fit:contain;margin-left:0}.article-body .references p{margin:0 0 1.15rem}.article-body figcaption,.caption{color:#665f55;font-size:.92rem;font-style:italic}@media (max-width:720px){.article{width:min(calc(100% - 28px),820px)}.article-body p{line-height:1.72}}</style></head>
 <body><a class="skip" href="#main">Skip to main content</a><header class="site-header"><div class="shell header-inner"><a class="identity" href="/">Aridio Silva</a><nav aria-label="Primary navigation"><a href="/">Home</a><a href="/sgaeia">SGAEIA</a><a href="/publications.html">Publications</a></nav><div class="reading-tools" role="group" aria-label="Reading and language controls"><button type="button" id="articleFontDecrease" aria-label="Decrease text size">A-</button><button type="button" id="articleFontIncrease" aria-label="Increase text size">A+</button><button type="button" id="articleEasyRead" aria-pressed="false">Easy read</button><button type="button" id="articleListen" aria-pressed="false">Listen</button></div></div></header>
-<main id="main"><section class="hero"><div class="shell article"><p class="eyebrow">SGAEIA Research Series - Article 2</p><h1>Why Autonomous AI Agents Need Bounded and Revocable Authority</h1><p class="subtitle">Why trustworthy Agentic AI requires explicit, enforceable, time-bounded, and revocable permission to act</p><p class="author">Aridio Silva<br>Independent Researcher, Brazil · Creator of SGAEIA</p><p class="meta">Published <time datetime="2026-09-10">2026-09-10</time> · English · DOI <a href="https://doi.org/10.5281/zenodo.22715664">10.5281/zenodo.22715664</a></p></div></section><section class="content"><article class="shell article article-body"><h2>Abstract</h2><p class="abstract">This article develops bounded and revocable authority as a foundational security property for autonomous AI systems. It distinguishes technical capability from legitimate authority and argues that authority must be explicit, scoped, contextual, time-bounded, externally enforceable, traceable, and revocable across delegation chains.</p><p><strong>Keywords:</strong> Agentic AI; autonomous agents; bounded authority; revocation; Zero Trust; authenticated delegation; AI governance; SGAEIA.</p><div class="links"><a class="button primary" href="https://doi.org/10.5281/zenodo.22715664" rel="noopener">Archival record on Zenodo</a></div><h2>SGAEIA Research Series — Article 2</h2>
-<h2>Why Autonomous AI Agents Need Bounded and Revocable Authority</h2>
-<h4><em>Why trustworthy Agentic AI requires explicit, enforceable, time-bounded, and revocable permission to act</em></h4>
-<p><strong>Aridio Silva</strong></p>
-<p>Independent Researcher, Brazil Creator of SGAEIA — Secure Governed Autonomous Edge Intelligence Architecture</p>
-<figure><img src="assets/sgaeia-article2-cover.png" alt="Cover image: bounded authority constrains what an autonomous AI agent may legitimately do."><figcaption>Cover image: bounded authority constrains what an autonomous AI agent may legitimately do.</figcaption></figure>
-<blockquote><p><em>Bounded authority constrains what an autonomous AI agent may legitimately do across identity, scope, resources, actions, context, time, and delegation.</em></p></blockquote>
-<h3>Introduction — Autonomy Changes the Meaning of Access</h3>
-<p>For decades, access control has been built around a relatively stable question:</p>
-<p><strong>Who is allowed to access what?</strong></p>
-<p>Autonomous AI agents make that question insufficient.</p>
-<p>Modern agentic systems can plan, invoke tools, chain actions across systems, access data, execute workflows, delegate subtasks, and operate with less direct human intervention than traditional software components. These characteristics create new authorization, accountability, and access-control challenges, particularly when agents act on behalf of users or other agents. [1], [2]</p>
-<p>As autonomy increases, security is no longer only about preventing unauthorized access to information.</p>
-<p>It is also about controlling the <strong>authority to act</strong>.</p>
-<p>An authenticated agent may have a valid identity. A properly authenticated request may originate from a legitimate system component.</p>
-<p>Neither fact alone establishes that the agent should be permitted to perform a specific action against a specific resource at a specific time.</p>
-<p>The security question therefore changes from:</p>
-<blockquote><p><strong>Who is this agent?</strong></p></blockquote>
-<p>to:</p>
-<blockquote><p><strong>What is this agent legitimately authorized to do, on whose behalf, under which conditions, for how long, and how can that authority be withdrawn?</strong></p></blockquote>
-<p>This article develops <strong>bounded and revocable authority</strong> as a foundational security property for autonomous AI systems and as a core architectural principle of <strong>SGAEIA — Secure Governed Autonomous Edge Intelligence Architecture</strong>. [3]</p>
-<p>The central argument is straightforward:</p>
-<blockquote><p><strong>Autonomy without bounded authority can transform useful capability into uncontrolled privilege.</strong></p></blockquote>
-<h3>1. Capability Is Not Authority</h3>
-<p>An AI agent may technically be capable of performing many actions.</p>
-<p>It may be able to query databases, read documents, call APIs, send messages, modify records, create resources, execute code, invoke external services, or delegate work to another agent.</p>
-<p>These are <strong>capabilities</strong>.</p>
-<p>Authority is different.</p>
+<main id="main"><section class="hero"><div class="shell article"><p class="eyebrow">SGAEIA Research Series - Article 2</p><h1>Why Autonomous AI Agents Need Bounded and Revocable Authority</h1><p class="subtitle">Why trustworthy Agentic AI requires explicit, enforceable, time-bounded, and revocable permission to act</p><p class="author">Aridio Silva<br>Independent Researcher, Brazil · Creator of SGAEIA</p><p class="meta">Published <time datetime="2026-09-10">2026-09-10</time> · English · DOI <a href="https://doi.org/10.5281/zenodo.22715664">10.5281/zenodo.22715664</a></p></div></section><section class="content"><article class="shell article article-body">
+<figure><img src="assets/sgaeia-article2-cover.png" alt="Cover: bounded authority constrains what an autonomous AI agent may legitimately do across identity, scope, resources, actions, context, time, and delegation." loading="lazy"><figcaption>Cover image — Bounded Authority for Autonomous AI Agents. © 2026 Aridio Silva | Project SGAEIA | CC BY 4.0.</figcaption></figure><h3>Why Autonomous AI Agents Need Bounded and Revocable Authority</h3>
+<h3>Why trustworthy Agentic AI requires explicit, enforceable, time-bounded, and revocable permission to act</h3>
+<p><strong>SGAEIA Research Series—Article 2</strong></p>
+<p><strong>Aridio Silva</strong> Independent Researcher, Brazil · Creator of SGAEIA—Secure Governed Autonomous Edge Intelligence Architecture · ORCID: 0009-0008-2411-6995 <strong>ORCID:</strong> 0009–0008–2411–6995</p>
+<h2>Introduction — Autonomy Changes the Meaning of Access</h2>
+<p>For decades, access control has been built around a relatively stable question: <strong>Who is allowed to access what?</strong> Autonomous AI agents make that question insufficient.</p>
+<p>Modern agentic systems can plan, invoke tools, chain actions across systems, access data, execute workflows, delegate subtasks, and operate with less direct human intervention than traditional software components. These characteristics create new authorization, accountability, and access-control challenges, particularly when agents act on behalf of users or other agents. <strong>[1]</strong>, <strong>[2]</strong> As autonomy increases, security is no longer only about preventing unauthorized access to information.</p>
+<p>It is also about controlling the <strong>authority to act</strong>. An authenticated agent may have a valid identity. A properly authenticated request may originate from a legitimate system component.</p>
+<p>Neither fact alone establishes that the agent should be permitted to perform a specific action against a specific resource at a specific time. The security question therefore changes from <strong>Who is this agent?</strong> to <strong>What is this agent legitimately authorized to do, on whose behalf, under which conditions, for how long, and how can that authority be withdrawn?</strong></p>
+<p>This article develops <strong>bounded and revocable authority</strong> as a foundational security property for autonomous AI systems and as a core architectural principle of <strong>SGAEIA — Secure Governed Autonomous Edge Intelligence Architecture</strong>. <strong>[3]</strong> The central argument is straightforward: <strong>Autonomy without bounded authority can transform useful capability into uncontrolled privilege.</strong></p>
+<h2>1. Capability Is Not Authority</h2>
+<p>An AI agent may technically be capable of performing many actions. It may be able to query databases, read documents, call APIs, send messages, modify records, create resources, execute code, invoke external services, or delegate work to another agent. These are <strong>capabilities</strong>. Authority is different.</p>
 <blockquote><p><strong>Capability describes what an agent can technically do. Authority describes what the agent is legitimately permitted to do.</strong></p></blockquote>
-<p>This distinction is critical because technical capability frequently exceeds the authority that should be granted for a particular task.</p>
-<p>Consider an agent connected to a corporate email system. Its integration may expose operations for reading, sending, deleting, forwarding, labeling, and searching messages.</p>
-<p>A task such as:</p>
-<blockquote><p>“Find the invoices received this week and summarize them.”</p></blockquote>
-<p>does not imply permission to delete messages, forward attachments, modify mailbox configuration, or send new emails.</p>
-<p>Giving an agent access to an API therefore cannot be equivalent to granting unrestricted authority over that API.</p>
-<p>Recent industry security guidance for AI agents similarly recommends dedicated agent identities, task-based least-privilege roles, resource and action scoping, controlled tool access, and end-to-end auditability. Microsoft’s guidance also warns that multiple individually reasonable permissions can combine into broader effective authority when agents operate across several systems. [4]</p>
-<p>This leads to the first SGAEIA principle:</p>
-<blockquote><p><strong>SGAEIA Principle 1 — Capability MUST NOT imply authority.</strong></p></blockquote>
-<p>A governed agentic system must distinguish between the actions technically available to an agent and the subset legitimately authorized within the current execution context.</p>
-<figure><img src="assets/sgaeia-article2-figure1-capability-vs-authority.png" alt="Figure 1 - Capability Is Not Authority."></figure>
-<blockquote><p><strong>Figure 1 — Capability Is Not Authority.</strong> <em>Technical capability represents what an agent can do; bounded authority defines the subset of actions the agent is legitimately permitted to perform.</em></p></blockquote>
-<h3>2. Why Traditional Authorization Is Not Enough</h3>
-<p>Traditional Identity and Access Management systems were largely designed around human users, applications, services, and comparatively stable roles.</p>
-<p>Agentic systems introduce a different operating model.</p>
-<p>An autonomous agent may receive a task from a human, determine a plan dynamically, invoke multiple tools, create intermediate tasks, communicate with other agents, and act across several administrative or infrastructure boundaries.</p>
-<p>The resulting authority path may look like:</p>
+<p>This distinction is critical because technical capability frequently exceeds the authority that should be granted for a particular task. Consider an agent connected to a corporate email system. Its integration may expose operations for reading, sending, deleting, forwarding, labeling, and searching messages. A task such as:</p>
+<blockquote><p>"Find the invoices received this week and summarize them."</p></blockquote>
+<p>does not imply permission to delete messages, forward attachments, modify mailbox configuration, or send new emails. Giving an agent access to an API therefore cannot be equivalent to granting unrestricted authority over that API. Recent industry security guidance for AI agents similarly recommends dedicated agent identities, task-based least-privilege roles, resource and action scoping, controlled tool access, and end-to-end auditability. Microsoft's guidance also warns that multiple individually reasonable permissions can combine into broader effective authority when agents operate across several systems. <strong>[4]</strong></p>
+<p>This leads to the first SGAEIA principle: <strong>SGAEIA Principle 1 — Capability MUST NOT imply authority.</strong> A governed agentic system must distinguish between the actions technically available to an agent and the subset legitimately authorized within the current execution context.</p>
+<figure><img src="assets/sgaeia-article2-figure1-capability-vs-authority.png" alt="Figure 1 — Capability Is Not Authority." loading="lazy"><figcaption>Figure 1 — Capability Is Not Authority. © 2026 Aridio Silva | Project SGAEIA | CC BY 4.0.</figcaption></figure><p><strong>Figure 1 — Capability Is Not Authority.</strong> <em>Technical capability represents what an agent can do; bounded authority defines the subset of actions the agent is legitimately permitted to perform.</em></p>
+<h2>2. Why Traditional Authorization Is Not Enough</h2>
+<p>Traditional Identity and Access Management systems were largely designed around human users, applications, services, and comparatively stable roles. Agentic systems introduce a different operating model. An autonomous agent may receive a task from a human, determine a plan dynamically, invoke multiple tools, create intermediate tasks, communicate with other agents, and act across several administrative or infrastructure boundaries. The resulting authority path may look like:</p>
 <blockquote><p><strong>Human → Agent A → Agent B → Tool → Service → Resource</strong></p></blockquote>
-<p>South et al. identify authorization, accountability, and access control in task delegation as urgent challenges for autonomous AI agents and argue for authenticated and auditable delegation with clear chains of accountability. Their proposed direction extends existing authentication and authorization infrastructure, including OAuth 2.0 and OpenID Connect, toward agent-specific delegation. [1]</p>
-<p>Traditional authorization remains necessary.</p>
-<p>But multi-agent systems introduce additional questions:</p>
-<p>Who originally authorized the operation?</p>
-<p>Which part of that authority was delegated?</p>
-<p>Was the receiving agent allowed to delegate again?</p>
-<p>Did authority become broader during delegation?</p>
-<p>Has the originating grant expired?</p>
-<p>Was it revoked?</p>
-<p>Does the final tool invocation still correspond to the original authorized task?</p>
-<p>Can the complete authority chain be reconstructed afterward?</p>
-<p>These questions suggest that authority in agentic systems should not be modeled merely as a static role attached to an identity.</p>
-<p>It must become a <strong>runtime-governed security object</strong>.</p>
-<h3>3. The Anatomy of Bounded Agent Authority</h3>
+<p>South et al. identify authorization, accountability, and access control in task delegation as urgent challenges for autonomous AI agents and argue for authenticated and auditable delegation with clear chains of accountability. Their proposed direction extends existing authentication and authorization infrastructure, including OAuth 2.0 and OpenID Connect, toward agent-specific delegation. <strong>[1]</strong></p>
+<p>Traditional authorization remains necessary. But multi-agent systems introduce additional questions: Who originally authorized the operation?</p>
+<p>Which part of that authority was delegated? Was the receiving agent allowed to delegate again? Did authority become broader during delegation?</p>
+<p>Has the originating grant expired? Was it revoked? Does the final tool invocation still correspond to the original authorized task?</p>
+<p>Can the complete authority chain be reconstructed afterward? These questions suggest that authority in agentic systems should not be modeled merely as a static role attached to an identity. It must become a <strong>runtime-governed security object</strong>.</p>
+<h2>3. The Anatomy of Bounded Agent Authority</h2>
 <p>SGAEIA represents effective agent authority as a multidimensional construct:</p>
 <blockquote><p><strong>Authority = Identity + Scope + Resource + Action + Context + Time + Delegation Constraints</strong></p></blockquote>
-<p>This expression is conceptual rather than arithmetic. [3]</p>
-<p>A more formal representation is:</p>
+<p>This expression is conceptual rather than arithmetic. <strong>[3]</strong> A more formal representation is:</p>
 <blockquote><p><strong>A = ⟨ I, S, R, X, C, T, D ⟩</strong></p></blockquote>
 <p>where:</p>
 <ul><li><strong>I</strong> = Identity</li><li><strong>S</strong> = Scope</li><li><strong>R</strong> = Resource</li><li><strong>X</strong> = Action</li><li><strong>C</strong> = Context</li><li><strong>T</strong> = Time</li><li><strong>D</strong> = Delegation Constraints</li></ul>
-<h4>Identity</h4>
-<p>Which agent is attempting the action?</p>
-<p>An autonomous agent should have a distinguishable identity so that authorization decisions and evidence can be associated with the actual actor rather than an ambiguous shared credential.</p>
-<h4>Scope</h4>
+<h3>Identity</h3>
+<p>Which agent is attempting the action? An autonomous agent should have a distinguishable identity so that authorization decisions and evidence can be associated with the actual actor rather than an ambiguous shared credential.</p>
+<h3>Scope</h3>
 <p>For which task, workflow, tenant, domain, or operational purpose was authority granted?</p>
-<h4>Resource</h4>
-<p>Which resources may the agent affect?</p>
-<p>Permission to access one repository should not silently become authority over every repository reachable through the same integration.</p>
-<h4>Action</h4>
-<p>Which operations are permitted?</p>
-<p>Read, write, execute, delete, export, approve, deploy, transfer, and delegate are materially different authorities.</p>
-<h4>Context</h4>
-<p>Under which runtime conditions is the authorization valid?</p>
-<p>Context may include workflow state, environment, security posture, risk level, data classification, transaction value, location, or other policy-relevant information.</p>
-<h4>Time</h4>
-<p>When does authority begin, and when does it expire?</p>
-<p>Temporary tasks should not automatically create permanent privilege.</p>
-<h4>Delegation Constraints</h4>
-<p>May the agent transfer any portion of its authority?</p>
-<p>If so, to whom, which subset, for how long, and with what right to delegate further?</p>
-<p>These dimensions transform a broad statement such as:</p>
-<blockquote><p>“Agent A has access to System X”</p></blockquote>
+<h3>Resource</h3>
+<p>Which resources may the agent affect? Permission to access one repository should not silently become authority over every repository reachable through the same integration.</p>
+<h3>Action</h3>
+<p>Which operations are permitted? Read, write, execute, delete, export, approve, deploy, transfer, and delegate are materially different authorities.</p>
+<h3>Context</h3>
+<p>Under which runtime conditions is the authorization valid? Context may include workflow state, environment, security posture, risk level, data classification, transaction value, location, or other policy-relevant information.</p>
+<h3>Time</h3>
+<p>When does authority begin, and when does it expire? Temporary tasks should not automatically create permanent privilege.</p>
+<h3>Delegation Constraints</h3>
+<p>May the agent transfer any portion of its authority? If so, to whom, which subset, for how long, and with what right to delegate further? These dimensions transform a broad statement such as:</p>
+<blockquote><p>"Agent A has access to System X"</p></blockquote>
 <p>into a substantially more precise statement:</p>
-<blockquote><p>“Agent A may execute Action Y against Resource Z, within Scope S, under Context C, until Time T, and may delegate only subset D under defined constraints.”</p></blockquote>
+<blockquote><p>"Agent A may execute Action Y against Resource Z, within Scope S, under Context C, until Time T, and may delegate only subset D under defined constraints."</p></blockquote>
 <p>That difference is the essence of <strong>bounded authority</strong>.</p>
-<figure><img src="assets/sgaeia-article2-figure2-anatomy-bounded-authority.png" alt="Figure 2 - The Anatomy of Bounded Agent Authority."></figure>
-<blockquote><p><strong>Figure 2 — The Anatomy of Bounded Agent Authority.</strong> <em>SGAEIA models authority as a multidimensional construct jointly constrained by identity, scope, resource, action, context, time, and delegation constraints.</em></p></blockquote>
-<h3>4. Authority Must Be Contextual and Time-Bounded</h3>
-<p>An authorization decision valid yesterday may not be valid now.</p>
-<p>Even one granted minutes earlier may cease to be appropriate when operational context changes.</p>
-<p>NIST Zero Trust Architecture rejects implicit trust based solely on physical or network location or asset ownership. It treats authentication and authorization as discrete functions performed before access to enterprise resources is established and shifts protection from network segments toward users, assets, and resources. [5]</p>
-<p>SGAEIA extends this resource-centric and explicitly authorized security posture to the <strong>runtime authority lifecycle of autonomous agents</strong>.</p>
-<p>Consider an infrastructure-management agent authorized to remediate a specific service failure.</p>
-<p>The agent may legitimately receive temporary write authority for the affected service.</p>
-<p>It does not follow that it should retain that privilege after remediation is complete.</p>
-<p>Likewise, a financial agent authorized to prepare a transaction should not automatically receive authority to approve or execute it.</p>
-<p>A temporary task should normally imply <strong>temporary authority</strong>.</p>
-<p>Recent AI-agent least-privilege guidance recommends time-limited entitlements, just-in-time elevation, narrowly scoped roles, controlled tool access, and re-checking authorization in downstream systems. [4]</p>
-<p>This leads to the second SGAEIA principle:</p>
-<blockquote><p><strong>SGAEIA Principle 2 — Authority SHOULD be scoped to the smallest practical combination of task, resource, action, context, and time.</strong></p></blockquote>
-<p>For autonomous systems, least privilege therefore becomes more than a count of permissions.</p>
-<p>It becomes <strong>least authority for the current purpose</strong>.</p>
-<h3>5. Delegation Must Not Amplify Authority</h3>
-<p>Multi-agent systems make authorization considerably more complex because authority can propagate.</p>
-<p>Suppose a human grants authority <strong>A₀</strong> to Agent 1.</p>
-<p>Agent 1 delegates part of its task to Agent 2.</p>
-<p>Agent 2 delegates a specialized operation to Agent 3.</p>
-<p>Conceptually:</p>
+<figure><img src="assets/sgaeia-article2-figure2-anatomy-bounded-authority.png" alt="Figure 2 — The Anatomy of Bounded Agent Authority." loading="lazy"><figcaption>Figure 2 — The Anatomy of Bounded Agent Authority. © 2026 Aridio Silva | Project SGAEIA | CC BY 4.0.</figcaption></figure><p><strong>Figure 2 — The Anatomy of Bounded Agent Authority.</strong> <em>SGAEIA models authority as a multidimensional construct jointly constrained by identity, scope, resource, action, context, time, and delegation constraints.</em></p>
+<h2>4. Authority Must Be Contextual and Time-Bounded</h2>
+<p>An authorization decision valid yesterday may not be valid now. Even one granted minutes earlier may cease to be appropriate when operational context changes. NIST Zero Trust Architecture rejects implicit trust based solely on physical or network location or asset ownership. It treats authentication and authorization as discrete functions performed before access to enterprise resources is established and shifts protection from network segments toward users, assets, and resources. <strong>[5]</strong></p>
+<p>SGAEIA extends this resource-centric and explicitly authorized security posture to the <strong>runtime authority lifecycle of autonomous agents</strong>. Consider an infrastructure-management agent authorized to remediate a specific service failure. The agent may legitimately receive temporary write authority for the affected service.</p>
+<p>It does not follow that it should retain that privilege after remediation is complete. Likewise, a financial agent authorized to prepare a transaction should not automatically receive authority to approve or execute it. A temporary task should normally imply <strong>temporary authority</strong>.</p>
+<p>Recent AI-agent least-privilege guidance recommends time-limited entitlements, just-in-time elevation, narrowly scoped roles, controlled tool access, and re-checking authorization in downstream systems. <strong>[4]</strong> This leads to the second SGAEIA principle: <strong>SGAEIA Principle 2 — Authority SHOULD be scoped to the smallest practical combination of task, resource, action, context, and time.</strong> For autonomous systems, least privilege therefore becomes more than a count of permissions. It becomes <strong>least authority for the current purpose</strong>.</p>
+<h2>5. Delegation Must Not Amplify Authority</h2>
+<p>Multi-agent systems make authorization considerably more complex because authority can propagate. Suppose a human grants authority <strong>A₀</strong> to Agent 1. Agent 1 delegates part of its task to Agent 2.</p>
+<p>Agent 2 delegates a specialized operation to Agent 3. Conceptually:</p>
 <blockquote><p><strong>Human → Agent 1 → Agent 2 → Agent 3</strong></p></blockquote>
-<p>A secure delegation model should prevent authority from expanding merely because another agent entered the chain.</p>
-<p>SGAEIA therefore proposes the invariant:</p>
-
-<p>Rather than representing authority as a simple mathematical set, SGAEIA uses a <strong>no-broader-than</strong> relation:</p>
+<p>A secure delegation model should prevent authority from expanding merely because another agent entered the chain. SGAEIA therefore proposes the invariant: <strong>Delegation MUST NOT amplify authority.</strong> Rather than representing authority as a simple mathematical set, SGAEIA uses a <strong>no-broader-than</strong> relation:</p>
 <blockquote><p><strong>A_delegated ≼ A_delegator</strong></p></blockquote>
-<p>where <strong>≼</strong> means that the delegated authority is <strong>no broader than</strong> the delegator’s effective authority across the governed authority dimensions.</p>
-<p>For a delegation chain:</p>
+<p>where <strong>≼</strong> means that the delegated authority is <strong>no broader than</strong> the delegator's effective authority across the governed authority dimensions. For a delegation chain:</p>
 <blockquote><p><strong>A₃ ≼ A₂ ≼ A₁ ≼ A₀</strong></p></blockquote>
-<p>Each downstream delegation may preserve or attenuate authority, but it must not create authority that the delegating principal did not legitimately possess.</p>
-<p>This is consistent with South et al.’s requirement for authenticated, scoped, and accountable delegation, while SGAEIA makes <strong>non-amplification of delegated authority</strong> an explicit architectural invariant. [1], [3]</p>
-<p>If Agent A may only read a customer record, delegating a subtask to Agent B cannot legitimately give Agent B authority to modify it.</p>
-<p>If Agent A has authorization valid for ten minutes, a dependent Agent B should not receive a derived grant valid for a day.</p>
-<p>If Agent A cannot export data, delegation should not become a path for Agent B to bypass that restriction.</p>
-<p>Delegation must preserve the boundaries from which the delegated authority derives.</p>
-<figure><img src="assets/sgaeia-article2-figure3-delegation-narrowing.png" alt="Figure 3 - Authority Must Narrow Through Delegation."></figure>
-<blockquote><p><strong>Figure 3 — Authority Must Narrow Through Delegation.</strong> <em>Each downstream grant must remain equal to or narrower than the effective authority from which it derives. In SGAEIA, delegation must not amplify authority.</em></p></blockquote>
-<h3>6. The Authority Amplification Problem</h3>
-<p>Authority may also expand through <strong>composition</strong>.</p>
-<p>Imagine that an agent independently has:</p>
+<p>Each downstream delegation may preserve or attenuate authority, but it must not create authority that the delegating principal did not legitimately possess. This is consistent with South et al.'s requirement for authenticated, scoped, and accountable delegation, while SGAEIA makes <strong>non-amplification of delegated authority</strong> an explicit architectural invariant. <strong>[1]</strong>, <strong>[3]</strong> If Agent A may only read a customer record, delegating a subtask to Agent B cannot legitimately give Agent B authority to modify it.</p>
+<p>If Agent A has authorization valid for ten minutes, a dependent Agent B should not receive a derived grant valid for a day. If Agent A cannot export data, delegation should not become a path for Agent B to bypass that restriction. Delegation must preserve the boundaries from which the delegated authority derives.</p>
+<figure><img src="assets/sgaeia-article2-figure3-delegation-narrowing.png" alt="Figure 3 — Authority Must Narrow Through Delegation." loading="lazy"><figcaption>Figure 3 — Authority Must Narrow Through Delegation. © 2026 Aridio Silva | Project SGAEIA | CC BY 4.0.</figcaption></figure><p><strong>Figure 3 — Authority Must Narrow Through Delegation.</strong> <em>Each downstream grant must remain equal to or narrower than the effective authority from which it derives. In SGAEIA, delegation must not amplify authority.</em></p>
+<h2>6. The Authority Amplification Problem</h2>
+<p>Authority may also expand through <strong>composition</strong>. Imagine that an agent independently has:</p>
 <ul><li>read access to internal documents,</li><li>access to a data-transformation tool,</li><li>access to an external messaging system.</li></ul>
-<p>Each permission may appear low risk when examined independently.</p>
-<p>Together, they may create the effective capability to retrieve internal information, transform it, and transmit it outside the organization.</p>
-<p>Microsoft’s 2026 agent-security guidance highlights this problem: access across email, files, ticketing, source-code repositories, and other systems can combine into broader effective permissions than teams evaluated at each individual integration. [4]</p>
-<p>OWASP’s <em>Top 10 for Agentic Applications for 2026</em> likewise frames autonomous-agent security around risks arising when agents plan, act, invoke tools, and interact across complex workflows. [8]</p>
-<p>Bounded authority therefore cannot be evaluated exclusively permission by permission.</p>
-<p>The architecture must also reason about the <strong>composition of authority across an executable action chain</strong>.</p>
-<p>This produces another SGAEIA principle:</p>
-<blockquote><p><strong>SGAEIA Principle 3 — Effective authority SHOULD be evaluated across the complete executable action chain, not only at individual permission boundaries.</strong></p></blockquote>
-<p>The security consequence of several individually acceptable actions may be an unacceptable composite action.</p>
-<h3>7. Revocation Is a Runtime Security Requirement</h3>
-<p>Authorization architectures often focus on granting access.</p>
-<p>Autonomous systems require equal attention to <strong>withdrawing authority</strong>.</p>
-<p>Suppose an agent receives legitimate authority to perform a task.</p>
-<p>Ten minutes later:</p>
+<p>Each permission may appear low risk when examined independently. Together, they may create the effective capability to retrieve internal information, transform it, and transmit it outside the organization. Microsoft's 2026 agent-security guidance highlights this problem: access across email, files, ticketing, source-code repositories, and other systems can combine into broader effective permissions than teams evaluated at each individual integration. <strong>[4]</strong></p>
+<p>OWASP's <em>Top 10 for Agentic Applications for 2026</em> likewise frames autonomous-agent security around risks arising when agents plan, act, invoke tools, and interact across complex workflows. <strong>[8]</strong> Bounded authority therefore cannot be evaluated exclusively permission by permission. The architecture must also reason about the <strong>composition of authority across an executable action chain</strong>.</p>
+<p>This produces another SGAEIA principle: <strong>SGAEIA Principle 3 — Effective authority SHOULD be evaluated across the complete executable action chain, not only at individual permission boundaries.</strong> The security consequence of several individually acceptable actions may be an unacceptable composite action.</p>
+<h2>7. Revocation Is a Runtime Security Requirement</h2>
+<p>Authorization architectures often focus on granting access. Autonomous systems require equal attention to <strong>withdrawing authority</strong>. Suppose an agent receives legitimate authority to perform a task. Ten minutes later:</p>
 <ul><li>the user cancels the operation,</li><li>the agent begins behaving anomalously,</li><li>a credential is suspected of compromise,</li><li>the risk classification changes,</li><li>policy changes,</li><li>the delegating principal loses authority,</li><li>the underlying task is complete.</li></ul>
-<p>The original authority should not continue merely because it was valid when issued.</p>
-<p>This produces one of the central propositions of the SGAEIA authority model:</p>
-<blockquote><p><strong>Authority that cannot be revoked is not bounded authority.</strong></p></blockquote>
-<p>Revocation is therefore not merely an administrative cleanup mechanism.</p>
-<p>It is a <strong>runtime security requirement</strong>.</p>
-<p>Recent agent-security guidance recommends lifecycle management from the outset, including credential rotation, suspension and decommissioning procedures, fast shutdown mechanisms, expiry mechanisms, downstream authorization re-checks, and revocation testing. [4]</p>
-<p>The OWASP Agent Control Standard similarly states that agents should be inspectable, traceable, and instrumentable, with mechanisms enabling runtime behavioral control and declarative policy enforcement across agent platforms. [6]</p>
-<h3>8. Revocation Must Follow Delegation</h3>
-<p>Revocation becomes harder after authority has propagated.</p>
-<p>Consider:</p>
+<p>The original authority should not continue merely because it was valid when issued. This produces one of the central propositions of the SGAEIA authority model: <strong>Authority that cannot be revoked is not bounded authority.</strong> Revocation is therefore not merely an administrative cleanup mechanism.</p>
+<p>It is a <strong>runtime security requirement</strong>. Recent agent-security guidance recommends lifecycle management from the outset, including credential rotation, suspension and decommissioning procedures, fast shutdown mechanisms, expiry mechanisms, downstream authorization re-checks, and revocation testing. <strong>[4]</strong> The OWASP Agent Control Standard similarly states that agents should be inspectable, traceable, and instrumentable, with mechanisms enabling runtime behavioral control and declarative policy enforcement across agent platforms. <strong>[6]</strong></p>
+<h2>8. Revocation Must Follow Delegation</h2>
+<p>Revocation becomes harder after authority has propagated. Consider:</p>
 <blockquote><p><strong>Human → Agent A → Agent B → Agent C</strong></p></blockquote>
-<p>Suppose Agent A’s authority is revoked.</p>
-<p>What happens to Agent B?</p>
-<p>What happens to Agent C?</p>
-<p>If their authority was derived exclusively from Agent A, allowing those grants to survive could defeat the purpose of revocation.</p>
-<p>SGAEIA therefore proposes:</p>
-<blockquote><p><strong>SGAEIA Principle 4 — Revocation SHOULD propagate across authority derived exclusively from the revoked grant.</strong></p></blockquote>
-<p>If:</p>
+<p>Suppose Agent A's authority is revoked. What happens to Agent B? What happens to Agent C?</p>
+<p>If their authority was derived exclusively from Agent A, allowing those grants to survive could defeat the purpose of revocation. SGAEIA therefore proposes: <strong>SGAEIA Principle 4 — Revocation SHOULD propagate across authority derived exclusively from the revoked grant.</strong> If:</p>
 <blockquote><p><strong>A_B ≼ A_A</strong></p></blockquote>
 <p>and:</p>
 <blockquote><p><strong>A_C ≼ A_B</strong></p></blockquote>
-<p>then invalidating the root authority from which those dependent grants derive should invalidate the dependent chain, subject to explicitly modeled independent grants.</p>
-<p>This qualification matters.</p>
-<p>An agent may possess authority from multiple legitimate sources.</p>
-<p>Revoking one delegation should not necessarily invalidate a separate, independently authorized grant.</p>
-<p>The architecture must therefore know <strong>where authority came from</strong>.</p>
-<p>That makes <strong>authority provenance</strong> a first-class security requirement.</p>
-<p>Authenticated delegation research emphasizes the importance of clear accountability chains and traceable delegation relationships. [1]</p>
-<h3>9. From Access Control to Authority Lifecycle Management</h3>
+<p>then invalidating the root authority from which those dependent grants derive should invalidate the dependent chain, subject to explicitly modeled independent grants. This qualification matters. An agent may possess authority from multiple legitimate sources.</p>
+<p>Revoking one delegation should not necessarily invalidate a separate, independently authorized grant. The architecture must therefore know <strong>where authority came from</strong>. That makes <strong>authority provenance</strong> a first-class security requirement. Authenticated delegation research emphasizes the importance of clear accountability chains and traceable delegation relationships. <strong>[1]</strong></p>
+<h2>9. From Access Control to Authority Lifecycle Management</h2>
 <p>A traditional authorization sequence is often represented as:</p>
 <blockquote><p><strong>Request → Authenticate → Authorize → Allow / Deny</strong></p></blockquote>
 <p>For autonomous systems, SGAEIA proposes a richer lifecycle:</p>
 <blockquote><p><strong>Request → Evaluate → Grant → Enforce → Monitor → Re-evaluate → Revoke / Expire</strong></p></blockquote>
-<h4>Request</h4>
-<p>An agent requests authority to perform an operation.</p>
-<h4>Evaluate</h4>
-<p>Policy evaluates identity, scope, resource, action, context, risk, delegation provenance, and other constraints.</p>
-<h4>Grant</h4>
-<p>A bounded authority grant is issued.</p>
-<h4>Enforce</h4>
-<p>The grant is enforced at the relevant policy enforcement point.</p>
-<h4>Monitor</h4>
-<p>Execution and surrounding conditions remain observable.</p>
-<h4>Re-evaluate</h4>
-<p>Material changes in context may trigger a new policy decision.</p>
-<h4>Revoke or Expire</h4>
-<p>Authority terminates explicitly or automatically.</p>
-<p>This lifecycle transforms authorization from a one-time gateway decision into a <strong>continuously governable security process</strong>.</p>
-<p>The model is a SGAEIA architectural construct, but it aligns with the NIST AI Risk Management Framework’s broader treatment of AI risk management as an ongoing process across the AI lifecycle. NIST AI RMF 1.0 defines the GOVERN, MAP, MEASURE, and MANAGE functions as the core of its risk-management structure. [7]</p>
+<ul><li><strong>Request:</strong> An agent requests authority to perform an operation.</li><li><strong>Evaluate:</strong> Policy evaluates identity, scope, resource, action, context, risk, delegation provenance, and other constraints.</li><li><strong>Grant:</strong> A bounded authority grant is issued.</li><li><strong>Enforce:</strong> The grant is enforced at the relevant policy enforcement point.</li><li><strong>Monitor:</strong> Execution and surrounding conditions remain observable.</li><li><strong>Re-evaluate:</strong> Material changes in context may trigger a new policy decision.</li><li><strong>Revoke or Expire:</strong> Authority terminates explicitly or automatically.</li></ul>
+<p>This lifecycle transforms authorization from a one-time gateway decision into a <strong>continuously governable security process</strong>. The model is a SGAEIA architectural construct, but it aligns with the NIST AI Risk Management Framework's broader treatment of AI risk management as an ongoing process across the AI lifecycle. NIST AI RMF 1.0 defines the GOVERN, MAP, MEASURE, and MANAGE functions as the core of its risk-management structure. <strong>[7]</strong></p>
 <p>SGAEIA applies this continuous-governance perspective specifically to the operational authority exercised by autonomous agents.</p>
-<figure><img src="assets/sgaeia-article2-figure4-authority-lifecycle-revocation.png" alt="Figure 4 - Authority Lifecycle and Revocation."></figure>
-<blockquote><p><strong>Figure 4 — Authority Lifecycle and Revocation.</strong> <em>SGAEIA treats authorization as a governable runtime lifecycle: Request → Evaluate → Grant → Enforce → Monitor → Re-evaluate → Revoke/Expire. Revocation may propagate through exclusively derived authority.</em></p></blockquote>
-<h3>10. Enforcement Must Be Independent of Agent Intent</h3>
-<p>A crucial architectural consequence follows:</p>
-<blockquote><p><strong>An agent cannot be the ultimate authority over its own authorization boundaries.</strong></p></blockquote>
-<p>Prompt instructions such as:</p>
-<blockquote><p>“Do not delete files.”</p></blockquote>
-<p>or:</p>
-<blockquote><p>“Only access documents related to this task.”</p></blockquote>
-<p>may be useful behavioral constraints.</p>
-<p>They are not equivalent to enforceable authorization controls.</p>
-<p>Prompt-level instructions can be affected by conflicting goals, prompt injection, tool metadata manipulation, workflow drift, or unexpected tool composition.</p>
-<p>Recent industry guidance explicitly warns against relying on prompts or narrative expectations such as “the agent will only do X” in place of hard authorization boundaries. [4]</p>
-<p>OWASP’s Agent Control Standard provides a complementary architectural direction through middleware hooks and declarative policies that can support portable runtime enforcement across agent frameworks. [6]</p>
-<p>This leads to another SGAEIA principle:</p>
-<blockquote><p><strong>SGAEIA Principle 5 — Authority boundaries MUST be externally enforceable and MUST NOT depend solely on the agent’s willingness to obey them.</strong></p></blockquote>
-<p>This is the difference between a behavioral instruction and a security control.</p>
-<h3>11. Every Exercise of Authority Should Leave Evidence</h3>
-<p>A secure authority model should answer more than whether an operation succeeded.</p>
-<p>It should be possible to reconstruct:</p>
-
-
-
-
-
-
-
-
-
-
-<ul class="evidence-questions"><li><strong>Who acted?</strong></li><li><strong>On whose behalf?</strong></li><li><strong>Under which authority?</strong></li><li><strong>Against which resource?</strong></li><li><strong>Which action was performed?</strong></li><li><strong>Which policy authorized it?</strong></li><li><strong>What was the runtime context?</strong></li><li><strong>Was authority delegated?</strong></li><li><strong>From whom?</strong></li><li><strong>What evidence demonstrates that the action remained within its authorized boundary?</strong></li></ul><p>This connects bounded authority directly to another SGAEIA concept:</p>
-<blockquote><p><strong>Evidence-as-Code.</strong> [3]</p></blockquote>
-<p>A governed runtime should produce machine-verifiable evidence associated with security-relevant actions rather than relying only on retrospective explanations.</p>
-<p>Recent agent-security guidance recommends end-to-end auditability sufficient to reconstruct what happened, under which identity and effective permissions, against which resources, and with what downstream effects. [4]</p>
-<p>SGAEIA expresses this as:</p>
-<blockquote><p><strong>SGAEIA Principle 6 — Every security-relevant exercise of agent authority SHOULD produce verifiable evidence sufficient to reconstruct its authorization provenance and execution context.</strong></p></blockquote>
-<p>Auditability therefore becomes an architectural property, not merely an after-the-fact reporting activity.</p>
-<h3>12. Bounded Authority in Distributed Edge Environments</h3>
-<p>The authority problem becomes more difficult at the edge.</p>
-<p>Edge Intelligence and Edge AI move AI computation away from purely centralized cloud or data-center environments and toward network-edge infrastructure and devices. Literature in the field highlights distributed architectures, constrained resources, heterogeneous environments, and operational challenges involved in training and inference near the edge. [9], [10]</p>
-<p>A governed Edge AI environment may therefore involve:</p>
+<figure><img src="assets/sgaeia-article2-figure4-authority-lifecycle-revocation.png" alt="Figure 4 — Authority Lifecycle and Revocation." loading="lazy"><figcaption>Figure 4 — Authority Lifecycle and Revocation. © 2026 Aridio Silva | Project SGAEIA | CC BY 4.0.</figcaption></figure><p><strong>Figure 4 — Authority Lifecycle and Revocation.</strong> <em>SGAEIA treats authorization as a governable runtime lifecycle: Request → Evaluate → Grant → Enforce → Monitor → Re-evaluate → Revoke/Expire. Revocation may propagate through exclusively derived authority.</em></p>
+<h2>10. Enforcement Must Be Independent of Agent Intent</h2>
+<p>A crucial architectural consequence follows: <strong>An agent cannot be the ultimate authority over its own authorization boundaries.</strong> Prompt instructions such as "Do not delete files" or "Only access documents related to this task" may be useful behavioral constraints. They are not equivalent to enforceable authorization controls.</p>
+<p>Prompt-level instructions can be affected by conflicting goals, prompt injection, tool metadata manipulation, workflow drift, or unexpected tool composition. Recent industry guidance explicitly warns against relying on prompts or narrative expectations such as "the agent will only do X" in place of hard authorization boundaries. <strong>[4]</strong> OWASP's Agent Control Standard provides a complementary architectural direction through middleware hooks and declarative policies that can support portable runtime enforcement across agent frameworks. <strong>[6]</strong></p>
+<p>This leads to another SGAEIA principle: <strong>SGAEIA Principle 5 — Authority boundaries MUST be externally enforceable and MUST NOT depend solely on the agent's willingness to obey them.</strong> This is the difference between a behavioral instruction and a security control.</p>
+<h2>11. Every Exercise of Authority Should Leave Evidence</h2>
+<p>A secure authority model should answer more than whether an operation succeeded. It should be possible to reconstruct:</p>
+<ul><li><strong>Who acted?</strong></li></ul>
+<ul><li><strong>On whose behalf?</strong></li></ul>
+<ul><li><strong>Under which authority?</strong></li></ul>
+<ul><li><strong>Against which resource?</strong></li></ul>
+<ul><li><strong>Which action was performed?</strong></li></ul>
+<ul><li><strong>Which policy authorized it?</strong></li></ul>
+<ul><li><strong>What was the runtime context?</strong></li></ul>
+<ul><li><strong>Was authority delegated?</strong></li></ul>
+<ul><li><strong>From whom?</strong></li></ul>
+<ul><li><strong>What evidence demonstrates that the action remained within its authorized boundary?</strong></li></ul>
+<p>This connects bounded authority directly to another SGAEIA concept:</p>
+<blockquote><p><strong>Evidence-as-Code.</strong> <strong>[3]</strong></p></blockquote>
+<p>A governed runtime should produce machine-verifiable evidence associated with security-relevant actions rather than relying only on retrospective explanations. Recent agent-security guidance recommends end-to-end auditability sufficient to reconstruct what happened, under which identity and effective permissions, against which resources, and with what downstream effects. <strong>[4]</strong> SGAEIA expresses this as: <strong>SGAEIA Principle 6 — Every security-relevant exercise of agent authority SHOULD produce verifiable evidence sufficient to reconstruct its authorization provenance and execution context.</strong> Auditability therefore becomes an architectural property, not merely an after-the-fact reporting activity.</p>
+<h2>12. Bounded Authority in Distributed Edge Environments</h2>
+<p>The authority problem becomes more difficult at the edge. Edge Intelligence and Edge AI move AI computation away from purely centralized cloud or data-center environments and toward network-edge infrastructure and devices. Literature in the field highlights distributed architectures, constrained resources, heterogeneous environments, and operational challenges involved in training and inference near the edge. <strong>[9]</strong>, <strong>[10]</strong> A governed Edge AI environment may therefore involve:</p>
 <ul><li>heterogeneous hardware,</li><li>resource-constrained devices,</li><li>multiple administrative domains,</li><li>local execution,</li><li>cloud-edge coordination,</li><li>intermittent or degraded connectivity,</li><li>autonomous agents operating with partial local context.</li></ul>
-<p>Centralized authorization alone may not always be sufficient for every runtime decision.</p>
-<p>An edge agent may need to continue operating when communication with a central governance component is delayed or unavailable.</p>
-<p>This creates a fundamental tension:</p>
-<blockquote><p><strong>How can an agent remain operationally autonomous without becoming independently authoritative?</strong></p></blockquote>
-<p>SGAEIA addresses this by separating <strong>operational autonomy</strong> from <strong>unbounded authority</strong>. [3]</p>
-<p>An agent may continue operating autonomously within a valid authority envelope while remaining unable to expand that envelope merely because central connectivity is unavailable.</p>
-<p>This yields another SGAEIA principle:</p>
-<blockquote><p><strong>SGAEIA Principle 7 — Local autonomy MAY continue within previously valid authority boundaries, but local authority expansion SHOULD require an explicitly authorized mechanism.</strong></p></blockquote>
-<p>The objective is resilience without converting network partitions, edge isolation, or degraded connectivity into implicit security exceptions.</p>
-<h3>13. Security Invariants for Agent Authority</h3>
-<p>The concepts developed above can be summarized as a set of architectural propositions and invariants.</p>
-<p>Within SGAEIA, a governed autonomous agent should satisfy the following properties:</p>
-
-
+<p>Centralized authorization alone may not always be sufficient for every runtime decision. An edge agent may need to continue operating when communication with a central governance component is delayed or unavailable. This creates a fundamental tension: <strong>How can an agent remain operationally autonomous without becoming independently authoritative?</strong></p>
+<p>SGAEIA addresses this by separating <strong>operational autonomy</strong> from <strong>unbounded authority</strong>. <strong>[3]</strong> An agent may continue operating autonomously within a valid authority envelope while remaining unable to expand that envelope merely because central connectivity is unavailable. This yields another SGAEIA principle: <strong>SGAEIA Principle 7 — Local autonomy MAY continue within previously valid authority boundaries, but local authority expansion SHOULD require an explicitly authorized mechanism.</strong> The objective is resilience without converting network partitions, edge isolation, or degraded connectivity into implicit security exceptions.</p>
+<h2>13. Security Invariants for Agent Authority</h2>
+<p>The concepts developed above can be summarized as a set of architectural propositions and invariants. Within SGAEIA, a governed autonomous agent should satisfy the following properties: <strong>Capability MUST NOT imply authority.</strong></p>
+<blockquote><p><strong>Authority MUST have explicit boundaries.</strong></p></blockquote>
 <blockquote><p><strong>Delegation MUST NOT amplify authority.</strong></p></blockquote>
-
-
-
-
-
-
-
-
-<ul class="invariants"><li><strong>Capability MUST NOT imply authority.</strong></li><li><strong>Authority MUST have explicit boundaries.</strong></li><li><strong>Delegation MUST NOT amplify authority.</strong></li><li><strong>Delegated authority MUST be no broader than the authority from which it derives.</strong></li><li><strong>Authority SHOULD be contextual and time-bounded.</strong></li><li><strong>Effective authority SHOULD be evaluated compositionally across action chains.</strong></li><li><strong>Authority boundaries MUST be externally enforceable.</strong></li><li><strong>Authority SHOULD be revocable.</strong></li><li><strong>Revocation SHOULD propagate through exclusively derived authority.</strong></li><li><strong>Authority provenance SHOULD remain traceable.</strong></li><li><strong>Security-relevant exercises of authority SHOULD produce verifiable evidence.</strong></li></ul><p>These are <strong>SGAEIA architectural propositions</strong>, not quotations from the referenced standards or papers.</p>
-<p>They synthesize established security principles—least privilege, Zero Trust, authenticated delegation, runtime enforcement, auditability, and continuous risk management—into a model intended specifically for autonomous distributed multi-agent systems. [1], [3], [5], [6], [7]</p>
-<h3>14. From Bounded Authority to Authenticated Delegation</h3>
-<p>Bounding authority solves only part of the problem.</p>
-<p>Once an agent is allowed to delegate some of its authority to another agent, additional questions emerge.</p>
-<p>How does the receiving agent verify that the delegation is authentic?</p>
-<p>How is the delegating principal identified?</p>
-<p>How is the original human or organizational authority preserved?</p>
-<p>How can a downstream service distinguish direct authority from delegated authority?</p>
-<p>How can an authority chain be represented in a verifiable form?</p>
-<p>How should delegation constraints survive multiple hops?</p>
-<p>These questions move us from <strong>bounded authority</strong> to <strong>authenticated delegation</strong>.</p>
-<p>South et al. argue that authenticated and auditable delegation is a critical component of agent governance and explore how established web authentication and authorization mechanisms can be extended with agent-specific credentials and robust scoping rules. [1]</p>
-<p>That subject deserves separate treatment.</p>
-<p>It will be addressed later in this series in:</p>
+<blockquote><p><strong>Delegated authority MUST be no broader than the authority from which it derives.</strong></p></blockquote>
+<blockquote><p><strong>Authority SHOULD be contextual and time-bounded.</strong></p></blockquote>
+<blockquote><p><strong>Effective authority SHOULD be evaluated compositionally across action chains.</strong></p></blockquote>
+<blockquote><p><strong>Authority boundaries MUST be externally enforceable.</strong></p></blockquote>
+<blockquote><p><strong>Authority SHOULD be revocable.</strong></p></blockquote>
+<blockquote><p><strong>Revocation SHOULD propagate through exclusively derived authority.</strong></p></blockquote>
+<blockquote><p><strong>Authority provenance SHOULD remain traceable.</strong></p></blockquote>
+<blockquote><p><strong>Security-relevant exercises of authority SHOULD produce verifiable evidence.</strong></p></blockquote>
+<p>These are <strong>SGAEIA architectural propositions</strong>, not quotations from the referenced standards or papers. They synthesize established security principles—least privilege, Zero Trust, authenticated delegation, runtime enforcement, auditability, and continuous risk management—into a model intended specifically for autonomous distributed multi-agent systems. <strong>[1]</strong>, <strong>[3]</strong>, <strong>[5]</strong>, <strong>[6]</strong>, <strong>[7]</strong></p>
+<h2>14. From Bounded Authority to Authenticated Delegation</h2>
+<p>Bounding authority solves only part of the problem. Once an agent is allowed to delegate some of its authority to another agent, additional questions emerge. How does the receiving agent verify that the delegation is authentic?</p>
+<p>How is the delegating principal identified? How is the original human or organizational authority preserved? How can a downstream service distinguish direct authority from delegated authority?</p>
+<p>How can an authority chain be represented in a verifiable form? How should delegation constraints survive multiple hops? These questions move us from <strong>bounded authority</strong> to <strong>authenticated delegation</strong>.</p>
+<p>South et al. argue that authenticated and auditable delegation is a critical component of agent governance and explore how established web authentication and authorization mechanisms can be extended with agent-specific credentials and robust scoping rules. <strong>[1]</strong> That subject deserves separate treatment. It will be addressed later in this series in:</p>
 <p><strong>Authenticated Delegation Between Autonomous AI Agents</strong></p>
 <p>Before that, the next article will examine the broader security model within which these authority decisions operate:</p>
 <p><strong>Zero Trust for Multi-Agent AI Systems</strong></p>
 <h2>Conclusion</h2>
-<p>The security of autonomous AI cannot be reduced to determining whether an agent is authenticated.</p>
-<p>Identity answers:</p>
-<blockquote><p><strong>Who is acting?</strong></p></blockquote>
-<p>Authority must additionally answer:</p>
-<blockquote><p><strong>What may this agent do, against which resources, under which conditions, for how long, on whose behalf, and with what right to delegate?</strong></p></blockquote>
-<p>As agents become capable of increasingly consequential operations, the distinction between capability and authority becomes fundamental.</p>
-<p>A trustworthy autonomous system should not rely on the assumption that an agent will voluntarily remain within its intended boundaries.</p>
-<p>Those boundaries must be explicit.</p>
-<p>They must be enforceable.</p>
-<p>They must survive delegation.</p>
-<p>They must be observable.</p>
-<p>And they must be revocable.</p>
-<p>The architectural challenge is therefore not to eliminate autonomy.</p>
-<p>It is to make autonomy <strong>governable</strong>.</p>
+<p>The security of autonomous AI cannot be reduced to determining whether an agent is authenticated. Identity answers: <strong>Who is acting?</strong> Authority must additionally answer: <strong>What may this agent do, against which resources, under which conditions, for how long, on whose behalf, and with what right to delegate?</strong></p>
+<p>As agents become capable of increasingly consequential operations, the distinction between capability and authority becomes fundamental. A trustworthy autonomous system should not rely on the assumption that an agent will voluntarily remain within its intended boundaries. Those boundaries must be explicit.</p>
+<p>They must be enforceable. They must survive delegation. They must be observable.</p>
+<p>And they must be revocable. The architectural challenge is therefore not to eliminate autonomy. It is to make autonomy <strong>governable</strong>.</p>
 <blockquote><p><strong>Autonomous agents need enough authority to act — but never unlimited authority to decide the boundaries of their own authority.</strong></p></blockquote>
-<p>That principle lies at the heart of SGAEIA’s approach to governed autonomous intelligence.</p>
+<p>That principle lies at the heart of SGAEIA's approach to governed autonomous intelligence.</p>
 <p><strong>Autonomous AI. Governed by Design. Trusted by Evidence.</strong></p>
 <h2>References</h2>
-<p><strong>[1]</strong> South, T., Marro, S., Hardjono, T., Mahari, R., Whitney, C. D., Chan, A., &amp; Pentland, A. (2025). <em>Position: AI Agents Need Authenticated Delegation</em>. Proceedings of the 42nd International Conference on Machine Learning, Proceedings of Machine Learning Research, 267, 82211–82231. https://proceedings.mlr.press/v267/south25a.html</p>
-<p><strong>[2]</strong> Chhabra, A., Datta, S., Nahin, S. K., &amp; Mohapatra, P. (2026). <em>Agentic AI Security: Threats, Defenses, Evaluation, and Open Challenges</em>. IEEE Access, 14, 49455–49482. DOI: 10.1109/ACCESS.2026.3675554. https://doi.org/10.1109/ACCESS.2026.3675554</p>
-<p><strong>[3]</strong> <strong>Silva, Aridio. (2026).</strong> <em>SGAEIA — Secure Governed Autonomous Edge Intelligence Architecture</em>. Research Artifact. Zenodo. DOI: 10.5281/zenodo.22557796. https://doi.org/10.5281/zenodo.22557796</p>
-<p><strong>[4]</strong> Yser, Y., &amp; Kohlenberg, T. (2026). <em>Least privilege for AI agents: Identity, access, and tool binding</em>. Microsoft Security Blog, July 16, 2026. https://www.microsoft.com/en-us/security/blog/2026/07/16/least-privilege-for-ai-agents-identity-access-and-tool-binding/</p>
-<p><strong>[5]</strong> Rose, S., Borchert, O., Mitchell, S., &amp; Connelly, S. (2020). <em>Zero Trust Architecture</em>. NIST Special Publication 800-207. DOI: 10.6028/NIST.SP.800-207. https://doi.org/10.6028/NIST.SP.800-207</p>
-<p><strong>[6]</strong> OWASP GenAI Security Project. (2026). <em>Agent Control Standard (ACS)</em>. September 1, 2026. https://genai.owasp.org/resource/agent-control-standard-acs/</p>
-<p><strong>[7]</strong> Tabassi, E. (2023). <em>Artificial Intelligence Risk Management Framework (AI RMF 1.0)</em>. NIST AI 100-1. DOI: 10.6028/NIST.AI.100-1. https://doi.org/10.6028/NIST.AI.100-1</p>
-<p><strong>[8]</strong> OWASP GenAI Security Project. (2025). <em>OWASP Top 10 for Agentic Applications for 2026</em>. December 9, 2025. https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/</p>
-<p><strong>[9]</strong> Zhou, Z., Chen, X., Li, E., Zeng, L., Luo, K., &amp; Zhang, J. (2019). <em>Edge Intelligence: Paving the Last Mile of Artificial Intelligence With Edge Computing</em>. Proceedings of the IEEE, 107(8), 1738–1762. DOI: 10.1109/JPROC.2019.2918951. https://doi.org/10.1109/JPROC.2019.2918951</p>
-<p><strong>[10]</strong> Singh, R., &amp; Gill, S. S. (2023). <em>Edge AI: A survey</em>. Internet of Things and Cyber-Physical Systems, 3, 71–92. DOI: 10.1016/j.iotcps.2023.02.004. https://doi.org/10.1016/j.iotcps.2023.02.004</p>
+<p><strong>[1]</strong> South, T., Marro, S., Hardjono, T., Mahari, R., Whitney, C. D., Chan, A., &amp; Pentland, A. (2025). <em>Position: AI Agents Need Authenticated Delegation</em>. Proceedings of the 42nd International Conference on Machine Learning, Proceedings of Machine Learning Research, 267, 82211--82231. <a href="https://proceedings.mlr.press/v267/south25a.html" rel="noopener">https://proceedings.mlr.press/v267/south25a.html</a></p>
+<p><strong>[2]</strong> Chhabra, A., Datta, S., Nahin, S. K., &amp; Mohapatra, P. (2026). <em>Agentic AI Security: Threats, Defenses, Evaluation, and Open Challenges</em>. IEEE Access, 14, 49455--49482. DOI: 10.1109/ACCESS.2026.3675554. <a href="https://doi.org/10.1109/ACCESS.2026.3675554" rel="noopener">https://doi.org/10.1109/ACCESS.2026.3675554</a></p>
+<p><strong>[3]</strong> <strong>Silva, Aridio. (2026).</strong> <em>SGAEIA — Secure Governed Autonomous Edge Intelligence Architecture</em>. Research Artifact. Zenodo. DOI: 10.5281/zenodo.22557796. <a href="https://doi.org/10.5281/zenodo.22557796" rel="noopener">https://doi.org/10.5281/zenodo.22557796</a></p>
+<p><strong>[4]</strong> Yser, Y., &amp; Kohlenberg, T. (2026). <em>Least privilege for AI agents: Identity, access, and tool binding</em>. Microsoft Security Blog, July 16, 2026. <a href="https://www.microsoft.com/en-us/security/blog/2026/07/16/least-privilege-for-ai-agents-identity-access-and-tool-binding/" rel="noopener">https://www.microsoft.com/en-us/security/blog/2026/07/16/least-privilege-for-ai-agents-identity-access-and-tool-binding/</a></p>
+<p><strong>[5]</strong> Rose, S., Borchert, O., Mitchell, S., &amp; Connelly, S. (2020). <em>Zero Trust Architecture</em>. NIST Special Publication 800-207. DOI: 10.6028/NIST.SP.800-207. <a href="https://doi.org/10.6028/NIST.SP.800-207" rel="noopener">https://doi.org/10.6028/NIST.SP.800-207</a></p>
+<p><strong>[6]</strong> OWASP GenAI Security Project. (2026). <em>Agent Control Standard (ACS)</em>. September 1, 2026. <a href="https://genai.owasp.org/resource/agent-control-standard-acs/" rel="noopener">https://genai.owasp.org/resource/agent-control-standard-acs/</a></p>
+<p><strong>[7]</strong> Tabassi, E. (2023). <em>Artificial Intelligence Risk Management Framework (AI RMF 1.0)</em>. NIST AI 100-1. DOI: 10.6028/NIST.AI.100-1. <a href="https://doi.org/10.6028/NIST.AI.100-1" rel="noopener">https://doi.org/10.6028/NIST.AI.100-1</a></p>
+<p><strong>[8]</strong> OWASP GenAI Security Project. (2025). <em>OWASP Top 10 for Agentic Applications for 2026</em>. December 9, 2025. <a href="https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/" rel="noopener">https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/</a></p>
+<p><strong>[9]</strong> Zhou, Z., Chen, X., Li, E., Zeng, L., Luo, K., &amp; Zhang, J. (2019). <em>Edge Intelligence: Paving the Last Mile of Artificial Intelligence With Edge Computing</em>. Proceedings of the IEEE, 107(8), 1738--1762. DOI: 10.1109/JPROC.2019.2918951. <a href="https://doi.org/10.1109/JPROC.2019.2918951" rel="noopener">https://doi.org/10.1109/JPROC.2019.2918951</a></p>
+<p><strong>[10]</strong> Singh, R., &amp; Gill, S. S. (2023). <em>Edge AI: A survey</em>. Internet of Things and Cyber-Physical Systems, 3, 71--92. DOI: 10.1016/j.iotcps.2023.02.004. <a href="https://doi.org/10.1016/j.iotcps.2023.02.004" rel="noopener">https://doi.org/10.1016/j.iotcps.2023.02.004</a></p>
+<h2>About the Author</h2>
+<p><strong>Aridio Silva</strong> is an independent researcher based in Brazil working on the architecture, security, governance, and trustworthiness of autonomous and distributed artificial intelligence systems.</p>
+<p>His research focuses on <strong>Agentic AI, Multi-Agent Systems, Edge AI, AI Security, Zero Trust, Security-by-Design, AI Governance, Spec-Driven Development, and continuous security assurance</strong>. He is the creator and lead researcher of <strong>SGAEIA — Secure Governed Autonomous Edge Intelligence Architecture</strong>, an open research initiative investigating architectural foundations for secure, governed, auditable, and trustworthy autonomous AI systems operating across distributed edge-cloud environments.</p>
 <h2>Research &amp; Project Resources</h2>
-<p><strong>SGAEIA — Secure Governed Autonomous Edge Intelligence Architecture</strong></p>
-<p>GitHub: https://github.com/aridiosilva/SGAEIA</p>
-<p><strong>Archived Research Artifact — SGAEIA v0.3.4</strong></p>
-<p>https://doi.org/10.5281/zenodo.22557796</p>
-<p><strong>Author</strong></p>
-<p>Aridio Silva ORCID: https://orcid.org/0009-0008-2411-6995</p>
-<h2>SGAEIA Research Series</h2>
-<p><strong>Previous article:</strong></p>
-<p><em>From Edge AI to Governed Autonomous Edge Intelligence</em> <code>[INSERT PERMANENT MEDIUM URL]</code></p>
-<p><strong>Current article:</strong></p>
-<p><em>Why Autonomous AI Agents Need Bounded and Revocable Authority</em></p>
-<p><strong>Next article:</strong></p>
-<p><em>Zero Trust for Multi-Agent AI Systems</em> <em>Forthcoming</em></p>
-<h3>About the Author</h3>
-<p><strong>Aridio Silva</strong> is an independent researcher whose current work focuses on Agentic AI, distributed Multi-Agent Systems, Edge AI, AI Security, Zero Trust, continuous GRC, and trustworthy autonomous systems.</p>
-<p>He is the creator of <strong>SGAEIA — Secure Governed Autonomous Edge Intelligence Architecture</strong>, an open and vendor-neutral reference architecture investigating how autonomous AI agents can operate with bounded authority, authenticated delegation, runtime policy enforcement, continuous assurance, and verifiable security evidence.</p>
-<p><em>Autonomous AI. Governed by Design. Trusted by Evidence.</em></p><h2>License</h2><p>Except where otherwise noted, the text and original conceptual diagrams in this article are licensed under the <a href="https://creativecommons.org/licenses/by/4.0/"><strong>Creative Commons Attribution 4.0 International License (CC BY 4.0)</strong></a>.</p><p>© 2026 Aridio Silva. You may share and adapt this work for any purpose, provided appropriate attribution is given.</p><h2>Series continuity</h2><ol><li><em>From Edge AI to Governed Autonomous Edge Intelligence</em></li><li><strong>Why Autonomous AI Agents Need Bounded and Revocable Authority</strong></li><li><em>Zero Trust for Multi-Agent AI Systems</em></li><li><em>Authenticated Delegation Between Autonomous AI Agents</em></li></ol><h2>Suggested citation</h2><p>Silva, Aridio. (2026). <em>Why Autonomous AI Agents Need Bounded and Revocable Authority</em>. Zenodo. <a href="https://doi.org/10.5281/zenodo.22715664">https://doi.org/10.5281/zenodo.22715664</a></p><p class="medium-full-link"><strong>Full article on Medium:</strong> <a href="https://medium.com/@aridiosilva/why-autonomous-ai-agents-need-bounded-and-revocable-authority-da75656098f7" rel="noopener">Read the full article on Medium</a></p><p class="notice">This open page provides the complete English author manuscript for reading without a Medium membership. Zenodo remains the persistent source for the archival file, version, license, and citation record.</p></article></section></main><footer><div class="shell">© 2026 Aridio Silva · SGAEIA - Secure Governed Autonomous Edge Intelligence Architecture</div></footer></body></html>
+<p><strong>Aridio Silva</strong> — Independent Researcher, Brazil</p>
+<ol><li><strong>ORCID:</strong> <a href="https://orcid.org/0009-0008-2411-6995" rel="noopener">https://orcid.org/0009-0008-2411-6995</a></li><li><strong>Google Scholar:</strong> <a href="https://scholar.google.com/citations?user=rPn5O48AAAAJ" rel="noopener">https://scholar.google.com/citations?user=rPn5O48AAAAJ</a></li><li><strong>Zenodo — SGAEIA Community:</strong> <a href="https://zenodo.org/communities/sgaeia" rel="noopener">https://zenodo.org/communities/sgaeia</a></li><li><strong>OpenAIRE:</strong> <a href="https://explore.openaire.eu/search/find?fv0=Aridio%20Silva\&amp;f0=q" rel="noopener">https://explore.openaire.eu/search/find?fv0=Aridio%20Silva&amp;f0=q</a></li><li><strong>Medium:</strong> <a href="https://medium.com/@aridiosilva" rel="noopener">https://medium.com/@aridiosilva</a></li><li><strong>GitHub:</strong> <a href="https://github.com/aridiosilva" rel="noopener">https://github.com/aridiosilva</a></li><li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/aridio-silva-74997111/" rel="noopener">https://www.linkedin.com/in/aridio-silva-74997111/</a></li><li><strong>SGAEIA Research Artifact / DOI:</strong> <a href="https://doi.org/10.5281/zenodo.22557796" rel="noopener">https://doi.org/10.5281/zenodo.22557796</a></li><li><strong>Homepage:</strong> <a href="https://aridiosilva.com" rel="noopener">https://aridiosilva.com</a></li><li><strong>SGAEIA Homepage:</strong> <a href="https://aridiosilva.com/sgaeia" rel="noopener">https://aridiosilva.com/sgaeia</a></li><li><strong>SGAEIA LinkedIn:</strong> <a href="https://www.linkedin.com/company/sgaeia/" rel="noopener">https://www.linkedin.com/company/sgaeia/</a></li></ol>
+<h2>Figures</h2>
+<p>The cover image is not numbered. Figures 1–4 are numbered sequentially and referenced consistently in this article. All images are original conceptual illustrations prepared for this article. They carry visible attribution and publication metadata identifying Aridio Silva as creator, SGAEIA as the project, and CC BY 4.0 as the license. They remain within the public disclosure boundary by communicating properties and high-level governance relationships without exposing private protocols, algorithms, state machines, policy logic, or reconstruction-enabling implementation details.</p>
+<h2>License</h2>
+<p>Except where otherwise noted, the text and original conceptual illustrations in this article are licensed under the <strong>Creative Commons Attribution 4.0 International License (CC BY 4.0)</strong>. © 2026 Aridio Silva. You may share and adapt this work for any purpose, provided appropriate attribution is given. The SGAEIA software research artifact remains subject to its own <strong>Apache License 2.0</strong>.</p>
+<p><strong>Autonomous AI. Governed by Design. Trusted by Evidence.</strong></p>
+<h2>Series continuity</h2>
+<p>Published/current entries in the <strong>SGAEIA Research Series</strong> include:</p>
+<ol><li><a href="https://medium.com/@aridiosilva/from-edge-ai-to-governed-autonomous-edge-intelligence-9cbe487d853a" rel="noopener"><em>From Edge AI to Governed Autonomous Edge Intelligence</em></a></li><li><a href="https://medium.com/@aridiosilva/why-autonomous-ai-agents-need-bounded-and-revocable-authority-da75656098f7" rel="noopener"><em>Why Autonomous AI Agents Need Bounded and Revocable Authority</em></a></li><li><a href="https://medium.com/@aridiosilva/zero-trust-for-multi-agent-ai-systems-31747c850af4" rel="noopener"><em>Zero Trust for Multi-Agent AI Systems</em></a></li><li><a href="https://medium.com/@aridiosilva/authenticated-delegation-between-autonomous-ai-agents-4c1281cd9e14" rel="noopener"><em>Authenticated Delegation Between Autonomous AI Agents</em></a></li><li><a href="https://medium.com/@aridiosilva/continuous-grc-for-agentic-ai-ada11c2974d0" rel="noopener"><em>Continuous GRC for Agentic AI</em></a></li><li><a href="https://medium.com/@aridiosilva/evidence-as-code-making-ai-governance-verifiable-db89e3105b87" rel="noopener"><em>Evidence-as-Code: Making AI Governance Verifiable</em></a></li><li><a href="https://medium.com/@aridiosilva/security-by-design-for-distributed-agentic-ai-d8a00dfe1acd" rel="noopener"><em>Security-by-Design for Distributed Agentic AI</em></a></li><li><a href="https://medium.com/@aridiosilva/sgaeia-a-reference-architecture-for-secure-governed-autonomous-edge-intelligence-cd5466cbc29c" rel="noopener"><em>SGAEIA: A Reference Architecture for Secure Governed Autonomous Edge Intelligence</em></a></li><li><a href="https://medium.com/@aridiosilva/when-ai-begins-to-build-ai-f762df34afec" rel="noopener"><em>When AI Begins to Build AI</em></a></li><li><a href="https://medium.com/@aridiosilva/rogue-ai-agents-when-autonomous-systems-become-a-collective-75ddaf685938" rel="noopener"><em>Rogue AI Agents: When Autonomous Systems Become a Collective</em></a></li><li><a href="https://medium.com/@aridiosilva/from-model-capability-to-governed-action-an-architecture-for-secure-agentic-ai-de0bf29d0cdc" rel="noopener"><em>From Model Capability to Governed Action: An Architecture for Secure Agentic AI</em></a></li><li><a href="https://medium.com/@aridiosilva/ten-days-that-exposed-the-governance-gap-in-frontier-ai-07fbd2c278d4" rel="noopener"><em>Ten Days That Exposed the Governance Gap in Frontier AI</em></a></li><li><a href="https://medium.com/@aridiosilva/when-ai-hallucination-becomes-action-f04cc100b76a" rel="noopener"><em>When AI Hallucination Becomes Action</em></a></li><li><a href="https://medium.com/@aridiosilva/ais-alien-mind-0c228fc0d320" rel="noopener"><em>AI’s Alien Mind: How to Govern What We Cannot Fully Understand</em></a></li><li><a href="https://medium.com/@aridiosilva/when-ai-agents-form-societies-448a8d06d411" rel="noopener"><em>When AI Agents Form Societies: Is Security a Property of the Model or the System?</em></a></li><li><a href="https://medium.com/@aridiosilva/when-ai-improves-ai-governing-recursive-intelligence-acceleration-6eb951abdbaf" rel="noopener"><em>When AI Improves AI: Governing Recursive Intelligence Acceleration</em></a></li></ol>
+<h2>Citation</h2>
+<p>Silva, Aridio. (2026). Why Autonomous AI Agents Need Bounded and Revocable Authority (Version 1.0). Zenodo. <a href="https://doi.org/10.5281/zenodo.22715664" rel="noopener">https://doi.org/10.5281/zenodo.22715664</a></p>
+</article></section></main><footer><div class="shell">© 2026 Aridio Silva · SGAEIA - Secure Governed Autonomous Edge Intelligence Architecture</div></footer></body></html>
