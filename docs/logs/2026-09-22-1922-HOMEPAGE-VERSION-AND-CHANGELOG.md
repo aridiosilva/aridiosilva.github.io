@@ -6,7 +6,7 @@
 **Owner:** Aridio Silva  
 **Date covered:** 2026-09-22  
 **Created:** 2026-09-22 19:22 BRT  
-**Last Updated:** 2026-09-25 12:46 BRT
+**Last Updated:** 2026-10-02 19:02 BRT
 **Timezone:** America/Sao_Paulo (UTC−03:00)  
 **Document Status:** HOMEPAGE VERSION RECORD — COMPLETE FOR DEPLOYED SCOPE  
 **Public/private classification:** PUBLIC TECHNICAL CHANGELOG; no secret, credential or private mechanism is included  
@@ -324,7 +324,7 @@ Static validation confirmed that all 68 anchors in `index.html` and all 62 ancho
 ## Document Record
 
 **Created:** 2026-09-22 19:22 BRT  
-**Last Updated:** 2026-09-25 12:46 BRT
+**Last Updated:** 2026-10-02 19:02 BRT
 **Timezone:** America/Sao_Paulo (UTC−03:00)  
 **Document Status:** HOMEPAGE VERSION RECORD — COMPLETE FOR DEPLOYED SCOPE  
 **Repository Path:** `docs/logs/2026-09-22-1922-HOMEPAGE-VERSION-AND-CHANGELOG.md`  
@@ -338,3 +338,55 @@ Static validation confirmed that all 68 anchors in `index.html` and all 62 ancho
 The local website source was extended for *AI's Alien Mind*, SGAEIA Research Series Article 14. The change adds the article to `index.html`, `sgaeia.html`, and `publications.html`; creates `publications/ais-alien-mind/index.html`; adds the canonical record to `sitemap.xml`; and updates `llms.txt` with the individual publication page, Zenodo Version 1.0 DOI `10.5281/zenodo.22964672`, and Medium reading URL.
 
 The individual page contains the author-written abstract, required citation metadata, suggested citation, strict CSP, analytics-consent controller, and persistent links. New links open in a separate page with `noopener noreferrer`. Local validation covers HTML structure, citation-field uniqueness, metadata consistency, link resolution, sitemap uniqueness, public-disclosure boundaries, and `git diff --check`. No deployment, commit, push, Search Console submission, or indexing claim was performed.
+
+## 15. Unified article-header update — 2 October 2026
+
+By owner instruction, the header of every homepage article was standardized across all 16 individual publication pages. The previous series eyebrow and abbreviated author line were replaced by the following canonical block, placed immediately after the subtitle and before the publication date and DOI metadata:
+
+```text
+SGAEIA Research Series — Article N
+Aridio Silva
+Independent Researcher, Brazil
+Creator of SGAEIA — Secure Governed Autonomous Edge Intelligence Architecture
+ORCID: 0009–0008–2411–6995
+```
+
+The affected pages are the Article 1–16 records under `publications/`. The displayed article number is specific to each page. The DOI, publication date, canonical URL, article body, cover image, figures, bibliography, and footer content were preserved. The new shared stylesheet is `assets/article-header.css`.
+
+Article 3 remains the complete English reading edition with its public cover, Figures 1–5, and the previously requested `Series continuity` section containing 16 linked entries. Its page-specific stylesheet remains `assets/article3.css`, and its public images remain under `assets/article3/`.
+
+Validation performed locally:
+
+- 16 article pages discovered and updated;
+- 16/16 pages contain the exact standard header block;
+- 16/16 pages place the block after the subtitle and before the DOI metadata;
+- no legacy `<p class="eyebrow">` remains in the article heroes;
+- all 16 HTML files parsed without unclosed tags or unexpected closing tags;
+- `git diff --check` passed, with only Git line-ending normalization warnings;
+- no stage, commit, push, deployment, Search Console submission, or external-indexing claim was performed.
+
+The working tree also contains the earlier Article 3 full-reading and image additions, sitemap update, and a pre-existing untracked prompt file under `docs/prompts/`; these remain uncommitted for owner review.
+
+## 17. Scope rollback — one article per execution — 2 October 2026
+
+The temporary header-only standardization applied to Articles 1, 2, and 5–16 was reverted by explicit owner instruction so homepage publication work again follows the canonical one-article-per-execution rule. Those article pages were restored with `git restore` to their last committed state. Articles 1 and 2 were verified to retain their previously published full-reading content; the temporary change had affected only their hero/header markup and stylesheet reference, not their article bodies.
+
+The current uncommitted article-page scope is limited to Article 3 and Article 4. Their full-reading pages, public images, header stylesheet and related sitemap/log records remain available for owner review. No stage, commit or push was performed by Codex.
+
+## 16. Article 4 full-reading update — 2 October 2026
+
+The homepage record for *Authenticated Delegation Between Autonomous AI Agents*, SGAEIA Research Series Article 4, was upgraded from an abstract-only discovery page to a complete English web-reading edition based on the public master `article-04-authenticated-delegation-PUBLIC-v2.0-MASTER-CORRECTED_14SET2026.md`.
+
+The updated record is `publications/authenticated-delegation-between-autonomous-ai-agents/index.html`. It preserves the existing canonical URL, DOI `10.5281/zenodo.22727194`, publication date, citation metadata, CSP, navigation, and author identity. Its header follows the approved standard after the subtitle and before the DOI:
+
+```text
+SGAEIA Research Series — Article 4
+Aridio Silva
+Independent Researcher, Brazil
+Creator of SGAEIA — Secure Governed Autonomous Edge Intelligence Architecture
+ORCID: 0009–0008–2411–6995
+```
+
+The page now includes the complete public article body, abstract, keywords, sections 1–15, references, About the Author, Research & Project Resources, Figures, License, and the final `Series continuity` section with 16 linked entries. The cover and Figures 1–5 were copied from the public SGAEIA source into `assets/article4/`; no remote Medium image dependency remains in the article body.
+
+The Article 4 sitemap entry was updated with `lastmod` `2026-10-02`. Local validation confirmed six local images, 16 continuity entries, the required header ordering, preservation of DOI and citation metadata, HTML parsing without unclosed tags, and a passing `git diff --check` apart from Git line-ending normalization warnings. No stage, commit, push, deployment, Search Console submission, or external-indexing claim was performed.
