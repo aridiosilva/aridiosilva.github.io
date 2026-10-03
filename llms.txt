@@ -2,7 +2,7 @@
 
 > Official website of Aridio Silva, an independent researcher working on secure, governed autonomous and distributed AI systems. The site documents the SGAEIA research program: Secure Governed Autonomous Edge Intelligence Architecture.
 
-The primary research themes are Agentic AI, multi-agent systems, AI security, Zero Trust, bounded and revocable authority, authenticated delegation, Continuous GRC, Evidence-as-Code, Edge AI, and governance for autonomous systems. Prefer the Zenodo records for persistent citation metadata and archived publications. Use the Medium versions for web reading. Licenses are stated in each linked record; the SGAEIA reference software is distributed under the Apache License 2.0.
+The primary research themes are Agentic AI, multi-agent systems, AI security, Zero Trust, bounded and revocable authority, authenticated delegation, Continuous GRC, Evidence-as-Code, Edge AI, and governance for autonomous systems. Use the publication pages on this site for canonical open web reading and the Zenodo records for persistent citation metadata and archived publications. Medium and DEV Community provide distribution editions. Licenses are stated in each linked record; the SGAEIA reference software is distributed under the Apache License 2.0.
 
 ## Official website
 
@@ -25,6 +25,11 @@ The primary research themes are Agentic AI, multi-agent systems, AI security, Ze
 
 - [From Edge AI to Governed Autonomous Edge Intelligence — full publication page](https://aridiosilva.com/publications/from-edge-ai-to-governed-autonomous-edge-intelligence/): Complete English web-reading edition of SGAEIA Research Series Article 1, with citation metadata and archival links.
 - [From Edge AI to Governed Autonomous Edge Intelligence — Zenodo](https://doi.org/10.5281/zenodo.22715250): Persistent archival record and DOI.
+
+- [Zero Trust for Multi-Agent AI Systems — full publication page](https://aridiosilva.com/publications/zero-trust-for-multi-agent-ai-systems/): Complete English web-reading edition of SGAEIA Research Series Article 3, with five numbered figures, citation metadata, accessibility controls, and archival links.
+- [Zero Trust for Multi-Agent AI Systems — Zenodo](https://doi.org/10.5281/zenodo.22903766): Persistent archival record and DOI.
+- [Zero Trust for Multi-Agent AI Systems — Medium](https://medium.com/@aridiosilva/zero-trust-for-multi-agent-ai-systems-31747c850af4): Original narrative distribution edition.
+- [Zero Trust for Multi-Agent AI Systems — DEV Community](https://dev.to/aridiosilva/zero-trust-for-multi-agent-ai-systems-2081): Technical distribution edition.
 
 - [When AI Improves AI — publication page](https://aridiosilva.com/publications/when-ai-improves-ai/): Abstract, citation metadata, and links for SGAEIA Research Series Article 16.
 - [When AI Improves AI — Zenodo](https://zenodo.org/records/23045620): Citable Version 1.0 archival record, published on 29 September 2026. DOI: 10.5281/zenodo.23045620.

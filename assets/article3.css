@@ -9,6 +9,11 @@
 .article-figure{margin:34px 0 42px}
 .article-figure img{display:block;width:100%;height:auto;border:1px solid var(--rule);border-radius:8px}
 .article-figure figcaption{margin-top:12px;color:var(--muted);font-family:var(--serif);font-size:.98rem}
+.article-figure figcaption strong{font-style:normal}
+.article-figure figcaption em{font-style:italic}
+.article-figure figcaption .figure-credit{display:block;margin-top:.35rem;font-family:var(--sans);font-size:.84em;font-style:normal}
 .cover-figure img{border:0}
+.medium-link{margin-top:2rem}
+.distribution-link{margin-top:.75rem}
 .article ol,.article ul{padding-left:1.5rem}
 .article code{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-size:.9em;background:var(--soft);padding:.1em .3em;border-radius:3px}
