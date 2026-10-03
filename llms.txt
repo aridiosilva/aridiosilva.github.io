@@ -31,6 +31,22 @@ The primary research themes are Agentic AI, multi-agent systems, AI security, Ze
 - [Zero Trust for Multi-Agent AI Systems — Medium](https://medium.com/@aridiosilva/zero-trust-for-multi-agent-ai-systems-31747c850af4): Original narrative distribution edition.
 - [Zero Trust for Multi-Agent AI Systems — DEV Community](https://dev.to/aridiosilva/zero-trust-for-multi-agent-ai-systems-2081): Technical distribution edition.
 
+- [Continuous GRC for Agentic AI — full publication page](https://aridiosilva.com/publications/continuous-grc-for-agentic-ai/): Complete English web-reading edition of SGAEIA Research Series Article 5, with 5 numbered figures, citation metadata, accessibility controls, and archival links.
+- [Continuous GRC for Agentic AI — Zenodo](https://doi.org/10.5281/zenodo.22728227): Persistent archival record and DOI.
+- [Continuous GRC for Agentic AI — Medium](https://medium.com/@aridiosilva/continuous-grc-for-agentic-ai-ada11c2974d0): Narrative distribution edition.
+
+- [Evidence-as-Code: Making AI Governance Verifiable — full publication page](https://aridiosilva.com/publications/evidence-as-code/): Complete English web-reading edition of SGAEIA Research Series Article 6, with 4 numbered figures, citation metadata, accessibility controls, and archival links.
+- [Evidence-as-Code: Making AI Governance Verifiable — Zenodo](https://doi.org/10.5281/zenodo.22736488): Persistent archival record and DOI.
+- [Evidence-as-Code: Making AI Governance Verifiable — Medium](https://medium.com/@aridiosilva/evidence-as-code-making-ai-governance-verifiable-db89e3105b87): Narrative distribution edition.
+
+- [Security-by-Design for Distributed Agentic AI — full publication page](https://aridiosilva.com/publications/security-by-design-for-distributed-agentic-ai/): Complete English web-reading edition of SGAEIA Research Series Article 7, with 4 numbered figures, citation metadata, accessibility controls, and archival links.
+- [Security-by-Design for Distributed Agentic AI — Zenodo](https://doi.org/10.5281/zenodo.22816239): Persistent archival record and DOI.
+- [Security-by-Design for Distributed Agentic AI — Medium](https://medium.com/@aridiosilva/security-by-design-for-distributed-agentic-ai-d8a00dfe1acd): Narrative distribution edition.
+
+- [SGAEIA: A Reference Architecture for Secure Governed Autonomous Edge Intelligence — full publication page](https://aridiosilva.com/publications/sgaeia-reference-architecture/): Complete English web-reading edition of SGAEIA Research Series Article 8, with 4 numbered figures, citation metadata, accessibility controls, and archival links.
+- [SGAEIA: A Reference Architecture for Secure Governed Autonomous Edge Intelligence — Zenodo](https://doi.org/10.5281/zenodo.22882020): Persistent archival record and DOI.
+- [SGAEIA: A Reference Architecture for Secure Governed Autonomous Edge Intelligence — Medium](https://medium.com/@aridiosilva/sgaeia-a-reference-architecture-for-secure-governed-autonomous-edge-intelligence-cd5466cbc29c): Narrative distribution edition.
+
 - [When AI Improves AI — publication page](https://aridiosilva.com/publications/when-ai-improves-ai/): Abstract, citation metadata, and links for SGAEIA Research Series Article 16.
 - [When AI Improves AI — Zenodo](https://zenodo.org/records/23045620): Citable Version 1.0 archival record, published on 29 September 2026. DOI: 10.5281/zenodo.23045620.
 - [When AI Improves AI — Medium](https://medium.com/@aridiosilva/when-ai-improves-ai-governing-recursive-intelligence-acceleration-6eb951abdbaf): English web-reading edition of SGAEIA Research Series Article 16.

@@ -1,8 +1,6 @@
 <!doctype html>
 <html lang="en">
 <head>
-<!-- GA4 G-MXMJ7Z3LS7: loaded once, only after the visitor grants analytics consent. -->
-<script defer src="/assets/analytics-consent.js"></script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="color-scheme" content="light">
@@ -15,7 +13,6 @@
 <meta name="citation_online_date" content="2026/09/14">
 <meta name="citation_doi" content="10.5281/zenodo.22736488">
 <meta name="citation_language" content="en">
-
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://www.googletagmanager.com; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https://*.google-analytics.com; connect-src https://*.google-analytics.com https://www.googletagmanager.com; media-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'; upgrade-insecure-requests">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <link rel="sitemap" type="application/xml" href="/sitemap.xml">
@@ -24,16 +21,140 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Source+Serif+4:opsz,wght@8..60,500;6..60,700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/publications.css">
-<link rel="stylesheet" href="/assets/analytics-consent.css">
+<link rel="stylesheet" href="/assets/article-header.css">
+<link rel="stylesheet" href="/assets/article-accessibility.css">
+<link rel="stylesheet" href="/assets/article3.css">
+<script defer src="/assets/article-accessibility.js?v=20261003"></script>
 </head>
 <body><a class="skip" href="#main">Skip to main content</a>
-<header class="site-header"><div class="shell header-inner">
-<a class="identity" href="/">Aridio Silva</a>
-<nav aria-label="Primary navigation"><a href="/">Home</a><a href="/sgaeia">SGAEIA</a><a href="/publications.html">Publications</a></nav>
-</div></header>
-<main id="main"><section class="hero"><div class="shell article"><p class="eyebrow">SGAEIA Research Series — Article 6</p><h1 class="citation_title">Evidence-as-Code: Making AI Governance Verifiable</h1><p class="subtitle">Why accountable AI requires evidence that can be questioned, assessed, and understood</p><p class="author"><span class="citation_author">Aridio Silva</span><br>Independent Researcher · Creator of SGAEIA</p><p class="meta">Published <time datetime="2026-09-14">2026-09-14</time> · DOI <a href="https://doi.org/10.5281/zenodo.22736488">10.5281/zenodo.22736488</a></p></div></section>
-<section class="content"><article class="shell article"><h2>Abstract</h2><p class="abstract">As AI systems take actions with consequences beyond a conversation, governance claims require closer examination. A policy may describe intended behavior, and an operational record may describe an event, yet neither alone establishes that a particular claim is justified. This article discusses Evidence-as-Code as an evidence-oriented perspective on AI governance: relevant information should be sufficiently clear, assessable, and appropriately structured to support critical review. The emphasis is on the meaning and limits of evidence, rather than a technical design. Drawing on established work in AI risk management, control assessment, provenance, and observability, the article examines accountability, evidence quality, uncertainty, and privacy. Its contribution is an educational synthesis within the SGAEIA research series. It does not introduce a validated protocol, establish conformity, or report empirical proof of the SGAEIA framework.</p>
-<div class="links"><a class="button primary" href="https://doi.org/10.5281/zenodo.22736488" rel="noopener">Archival record on Zenodo</a><a class="button" href="https://medium.com/@aridiosilva/evidence-as-code-making-ai-governance-verifiable-db89e3105b87" rel="noopener">Read on Medium</a></div>
-<section class="citation"><h2>Suggested citation</h2><p>Silva, Aridio. (2026). <em>Evidence-as-Code: Making AI Governance Verifiable</em>. Zenodo. <a href="https://doi.org/10.5281/zenodo.22736488">https://doi.org/10.5281/zenodo.22736488</a></p></section>
-<p class="notice">This page provides the author-written abstract and bibliographic metadata for discovery. The Zenodo record is the persistent source for citation, files, version, and license information.</p>
-</article></section></main><footer><div class="shell">© 2026 Aridio Silva · SGAEIA — Secure Governed Autonomous Edge Intelligence Architecture</div></footer></body></html>
+<header class="site-header"><div class="shell header-inner"><a class="identity" href="/">Aridio Silva</a><nav aria-label="Primary navigation"><a href="/">Home</a><a href="/sgaeia">SGAEIA</a><a href="/publications.html">Publications</a></nav><div class="reading-tools" role="group" aria-label="Reading controls"><button type="button" id="articleFontDecrease" aria-label="Decrease text size">A−</button><button type="button" id="articleFontIncrease" aria-label="Increase text size">A+</button><button type="button" id="articleEasyRead" aria-pressed="false">Easy read</button><button type="button" id="articleListen" aria-pressed="false">Listen</button></div></div></header>
+<main id="main"><section class="hero"><div class="shell article"><h1 class="citation_title">Evidence-as-Code: Making AI Governance Verifiable</h1><p class="subtitle">Why accountable AI requires evidence that can be questioned, assessed, and understood</p><p class="series-header"><strong>SGAEIA Research Series — Article 6</strong><br><strong>Aridio Silva</strong><br>Independent Researcher, Brazil<br>Creator of SGAEIA — Secure Governed Autonomous Edge Intelligence Architecture<br><strong>ORCID:</strong> <a href="https://orcid.org/0009-0008-2411-6995" rel="noopener">0009–0008–2411–6995</a></p><p class="meta">Published <time datetime="2026-09-14">2026-09-14</time> · English · DOI <a href="https://doi.org/10.5281/zenodo.22736488">10.5281/zenodo.22736488</a></p></div></section>
+<section class="content"><article class="shell article article-body">
+<figure class="article-figure cover-figure"><img src="/assets/article6/sgaeia-article-06-cover-evidence-as-code.png" alt="Cover — Evidence-as-Code" loading="lazy"><figcaption><em>Cover — Evidence-as-Code frames a research question: what makes a claim about governed AI behavior worthy of confidence? The illustration represents concepts, not a system design.</em> <span class="figure-credit">© 2026 Aridio Silva | Project SGAEIA | CC BY 4.0.</span></figcaption></figure>
+<h2>Abstract</h2>
+<p class="abstract">As AI systems take actions with consequences beyond a conversation, governance claims require closer examination. A policy may describe intended behavior, and an operational record may describe an event, yet neither alone establishes that a particular claim is justified. This article discusses Evidence-as-Code as an evidence-oriented perspective on AI governance: relevant information should be sufficiently clear, assessable, and appropriately structured to support critical review. The emphasis is on the meaning and limits of evidence, rather than a technical design. Drawing on established work in AI risk management, control assessment, provenance, and observability, the article examines accountability, evidence quality, uncertainty, and privacy. Its contribution is an educational synthesis within the SGAEIA research series. It does not introduce a validated protocol, establish conformity, or report empirical proof of the SGAEIA framework.</p>
+<h2>1. A governance claim needs a defensible basis</h2>
+<p>An organization may say that its AI system is governed because it has written policies, assigned responsibilities, or introduced an approval process. These are meaningful commitments. Assessing whether a specific claim holds requires attention to what the available evidence actually supports.</p>
+<p>Consider a fictional AI assistant helping an organization prepare a purchase. The organization states that important purchases receive appropriate human oversight. A record showing that a purchase occurred does not, by itself, establish that this oversight was meaningful. Equally, an approval statement does not establish that the result was appropriate or that affected people had a way to challenge it. These are different questions, even when they concern the same event.</p>
+<p>The distinction is between describing an intention and providing a defensible basis for confidence. Assurance is necessarily bounded: a conclusion concerns a particular claim, an identified context, and information with known limitations. A favorable finding about one question should not be silently expanded into a claim that the whole system is trustworthy.</p>
+<p>Figure 1 illustrates this distinction between a claim and its evidential basis.</p>
+<figure class="article-figure"><img src="/assets/article6/sgaeia-article-06-figure-01-claims-and-evidence.png" alt="Figure 1 — Claims and Evidence" loading="lazy"><figcaption><strong>Figure 1 — Claims and Evidence.</strong> A statement about governed behavior and the information supporting its assessment serve different purposes; the illustration does not prescribe a processing sequence. <span class="figure-credit">© 2026 Aridio Silva | Project SGAEIA | CC BY 4.0.</span></figcaption></figure>
+<h2>2. What Evidence-as-Code means in this discussion</h2>
+<p>Here, Evidence-as-Code refers to an approach in which governance-relevant information is expressed clearly enough to support repeatable assessment, including machine-assisted assessment where appropriate. The word “code” highlights the possibility of consistent interpretation and review. It does not make software output equivalent to proof, and it does not remove the need for judgment.</p>
+<p>This perspective has precedents. NIST OSCAL supports machine-readable representations of security-control and assessment information <a href="https://pages.nist.gov/OSCAL/" rel="noopener">(1)</a>. Such work illustrates that governance information can be organized for both human and automated use. It does not establish that every question about autonomous AI can be reduced to an automatic test.</p>
+<p>Related work also addresses machine-readable evidence for AI governance. In their 2026 preprint, Rodrigo Cilla Ugarte and colleagues examine OSCAL as a candidate format for that purpose <a href="https://arxiv.org/abs/2604.13767v1" rel="noopener">(2)</a>. This establishes relevant prior work; it is not evidence that the SGAEIA framework has been validated. The source is cited as an arXiv preprint, not as an established consensus or a confirmed peer-reviewed publication.</p>
+<p>The SGAEIA contribution in this article is an interpretive argument: evidence quality should be central to discussions of autonomous AI governance. This is a research position, not a claim that the term is new, that a universal evidence standard has been established, or that a particular implementation has been validated.</p>
+<h2>3. Accountability remains important when work is delegated</h2>
+<p>An AI-assisted activity may involve several people, organizations, or automated services. Distributing the work can make responsibility harder to understand. It does not make accountability less necessary.</p>
+<p>The following four questions are the author's non-exhaustive synthesis for public discussion, rather than a validated assessment instrument:</p>
+<ul>
+<li><strong>Responsibility:</strong> who is answerable for the activity and its consequences?</li>
+<li><strong>Justification:</strong> what supports the claim being made about that activity?</li>
+<li><strong>Consequences:</strong> what was the observed impact, including adverse effects?</li>
+<li><strong>Uncertainty:</strong> what cannot presently be established?</li>
+</ul>
+<p>These questions concern the quality of an account offered to a reviewer or affected person. They are not a specification of the information a system must collect, a model of agent coordination, or a design for authorizing delegated actions. Their value is that they prevent the presence of several participants from becoming an excuse for an unanswerable outcome.</p>
+<p>Figure 2 brings these four questions together as independent prompts for reflection.</p>
+<figure class="article-figure"><img src="/assets/article6/sgaeia-article-06-figure-02-accountability-questions.png" alt="Figure 2 — Questions for Accountable AI" loading="lazy"><figcaption><strong>Figure 2 — Questions for Accountable AI.</strong> Delegation does not erase accountability; these questions help readers assess an explanation without prescribing internal relationships or mechanisms. <span class="figure-credit">© 2026 Aridio Silva | Project SGAEIA | CC BY 4.0.</span></figcaption></figure>
+<h2>4. Useful evidence has qualities that can be examined</h2>
+<p>Evidence is useful in relation to a claim. A large quantity of information can still leave the relevant question unanswered. Conversely, a carefully bounded body of information may support a modest conclusion without supporting broader assurances.</p>
+<p>The author proposes five complementary qualities as an explanatory aid. They are not a standardized taxonomy, a validated scale, or an exhaustive test of evidence quality:</p>
+<ul>
+<li><strong>Relevance:</strong> the information addresses the question under examination.</li>
+<li><strong>Credibility:</strong> there is a defensible basis for relying on the information.</li>
+<li><strong>Context:</strong> the circumstances and conditions of the account are understandable.</li>
+<li><strong>Sufficiency:</strong> the information supports the stated scope of the conclusion.</li>
+<li><strong>Reviewability:</strong> another qualified reviewer can critically examine the basis and limits of the assessment.</li>
+</ul>
+<p>These are complementary qualities, not stages in a lifecycle or a checklist that guarantees trustworthiness. Their importance varies with the claim and the consequences of being wrong. An assessment can be well documented and still depend on assumptions that deserve challenge.</p>
+<p>Figure 3 summarizes these proposed qualities without ranking them or implying a sequence.</p>
+<figure class="article-figure"><img src="/assets/article6/sgaeia-article-06-figure-03-evidence-quality.png" alt="Figure 3 — Qualities of Useful Evidence" loading="lazy"><figcaption><strong>Figure 3 — Properties of Useful Evidence.</strong> The properties describe the quality of an evidential basis; they do not represent software components, architectural layers, or an operational model. <span class="figure-credit">© 2026 Aridio Silva | Project SGAEIA | CC BY 4.0.</span></figcaption></figure>
+<h2>5. Records, observations, and conclusions are different</h2>
+<p>Operational information and governance assessment overlap, but they answer different questions. OpenTelemetry describes signals such as traces, metrics, and logs as ways of representing system activity <a href="https://opentelemetry.io/docs/concepts/signals/" rel="noopener">(3)</a>. Those signals can be useful sources of information. Their presence alone does not establish that a governance claim is justified.</p>
+<p>Provenance concerns the origins and history of information. W3C PROV provides a common basis for describing provenance and supporting assessments of reliability <a href="https://www.w3.org/TR/prov-overview/" rel="noopener">(4)</a>. Knowing where information came from helps a reviewer reason about it, but does not automatically settle questions about responsibility, appropriateness, or truth.</p>
+<p>Three ideas should remain distinct. Authenticity concerns whether a record is genuinely attributable to its claimed source. Integrity concerns whether the record has remained unaltered in the relevant respects. Truthfulness concerns whether its account accurately represents what happened. An authentic, unaltered statement can still be mistaken, incomplete, or misleading. These distinctions limit what a reviewer may reasonably conclude from a record.</p>
+<p>A careful assessment keeps the observed information separate from the interpretation placed upon it. Readers should be able to distinguish what was reported, what was corroborated, what was inferred, and what remains uncertain.</p>
+<h2>6. Evidence can mislead without being entirely false</h2>
+<p>Some of the most consequential weaknesses arise from the way information is selected or interpreted. A collection of accurate records may still omit a relevant event. A favorable summary may obscure disagreement. An apparently comprehensive account may concern only a narrow set of circumstances.</p>
+<p>The following non-exhaustive limitations form part of the author's critical synthesis:</p>
+<ul>
+<li><strong>Missing information:</strong> absence may prevent a conclusion, even when the available material appears coherent.</li>
+<li><strong>Selective reporting:</strong> presenting only favorable material can produce unjustified confidence.</li>
+<li><strong>Misplaced confidence:</strong> authenticity or technical validity may be mistaken for truthfulness.</li>
+<li><strong>Excessive collection:</strong> seeking more information can create new privacy and security risks.</li>
+</ul>
+<p>These limitations should affect the strength of the conclusion. A gap does not automatically establish misconduct, but neither should it be treated as affirmative evidence that everything was appropriate. An honest assessment may conclude that the available information is insufficient.</p>
+<p>Figure 4 summarizes these limitations; it does not suggest that this list is complete.</p>
+<figure class="article-figure"><img src="/assets/article6/sgaeia-article-06-figure-04-limits-of-assurance.png" alt="Figure 4 — Limits of Assurance" loading="lazy"><figcaption><strong>Figure 4 — Limits of Assurance.</strong> Evidence-based assessment must acknowledge uncertainty and potential harm; the figure is not a lifecycle, threat-control map, or implementation guide. <span class="figure-credit">© 2026 Aridio Silva | Project SGAEIA | CC BY 4.0.</span></figcaption></figure>
+<h2>7. Evidence must respect people and confidential information</h2>
+<p>Accountability does not require indiscriminate collection. Recording more information may expose personal data, confidential communications, or intellectual property without improving the answer to the question being assessed.</p>
+<p>The objective is a proportionate basis for review. An organization should be able to explain why information is needed, whose interests may be affected by its use, and what limitations apply to the account it provides. Evidence collected for one purpose should not quietly become a justification for unrelated surveillance.</p>
+<p>Transparency is also compatible with protecting sensitive information. A public explanation can describe the question, the basis of a conclusion, and its limits without revealing every internal detail. Appropriate disclosure requires judgment about both accountability and the consequences of exposure.</p>
+<h2>8. Assessment has to remain open to revision</h2>
+<p>AI systems and their contexts change. An earlier assessment may remain historically useful while no longer supporting the same conclusion about a later situation. Confidence should therefore be connected to the circumstances under which it was earned.</p>
+<p>The NIST AI Risk Management Framework provides a voluntary basis for considering trustworthiness and managing AI risks <a href="https://doi.org/10.6028/NIST.AI.100-1" rel="noopener">(5)</a>. NIST SP 800-53A provides a complementary foundation for assessing security and privacy controls <a href="https://csrc.nist.gov/pubs/sp/800/53/a/r5/final" rel="noopener">(6)</a>. These sources support disciplined assessment; neither should be read as certifying the SGAEIA research presented here.</p>
+<p>A continuing commitment to assessment includes acknowledging contrary evidence and revisiting earlier conclusions. The phrase “continuous assurance” should not be understood as a promise of complete visibility, uninterrupted certainty, or automatic resolution of governance questions.</p>
+<h2>9. The public contribution and its limits</h2>
+<p>This article offers a vocabulary for discussing why evidence matters and how its quality affects governance claims. The figures present distinctions, questions, properties, and limitations. They do not define how to build a SGAEIA system.</p>
+<p>The method is a selected-source narrative synthesis of official guidance on risk management, control assessment, provenance and observability, together with one closely related research preprint. Sources were chosen for their direct relevance to these concepts. This is not a systematic literature review: no exhaustive search strategy, study-selection protocol or quantitative evidence synthesis was conducted. The questions and properties introduced here are explanatory proposals, not empirically validated measures.</p>
+<p>The discussion is an educational research synthesis. It presents no experimental results demonstrating that the framework achieves a particular level of security, reliability, or assurance. It also makes no claim of certification or legal conformity. An assessment of any concrete deployment would require its own evidence, scope, methods, and qualified judgment.</p>
+<p>Evidence can support accountability without eliminating uncertainty. It cannot, by itself, settle contested values, establish every causal explanation, or guarantee that future behavior will resemble past behavior. Those limits are part of responsible research communication.</p>
+<h2>10. Conclusion</h2>
+<p>As AI systems participate in consequential work, organizations need more than confident statements about governance. They need defensible explanations of what the available evidence supports and where it falls short.</p>
+<p>Evidence-as-Code, as discussed here, places clarity and assessability at the center of that task. Its public value lies in encouraging better questions: Is the information relevant? Is the account credible? Are its conditions clear? Is the conclusion proportionate? Can the basis be critically reviewed?</p>
+<p>Accountable AI requires room for scrutiny, disagreement, and revision. Trust is strengthened when claims remain connected to evidence and uncertainty is made visible.</p>
+<h2>References</h2>
+<ol>
+<li>National Institute of Standards and Technology. <em>Open Security Controls Assessment Language (OSCAL).</em> <a href="https://pages.nist.gov/OSCAL/" rel="noopener">Official project documentation</a>.</li>
+<li>Rodrigo Cilla Ugarte, Miguel Ángel Patricio Guisado, Antonio Berlanga de Jesús, and José Manuel Molina López. <em>Making AI Compliance Evidence Machine-Readable.</em> arXiv:2604.13767v1, 15 April 2026. Preprint. <a href="https://arxiv.org/abs/2604.13767v1" rel="noopener">Version consulted</a>; <a href="https://doi.org/10.48550/arXiv.2604.13767" rel="noopener">DOI</a>.</li>
+<li>OpenTelemetry. <em>Signals.</em> <a href="https://opentelemetry.io/docs/concepts/signals/" rel="noopener">Official documentation</a>.</li>
+<li>Groth, P., and Moreau, L., eds. <em>PROV-Overview: An Overview of the PROV Family of Documents.</em> W3C Working Group Note, 30 April 2013. <a href="https://www.w3.org/TR/prov-overview/" rel="noopener">Official document</a>.</li>
+<li>National Institute of Standards and Technology. <em>Artificial Intelligence Risk Management Framework (AI RMF 1.0).</em> NIST AI 100-1, 2023. <a href="https://doi.org/10.6028/NIST.AI.100-1" rel="noopener">Publication</a>. The cited baseline is version 1.0; NIST's <a href="https://www.nist.gov/itl/ai-risk-management-framework" rel="noopener">framework page</a> identifies ongoing revision as of 19 September 2026.</li>
+<li>Joint Task Force. <em>Assessing Security and Privacy Controls in Information Systems and Organizations.</em> National Institute of Standards and Technology, NIST SP 800-53A Rev. 5, January 2022. <a href="https://doi.org/10.6028/NIST.SP.800-53Ar5" rel="noopener">DOI</a>. The <a href="https://csrc.nist.gov/pubs/sp/800/53/a/r5/final" rel="noopener">official publication page</a> also identifies minor release 5.2.0, issued 27 August 2025; this article cites the general assessment methodology rather than individual updated procedures.</li>
+</ol>
+<p><em>Online resources consulted on 19 September 2026. External frameworks and documentation provide background; the SGAEIA interpretation is the author's research synthesis.</em></p>
+<h2>About the Author</h2>
+<p><strong>Aridio Silva</strong> is an independent researcher based in Brazil and the creator of <strong>SGAEIA — Secure Governed Autonomous Edge Intelligence Architecture</strong>. His research concerns the security, governance, accountability, and trustworthiness of autonomous and distributed AI systems, including Agentic AI, Multi-Agent Systems, Edge AI, Zero Trust, and Security-by-Design.</p>
+<h2>Research &amp; Project Resources</h2>
+<p><strong>Aridio Silva</strong> — Independent Researcher, Brazil</p>
+<ol>
+<li><strong>ORCID:</strong> <a href="https://orcid.org/0009-0008-2411-6995" rel="noopener">https://orcid.org/0009-0008-2411-6995</a></li>
+<li><strong>Google Scholar:</strong> <a href="https://scholar.google.com/citations?user=rPn5O48AAAAJ" rel="noopener">https://scholar.google.com/citations?user=rPn5O48AAAAJ</a></li>
+<li><strong>Zenodo — SGAEIA Community:</strong> <a href="https://zenodo.org/communities/sgaeia" rel="noopener">https://zenodo.org/communities/sgaeia</a></li>
+<li><strong>OpenAIRE:</strong> <a href="https://explore.openaire.eu/search/find?fv0=Aridio%20Silva&amp;f0=q" rel="noopener">https://explore.openaire.eu/search/find?fv0=Aridio%20Silva&amp;f0=q</a></li>
+<li><strong>Medium:</strong> <a href="https://medium.com/@aridiosilva" rel="noopener">https://medium.com/@aridiosilva</a></li>
+<li><strong>GitHub:</strong> <a href="https://github.com/aridiosilva" rel="noopener">https://github.com/aridiosilva</a></li>
+<li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/aridio-silva-74997111/" rel="noopener">https://www.linkedin.com/in/aridio-silva-74997111/</a></li>
+<li><strong>SGAEIA Repository:</strong> <a href="https://github.com/aridiosilva/SGAEIA" rel="noopener">https://github.com/aridiosilva/SGAEIA</a></li>
+<li><strong>SGAEIA Research Artifact / DOI:</strong> <a href="https://doi.org/10.5281/zenodo.22557796" rel="noopener">https://doi.org/10.5281/zenodo.22557796</a></li>
+<li><strong>Homepage:</strong> <a href="https://aridiosilva.com" rel="noopener">https://aridiosilva.com</a></li>
+<li><strong>SGAEIA Homepage:</strong> <a href="https://aridiosilva.com/sgaeia" rel="noopener">https://aridiosilva.com/sgaeia</a></li>
+<li><strong>SGAEIA LinkedIn:</strong> <a href="https://www.linkedin.com/company/sgaeia" rel="noopener">https://www.linkedin.com/company/sgaeia</a></li>
+</ol>
+<h2>Figures and License</h2>
+<p>The cover and Figures 1–4 are original editorial illustrations prepared for this revised edition with AI-assisted image generation. They communicate public concepts and do not constitute technical specifications or evidence of system performance.</p>
+<p>This article and its original illustrations are licensed under the <a href="https://creativecommons.org/licenses/by/4.0/" rel="noopener">Creative Commons Attribution 4.0 International License (CC BY 4.0)</a>, except where otherwise noted. Referenced third-party works retain their own terms. Software artifacts are governed by their separately stated licenses.</p>
+<p><strong>© 2026 Aridio Silva | Project SGAEIA</strong></p>
+<p><strong>Autonomous AI. Governed by Design. Trusted by Evidence.</strong></p>
+<h2>Series continuity</h2>
+<p>Published/current entries in the <strong>SGAEIA Research Series</strong> include:</p>
+<ol>
+<li><a href="https://medium.com/@aridiosilva/from-edge-ai-to-governed-autonomous-edge-intelligence-9cbe487d853a" rel="noopener"><em>From Edge AI to Governed Autonomous Edge Intelligence</em></a></li>
+<li><a href="https://medium.com/@aridiosilva/why-autonomous-ai-agents-need-bounded-and-revocable-authority-da75656098f7" rel="noopener"><em>Why Autonomous AI Agents Need Bounded and Revocable Authority</em></a></li>
+<li><em>Zero Trust for Multi-Agent AI Systems</em></li>
+<li><a href="https://medium.com/@aridiosilva/authenticated-delegation-between-autonomous-ai-agents-4c1281cd9e14" rel="noopener"><em>Authenticated Delegation Between Autonomous AI Agents</em></a></li>
+<li><a href="https://medium.com/@aridiosilva/continuous-grc-for-agentic-ai-ada11c2974d0" rel="noopener"><em>Continuous GRC for Agentic AI</em></a></li>
+<li><a href="https://medium.com/@aridiosilva/evidence-as-code-making-ai-governance-verifiable-db89e3105b87" rel="noopener"><em><strong>Evidence-as-Code: Making AI Governance Verifiable</strong></em></a></li>
+<li><a href="https://medium.com/@aridiosilva/security-by-design-for-distributed-agentic-ai-d8a00dfe1acd" rel="noopener"><em>Security-by-Design for Distributed Agentic AI</em></a></li>
+<li><em>SGAEIA: A Reference Architecture for Secure Governed Autonomous Edge Intelligence</em></li>
+<li><a href="https://medium.com/@aridiosilva/when-ai-begins-to-build-ai-f762df34afec" rel="noopener"><em>When AI Begins to Build AI</em></a></li>
+<li><a href="https://medium.com/@aridiosilva/rogue-ai-agents-when-autonomous-systems-become-a-collective-75ddaf685938" rel="noopener"><em>Rogue AI Agents: When Autonomous Systems Become a Collective</em></a></li>
+<li><a href="https://medium.com/@aridiosilva/from-model-capability-to-governed-action-an-architecture-for-secure-agentic-ai-de0bf29d0cdc" rel="noopener"><em>From Model Capability to Governed Action: An Architecture for Secure Agentic AI</em></a></li>
+</ol>
+<h2>Suggested citation</h2>
+<p>Silva, Aridio. (2026). <em>Evidence-as-Code: Making AI Governance Verifiable</em>. Zenodo. <a href="https://doi.org/10.5281/zenodo.22736488" rel="noopener">https://doi.org/10.5281/zenodo.22736488</a></p>
+<p>Zenodo is the persistent source for files, version, license, and citation data.</p>
+<p class="medium-link"><a href="https://medium.com/@aridiosilva/evidence-as-code-making-ai-governance-verifiable-db89e3105b87" rel="noopener">Read the full article on Medium</a></p>
+</article></section></main>
+<footer><div class="shell">© 2026 Aridio Silva · SGAEIA — Secure Governed Autonomous Edge Intelligence Architecture</div></footer>
+</body></html>

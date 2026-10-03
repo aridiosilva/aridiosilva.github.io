@@ -1,8 +1,6 @@
 <!doctype html>
 <html lang="en">
 <head>
-<!-- GA4 G-MXMJ7Z3LS7: loaded once, only after the visitor grants analytics consent. -->
-<script defer src="/assets/analytics-consent.js"></script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="color-scheme" content="light">
@@ -15,7 +13,6 @@
 <meta name="citation_online_date" content="2026/09/17">
 <meta name="citation_doi" content="10.5281/zenodo.22816239">
 <meta name="citation_language" content="en">
-
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://www.googletagmanager.com; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https://*.google-analytics.com; connect-src https://*.google-analytics.com https://www.googletagmanager.com; media-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'; upgrade-insecure-requests">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <link rel="sitemap" type="application/xml" href="/sitemap.xml">
@@ -24,16 +21,489 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Source+Serif+4:opsz,wght@8..60,500;6..60,700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/publications.css">
-<link rel="stylesheet" href="/assets/analytics-consent.css">
+<link rel="stylesheet" href="/assets/article-header.css">
+<link rel="stylesheet" href="/assets/article-accessibility.css">
+<link rel="stylesheet" href="/assets/article3.css">
+<script defer src="/assets/article-accessibility.js?v=20261003"></script>
 </head>
 <body><a class="skip" href="#main">Skip to main content</a>
-<header class="site-header"><div class="shell header-inner">
-<a class="identity" href="/">Aridio Silva</a>
-<nav aria-label="Primary navigation"><a href="/">Home</a><a href="/sgaeia">SGAEIA</a><a href="/publications.html">Publications</a></nav>
-</div></header>
-<main id="main"><section class="hero"><div class="shell article"><p class="eyebrow">SGAEIA Research Series — Article 7</p><h1 class="citation_title">Security-by-Design for Distributed Agentic AI</h1><p class="subtitle">Why security must become an architectural property before autonomous systems are allowed to act</p><p class="author"><span class="citation_author">Aridio Silva</span><br>Independent Researcher · Creator of SGAEIA</p><p class="meta">Published <time datetime="2026-09-17">2026-09-17</time> · DOI <a href="https://doi.org/10.5281/zenodo.22816239">10.5281/zenodo.22816239</a></p></div></section>
-<section class="content"><article class="shell article"><h2>Abstract</h2><p class="abstract">Agentic AI changes the security problem because artificial intelligence is no longer limited to producing text, classifications, or recommendations. Autonomous agents can hold identities, invoke tools, access resources, delegate tasks, coordinate with other agents, and trigger actions across distributed edge–cloud environments. In that setting, conventional application security controls remain necessary but are no longer sufficient. This article argues that security for distributed agentic AI must be established as an architectural property before execution, rather than added later as a collection of filters, prompt guardrails, monitoring tools, or post-hoc compliance checks. It develops a Security-by-Design perspective around bounded authority, authenticated delegation, Zero Trust, revocability, continuous governance, and verifiable evidence. These properties form part of the research foundation of SGAEIA — Secure Governed Autonomous Edge Intelligence Architecture. ---</p>
-<div class="links"><a class="button primary" href="https://doi.org/10.5281/zenodo.22816239" rel="noopener">Archival record on Zenodo</a><a class="button" href="https://medium.com/@aridiosilva/security-by-design-for-distributed-agentic-ai-d8a00dfe1acd" rel="noopener">Read on Medium</a></div>
-<section class="citation"><h2>Suggested citation</h2><p>Silva, Aridio. (2026). <em>Security-by-Design for Distributed Agentic AI</em>. Zenodo. <a href="https://doi.org/10.5281/zenodo.22816239">https://doi.org/10.5281/zenodo.22816239</a></p></section>
-<p class="notice">This page provides the author-written abstract and bibliographic metadata for discovery. The Zenodo record is the persistent source for citation, files, version, and license information.</p>
-</article></section></main><footer><div class="shell">© 2026 Aridio Silva · SGAEIA — Secure Governed Autonomous Edge Intelligence Architecture</div></footer></body></html>
+<header class="site-header"><div class="shell header-inner"><a class="identity" href="/">Aridio Silva</a><nav aria-label="Primary navigation"><a href="/">Home</a><a href="/sgaeia">SGAEIA</a><a href="/publications.html">Publications</a></nav><div class="reading-tools" role="group" aria-label="Reading controls"><button type="button" id="articleFontDecrease" aria-label="Decrease text size">A−</button><button type="button" id="articleFontIncrease" aria-label="Increase text size">A+</button><button type="button" id="articleEasyRead" aria-pressed="false">Easy read</button><button type="button" id="articleListen" aria-pressed="false">Listen</button></div></div></header>
+<main id="main"><section class="hero"><div class="shell article"><h1 class="citation_title">Security-by-Design for Distributed Agentic AI</h1><p class="subtitle">Why security must become an architectural property before autonomous systems are allowed to act</p><p class="series-header"><strong>SGAEIA Research Series — Article 7</strong><br><strong>Aridio Silva</strong><br>Independent Researcher, Brazil<br>Creator of SGAEIA — Secure Governed Autonomous Edge Intelligence Architecture<br><strong>ORCID:</strong> <a href="https://orcid.org/0009-0008-2411-6995" rel="noopener">0009–0008–2411–6995</a></p><p class="meta">Published <time datetime="2026-09-17">2026-09-17</time> · English · DOI <a href="https://doi.org/10.5281/zenodo.22816239">10.5281/zenodo.22816239</a></p></div></section>
+<section class="content"><article class="shell article article-body">
+<figure class="article-figure cover-figure"><img src="/assets/article7/sgaeia-article-07-cover.png" alt="Security-by-Design for Distributed Agentic AI" loading="lazy"><figcaption><em>Cover — Security-by-Design for Distributed Agentic AI. Governed distributed autonomy across edge–cloud environments, with security and governance treated as architectural properties rather than after-the-fact controls.</em> <span class="figure-credit">© 2026 Aridio Silva | Project SGAEIA | CC BY 4.0.</span></figcaption></figure>
+<hr />
+<h2>Abstract</h2>
+<p class="abstract">Agentic AI changes the security problem because artificial intelligence is no longer limited to producing text, classifications, or recommendations. Autonomous agents can hold identities, invoke tools, access resources, delegate tasks, coordinate with other agents, and trigger actions across distributed edge–cloud environments. In that setting, conventional application security controls remain necessary but are no longer sufficient.</p>
+<p>This article argues that security for distributed agentic AI must be established as an architectural property before execution, rather than added later as a collection of filters, prompt guardrails, monitoring tools, or post-hoc compliance checks. It develops a Security-by-Design perspective around bounded authority, authenticated delegation, Zero Trust, revocability, continuous governance, and verifiable evidence. These properties form part of the research foundation of SGAEIA — Secure Governed Autonomous Edge Intelligence Architecture.</p>
+<hr />
+<h2>1. The security boundary has moved</h2>
+<p>For decades, software security was largely framed around applications, users, processes, networks, devices, and data.</p>
+<p>Agentic AI adds another category:</p>
+<p><strong>software entities capable of deciding what to do next and acting on those decisions.</strong></p>
+<p>An AI agent may:</p>
+<ul>
+<li>select a tool;</li>
+<li>query a database;</li>
+<li>invoke an API;</li>
+<li>modify a business object;</li>
+<li>delegate work to another agent;</li>
+<li>initiate a workflow;</li>
+<li>interact with cloud or edge infrastructure;</li>
+<li>make decisions at machine speed.</li>
+</ul>
+<p>The security problem therefore changes.</p>
+<p>The question is no longer only:</p>
+<blockquote>
+<p>Is the model output safe?</p>
+</blockquote>
+<p>It becomes:</p>
+<blockquote>
+<p>What authority does this autonomous entity hold, under which conditions, for how long, over which resources, and how can that authority be reduced or revoked?</p>
+</blockquote>
+<p>This is an architectural question.</p>
+<p>Prompt filtering can reduce some classes of harmful input or output. Content moderation can constrain what a model produces. Monitoring can detect suspicious behavior.</p>
+<p>But none of those mechanisms, by themselves, define the authority of an autonomous software actor.</p>
+<p>Once an AI system can act, <strong>authority becomes part of the attack surface</strong>.</p>
+<hr />
+<h2>2. Why conventional guardrails are not enough</h2>
+<p>Traditional security mechanisms remain essential.</p>
+<p>Identity management, authorization, secure coding, dependency management, network security, secrets management, logging, vulnerability management, and threat modeling do not become obsolete because a system contains AI.</p>
+<p>The problem is that agentic systems introduce combinations that conventional architectures were not originally designed to govern.</p>
+<p>A distributed agent may simultaneously depend on:</p>
+<ul>
+<li>model inference;</li>
+<li>contextual memory;</li>
+<li>retrieved information;</li>
+<li>external APIs;</li>
+<li>delegated permissions;</li>
+<li>dynamic tool selection;</li>
+<li>other autonomous agents;</li>
+<li>intermittent edge connectivity;</li>
+<li>changing trust conditions.</li>
+</ul>
+<p>A model-level guardrail operates close to reasoning or content generation, whereas Security-by-Design must operate at the level of <strong>system authority</strong>. The distinction is fundamental:</p>
+<p><strong>A model may recommend an action. The architecture must decide whether that action is allowed to occur.</strong></p>
+<p>That separation prevents the intelligence component from becoming the ultimate security authority over its own behavior.</p>
+<figure class="article-figure"><img src="/assets/article7/sgaeia-article-07-figure-01-new-risk-landscape.png" alt="The New Risk Landscape for Distributed Agentic AI" loading="lazy"><figcaption><em>Figure 1 — The new risk landscape for distributed agentic AI. As autonomy and connectivity increase, tools, infrastructure, edge nodes, organizations, and physical systems enlarge the security surface around agentic action.</em> <span class="figure-credit">© 2026 Aridio Silva | Project SGAEIA | CC BY 4.0.</span></figcaption></figure>
+<hr />
+<h2>3. Security-by-Design begins with authority</h2>
+<p>In distributed agentic AI, Security-by-Design means defining security properties before an agent receives operational freedom.</p>
+<p>The first design question should not be:</p>
+<blockquote>
+<p>What can this agent technically do?</p>
+</blockquote>
+<p>It should be:</p>
+<blockquote>
+<p>What is this agent explicitly allowed to do?</p>
+</blockquote>
+<p>That produces a very different architecture: useful autonomy does not require unlimited authority.</p>
+<p>An agent can remain highly capable while its operational authority is constrained by:</p>
+<ul>
+<li>purpose;</li>
+<li>resource;</li>
+<li>action type;</li>
+<li>context;</li>
+<li>time;</li>
+<li>trust state;</li>
+<li>risk level;</li>
+<li>delegation scope.</li>
+</ul>
+<p>This leads to one of the central SGAEIA principles:</p>
+<p><strong>Autonomy should be useful, but authority should remain bounded.</strong></p>
+<p>Security-by-Design therefore begins by separating three concepts that are often collapsed:</p>
+<p><strong>Intelligence is not trust.<br />
+Trust is not authority.<br />
+Authority is not unlimited autonomy.</strong></p>
+<p>A capable system may still be untrusted in a specific context, and a trusted system may still have limited authority. An autonomous system should never infer that greater intelligence entitles it to greater operational permission.</p>
+<figure class="article-figure"><img src="/assets/article7/sgaeia-article-07-figure-02-security-by-design-foundation.png" alt="Security-by-Design as an Architectural Foundation" loading="lazy"><figcaption><em>Figure 2 — Security-by-Design as an architectural foundation. Governed autonomy rests on architectural properties including identity and trust, bounded authority, authenticated delegation, Zero Trust, governance and compliance, and continuous evidence and assurance.</em> <span class="figure-credit">© 2026 Aridio Silva | Project SGAEIA | CC BY 4.0.</span></figcaption></figure>
+<hr />
+<h2>4. Identity must precede authority</h2>
+<p>A distributed system cannot govern an autonomous actor that it cannot reliably identify.</p>
+<p>For human users, identity has long been a foundational security concept. Agentic AI extends that requirement to large populations of non-human actors:</p>
+<ul>
+<li>agents;</li>
+<li>workloads;</li>
+<li>tools;</li>
+<li>services;</li>
+<li>models;</li>
+<li>delegated processes.</li>
+</ul>
+<p>Security-by-Design requires autonomous actors to participate in an identity model appropriate to their role and context.</p>
+<p>The architectural principle is simple:</p>
+<blockquote>
+<p><strong>No accountable authority without accountable identity.</strong></p>
+</blockquote>
+<p>Identity alone is not sufficient.</p>
+<p>A valid identity does not automatically imply trust, and trust does not automatically imply permission.</p>
+<p>But without identity, attribution becomes weak, delegation becomes ambiguous, and post-incident evidence becomes much less reliable.</p>
+<p>This is one reason Zero Trust is highly relevant to agentic systems.</p>
+<p>NIST Zero Trust Architecture explicitly rejects implicit trust based only on location or ownership and treats authentication and authorization as distinct functions performed before access to protected resources. That principle becomes even more important when the requesting entity is autonomous. [1]</p>
+<hr />
+<h2>5. Delegation must not create authority</h2>
+<p>Multi-agent systems introduce another challenge: delegation.</p>
+<ul>
+<li>An agent may ask another agent to perform part of a task.</li>
+<li>Operationally, delegation can be extremely useful.</li>
+<li>Security-wise, it creates a chain of authority.</li>
+</ul>
+<p>A safe delegation model must preserve a basic invariant:</p>
+<blockquote>
+<p><strong>Delegation may transfer or narrow authority, but it must not manufacture new authority.</strong></p>
+</blockquote>
+<p>If Agent A lacks permission to perform a sensitive operation, delegating the task to Agent B must not make that operation legitimate.</p>
+<p>The same principle applies across longer chains.</p>
+<p>As autonomous systems become more collaborative, the question is not merely whether a downstream agent is authenticated.</p>
+<p>The system must be able to determine:</p>
+<ul>
+<li>where the authority originated;</li>
+<li>what scope was delegated;</li>
+<li>whether the delegation remains valid;</li>
+<li>whether the downstream action stays within that scope;</li>
+<li>whether the authority has been changed or revoked.</li>
+</ul>
+<p>This converts delegation from a workflow convenience into a security primitive.</p>
+<p>Security-by-Design requires that this be considered before deployment, not reconstructed after an incident.</p>
+<hr />
+<h2>6. Policy must exist before action</h2>
+<p>Many traditional systems follow a familiar sequence:</p>
+<p><strong>action → log → audit</strong></p>
+<p>That is not sufficient for high-consequence autonomous systems.</p>
+<p>A governed agentic architecture should prefer:</p>
+<p><strong>intent → authorization → execution → evidence</strong></p>
+<p>The security significance of this sequence is considerable.</p>
+<p>The architecture should evaluate relevant policy before the action crosses a meaningful trust boundary or affects an external resource.</p>
+<p>That means the AI model itself should not be the final authority deciding whether its intended action is permissible.</p>
+<p>The model may:</p>
+<ul>
+<li>reason;</li>
+<li>propose;</li>
+<li>rank;</li>
+<li>plan;</li>
+<li>explain.</li>
+</ul>
+<p>But authorization should remain an architectural decision.</p>
+<p>This separation is analogous to established security engineering practice: decision-making and enforcement should not depend solely on the component requesting access.</p>
+<p>For agentic AI, that principle becomes especially important because the requesting component may be probabilistic, manipulated, compromised, or operating on poisoned context.</p>
+<hr />
+<h2>7. Revocation is part of safety</h2>
+<p>Autonomy without revocation is difficult to govern.</p>
+<p>An autonomous system may initially satisfy every deployment requirement and later enter a different condition because of:</p>
+<ul>
+<li>changing context;</li>
+<li>anomalous behavior;</li>
+<li>credential compromise;</li>
+<li>model replacement;</li>
+<li>unsafe delegation;</li>
+<li>new risk information;</li>
+<li>infrastructure degradation;</li>
+<li>loss of connectivity;</li>
+<li>policy change.</li>
+</ul>
+<p>Security-by-Design therefore cannot treat authorization as permanent.</p>
+<p>Authority should be capable of being:</p>
+<ul>
+<li>reduced;</li>
+<li>paused;</li>
+<li>isolated;</li>
+<li>revoked;</li>
+<li>terminated.</li>
+</ul>
+<p>This leads to another central SGAEIA principle:</p>
+<p><strong>Autonomy implies revocability.</strong></p>
+<p>A system that can gain operational authority but cannot reliably lose it is not fully governable.</p>
+<p>Revocation is therefore not an administrative afterthought; it is a first-class safety and security property.</p>
+<hr />
+<h2>8. Zero Trust must extend to autonomous actors</h2>
+<p>Zero Trust was developed in response to the limits of perimeter-based security.</p>
+<p>NIST SP 800-207 describes Zero Trust as a shift away from implicit trust based on network location and toward protecting resources through explicit authentication and authorization. [1]</p>
+<p>Agentic AI extends the relevance of that principle.</p>
+<p>An autonomous actor should not be trusted merely because it:</p>
+<ul>
+<li>runs inside the enterprise;</li>
+<li>belongs to a known application;</li>
+<li>was created by another trusted agent;</li>
+<li>operates on a known device;</li>
+<li>uses an approved model;</li>
+<li>executes from an internal network.</li>
+</ul>
+<p>Each of those signals may contribute context, but none should automatically grant authority.</p>
+<p>For distributed agentic AI, Zero Trust becomes a foundation for answering a recurring question:</p>
+<blockquote>
+<p>Why should this autonomous actor be allowed to perform this action now?</p>
+</blockquote>
+<p>The answer should be based on identity, policy, context, risk, and current authority — not on architectural proximity.</p>
+<hr />
+<h2>9. Security-by-Design must include continuous governance</h2>
+<p>Security-by-Design must address a structural mismatch:</p>
+<ul>
+<li>Traditional governance often relies on periodic assessments.</li>
+<li>Agentic systems operate continuously.</li>
+<li>Their state can change faster than conventional governance cycles.</li>
+</ul>
+<p>The result is <strong>continuous autonomy versus periodic governance</strong>.</p>
+<p>Security-by-Design must reduce that gap.</p>
+<p>Governance should increasingly be expressed through properties that can be evaluated during operation, such as:</p>
+<ul>
+<li>whether authority remains within scope;</li>
+<li>whether delegation remains valid;</li>
+<li>whether required controls are active;</li>
+<li>whether trust assumptions still hold;</li>
+<li>whether relevant evidence exists;</li>
+<li>whether revocation remains possible.</li>
+</ul>
+<p>This does not eliminate organizational governance; it connects governance more directly to the system itself.</p>
+<p>NIST's AI Risk Management Framework emphasizes incorporating trustworthiness considerations throughout the design, development, use, and evaluation of AI systems. [2]</p>
+<p>ISO/IEC 42001 similarly frames AI governance through an organizational management system intended for continual improvement. [3]</p>
+<p>Agentic systems make the architectural realization of those ideas increasingly important.</p>
+<hr />
+<h2>10. Evidence must be produced by default</h2>
+<p>A governed system must be able to demonstrate what happened. That requirement is stronger than logging: logs may show events, while governance evidence should establish relationships among:</p>
+<ul>
+<li>identity;</li>
+<li>authority;</li>
+<li>policy;</li>
+<li>delegation;</li>
+<li>decision;</li>
+<li>action;</li>
+<li>outcome.</li>
+</ul>
+<p>This is the motivation behind Evidence-as-Code in the SGAEIA research program. The objective is not simply to produce more telemetry, but to make important governance claims increasingly verifiable.</p>
+<p>Examples include the ability to demonstrate that:</p>
+<ul>
+<li>an action was associated with an identifiable actor;</li>
+<li>the actor possessed relevant authority;</li>
+<li>applicable policy was evaluated;</li>
+<li>a delegation remained within scope;</li>
+<li>an action occurred under a defined governance state;</li>
+<li>revocation or restriction could be applied.</li>
+</ul>
+<p>Evidence therefore becomes part of architecture rather than a report assembled long after execution.</p>
+<p>This is essential for Continuous GRC.</p>
+<hr />
+<h2>11. Shift Left is necessary — but not sufficient</h2>
+<p>Security-by-Design is closely associated with Shift Left: addressing security earlier in the software lifecycle.</p>
+<p>That principle remains valid.</p>
+<p>Threat modeling, secure design, dependency review, automated tests, policy validation, and architecture analysis should occur before deployment.</p>
+<p>But autonomous systems also require security after deployment.</p>
+<p>A design can be correct at release time and later operate under a very different context.</p>
+<p>For agentic AI, the security lifecycle must therefore extend across:</p>
+<p><strong>design → build → deploy → operate → observe → govern</strong></p>
+<p>This is sometimes described as Shift Left, Shift Right, or Shift Everywhere.</p>
+<p>The exact terminology matters less than the architectural conclusion:</p>
+<blockquote>
+<p>Security must exist before action and remain effective during action.</p>
+</blockquote>
+<p>The two are inseparable.</p>
+<hr />
+<h2>12. Distribution makes governance harder</h2>
+<p>The challenge becomes more significant at the edge.</p>
+<p>Distributed agentic systems may operate across:</p>
+<ul>
+<li>cloud infrastructure;</li>
+<li>regional services;</li>
+<li>edge nodes;</li>
+<li>devices;</li>
+<li>industrial environments;</li>
+<li>intermittently connected systems.</li>
+</ul>
+<p>Centralized control becomes more difficult as latency, connectivity, administrative domains, and local autonomy increase.</p>
+<p>This creates an important design tension.</p>
+<p>The system may need local autonomy precisely when centralized governance is least available.</p>
+<p>Security-by-Design must therefore answer:</p>
+<blockquote>
+<p>How much authority can remain local without becoming ungoverned?</p>
+</blockquote>
+<p>A resilient architecture should not respond to uncertainty by silently expanding authority. In degraded conditions:</p>
+<ul>
+<li>Loss of connectivity should not automatically become permission.</li>
+<li>Reduced connectivity should preserve or reduce authority according to explicit policy.</li>
+</ul>
+<p>This is particularly important when autonomous AI can affect cyber-physical systems or other high-consequence resources.</p>
+<hr />
+<h2>13. Security properties should be testable</h2>
+<p>Security principles are useful, but testable security properties are stronger.</p>
+<p>For distributed agentic AI, architectural requirements should increasingly be expressible as invariants such as:</p>
+<ul>
+<li>unidentified autonomous actors cannot receive consequential authority;</li>
+<li>delegation cannot increase authority beyond the delegator's permitted scope;</li>
+<li>critical actions require prior authorization;</li>
+<li>autonomous actors cannot independently expand their own authority;</li>
+<li>loss of trust cannot increase authority;</li>
+<li>critical authority remains revocable;</li>
+<li>relevant actions produce attributable evidence.</li>
+</ul>
+<p>These are intentionally stated as architectural properties, not implementation instructions. The implementation may vary across systems and technologies, while the property should remain.</p>
+<p>That separation is important because Security-by-Design should survive technology substitution. Technology will change:</p>
+<ul>
+<li>Models will change.</li>
+<li>Agent frameworks will change.</li>
+<li>Protocols will change.</li>
+</ul>
+<p>The security invariants should remain meaningful.</p>
+<hr />
+<h2>14. Agentic threats reinforce the architectural argument</h2>
+<p>The OWASP Agentic Security Initiative has documented emerging threats associated with agentic AI and emphasizes threat-model-based approaches to understanding and mitigating them. [4]</p>
+<p>This is important because agentic risk is not confined to a single prompt or model response.</p>
+<p>Threats can emerge from interactions among:</p>
+<ul>
+<li>goals;</li>
+<li>tools;</li>
+<li>memory;</li>
+<li>external data;</li>
+<li>permissions;</li>
+<li>autonomous coordination.</li>
+</ul>
+<p>A system that relies on the agent itself to remain correct under every combination of those conditions is fragile.</p>
+<p>Security-by-Design assumes something more realistic:</p>
+<p><strong>the agent may fail.</strong></p>
+<p>It may:</p>
+<ul>
+<li>misunderstand;</li>
+<li>be manipulated;</li>
+<li>receive malicious context;</li>
+<li>be compromised;</li>
+<li>coordinate in unexpected ways.</li>
+</ul>
+<p>The architecture should therefore remain capable of constraining consequential authority even when the agent is wrong.</p>
+<hr />
+<h2>15. Security should survive component substitution</h2>
+<p>Agentic AI is evolving rapidly.</p>
+<p>Today's model, framework, memory system, orchestration layer, or tool interface may be replaced tomorrow.</p>
+<p>A security architecture tightly coupled to one model or one agent framework will age quickly.</p>
+<p>This motivates another SGAEIA research principle:</p>
+<p><strong>security-preserving substitution.</strong></p>
+<p>Replacing a component should not silently invalidate the system's core security properties. The implementation may change, but the architectural expectations should remain:</p>
+<ul>
+<li>identifiable actors;</li>
+<li>bounded authority;</li>
+<li>controlled delegation;</li>
+<li>policy before action;</li>
+<li>revocability;</li>
+<li>evidence;</li>
+<li>continuous governance.</li>
+</ul>
+<p>This makes Security-by-Design a property of the system rather than a feature of a particular vendor or model.</p>
+<figure class="article-figure"><img src="/assets/article7/sgaeia-article-07-figure-03-security-preserving-substitution.png" alt="Security-Preserving Substitution" loading="lazy"><figcaption><em>Figure 3 — Security-preserving substitution. Components may evolve or be replaced while security properties — including identity, policy enforcement, bounded authority, audit continuity, and architectural invariants — remain preserved.</em> <span class="figure-credit">© 2026 Aridio Silva | Project SGAEIA | CC BY 4.0.</span></figcaption></figure>
+<hr />
+<h2>16. The SGAEIA perspective</h2>
+<p>SGAEIA — Secure Governed Autonomous Edge Intelligence Architecture — explores how autonomous and distributed AI systems can operate with useful autonomy while authority remains bounded, attributable, auditable, continuously governed, and revocable.</p>
+<p>Security-by-Design connects several themes developed across the SGAEIA Research Series:</p>
+<ul>
+<li>bounded and revocable authority;</li>
+<li>authenticated delegation;</li>
+<li>Continuous GRC;</li>
+<li>Evidence-as-Code;</li>
+<li>Zero Trust;</li>
+<li>distributed edge intelligence.</li>
+</ul>
+<p>These are not independent controls; together, they describe a broader architectural objective:</p>
+<blockquote>
+<p><strong>Autonomous intelligence should not imply autonomous authority.</strong></p>
+</blockquote>
+<p>The architecture must remain capable of deciding what an autonomous system may do, proving why that decision was made, and withdrawing authority when conditions change.</p>
+<p>That is the foundation of governed autonomy.</p>
+<figure class="article-figure"><img src="/assets/article7/sgaeia-article-07-figure-04-trusted-agent-ecosystem.png" alt="Toward a Trusted Ecosystem of Autonomous Agents" loading="lazy"><figcaption><em>Figure 4 — Toward a trusted ecosystem of autonomous agents. Bounded authority, human control, Continuous GRC, trusted collaboration, and Evidence-as-Code provide a governance foundation for increasingly capable distributed AI systems.</em> <span class="figure-credit">© 2026 Aridio Silva | Project SGAEIA | CC BY 4.0.</span></figcaption></figure>
+<hr />
+<h2>17. What this article intentionally does not publish</h2>
+<p>This article presents public research principles and high-level architectural properties.</p>
+<p>It intentionally does not define implementation-specific:</p>
+<ul>
+<li>schemas;</li>
+<li>protocols;</li>
+<li>internal state machines;</li>
+<li>enforcement algorithms;</li>
+<li>operational pipelines;</li>
+<li>private interface contracts.</li>
+</ul>
+<p>The objective is to make the research position open to technical and academic discussion while preserving an appropriate boundary between public architectural reasoning and implementation detail.</p>
+<hr />
+<h2>Conclusion</h2>
+<p>Agentic AI requires a different security posture because autonomous software can become an operational actor.</p>
+<p>Once a system can select tools, hold credentials, delegate tasks, coordinate with other agents, and affect external resources, security can no longer depend mainly on filtering model outputs or auditing actions afterward.</p>
+<p>Security must shape the authority of the system before execution.</p>
+<p>That means designing for:</p>
+<ul>
+<li>identity before authority;</li>
+<li>bounded permission;</li>
+<li>authenticated and constrained delegation;</li>
+<li>policy before action;</li>
+<li>Zero Trust;</li>
+<li>revocation;</li>
+<li>continuous governance;</li>
+<li>verifiable evidence.</li>
+</ul>
+<p>The central argument is simple:</p>
+<blockquote>
+<p><strong>Security for autonomous AI should not be added around autonomy. It should define the conditions under which autonomy is allowed to exist.</strong></p>
+</blockquote>
+<p>That is Security-by-Design for distributed agentic AI.</p>
+<hr />
+<h2>References</h2>
+<p>[1] Rose, S., Borchert, O., Mitchell, S., &amp; Connelly, S. (2020). <em>Zero Trust Architecture</em>. NIST Special Publication 800-207. National Institute of Standards and Technology. <a href="https://doi.org/10.6028/NIST.SP.800-207" rel="noopener">https://doi.org/10.6028/NIST.SP.800-207</a></p>
+<p>[2] Tabassi, E. (2023). <em>Artificial Intelligence Risk Management Framework (AI RMF 1.0)</em>. NIST AI 100-1. National Institute of Standards and Technology. <a href="https://doi.org/10.6028/NIST.AI.100-1" rel="noopener">https://doi.org/10.6028/NIST.AI.100-1</a></p>
+<p>[3] ISO/IEC. (2023). <em>ISO/IEC 42001:2023 — Information technology — Artificial intelligence — Management system</em>. International Organization for Standardization. <a href="https://www.iso.org/standard/42001" rel="noopener">https://www.iso.org/standard/42001</a></p>
+<p>[4] OWASP GenAI Security Project. (2025). <em>Agentic AI — Threats and Mitigations</em>. OWASP Agentic Security Initiative. <a href="https://genai.owasp.org/resource/agentic-ai-threats-and-mitigations/" rel="noopener">https://genai.owasp.org/resource/agentic-ai-threats-and-mitigations/</a></p>
+<hr />
+<h2>About the Author</h2>
+<p><strong>Aridio Silva</strong> is an independent researcher based in Brazil working on the architecture, security, governance, and trustworthiness of autonomous and distributed artificial intelligence systems.</p>
+<p>His research focuses on <strong>Agentic AI, Multi-Agent Systems, Edge AI, AI Security, Zero Trust, Security-by-Design, AI Governance, Spec-Driven Development, and continuous security assurance</strong>.</p>
+<p>He is the creator and lead researcher of <strong>SGAEIA — Secure Governed Autonomous Edge Intelligence Architecture</strong>, an open research initiative investigating architectural foundations for secure, governed, auditable, and trustworthy autonomous AI systems operating across distributed edge-cloud environments.</p>
+<hr />
+<h2>Research &amp; Project Resources</h2>
+<p><strong>Aridio Silva</strong> — Independent Researcher, Brazil</p>
+<ol>
+<li><strong>ORCID:</strong> <a href="https://orcid.org/0009-0008-2411-6995" rel="noopener">https://orcid.org/0009-0008-2411-6995</a></li>
+<li><strong>Google Scholar:</strong> <a href="https://scholar.google.com/citations?user=rPn5O48AAAAJ" rel="noopener">https://scholar.google.com/citations?user=rPn5O48AAAAJ</a></li>
+<li><strong>Zenodo — SGAEIA Community:</strong> <a href="https://zenodo.org/communities/sgaeia" rel="noopener">https://zenodo.org/communities/sgaeia</a></li>
+<li><strong>OpenAIRE:</strong> <a href="https://explore.openaire.eu/search/find?fv0=Aridio%20Silva&amp;f0=q" rel="noopener">https://explore.openaire.eu/search/find?fv0=Aridio Silva&amp;f0=q</a></li>
+<li><strong>Medium:</strong> <a href="https://medium.com/@aridiosilva" rel="noopener">https://medium.com/@aridiosilva</a></li>
+<li><strong>GitHub:</strong> <a href="https://github.com/aridiosilva" rel="noopener">https://github.com/aridiosilva</a></li>
+<li><strong>LinkedIn pessoal:</strong> <a href="https://www.linkedin.com/in/aridio-silva-74997111/" rel="noopener">https://www.linkedin.com/in/aridio-silva-74997111/</a></li>
+<li><strong>SGAEIA Repository:</strong> <a href="https://github.com/aridiosilva/SGAEIA" rel="noopener">https://github.com/aridiosilva/SGAEIA</a></li>
+<li><strong>SGAEIA Research Artifact / DOI:</strong> <a href="https://doi.org/10.5281/zenodo.22557796" rel="noopener">https://doi.org/10.5281/zenodo.22557796</a></li>
+<li><strong>Homepage pessoal:</strong> <a href="https://aridiosilva.com" rel="noopener">https://aridiosilva.com</a></li>
+<li><strong>Homepage SGAEIA:</strong> <a href="https://aridiosilva.com/sgaeia" rel="noopener">https://aridiosilva.com/sgaeia</a></li>
+<li><strong>SGAEIA LinkedIn:</strong> <a href="https://www.linkedin.com/company/sgaeia/" rel="noopener">https://www.linkedin.com/company/sgaeia/</a></li>
+</ol>
+<hr />
+<h2>Figures</h2>
+<p>The cover image is not numbered. Figures 1–4 are numbered sequentially and referenced consistently in the article.</p>
+<p>All final images follow the <strong>SGAEIA Image Editorial Standard v1.0</strong> and contain embedded publication metadata.</p>
+<ul>
+<li><strong>Creator:</strong> Aridio Silva</li>
+<li><strong>Copyright:</strong> © 2026 Aridio Silva</li>
+<li><strong>Project:</strong> SGAEIA</li>
+<li><strong>License:</strong> CC BY 4.0</li>
+<li><strong>Institutional URL:</strong> <a href="https://aridiosilva.com/sgaeia" rel="noopener">https://aridiosilva.com/sgaeia</a></li>
+</ul>
+<p>The images are conceptual and intentionally remain within the public disclosure boundary: they communicate principles, properties, governance relationships, and high-level architectural ideas without exposing implementation-sensitive protocols, state machines, operational pipelines, enforcement internals, or reconstruction-enabling schemas.</p>
+<hr />
+<h2>License</h2>
+<p>Except where otherwise noted, the text and original conceptual illustrations in this article are licensed under the <strong>Creative Commons Attribution 4.0 International License (CC BY 4.0)</strong>.</p>
+<p>© 2026 Aridio Silva. You may share and adapt this work for any purpose, provided appropriate attribution is given.</p>
+<p>The SGAEIA software research artifact remains subject to its own <strong>Apache License 2.0</strong>.</p>
+<p><strong>Autonomous AI. Governed by Design. Trusted by Evidence.</strong></p>
+<hr />
+<h3>Series continuity</h3>
+<p>Published/current entries in the <strong>SGAEIA Research Series</strong> include:</p>
+<ol>
+<li><a href="https://medium.com/@aridiosilva/from-edge-ai-to-governed-autonomous-edge-intelligence-9cbe487d853a" rel="noopener"><em>From Edge AI to Governed Autonomous Edge Intelligence</em></a></li>
+<li><a href="https://medium.com/@aridiosilva/why-autonomous-ai-agents-need-bounded-and-revocable-authority-da75656098f7" rel="noopener"><em>Why Autonomous AI Agents Need Bounded and Revocable Authority</em></a></li>
+<li><em>Zero Trust for Multi-Agent AI Systems</em></li>
+<li><a href="https://medium.com/@aridiosilva/authenticated-delegation-between-autonomous-ai-agents-4c1281cd9e14" rel="noopener"><em>Authenticated Delegation Between Autonomous AI Agents</em></a></li>
+<li><a href="https://medium.com/@aridiosilva/continuous-grc-for-agentic-ai-ada11c2974d0" rel="noopener"><em>Continuous GRC for Agentic AI</em></a></li>
+<li><a href="https://medium.com/@aridiosilva/evidence-as-code-making-ai-governance-verifiable-db89e3105b87" rel="noopener"><em>Evidence-as-Code: Making AI Governance Verifiable</em></a></li>
+<li><em><strong>Security-by-Design for Distributed Agentic AI</strong></em></li>
+<li><em>SGAEIA: A Reference Architecture for Secure Governed Autonomous Edge Intelligence</em></li>
+<li><a href="https://medium.com/@aridiosilva/when-ai-begins-to-build-ai-f762df34afec" rel="noopener"><em>When AI Begins to Build AI</em></a></li>
+<li><a href="https://medium.com/@aridiosilva/rogue-ai-agents-when-autonomous-systems-become-a-collective-75ddaf685938" rel="noopener">Rogue AI Agents: When Autonomous Systems Become a Collective</a></li>
+<li><a href="https://medium.com/@aridiosilva/from-model-capability-to-governed-action-an-architecture-for-secure-agentic-ai-de0bf29d0cdc" rel="noopener"><em>From Model Capability to Governed Action: An Architecture for Secure Agentic AI</em></a></li>
+<li><a href="https://medium.com/@aridiosilva/ten-days-that-exposed-the-governance-gap-in-frontier-ai-07fbd2c278d4" rel="noopener"><em>Ten Days That Exposed the Governance Gap in Frontier AI</em></a></li>
+</ol>
+<h2>Suggested citation</h2>
+<p>Silva, Aridio. (2026). <em>Security-by-Design for Distributed Agentic AI</em>. Zenodo. <a href="https://doi.org/10.5281/zenodo.22816239" rel="noopener">https://doi.org/10.5281/zenodo.22816239</a></p>
+<p>Zenodo is the persistent source for files, version, license, and citation data.</p>
+<p class="medium-link"><a href="https://medium.com/@aridiosilva/security-by-design-for-distributed-agentic-ai-d8a00dfe1acd" rel="noopener">Read the full article on Medium</a></p>
+</article></section></main>
+<footer><div class="shell">© 2026 Aridio Silva · SGAEIA — Secure Governed Autonomous Edge Intelligence Architecture</div></footer>
+</body></html>
