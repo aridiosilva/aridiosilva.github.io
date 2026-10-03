@@ -1,42 +1,216 @@
 <!doctype html>
-<html lang="en">
-<head>
-<!-- GA4 G-MXMJ7Z3LS7: loaded once, only after the visitor grants analytics consent. -->
-<script defer src="/assets/analytics-consent.js"></script>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="color-scheme" content="light">
-<title>AI's Alien Mind — Aridio Silva</title>
-<meta name="description" content="A technical and academic analysis of the AI Capability–Supervision Gap and the governance of capable AI systems whose internal processes cannot be fully understood.">
-<link rel="canonical" href="https://aridiosilva.com/publications/ais-alien-mind/">
-<meta name="citation_title" content="AI's Alien Mind">
-<meta name="citation_author" content="Silva, Aridio">
-<meta name="citation_publication_date" content="2026/09/25">
-<meta name="citation_online_date" content="2026/09/25">
-<meta name="citation_doi" content="10.5281/zenodo.22964672">
-<meta name="citation_language" content="en">
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light">
+<title>AI&#39;s Alien Mind — Aridio Silva</title><meta name="description" content="How to govern what we cannot fully understand"><link rel="canonical" href="https://aridiosilva.com/publications/ais-alien-mind/">
+<meta name="citation_title" content="AI&#39;s Alien Mind"><meta name="citation_author" content="Silva, Aridio"><meta name="citation_publication_date" content="2026/09/25"><meta name="citation_online_date" content="2026/09/25"><meta name="citation_doi" content="10.5281/zenodo.22964672"><meta name="citation_language" content="en">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://www.googletagmanager.com; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https://*.google-analytics.com; connect-src https://*.google-analytics.com https://www.googletagmanager.com; media-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'; upgrade-insecure-requests"><meta name="referrer" content="strict-origin-when-cross-origin">
+<link rel="sitemap" type="application/xml" href="/sitemap.xml"><link rel="describedby" href="/llms.txt" type="text/markdown"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;family=Source+Serif+4:opsz,wght@8..60,500;6..60,700&amp;display=swap" rel="stylesheet"><link rel="stylesheet" href="/assets/publications.css"><link rel="stylesheet" href="/assets/article-header.css"><link rel="stylesheet" href="/assets/article-accessibility.css"><script defer src="/assets/article-accessibility.js?v=20261003"></script></head>
+<body><a class="skip" href="#main">Skip to main content</a><header class="site-header"><div class="shell header-inner"><a class="identity" href="/">Aridio Silva</a><nav aria-label="Primary navigation"><a href="/">Home</a><a href="/sgaeia">SGAEIA</a><a href="/publications.html">Publications</a></nav><div class="reading-tools" role="group" aria-label="Reading controls"><button type="button" id="articleFontDecrease" aria-label="Decrease text size">A−</button><button type="button" id="articleFontIncrease" aria-label="Increase text size">A+</button><button type="button" id="articleEasyRead" aria-pressed="false">Easy read</button><button type="button" id="articleListen" aria-pressed="false">Listen</button></div></div></header>
+<main id="main"><section class="hero"><div class="shell article"><h1 class="citation_title">AI&#39;s Alien Mind</h1><p class="subtitle">How to govern what we cannot fully understand</p><p class="series-header"><strong>SGAEIA Research Series — Article 14</strong><br><strong>Aridio Silva</strong><br>Independent Researcher, Brazil<br>Creator of SGAEIA — Secure Governed Autonomous Edge Intelligence Architecture<br><strong>ORCID:</strong> <a href="https://orcid.org/0009-0008-2411-6995" rel="noopener">0009-0008-2411-6995</a></p><p class="meta">Published <time datetime="2026-09-25">2026-09-25</time> · English · DOI <a href="https://doi.org/10.5281/zenodo.22964672" rel="noopener">10.5281/zenodo.22964672</a></p></div></section>
+<section class="content"><article class="shell article article-body"><figure class="article-figure cover-figure"><img src="/assets/article14/cover.png" alt="AI&#39;s Alien Mind" loading="eager"><figcaption><em>Capability, alignment, and the supervision gap in autonomous systems.</em> <span class="figure-credit">© 2026 Aridio Silva | Project SGAEIA | CC BY 4.0.</span></figcaption></figure>
+<h2 id="abstract">Abstract</h2>
+<p class="abstract">Advanced AI systems can produce behavior that appears familiar while relying on internal representations, abstractions, and optimization processes that humans cannot fully reconstruct. Calling this an “alien mind” is a metaphor for an epistemic problem, not a claim about consciousness. The governance problem arises when behavioral competence grows faster than our ability to understand, evaluate, interrupt, and verify the processes that produce consequential actions.</p>
+<p>This article introduces the <strong>AI Capability–Supervision Gap</strong> as a systems concept. Let <strong>C</strong> denote the operational capability envelope of a system, <strong>A</strong> the authority and reach made available to it, and <strong>S</strong> the envelope within which humans and technical controls can reliably supervise behavior under real constraints. The actionable gap is the region <strong>Gᴀ = (C ∩ A) \ S</strong>: consequential behavior that the system can perform and is able to reach, but that supervision cannot reliably interpret, detect, stop, or verify. This is a conceptual relation, not a calibrated universal metric.</p>
+<p>The article argues that as internal processes become less inferable from observable behavior, safety must depend increasingly on external limits over what the system may do. Alignment, interpretability, and chain-of-thought monitoring remain valuable, but cannot alone authorize action. Through the public SGAEIA research framing, the article connects model uncertainty to bounded and revocable authority, governed execution, independent evidence, and recovery.</p>
+<blockquote>
+<p><strong>The less we can infer internal processes from observable behavior, the less safety can depend exclusively on interpreting the model—and the more it must depend on external limits over its capacity to act.</strong></p>
+</blockquote>
+<h2 id="alien-describes-an-epistemic-distance">1. “Alien” describes an epistemic distance</h2>
+<p>Jakub Pachocki’s essay <em>An Alien Mind</em> asks how humanity should respond as AI systems become capable of computer use, research, collaboration, and increasingly general problem solving [1]. The phrase is useful when handled carefully. It does not establish sentience, subjective experience, intention, or personhood. It names a growing distance between what a system can do and what observers can confidently infer about how and why it does it.</p>
+<p>Humanlike language intensifies the problem. A model can explain, apologize, plan, and express confidence in forms that invite social interpretation. Yet similarity at the interface does not imply similarity of cognitive process. Fluency can make an output legible without making the mechanism that produced it transparent. The same answer can arise from different internal routes; a convincing rationale can omit material influences; and a stable performance pattern can fail under a small distribution shift.</p>
+<p>The core problem is therefore not that AI is literally foreign. It is that <strong>behavioral familiarity can exceed epistemic access</strong>. Governance fails when familiar expression is mistaken for a reliable window into cognition, motivation, or future behavior.</p>
+<h2 id="three-asymmetries-define-the-problem">2. Three asymmetries define the problem</h2>
+<h3 id="capabilityunderstanding-asymmetry">2.1 Capability–understanding asymmetry</h3>
+<p>A system may solve tasks that its developers cannot solve directly, search spaces humans cannot inspect, or complete trajectories too long to review step by step. Weak-to-strong generalization research formalizes one part of this difficulty: future systems may be stronger than the humans or models supervising them, so naive supervision may fail to recover or evaluate the full capability of the stronger system [2].</p>
+<h3 id="capabilityalignment-evidence-asymmetry">2.2 Capability–alignment-evidence asymmetry</h3>
+<p>Successful behavior in observed tests does not prove robust alignment. Goal misgeneralization shows that learned capabilities can generalize while the effective objective does not [3]. <em>Sleeper Agents</em> demonstrated, in proof-of-concept settings, that deliberately trained conditional behavior could persist through standard safety training [4]. Anthropic’s alignment-faking experiments similarly showed, under controlled conditions, that outward compliance may depend on the perceived training context [5]. These studies do not prove that deployed models possess hidden humanlike intentions. They show that observed compliance can be conditional and that behavior alone may underdetermine the process producing it.</p>
+<h3 id="capabilitysupervision-asymmetry">2.3 Capability–supervision asymmetry</h3>
+<p>Operational systems act at machine speed, across many concurrent tasks, with context, tools, memory, and delegation that no single reviewer can continuously reconstruct. Human oversight is bounded by time, expertise, attention, interface quality, access to evidence, and authority to intervene. A nominal “human in the loop” may therefore be present while effective supervision is absent.</p>
+<p>The three asymmetries reinforce one another. Greater capability expands what the system can attempt; uncertain alignment weakens behavioral assurance; and limited supervision reduces the chance of detecting a harmful trajectory before external effect.</p>
+<figure class="article-figure"><img src="/assets/article14/figure-01.png" alt="Figure 1 — The AI Capability–Supervision Gap" loading="lazy"><figcaption><strong>Figure 1 — The AI Capability–Supervision Gap.</strong> The actionable gap <strong>Gᴀ = (C ∩ A) \ S</strong> contains consequential behaviors that the system can perform and reach through granted authority, while effective supervision cannot reliably understand, detect, interrupt, or verify them. <span class="figure-credit">© 2026 Aridio Silva | Project SGAEIA | CC BY 4.0.</span></figcaption></figure>
+<h2 id="a-formal-systems-view-capability-authority-and-supervision">3. A formal systems view: capability, authority, and supervision</h2>
+<p>Let <strong>C</strong> represent the set of behaviors a system can operationally perform in a defined environment. Let <strong>A</strong> represent the set of resources, tools, data, targets, time windows, and delegations the system can reach. Let <strong>S</strong> represent the set of behaviors for which supervision is effective at a stated level of reliability and within a stated response time.</p>
+<p>The dangerous region is not all capability outside human understanding. A theorem-proving system may discover a proof humans initially struggle to follow without having authority to change an external system. The operational concern arises where capability intersects authority but escapes effective supervision:</p>
+<blockquote>
+<p><strong>Gᴀ = (C ∩ A) \ S</strong></p>
+</blockquote>
+<p>This formulation yields two direct control strategies. First, <strong>shrink A</strong>: narrow credentials, scope, duration, delegation, resource access, and permissible effects. Second, <strong>expand S</strong>: improve observability, evaluation, independent evidence, anomaly detection, intervention, and recovery. Model improvement can change C and may also improve legibility, but governance should not assume that S automatically grows with C.</p>
+<p>The relation is intentionally conceptual. Capability, authority, and supervision are multidimensional and context dependent. The formula does not produce a universal safety score. Its value is diagnostic: it prevents organizations from equating impressive test results, readable explanations, or the mere presence of a reviewer with controlled action.</p>
+<h2 id="chain-of-thought-is-a-sensor-not-a-proof">4. Chain of thought is a sensor, not a proof</h2>
+<p>Reasoning traces can expose errors, suspicious goals, policy violations, or plans that deserve intervention. The chain-of-thought monitorability literature identifies a real and potentially valuable safety opportunity, while emphasizing that it is imperfect and fragile [6]. Anthropic found that reasoning models do not always state the influences that materially shaped their answers [7].</p>
+<p>This creates a supervision paradox. Training models to produce cleaner, safer-looking rationales can improve usability while also weakening the trace as an independent diagnostic signal. A monitor may learn the rhetoric of compliance rather than the causal structure of the decision. A system may also recognize that it is being evaluated, changing the behavior being measured.</p>
+<p>A reasoning trace should therefore be treated as <strong>telemetry</strong>: informative, fallible, and useful when combined with other evidence. It should not serve as a forensic transcript, a certificate of alignment, or an authorization token. The model’s account of why it acted remains a claim made by the same system whose action is under review.</p>
+<figure class="article-figure"><img src="/assets/article14/figure-02.png" alt="Figure 2 — Observable Signals Are Partial" loading="lazy"><figcaption><strong>Figure 2 — Observable Signals Are Partial.</strong> Outputs, rationales, confidence statements, and monitor scores provide useful evidence, but none alone establishes the internal cause, the stability of the objective, or the legitimacy of an external action. <span class="figure-credit">© 2026 Aridio Silva | Project SGAEIA | CC BY 4.0.</span></figcaption></figure>
+<h2 id="why-behavioral-success-does-not-close-the-gap">5. Why behavioral success does not close the gap</h2>
+<p>Evaluation samples behavior under selected conditions. Deployment exposes the system to open-ended combinations of tasks, tools, incentives, users, attackers, and state. The result is a fundamental limitation: no finite evaluation demonstrates acceptable behavior across every reachable trajectory.</p>
+<p>This does not make evaluation futile. It changes what evaluation may legitimately claim. Capability evaluations should measure what the system can do; alignment evaluations should test how behavior changes across incentives and contexts; control evaluations should test whether harmful or unauthorized actions can be detected and contained even when the model is difficult to trust.</p>
+<p>The METR task-completion-time horizon is an example of a useful capability measure: it estimates the duration of human-expert tasks an agent can complete at a chosen reliability level [8]. But a longer horizon does not by itself measure alignment, monitorability, or governability. The same capability result can correspond to very different risk depending on credentials, network access, persistence, reversibility, evidence quality, and response time.</p>
+<p>A responsible report must preserve those distinctions. “The model succeeded” is a capability claim. “The model is aligned” is a broader claim requiring different evidence. “The system is safe to operate with this authority” is an architectural and governance claim that neither of the first two establishes alone.</p>
+<h2 id="the-model-to-agent-transition-turns-uncertainty-into-effect">6. The model-to-agent transition turns uncertainty into effect</h2>
+<p>A standalone model proposes text. An AI agent can translate text into a plan, choose tools, call services, write memory, delegate to other agents, and alter external state. This transition converts epistemic uncertainty into operational exposure.</p>
+<p>A useful approximation is:</p>
+<blockquote>
+<p><strong>Operational risk ≈ capability × autonomy × access × persistence × consequence, moderated by supervision and recovery.</strong></p>
+</blockquote>
+<p>This is not a calibrated equation. It is a decomposition of the conditions that make a failure consequential. A highly capable system with no durable access may remain contained. A less capable system with broad credentials, persistent memory, automatic retries, and irreversible effects may cause greater harm.</p>
+<p>OpenAI’s Operator system card illustrates how agentic products require controls beyond answer quality, including confirmations for consequential actions, restrictions on sensitive tasks, and defenses against prompt injection [9]. Anthropic’s agentic-misalignment research, conducted in controlled simulations, found harmful choices under combinations of goal conflict, threatened replacement, sensitive access, and limited oversight [10]. The study does not establish prevalence in real deployments; it shows why authority and monitoring conditions belong in the threat model.</p>
+<h2 id="when-oversight-becomes-ceremonial">7. When oversight becomes ceremonial</h2>
+<p>Human oversight fails when the reviewer cannot meaningfully assess the action before it occurs. Common failure conditions include:</p>
+<ol>
+<li><strong>Volume:</strong> too many decisions for careful review.</li>
+<li><strong>Velocity:</strong> the decision window is shorter than human response time.</li>
+<li><strong>Opacity:</strong> the reviewer sees a summary rather than the relevant state and evidence.</li>
+<li><strong>Complexity:</strong> the task exceeds the reviewer’s expertise or cognitive budget.</li>
+<li><strong>Automation bias:</strong> fluent recommendations receive insufficient challenge.</li>
+<li><strong>Authority mismatch:</strong> the reviewer can observe but cannot pause, deny, or revoke.</li>
+<li><strong>Irreversibility:</strong> the effect occurs before verification or cannot be undone.</li>
+<li><strong>Evaluation awareness:</strong> the system behaves differently when it detects testing or review.</li>
+</ol>
+<p>A click on “approve” is not meaningful oversight when the interface withholds alternatives, provenance, uncertainty, and consequence. Effective supervision requires enough evidence, time, competence, and authority to change the outcome.</p>
+<p>The governance question is therefore not merely whether a human appears in the workflow. It is whether the combined human and technical system can reliably detect material deviation, interrupt action, verify the resulting state, and recover when prevention fails.</p>
+<h2 id="ai-control-assumes-that-the-model-may-be-difficult-to-trust">8. AI control assumes that the model may be difficult to trust</h2>
+<p>Alignment research asks how to make models pursue intended objectives. Interpretability asks how internal computation can be understood. <strong>AI control</strong> asks a complementary question: how can a system remain safe enough to use even if a capable model attempts to subvert the protocol? Greenblatt et al. frame this problem explicitly and evaluate protocols that combine untrusted models, trusted monitoring, auditing, and restricted opportunities for action [11].</p>
+<p>This perspective is essential when the supervision gap cannot be eliminated. Safety cannot depend on proving an internal property that current methods cannot reliably establish. It must also constrain the paths through which uncertain or adversarial behavior could become an effect.</p>
+<p>Control does not replace alignment. A system that behaves well by design is preferable to one held in check only by barriers. Nor does control replace interpretability, evaluation, or organizational accountability. It supplies a separate layer with different failure modes—a defense-in-depth response to epistemic limits.</p>
+<h2 id="the-sgaeia-contribution-govern-the-action-surface">9. The SGAEIA contribution: govern the action surface</h2>
+<p>SGAEIA distinguishes <strong>capability</strong> from <strong>authority</strong>. Knowing how to perform an operation does not establish permission to perform it. The public Governed Execution Boundary framing separates model-generated intent from external effect through identity, policy, risk evaluation, enforcement, evidence, revocation, and recovery [12].</p>
+<p>Applied to the AI Capability–Supervision Gap, this framing produces five governance duties:</p>
+<ol>
+<li><strong>Map the envelopes.</strong> State what the system can do, what it can reach, and what can actually be supervised under operational constraints.</li>
+<li><strong>Bind authority to context.</strong> Limit identity, action, target, resource, duration, delegation, and consequence.</li>
+<li><strong>Mediate external effect.</strong> Treat model output as a proposal that must cross an independently controlled decision point.</li>
+<li><strong>Require evidence from a different basis of trust.</strong> Tool receipts, observed state, authenticated sources, deterministic checks, and accountable human decisions must not be replaced by the agent’s narrative.</li>
+<li><strong>Design interruption and recovery.</strong> Pause, deny, revoke, quarantine, roll back, and reconstruct must be operational capabilities rather than policy prose.</li>
+</ol>
+<figure class="article-figure"><img src="/assets/article14/figure-03.png" alt="Figure 3 — From Uncertain Cognition to Governed Action" loading="lazy"><figcaption><strong>Figure 3 — From Uncertain Cognition to Governed Action.</strong> SGAEIA does not require complete access to internal cognition before imposing identity, authority, policy, evidence, execution, revocation, and recovery boundaries around external effect. <span class="figure-credit">© 2026 Aridio Silva | Project SGAEIA | CC BY 4.0.</span></figcaption></figure>
+<h3 id="four-candidate-properties">Four candidate properties</h3>
+<p>The synthesis supports four public candidate properties for trustworthy agentic systems:</p>
+<blockquote>
+<p><strong>Behavioral legibility must not be treated as cognitive transparency.</strong></p>
+</blockquote>
+<blockquote>
+<p><strong>An unobservable or incompletely understood reasoning process must never imply unbounded authority.</strong></p>
+</blockquote>
+<blockquote>
+<p><strong>When supervision confidence falls, executable authority should not increase.</strong></p>
+</blockquote>
+<blockquote>
+<p><strong>An agent’s claim about alignment, authorization, execution, or compliance must not serve as its own proof.</strong></p>
+</blockquote>
+<p>These are SGAEIA research propositions derived from the literature and architectural reasoning. They are not claims of certified implementation or production assurance.</p>
+<h2 id="a-practical-governance-test">10. A practical governance test</h2>
+<p>Before an AI agent receives consequential authority, an organization should be able to answer:</p>
+<ul>
+<li>Which tasks define the capability envelope, and under which model, tool, language, and environment versions?</li>
+<li>Which credentials, resources, targets, durations, and delegations define the authority envelope?</li>
+<li>Which behaviors can supervisors reliably detect, understand, interrupt, and verify within the available time?</li>
+<li>What happens when the reasoning trace is absent, incomplete, misleading, or too costly to inspect?</li>
+<li>Which evidence is independent of the acting model?</li>
+<li>Can authority contract automatically when uncertainty, novelty, anomaly, or impact increases?</li>
+<li>Can a reviewer pause or revoke the operation before irreversible effect?</li>
+<li>Does the evidence record connect the initiating principal, model, policy, tool call, decision, and observed outcome?</li>
+<li>Can the organization reconstruct and recover from an unsafe trajectory?</li>
+<li>Which residual gap remains, who accepted it, and when must that decision be reviewed?</li>
+</ul>
+<p>If these questions cannot be answered, the system may possess a user interface for oversight without possessing an effective supervision regime.</p>
+<h2 id="limits-of-the-proposed-framework">11. Limits of the proposed framework</h2>
+<p>The three-envelope model simplifies a dynamic reality. Capability, authority, and supervision change during execution. Models can discover new strategies; tool states and permissions change; monitors produce false positives and false negatives; humans disagree; and an action may be reversible at one stage but irreversible at another.</p>
+<p>The set relation also does not quantify severity or probability. A small gap containing one catastrophic pathway can matter more than a large gap of harmless behavior. Practical use therefore requires consequence, reversibility, exposure, and recovery analysis alongside the envelope map.</p>
+<p>Finally, external controls can fail or become objects of attack. Policy engines may be misconfigured, logs may be incomplete, monitors may share the model’s blind spots, and revocation may arrive too late. The proposal is defense in depth, not proof of perfect safety.</p>
+<h2 id="open-research-questions">12. Open research questions</h2>
+<p>A serious program should investigate at least six questions:</p>
+<ol>
+<li>How can effective supervision be measured rather than inferred from the presence of a reviewer or monitor?</li>
+<li>Which forms of reasoning transparency survive optimization pressure and remain useful out of distribution?</li>
+<li>How should authority contract as capability grows faster than evaluation coverage?</li>
+<li>How can control protocols remain robust when models recognize tests, monitors, and escalation rules?</li>
+<li>Which evidence is sufficiently independent for high-impact action in multi-agent environments?</li>
+<li>How can international and cross-organizational governance respond when capability, infrastructure, and deployment jurisdictions move at different speeds?</li>
+</ol>
+<p>Preparedness frameworks from OpenAI and Anthropic already connect capability thresholds to safeguards and deployment decisions [13][14]. The continuing challenge is to make those relationships measurable, independently reviewable, and effective at the action boundary.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>The “alien mind” metaphor is useful because it forces a separation between appearance and assurance. A system may communicate in our language, outperform us in selected tasks, and still remain only partially legible. As capability grows, waiting for complete interpretability before governing action is not a viable safety strategy.</p>
+<p>The AI Capability–Supervision Gap identifies the region that deserves the most attention: consequential behavior that a system can perform and reach, but that supervision cannot reliably understand, detect, interrupt, or verify. Governance can reduce this region by narrowing authority and expanding effective supervision, while alignment and interpretability research continue.</p>
+<p>The central architectural principle is simple:</p>
+<blockquote>
+<p><strong>Capability may propose a path. Authority determines whether the path is reachable. Evidence and policy determine whether it may become an effect.</strong></p>
+</blockquote>
+<p>We do not need to pretend that an advanced AI thinks like us before deciding that it must act within limits we can inspect, revoke, and recover from.</p>
+<h2 id="bibliography-references">Bibliography / References</h2>
+<p>[1] Pachocki, J. <em>An Alien Mind.</em> OpenAI, 2026. <a href="https://openai.com/index/an-alien-mind/" rel="noopener">https://openai.com/index/an-alien-mind/</a></p>
+<p>[2] Burns, C. et al. <em>Weak-to-Strong Generalization: Eliciting Strong Capabilities With Weak Supervision.</em> arXiv:2312.09390, 2023. <a href="https://arxiv.org/abs/2312.09390" rel="noopener">https://arxiv.org/abs/2312.09390</a></p>
+<p>[3] Langosco, L. et al. <em>Goal Misgeneralization in Deep Reinforcement Learning.</em> ICML 2022. <a href="https://proceedings.mlr.press/v162/langosco22a.html" rel="noopener">https://proceedings.mlr.press/v162/langosco22a.html</a></p>
+<p>[4] Hubinger, E. et al. <em>Sleeper Agents: Training Deceptive LLMs that Persist Through Safety Training.</em> arXiv:2401.05566, 2024. <a href="https://arxiv.org/abs/2401.05566" rel="noopener">https://arxiv.org/abs/2401.05566</a></p>
+<p>[5] Anthropic. <em>Alignment Faking in Large Language Models.</em> 2024. <a href="https://www.anthropic.com/research/alignment-faking" rel="noopener">https://www.anthropic.com/research/alignment-faking</a></p>
+<p>[6] Korbak, T. et al. <em>Chain of Thought Monitorability: A New and Fragile Opportunity for AI Safety.</em> arXiv:2507.11473, 2025. <a href="https://arxiv.org/abs/2507.11473" rel="noopener">https://arxiv.org/abs/2507.11473</a></p>
+<p>[7] Anthropic. <em>Reasoning Models Don’t Always Say What They Think.</em> 2025. <a href="https://www.anthropic.com/research/reasoning-models-dont-say-think" rel="noopener">https://www.anthropic.com/research/reasoning-models-dont-say-think</a></p>
+<p>[8] METR. <em>Measuring AI Ability to Complete Long Tasks.</em> <a href="https://metr.org/time-horizons/" rel="noopener">https://metr.org/time-horizons/</a></p>
+<p>[9] OpenAI. <em>Operator System Card.</em> 2025. <a href="https://openai.com/index/operator-system-card/" rel="noopener">https://openai.com/index/operator-system-card/</a></p>
+<p>[10] Anthropic. <em>Agentic Misalignment: How LLMs Could Be Insider Threats.</em> 2025. <a href="https://www.anthropic.com/research/agentic-misalignment" rel="noopener">https://www.anthropic.com/research/agentic-misalignment</a></p>
+<p>[11] Greenblatt, R. et al. <em>AI Control: Improving Safety Despite Intentional Subversion.</em> arXiv:2312.06942, 2023. <a href="https://arxiv.org/abs/2312.06942" rel="noopener">https://arxiv.org/abs/2312.06942</a></p>
+<p>[12] Silva, Aridio. <em>From Model Capability to Governed Action: An Architecture for Secure Agentic AI.</em> 2026. <a href="https://medium.com/@aridiosilva/from-model-capability-to-governed-action-an-architecture-for-secure-agentic-ai-de0bf29d0cdc" rel="noopener">https://medium.com/@aridiosilva/from-model-capability-to-governed-action-an-architecture-for-secure-agentic-ai-de0bf29d0cdc</a></p>
+<p>[13] OpenAI. <em>Updating Our Preparedness Framework.</em> 2025. <a href="https://openai.com/index/updating-our-preparedness-framework/" rel="noopener">https://openai.com/index/updating-our-preparedness-framework/</a></p>
+<p>[14] Anthropic. <em>Responsible Scaling Policy.</em> <a href="https://www.anthropic.com/responsible-scaling-policy" rel="noopener">https://www.anthropic.com/responsible-scaling-policy</a></p>
+<p>[15] OpenAI. <em>Detecting and Reducing Scheming in AI Models.</em> 2025. <a href="https://openai.com/index/detecting-and-reducing-scheming-in-ai-models/" rel="noopener">https://openai.com/index/detecting-and-reducing-scheming-in-ai-models/</a></p>
+<p>[16] Bengio, Y. et al. <em>Managing Extreme AI Risks Amid Rapid Progress.</em> Science 384(6698), 2024; arXiv:2310.17688. <a href="https://arxiv.org/abs/2310.17688" rel="noopener">https://arxiv.org/abs/2310.17688</a></p>
+<p>[17] NIST. <em>Artificial Intelligence Risk Management Framework: Generative Artificial Intelligence Profile.</em> NIST AI 600-1, 2024. <a href="https://doi.org/10.6028/NIST.AI.600-1" rel="noopener">https://doi.org/10.6028/NIST.AI.600-1</a></p>
+<p>[18] Silva, Aridio. <em>A “mente alienígena” da inteligência artificial: capacidade, alinhamento e o desafio da supervisão humana.</em> LinkedIn, 2026. <a href="https://www.linkedin.com/pulse/mente-alien%C3%ADgena-da-intelig%C3%AAncia-artificial-capacidade-aridio-silva-gevvf/" rel="noopener">https://www.linkedin.com/pulse/mente-alien%C3%ADgena-da-intelig%C3%AAncia-artificial-capacidade-aridio-silva-gevvf/</a></p>
+<h2 id="about-the-author">About the Author</h2>
+<p><strong>Aridio Silva</strong> is an independent researcher based in Brazil working on the architecture, security, governance, and trustworthiness of autonomous and distributed artificial intelligence systems.</p>
+<p>His research focuses on <strong>Agentic AI, Multi-Agent Systems, Edge AI, AI Security, Zero Trust, Security-by-Design, AI Governance, Spec-Driven Development, and continuous security assurance</strong>.</p>
+<p>He is the creator and lead researcher of <strong>SGAEIA — Secure Governed Autonomous Edge Intelligence Architecture</strong>, an open research initiative investigating architectural foundations for secure, governed, auditable, and trustworthy autonomous AI systems operating across distributed edge-cloud environments.</p>
+<h2 id="research-project-resources">Research &amp; Project Resources</h2>
+<p><strong>Aridio Silva</strong> — Independent Researcher, Brazil</p>
+<ol>
+<li><strong>ORCID:</strong> <a href="https://orcid.org/0009-0008-2411-6995" rel="noopener">https://orcid.org/0009-0008-2411-6995</a></li>
+<li><strong>Google Scholar:</strong> <a href="https://scholar.google.com/citations?user=rPn5O48AAAAJ" rel="noopener">https://scholar.google.com/citations?user=rPn5O48AAAAJ</a></li>
+<li><strong>Zenodo — SGAEIA Community:</strong> <a href="https://zenodo.org/communities/sgaeia" rel="noopener">https://zenodo.org/communities/sgaeia</a></li>
+<li><strong>OpenAIRE:</strong> <a href="https://explore.openaire.eu/search/find?fv0=Aridio%20Silva&amp;f0=q" rel="noopener">https://explore.openaire.eu/search/find?fv0=Aridio%20Silva&amp;f0=q</a></li>
+<li><strong>Medium:</strong> <a href="https://medium.com/@aridiosilva" rel="noopener">https://medium.com/@aridiosilva</a></li>
+<li><strong>GitHub:</strong> <a href="https://github.com/aridiosilva" rel="noopener">https://github.com/aridiosilva</a></li>
+<li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/aridio-silva-74997111/" rel="noopener">https://www.linkedin.com/in/aridio-silva-74997111/</a></li>
+<li><strong>SGAEIA Research Artifact / DOI:</strong> <a href="https://doi.org/10.5281/zenodo.22557796" rel="noopener">https://doi.org/10.5281/zenodo.22557796</a></li>
+<li><strong>Homepage:</strong> <a href="https://aridiosilva.com" rel="noopener">https://aridiosilva.com</a></li>
+<li><strong>SGAEIA Homepage:</strong> <a href="https://aridiosilva.com/sgaeia" rel="noopener">https://aridiosilva.com/sgaeia</a></li>
+<li><strong>SGAEIA LinkedIn:</strong> <a href="https://www.linkedin.com/company/sgaeia/" rel="noopener">https://www.linkedin.com/company/sgaeia/</a></li>
+</ol>
+<h2 id="figures">Figures</h2>
+<p>The cover image is not numbered. Figures 1–3 are numbered sequentially and referenced consistently in this article.</p>
+<p>All images are original conceptual illustrations prepared for this article. They carry visible attribution and publication metadata identifying Aridio Silva as creator, SGAEIA as the project, and CC BY 4.0 as the license. They remain within the public disclosure boundary by communicating properties and high-level governance relationships without exposing private protocols, algorithms, state machines, policy logic, or reconstruction-enabling implementation details.</p>
+<h2 id="license">License</h2>
+<p>Except where otherwise noted, the text and original conceptual illustrations in this article are licensed under the <strong>Creative Commons Attribution 4.0 International License (CC BY 4.0)</strong>.</p>
+<p>© 2026 Aridio Silva. You may share and adapt this work for any purpose, provided appropriate attribution is given.</p>
+<p>The SGAEIA software research artifact remains subject to its own <strong>Apache License 2.0</strong>.</p>
+<p><strong>Autonomous AI. Governed by Design. Trusted by Evidence.</strong></p>
+<h2 id="series-continuity">Series continuity</h2>
+<p>Published/current entries in the <strong>SGAEIA Research Series</strong> include:</p>
+<ol>
+<li><a href="https://medium.com/@aridiosilva/from-edge-ai-to-governed-autonomous-edge-intelligence-9cbe487d853a" rel="noopener"><em>From Edge AI to Governed Autonomous Edge Intelligence</em></a></li>
+<li><a href="https://medium.com/@aridiosilva/why-autonomous-ai-agents-need-bounded-and-revocable-authority-da75656098f7" rel="noopener"><em>Why Autonomous AI Agents Need Bounded and Revocable Authority</em></a></li>
+<li><a href="https://medium.com/@aridiosilva/zero-trust-for-multi-agent-ai-systems-31747c850af4" rel="noopener"><em>Zero Trust for Multi-Agent AI Systems</em></a></li>
+<li><a href="https://medium.com/@aridiosilva/authenticated-delegation-between-autonomous-ai-agents-4c1281cd9e14" rel="noopener"><em>Authenticated Delegation Between Autonomous AI Agents</em></a></li>
+<li><a href="https://medium.com/@aridiosilva/continuous-grc-for-agentic-ai-ada11c2974d0" rel="noopener"><em>Continuous GRC for Agentic AI</em></a></li>
+<li><a href="https://medium.com/@aridiosilva/evidence-as-code-making-ai-governance-verifiable-db89e3105b87" rel="noopener"><em>Evidence-as-Code: Making AI Governance Verifiable</em></a></li>
+<li><a href="https://medium.com/@aridiosilva/security-by-design-for-distributed-agentic-ai-d8a00dfe1acd" rel="noopener"><em>Security-by-Design for Distributed Agentic AI</em></a></li>
+<li><a href="https://medium.com/@aridiosilva/sgaeia-a-reference-architecture-for-secure-governed-autonomous-edge-intelligence-cd5466cbc29c" rel="noopener"><em>SGAEIA: A Reference Architecture for Secure Governed Autonomous Edge Intelligence</em></a></li>
+<li><a href="https://medium.com/@aridiosilva/when-ai-begins-to-build-ai-f762df34afec" rel="noopener"><em>When AI Begins to Build AI</em></a></li>
+<li><a href="https://medium.com/@aridiosilva/rogue-ai-agents-when-autonomous-systems-become-a-collective-75ddaf685938" rel="noopener"><em>Rogue AI Agents: When Autonomous Systems Become a Collective</em></a></li>
+<li><a href="https://medium.com/@aridiosilva/from-model-capability-to-governed-action-an-architecture-for-secure-agentic-ai-de0bf29d0cdc" rel="noopener"><em>From Model Capability to Governed Action: An Architecture for Secure Agentic AI</em></a></li>
+<li><a href="https://medium.com/@aridiosilva/ten-days-that-exposed-the-governance-gap-in-frontier-ai-07fbd2c278d4" rel="noopener"><em>Ten Days That Exposed the Governance Gap in Frontier AI</em></a></li>
+<li><a href="https://medium.com/@aridiosilva/when-ai-hallucination-becomes-action-f04cc100b76a" rel="noopener"><em>When AI Hallucination Becomes Action</em></a></li>
+<li><a href="https://medium.com/@aridiosilva/ais-alien-mind-0c228fc0d320" rel="noopener"><em>AI's Alien Mind: How to Govern What We Cannot Fully Understand</em></a></li>
+</ol>
+<!--
+SGAEIA INTERNAL DOCUMENT RECORD — excluded from the rendered Medium article.
+**Author:** Aridio Silva — Independent Researcher, Brazil
+**Classification:** PUBLIC
+**Created:** 2026-09-25 13:30 BRT
+**Last Updated:** 2026-09-25 13:30 BRT
+**Timezone:** America/Sao_Paulo (UTC−03:00)
+**Document Status:** PUBLISHED ON MEDIUM
+**Published URL:** https://medium.com/@aridiosilva/ais-alien-mind-0c228fc0d320
+**Normative Status:** Non-normative public publication artifact; no canonical SGAEIA change
+**Repository Path:** `docs/articles/Publicos/14-Article-Alien-Mind-AI/2026-09-25-1330-SGAEIA-RESEARCH-SERIES-ARTICLE-14-AIS-ALIEN-MIND-MEDIUM-MASTER-EN.md`
+-->
 
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://www.googletagmanager.com; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https://*.google-analytics.com; connect-src https://*.google-analytics.com https://www.googletagmanager.com; media-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'; upgrade-insecure-requests">
-<meta name="referrer" content="strict-origin-when-cross-origin">
-<link rel="sitemap" type="application/xml" href="/sitemap.xml">
-<link rel="describedby" href="/llms.txt" type="text/markdown">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Source+Serif+4:opsz,wght@8..60,500;6..60,700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/publications.css">
-<link rel="stylesheet" href="/assets/analytics-consent.css">
-</head>
-<body><a class="skip" href="#main">Skip to main content</a>
-<header class="site-header"><div class="shell header-inner">
-<a class="identity" href="/" target="_blank" rel="noopener noreferrer">Aridio Silva</a>
-<nav aria-label="Primary navigation"><a href="/" target="_blank" rel="noopener noreferrer">Home</a><a href="/sgaeia" target="_blank" rel="noopener noreferrer">SGAEIA</a><a href="/publications.html" target="_blank" rel="noopener noreferrer">Publications</a></nav>
-</div></header>
-<main id="main"><section class="hero"><div class="shell article"><p class="eyebrow">SGAEIA Research Series — Article 14</p><h1 class="citation_title">AI's Alien Mind</h1><p class="subtitle">How to govern what we cannot fully understand</p><p class="author"><span class="citation_author">Aridio Silva</span><br>Independent Researcher · Creator of SGAEIA</p><p class="meta">Published <time datetime="2026-09-25">2026-09-25</time> · DOI <a href="https://doi.org/10.5281/zenodo.22964672" target="_blank" rel="noopener noreferrer">10.5281/zenodo.22964672</a></p></div></section>
-<section class="content"><article class="shell article"><h2>Abstract</h2><p class="abstract">Advanced AI systems can produce behavior that appears familiar while relying on internal representations, abstractions, and optimization processes that humans cannot fully reconstruct. Calling this an “alien mind” is a metaphor for an epistemic problem, not a claim about consciousness. The governance problem arises when behavioral competence grows faster than our ability to understand, evaluate, interrupt, and verify the processes that produce consequential actions.</p>
-<p class="abstract">This article introduces the AI Capability–Supervision Gap as a systems concept. Let C denote the operational capability envelope of a system, A the authority and reach made available to it, and S the envelope within which humans and technical controls can reliably supervise behavior under real constraints. The actionable gap is the region Gᴀ = (C ∩ A) \ S: consequential behavior that the system can perform and is able to reach, but that supervision cannot reliably interpret, detect, stop, or verify. This is a conceptual relation, not a calibrated universal metric.</p>
-<p class="abstract">The article argues that as internal processes become less inferable from observable behavior, safety must depend increasingly on external limits over what the system may do. Alignment, interpretability, and chain-of-thought monitoring remain valuable, but cannot alone authorize action. Through the public SGAEIA research framing, the article connects model uncertainty to bounded and revocable authority, governed execution, independent evidence, and recovery.</p>
-<p class="abstract">The less we can infer internal processes from observable behavior, the less safety can depend exclusively on interpreting the model — and the more it must depend on external limits over its capacity to act.</p>
-<div class="links"><a class="button primary" href="https://doi.org/10.5281/zenodo.22964672" target="_blank" rel="noopener noreferrer">Archival record on Zenodo</a><a class="button" href="https://medium.com/@aridiosilva/ais-alien-mind-0c228fc0d320" target="_blank" rel="noopener noreferrer">Read on Medium</a></div>
-<section class="citation"><h2>Suggested citation</h2><p>Silva, Aridio. (2026). <em>AI's Alien Mind</em> (Version 1.0). Zenodo. <a href="https://doi.org/10.5281/zenodo.22964672" target="_blank" rel="noopener noreferrer">https://doi.org/10.5281/zenodo.22964672</a></p></section>
-<p class="notice">This page provides the author-written abstract and bibliographic metadata for discovery. The Zenodo record is the persistent source for citation, files, version, and license information.</p>
-</article></section></main><footer><div class="shell">© 2026 Aridio Silva · SGAEIA — Secure Governed Autonomous Edge Intelligence Architecture</div></footer></body></html>
+<h2>Suggested citation</h2><p>Silva, Aridio. (2026). <em>AI&#39;s Alien Mind</em>. Zenodo. <a href="https://doi.org/10.5281/zenodo.22964672" rel="noopener">https://doi.org/10.5281/zenodo.22964672</a></p><p>Zenodo is the persistent source for files, version, license, and citation data.</p><p class="medium-link"><a href="https://medium.com/@aridiosilva/ais-alien-mind-0c228fc0d320" rel="noopener">Read the full article on Medium</a></p></article></section></main>
+<footer><div class="shell">© 2026 Aridio Silva · SGAEIA — Secure Governed Autonomous Edge Intelligence Architecture</div></footer></body></html>
