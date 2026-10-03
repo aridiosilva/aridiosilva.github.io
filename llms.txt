@@ -47,6 +47,19 @@ The primary research themes are Agentic AI, multi-agent systems, AI security, Ze
 - [SGAEIA: A Reference Architecture for Secure Governed Autonomous Edge Intelligence — Zenodo](https://doi.org/10.5281/zenodo.22882020): Persistent archival record and DOI.
 - [SGAEIA: A Reference Architecture for Secure Governed Autonomous Edge Intelligence — Medium](https://medium.com/@aridiosilva/sgaeia-a-reference-architecture-for-secure-governed-autonomous-edge-intelligence-cd5466cbc29c): Narrative distribution edition.
 
+
+- [When AI Begins to Build AI — full publication page](https://aridiosilva.com/publications/when-ai-begins-to-build-ai/): Complete English web-reading edition of SGAEIA Research Series Article 9, with 7 numbered figures, citation metadata, accessibility controls, and archival links.
+- [When AI Begins to Build AI — Zenodo](https://doi.org/10.5281/zenodo.22754885): Persistent archival record and DOI.
+- [When AI Begins to Build AI — Medium](https://medium.com/@aridiosilva/when-ai-begins-to-build-ai-f762df34afec): Narrative distribution edition.
+- [Rogue AI Agents — full publication page](https://aridiosilva.com/publications/rogue-ai-agents/): Complete English web-reading edition of SGAEIA Research Series Article 10, with 4 numbered figures, citation metadata, accessibility controls, and archival links.
+- [Rogue AI Agents — Zenodo](https://doi.org/10.5281/zenodo.22796900): Persistent archival record and DOI.
+- [Rogue AI Agents — Medium](https://medium.com/@aridiosilva/rogue-ai-agents-when-autonomous-systems-become-a-collective-75ddaf685938): Narrative distribution edition.
+- [From Model Capability to Governed Action — full publication page](https://aridiosilva.com/publications/from-model-capability-to-governed-action/): Complete English web-reading edition of SGAEIA Research Series Article 11, with 4 numbered figures, citation metadata, accessibility controls, and archival links.
+- [From Model Capability to Governed Action — Zenodo](https://doi.org/10.5281/zenodo.22837908): Persistent archival record and DOI.
+- [From Model Capability to Governed Action — Medium](https://medium.com/@aridiosilva/from-model-capability-to-governed-action-an-architecture-for-secure-agentic-ai-de0bf29d0cdc): Narrative distribution edition.
+- [Ten Days That Exposed the Governance Gap in Frontier AI — full publication page](https://aridiosilva.com/publications/ten-days-that-exposed-the-governance-gap/): Complete English web-reading edition of SGAEIA Research Series Article 12, with 4 numbered figures and the published institutional-comparison table image, citation metadata, accessibility controls, and archival links.
+- [Ten Days That Exposed the Governance Gap in Frontier AI — Zenodo](https://doi.org/10.5281/zenodo.22864340): Persistent archival record and DOI.
+- [Ten Days That Exposed the Governance Gap in Frontier AI — Medium](https://medium.com/@aridiosilva/ten-days-that-exposed-the-governance-gap-in-frontier-ai-07fbd2c278d4): Narrative distribution edition.
 - [When AI Improves AI — publication page](https://aridiosilva.com/publications/when-ai-improves-ai/): Abstract, citation metadata, and links for SGAEIA Research Series Article 16.
 - [When AI Improves AI — Zenodo](https://zenodo.org/records/23045620): Citable Version 1.0 archival record, published on 29 September 2026. DOI: 10.5281/zenodo.23045620.
 - [When AI Improves AI — Medium](https://medium.com/@aridiosilva/when-ai-improves-ai-governing-recursive-intelligence-acceleration-6eb951abdbaf): English web-reading edition of SGAEIA Research Series Article 16.
