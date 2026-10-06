@@ -11,7 +11,21 @@ The primary research themes are Agentic AI, multi-agent systems, AI security, Ze
 
 ## Publication index
 
+- [AI Jailbreaks — Article 17, English](https://aridiosilva.com/publications/artigo17/): Complete English article with cover, four figures and 25 references; Zenodo DOI pending.
+- [AI Jailbreaks — Article 17, Portuguese](https://aridiosilva.com/publications/artigo17/pt/): Complete Portuguese edition with Portuguese cover and figures.
+
 - [Academic publication index](https://aridiosilva.com/publications.html): Individual publication pages with author-written abstracts, dates, DOIs, and archival links.
+
+## Article 17 — AI Jailbreaks
+
+Author: Aridio Silva — Independent Researcher, Brazil. SGAEIA Research Series, Article 17, 6 October 2026. A critical narrative review of jailbreak history, prompt injection and governed authority; a conceptual response–action–effect synthesis, not an empirical security certification. License: CC BY 4.0. Copyright: © 2026 Aridio Silva.
+
+- [AI Jailbreaks: From Bypassing Restrictions to Governing Authority — complete English article](https://aridiosilva.com/publications/artigo17/): From the iPhone to autonomous agents: a historical, technical and educational analysis through the SGAEIA lens. Full HTML text, cover, four figures and 25 numbered references.
+- [Jailbreak de AI: da quebra de restrições à governança da autoridade — artigo completo em português](https://aridiosilva.com/publications/artigo17/pt/): Do iPhone aos agentes autônomos: uma análise histórica, técnica e didática pela ótica do SGAEIA. Full Portuguese HTML text, cover, four figures and the same bibliography.
+- [Article 17 — English cover](https://aridiosilva.com/assets/article17/cover.png): Visible attribution and PNG copyright metadata.
+- [Article 17 — Portuguese cover](https://aridiosilva.com/assets/article17/cover-pt.png): Visible attribution and PNG copyright metadata.
+
+Use the matching language's homepage record as the canonical reading edition. The article's Zenodo DOI and individual Medium/DEV distribution URLs are pending and must not be inferred from the project's separate software DOI. These records describe the intended public edition prepared locally; live deployment and indexing are not verified. Discovery files help compatible consumers find content; they do not guarantee indexing, ranking, citation or adoption by AI systems.
 
 ## Research archives and profiles
 

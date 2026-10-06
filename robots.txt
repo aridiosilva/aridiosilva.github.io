@@ -1,3 +1,7 @@
+# © 2026 Aridio Silva
+# AI-readable publication index: https://aridiosilva.com/llms.txt
+# The URL above is an informational comment, not a robots directive.
+# Last updated: 2026-10-06
 User-agent: *
 Allow: /
 

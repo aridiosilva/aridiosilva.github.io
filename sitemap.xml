@@ -1,20 +1,20 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<?xml version='1.0' encoding='UTF-8'?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://aridiosilva.com/</loc>
-    <lastmod>2026-09-25</lastmod>
+    <lastmod>2026-10-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://aridiosilva.com/sgaeia.html</loc>
-    <lastmod>2026-09-25</lastmod>
+    <lastmod>2026-10-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://aridiosilva.com/publications.html</loc>
-    <lastmod>2026-09-25</lastmod>
+    <lastmod>2026-10-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -113,5 +113,51 @@
     <lastmod>2026-10-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://aridiosilva.com/publications/artigo17/</loc>
+    <lastmod>2026-10-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aridiosilva.com/publications/artigo17/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://aridiosilva.com/publications/artigo17/pt/"/>
+    <image:image>
+      <image:loc>https://aridiosilva.com/assets/article17/cover.png</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://aridiosilva.com/assets/article17/figure-01-en.png</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://aridiosilva.com/assets/article17/figure-02-en.png</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://aridiosilva.com/assets/article17/figure-03-en.png</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://aridiosilva.com/assets/article17/figure-04-en.png</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://aridiosilva.com/publications/artigo17/pt/</loc>
+    <lastmod>2026-10-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aridiosilva.com/publications/artigo17/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://aridiosilva.com/publications/artigo17/pt/"/>
+    <image:image>
+      <image:loc>https://aridiosilva.com/assets/article17/cover-pt.png</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://aridiosilva.com/assets/article17/figure-01-pt.png</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://aridiosilva.com/assets/article17/figure-02-pt.png</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://aridiosilva.com/assets/article17/figure-03-pt.png</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://aridiosilva.com/assets/article17/figure-04-pt.png</image:loc>
+    </image:image>
   </url>
 </urlset>
