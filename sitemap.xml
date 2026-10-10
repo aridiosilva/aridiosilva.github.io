@@ -115,6 +115,20 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://aridiosilva.com/publications/artigo18/</loc>
+    <lastmod>2026-10-10</lastmod><changefreq>monthly</changefreq><priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aridiosilva.com/publications/artigo18/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://aridiosilva.com/publications/artigo18/pt/"/>
+    <image:image><image:loc>https://aridiosilva.com/assets/article18/sgaeia-article-18-cover-en.png</image:loc><image:title>Tracing AI Agent Execution</image:title><image:caption>© 2026 Aridio Silva | Project SGAEIA | CC BY 4.0</image:caption></image:image>
+  </url>
+  <url>
+    <loc>https://aridiosilva.com/publications/artigo18/pt/</loc>
+    <lastmod>2026-10-10</lastmod><changefreq>monthly</changefreq><priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aridiosilva.com/publications/artigo18/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://aridiosilva.com/publications/artigo18/pt/"/>
+    <image:image><image:loc>https://aridiosilva.com/assets/article18/sgaeia-article-18-cover-pt.png</image:loc><image:title>Rastreamento da Execução de Agentes de AI</image:title><image:caption>© 2026 Aridio Silva | Project SGAEIA | CC BY 4.0</image:caption></image:image>
+  </url>
+  <url>
     <loc>https://aridiosilva.com/publications/artigo17/</loc>
     <lastmod>2026-10-06</lastmod>
     <changefreq>monthly</changefreq>

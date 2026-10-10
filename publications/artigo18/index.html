@@ -1,0 +1,452 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light">
+<title>Tracing AI Agent Execution: Foundations, State of the Art, and Implications for Distributed Multi-Agent Systems — Aridio Silva</title><meta name="description" content="A critical comparative review of AI-agent tracing across 13 platforms, with implications for observability, evaluation, governed evidence, and SGAEIA."><link rel="canonical" href="https://aridiosilva.com/publications/artigo18/">
+<meta name="citation_title" content="Tracing AI Agent Execution: Foundations, State of the Art, and Implications for Distributed Multi-Agent Systems"><meta name="citation_author" content="Silva, Aridio"><meta name="citation_publication_date" content="2026/10/10"><meta name="citation_online_date" content="2026/10/10"><meta name="citation_language" content="en">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://www.googletagmanager.com; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https://*.google-analytics.com; connect-src https://*.google-analytics.com https://www.googletagmanager.com; media-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'; upgrade-insecure-requests"><meta name="referrer" content="strict-origin-when-cross-origin">
+<link rel="sitemap" type="application/xml" href="/sitemap.xml"><link rel="describedby" href="/llms.txt" type="text/markdown"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;family=Source+Serif+4:opsz,wght@8..60,500;6..60,700&amp;display=swap" rel="stylesheet"><link rel="stylesheet" href="/assets/publications.css"><link rel="stylesheet" href="/assets/article-header.css"><link rel="stylesheet" href="/assets/article-accessibility.css"><script defer src="/assets/article-accessibility.js?v=20261003"></script><meta name="author" content="Aridio Silva"><meta name="copyright" content="© 2026 Aridio Silva"><meta property="og:type" content="article"><meta property="og:title" content="Tracing AI Agent Execution: Foundations, State of the Art, and Implications for Distributed Multi-Agent Systems"><meta property="og:description" content="A critical comparative review of AI-agent tracing across 13 platforms, with implications for observability, evaluation, governed evidence, and SGAEIA."><meta property="og:image" content="https://aridiosilva.com/assets/article18/sgaeia-article-18-cover-en.png"><link rel="alternate" hreflang="en" href="https://aridiosilva.com/publications/artigo18/"><link rel="alternate" hreflang="pt-BR" href="https://aridiosilva.com/publications/artigo18/pt/"><link rel="stylesheet" href="/assets/analytics-consent.css"><script defer src="/assets/analytics-consent.js"></script><script type="application/ld+json">{"@context":"https://schema.org","@type":"ScholarlyArticle","headline":"Tracing AI Agent Execution: Foundations, State of the Art, and Implications for Distributed Multi-Agent Systems","author":{"@type":"Person","name":"Aridio Silva","identifier":"https://orcid.org/0009-0008-2411-6995"},"datePublished":"2026-10-10","inLanguage":"en","license":"https://creativecommons.org/licenses/by/4.0/","isPartOf":{"@type":"CreativeWorkSeries","name":"SGAEIA Research Series"},"url":"https://aridiosilva.com/publications/artigo18/","image":"https://aridiosilva.com/assets/article18/sgaeia-article-18-cover-en.png","description":"A critical comparative review of AI-agent tracing across 13 platforms, with implications for observability, evaluation, governed evidence, and SGAEIA."}</script></head>
+<body><a class="skip" href="#main">Skip to main content</a><header class="site-header"><div class="shell header-inner"><a class="identity" href="/">Aridio Silva</a><nav aria-label="Primary navigation"><a href="/">Home</a><a href="/sgaeia">SGAEIA</a><a href="/publications.html">Publications</a></nav><div class="reading-tools" role="group" aria-label="Reading controls"><button type="button" id="articleFontDecrease" aria-label="Decrease text size">A−</button><button type="button" id="articleFontIncrease" aria-label="Increase text size">A+</button><button type="button" id="articleEasyRead" aria-pressed="false">Easy read</button><button type="button" id="articleListen" aria-pressed="false">Listen</button></div></div></header>
+<main id="main"><section class="hero"><div class="shell article"><h1>Tracing AI Agent Execution: Foundations, State of the Art, and Implications for Distributed Multi-Agent Systems</h1><p class="subtitle">Observability, evaluation, and evidence for governing autonomous agents at the edge</p><p class="meta">SGAEIA Research Series — Article 18 · 2026-10-10 · DOI pending · Author review ready</p><nav aria-label="Article languages"><a href="https://aridiosilva.com/publications/artigo18/">English</a> · <a href="https://aridiosilva.com/publications/artigo18/pt/">Português</a></nav></div></section><section class="content"><article class="shell article article-body"><p><strong>Observability, evaluation, and evidence for governing autonomous agents at the edge</strong></p>
+<p><strong>SGAEIA Research Series — Article 18</strong></p>
+<p><strong>Aridio Silva</strong><br>Independent Researcher, Brazil<br>Creator of SGAEIA — Secure Governed Autonomous Edge Intelligence Architecture<br><strong>ORCID:</strong> 0009-0008-2411-6995</p>
+<p><strong>Copyright:</strong> © 2026 Aridio Silva | <strong>License:</strong> CC BY 4.0</p>
+<figure class="article-figure cover-figure"><img alt="Tracing AI Agent Execution" src="/assets/article18/sgaeia-article-18-cover-en.png" loading="eager" decoding="async"><figcaption>© 2026 Aridio Silva | Project SGAEIA | CC BY 4.0</figcaption></figure>
+<h2 id="abstract">Abstract</h2>
+<p>As of October 2026, the major AI-agent platforms can record the individual steps of an execution, yet the ecosystem still lacks stable and uniform semantics. This paper combines three contributions: a conceptual framework for agent-observability questions; a comparative review of 13 platforms, with package versions checked on 10 October 2026; and a non-normative interpretation of the implications for SGAEIA in distributed multi-agent and edge environments. The results show that a trace reconstructs the path of execution but does not demonstrate the correctness of the outcome; that essential capabilities remain in beta, preview, or Development status; and that divergent content-capture defaults create direct privacy, governance, and evidence-continuity risks. The central conclusion is that tracing, evaluation, and governed evidence must operate as complementary functions: observing execution, judging outcomes, and preserving a verifiable basis for audit and assurance.</p>
+<p><strong>Keywords:</strong> AI; AI agents; observability; distributed tracing; OpenTelemetry; spans; agent evaluation; multi-agent systems; edge AI; SGAEIA.</p>
+<h2 id="1-introduction">1. Introduction</h2>
+<p>When an AI agent is activated, operators need to know what it actually did: whether execution ended normally, where errors or deviations occurred, how long and how much it cost, which tools were invoked, and which agents received control. Agents choose tools and delegation paths at runtime, so their behavior is non-deterministic and cannot be reconstructed reliably from flat application logs alone. Engineering practice therefore adapts distributed tracing from microservice systems to the agent lifecycle.</p>
+<p>This paper addresses four research questions:</p>
+<ol>
+<li><strong>RQ1.</strong> How do traces and spans apply to the execution of one or more AI agents?</li>
+<li><strong>RQ2.</strong> Which signals answer questions about completion, error, deviation, duration, cost, and executed steps?</li>
+<li><strong>RQ3.</strong> Which platforms offer these capabilities, at what level of maturity, and with which strengths and limitations?</li>
+<li><strong>RQ4.</strong> How do tracing, evaluation, and evidence preservation relate to governance of distributed edge agents from the conceptual perspective of SGAEIA?</li>
+</ol>
+<p>The scope covers agent runtimes from Anthropic, OpenAI, Google, Microsoft, and AWS; seven independent observability platforms; and the OpenTelemetry standard. The language model alone does not create this operational record. Tracing is produced by the execution layer: the SDK, framework, orchestration environment, or hosting platform surrounding the model.</p>
+<h2 id="2-foundations-trace-span-and-session">2. Foundations: trace, span, and session</h2>
+<p>A <strong>span</strong> is the basic unit of traced work. Each relevant operation can produce its own span, normally including start and end times, parent relationship, status, and operation-specific attributes. Common examples include a model call, a tool invocation, and a handoff or nested agent invocation. A <strong>trace</strong> groups causally related spans into the end-to-end journey of an operation, while a <strong>session</strong> or thread may group multiple traces that belong to the same conversation or longer-running task.</p>
+<p>In the OpenAI Agents SDK, spans expose fields such as <code>started_at</code>, <code>ended_at</code>, <code>parent_id</code>, and step-specific data [R4]. AWS AgentCore similarly records status and events [R15]. The vocabulary is not fully uniform: one platform may define a trace as a complete operation, another as one request-response cycle, and a third may use a session to provide the longer boundary.</p>
+<h3 id="2-1-three-nuances-that-change-trace-interpretation">2.1 Three nuances that change trace interpretation</h3>
+<p>First, a trace is not always the entire task. OpenAI can connect several executions through a <code>group_id</code> [R4], whereas AgentCore treats a trace as a request-response cycle and groups traces into a session [R15]. A reviewer must therefore identify the platform&#39;s execution boundary before comparing duration, cost, or completion.</p>
+<p>Second, a handoff is not always represented by a dedicated span. OpenAI defines a handoff span [R4], while OpenTelemetry defines <code>create_agent</code>, <code>invoke_agent</code>, and <code>execute_tool</code>, allowing a subagent to appear as a nested <code>invoke_agent</code> operation [R18, R19]. Microsoft has also documented semantics for communication between agents [R11, R44].</p>
+<p>Third, agent traces may include more than model, tool, and handoff spans. Guardrail checks, turns, permission decisions, and time spent awaiting human approval can be observable operations. The Claude Agent SDK, for example, can record a child span for a tool waiting on user authorization [R1].</p>
+<h3 id="2-2-tree-structure">2.2 Tree structure</h3>
+<p>Spans form a tree rather than a flat list. Figure 1 represents the transition from a session to traces and nested spans, including model calls, tools, and subagents. The hierarchy supports latency analysis, causal reconstruction, and failure localization without reducing the execution to an undifferentiated stream of messages.</p>
+<figure class="article-figure"><img alt="Figure 1 — Session, trace, and span hierarchy" src="/assets/article18/sgaeia-article-18-figure-01-trace-hierarchy-en.png" loading="lazy" decoding="async"><figcaption>© 2026 Aridio Silva | Project SGAEIA | CC BY 4.0</figcaption></figure>
+<p><strong>Figure 1 — From a session to verifiable spans.</strong> A session can group multiple traces; each trace organizes agent, model, tool, and handoff spans into a causal structure. © 2026 Aridio Silva | Project SGAEIA | CC BY 4.0.</p>
+<h2 id="3-observability-questions-and-their-signals">3. Observability questions and their signals</h2>
+<p>The main analytical distinction is between technical completion and substantive success. A run can terminate without an exception while still producing an incorrect answer, violating an instruction, or acting outside the intended scope. A trace reports operational facts; a separate evaluator, test, schema validator, or human review must judge the result.</p>
+<table>
+<thead>
+<tr>
+<th>Question</th>
+<th>Signal to inspect</th>
+<th>Interpretation limit</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Did the task complete?</td>
+<td>Final run status plus independent outcome validation</td>
+<td>No exception proves only that execution did not crash</td>
+</tr>
+<tr>
+<td>Were there errors or deviations?</td>
+<td>Error spans, failed tools, exceeded limits, denied permissions, guardrail events</td>
+<td>Deviation requires comparison with expected behavior</td>
+</tr>
+<tr>
+<td>When did it finish and how long did it take?</td>
+<td>Run and span duration; tokens and derived cost</td>
+<td>Boundaries vary by platform</td>
+</tr>
+<tr>
+<td>What happened at each step?</td>
+<td>Hierarchical trace with tool, arguments, and result</td>
+<td>Content capture may be disabled or redacted</td>
+</tr>
+<tr>
+<td>Who requested and authorized the action?</td>
+<td>End-user attributes and permission-decision events</td>
+<td>Identity does not itself establish authority</td>
+</tr>
+<tr>
+<td>Was there a loop or waste?</td>
+<td>Turn count, tool calls, and inference calls</td>
+<td>Thresholds depend on task and policy</td>
+</tr>
+</tbody></table>
+<h3 id="3-1-completion-and-outcome-quality">3.1 Completion and outcome quality</h3>
+<p>The Claude Agent SDK result can report termination subtype, error state, number of turns, duration, and cost, including outcomes such as success, maximum-turn termination, and execution error [R36]. These fields describe how execution stopped; they do not establish that the requested objective was achieved. Semantic failures can therefore remain invisible to ordinary error status [R37]. OpenAI&#39;s trace grading illustrates the complementary approach of evaluating traces and outcomes at scale [R5].</p>
+<h3 id="3-2-errors-deviations-and-auditability">3.2 Errors, deviations, and auditability</h3>
+<p>Errors appear in span status, API error events, and failed tool results. Deviations require broader evidence: permission events, guardrail decisions, expected-path comparison, and independent observation of resulting state. Claude Code permission decisions can be exported as structured events associated with the end user, providing input to an audit or SIEM workflow [R2].</p>
+<h2 id="4-method-sources-and-limitations">4. Method, sources, and limitations</h2>
+<p>The review was conducted on 10 October 2026 using three source categories: package-registry data from PyPI and npm [R40]; official vendor and platform documentation; and secondary technical sources only where official documentation did not cover the relevant point. Secondary and competitor-produced comparisons are identified and treated cautiously. Package versions refer to the stable release visible in the registry on the consultation date.</p>
+<p>In the comparison matrix, <strong>✔</strong> indicates a capability confirmed in the consulted documentation, <strong>◐</strong> indicates partial or conditional support, and <strong>—</strong> means that the capability was not found in the reviewed material. Absence from the matrix is not proof that a feature does not exist. SaaS platforms do not have a single platform version, so the version column reports the associated SDK when applicable.</p>
+<p>This is a structured comparative review, not a systematic review or experimental benchmark. The work does not measure instrumentation overhead, reproduce vendor evaluations, or establish production effectiveness. Platform behavior, prices, retention policies, and maturity labels can change after the stated date; adoption decisions must revalidate the relevant documentation.</p>
+<h2 id="5-open-standard-opentelemetry-genai">5. Open standard: OpenTelemetry GenAI</h2>
+<p>OpenTelemetry GenAI semantic conventions are the leading candidate for a common language across runtimes and backends, but they remain under active development [R18–R20]. The defined operations include <code>create_agent</code>, <code>invoke_agent</code>, and <code>execute_tool</code>; attributes cover agent and tool identity; and metrics include agent-run duration, tool-call count, and inference-call count [R18, R19]. Development status means that names and behavior can still change between versions.</p>
+<p>The practical value is portability. Datadog accepts traces compatible with OpenTelemetry GenAI 1.37 or later [R28], MLflow can ingest and export the conventions [R33], and Google ADK implements them natively [R7]. Portability is nevertheless incomplete because vendor SDKs may emit proprietary span types, require a distribution such as ADOT, or depend on third-party bridges.</p>
+<h2 id="6-vendor-platforms">6. Vendor platforms</h2>
+<h3 id="6-1-anthropic-claude-agent-sdk-claude-code-and-managed-agents">6.1 Anthropic: Claude Agent SDK, Claude Code, and Managed Agents</h3>
+<p>The Claude Agent SDK runs Claude Code as a child process and can export spans for interactions, model calls, tools, tokens, cost, permission decisions, and nested subagents [R1, R2]. Its main strength is OTLP export without a mandatory backend and content-disabled-by-default behavior for read/write payloads. Limitations include beta span names, silent export failures by default, and extra beta configuration for hook spans; Managed Agents also uses a beta API header [R1, R3].</p>
+<h3 id="6-2-openai-agents-sdk">6.2 OpenAI Agents SDK</h3>
+<p>OpenAI tracing is enabled by default and includes run, task, turn, agent, generation, tool, guardrail, handoff, and audio spans [R4]. The platform connects traces through <code>group_id</code> and integrates trace grading and agent evaluations [R5, R6]. Its strengths are low-friction instrumentation and rich agent-specific semantics; limitations include incompatibility with Zero Data Retention tracing, default capture of inputs and outputs, batch export behavior, and dependence on third-party tooling for an OpenTelemetry bridge [R4, R26].</p>
+<h3 id="6-3-google-adk-and-vertex-ai-agent-engine">6.3 Google ADK and Vertex AI Agent Engine</h3>
+<p>Google ADK implements OpenTelemetry GenAI semantics, with an agent execution as the root span and child spans for model and tool operations [R7, R8]. Agent Engine sends traces to Cloud Trace and exposes response times and executed operations [R9]. The design benefits from native OpenTelemetry support and managed visualization, while Cloud Logging size limits and the lack of a documented integrated trace-evaluation workflow remain material constraints [R9, R10].</p>
+<h3 id="6-4-microsoft-foundry-and-agent-framework">6.4 Microsoft Foundry and Agent Framework</h3>
+<p>Microsoft provides generally available tracing for prompt and hosted agents and preview support for workflows and external agents, storing telemetry in Application Insights [R11–R14]. Its multi-agent semantics and Azure Monitor integration are notable strengths. Costs, retention, access-role requirements, and differing maturity labels across documentation require careful operational review; the evaluation-related comparison includes an explicitly identified third-party source [R39].</p>
+<h3 id="6-5-aws-bedrock-agentcore">6.5 AWS Bedrock AgentCore</h3>
+<p>AgentCore organizes observability around sessions, traces, and spans, including tool inputs, outputs, timing, and errors [R15]. Unified per-agent log groups can combine spans, prompts, and logs under IAM and customer-managed encryption controls [R17]. Agent spans require ADOT instrumentation, CloudWatch Transaction Search must be configured, and the reviewed documentation did not establish integrated outcome-quality evaluation [R15, R16].</p>
+<h2 id="7-independent-platforms">7. Independent platforms</h2>
+<h3 id="7-1-langsmith">7.1 LangSmith</h3>
+<p>LangSmith treats runs as spans and groups them into projects and threads. It supports OpenTelemetry ingestion, distributed tracing, sampling, sensitive-data controls, token cost, dashboards, and online evaluation [R21–R23]. Relevant limitations include per-trace run limits, Python-only integration for the OpenAI Agents SDK, and enterprise conditions around self-hosting reported by a third party [R41].</p>
+<h3 id="7-2-langfuse">7.2 Langfuse</h3>
+<p>Langfuse offers an MIT-licensed core, self-hosting, nested observations, sessions, agent graphs, human annotation queues, and OTLP-oriented ingestion [R24, R25, R45]. Open source removes license fees but not the operational cost of running and securing the platform [R38].</p>
+<h3 id="7-3-arize-phoenix-and-ax">7.3 Arize Phoenix and AX</h3>
+<p>Phoenix uses OpenTelemetry and OpenInference semantics for LLM, Tool, Agent, and Retriever spans, and includes evaluations, datasets, experiments, and prompt management [R26, R27]. The Elastic License 2.0 permits broad internal use but limits offering the software as a managed service, while some TypeScript evaluation components remain early-stage [R26, R46].</p>
+<h3 id="7-4-datadog-agent-observability">7.4 Datadog Agent Observability</h3>
+<p>Datadog accepts OpenTelemetry GenAI traces and uses span links to build an execution graph for multi-agent pipelines [R28, R29]. It monitors latency, error rate, cost, and decisions with automatic instrumentation for selected frameworks. Cross-trace links may be stored without being drawn, and the offering remains SaaS-only in the reviewed scope.</p>
+<h3 id="7-5-braintrust">7.5 Braintrust</h3>
+<p>Braintrust combines production logs with offline and online evaluation and integrates with Claude, OpenAI, and Google agent SDKs [R30–R32]. Its self-hosting model is hybrid and its documentation describes telemetry sent to the vendor control plane, which is relevant to data-governance analysis. A third-party vendor profile used only as supplementary context is identified separately [R42].</p>
+<h3 id="7-6-mlflow-tracing">7.6 MLflow Tracing</h3>
+<p>MLflow provides an open-source tracing layer compatible with OpenTelemetry, including ingestion and export of GenAI conventions and more than 30 automatic integrations [R33, R34]. Autologging must be enabled explicitly for each integration, which makes configuration discipline part of the assurance boundary.</p>
+<h3 id="7-7-pydantic-logfire">7.7 Pydantic Logfire</h3>
+<p>Logfire builds on OpenTelemetry with Python and JavaScript SDKs and integrates with Pydantic AI [R35, R43, R47]. Evaluation and prompt-management claims were not fully confirmed on an opened official page in the underlying review, so evaluation remains marked as conditional. Self-hosting is limited to enterprise arrangements [R43].</p>
+<h2 id="8-comparative-analysis">8. Comparative analysis</h2>
+<h3 id="8-1-versions-and-maturity-on-10-october-2026">8.1 Versions and maturity on 10 October 2026</h3>
+<table>
+<thead>
+<tr>
+<th>Platform</th>
+<th>Version reported</th>
+<th>Maturity note</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Claude Agent SDK / Claude Code</td>
+<td>py 0.2.165; npm 0.3.296; CLI 2.1.296</td>
+<td>Tracing beta; 0.x SDKs</td>
+</tr>
+<tr>
+<td>Claude Managed Agents</td>
+<td>API</td>
+<td>Beta header</td>
+</tr>
+<tr>
+<td>OpenAI Agents SDK</td>
+<td>py 0.23.1; JS 0.20.0</td>
+<td>Tracing enabled by default; 0.x SDKs</td>
+</tr>
+<tr>
+<td>Google ADK</td>
+<td>py 2.11.0; JS 2.2.1</td>
+<td>2.x; native telemetry</td>
+</tr>
+<tr>
+<td>Microsoft Agent Framework</td>
+<td>py 1.21.0; azure-ai-projects 2.8.0</td>
+<td>GA and preview scopes differ</td>
+</tr>
+<tr>
+<td>AWS Bedrock AgentCore</td>
+<td>py 1.24.1</td>
+<td>Rapidly evolving managed service</td>
+</tr>
+<tr>
+<td>LangSmith</td>
+<td>py 0.14.7; JS 0.10.11</td>
+<td>Commercial SaaS; 0.x SDKs</td>
+</tr>
+<tr>
+<td>Langfuse</td>
+<td>py 4.17.0; JS tracing 5.13.1</td>
+<td>OTLP-first v4 platform</td>
+</tr>
+<tr>
+<td>Arize Phoenix</td>
+<td>20.20.0</td>
+<td>Frequent releases; ELv2</td>
+</tr>
+<tr>
+<td>Datadog</td>
+<td>ddtrace 4.15.6</td>
+<td>SaaS</td>
+</tr>
+<tr>
+<td>Braintrust</td>
+<td>py 0.45.0; JS 3.37.2</td>
+<td>SaaS and hybrid</td>
+</tr>
+<tr>
+<td>MLflow Tracing</td>
+<td>3.17.0</td>
+<td>Open source</td>
+</tr>
+<tr>
+<td>Pydantic Logfire</td>
+<td>5.1.1</td>
+<td>Commercial</td>
+</tr>
+<tr>
+<td>OpenTelemetry Python SDK</td>
+<td>1.45.1</td>
+<td>GenAI conventions in Development</td>
+</tr>
+</tbody></table>
+<h3 id="8-2-capability-matrix">8.2 Capability matrix</h3>
+<table>
+<thead>
+<tr>
+<th>Platform</th>
+<th align="right">LLM/tool steps</th>
+<th align="right">Multi-agent</th>
+<th align="right">OTel</th>
+<th align="right">Sessions/threads</th>
+<th align="right">Trace evaluation</th>
+<th>Hosting</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Claude Agent SDK</td>
+<td align="right">✔ beta</td>
+<td align="right">✔ subagents</td>
+<td align="right">✔ OTLP</td>
+<td align="right">✔</td>
+<td align="right">—</td>
+<td>Backend of choice</td>
+</tr>
+<tr>
+<td>Claude Managed Agents</td>
+<td align="right">✔ console</td>
+<td align="right">—</td>
+<td align="right">—</td>
+<td align="right">✔</td>
+<td align="right">—</td>
+<td>Managed</td>
+</tr>
+<tr>
+<td>OpenAI Agents SDK</td>
+<td align="right">✔</td>
+<td align="right">✔ handoffs</td>
+<td align="right">◐ third party</td>
+<td align="right">✔</td>
+<td align="right">✔</td>
+<td>OpenAI dashboard</td>
+</tr>
+<tr>
+<td>Google ADK / Agent Engine</td>
+<td align="right">✔</td>
+<td align="right">◐</td>
+<td align="right">✔ native</td>
+<td align="right">—</td>
+<td align="right">—</td>
+<td>Cloud Trace</td>
+</tr>
+<tr>
+<td>Microsoft Foundry / Agent Framework</td>
+<td align="right">✔</td>
+<td align="right">✔</td>
+<td align="right">✔</td>
+<td align="right">—</td>
+<td align="right">◐</td>
+<td>Application Insights</td>
+</tr>
+<tr>
+<td>AWS AgentCore</td>
+<td align="right">✔ with ADOT</td>
+<td align="right">✔</td>
+<td align="right">✔ ADOT</td>
+<td align="right">✔</td>
+<td align="right">—</td>
+<td>CloudWatch</td>
+</tr>
+<tr>
+<td>LangSmith</td>
+<td align="right">✔</td>
+<td align="right">✔</td>
+<td align="right">✔</td>
+<td align="right">✔</td>
+<td align="right">✔</td>
+<td>SaaS / enterprise</td>
+</tr>
+<tr>
+<td>Langfuse</td>
+<td align="right">✔</td>
+<td align="right">✔ graph</td>
+<td align="right">✔</td>
+<td align="right">✔</td>
+<td align="right">✔</td>
+<td>SaaS / MIT self-host</td>
+</tr>
+<tr>
+<td>Phoenix / AX</td>
+<td align="right">✔</td>
+<td align="right">✔</td>
+<td align="right">✔</td>
+<td align="right">—</td>
+<td align="right">✔</td>
+<td>ELv2 / SaaS</td>
+</tr>
+<tr>
+<td>Datadog</td>
+<td align="right">✔</td>
+<td align="right">✔ graph</td>
+<td align="right">✔</td>
+<td align="right">—</td>
+<td align="right">◐</td>
+<td>SaaS</td>
+</tr>
+<tr>
+<td>Braintrust</td>
+<td align="right">✔</td>
+<td align="right">✔</td>
+<td align="right">✔</td>
+<td align="right">—</td>
+<td align="right">✔</td>
+<td>SaaS / hybrid</td>
+</tr>
+<tr>
+<td>MLflow</td>
+<td align="right">✔</td>
+<td align="right">✔</td>
+<td align="right">✔</td>
+<td align="right">—</td>
+<td align="right">—</td>
+<td>OSS / managed</td>
+</tr>
+<tr>
+<td>Logfire</td>
+<td align="right">✔</td>
+<td align="right">✔</td>
+<td align="right">✔</td>
+<td align="right">—</td>
+<td align="right">◐</td>
+<td>SaaS / enterprise</td>
+</tr>
+</tbody></table>
+<p>The symbols reflect only the reviewed documentation. A dash means “not found in the reviewed sources,” not “the feature does not exist.”</p>
+<h2 id="9-discussion-gaps-risks-and-engineering-practices">9. Discussion: gaps, risks, and engineering practices</h2>
+<p>The ecosystem is converging toward OpenTelemetry but still exposes incompatible dialects. Claude emits <code>claude_code.*</code> spans, OpenAI uses a native format with third-party bridges, Google and Microsoft follow GenAI conventions more directly, and AWS depends on ADOT. Multi-vendor deployments therefore need an OpenTelemetry collector or another normalization layer, together with explicit version management for semantic changes.</p>
+<p>Maturity is uneven. Several high-value capabilities remain beta, preview, or Development, and central SDKs still use pre-1.0 numbering. Long-lived deployments should expect schema migration and avoid binding assurance claims to unstable attribute names.</p>
+<p>Privacy risk is architectural rather than incidental. Claude does not capture read/write content by default [R1], while OpenAI tracing captures inputs and outputs by default [R4]. Prompts, tool arguments, retrieved records, and outputs can contain personal data, secrets, or regulated information, so collection, redaction, access control, retention, and deletion rules must be decided before production.</p>
+<p>Telemetry can fail silently. When export failure does not interrupt agent execution [R1], an absent trace can mean “nothing happened” or “evidence was lost.” Monitoring the telemetry pipeline is therefore part of observability itself. A defensible deployment should track span volume, exporter health, queue loss, clock quality, and gaps between agent activity and recorded evidence.</p>
+<p>Finally, a trace is not an evaluation. The platforms that connect trace data to grading or evaluation cover both operational reconstruction and outcome analysis; others require an independent evaluator. Practical adoption should separate “execution ended without error” from “the result was correct and authorized,” define capture policy explicitly, monitor telemetry export, and group related traces through a stable session boundary.</p>
+<h2 id="10-conceptual-implications-for-sgaeia-in-distributed-edge-environments">10. Conceptual implications for SGAEIA in distributed edge environments</h2>
+<h3 id="10-1-observability-is-not-governance">10.1 Observability is not governance</h3>
+<p>From the SGAEIA perspective, tracing is an observation and reconstruction capability, not authorization to act and not automatic proof of compliance. A trace can show that an agent invoked a tool, transferred control, or produced an output, but legitimacy depends on authority, context, and policy that cannot be inferred from telemetry alone. This preserves the distinction that technical capability, authenticated identity, and stated intent do not equal operational authority.</p>
+<h3 id="10-2-evidence-must-survive-distribution">10.2 Evidence must survive distribution</h3>
+<p>Across edge-cloud environments, execution can cross devices, services, administrative domains, and periods of intermittent connectivity. Tracing is useful only if context propagates coherently, identifiers and time information remain sufficiently reliable, retention is proportionate to risk, and evidence loss can be distinguished from lack of activity. The conceptual requirement is not to capture everything; it is to preserve enough governed evidence to reconstruct decisions and effects without turning the observability plane into another disclosure channel.</p>
+<figure class="article-figure"><img alt="Figure 2 — Tracing, evaluation, and evidence in SGAEIA" src="/assets/article18/sgaeia-article-18-figure-02-sgaeia-observability-evidence-en.png" loading="lazy" decoding="async"><figcaption>© 2026 Aridio Silva | Project SGAEIA | CC BY 4.0</figcaption></figure>
+<p><strong>Figure 2 — Tracing, evaluation, and evidence in SGAEIA.</strong> The trace records the path; evaluation examines outcome quality and conformity; governed evidence supports audit and assurance under explicit assumptions. This is a non-normative conceptual interpretation. © 2026 Aridio Silva | Project SGAEIA | CC BY 4.0.</p>
+<h3 id="10-3-outcome-correctness-requires-an-independent-signal">10.3 Outcome correctness requires an independent signal</h3>
+<p>The most important finding for autonomous systems is that lack of an exception does not show that the objective was achieved. A run can finish cleanly while producing incorrect content, choosing an unsuitable path, or acting beyond legitimate scope. Assurance must therefore separate at least two axes: execution integrity and outcome quality or conformity, preventing one green status from hiding a semantic failure.</p>
+<figure class="article-figure"><img alt="Figure 3 — A trace is not correctness" src="/assets/article18/sgaeia-article-18-figure-03-trace-not-correctness-en.png" loading="lazy" decoding="async"><figcaption>© 2026 Aridio Silva | Project SGAEIA | CC BY 4.0</figcaption></figure>
+<p><strong>Figure 3 — A trace is not correctness.</strong> Technical execution status and outcome quality are independent dimensions; only the combination of tracing and evaluation distinguishes operational completion from substantive success. © 2026 Aridio Silva | Project SGAEIA | CC BY 4.0.</p>
+<h3 id="10-4-research-and-validation-requirements">10.4 Research and validation requirements</h3>
+<p>This interpretation suggests research questions for the governed evolution of SGAEIA, but it does not automatically promote controls or components into normative architecture. Future work should evaluate context continuity across agents and domains, resistance of the evidence chain to suppression and tampering, offline and degraded operation, the effects of sampling and redaction on auditability, and the relation between local events and distributed trajectories. Any requirement, invariant, or mechanism derived from these findings must pass the Research-to-Architecture process and be validated before supporting an assurance statement.</p>
+<h2 id="11-conclusion">11. Conclusion</h2>
+<p>Detailed tracing of agent execution is feasible across every platform reviewed, using spans for model calls, tools, handoffs, and related operations, arranged hierarchically within traces and sometimes grouped into sessions. The field is nevertheless in transition: Claude Agent SDK tracing and Managed Agents remain beta, Foundry workflows and external-agent tracing include preview scopes, OpenTelemetry GenAI conventions remain in Development, and several major SDKs retain 0.x versions. Adopters should expect migration cost and semantic change.</p>
+<p>The research questions can be answered as follows. For RQ1, distributed-tracing concepts apply directly to agent systems, with material variation in naming and boundaries. For RQ2, trace signals answer questions about completion, errors, duration, and executed steps, but outcome correctness requires independent evaluation. For RQ3, the ecosystem is broad but uneven in portability, privacy defaults, maturity, evaluation, and hosting. For RQ4, SGAEIA should treat tracing as a governed source of evidence that complements rather than replaces authority, evaluation, validation, and assurance.</p>
+<p>Future work includes empirical measurement of instrumentation overhead, direct product verification of capabilities marked as absent from the reviewed documentation, longitudinal monitoring of OpenTelemetry GenAI stabilization, and experiments on evidence continuity across intermittent edge environments.</p>
+<h2 id="glossary">Glossary</h2>
+<ul>
+<li><strong>Agent:</strong> a system that uses a model to decide at runtime which tools or agents to invoke.</li>
+<li><strong>Evaluation:</strong> code-, model-, or human-based assessment of outcome quality.</li>
+<li><strong>Handoff:</strong> transfer of control from one agent to another.</li>
+<li><strong>OpenTelemetry (OTel):</strong> an open standard for producing and exporting traces, metrics, and logs.</li>
+<li><strong>OTLP:</strong> the OpenTelemetry protocol for telemetry transport.</li>
+<li><strong>Session/thread:</strong> a grouping of traces belonging to one conversation or extended task.</li>
+<li><strong>Span:</strong> a timed, attributed unit of traced work with a parent relationship and status.</li>
+<li><strong>Trace:</strong> the end-to-end record of an operation, composed of spans.</li>
+<li><strong>Trace grading:</strong> assigning scores to agent traces to identify failures and regressions.</li>
+<li><strong>ZDR:</strong> Zero Data Retention; OpenAI Agents SDK tracing is unavailable under ZDR.</li>
+</ul>
+<h2 id="bibliography-references">Bibliography / References</h2>
+<p>All sources were consulted on 10 October 2026. Validation markers from the source study are preserved: [A] page opened in full; [B] page recovered through search and matched to the claim; [C] registry API data. Third-party sources are identified explicitly.</p>
+<h3 id="vendors-and-standards">Vendors and standards</h3>
+<ul>
+<li>R1. Anthropic. <a href="https://code.claude.com/docs/en/agent-sdk/observability">Observability with OpenTelemetry (Agent SDK)</a>. [A]</li>
+<li>R2. Anthropic. <a href="https://code.claude.com/docs/en/monitoring-usage?m=1">Monitoring (Claude Code)</a>. [A]</li>
+<li>R3. Anthropic. <a href="https://platform.claude.com/docs/en/managed-agents/observability">Managed Agents: observability</a>. [B]</li>
+<li>R4. OpenAI. <a href="https://openai.github.io/openai-agents-python/tracing/">Tracing (Agents SDK)</a>. [A]</li>
+<li>R5. OpenAI. <a href="https://developers.openai.com/api/docs/guides/trace-grading">Trace grading</a>. [B]</li>
+<li>R6. OpenAI. <a href="https://developers.openai.com/api/docs/guides/agent-evals">Evaluate agent workflows</a>. [B]</li>
+<li>R7. Google. <a href="https://adk.dev/observability/traces/">Agent activity traces (ADK)</a>. [B]</li>
+<li>R8. Google. <a href="https://adk.dev/observability/">Observability for agents (ADK)</a>. [B]</li>
+<li>R9. Google Cloud. <a href="https://cloud.google.com/agent-builder/agent-engine/manage/tracing">Trace an agent (Agent Engine)</a>. [B]</li>
+<li>R10. Google Cloud. <a href="https://docs.cloud.google.com/stackdriver/docs/instrumentation/ai-agent-overview">Observability for AI agent developers</a>. [B]</li>
+<li>R11. Microsoft. <a href="https://learn.microsoft.com/en-us/azure/foundry/observability/concepts/trace-agent-concept">Trace agent concept (Foundry)</a>. [B]</li>
+<li>R12. Microsoft. <a href="https://learn.microsoft.com/en-my/Azure/foundry/observability/how-to/trace-agent-setup">Set up tracing in Foundry</a>. [B]</li>
+<li>R13. Microsoft. <a href="https://learn.microsoft.com/en-my/Azure/foundry/observability/quickstarts/quickstart-tracing-hosted-agent">Quickstart: tracing a hosted agent</a>. [B]</li>
+<li>R14. Microsoft. <a href="https://learn.microsoft.com/el-gr/agent-framework/tutorials/agents/enable-observability">Enable observability for agents (Agent Framework)</a>. [B]</li>
+<li>R15. AWS. <a href="https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/observability-telemetry.html">Observability for agentic resources in AgentCore</a>. [A]</li>
+<li>R16. AWS. <a href="https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/observability-configure.md">Add observability to AgentCore resources</a>. [B]</li>
+<li>R17. AWS. <a href="https://aws.amazon.com/about-aws/whats-new/2026/07/amazon-bedrock-agentcore-unified-observability-single-log-group/">Amazon Bedrock AgentCore now delivers unified observability with traces and logs in a single log group</a> (23 July 2026). [B]</li>
+<li>R18. OpenTelemetry. <a href="https://github.com/open-telemetry/semantic-conventions-genai">OpenTelemetry GenAI Semantic Conventions</a>. Official repository to which the former agent-spans documentation now points. [A]</li>
+<li>R19. Dash0 (third party). <a href="https://www.dash0.com/knowledge/opentelemetry-genai-semantic-conventions-explained">OpenTelemetry GenAI semantic conventions explained</a>. [B]</li>
+<li>R20. DEV Community (third party). <a href="https://dev.to/azena-ai/opentelemetrys-genai-semantic-conventions-are-not-stable-yet-heres-what-actually-shipped-in-2026-3mke">OpenTelemetry&#39;s GenAI semantic conventions are not stable yet</a>. [B]</li>
+<li>R44. Microsoft. <a href="https://learn.microsoft.com/azure/ai-foundry/agents/concepts/tracing">Tracing in Microsoft Foundry (earlier page mentioning Outshift)</a>. [B]</li>
+</ul>
+<h3 id="independent-platforms">Independent platforms</h3>
+<ul>
+<li>R21. LangChain. <a href="https://docs.langchain.com/langsmith/observability-concepts.md">Observability concepts (LangSmith)</a>. [B]</li>
+<li>R22. LangChain. <a href="https://docs.langchain.com/langsmith/trace-with-opentelemetry/index.html">Trace with OpenTelemetry (LangSmith)</a>. [B]</li>
+<li>R23. LangChain. <a href="https://docs.smith.langchain.com/how_to_guides/tracing">Observability how-to guides (LangSmith)</a>. [B]</li>
+<li>R24. Langfuse. <a href="https://langfuse.com/resources/engineering/clarifications.md">Engineering clarifications</a>. [B]</li>
+<li>R25. Langfuse. <a href="https://langfuse.com/docs/observability/data-model.md">Data model</a>. [B]</li>
+<li>R26. Arize. <a href="https://github.com/Arize-ai/phoenix">Phoenix repository</a>. [B]</li>
+<li>R27. Atlan (third party). <a href="https://atlan.com/know/ai-agent/ai-agent-observability/what-is-arize/">What is Arize</a>. [B]</li>
+<li>R28. Datadog. <a href="https://docs.datadoghq.com/llm_observability/instrument/otel_instrumentation/">OpenTelemetry instrumentation</a>. [B]</li>
+<li>R29. Datadog. <a href="https://docs.datadoghq.com/llm_observability/monitoring/agent_monitoring/">Agent monitoring</a>. [B]</li>
+<li>R30. Braintrust. <a href="https://braintrust.dev/docs/guides/self-hosting">Self-hosting</a>. [B]</li>
+<li>R31. Braintrust. <a href="https://www.braintrust.dev/docs/release-notes">Release notes</a>. [B]</li>
+<li>R32. Braintrust. <a href="https://www.braintrust.dev/docs/reference/glossary.md">Glossary</a>. [B]</li>
+<li>R33. MLflow. <a href="https://mlflow.org/docs/latest/genai/tracing/index.html">Tracing for LLM and agent observability</a>. [B]</li>
+<li>R34. Databricks. <a href="https://docs.databricks.com/gcp/en/mlflow3/genai/tracing/automatic-tracing">Automatic tracing and integrations</a>. [B]</li>
+<li>R35. Pydantic. <a href="https://pydantic.dev/logfire.md">Logfire: AI observability</a>. [B]</li>
+<li>R45. Langfuse. <a href="https://langfuse.com/integrations/frameworks/ai-sdk-cpp.md">AI SDK C++ integration</a>. [B]</li>
+<li>R47. Pydantic. <a href="https://ai.pydantic.dev/logfire">Pydantic AI: Logfire</a>. [B]</li>
+</ul>
+<h3 id="third-party-sources-and-version-data">Third-party sources and version data</h3>
+<ul>
+<li>R36. Inference.net (third party). <a href="https://inference.net/content/claude-agent-sdk-tracing/">Claude Agent SDK tracing and evaluation in production</a>. [B]</li>
+<li>R37. ClickHouse (third party). <a href="https://clickhouse.com/resources/engineering/what-is-ai-agent-observability">What is AI agent observability</a>. [B]</li>
+<li>R38. BenchLM (third party). <a href="https://benchlm.ai/blog/posts/best-llm-observability-tools">Best LLM observability tools</a>. [B]</li>
+<li>R39. Jannik Reinhard (third party). <a href="https://jannikreinhard.com/microsoft-foundry-observability/">Microsoft Foundry observability</a>. [B]</li>
+<li>R40. <a href="https://pypi.org">PyPI</a> and <a href="https://registry.npmjs.org">npm</a> registries, accessed through API on 10 October 2026 for version and publication dates. [C]</li>
+<li>R41. Latitude (third party). <a href="https://latitude.so/blog/llm-observability-tools-compared">LLM observability tools compared</a>. [B]</li>
+<li>R42. RFP.wiki (third party). <a href="https://www.rfp.wiki/vendors/braintrust">Braintrust</a>. [B]</li>
+<li>R43. Pydantic. <a href="https://logfire.pydantic.dev/docs/faq">Logfire FAQ</a>. [B]</li>
+<li>R46. Inference.net (third party). <a href="https://inference.net/content/arize-phoenix-alternatives/">Arize Phoenix alternatives for agent observability</a>. [B]</li>
+</ul>
+<h2 id="about-the-author">About the Author</h2>
+<p><strong>Aridio Silva</strong> is an independent researcher based in Brazil working on the architecture, security, governance, and trustworthiness of autonomous and distributed artificial intelligence systems.</p>
+<p>His research focuses on <strong>Agentic AI, Multi-Agent Systems, Edge AI, AI Security, Zero Trust, Security-by-Design, AI Governance, Spec-Driven Development, and continuous security assurance</strong>.</p>
+<p>He is the creator and lead researcher of <strong>SGAEIA — Secure Governed Autonomous Edge Intelligence Architecture</strong>, a research initiative investigating architectural foundations for secure, governed, auditable, and trustworthy autonomous AI systems operating across distributed edge-cloud environments.</p>
+<h2 id="research-amp-project-resources">Research &amp; Project Resources</h2>
+<ol>
+<li><strong>ORCID:</strong> <a href="https://orcid.org/0009-0008-2411-6995">https://orcid.org/0009-0008-2411-6995</a></li>
+<li><strong>Google Scholar:</strong> <a href="https://scholar.google.com/citations?user=rPn5O48AAAAJ">https://scholar.google.com/citations?user=rPn5O48AAAAJ</a></li>
+<li><strong>Zenodo — SGAEIA Community:</strong> <a href="https://zenodo.org/communities/sgaeia">https://zenodo.org/communities/sgaeia</a></li>
+<li><strong>OpenAIRE:</strong> <a href="https://explore.openaire.eu/search/find?fv0=Aridio%20Silva&f0=q">https://explore.openaire.eu/search/find?fv0=Aridio%20Silva&amp;f0=q</a></li>
+<li><strong>Medium:</strong> <a href="https://medium.com/@aridiosilva">https://medium.com/@aridiosilva</a></li>
+<li><strong>DEV Community:</strong> <a href="https://dev.to/aridiosilva">https://dev.to/aridiosilva</a></li>
+<li><strong>GitHub:</strong> <a href="https://github.com/aridiosilva">https://github.com/aridiosilva</a></li>
+<li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/aridio-silva-74997111/">https://www.linkedin.com/in/aridio-silva-74997111/</a></li>
+<li><strong>Homepage:</strong> <a href="https://aridiosilva.com">https://aridiosilva.com</a></li>
+<li><strong>SGAEIA Homepage:</strong> <a href="https://aridiosilva.com/sgaeia">https://aridiosilva.com/sgaeia</a></li>
+<li><strong>SGAEIA LinkedIn:</strong> <a href="https://www.linkedin.com/company/sgaeia/">https://www.linkedin.com/company/sgaeia/</a></li>
+</ol>
+<h2 id="figures">Figures</h2>
+<p>The cover is not numbered. Figures 1–3 are public conceptual illustrations and do not disclose private SGAEIA protocols, algorithms, state machines, policy structures, thresholds, or enforcement mechanisms. Final assets must include visible credit and embedded creator, copyright, project, title, description, and license metadata.</p>
+<h2 id="license">License</h2>
+<p>Except where otherwise noted, the text and original conceptual illustrations in this article are licensed under the <strong>Creative Commons Attribution 4.0 International License (CC BY 4.0)</strong>.</p>
+<p>© 2026 Aridio Silva. You may share and adapt this work for any purpose, provided appropriate attribution is given.</p>
+<p>The SGAEIA software and research artifact remain subject to their own <strong>Apache License 2.0</strong>.</p>
+<p><strong>Autonomous AI. Governed by Design. Trusted by Evidence.</strong></p>
+<h2 id="series-continuity">Series continuity</h2>
+<p>This work is <strong>SGAEIA Research Series — Article 18</strong>. The canonical homepage record, Zenodo deposit, DOI, Medium URL, and DEV Community URL remain pending until external publication and author verification.</p>
+<h2 id="suggested-citation">Suggested citation</h2>
+<p>Silva, Aridio. (2026). <em>Tracing AI Agent Execution: Foundations, State of the Art, and Implications for Distributed Multi-Agent Systems</em>. SGAEIA Research Series, Article 18. CC BY 4.0. Canonical URL and DOI pending.</p>
+</article></section></main>
+<footer class="site-footer"><div class="shell"><p>© 2026 Aridio Silva · <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a> · Project SGAEIA</p></div></footer></body></html>
