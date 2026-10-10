@@ -11,8 +11,8 @@ The primary research themes are Agentic AI, multi-agent systems, AI security, Ze
 
 ## Publication index
 
-- [Tracing AI Agent Execution — Article 18, English](https://aridiosilva.com/publications/artigo18/): Complete English article with official cover, three figures and 47 references; DOI pending.
-- [Rastreamento da Execução de Agentes de AI — Artigo 18, Português](https://aridiosilva.com/publications/artigo18/pt/): Edição integral em português com capa e figuras localizadas; DOI pendente.
+- [Tracing AI Agent Execution — Article 18, English](https://aridiosilva.com/publications/artigo18/): Complete English article with official cover, three figures and 47 references; DOI 10.5281/zenodo.23284753.
+- [Rastreamento da Execução de Agentes de AI — Artigo 18, Português](https://aridiosilva.com/publications/artigo18/pt/): Edição integral em português com capa e figuras localizadas; DOI 10.5281/zenodo.23284753.
 - [AI Jailbreaks — Article 17, English](https://aridiosilva.com/publications/artigo17/): Complete English article with cover, four figures and 25 references; Zenodo DOI pending.
 - [AI Jailbreaks — Article 17, Portuguese](https://aridiosilva.com/publications/artigo17/pt/): Complete Portuguese edition with Portuguese cover and figures.
 
@@ -20,10 +20,13 @@ The primary research themes are Agentic AI, multi-agent systems, AI security, Ze
 
 ## Article 18 — Tracing AI Agent Execution
 
-Author: Aridio Silva — Independent Researcher, Brazil. SGAEIA Research Series, Article 18, 10 October 2026. Critical comparative review of tracing and observability across 13 AI-agent platforms, with a conceptual, non-normative analysis of evaluation and governed evidence for SGAEIA. Status: author review ready; DOI and external publication URLs pending. License: CC BY 4.0. Copyright: © 2026 Aridio Silva.
+Author: Aridio Silva — Independent Researcher, Brazil. SGAEIA Research Series, Article 18, 10 October 2026. Critical comparative review of tracing and observability across 13 AI-agent platforms, with a conceptual, non-normative analysis of evaluation and governed evidence for SGAEIA. DOI: 10.5281/zenodo.23284753. License: CC BY 4.0. Copyright: © 2026 Aridio Silva.
 
 - [Complete English article](https://aridiosilva.com/publications/artigo18/)
 - [Artigo completo em português](https://aridiosilva.com/publications/artigo18/pt/)
+- [Zenodo DOI](https://doi.org/10.5281/zenodo.23284753)
+- [Medium edition](https://medium.com/@aridiosilva/tracing-ai-agent-execution-foundations-state-of-the-art-and-implications-for-distributed-cf1cda3b9cd4)
+- [DEV Community edition](https://dev.to/aridiosilva/tracing-ai-agent-execution-observability-and-evidence-in-distributed-systems-2fh0)
 - [English cover](https://aridiosilva.com/assets/article18/sgaeia-article-18-cover-en.png)
 - [Capa em português](https://aridiosilva.com/assets/article18/sgaeia-article-18-cover-pt.png)
 
