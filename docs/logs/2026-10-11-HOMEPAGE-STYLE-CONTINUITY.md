@@ -421,3 +421,163 @@ git push origin main
 - O registro deve informar escopo, arquivos afetados, decisões visuais/funcionais, validações, estado de commit/push e eventual mecanismo de cache-busting.
 - Não declarar uma alteração como publicada enquanto o commit e o push correspondentes não tiverem sido confirmados.
 
+## Atualização de continuidade — miniaturas na seção 05 Research Series — 11 de outubro de 2026
+
+### Escopo
+
+- Arquivo funcional alterado: `sgaeia.html`.
+- Os 19 cartões da seção 05 Research Series receberam uma miniatura da capa do respectivo artigo.
+- As imagens e dimensões intrínsecas foram reutilizadas do mapa já aprovado em `publications.html`; nenhuma nova arte foi criada.
+- A ordem da coluna esquerda de cada cartão é: bullet numerado, data e miniatura da capa.
+- A miniatura permanece dentro do box do artigo e funciona como link acessível para a página local do artigo.
+
+### Tamanho inicial em avaliação
+
+- Desktop amplo: largura externa de até `112px`, preservando a proporção original com `height: auto`.
+- Painel ou viewport com até 760px: largura externa de até `96px`.
+- Celular com até 430px: largura externa de `112px`, com a coluna centralizada acima do conteúdo textual.
+- Bordas, raio, sombra e hover/foco terracota foram adicionados sem alterar a proporção das capas.
+- As imagens usam `loading="lazy"` e `decoding="async"`.
+
+### Acessibilidade e responsividade
+
+- Todas as 19 imagens possuem texto alternativo iniciado por `Cover:`.
+- Todos os 19 links de capa possuem `aria-label` com o título do artigo.
+- `prefers-reduced-motion` desativa o deslocamento do hover das miniaturas.
+- O teste da própria seção não detectou overflow causado pelas capas.
+- Em 390px, o overflow horizontal já existente continua originado pelo SVG decorativo `.brand-banner-art`, não pelas miniaturas.
+
+### Validações
+
+- 19 cartões, 19 datas preservadas e 19 miniaturas confirmadas.
+- Nenhuma imagem quebrada entre as capas carregadas durante a inspeção.
+- Proporção preservada em todas as imagens verificadas.
+- Nenhum marcador literal de transformação permaneceu no HTML após a correção e restauração pelo backup.
+- `git diff --check -- sgaeia.html` passou, com apenas o aviso normal de LF/CRLF.
+- Backup restaurável: `C:\Users\as294\Documents\Codex\2026-10-11\lei-2\work\sgaeia-before-research-series-thumbnails-2026-10-11.html`.
+- Estado: alteração local em teste; ainda sem stage, commit ou push.
+
+## Atualização de continuidade — capas na seção 03 Publicações da homepage — 11 de outubro de 2026
+
+### Escopo e composição
+
+- Arquivo funcional alterado: `index.html`.
+- Os 21 blocos da seção 03 Publicações passaram a usar a composição aprovada na seção 05 Research Series de `sgaeia.html`.
+- A ordem visual é: bullet/data, miniatura e conteúdo textual com título, descrição, identificação e links.
+- Os 19 artigos da SGAEIA Research Series reutilizam suas capas locais já aprovadas.
+- O registro `SGAEIA: Secure Governed Autonomous Edge Intelligence Architecture` usa o logo SGAEIA em uma miniatura circular exclusiva para o artefato de software.
+- O item 21, `When AI Begins to Build Itself`, usa sua capa oficial publicada no registro Zenodo `10.5281/zenodo.22681646`.
+- Os antigos blocos laterais `.editorial-meta` foram eliminados da seção; identificação e links agora ficam abaixo da descrição no conteúdo principal.
+
+### Tamanhos e responsividade
+
+- Desktop: colunas de `86px 160px minmax(0, 1fr)` e capas de `160px`.
+- Entre 601px e 760px: colunas de `76px 128px minmax(0, 1fr)` e capas de `128px`.
+- Entre 431px e 600px: colunas de `64px 112px minmax(0, 1fr)` e capas de `112px`.
+- Até 430px, bullet/data, capa e conteúdo são empilhados nessa ordem.
+- As capas preservam sua proporção com `height: auto`; hover, foco e movimento reduzido seguem o padrão da seção Research Series.
+
+### Validações
+
+- 21 cartões, 21 miniaturas, 21 identificações e 21 blocos de links confirmados.
+- Nenhum `.editorial-meta` antigo permaneceu na seção 03.
+- Nenhum dos 21 arquivos de imagem referenciados está ausente ou quebrado.
+- A medição no navegador confirmou a ordem horizontal bullet/data, miniatura e conteúdo.
+- O artefato de software foi confirmado com `border-radius: 50%` e logo local de `1254 × 1254`.
+- `git diff --check -- index.html` passou, com apenas o aviso normal de LF/CRLF após a remoção de espaços finais.
+- Backup restaurável: `C:\Users\as294\Documents\Codex\2026-10-11\lei-2\work\index-before-publication-cover-column-2026-10-11.html`.
+- Estado: alteração local em teste; ainda sem stage, commit ou push.
+
+## Correção de continuidade — capa oficial do item 21 — 11 de outubro de 2026
+
+- O item 21 da seção 03 Publicações é tratado na homepage como artigo de pesquisa, não como um registro visual genérico.
+- A API pública do Zenodo confirmou o título `When AI Begins to Build Itself: Progress Toward Recursive Self-Improvement and Its Implications` e disponibilizou a capa `When_AI_Begins_to_build_itself_cover_Image-created_by_ia_AridioSIlva_SEP2026.png`.
+- A capa oficial foi incorporada localmente em `assets/when-ai-begins-to-build-itself/cover.png` com dimensões intrínsecas de `2048 × 1156`.
+- O box 21 deixou de usar o logo SGAEIA genérico e passou a exibir a capa própria, preservando sua proporção.
+- A identificação visível foi alterada de `Preprint` para `Research article`.
+- A descrição foi atualizada de preprint para artigo de pesquisa nos cinco idiomas da homepage: inglês, português, espanhol, francês e alemão.
+- Inspeção no navegador confirmou a imagem carregada, sem quebra, renderizada em `126 × 71` no painel atual.
+- O item 20 permanece inalterado como `Software artifact`, com o logo circular SGAEIA.
+- Estado: alteração local em teste; ainda sem stage, commit ou push.
+
+## Atualização de continuidade — capa entre o bullet e o título — 11 de outubro de 2026
+
+### Composição dos cartões
+
+- As 19 miniaturas foram retiradas da coluna de data e colocadas em uma coluna visual própria entre o bullet/data e o conteúdo do artigo.
+- Em desktop, cada cartão usa três colunas: `86px 160px minmax(0, 1fr)`; a capa passa a ter `160px` de largura.
+- Entre 601px e 760px, a composição usa `76px 128px minmax(0, 1fr)` e capa de `128px`.
+- Entre 431px e 600px, mantém-se a ordem horizontal solicitada com `64px 112px minmax(0, 1fr)` e capa de `112px`.
+- Até 430px, bullet/data, capa e conteúdo são empilhados nessa mesma ordem para preservar legibilidade.
+- Todas as capas continuam usando `height: auto`, sem deformação.
+
+### Validações
+
+- Os 19 cartões mantêm uma capa cada e nenhuma capa continua aninhada na coluna de data.
+- No painel lateral de 507px, a medição confirmou a ordem horizontal: bullet/data à esquerda, capa de 112px ao centro e conteúdo à direita.
+- Inspeção visual dos Artigos 12, 11 e 10 confirmou o novo arranjo.
+- `git diff --check -- sgaeia.html` passou, com apenas o aviso normal de LF/CRLF.
+- Backup restaurável: `C:\Users\as294\Documents\Codex\2026-10-11\lei-2\work\sgaeia-before-series-cover-middle-column-2026-10-11.html`.
+- Estado: alteração local em teste; ainda sem stage, commit ou push.
+
+## Atualização de continuidade — metadados da seção 05 Research Series — 11 de outubro de 2026
+
+### Ajuste visual e estrutural
+
+- A terceira coluna isolada de metadados foi removida dos 19 cartões da seção 05.
+- A linha redundante `Article XX` foi eliminada de todos os cartões.
+- `Zenodo DOI`, `Medium` e os demais links disponíveis de cada publicação agora aparecem no corpo principal, imediatamente abaixo de `SGAEIA Research Series — Article XX`.
+- A coluna esquerda continua reservada ao bullet numerado, à data e à miniatura da capa.
+- O grid dos cartões passou de três para duas colunas: coluna visual à esquerda e conteúdo textual à direita.
+- O ajuste preserva o comportamento responsivo e o estilo de hover/foco dos links.
+
+### Validações
+
+- 19 cartões, 19 miniaturas e 19 blocos de links confirmados.
+- Nenhum bloco antigo `.editorial-meta` permaneceu na seção.
+- Não há linha `Article XX` duplicada nos blocos de links.
+- Inspeção visual do Artigo 2 confirmou a ordem: título, identificação completa da série e links; à esquerda permanecem bullet, data e capa.
+- A mesma ordem foi confirmada por inspeção estrutural no Artigo 11.
+- `git diff --check -- sgaeia.html` passou, com apenas o aviso normal de LF/CRLF.
+- Backup restaurável: `C:\Users\as294\Documents\Codex\2026-10-11\lei-2\work\sgaeia-before-series-metadata-consolidation-2026-10-11.html`.
+- Estado: alteração local em teste; ainda sem stage, commit ou push.
+
+## Atualização de continuidade — links centralizados no hero da homepage — 11 de outubro de 2026
+
+- Os dois links de ação da seção inicial de `index.html`, `Explore research` e `Explore SGAEIA`, passaram a ser centralizados horizontalmente como um conjunto.
+- Em larguras suficientes, os boxes permanecem lado a lado e centralizados.
+- Quando a largura não comporta ambos, `flex-wrap` os distribui em linhas diferentes, mantendo cada box centralizado no meio do contêiner.
+- Os boxes preservam largura natural, com `max-width: 100%`, texto centralizado e quebra interna segura para traduções mais longas.
+- Em viewport de `320px`, os links foram confirmados em duas linhas; seus centros medidos foram `152px` e `153px`, contra centro de `153px` do contêiner.
+- Após o teste, o override temporário de viewport foi removido e a visualização normal restaurada.
+- `git diff --check -- index.html` passou, com apenas o aviso normal de LF/CRLF.
+- Estado: alteração local em teste; ainda sem stage, commit ou push.
+
+## Atualização de continuidade — hero e Research proposition da SGAEIA — 11 de outubro de 2026
+
+- Arquivo funcional alterado: `sgaeia.html`.
+- O conteúdo `Research proposition` passou a ocupar um box responsivo equivalente ao `Current research question` da homepage principal.
+- O box usa fundo `#f9fcfb`, borda fina `#bed0d2`, barra esquerda azul de `5px`, sombra suave e espaçamento interno de `22px 22px 24px`.
+- Os links `Explore the research problem` e `Open research artifact` passaram a ser centralizados horizontalmente como um conjunto.
+- Quando não cabem lado a lado, os links quebram em linhas diferentes e cada box permanece centralizado com largura natural.
+- Em viewport de `320px`, os dois links foram confirmados em linhas separadas e ambos tiveram centro medido em `153px`, igual ao centro do contêiner.
+- O `gap` herdado do grid foi zerado abaixo de `980px`, aproximando verticalmente o conjunto de links do box `Research proposition`.
+- A distância vertical final entre os links e o box foi medida em `36px`, controlada pela margem superior responsiva do box.
+- Após os testes, o override temporário de viewport foi removido e a visualização normal restaurada.
+- `git diff --check -- sgaeia.html` passou, com apenas o aviso normal de LF/CRLF.
+- Backup restaurável: `C:\Users\as294\Documents\Codex\2026-10-11\lei-2\work\sgaeia-before-hero-proposition-box-2026-10-11.html`.
+- Estado: alteração local em teste; ainda sem stage, commit ou push.
+
+## Atualização de continuidade — quatro canais de publicação na Research Series — 11 de outubro de 2026
+
+- Arquivo funcional alterado: `sgaeia.html`, seção 05 `SGAEIA Research Series`.
+- A seção 03 `Publications` de `index.html` foi usada como fonte canônica, com associação pelo endereço local de cada artigo para evitar trocas entre títulos ou números.
+- Os 19 boxes agora apresentam, nesta ordem, os canais disponíveis: `Zenodo DOI`, `Medium`, `DEV Community` e `Academia.edu`.
+- Links auxiliares da homepage, como `Português`, `Homepage record` e `Read full article`, não foram copiados, pois o ajuste solicitado limita o bloco aos quatro canais de publicação.
+- O Artigo 17 mantém `DOI pending`, porque a entrada correspondente da página principal ainda não possui link Zenodo; os links Medium, DEV Community e Academia.edu foram incluídos normalmente.
+- Validação estrutural confirmou 19 boxes, 19 blocos de links, 18 links Zenodo, 19 Medium, 19 DEV Community, 19 Academia.edu e uma única indicação `DOI pending`.
+- Inspeção no navegador confirmou os quatro links no Artigo 19, a exceção documentada no Artigo 17 e os quatro canais nos demais artigos, inclusive os artigos mais antigos.
+- `git diff --check -- sgaeia.html` passou, com apenas o aviso normal de LF/CRLF.
+- Backup restaurável: `C:\Users\as294\Documents\Codex\2026-10-11\lei-2\work\sgaeia-before-four-publication-links-2026-10-11.html`.
+- Estado: alteração local em teste; ainda sem stage, commit ou push.
+
