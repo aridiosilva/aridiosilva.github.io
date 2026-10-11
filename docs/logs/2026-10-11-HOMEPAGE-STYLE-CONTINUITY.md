@@ -2,12 +2,12 @@
 
 **Data:** 2026-10-11 BRT  
 **Classificação:** PRIVATE WORK LOG  
-**Status:** ALTERAÇÕES VISUAIS CONCLUÍDAS, COMMITADAS E ENVIADAS AO GITHUB  
-**Commit funcional atual:** `6535ddb` — `Improve homepage sections, cards, responsiveness, and footer icons`
+**Status:** CONTEXTO ATUALIZADO; REDESIGN SGAEIA PUBLICADO E NOVAS ALTERAÇÕES LOCAIS PENDENTES  
+**Commit funcional atual:** `d6935b2` — `Improve SGAEIA sections, cards, and footer icons`
 
 ## Prompt pronto para iniciar outro chat
 
-Continue o trabalho na homepage `aridiosilva.com` usando este documento como contexto técnico e registro de decisões já aprovadas. O repositório local é `C:\Users\as294\aridiosilva.github.io`, o branch é `main` e o remoto é `https://github.com/aridiosilva/aridiosilva.github.io`. Antes de alterar qualquer arquivo, execute `git status --short --branch`, confirme o commit atual e inspecione o código existente. Preserve todas as mudanças visuais descritas abaixo, as traduções EN/PT/ES/FR/DE, os controles de acessibilidade, analytics consent, links externos e responsividade. Não restaure variantes antigas amarelo/magenta, hover magenta ou hover azul-escuro, pois foram testes descartados. Faça alterações incrementais, valide no navegador local em `http://127.0.0.1:8765/`, execute `git diff --check`, salve uma cópia restaurável antes de cada novo experimento e não faça commit ou push sem pedido explícito.
+Continue o trabalho na homepage `aridiosilva.com` usando este documento como contexto técnico e registro de decisões já aprovadas. O repositório local é `C:\Users\as294\aridiosilva.github.io`, o branch é `main` e o remoto é `https://github.com/aridiosilva/aridiosilva.github.io`. Antes de alterar qualquer arquivo, execute `git status --short --branch`, confirme o commit atual e inspecione o código existente. Preserve todas as mudanças visuais descritas abaixo, as traduções EN/PT/ES/FR/DE, os controles de acessibilidade, a medição automática de audiência sem interface e com armazenamento negado, os links externos e a responsividade. Preserve também o cache-busting dos ativos alterados para que os testes locais não dependam de limpeza manual do cache. Não restaure variantes antigas amarelo/magenta, hover magenta ou hover azul-escuro, pois foram testes descartados. Faça alterações incrementais, valide no navegador local em `http://127.0.0.1:8765/`, execute `git diff --check`, salve uma cópia restaurável antes de cada novo experimento e não faça commit ou push sem pedido explícito.
 
 ## Estado do repositório no encerramento
 
@@ -349,4 +349,75 @@ git add -- "docs/logs/2026-10-11-HOMEPAGE-STYLE-CONTINUITY.md"
 git commit -m "docs: record homepage style redesign context"
 git push origin main
 ```
+
+## Atualização de continuidade — SGAEIA, Analytics, cache e Versão 2.0 — 11 de outubro de 2026
+
+### Estado Git desta atualização
+
+- Branch: `main`.
+- `HEAD`, `origin/main` e `origin/HEAD`: `d6935b2` — `Improve SGAEIA sections, cards, and footer icons`.
+- O commit `d6935b2` já foi enviado ao GitHub.
+- As alterações descritas abaixo como “locais pendentes” ainda não receberam stage, commit ou push.
+- O arquivo `sgaeia.html` já continha mudanças locais de cabeçalho antes da atualização global de Analytics e rodapés; elas foram preservadas.
+
+### Redesign da página `sgaeia.html` publicado em `d6935b2`
+
+- Os quatro cartões da seção 01 Problem receberam o mesmo sistema visual dos cartões 01 Research da homepage principal.
+- Os seis cartões da seção 02 Principles receberam o mesmo sistema visual dos seis cartões 02 SGAEIA da homepage principal.
+- Principles recebeu bullets numerados de `02.1` a `02.6`, seguindo o padrão visual da seção 01.
+- Os quatro cartões da seção 03 Properties passaram a usar o padrão da seção 01 Problem.
+- Os quatro cartões da seção 04 Agenda passaram a usar o padrão visual da seção 02 Principles.
+- A seção 05 Research Series passou a usar o padrão dos blocos de artigos da seção 03 Publications da homepage principal.
+- Os cinco blocos da seção 06 Artifacts passaram a usar o padrão da seção 04 Agenda, sem bullets.
+- Os links da seção 06 receberam hover terracota equivalente ao usado nos títulos da Research Series.
+- Os boxes de ícones do rodapé da SGAEIA foram alinhados ao padrão visual do rodapé da homepage principal.
+
+### Ajustes locais pendentes em `sgaeia.html`
+
+- As quatro linhas do cabeçalho fixo foram centralizadas e tornadas responsivas.
+- Em janelas estreitas, os textos, o menu e os controles podem quebrar em múltiplas linhas sem sair da área visível.
+- As margens de rolagem das âncoras foram ajustadas para compensar a altura variável do cabeçalho fixo.
+- O link `Aridio Silva` recebeu hover e foco por teclado coerentes com os links do menu, aplicados somente ao texto em negrito.
+
+### Medição automática de audiência em todas as páginas
+
+- `assets/analytics-consent.js` foi simplificado e não cria mais banner, diálogo, botões de aceitar/recusar ou o botão `Analytics preferences`.
+- A medição é inicializada automaticamente nas 25 páginas HTML inventariadas no repositório.
+- Cada página contém exatamente uma referência ao carregador comum.
+- O carregador usa o Measurement ID `G-MXMJ7Z3LS7`.
+- O Consent Mode permanece com `analytics_storage`, `ad_storage`, `ad_user_data` e `ad_personalization` definidos como `denied`.
+- `allow_google_signals` e `allow_ad_personalization_signals` permanecem desativados.
+- `ads_data_redaction` permanece habilitado.
+- O comportamento esperado é medição automática por sinais sem cookies; bloqueadores do navegador ou da rede ainda podem impedir requisições externas.
+- As referências a `assets/analytics-consent.css` foram retiradas dos HTMLs, pois a interface deixou de existir. O arquivo CSS ainda pode permanecer no repositório até limpeza futura deliberada.
+
+### Cache-busting para testes
+
+- Todas as 25 páginas carregam `/assets/analytics-consent.js?v=20261011`.
+- A versão na URL força o navegador a buscar o carregador atualizado e evita a necessidade de limpar o cache manualmente durante os testes desta alteração.
+- Regra de continuidade: sempre que um CSS, JavaScript ou outro ativo compartilhado for alterado e puder permanecer em cache, atualizar seu parâmetro `?v=` de forma coordenada em todas as páginas que o utilizam.
+- Não renomear ou retirar o parâmetro de versão sem substituir por mecanismo equivalente de invalidação de cache.
+
+### Identificação Versão 2.0 nos rodapés
+
+- Todas as 25 páginas HTML exibem a identificação da versão no rodapé.
+- Em `index.html` e `sgaeia.html`, a versão aparece ao lado da data de atualização.
+- A homepage multilíngue usa `Version 2.0`, `Versão 2.0`, `Versión 2.0` ou `Version 2.0`, conforme o idioma selecionado.
+- As páginas individuais em português usam `Versão 2.0`; as páginas em inglês usam `Version 2.0`.
+
+### Validações executadas
+
+- Inventário confirmou 25 páginas HTML.
+- Cada página possui exatamente uma referência versionada ao carregador de audiência.
+- Todas as 25 páginas possuem a identificação 2.0 dentro do rodapé.
+- A interface de Analytics não aparece após recarregar a página com o ativo versionado.
+- `node --check assets/analytics-consent.js` passou sem erros.
+- Um teste isolado confirmou a fila `gtag` com consentimento padrão negado e configuração do Measurement ID esperado.
+- `git diff --check` passou; permaneceram apenas avisos normais de conversão LF/CRLF.
+
+### Regra de registro para as próximas alterações
+
+- Toda mudança aprovada na homepage, na página SGAEIA, nas páginas de publicações ou em ativos compartilhados deve ser registrada neste documento e no prompt externo de continuidade fornecido pelo proprietário.
+- O registro deve informar escopo, arquivos afetados, decisões visuais/funcionais, validações, estado de commit/push e eventual mecanismo de cache-busting.
+- Não declarar uma alteração como publicada enquanto o commit e o push correspondentes não tiverem sido confirmados.
 
