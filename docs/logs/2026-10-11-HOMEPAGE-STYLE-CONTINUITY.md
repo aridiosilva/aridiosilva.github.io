@@ -581,3 +581,20 @@ git push origin main
 - Backup restaurável: `C:\Users\as294\Documents\Codex\2026-10-11\lei-2\work\sgaeia-before-four-publication-links-2026-10-11.html`.
 - Estado: alteração local em teste; ainda sem stage, commit ou push.
 
+## Encerramento do ciclo visual — Homepage versão 2.0 — 11 de outubro de 2026
+
+- O ciclo de ajustes visuais e de continuidade editorial da Homepage versão 2.0 foi concluído.
+- Foram consolidados os estilos responsivos da página principal e de `sgaeia.html`, incluindo headers, boxes, botões, cards, capas, links editoriais, rodapés e identificação de versão.
+- A seção 03 `Publications` da homepage e a seção 05 `SGAEIA Research Series` ficaram visualmente alinhadas, com capas proporcionais e canais editoriais consistentes.
+- O rodapé das páginas HTML identifica a entrega como `Versão 2.0`.
+- Este registro encerra o ciclo de atualizações da versão 2.0; novos ajustes deverão ser tratados como uma nova etapa de manutenção ou evolução.
+
+## Preparação do próximo ciclo — Prompt de continuidade da versão 2.1 — 11 de outubro de 2026
+
+- Foi criado o prompt de continuidade `docs/prompts/2026-10-11-HOMEPAGE-CONTINUIDADE-V2.1.md`.
+- O documento estabelece o commit `9871f8d` como baseline funcional da versão 2.0 e ponto de partida da versão 2.1.
+- O prompt consolida decisões visuais, estrutura das páginas, responsividade, acessibilidade, traduções, capas, canais editoriais, cache-busting e fluxo de validação.
+- A versão visível no rodapé permanece `Versão 2.0` até que o usuário determine a publicação efetiva da versão 2.1.
+- O ciclo 2.1 começa sem mudanças funcionais próprias e deve aguardar os próximos comandos do usuário.
+- Referência relativa: [`Prompt de continuidade — Homepage versão 2.1`](../prompts/2026-10-11-HOMEPAGE-CONTINUIDADE-V2.1.md).
+
