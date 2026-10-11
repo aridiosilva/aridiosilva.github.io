@@ -26,11 +26,15 @@ Author: Aridio Silva — Independent Researcher, Brazil. SGAEIA Research Series,
 
 - [Complete English article](https://aridiosilva.com/publications/artigo19/)
 - [Artigo completo em português](https://aridiosilva.com/publications/artigo19/pt/)
+- [Zenodo record](https://zenodo.org/records/23300168)
 - [Zenodo DOI](https://doi.org/10.5281/zenodo.23300168)
+- [Medium edition](https://medium.com/@aridiosilva/lora-in-ai-agents-efficiency-security-risks-and-adapter-governance-e3cbdfb3e588)
+- [DEV Community edition](https://dev.to/aridiosilva/lora-in-ai-agents-efficiency-security-risks-and-adapter-governance-lh4)
+- [Academia.edu edition](https://www.academia.edu/178742323/LoRA_in_AI_Agents_Efficiency_Security_Risks_and_Adapter_Governance)
 - [English cover](https://aridiosilva.com/assets/article19/sgaeia-article-19-cover-en.png)
 - [Capa em português](https://aridiosilva.com/assets/article19/sgaeia-article-19-cover-pt.png)
 
-Medium and DEV Community URLs are not listed because no public distribution URL has been confirmed. The homepage records are the canonical open-reading editions. Live deployment and indexing are not verified, and discovery metadata does not guarantee indexing or ranking.
+The homepage records are the canonical open-reading editions; Zenodo is the persistent archival record, and Medium, DEV Community, and Academia.edu are distribution surfaces. Discovery metadata does not guarantee indexing or ranking.
 
 ## Article 18 — Tracing AI Agent Execution
 
