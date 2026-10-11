@@ -550,9 +550,305 @@
   .copy-button:hover { background: var(--research); color: #fff; }
   .license-note { color: var(--muted); font-size: .76rem; margin-top: 18px; }
   .mini-label { display:block; color:var(--terracotta); font-size:.68rem; font-weight:700; margin-bottom:10px; }
+
+  /* Problem cards mirror the visual language of Homepage section 01 — Research. */
+  #problem .problem-grid {
+    gap: 18px;
+    border-top: 0;
+  }
+  #problem .problem-card {
+    position: relative;
+    padding: 24px 24px 26px;
+    background: #f9fcfb;
+    border: 1px solid #bed0d2;
+    border-left-width: 5px;
+    box-shadow: 0 3px 12px rgb(31 72 82 / .08);
+    transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease, background-color .18s ease;
+  }
+  #problem .problem-card:nth-child(1) { border-left-color: #679f8d; }
+  #problem .problem-card:nth-child(2) { border-left-color: #438f92; }
+  #problem .problem-card:nth-child(3) { border-left-color: #377b97; }
+  #problem .problem-card:nth-child(4) { border-left-color: #315f7f; }
+  #problem .problem-card .mini-label {
+    display: inline-flex;
+    width: 38px;
+    height: 38px;
+    margin-bottom: 12px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: #fff;
+    font-size: .68rem;
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: -.015em;
+    box-shadow: 0 2px 7px rgb(20 61 79 / .18);
+  }
+  #problem .problem-card:nth-child(1) .mini-label { background: #679f8d; }
+  #problem .problem-card:nth-child(2) .mini-label { background: #438f92; }
+  #problem .problem-card:nth-child(3) .mini-label { background: #377b97; }
+  #problem .problem-card:nth-child(4) .mini-label { background: #315f7f; }
+  #problem .problem-card h3 {
+    color: #123f59;
+    font-size: 1.24rem;
+  }
+  #problem .problem-card p { color: #35535d; }
+  #problem .problem-card:hover {
+    z-index: 1;
+    transform: translateY(-3px);
+    background: #fff;
+    border-color: #214f72;
+    box-shadow: 0 10px 24px rgb(20 61 79 / .18);
+  }
+
+  /* Property cards reuse the visual language established in section 01 — Problem. */
+  #properties .property-grid {
+    gap: 18px;
+    border-top: 0;
+  }
+  #properties .property-card {
+    position: relative;
+    padding: 24px 24px 26px;
+    background: #f9fcfb;
+    border: 1px solid #bed0d2;
+    border-left-width: 5px;
+    box-shadow: 0 3px 12px rgb(31 72 82 / .08);
+    transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease, background-color .18s ease;
+  }
+  #properties .property-card:nth-child(1) { border-left-color: #679f8d; }
+  #properties .property-card:nth-child(2) { border-left-color: #438f92; }
+  #properties .property-card:nth-child(3) { border-left-color: #377b97; }
+  #properties .property-card:nth-child(4) { border-left-color: #315f7f; }
+  #properties .property-card .mini-label {
+    display: inline-flex;
+    width: 38px;
+    height: 38px;
+    margin-bottom: 12px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: #fff;
+    font-size: .68rem;
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: -.015em;
+    box-shadow: 0 2px 7px rgb(20 61 79 / .18);
+  }
+  #properties .property-card:nth-child(1) .mini-label { background: #679f8d; }
+  #properties .property-card:nth-child(2) .mini-label { background: #438f92; }
+  #properties .property-card:nth-child(3) .mini-label { background: #377b97; }
+  #properties .property-card:nth-child(4) .mini-label { background: #315f7f; }
+  #properties .property-card h3 {
+    color: #123f59;
+    font-size: 1.24rem;
+  }
+  #properties .property-card p { color: #35535d; }
+  #properties .property-card:hover {
+    z-index: 1;
+    transform: translateY(-3px);
+    background: #fff;
+    border-color: #214f72;
+    box-shadow: 0 10px 24px rgb(20 61 79 / .18);
+  }
+
+  /* Principle cards mirror the visual language of Homepage section 02 — SGAEIA. */
+  #principles .principles {
+    gap: 18px;
+    border-top: 0;
+    border-left: 0;
+  }
+  #principles .principle {
+    position: relative;
+    min-height: 132px;
+    padding: 24px;
+    background: #e8f3f4;
+    border: 1px solid #bfd4d7;
+    border-left: 5px solid #2f7a83;
+    box-shadow: 0 3px 12px rgb(31 72 82 / .08);
+    transition: transform .18s ease, background-color .18s ease, box-shadow .18s ease, border-color .18s ease;
+  }
+  #principles .principle > strong { color: #123f59; }
+  #principles .principle span { color: #3b5861; }
+  #principles .principle .mini-label {
+    display: inline-flex;
+    width: 38px;
+    height: 38px;
+    margin-bottom: 12px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #2f7a83;
+    color: #fff;
+    font-size: .68rem;
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: -.015em;
+    box-shadow: 0 2px 7px rgb(20 61 79 / .18);
+  }
+  #principles .principle:hover {
+    z-index: 1;
+    transform: translateY(-3px);
+    background: #f2f8f8;
+    border-color: #7398a2;
+    border-left-color: #174f63;
+    box-shadow: 0 10px 24px rgb(20 61 79 / .18);
+  }
+
+  /* Agenda cards reuse the visual language established in section 02 — Principles. */
+  #agenda .agenda-grid {
+    gap: 18px;
+    border-top: 0;
+  }
+  #agenda .agenda-card {
+    position: relative;
+    min-height: 132px;
+    padding: 24px;
+    background: #e8f3f4;
+    border: 1px solid #bfd4d7;
+    border-left: 5px solid #2f7a83;
+    box-shadow: 0 3px 12px rgb(31 72 82 / .08);
+    transition: transform .18s ease, background-color .18s ease, box-shadow .18s ease, border-color .18s ease;
+  }
+  #agenda .agenda-card .mini-label {
+    display: inline-flex;
+    width: 38px;
+    height: 38px;
+    margin-bottom: 12px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #2f7a83;
+    color: #fff;
+    font-size: .68rem;
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: -.015em;
+    box-shadow: 0 2px 7px rgb(20 61 79 / .18);
+  }
+  #agenda .agenda-card h3 { color: #123f59; }
+  #agenda .agenda-card p { color: #3b5861; }
+  #agenda .agenda-card:hover {
+    z-index: 1;
+    transform: translateY(-3px);
+    background: #f2f8f8;
+    border-color: #7398a2;
+    border-left-color: #174f63;
+    box-shadow: 0 10px 24px rgb(20 61 79 / .18);
+  }
+
+  /* Research Series mirrors Homepage section 03 — Publications. */
+  #series .editorial-list {
+    display: grid;
+    gap: 18px;
+    border-top: 0;
+    counter-reset: series-item;
+  }
+  #series .editorial-row {
+    position: relative;
+    padding: 22px 22px 24px;
+    background: #f9fcfb;
+    border: 1px solid #b9ced4;
+    border-left: 5px solid #2f7a83;
+    box-shadow: 0 3px 12px rgb(31 72 82 / .08);
+    transition: transform .18s ease, background-color .18s ease, border-color .18s ease, box-shadow .18s ease;
+    counter-increment: series-item;
+  }
+  #series .editorial-row:hover {
+    z-index: 1;
+    transform: translateY(-3px);
+    background: #dce9ec;
+    border-color: #6f919d;
+    border-left-color: #174f63;
+    box-shadow: 0 10px 24px rgb(20 61 79 / .22);
+  }
+  #series .editorial-year {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding-top: 0;
+    text-align: center;
+  }
+  #series .editorial-year::before {
+    content: counter(series-item, decimal-leading-zero);
+    display: inline-flex;
+    width: 38px;
+    height: 38px;
+    flex: 0 0 38px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #2f7a83;
+    color: #fff;
+    font-size: .7rem;
+    font-weight: 800;
+    line-height: 1;
+    box-shadow: 0 2px 7px rgb(23 79 99 / .24);
+  }
+  #series .editorial-main h3 a {
+    transition: color .18s ease, text-decoration-color .18s ease;
+  }
+  #series .editorial-main h3 a:hover,
+  #series .editorial-main h3 a:focus-visible {
+    color: #9a3412;
+    text-decoration-color: #9a3412;
+    text-decoration-thickness: 2px;
+  }
+
+  /* Artifact cards reuse section 04 — Agenda styling, without numbered bullets. */
+  #artifacts .resource-grid {
+    gap: 18px;
+    border-top: 0;
+  }
+  #artifacts .resource-card {
+    position: relative;
+    min-height: 132px;
+    padding: 24px;
+    background: #e8f3f4;
+    border: 1px solid #bfd4d7;
+    border-left: 5px solid #2f7a83;
+    box-shadow: 0 3px 12px rgb(31 72 82 / .08);
+    transition: transform .18s ease, background-color .18s ease, box-shadow .18s ease, border-color .18s ease;
+  }
+  #artifacts .resource-card h3 { color: #123f59; }
+  #artifacts .resource-card p { color: #3b5861; }
+  #artifacts .resource-card a {
+    transition: color .18s ease, text-decoration-color .18s ease;
+  }
+  #artifacts .resource-card a:hover,
+  #artifacts .resource-card a:focus-visible {
+    color: #9a3412;
+    text-decoration-color: #9a3412;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 3px;
+  }
+  #artifacts .resource-card:hover {
+    z-index: 1;
+    transform: translateY(-3px);
+    background: #f2f8f8;
+    border-color: #7398a2;
+    border-left-color: #174f63;
+    box-shadow: 0 10px 24px rgb(20 61 79 / .18);
+  }
   @media (max-width: 760px) {
     .problem-grid, .property-grid, .agenda-grid, .resource-grid { grid-template-columns: 1fr; gap: 0; }
     .resource-card-wide { grid-column: auto; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    #problem .problem-card { transition: none; }
+    #problem .problem-card:hover { transform: none; }
+    #properties .property-card { transition: none; }
+    #properties .property-card:hover { transform: none; }
+    #principles .principle { transition: none; }
+    #principles .principle:hover { transform: none; }
+    #agenda .agenda-card { transition: none; }
+    #agenda .agenda-card:hover { transform: none; }
+    #series .editorial-row { transition: none; }
+    #series .editorial-row:hover { transform: none; }
+    #artifacts .resource-card { transition: none; }
+    #artifacts .resource-card:hover { transform: none; }
   }
 
   /* SGAEIA visual identity: institutional banner + transparent logo */
@@ -705,6 +1001,86 @@
     border-color: #ffffff;
   }
 
+  /* Footer profile boxes mirror the final Homepage icon treatment. */
+  .site-footer .brand-links {
+    gap: 16px;
+    padding: 26px 0;
+  }
+  .site-footer .brand-link {
+    width: 58px;
+    height: 58px;
+    background: #dcebea;
+    border-color: #7fa39e;
+    box-shadow: 0 2px 8px rgb(31 72 82 / .08);
+  }
+  .site-footer .brand-link img {
+    width: 44px;
+    height: 44px;
+  }
+  .site-footer .brand-link[data-label="OpenAIRE"] img,
+  .site-footer .brand-link[data-label="LinkedIn"] img,
+  .site-footer .brand-link[data-label="SGAEIA LinkedIn"] img,
+  .site-footer .brand-link[data-label="SGAEIA · LinkedIn"] img {
+    width: 50px;
+    height: 50px;
+  }
+  .site-footer .brand-link[data-label="OpenAIRE"] .fallback-icon,
+  .site-footer .brand-link[data-label="LinkedIn"] .fallback-icon,
+  .site-footer .brand-link[data-label="SGAEIA LinkedIn"] .fallback-icon,
+  .site-footer .brand-link[data-label="SGAEIA · LinkedIn"] .fallback-icon {
+    font-size: 1.5rem;
+    font-weight: 900;
+    letter-spacing: -.06em;
+  }
+  .site-footer .fallback-icon { font-size: .9rem; }
+  .site-footer .brand-link:hover,
+  .site-footer .brand-link:focus-visible {
+    background: #c9dfdc;
+    border-color: #2f7a83;
+    box-shadow: 0 7px 16px rgb(31 72 82 / .16);
+  }
+  .site-footer .brand-link:focus-visible {
+    outline: 3px solid rgb(47 122 131 / .28);
+    outline-offset: 3px;
+  }
+  .site-footer .brand-link::before {
+    bottom: calc(100% + 12px);
+    font-size: .68rem;
+  }
+  .site-footer .brand-link[data-badge]::after {
+    right: -5px;
+    bottom: -5px;
+    min-width: 20px;
+    height: 20px;
+    font-size: .6rem;
+    border-color: #fff;
+  }
+  @media (max-width: 760px) {
+    .site-footer .brand-links {
+      gap: 12px;
+      padding: 22px 0;
+    }
+    .site-footer .brand-link {
+      width: 52px;
+      height: 52px;
+    }
+    .site-footer .brand-link img {
+      width: 39px;
+      height: 39px;
+    }
+    .site-footer .brand-link[data-label="OpenAIRE"] img,
+    .site-footer .brand-link[data-label="LinkedIn"] img,
+    .site-footer .brand-link[data-label="SGAEIA LinkedIn"] img,
+    .site-footer .brand-link[data-label="SGAEIA · LinkedIn"] img {
+      width: 46px;
+      height: 46px;
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .site-footer .brand-link:hover,
+    .site-footer .brand-link:focus-visible { transform: none; }
+  }
+
 </style>
 </head>
 <body>
@@ -785,12 +1161,12 @@
   <div class="sgaeia-band" id="principles"><section class="section"><div class="shell section-grid"><div class="section-kicker"><span>02</span><span data-i18n="nav_principles">Principles</span></div><div>
     <h2 class="sgaeia-name" data-i18n="thesis_title">Governance must be architectural</h2><p class="section-intro" data-i18n="thesis_intro">SGAEIA is an open reference architecture and research program built around a simple thesis: useful autonomy should not depend on implicit trust or static approval. Authority must be explicit, constrained, continuously evaluated, and capable of being withdrawn.</p>
     <div class="principles" aria-label="SGAEIA research principles">
-      <div class="principle"><strong data-i18n="p1">Bounded Authority</strong><span data-i18n="p1_text">Useful autonomy requires explicit limits on scope, duration, permissions, and consequential action.</span></div>
-      <div class="principle"><strong data-i18n="p2">Authenticated Delegation</strong><span data-i18n="p2_text">Delegated authority remains attributable, constrained, traceable, and connected to its source.</span></div>
-      <div class="principle"><strong>Zero Trust</strong><span data-i18n="p3_text">Consequential interactions are explicitly verified rather than implicitly trusted.</span></div>
-      <div class="principle"><strong data-i18n="p4">Revocation by Design</strong><span data-i18n="p4_text">Authority can be withdrawn as deliberately as it is granted, including after conditions change.</span></div>
-      <div class="principle"><strong data-i18n="p5">Continuous GRC</strong><span data-i18n="p5_text">Governance, risk, compliance, and assurance remain active during operation rather than only at audit time.</span></div>
-      <div class="principle"><strong>Evidence-as-Code</strong><span data-i18n="p6_text">Governed operation produces machine-verifiable evidence suitable for continuous assurance and independent review.</span></div>
+      <div class="principle"><span class="mini-label">02.1</span><strong data-i18n="p1">Bounded Authority</strong><span data-i18n="p1_text">Useful autonomy requires explicit limits on scope, duration, permissions, and consequential action.</span></div>
+      <div class="principle"><span class="mini-label">02.2</span><strong data-i18n="p2">Authenticated Delegation</strong><span data-i18n="p2_text">Delegated authority remains attributable, constrained, traceable, and connected to its source.</span></div>
+      <div class="principle"><span class="mini-label">02.3</span><strong>Zero Trust</strong><span data-i18n="p3_text">Consequential interactions are explicitly verified rather than implicitly trusted.</span></div>
+      <div class="principle"><span class="mini-label">02.4</span><strong data-i18n="p4">Revocation by Design</strong><span data-i18n="p4_text">Authority can be withdrawn as deliberately as it is granted, including after conditions change.</span></div>
+      <div class="principle"><span class="mini-label">02.5</span><strong data-i18n="p5">Continuous GRC</strong><span data-i18n="p5_text">Governance, risk, compliance, and assurance remain active during operation rather than only at audit time.</span></div>
+      <div class="principle"><span class="mini-label">02.6</span><strong>Evidence-as-Code</strong><span data-i18n="p6_text">Governed operation produces machine-verifiable evidence suitable for continuous assurance and independent review.</span></div>
     </div>
   </div></div></section></div>
 
