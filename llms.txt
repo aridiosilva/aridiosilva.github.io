@@ -11,6 +11,8 @@ The primary research themes are Agentic AI, multi-agent systems, AI security, Ze
 
 ## Publication index
 
+- [LoRA in AI Agents — Article 19, English](https://aridiosilva.com/publications/artigo19/): Complete English article with cover, one equation plate, four figures and 14 references; DOI 10.5281/zenodo.23300168.
+- [LoRA em Agentes de AI — Artigo 19, Português](https://aridiosilva.com/publications/artigo19/pt/): Edição integral em português com capa, uma equação, quatro figuras e 14 referências; DOI 10.5281/zenodo.23300168.
 - [Tracing AI Agent Execution — Article 18, English](https://aridiosilva.com/publications/artigo18/): Complete English article with official cover, three figures and 47 references; DOI 10.5281/zenodo.23284753.
 - [Rastreamento da Execução de Agentes de AI — Artigo 18, Português](https://aridiosilva.com/publications/artigo18/pt/): Edição integral em português com capa e figuras localizadas; DOI 10.5281/zenodo.23284753.
 - [AI Jailbreaks — Article 17, English](https://aridiosilva.com/publications/artigo17/): Complete English article with cover, four figures and 25 references; Zenodo DOI pending.
@@ -18,13 +20,27 @@ The primary research themes are Agentic AI, multi-agent systems, AI security, Ze
 
 - [Academic publication index](https://aridiosilva.com/publications.html): Individual publication pages with author-written abstracts, dates, DOIs, and archival links.
 
+## Article 19 — LoRA in AI Agents
+
+Author: Aridio Silva — Independent Researcher, Brazil. SGAEIA Research Series, Article 19, 11 October 2026. Technical synthesis of LoRA efficiency and adapter engineering reinterpreted for AI-agent security, behavioral supply chains, composition risk, multi-tenant isolation, distributed revocation, and non-normative SGAEIA candidate properties. DOI: 10.5281/zenodo.23300168. License: CC BY 4.0. Copyright: © 2026 Aridio Silva.
+
+- [Complete English article](https://aridiosilva.com/publications/artigo19/)
+- [Artigo completo em português](https://aridiosilva.com/publications/artigo19/pt/)
+- [Zenodo DOI](https://doi.org/10.5281/zenodo.23300168)
+- [English cover](https://aridiosilva.com/assets/article19/sgaeia-article-19-cover-en.png)
+- [Capa em português](https://aridiosilva.com/assets/article19/sgaeia-article-19-cover-pt.png)
+
+Medium and DEV Community URLs are not listed because no public distribution URL has been confirmed. The homepage records are the canonical open-reading editions. Live deployment and indexing are not verified, and discovery metadata does not guarantee indexing or ranking.
+
 ## Article 18 — Tracing AI Agent Execution
 
 Author: Aridio Silva — Independent Researcher, Brazil. SGAEIA Research Series, Article 18, 10 October 2026. Critical comparative review of tracing and observability across 13 AI-agent platforms, with a conceptual, non-normative analysis of evaluation and governed evidence for SGAEIA. DOI: 10.5281/zenodo.23284753. License: CC BY 4.0. Copyright: © 2026 Aridio Silva.
 
 - [Complete English article](https://aridiosilva.com/publications/artigo18/)
 - [Artigo completo em português](https://aridiosilva.com/publications/artigo18/pt/)
+- [Zenodo record](https://zenodo.org/records/23284753)
 - [Zenodo DOI](https://doi.org/10.5281/zenodo.23284753)
+- [Academia.edu edition](https://www.academia.edu/178612201/Tracing_AI_Agent_Execution_Foundations_State_of_the_Art_and_Implications_for_Distributed_Multi_Agent_Systems)
 - [Medium edition](https://medium.com/@aridiosilva/tracing-ai-agent-execution-foundations-state-of-the-art-and-implications-for-distributed-cf1cda3b9cd4)
 - [DEV Community edition](https://dev.to/aridiosilva/tracing-ai-agent-execution-observability-and-evidence-in-distributed-systems-2fh0)
 - [English cover](https://aridiosilva.com/assets/article18/sgaeia-article-18-cover-en.png)

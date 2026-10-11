@@ -2,19 +2,19 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://aridiosilva.com/</loc>
-    <lastmod>2026-10-06</lastmod>
+    <lastmod>2026-10-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://aridiosilva.com/sgaeia.html</loc>
-    <lastmod>2026-10-06</lastmod>
+    <lastmod>2026-10-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://aridiosilva.com/publications.html</loc>
-    <lastmod>2026-10-06</lastmod>
+    <lastmod>2026-10-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -113,6 +113,22 @@
     <lastmod>2026-10-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://aridiosilva.com/publications/artigo19/</loc>
+    <lastmod>2026-10-11</lastmod><changefreq>monthly</changefreq><priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aridiosilva.com/publications/artigo19/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://aridiosilva.com/publications/artigo19/pt/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aridiosilva.com/publications/artigo19/"/>
+    <image:image><image:loc>https://aridiosilva.com/assets/article19/sgaeia-article-19-cover-en.png</image:loc><image:title>LoRA in AI Agents: Efficiency, Security Risks, and Adapter Governance</image:title><image:caption>© 2026 Aridio Silva | Project SGAEIA | CC BY 4.0</image:caption></image:image>
+  </url>
+  <url>
+    <loc>https://aridiosilva.com/publications/artigo19/pt/</loc>
+    <lastmod>2026-10-11</lastmod><changefreq>monthly</changefreq><priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aridiosilva.com/publications/artigo19/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://aridiosilva.com/publications/artigo19/pt/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aridiosilva.com/publications/artigo19/"/>
+    <image:image><image:loc>https://aridiosilva.com/assets/article19/sgaeia-article-19-cover-pt.png</image:loc><image:title>LoRA em Agentes de AI: eficiência, riscos de segurança e governança de adaptadores</image:title><image:caption>© 2026 Aridio Silva | Project SGAEIA | CC BY 4.0</image:caption></image:image>
   </url>
   <url>
     <loc>https://aridiosilva.com/publications/artigo18/</loc>
