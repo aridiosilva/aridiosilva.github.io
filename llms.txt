@@ -2,7 +2,7 @@
 
 > Official website of Aridio Silva, an independent researcher working on secure, governed autonomous and distributed AI systems. The site documents the SGAEIA research program: Secure Governed Autonomous Edge Intelligence Architecture.
 
-The primary research themes are Agentic AI, multi-agent systems, AI security, Zero Trust, bounded and revocable authority, authenticated delegation, Continuous GRC, Evidence-as-Code, Edge AI, and governance for autonomous systems. Use the publication pages on this site for canonical open web reading and the Zenodo records for persistent citation metadata and archived publications. Medium and DEV Community provide distribution editions. Licenses are stated in each linked record; the SGAEIA reference software is distributed under the Apache License 2.0.
+The primary research themes are Agentic AI, multi-agent systems, AI security, Zero Trust, bounded and revocable authority, authenticated delegation, Continuous GRC, Evidence-as-Code, Edge AI, Context Language Models, and governance for autonomous systems. Use the publication pages on this site for canonical open web reading and the infographic pages for bilingual visual research communication. Zenodo records provide persistent citation metadata and archived publications; Medium, DEV Community, and LinkedIn provide distribution editions. Licenses are stated in each linked record; the SGAEIA reference software is distributed under the Apache License 2.0.
 
 ## Official website
 
@@ -19,6 +19,14 @@ The primary research themes are Agentic AI, multi-agent systems, AI security, Ze
 - [AI Jailbreaks — Article 17, Portuguese](https://aridiosilva.com/publications/artigo17/pt/): Complete Portuguese edition with Portuguese cover and figures.
 
 - [Academic publication index](https://aridiosilva.com/publications.html): Individual publication pages with author-written abstracts, dates, DOIs, and archival links.
+
+## Infographic index
+
+- [Infographics](https://aridiosilva.com/infographics/): Index of visual studies and LinkedIn carousels, with English default editions and Portuguese alternatives when available.
+- [Context Language Models (CLMs) — Infographic 001, English](https://aridiosilva.com/infographics/Info_001/): English web edition with a 47-slide accessible carousel, the LinkedIn publication text, and the source PDF.
+- [Context Language Models (CLMs) — Infográfico 001, Português](https://aridiosilva.com/infographics/Info_001/pt/): Edição web em português com carrossel acessível de 47 slides, texto publicado no LinkedIn e PDF de origem.
+- [Context Language Models (CLMs) — English PDF](https://aridiosilva.com/infographics/Info_001/context-language-models-clm-en.pdf): Original 47-page English infographic PDF.
+- [Context Language Models (CLMs) — PDF em português](https://aridiosilva.com/infographics/Info_001/pt/context-language-models-clm-pt.pdf): PDF original do infográfico em português, com 47 páginas.
 
 ## Article 19 — LoRA in AI Agents
 

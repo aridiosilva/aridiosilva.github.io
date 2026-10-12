@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+<!-- GA4 G-MXMJ7Z3LS7: automatic cookieless audience measurement; analytics and advertising storage remain disabled. -->
+<script defer src="/assets/analytics-consent.js?v=20261011"></script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>Context Language Models (CLMs) - Aridio Silva</title>
+<meta name="description" content="A 47-slide infographic and critical study of Context Language Models, in which the model manages and rewrites its own working context.">
+<link rel="canonical" href="https://aridiosilva.com/infographics/Info_001/">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://www.googletagmanager.com; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https://*.google-analytics.com; connect-src https://*.google-analytics.com https://www.googletagmanager.com; media-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'; upgrade-insecure-requests">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="author" content="Aridio Silva">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Context Language Models (CLMs): What If the Model Edited Its Own Context?">
+<meta property="og:description" content="A critical study and 47-slide infographic about language models that manage their own context.">
+<meta property="og:image" content="https://aridiosilva.com/infographics/Info_001/assets/slide-01.png">
+<link rel="alternate" hreflang="en" href="https://aridiosilva.com/infographics/Info_001/">
+<link rel="alternate" hreflang="pt-BR" href="https://aridiosilva.com/infographics/Info_001/pt/">
+<link rel="alternate" hreflang="x-default" href="https://aridiosilva.com/infographics/Info_001/">
+<link rel="sitemap" type="application/xml" href="/sitemap.xml">
+<link rel="describedby" href="/llms.txt" type="text/markdown">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;family=Source+Serif+4:opsz,wght@8..60,500;6..60,700&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/publications.css?v=20261011-12">
+<link rel="stylesheet" href="/assets/infographics.css?v=20261012-6">
+<script defer src="/assets/infographics.js?v=20261012"></script>
+</head>
+<body class="infographic-page">
+<a class="skip" href="#main">Skip to main content</a>
+<header class="site-header"><div class="shell header-inner">
+<a class="identity" href="/">Aridio Silva</a>
+<nav aria-label="Primary navigation"><a href="/">Home</a><a href="/sgaeia">SGAEIA</a><a href="/publications.html">Publications</a><a href="/infographics/">Infographics</a></nav>
+</div></header>
+<main id="main">
+<section class="hero"><div class="shell article">
+<p class="eyebrow">Infographic 001 · LinkedIn carousel</p>
+<h1>Context Language Models (CLMs): What If the Model Edited Its Own Context?</h1>
+<p class="subtitle">Language models that manage their own context</p>
+<p class="meta">Aridio Silva · October 2026 · 47 slides</p>
+<nav class="language-nav" aria-label="Infographic languages"><a href="/infographics/Info_001/" lang="en" aria-current="page">English</a><span aria-hidden="true">·</span><a href="/infographics/Info_001/pt/" lang="pt-BR">Português</a></nav>
+</div></section>
+
+<section class="carousel-section" aria-labelledby="carousel-title"><div class="shell article">
+<h2 id="carousel-title">Infographic carousel</h2>
+<p class="carousel-intro">Select the slide to open it full screen. Use the on-screen arrows, the keyboard arrow keys, or swipe on a touch screen.</p>
+<div class="infographic-carousel" data-infographic-carousel data-slide-count="47" data-slide-path="assets/slide-{NN}.png" data-title="Context Language Models (CLMs)">
+<div class="carousel-stage" tabindex="0" role="group" aria-roledescription="carousel" aria-label="Context Language Models infographic">
+<button class="carousel-slide-button" type="button" aria-label="Open infographic in full screen"><img class="carousel-slide" src="assets/slide-01.png" alt="Context Language Models (CLMs) - slide 1 of 47" width="1920" height="1080" decoding="async"></button>
+<button class="carousel-control carousel-prev" type="button" aria-label="Previous slide" hidden>‹</button>
+<button class="carousel-control carousel-next" type="button" aria-label="Next slide">›</button>
+<button class="carousel-close" type="button" aria-label="Close full-screen viewer">×</button>
+<span class="carousel-counter" aria-live="polite">1 / 47</span>
+</div>
+<div class="carousel-toolbar"><button class="button primary" type="button" data-open-carousel>Open full screen</button><a class="button" href="context-language-models-clm-en.pdf" target="_blank" rel="noopener noreferrer">Open PDF</a><a class="button" href="context-language-models-clm-en.pdf" download>Download PDF</a></div>
+</div>
+</div></section>
+
+<section class="content"><article class="shell article linkedin-copy">
+<p class="eyebrow">LinkedIn publication text</p>
+<h2>Context Language Models (CLMs): what if the model edited its own context?</h2>
+<p>Study of the preprint by Shao et al. (2026; UW, Meta Superintelligence Labs and MIT; arXiv:2609.37725). The context becomes a file the model rewrites without restrictions, instead of relying on external rules for summarization, compaction or retrieval.</p>
+<p><strong>🟦 The problem:</strong> a finite window, quality that drops with long context and rising cost. Summaries lose or hallucinate details.</p>
+<p><strong>🟩 The proposal:</strong> c(t+1) = f<sub>CLM</sub>(c(t)). The model edits its context via Bash, defines its own management functions and spawns subagents by creating files.</p>
+<p><strong>🟧 Reported results:</strong> BrowseComp-Plus +11.4% (relative) with -21.5% FLOPs; 12-hour EdgeBench with -59% FLOPs; 24-hour swarm with +65% speedup; RL on a 9B model: 28.8% → 42.5%.</p>
+<p><strong>🟪 Emergent:</strong> a subagent scoreboard with 163 edits and a 6-8K-token context, a "notes" role and a compaction function called 37 times.</p>
+<p><strong>🟥 Cons:</strong> new attack surface (persistent prompt injection), irreversible information loss, hard auditing, complex infrastructure (SCR is an SGLang patch), CC BY-NC license and a v1 preprint without peer review.</p>
+<p><strong>⚠️ Risk already observed:</strong> OpenAI reported a model writing jailbreak-style instructions into its own compaction summaries (27 cases) and summaries that conceal errors (2.15% and 0.27%).</p>
+<p><strong>⚖️ The study's balance:</strong> today the cons outweigh the benefits for production. The needed controls (immutable log, protected regions, validators) reintroduce human rules and weaken the premise of full autonomy. It compromises practical adoption, not the value as research.</p>
+<p><strong>✅ What would change it:</strong> independent replication, defenses against persistent injection, latency and cost measurements.</p>
+<p><strong>📊 47-slide infographic</strong> with sections, evidence, glossary and bibliography.</p>
+<p class="closing-question">Would you trust an agent with its own working memory?</p>
+<p>© Aridio Silva @aridiosilva · October 2026</p>
+<p class="hashtags">#CLM #AIAgents #AISecurity #LLM #GRC</p>
+</article></section>
+</main>
+<footer><div class="shell"><p>© 2026 Aridio Silva · Project SGAEIA · Version 2.0</p></div></footer>
+</body>
+</html>

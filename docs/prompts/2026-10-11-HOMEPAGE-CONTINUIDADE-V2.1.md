@@ -105,3 +105,24 @@ Continue a evolução da homepage `aridiosilva.com` a partir da versão 2.0 cons
 - A versão 2.0 foi encerrada e permanece como baseline estável.
 - O ciclo 2.1 ainda não possui alterações funcionais próprias.
 - Próxima ação: aguardar o primeiro comando do usuário para a versão 2.1.
+
+## Atualização do ciclo 2.1 — Infographics — 12 de outubro de 2026
+
+- O primeiro trabalho funcional da versão 2.1 adiciona `Infographics` aos menus da homepage e de `sgaeia.html`, com traduções EN/PT/ES/FR/DE.
+- Foi criado o índice `/infographics/`, seguindo o estilo da página de publicações.
+- O arquivo desse índice é `infographics/index.html`; sua referência visual canônica é `publications.html`, pois o baseline não possui `publications/index.html`.
+- O padrão de diretórios é `infographics/Info_001/`, `Info_002/` e assim sucessivamente.
+- `Info_001` publica o estudo visual `Context Language Models (CLMs)` em inglês, como versão padrão, e em português na subpasta `pt/`.
+- Cada idioma possui 47 slides renderizados do PDF correspondente, PDF original, texto da publicação no LinkedIn e navegação recíproca de idioma.
+- O carrossel compartilhado usa `assets/infographics.css?v=20261012-6` e `assets/infographics.js?v=20261012`.
+- O visualizador abre em tela cheia, oferece setas condicionais, teclado, gesto horizontal, contador e fechamento acessível.
+- O primeiro slide exibe apenas avanço; o último exibe apenas retorno.
+- Os três controles abaixo do carrossel permanecem centralizados como um conjunto, com quebra responsiva em telas estreitas.
+- O texto do rodapé permanece centralizado no índice de infográficos e nas páginas EN/PT.
+- O fundo do rodapé usa `#e4edeb`, igual ao header, no índice e em todas as páginas de infográficos.
+- O cabeçalho fixo das páginas EN e PT possui hover e foco visível nos itens; o índice de infográficos herda o mesmo comportamento e o mesmo sistema visual do índice de publicações.
+- O sitemap inclui o índice e as páginas EN/PT com `hreflang` e capa.
+- `llms.txt` inclui o índice de infográficos, as edições EN/PT e os PDFs; `robots.txt` mantém rastreamento permitido e referência ao sitemap.
+- Toda nova página de infográfico deve carregar `/assets/analytics-consent.js?v=20261011`, mantendo a propriedade GA4 `G-MXMJ7Z3LS7`, e também declarar canonical, sitemap e `llms.txt`; idiomas alternativos exigem `hreflang` recíproco e `x-default`.
+- A identificação visível permanece `Version 2.0` / `Versão 2.0` até decisão explícita de publicação da versão 2.1.
+- Estado desta atualização: alterações locais prontas para revisão; sem stage, commit ou push executados pelo assistente.

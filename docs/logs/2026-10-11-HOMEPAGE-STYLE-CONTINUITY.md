@@ -598,3 +598,54 @@ git push origin main
 - O ciclo 2.1 começa sem mudanças funcionais próprias e deve aguardar os próximos comandos do usuário.
 - Referência relativa: [`Prompt de continuidade — Homepage versão 2.1`](../prompts/2026-10-11-HOMEPAGE-CONTINUIDADE-V2.1.md).
 
+## Atualização de continuidade — seção Infographics e Info_001 — 12 de outubro de 2026
+
+### Navegação da homepage
+
+- `index.html` recebeu a opção `Infographics` no menu principal, após `Publications`.
+- O rótulo foi incluído nas traduções EN, PT, ES, FR e DE como `Infographics`, `Infográficos`, `Infografías`, `Infographies` e `Infografiken`.
+- O destino da opção é `/infographics/`.
+- `sgaeia.html` também recebeu a opção `Infographics` após `Publications`, com o mesmo destino e as mesmas cinco traduções.
+
+### Índice de infográficos
+
+- Foi criado `infographics/index.html`, seguindo o sistema visual de `publications.html` e reutilizando `assets/publications.css`.
+- O repositório usa `publications.html` como índice canônico de artigos; não existe `publications/index.html` no baseline atual.
+- O primeiro card é `Infographic 001`, com a primeira página do carrossel como capa, título, resumo, data, total de slides e links para EN, PT e PDF.
+- A estrutura de continuidade adotada é `infographics/Info_001/`, `Info_002/` e assim sucessivamente.
+
+### Info_001 — Context Language Models
+
+- A versão inglesa canônica está em `infographics/Info_001/index.html`.
+- A versão portuguesa está em `infographics/Info_001/pt/index.html`.
+- Cada idioma possui 47 slides em PNG, renderizados a partir do PDF correspondente, além do PDF original para abertura ou download.
+- Os textos publicados no LinkedIn foram incorporados abaixo dos carrosséis em seus respectivos idiomas.
+- EN e PT possuem links recíprocos com `hreflang`; EN permanece como `x-default`.
+
+### Carrossel e acessibilidade
+
+- `assets/infographics.js` implementa navegação por setas laterais, teclado, gesto horizontal em telas sensíveis ao toque e comandos Home/End.
+- O primeiro slide exibe somente a seta direita; o último exibe somente a seta esquerda.
+- Selecionar o slide ou o botão dedicado abre o carrossel em tela cheia; há botão de fechamento e fallback visual quando a Fullscreen API não está disponível.
+- `assets/infographics.css` mantém proporção 16:9, foco visível, controles responsivos e respeito a `prefers-reduced-motion`.
+- O cabeçalho das páginas EN e PT é fixo durante a rolagem e seus itens possuem estados de `hover` e foco equivalentes ao índice de publicações.
+- O índice `infographics/index.html` herda do índice de publicações o mesmo cabeçalho fixo, hover/foco, hero, grade, cards e comportamento responsivo.
+- Os três controles abaixo do carrossel — tela cheia, abertura do PDF e download — ficam centralizados como um conjunto e quebram de linha responsivamente quando necessário.
+- O texto do rodapé fica centralizado no índice de infográficos e nas páginas EN/PT do Info_001.
+- O rodapé dessas páginas usa o mesmo fundo `#e4edeb` do header; a regra compartilhada também se aplica aos próximos infográficos.
+- O CSS de infográficos usa cache-busting `?v=20261012-6`; o JavaScript mantém `?v=20261012`.
+
+### Descoberta e validações
+
+- `sitemap.xml` recebeu o índice de infográficos e as páginas EN/PT do Info_001, com alternates e imagens de capa.
+- `llms.txt` recebeu o índice de infográficos, as edições web EN/PT e os PDFs correspondentes; o tema Context Language Models também foi incorporado à descrição de pesquisa.
+- `robots.txt` continua permitindo rastreamento integral e apontando para `sitemap.xml`; a data informativa foi atualizada para 12 de outubro de 2026.
+- A data de modificação da homepage no sitemap foi atualizada para `2026-10-12`, refletindo a nova opção de menu.
+- Todas as páginas da seção Infographics carregam `/assets/analytics-consent.js?v=20261011` e usam a propriedade GA4 `G-MXMJ7Z3LS7`, no mesmo padrão da homepage.
+- Páginas futuras de infográficos devem preservar simultaneamente a medição GA4 e os mecanismos próprios de descoberta: canonical, sitemap, `llms.txt`, `robots.txt` e `hreflang` quando houver idiomas alternativos.
+- Os PDFs possuem 47 páginas em formato 16:9; as 94 renderizações foram verificadas em folhas de contato.
+- O carrossel foi testado no navegador local em EN e PT, incluindo tela cheia, avanço, retorno e estados do primeiro e último slide.
+- `node --check assets/infographics.js` passou.
+- `git diff --check` passou sem erros.
+- Nenhum stage, commit ou push foi executado pelo assistente.
+
