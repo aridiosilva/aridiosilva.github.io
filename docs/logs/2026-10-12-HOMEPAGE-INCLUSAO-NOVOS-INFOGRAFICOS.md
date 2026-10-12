@@ -344,6 +344,20 @@ O novo infográfico somente estará pronto quando:
 
 ---
 
+## 17. Regras reforçadas após o Info_003
+
+Estas instruções são obrigatórias nas próximas inclusões e devem ser conferidas explicitamente antes da entrega:
+
+1. Adicionar o card do novo infográfico no início de `infographics/index.html`. O card usa a edição inglesa como padrão e canônica, com capa, título e resumo em inglês, além de acessos para EN, PT e PDF EN.
+2. Toda página HTML nova ou modificada deve carregar exatamente `<script defer src="/assets/analytics-consent.js?v=20261011"></script>`. Auditar todas as páginas HTML envolvidas, preservar o GA4 `G-MXMJ7Z3LS7`, o modelo cookieless e os domínios necessários na Content Security Policy.
+3. Atualizar sempre os arquivos de descoberta: `robots.txt` com data ou comentário informativo quando pertinente; `sitemap.xml` com páginas EN/PT, `lastmod`, `hreflang` recíproco, `x-default` e capas; `llms.txt` com páginas EN/PT e seus respectivos PDFs.
+4. Após a implementação e as validações, abrir na aba lateral o índice e todas as páginas HTML modificadas, usando o servidor local, para conferência do usuário.
+5. O usuário executa os comandos Git. O assistente fornece os comandos exatos de `git add`, `git commit` e `git push`, mas não os executa.
+6. Atualizar sempre os logs relevantes, registrando arquivos alterados, decisões, verificações e qualquer estado preexistente preservado.
+7. Usar os PDFs finais EN e PT como fontes visuais. Se for fornecido apenas um PPTX para algum idioma, solicitar o PDF correspondente antes de concluir a inclusão.
+
+---
+
 ## Referências internas
 
 - `docs/logs/2026-10-11-HOMEPAGE-STYLE-CONTINUITY.md`

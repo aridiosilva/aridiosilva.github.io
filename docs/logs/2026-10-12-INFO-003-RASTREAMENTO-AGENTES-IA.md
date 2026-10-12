@@ -71,3 +71,7 @@ Antes da inclusão, o repositório possuía alteração local não commitada em 
 ## Git
 
 O assistente não executou `git add`, `git commit` ou `git push`. Essas ações permanecem sob controle do usuário.
+
+## Continuidade incorporada ao prompt operacional
+
+O prompt operacional reutilizável foi atualizado após o Info_003 para tornar explícitas as regras de continuidade: card mais recente no início do índice com inglês como padrão; auditoria do Analytics em todas as páginas HTML envolvidas; atualização obrigatória de `robots.txt`, `sitemap.xml` e `llms.txt`; abertura das páginas modificadas na aba lateral; atualização dos logs; uso dos PDFs finais EN/PT; e execução dos comandos Git exclusivamente pelo usuário.
