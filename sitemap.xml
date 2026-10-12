@@ -25,6 +25,26 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://aridiosilva.com/infographics/Info_006/</loc>
+    <lastmod>2026-10-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aridiosilva.com/infographics/Info_006/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://aridiosilva.com/infographics/Info_006/pt/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aridiosilva.com/infographics/Info_006/"/>
+    <image:image><image:loc>https://aridiosilva.com/infographics/Info_006/assets/slide-01.png</image:loc><image:title>Anthropic's Cyber Verification Program</image:title><image:caption>© 2026 Aridio Silva</image:caption></image:image>
+  </url>
+  <url>
+    <loc>https://aridiosilva.com/infographics/Info_006/pt/</loc>
+    <lastmod>2026-10-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aridiosilva.com/infographics/Info_006/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://aridiosilva.com/infographics/Info_006/pt/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aridiosilva.com/infographics/Info_006/"/>
+    <image:image><image:loc>https://aridiosilva.com/infographics/Info_006/pt/assets/slide-01.png</image:loc><image:title>Anthropic e o novo Cyber Verification Program</image:title><image:caption>© 2026 Aridio Silva</image:caption></image:image>
+  </url>
+  <url>
     <loc>https://aridiosilva.com/infographics/Info_005/</loc>
     <lastmod>2026-10-12</lastmod>
     <changefreq>monthly</changefreq>

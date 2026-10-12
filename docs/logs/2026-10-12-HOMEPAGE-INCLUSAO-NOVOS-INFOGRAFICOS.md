@@ -375,4 +375,4 @@ Estas instruções são obrigatórias nas próximas inclusões e devem ser confe
 
 ## Observação final
 
-Este log descreve o padrão aprovado após a implantação do `Info_001 — Context Language Models (CLMs)`. O mesmo padrão foi aplicado ao `Info_002 — Threat Modeling in AI`, ao `Info_003 — AI Agent Execution Tracing`, ao `Info_004 — LoRA: Low-Rank Adaptation` e ao `Info_005 — From Zero to Weights / Do Zero aos Pesos`. Ele deve ser atualizado quando uma decisão estrutural for alterada, mas não deve ser movido para `docs/prompts/`.
+Este log descreve o padrão aprovado após a implantação do `Info_001 — Context Language Models (CLMs)`. O mesmo padrão foi aplicado ao `Info_002 — Threat Modeling in AI`, ao `Info_003 — AI Agent Execution Tracing`, ao `Info_004 — LoRA: Low-Rank Adaptation`, ao `Info_005 — From Zero to Weights / Do Zero aos Pesos` e ao `Info_006 — Anthropic Cyber Verification Program`. Ele deve ser atualizado quando uma decisão estrutural for alterada, mas não deve ser movido para `docs/prompts/`.
