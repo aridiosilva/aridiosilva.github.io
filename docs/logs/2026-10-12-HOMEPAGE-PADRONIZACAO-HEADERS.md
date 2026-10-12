@@ -34,3 +34,23 @@ Padronizar a identidade exibida nos headers de todas as páginas HTML do site pa
 
 - Nenhum comando de `git add`, `git commit` ou `git push` foi executado.
 - Backup anterior às alterações: `C:\Users\as294\Documents\Codex\2026-10-12\leia-x20\work\repo-backup-before-header-standardization`.
+
+## Comandos finais para stage, commit e push
+
+Executar no PowerShell:
+
+```powershell
+Set-Location -LiteralPath 'C:\Users\as294\aridiosilva.github.io'
+
+git add -- assets/publications.css index.html sgaeia.html publications.html infographics publications docs/logs/2026-10-12-HOMEPAGE-PADRONIZACAO-HEADERS.md
+
+git diff --cached --check
+git diff --cached --stat
+git status --short
+
+git commit -m "Padroniza identidade nos headers do site"
+
+git push origin main
+
+git status --short --branch
+```
