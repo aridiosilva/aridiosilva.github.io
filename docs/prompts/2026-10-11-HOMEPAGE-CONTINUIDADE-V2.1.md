@@ -114,8 +114,8 @@ Continue a evolução da homepage `aridiosilva.com` a partir da versão 2.0 cons
 - O padrão de diretórios é `infographics/Info_001/`, `Info_002/` e assim sucessivamente.
 - `Info_001` publica o estudo visual `Context Language Models (CLMs)` em inglês, como versão padrão, e em português na subpasta `pt/`.
 - Cada idioma possui 47 slides renderizados do PDF correspondente, PDF original, texto da publicação no LinkedIn e navegação recíproca de idioma.
-- O carrossel compartilhado usa `assets/infographics.css?v=20261012-6` e `assets/infographics.js?v=20261012`.
-- O visualizador abre em tela cheia, oferece setas condicionais, teclado, gesto horizontal, contador e fechamento acessível.
+- O carrossel compartilhado usa `assets/infographics.css?v=20261012-7` e `assets/infographics.js?v=20261012-3`.
+- O visualizador abre em um overlay responsivo ajustado à viewport corrente, oferece setas condicionais, teclado, gesto horizontal, contador e fechamento acessível.
 - O primeiro slide exibe apenas avanço; o último exibe apenas retorno.
 - Os três controles abaixo do carrossel permanecem centralizados como um conjunto, com quebra responsiva em telas estreitas.
 - O texto do rodapé permanece centralizado no índice de infográficos e nas páginas EN/PT.

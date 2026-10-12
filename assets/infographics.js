@@ -7,6 +7,7 @@
     const total = Number(carousel.dataset.slideCount || 0);
     const pattern = carousel.dataset.slidePath || '';
     const title = carousel.dataset.title || 'Infographic';
+    const isPortuguese = document.documentElement.lang.toLowerCase().startsWith('pt');
     const stage = carousel.querySelector('.carousel-stage');
     const image = carousel.querySelector('.carousel-slide');
     const slideButton = carousel.querySelector('.carousel-slide-button');
@@ -30,7 +31,7 @@
 
     function render() {
       image.src = slidePath(current);
-      image.alt = title + ' - slide ' + (current + 1) + ' of ' + total;
+      image.alt = title + ' - slide ' + (current + 1) + (isPortuguese ? ' de ' : ' of ') + total;
       counter.textContent = (current + 1) + ' / ' + total;
       previous.hidden = current === 0;
       next.hidden = current === total - 1;
@@ -47,26 +48,19 @@
     }
 
     function isExpanded() {
-      return document.fullscreenElement === stage || stage.classList.contains('is-expanded');
+      return stage.classList.contains('is-expanded');
     }
 
     function openViewer() {
       if (isExpanded()) return;
-      if (stage.requestFullscreen) {
-        stage.requestFullscreen().catch(function () {
-          stage.classList.add('is-expanded');
-          document.body.classList.add('carousel-expanded');
-        });
-      } else {
-        stage.classList.add('is-expanded');
-        document.body.classList.add('carousel-expanded');
-      }
+      stage.classList.add('is-expanded');
+      document.body.classList.add('carousel-expanded');
+      window.requestAnimationFrame(function () {
+        close.focus();
+      });
     }
 
     function closeViewer() {
-      if (document.fullscreenElement === stage && document.exitFullscreen) {
-        document.exitFullscreen();
-      }
       stage.classList.remove('is-expanded');
       document.body.classList.remove('carousel-expanded');
       slideButton.focus();
@@ -116,12 +110,6 @@
       pointerStartX = null;
       if (Math.abs(distance) < 60) return;
       goTo(distance > 0 ? current - 1 : current + 1);
-    });
-
-    document.addEventListener('fullscreenchange', function () {
-      if (document.fullscreenElement !== stage) {
-        document.body.classList.remove('carousel-expanded');
-      }
     });
 
     render();

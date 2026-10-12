@@ -23,6 +23,10 @@ The primary research themes are Agentic AI, multi-agent systems, AI security, Ze
 ## Infographic index
 
 - [Infographics](https://aridiosilva.com/infographics/): Index of visual studies and LinkedIn carousels, with English default editions and Portuguese alternatives when available.
+- [Threat Modeling in AI — Infographic 002, English](https://aridiosilva.com/infographics/Info_002/): English web edition with a 32-slide accessible carousel on frameworks, threat classes, mitigations, model behavior, and multi-agent risk, plus the LinkedIn publication text and source PDF.
+- [Modelagem de Ameaças em IA — Infográfico 002, Português](https://aridiosilva.com/infographics/Info_002/pt/): Edição web em português com carrossel acessível de 32 slides sobre frameworks, classes de ameaça, mitigações, comportamento do modelo e riscos multiagentes, além do texto publicado no LinkedIn e PDF de origem.
+- [Threat Modeling in AI — English PDF](https://aridiosilva.com/infographics/Info_002/threat-modeling-in-ai-en.pdf): Original 32-page English infographic PDF.
+- [Modelagem de Ameaças em IA — PDF em português](https://aridiosilva.com/infographics/Info_002/pt/modelagem-de-ameacas-em-ia-pt.pdf): PDF original do infográfico em português, com 32 páginas.
 - [Context Language Models (CLMs) — Infographic 001, English](https://aridiosilva.com/infographics/Info_001/): English web edition with a 47-slide accessible carousel, the LinkedIn publication text, and the source PDF.
 - [Context Language Models (CLMs) — Infográfico 001, Português](https://aridiosilva.com/infographics/Info_001/pt/): Edição web em português com carrossel acessível de 47 slides, texto publicado no LinkedIn e PDF de origem.
 - [Context Language Models (CLMs) — English PDF](https://aridiosilva.com/infographics/Info_001/context-language-models-clm-en.pdf): Original 47-page English infographic PDF.

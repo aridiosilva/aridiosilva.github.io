@@ -198,10 +198,13 @@
   cursor: pointer;
 }
 
-.carousel-stage:fullscreen,
 .carousel-stage.is-expanded {
   width: 100vw;
   height: 100vh;
+  width: 100dvw;
+  height: 100dvh;
+  max-width: none;
+  max-height: none;
   aspect-ratio: auto;
   border: 0;
   border-radius: 0;
@@ -212,15 +215,18 @@
   position: fixed;
   inset: 0;
   z-index: 9999;
+  padding:
+    env(safe-area-inset-top)
+    env(safe-area-inset-right)
+    env(safe-area-inset-bottom)
+    env(safe-area-inset-left);
 }
 
-.carousel-stage:fullscreen .carousel-close,
 .carousel-stage.is-expanded .carousel-close {
   display: grid;
   place-items: center;
 }
 
-.carousel-stage:fullscreen .carousel-slide-button,
 .carousel-stage.is-expanded .carousel-slide-button {
   cursor: default;
 }

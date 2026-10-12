@@ -626,14 +626,14 @@ git push origin main
 
 - `assets/infographics.js` implementa navegação por setas laterais, teclado, gesto horizontal em telas sensíveis ao toque e comandos Home/End.
 - O primeiro slide exibe somente a seta direita; o último exibe somente a seta esquerda.
-- Selecionar o slide ou o botão dedicado abre o carrossel em tela cheia; há botão de fechamento e fallback visual quando a Fullscreen API não está disponível.
+- Selecionar o slide ou o botão dedicado abre o carrossel em um overlay responsivo limitado à viewport corrente (`100dvw` × `100dvh`); há botão de fechamento e o slide acompanha redimensionamento, orientação e barras móveis sem deformação.
 - `assets/infographics.css` mantém proporção 16:9, foco visível, controles responsivos e respeito a `prefers-reduced-motion`.
 - O cabeçalho das páginas EN e PT é fixo durante a rolagem e seus itens possuem estados de `hover` e foco equivalentes ao índice de publicações.
 - O índice `infographics/index.html` herda do índice de publicações o mesmo cabeçalho fixo, hover/foco, hero, grade, cards e comportamento responsivo.
 - Os três controles abaixo do carrossel — tela cheia, abertura do PDF e download — ficam centralizados como um conjunto e quebram de linha responsivamente quando necessário.
 - O texto do rodapé fica centralizado no índice de infográficos e nas páginas EN/PT do Info_001.
 - O rodapé dessas páginas usa o mesmo fundo `#e4edeb` do header; a regra compartilhada também se aplica aos próximos infográficos.
-- O CSS de infográficos usa cache-busting `?v=20261012-6`; o JavaScript mantém `?v=20261012`.
+- O CSS de infográficos usa cache-busting `?v=20261012-7`; o JavaScript usa `?v=20261012-3`.
 
 ### Descoberta e validações
 
