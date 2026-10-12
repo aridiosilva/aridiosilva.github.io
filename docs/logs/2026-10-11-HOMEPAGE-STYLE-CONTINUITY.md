@@ -649,3 +649,14 @@ git push origin main
 - `git diff --check` passou sem erros.
 - Nenhum stage, commit ou push foi executado pelo assistente.
 
+## Atualização de continuidade — Info_007 — Agentes de IA à Solta — 12 de outubro de 2026
+
+- Foi adicionado o `Info_007` em inglês e português, com 45 slides por idioma, PDFs originais e os respectivos textos de publicação do LinkedIn.
+- A edição inglesa canônica está em `infographics/Info_007/index.html`; a edição portuguesa está em `infographics/Info_007/pt/index.html`.
+- Os PDFs foram copiados sem alteração para `ai-agents-unleashed-en.pdf` e `pt/agentes-de-ia-a-solta-pt.pdf`.
+- Os 90 slides foram renderizados em PNG a 1920 × 1080 e conferidos visualmente em folhas de contato.
+- O índice `infographics/index.html` recebeu o card do Info_007 na primeira posição; o Info_006 passou a usar carregamento diferido da capa.
+- `sitemap.xml` recebeu as páginas EN/PT, alternates recíprocos e imagens de capa; `llms.txt` recebeu as duas edições web e os dois PDFs.
+- Foram preservados analytics, CSP, canonical, `hreflang`, cache-busting, acessibilidade, controles do carrossel e identificação visível `Version 2.0` / `Versão 2.0`.
+- Estado desta atualização: alterações locais prontas para revisão; sem stage, commit ou push executados pelo assistente.
+

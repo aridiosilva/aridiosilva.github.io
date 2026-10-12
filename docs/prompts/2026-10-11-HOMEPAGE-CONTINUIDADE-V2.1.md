@@ -126,3 +126,12 @@ Continue a evolução da homepage `aridiosilva.com` a partir da versão 2.0 cons
 - Toda nova página de infográfico deve carregar `/assets/analytics-consent.js?v=20261011`, mantendo a propriedade GA4 `G-MXMJ7Z3LS7`, e também declarar canonical, sitemap e `llms.txt`; idiomas alternativos exigem `hreflang` recíproco e `x-default`.
 - A identificação visível permanece `Version 2.0` / `Versão 2.0` até decisão explícita de publicação da versão 2.1.
 - Estado desta atualização: alterações locais prontas para revisão; sem stage, commit ou push executados pelo assistente.
+
+## Atualização do ciclo 2.1 — Info_007 — 12 de outubro de 2026
+
+- `Info_007` publica `AI Agents Unleashed` / `Agentes de IA à Solta` em inglês e português.
+- Cada idioma possui 45 slides 16:9, PDF original e texto correspondente da publicação no LinkedIn.
+- A edição inglesa permanece canônica em `/infographics/Info_007/`; a portuguesa está em `/infographics/Info_007/pt/`, com `hreflang` recíproco e inglês como `x-default`.
+- O índice de infográficos mantém ordem decrescente e apresenta o Info_007 como primeiro card.
+- O sitemap e o `llms.txt` incluem as páginas e os PDFs do Info_007.
+- Próximos infográficos devem reutilizar o mesmo padrão de página, carrossel, metadados, descoberta, analytics e acessibilidade.
