@@ -144,6 +144,17 @@
     letter-spacing: .055em;
     text-transform: uppercase;
   }
+  .identity strong {
+    width: fit-content;
+    padding-bottom: 3px;
+    border-bottom: 1px solid transparent;
+    transition: color .18s ease, border-color .18s ease;
+  }
+  .identity:hover strong,
+  .identity:focus-visible strong {
+    color: var(--research-deep);
+    border-bottom-color: var(--research-deep);
+  }
   .header-right { display: flex; align-items: center; justify-content: flex-end; gap: 22px; }
   .site-nav { display: flex; gap: 20px; align-items: center; }
   .site-nav a {
