@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+<!-- GA4 G-MXMJ7Z3LS7: automatic cookieless audience measurement; analytics and advertising storage remain disabled. -->
+<script defer src="/assets/analytics-consent.js?v=20261011"></script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>LoRA: Low-Rank Adaptation - Aridio Silva</title>
+<meta name="description" content="A 31-slide infographic on LoRA foundations, mathematics, variants, engineering, adoption, limitations, governance, and security.">
+<link rel="canonical" href="https://aridiosilva.com/infographics/Info_004/">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://www.googletagmanager.com; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https://*.google-analytics.com; connect-src https://*.google-analytics.com https://www.googletagmanager.com; media-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'; upgrade-insecure-requests">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="author" content="Aridio Silva">
+<meta property="og:type" content="article">
+<meta property="og:title" content="LoRA: Low-Rank Adaptation">
+<meta property="og:description" content="A 31-slide visual study of LoRA origins, low-rank mathematics, variants, engineering, adoption, limitations, governance, and security.">
+<meta property="og:image" content="https://aridiosilva.com/infographics/Info_004/assets/slide-01.png">
+<link rel="alternate" hreflang="en" href="https://aridiosilva.com/infographics/Info_004/">
+<link rel="alternate" hreflang="pt-BR" href="https://aridiosilva.com/infographics/Info_004/pt/">
+<link rel="alternate" hreflang="x-default" href="https://aridiosilva.com/infographics/Info_004/">
+<link rel="sitemap" type="application/xml" href="/sitemap.xml">
+<link rel="describedby" href="/llms.txt" type="text/markdown">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;family=Source+Serif+4:opsz,wght@8..60,500;6..60,700&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/publications.css?v=20261012-14">
+<link rel="stylesheet" href="/assets/infographics.css?v=20261012-7">
+<script defer src="/assets/infographics.js?v=20261012-3"></script>
+</head>
+<body class="infographic-page">
+<a class="skip" href="#main">Skip to main content</a>
+<header class="site-header"><div class="shell header-inner">
+<a class="identity" href="/#top" aria-label="Aridio Silva home"><strong>Aridio Silva</strong><span>Independent Researcher · AI Systems Architecture</span></a>
+<nav aria-label="Primary navigation"><a href="/">Home</a><a href="/sgaeia">SGAEIA</a><a href="/publications.html">Publications</a><a href="/infographics/">Infographics</a></nav>
+</div></header>
+<main id="main">
+<section class="hero"><div class="shell article">
+<p class="eyebrow">Infographic 004 · LinkedIn carousel</p>
+<h1>LoRA: Low-Rank Adaptation</h1>
+<p class="subtitle">Origin, foundations, variants, engineering, and adoption</p>
+<p class="meta">Aridio Silva · October 12, 2026 · 31 slides</p>
+<nav class="language-nav" aria-label="Infographic languages"><a href="/infographics/Info_004/" lang="en" aria-current="page">English</a><span aria-hidden="true">·</span><a href="/infographics/Info_004/pt/" lang="pt-BR">Português</a></nav>
+</div></section>
+
+<section class="carousel-section" aria-labelledby="carousel-title"><div class="shell article">
+<h2 id="carousel-title">Infographic carousel</h2>
+<p class="carousel-intro">Select the slide to open it full screen. Use the on-screen arrows, the keyboard arrow keys, or swipe on a touch screen.</p>
+<div class="infographic-carousel" data-infographic-carousel data-slide-count="31" data-slide-path="assets/slide-{NN}.png" data-title="LoRA: Low-Rank Adaptation">
+<div class="carousel-stage" tabindex="0" role="group" aria-roledescription="carousel" aria-label="LoRA: Low-Rank Adaptation infographic">
+<button class="carousel-slide-button" type="button" aria-label="Open infographic in full screen"><img class="carousel-slide" src="assets/slide-01.png" alt="LoRA: Low-Rank Adaptation - slide 1 of 31" width="1921" height="1080" decoding="async"></button>
+<button class="carousel-control carousel-prev" type="button" aria-label="Previous slide" hidden>‹</button>
+<button class="carousel-control carousel-next" type="button" aria-label="Next slide">›</button>
+<button class="carousel-close" type="button" aria-label="Close full-screen viewer">×</button>
+<span class="carousel-counter" aria-live="polite">1 / 31</span>
+</div>
+<div class="carousel-toolbar"><button class="button primary" type="button" data-open-carousel>Open full screen</button><a class="button" href="lora-low-rank-adaptation-en.pdf" target="_blank" rel="noopener noreferrer">Open PDF</a><a class="button" href="lora-low-rank-adaptation-en.pdf" download>Download PDF</a></div>
+</div>
+</div></section>
+
+<section class="content"><article class="shell article linkedin-copy">
+<p class="eyebrow">LinkedIn publication text</p>
+<h2>LoRA: how a 2021 idea became the standard way to customize AI models</h2>
+<p>Adapting a giant model to each task used to be expensive. On GPT-3 175B, every fine-tuned version took 350 GB, and full fine-tuning needed 1.2 TB of GPU memory.</p>
+<p>In 2021, Edward J. Hu, Yelong Shen and six other Microsoft researchers proposed LoRA (Low-Rank Adaptation; arXiv:2106.09685, ICLR 2022). It freezes the model and trains only a small low-rank update, W₀ + BA.</p>
+<p>📊 <strong>Result in the original paper:</strong> about 10,000× fewer trainable parameters, a 35 MB checkpoint instead of 350 GB, and no added inference latency after merging.</p>
+<p>In this infographic I cover:</p>
+<ul>
+<li>🟣 The theoretical roots (intrinsic dimension, 2018–2020) and the authors</li>
+<li>🔵 The math and the engineering workflow: training, merging and multi-adapter serving (Punica, S-LoRA, vLLM)</li>
+<li>🟢 A timeline of the variants: QLoRA, AdaLoRA, rsLoRA, VeRA, LoftQ, LongLoRA, DoRA, LoRA+ and PiSSA</li>
+<li>🟡 Results and limits, from “LoRA Learns Less and Forgets Less” (2024) to “LoRA Without Regret” (2025)</li>
+<li>🟠 A comparison with adapters, prompt tuning, BitFit, (IA)³, GaLore and RAG</li>
+<li>🔴 Documented adoption: Azure OpenAI, Apple Intelligence, Tinker and Hugging Face</li>
+<li>🛡️ Pros, cons and governance and security (GRC) considerations</li>
+</ul>
+<p>✅ <strong>Bottom line:</strong> LoRA matches full fine-tuning in post-training and reinforcement learning when applied to all layers. It falls behind, however, when a model must absorb large amounts of new knowledge. The best combination is often LoRA for behavior and RAG for facts.</p>
+<p>📚 Each slide explains why the topic matters and its positive and negative implications. It ends with a glossary and primary references, each one checked against its source.</p>
+<p class="closing-question">Which of these topics matters most in your work today?</p>
+<p class="hashtags">#ArtificialIntelligence #LoRA #LLM #MachineLearning #FineTuning</p>
+</article></section>
+</main>
+<footer><div class="shell"><p>© 2026 Aridio Silva · Project SGAEIA · Version 2.0</p></div></footer>
+</body>
+</html>
