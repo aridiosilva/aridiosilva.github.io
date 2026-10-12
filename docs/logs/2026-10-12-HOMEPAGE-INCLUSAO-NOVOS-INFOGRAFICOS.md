@@ -361,4 +361,4 @@ O novo infográfico somente estará pronto quando:
 
 ## Observação final
 
-Este log descreve o padrão aprovado após a implantação do `Info_001 — Context Language Models (CLMs)`. Ele deve ser atualizado quando uma decisão estrutural for alterada, mas não deve ser movido para `docs/prompts/`.
+Este log descreve o padrão aprovado após a implantação do `Info_001 — Context Language Models (CLMs)`. O mesmo padrão foi aplicado ao `Info_002 — Threat Modeling in AI` e ao `Info_003 — AI Agent Execution Tracing`. Ele deve ser atualizado quando uma decisão estrutural for alterada, mas não deve ser movido para `docs/prompts/`.

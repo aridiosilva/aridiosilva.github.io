@@ -23,6 +23,10 @@ The primary research themes are Agentic AI, multi-agent systems, AI security, Ze
 ## Infographic index
 
 - [Infographics](https://aridiosilva.com/infographics/): Index of visual studies and LinkedIn carousels, with English default editions and Portuguese alternatives when available.
+- [AI Agent Execution Tracing — Infographic 003, English](https://aridiosilva.com/infographics/Info_003/): English web edition with a 41-slide accessible carousel on spans, traces, sessions, OpenTelemetry, evaluation, privacy, export failures, and the maturity of 13 AI agent platforms, plus the LinkedIn publication text and source PDF.
+- [Rastreamento de Execução de Agentes de IA — Infográfico 003, Português](https://aridiosilva.com/infographics/Info_003/pt/): Edição web em português com carrossel acessível de 41 slides sobre spans, traces, sessões, OpenTelemetry, avaliação, privacidade, falhas de exportação e a maturidade de 13 plataformas de agentes de IA, além do texto publicado no LinkedIn e PDF de origem.
+- [AI Agent Execution Tracing — English PDF](https://aridiosilva.com/infographics/Info_003/ai-agent-execution-tracing-en.pdf): Original 41-page English infographic PDF.
+- [Rastreamento de Execução de Agentes de IA — PDF em português](https://aridiosilva.com/infographics/Info_003/pt/rastreamento-de-execucao-de-agentes-de-ia-pt.pdf): PDF original do infográfico em português, com 41 páginas.
 - [Threat Modeling in AI — Infographic 002, English](https://aridiosilva.com/infographics/Info_002/): English web edition with a 32-slide accessible carousel on frameworks, threat classes, mitigations, model behavior, and multi-agent risk, plus the LinkedIn publication text and source PDF.
 - [Modelagem de Ameaças em IA — Infográfico 002, Português](https://aridiosilva.com/infographics/Info_002/pt/): Edição web em português com carrossel acessível de 32 slides sobre frameworks, classes de ameaça, mitigações, comportamento do modelo e riscos multiagentes, além do texto publicado no LinkedIn e PDF de origem.
 - [Threat Modeling in AI — English PDF](https://aridiosilva.com/infographics/Info_002/threat-modeling-in-ai-en.pdf): Original 32-page English infographic PDF.

@@ -25,6 +25,26 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://aridiosilva.com/infographics/Info_003/</loc>
+    <lastmod>2026-10-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aridiosilva.com/infographics/Info_003/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://aridiosilva.com/infographics/Info_003/pt/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aridiosilva.com/infographics/Info_003/"/>
+    <image:image><image:loc>https://aridiosilva.com/infographics/Info_003/assets/slide-01.png</image:loc><image:title>AI Agent Execution Tracing</image:title><image:caption>© 2026 Aridio Silva</image:caption></image:image>
+  </url>
+  <url>
+    <loc>https://aridiosilva.com/infographics/Info_003/pt/</loc>
+    <lastmod>2026-10-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aridiosilva.com/infographics/Info_003/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://aridiosilva.com/infographics/Info_003/pt/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aridiosilva.com/infographics/Info_003/"/>
+    <image:image><image:loc>https://aridiosilva.com/infographics/Info_003/pt/assets/slide-01.png</image:loc><image:title>Rastreamento de Execução de Agentes de IA</image:title><image:caption>© 2026 Aridio Silva</image:caption></image:image>
+  </url>
+  <url>
     <loc>https://aridiosilva.com/infographics/Info_002/</loc>
     <lastmod>2026-10-12</lastmod>
     <changefreq>monthly</changefreq>

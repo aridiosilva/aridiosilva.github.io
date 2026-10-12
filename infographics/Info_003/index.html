@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+<!-- GA4 G-MXMJ7Z3LS7: automatic cookieless audience measurement; analytics and advertising storage remain disabled. -->
+<script defer src="/assets/analytics-consent.js?v=20261011"></script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>AI Agent Execution Tracing - Aridio Silva</title>
+<meta name="description" content="A 41-slide infographic on AI agent execution tracing, spans, OpenTelemetry, evaluation, privacy, and a comparison of 13 platforms.">
+<link rel="canonical" href="https://aridiosilva.com/infographics/Info_003/">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://www.googletagmanager.com; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https://*.google-analytics.com; connect-src https://*.google-analytics.com https://www.googletagmanager.com; media-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'; upgrade-insecure-requests">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="author" content="Aridio Silva">
+<meta property="og:type" content="article">
+<meta property="og:title" content="AI Agent Execution Tracing">
+<meta property="og:description" content="A 41-slide visual study of spans, traces, sessions, OpenTelemetry, evaluation, privacy, and 13 agent platforms.">
+<meta property="og:image" content="https://aridiosilva.com/infographics/Info_003/assets/slide-01.png">
+<link rel="alternate" hreflang="en" href="https://aridiosilva.com/infographics/Info_003/">
+<link rel="alternate" hreflang="pt-BR" href="https://aridiosilva.com/infographics/Info_003/pt/">
+<link rel="alternate" hreflang="x-default" href="https://aridiosilva.com/infographics/Info_003/">
+<link rel="sitemap" type="application/xml" href="/sitemap.xml">
+<link rel="describedby" href="/llms.txt" type="text/markdown">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;family=Source+Serif+4:opsz,wght@8..60,500;6..60,700&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/publications.css?v=20261012-14">
+<link rel="stylesheet" href="/assets/infographics.css?v=20261012-7">
+<script defer src="/assets/infographics.js?v=20261012-3"></script>
+</head>
+<body class="infographic-page">
+<a class="skip" href="#main">Skip to main content</a>
+<header class="site-header"><div class="shell header-inner">
+<a class="identity" href="/#top" aria-label="Aridio Silva home"><strong>Aridio Silva</strong><span>Independent Researcher · AI Systems Architecture</span></a>
+<nav aria-label="Primary navigation"><a href="/">Home</a><a href="/sgaeia">SGAEIA</a><a href="/publications.html">Publications</a><a href="/infographics/">Infographics</a></nav>
+</div></header>
+<main id="main">
+<section class="hero"><div class="shell article">
+<p class="eyebrow">Infographic 003 · LinkedIn carousel</p>
+<h1>AI Agent Execution Tracing</h1>
+<p class="subtitle">Spans, traces, sessions, OpenTelemetry, evaluation, privacy, and 13 agent platforms</p>
+<p class="meta">Aridio Silva · October 11, 2026 · 41 slides</p>
+<nav class="language-nav" aria-label="Infographic languages"><a href="/infographics/Info_003/" lang="en" aria-current="page">English</a><span aria-hidden="true">·</span><a href="/infographics/Info_003/pt/" lang="pt-BR">Português</a></nav>
+</div></section>
+
+<section class="carousel-section" aria-labelledby="carousel-title"><div class="shell article">
+<h2 id="carousel-title">Infographic carousel</h2>
+<p class="carousel-intro">Select the slide to open it full screen. Use the on-screen arrows, the keyboard arrow keys, or swipe on a touch screen.</p>
+<div class="infographic-carousel" data-infographic-carousel data-slide-count="41" data-slide-path="assets/slide-{NN}.png" data-title="AI Agent Execution Tracing">
+<div class="carousel-stage" tabindex="0" role="group" aria-roledescription="carousel" aria-label="AI Agent Execution Tracing infographic">
+<button class="carousel-slide-button" type="button" aria-label="Open infographic in full screen"><img class="carousel-slide" src="assets/slide-01.png" alt="AI Agent Execution Tracing - slide 1 of 41" width="1920" height="1080" decoding="async"></button>
+<button class="carousel-control carousel-prev" type="button" aria-label="Previous slide" hidden>‹</button>
+<button class="carousel-control carousel-next" type="button" aria-label="Next slide">›</button>
+<button class="carousel-close" type="button" aria-label="Close full-screen viewer">×</button>
+<span class="carousel-counter" aria-live="polite">1 / 41</span>
+</div>
+<div class="carousel-toolbar"><button class="button primary" type="button" data-open-carousel>Open full screen</button><a class="button" href="ai-agent-execution-tracing-en.pdf" target="_blank" rel="noopener noreferrer">Open PDF</a><a class="button" href="ai-agent-execution-tracing-en.pdf" download>Download PDF</a></div>
+</div>
+</div></section>
+
+<section class="content"><article class="shell article linkedin-copy">
+<p class="eyebrow">LinkedIn publication text</p>
+<h2>How do you know what an AI agent really did?</h2>
+<p>Did it finish the task? Did it fail or drift off course? How long did it take and what did it cost? The answer is tracing: every step of the agent becomes a span inside a trace.</p>
+<p>I compared 13 platforms (Anthropic, OpenAI, Google, Microsoft, AWS and 7 independents). Versions were read from PyPI and npm on Oct 10, 2026, and features checked against the official documentation. What I found:</p>
+<p>🟦 <strong>Span, trace and session:</strong> a span is one traced step (model call, tool use, handoff); a trace is the whole journey; a session groups several traces from the same conversation.</p>
+<p>🟩 <strong>A trace is not proof of success:</strong> a run with no error only shows the agent did not crash. Content failures often trigger no error status at all, so you need a separate evaluation.</p>
+<p>🟧 <strong>OpenTelemetry is the path to portability,</strong> but the GenAI conventions are still in Development status: names can change.</p>
+<p>🟪 <strong>Privacy differs by platform:</strong> the Claude Agent SDK does not record content by default; the OpenAI Agents SDK records inputs and outputs unless you turn it off.</p>
+<p>🟥 <strong>Silent failure:</strong> on at least one platform, a telemetry export error never shows up. A missing trace may be an export failure.</p>
+<p>🟨 <strong>Maturity:</strong> Claude Agent SDK and Managed Agents traces are in beta; Foundry workflow tracing is in preview; core SDKs are still 0.x.</p>
+<p>📌 <strong>Bottom line:</strong> we are midway through maturation. The solutions are, in large part, preliminary versions, and many are in beta or preview. Span names, attributes and behaviors can change: adopt with the migration cost in mind.</p>
+<p>✅ <strong>Best practices:</strong> instrument with OTel, define in writing what gets captured, monitor the export itself, and keep "finished without error" apart from "correct result".</p>
+<p>The full study includes a glossary, 47 references with validation marks and a platform comparison matrix.</p>
+<p class="closing-question">Which tracing tool do you use for your agents?</p>
+<p class="hashtags">#AIAgents #Observability #OpenTelemetry #GenAI #LLMOps</p>
+</article></section>
+</main>
+<footer><div class="shell"><p>© 2026 Aridio Silva · Project SGAEIA · Version 2.0</p></div></footer>
+</body>
+</html>
