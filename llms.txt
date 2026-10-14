@@ -11,6 +11,8 @@ The primary research themes are Agentic AI, multi-agent systems, AI security, Ze
 
 ## Publication index
 
+- [AI Agents and Agentic AI — Article 20, English](https://aridiosilva.com/publications/artigo20/): Complete English article with cover, three figures, two comparative tables and 37 references; DOI 10.5281/zenodo.23373900.
+- [Agentes de AI e AI agêntica — Artigo 20, Português](https://aridiosilva.com/publications/artigo20/pt/): Edição integral em português com capa, três figuras, duas tabelas comparativas e 37 referências; DOI 10.5281/zenodo.23373900.
 - [LoRA in AI Agents — Article 19, English](https://aridiosilva.com/publications/artigo19/): Complete English article with cover, one equation plate, four figures and 14 references; DOI 10.5281/zenodo.23300168.
 - [LoRA em Agentes de AI — Artigo 19, Português](https://aridiosilva.com/publications/artigo19/pt/): Edição integral em português com capa, uma equação, quatro figuras e 14 referências; DOI 10.5281/zenodo.23300168.
 - [Tracing AI Agent Execution — Article 18, English](https://aridiosilva.com/publications/artigo18/): Complete English article with official cover, three figures and 47 references; DOI 10.5281/zenodo.23284753.
@@ -59,6 +61,22 @@ The primary research themes are Agentic AI, multi-agent systems, AI security, Ze
 - [Context Language Models (CLMs) — Infográfico 001, Português](https://aridiosilva.com/infographics/Info_001/pt/): Edição web em português com carrossel acessível de 47 slides, texto publicado no LinkedIn e PDF de origem.
 - [Context Language Models (CLMs) — English PDF](https://aridiosilva.com/infographics/Info_001/context-language-models-clm-en.pdf): Original 47-page English infographic PDF.
 - [Context Language Models (CLMs) — PDF em português](https://aridiosilva.com/infographics/Info_001/pt/context-language-models-clm-pt.pdf): PDF original do infográfico em português, com 47 páginas.
+
+## Article 20 — AI Agents and Agentic AI
+
+Author: Aridio Silva — Independent Researcher, Brazil. SGAEIA Research Series, Article 20, 14 October 2026. Critical comparison of agents, agenticness, and agentic AI across foundational research and major providers, distinguishing entity, property, system, capability, and authority. DOI: 10.5281/zenodo.23373900. License: CC BY 4.0. Copyright: © 2026 Aridio Silva.
+
+- [Complete English article](https://aridiosilva.com/publications/artigo20/)
+- [Artigo completo em português](https://aridiosilva.com/publications/artigo20/pt/)
+- [Zenodo record](https://zenodo.org/records/23373900)
+- [Zenodo DOI](https://doi.org/10.5281/zenodo.23373900)
+- [Medium edition](https://medium.com/@aridiosilva/ai-agents-and-agentic-ai-what-sets-them-apart-e7dcdf391fbc)
+- [DEV Community edition](https://dev.to/aridiosilva/ai-agents-and-agentic-ai-what-sets-them-apart-5boj)
+- [Academia.edu edition](https://www.academia.edu/178969947/AI_Agents_and_Agentic_AI_What_Sets_Them_Apart_Concepts_Autonomy_and_How_Major_AI_Providers_Use_the_Terms)
+- [English cover](https://aridiosilva.com/assets/article20/2026-10-14-1310-SGAEIA-Article20-Cover-AI-Agents-and-Agentic-AI_EN.png)
+- [Capa em português](https://aridiosilva.com/assets/article20/2026-10-14-1310-SGAEIA-Article20-Capa-Agentes-de-AI-e-AI-agentica_PT.png)
+
+The homepage records are the canonical open-reading editions; Zenodo is the persistent archival record, and Medium, DEV Community, and Academia.edu are distribution surfaces. Discovery metadata does not guarantee indexing or ranking.
 
 ## Article 19 — LoRA in AI Agents
 

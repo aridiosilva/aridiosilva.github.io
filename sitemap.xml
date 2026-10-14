@@ -301,6 +301,26 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://aridiosilva.com/publications/artigo20/</loc>
+    <lastmod>2026-10-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aridiosilva.com/publications/artigo20/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://aridiosilva.com/publications/artigo20/pt/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aridiosilva.com/publications/artigo20/"/>
+    <image:image><image:loc>https://aridiosilva.com/assets/article20/2026-10-14-1310-SGAEIA-Article20-Cover-AI-Agents-and-Agentic-AI_EN.png</image:loc><image:title>AI Agents and Agentic AI: What Sets Them Apart?</image:title><image:caption>© 2026 Aridio Silva | Project SGAEIA | CC BY 4.0</image:caption></image:image>
+  </url>
+  <url>
+    <loc>https://aridiosilva.com/publications/artigo20/pt/</loc>
+    <lastmod>2026-10-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aridiosilva.com/publications/artigo20/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://aridiosilva.com/publications/artigo20/pt/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aridiosilva.com/publications/artigo20/"/>
+    <image:image><image:loc>https://aridiosilva.com/assets/article20/2026-10-14-1310-SGAEIA-Article20-Capa-Agentes-de-AI-e-AI-agentica_PT.png</image:loc><image:title>Agentes de AI e AI agêntica: o que os distingue?</image:title><image:caption>© 2026 Aridio Silva | Project SGAEIA | CC BY 4.0</image:caption></image:image>
+  </url>
+  <url>
     <loc>https://aridiosilva.com/publications/artigo19/</loc>
     <lastmod>2026-10-11</lastmod><changefreq>monthly</changefreq><priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://aridiosilva.com/publications/artigo19/"/>
