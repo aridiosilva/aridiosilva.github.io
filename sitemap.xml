@@ -25,6 +25,26 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://aridiosilva.com/infographics/Info_010/</loc>
+    <lastmod>2026-10-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aridiosilva.com/infographics/Info_010/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://aridiosilva.com/infographics/Info_010/pt/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aridiosilva.com/infographics/Info_010/"/>
+    <image:image><image:loc>https://aridiosilva.com/infographics/Info_010/assets/slide-01.png</image:loc><image:title>Cancellation of Agentic AI Projects by 2027</image:title><image:caption>© 2026 Aridio Silva</image:caption></image:image>
+  </url>
+  <url>
+    <loc>https://aridiosilva.com/infographics/Info_010/pt/</loc>
+    <lastmod>2026-10-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aridiosilva.com/infographics/Info_010/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://aridiosilva.com/infographics/Info_010/pt/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aridiosilva.com/infographics/Info_010/"/>
+    <image:image><image:loc>https://aridiosilva.com/infographics/Info_010/pt/assets/slide-01.png</image:loc><image:title>Cancelamento de projetos de IA agêntica até 2027</image:title><image:caption>© 2026 Aridio Silva</image:caption></image:image>
+  </url>
+  <url>
     <loc>https://aridiosilva.com/infographics/Info_009/</loc>
     <lastmod>2026-10-14</lastmod>
     <changefreq>monthly</changefreq>
