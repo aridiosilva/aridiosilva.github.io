@@ -135,3 +135,12 @@ Continue a evolução da homepage `aridiosilva.com` a partir da versão 2.0 cons
 - O índice de infográficos mantém ordem decrescente e apresenta o Info_007 como primeiro card.
 - O sitemap e o `llms.txt` incluem as páginas e os PDFs do Info_007.
 - Próximos infográficos devem reutilizar o mesmo padrão de página, carrossel, metadados, descoberta, analytics e acessibilidade.
+
+## Atualização do ciclo 2.1 — Info_008 — 14 de outubro de 2026
+
+- `Info_008` publica `Agent-Assisted Peer Review` / `Revisão por Pares Assistida por Agentes de IA` em inglês e português.
+- Cada idioma possui 54 slides 16:9, o PDF final original e o texto correspondente da publicação no LinkedIn.
+- A edição inglesa permanece canônica em `/infographics/Info_008/`; a portuguesa está em `/infographics/Info_008/pt/`, com `hreflang` recíproco e inglês como `x-default`.
+- O índice de infográficos mantém ordem decrescente e apresenta o Info_008 como primeiro card.
+- `sitemap.xml`, `llms.txt` e o comentário informativo de `robots.txt` foram atualizados para a nova publicação.
+- Próximos infográficos devem reutilizar o mesmo padrão de página, carrossel, metadados, descoberta, analytics e acessibilidade.

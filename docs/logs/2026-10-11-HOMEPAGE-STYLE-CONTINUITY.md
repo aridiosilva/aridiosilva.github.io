@@ -660,3 +660,14 @@ git push origin main
 - Foram preservados analytics, CSP, canonical, `hreflang`, cache-busting, acessibilidade, controles do carrossel e identificação visível `Version 2.0` / `Versão 2.0`.
 - Estado desta atualização: alterações locais prontas para revisão; sem stage, commit ou push executados pelo assistente.
 
+## Atualização de continuidade — Info_008 — Revisão por Pares Assistida por Agentes de IA — 14 de outubro de 2026
+
+- Foi adicionado o `Info_008` em inglês e português, com 54 slides por idioma, os PDFs finais originais e os textos correspondentes da publicação no LinkedIn.
+- A edição inglesa canônica está em `infographics/Info_008/index.html`; a edição portuguesa está em `infographics/Info_008/pt/index.html`.
+- Os PDFs foram copiados sem alteração para `agent-assisted-peer-review-en.pdf` e `pt/revisao-por-pares-assistida-por-agentes-de-ia-pt.pdf`; os hashes SHA-256 preservados são `dfd1734a81b88dd40242adbf584314248ee6c7dc03df0e75ee60bd6372a0643b` (EN) e `716ce3ad49ed0615f9c1dcd97d8fbf4c7e055ad740f9e31113951c88f54a6177` (PT).
+- Os 108 slides foram renderizados em PNG a 1920 × 1080 e conferidos visualmente por folhas de contato.
+- O índice `infographics/index.html` recebeu o card do Info_008 na primeira posição; o Info_007 passou a usar carregamento diferido da capa.
+- `sitemap.xml` recebeu as páginas EN/PT, alternates recíprocos e imagens de capa; `llms.txt` recebeu as duas edições web e os dois PDFs; `robots.txt` teve o comentário informativo atualizado.
+- Foram preservados Analytics, CSP, canonical, `hreflang`, cache-busting, acessibilidade, controles compartilhados do carrossel e identificação visível `Version 2.0` / `Versão 2.0`.
+- Estado desta atualização: alterações locais prontas para revisão; sem stage, commit ou push executados pelo assistente.
+
