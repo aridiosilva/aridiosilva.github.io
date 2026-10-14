@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+<!-- GA4 G-MXMJ7Z3LS7: automatic cookieless audience measurement; analytics and advertising storage remain disabled. -->
+<script defer src="/assets/analytics-consent.js?v=20261011"></script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>AI Agents vs. Agentic AI: Conceptual, Technical, and Comparative Analysis - Aridio Silva</title>
+<meta name="description" content="A 29-slide analysis of AI agents and agentic AI, comparing definitions, architectures, standards, security risks, multi-agent failures, governance, and evidence from primary sources.">
+<link rel="canonical" href="https://aridiosilva.com/infographics/Info_009/">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://www.googletagmanager.com; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https://*.google-analytics.com; connect-src https://*.google-analytics.com https://www.googletagmanager.com; media-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'; upgrade-insecure-requests">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="author" content="Aridio Silva">
+<meta property="og:type" content="article">
+<meta property="og:title" content="AI Agents vs. Agentic AI: Conceptual, Technical, and Comparative Analysis">
+<meta property="og:description" content="A source-verified comparison of AI agents and agentic AI: definitions, architectures, open standards, security, multi-agent failures, governance, and practical guidance.">
+<meta property="og:image" content="https://aridiosilva.com/infographics/Info_009/assets/slide-01.png">
+<link rel="alternate" hreflang="en" href="https://aridiosilva.com/infographics/Info_009/">
+<link rel="alternate" hreflang="pt-BR" href="https://aridiosilva.com/infographics/Info_009/pt/">
+<link rel="alternate" hreflang="x-default" href="https://aridiosilva.com/infographics/Info_009/">
+<link rel="sitemap" type="application/xml" href="/sitemap.xml">
+<link rel="describedby" href="/llms.txt" type="text/markdown">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;family=Source+Serif+4:opsz,wght@8..60,500;6..60,700&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/publications.css?v=20261012-14">
+<link rel="stylesheet" href="/assets/infographics.css?v=20261012-7">
+<script defer src="/assets/infographics.js?v=20261012-3"></script>
+</head>
+<body class="infographic-page">
+<a class="skip" href="#main">Skip to main content</a>
+<header class="site-header"><div class="shell header-inner">
+<a class="identity" href="/#top" aria-label="Aridio Silva home"><strong>Aridio Silva</strong><span>Independent Researcher · AI Systems Architecture</span></a>
+<nav aria-label="Primary navigation"><a href="/">Home</a><a href="/sgaeia.html">SGAEIA</a><a href="/publications.html">Publications</a><a href="/infographics/">Infographics</a></nav>
+</div></header>
+<main id="main">
+<section class="hero"><div class="shell article">
+<p class="eyebrow">Infographic 009 · LinkedIn carousel</p>
+<h1>AI Agents vs. Agentic AI</h1>
+<p class="subtitle">Conceptual, technical, and comparative analysis</p>
+<p class="meta">Aridio Silva · October 14, 2026 · 29 slides</p>
+<nav class="language-nav" aria-label="Infographic languages"><a href="/infographics/Info_009/" lang="en" aria-current="page">English</a><span aria-hidden="true">·</span><a href="/infographics/Info_009/pt/" lang="pt-BR">Português</a></nav>
+</div></section>
+
+<section class="carousel-section" aria-labelledby="carousel-title"><div class="shell article">
+<h2 id="carousel-title">Infographic carousel</h2>
+<p class="carousel-intro">Select the slide to open it full screen. Use the on-screen arrows, the keyboard arrow keys, or swipe on a touch screen.</p>
+<div class="infographic-carousel" data-infographic-carousel data-slide-count="29" data-slide-path="assets/slide-{NN}.png" data-title="AI Agents vs. Agentic AI">
+<div class="carousel-stage" tabindex="0" role="group" aria-roledescription="carousel" aria-label="AI Agents vs. Agentic AI infographic">
+<button class="carousel-slide-button" type="button" aria-label="Open infographic in full screen"><img class="carousel-slide" src="assets/slide-01.png" alt="AI Agents vs. Agentic AI - slide 1 of 29" width="1920" height="1080" decoding="async"></button>
+<button class="carousel-control carousel-prev" type="button" aria-label="Previous slide" hidden>‹</button>
+<button class="carousel-control carousel-next" type="button" aria-label="Next slide">›</button>
+<button class="carousel-close" type="button" aria-label="Close full-screen viewer">×</button>
+<span class="carousel-counter" aria-live="polite">1 / 29</span>
+</div>
+<div class="carousel-toolbar"><button class="button primary" type="button" data-open-carousel>Open full screen</button><a class="button" href="ai-agents-vs-agentic-ai-en.pdf" target="_blank" rel="noopener noreferrer">Open PDF</a><a class="button" href="ai-agents-vs-agentic-ai-en.pdf" download>Download PDF</a></div>
+</div>
+</div></section>
+
+<section class="content"><article class="shell article linkedin-copy">
+<p class="eyebrow">LinkedIn publication text</p>
+<h2>AI Agents vs. Agentic AI: what's the difference?</h2>
+<p>I compared what the primary sources say about the two terms. The uncomfortable conclusion: there is no consensus definition.</p>
+<p>🔎 <strong>What I found</strong></p>
+<ul>
+<li>Only the taxonomy by Sapkota et al. (2025) treats the terms as distinct categories: agent = module for a specific task; agentic AI = coordinated specialized agents with persistent memory.</li>
+<li>Anthropic separates workflows (predefined paths) from agents (the LLM drives the process).</li>
+<li>OpenAI defines an agent as a system that acts independently and treats “agenticness” as a degree, not a category.</li>
+<li>Google bets on layered architecture and the A2A protocol; MCP and AGENTS.md moved to the Agentic AI Foundation (Linux Foundation).</li>
+</ul>
+<p>⚠️ <strong>The flip side</strong></p>
+<ul>
+<li>Multi-agent systems can use about 15× the tokens of a chat (Anthropic).</li>
+<li>The MAST study mapped 14 failure modes in 3 categories.</li>
+<li>OWASP published a Top 10 of risks for agentic applications.</li>
+<li>Platforms shift fast: OpenAI shut down Agent Builder and Evals in Jun 2026.</li>
+</ul>
+<p>✅ <strong>What to do</strong></p>
+<ol>
+<li>Start with the simplest solution.</li>
+<li>Test end to end and by subtask before granting autonomy.</li>
+<li>Keep people in high-risk actions.</li>
+<li>State the definition you adopt.</li>
+</ol>
+<p>In the carousel: 29 slides, glossary, a 2022–2026 timeline, comparison tables and 15 references graded by verification level (A, B or C). Where I only found a secondary source, I marked it with †.</p>
+<p class="closing-question">Which definition does your team use?</p>
+<p>© Aridio Silva @aridiosilva · October 2026</p>
+<p class="hashtags">#AgenticAI #AIAgents #AIGovernance #CyberSecurity #ArtificialIntelligence</p>
+</article></section>
+</main>
+<footer><div class="shell"><p>© 2026 Aridio Silva · Project SGAEIA · Version 2.0</p></div></footer>
+</body>
+</html>
