@@ -386,6 +386,35 @@ Em 14 de outubro de 2026 foi incluído o `Info_011 — AI Jailbreak: From the iP
 
 ---
 
+## 20. Inclusão do Info_012 — When AI Agents Form Societies / Quando Agentes de IA Formam Sociedades
+
+Em 14 de outubro de 2026 foi incluído o `Info_012 — When AI Agents Form Societies / Quando Agentes de IA Formam Sociedades`, seguindo o padrão bilíngue já aprovado.
+
+- Foram criadas as páginas canônicas EN e PT-BR, cada uma com carrossel acessível de 16 slides, texto localizado da publicação no LinkedIn e acesso ao PDF original correspondente.
+- Os 32 slides foram renderizados em PNG a partir dos PDFs finais e inspecionados visualmente; a edição EN usa 1921 × 1080 px e a edição PT usa 1920 × 1080 px.
+- O card do Info_012 foi inserido no início de `infographics/index.html`; apenas sua capa usa carregamento prioritário e a capa do Info_011 passou a carregamento preguiçoso.
+- `sitemap.xml` recebeu as URLs EN/PT, `lastmod`, `hreflang` recíproco, `x-default` e capas localizadas.
+- `llms.txt` recebeu as páginas e os PDFs EN/PT; `robots.txt` recebeu o comentário de atualização.
+- As duas páginas carregam exatamente `/assets/analytics-consent.js?v=20261011`, preservam o GA4 `G-MXMJ7Z3LS7` e autorizam os domínios necessários na Content Security Policy.
+- O registro operacional detalhado está em `docs/logs/2026-10-14-INFO-012-AGENTES-FORMANDO-SOCIEDADES.md`.
+
+---
+
+## 21. Inclusão do Info_013 — An Alien Mind
+
+Em 14 de outubro de 2026 foi incluído o `Info_013 — An Alien Mind`, seguindo o padrão bilíngue já aprovado.
+
+- Foram criadas as páginas canônicas EN e PT-BR, cada uma com carrossel acessível de 17 slides, texto localizado da publicação no LinkedIn e acesso ao PDF original correspondente.
+- Os 34 slides foram renderizados em PNG a partir dos PDFs finais, em 1920 × 1080 px, e inspecionados visualmente.
+- O texto editorial fornecido menciona 16 slides, enquanto ambos os PDFs têm 17 páginas; o carrossel preserva todas as 17 páginas reais e o texto-fonte foi mantido sem reescrita.
+- O card do Info_013 foi inserido no início de `infographics/index.html`; apenas sua capa usa carregamento prioritário e a capa do Info_012 passou a carregamento preguiçoso.
+- `sitemap.xml` recebeu as URLs EN/PT, `lastmod`, `hreflang` recíproco, `x-default` e capas localizadas.
+- `llms.txt` recebeu as páginas e os PDFs EN/PT; `robots.txt` recebeu o comentário de atualização.
+- As duas páginas carregam exatamente `/assets/analytics-consent.js?v=20261011`, preservam o GA4 `G-MXMJ7Z3LS7` e autorizam os domínios necessários na Content Security Policy.
+- O registro operacional detalhado está em `docs/logs/2026-10-14-INFO-013-AN-ALIEN-MIND.md`.
+
+---
+
 ## Referências internas
 
 - `docs/logs/2026-10-11-HOMEPAGE-STYLE-CONTINUITY.md`
@@ -403,4 +432,4 @@ Em 14 de outubro de 2026 foi incluído o `Info_011 — AI Jailbreak: From the iP
 
 ## Observação final
 
-Este log descreve o padrão aprovado após a implantação do `Info_001 — Context Language Models (CLMs)`. O mesmo padrão foi aplicado ao `Info_002 — Threat Modeling in AI`, ao `Info_003 — AI Agent Execution Tracing`, ao `Info_004 — LoRA: Low-Rank Adaptation`, ao `Info_005 — From Zero to Weights / Do Zero aos Pesos`, ao `Info_006 — Anthropic Cyber Verification Program`, ao `Info_007 — AI Agents Unleashed`, ao `Info_008 — Agent-Assisted Peer Review`, ao `Info_009 — AI Agents vs. Agentic AI / Agentes de IA vs. IA Agêntica`, ao `Info_010 — Cancellation of Agentic AI Projects by 2027 / Cancelamento de projetos de IA agêntica até 2027` e ao `Info_011 — AI Jailbreak / Jailbreak de IA`. Ele deve ser atualizado quando uma decisão estrutural for alterada, mas não deve ser movido para `docs/prompts/`.
+Este log descreve o padrão aprovado após a implantação do `Info_001 — Context Language Models (CLMs)`. O mesmo padrão foi aplicado ao `Info_002 — Threat Modeling in AI`, ao `Info_003 — AI Agent Execution Tracing`, ao `Info_004 — LoRA: Low-Rank Adaptation`, ao `Info_005 — From Zero to Weights / Do Zero aos Pesos`, ao `Info_006 — Anthropic Cyber Verification Program`, ao `Info_007 — AI Agents Unleashed`, ao `Info_008 — Agent-Assisted Peer Review`, ao `Info_009 — AI Agents vs. Agentic AI / Agentes de IA vs. IA Agêntica`, ao `Info_010 — Cancellation of Agentic AI Projects by 2027 / Cancelamento de projetos de IA agêntica até 2027`, ao `Info_011 — AI Jailbreak / Jailbreak de IA`, ao `Info_012 — When AI Agents Form Societies / Quando Agentes de IA Formam Sociedades` e ao `Info_013 — An Alien Mind`. Ele deve ser atualizado quando uma decisão estrutural for alterada, mas não deve ser movido para `docs/prompts/`.
