@@ -372,6 +372,20 @@ Em 14 de outubro de 2026 foi incluído o `Info_010 — Cancellation of Agentic A
 
 ---
 
+## 19. Inclusão do Info_011 — AI Jailbreak / Jailbreak de IA
+
+Em 14 de outubro de 2026 foi incluído o `Info_011 — AI Jailbreak: From the iPhone to Language Models / Jailbreak de IA: do iPhone aos modelos de linguagem`, seguindo o padrão bilíngue já aprovado.
+
+- Foram criadas as páginas canônicas EN e PT-BR, cada uma com carrossel acessível de 19 slides, texto localizado da publicação no LinkedIn e acesso ao PDF original correspondente.
+- Os 38 slides foram renderizados em PNG a partir dos PDFs finais e inspecionados visualmente; a edição EN usa 1921 × 1080 px e a edição PT usa 1920 × 1080 px.
+- O card do Info_011 foi inserido no início de `infographics/index.html`; apenas sua capa usa carregamento prioritário e a capa do Info_010 passou a carregamento preguiçoso.
+- `sitemap.xml` recebeu as URLs EN/PT, `lastmod`, `hreflang` recíproco, `x-default` e capas localizadas.
+- `llms.txt` recebeu as páginas e os PDFs EN/PT; `robots.txt` recebeu o comentário de atualização.
+- As duas páginas carregam exatamente `/assets/analytics-consent.js?v=20261011`, preservam o GA4 `G-MXMJ7Z3LS7` e autorizam os domínios necessários na Content Security Policy.
+- O registro operacional detalhado está em `docs/logs/2026-10-14-INFO-011-JAILBREAK-IA.md`.
+
+---
+
 ## Referências internas
 
 - `docs/logs/2026-10-11-HOMEPAGE-STYLE-CONTINUITY.md`
@@ -389,4 +403,4 @@ Em 14 de outubro de 2026 foi incluído o `Info_010 — Cancellation of Agentic A
 
 ## Observação final
 
-Este log descreve o padrão aprovado após a implantação do `Info_001 — Context Language Models (CLMs)`. O mesmo padrão foi aplicado ao `Info_002 — Threat Modeling in AI`, ao `Info_003 — AI Agent Execution Tracing`, ao `Info_004 — LoRA: Low-Rank Adaptation`, ao `Info_005 — From Zero to Weights / Do Zero aos Pesos`, ao `Info_006 — Anthropic Cyber Verification Program`, ao `Info_007 — AI Agents Unleashed`, ao `Info_008 — Agent-Assisted Peer Review`, ao `Info_009 — AI Agents vs. Agentic AI / Agentes de IA vs. IA Agêntica` e ao `Info_010 — Cancellation of Agentic AI Projects by 2027 / Cancelamento de projetos de IA agêntica até 2027`. Ele deve ser atualizado quando uma decisão estrutural for alterada, mas não deve ser movido para `docs/prompts/`.
+Este log descreve o padrão aprovado após a implantação do `Info_001 — Context Language Models (CLMs)`. O mesmo padrão foi aplicado ao `Info_002 — Threat Modeling in AI`, ao `Info_003 — AI Agent Execution Tracing`, ao `Info_004 — LoRA: Low-Rank Adaptation`, ao `Info_005 — From Zero to Weights / Do Zero aos Pesos`, ao `Info_006 — Anthropic Cyber Verification Program`, ao `Info_007 — AI Agents Unleashed`, ao `Info_008 — Agent-Assisted Peer Review`, ao `Info_009 — AI Agents vs. Agentic AI / Agentes de IA vs. IA Agêntica`, ao `Info_010 — Cancellation of Agentic AI Projects by 2027 / Cancelamento de projetos de IA agêntica até 2027` e ao `Info_011 — AI Jailbreak / Jailbreak de IA`. Ele deve ser atualizado quando uma decisão estrutural for alterada, mas não deve ser movido para `docs/prompts/`.
