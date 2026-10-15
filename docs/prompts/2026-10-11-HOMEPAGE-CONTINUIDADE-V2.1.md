@@ -144,3 +144,80 @@ Continue a evolução da homepage `aridiosilva.com` a partir da versão 2.0 cons
 - O índice de infográficos mantém ordem decrescente e apresenta o Info_008 como primeiro card.
 - `sitemap.xml`, `llms.txt` e o comentário informativo de `robots.txt` foram atualizados para a nova publicação.
 - Próximos infográficos devem reutilizar o mesmo padrão de página, carrossel, metadados, descoberta, analytics e acessibilidade.
+
+## Atualização de continuidade — Info_015 — Carta Aberta sobre IA e Cibersegurança — 15 de outubro de 2026
+
+- Adicionado `Info_015`: `Open Letter on AI and Cybersecurity from the Scientific Community` / `Carta Aberta sobre IA e Cibersegurança da Comunidade Científica`.
+- Cada idioma possui 55 slides 16:9 renderizados em PNG a 1920 × 1080, PDF original e texto fornecido da publicação no LinkedIn.
+- Páginas: `/infographics/Info_015/` (EN) e `/infographics/Info_015/pt/` (PT), com canonical, hreflang recíproco e EN como x-default.
+- Novo card no topo do índice de infográficos; a capa do Info_014 passa a carregamento diferido.
+- Preservados o sistema visual compartilhado, cabeçalho fixo, rodapé versão 2.0, carrossel acessível, tela cheia, teclado, gestos e botões PDF.
+- Preservado o fragmento `/assets/analytics-consent.js?v=20261011`, propriedade GA4 `G-MXMJ7Z3LS7`, com a CSP existente.
+- Atualizados `sitemap.xml`, `llms.txt` e a data informativa de `robots.txt`; rastreamento integral permanece permitido.
+- PDFs originais copiados sem alteração; hashes SHA-256: EN `8217a84fee9d5dce37b64ea436f0780b1065b463065fd97a494e3c4c28651f60`; PT `730c5237703546986b88d562705edf75477fdfaa00271829047d9d376aa49e88`.
+- Backup restaurável antes da integração: `C:\Users\as294\Documents\Codex\2026-10-15\lei-3\work\backup-before-info015`.
+- Estado: atualização local; sem stage, commit ou push.
+
+### Validação do Info_015
+
+- Conferidas visualmente as folhas de contato dos 110 slides renderizados.
+- Confirmados 55 PNGs 1920 × 1080 e 55 páginas de PDF por idioma; hashes dos PDFs iguais aos arquivos fornecidos.
+- Confirmada a preservação integral dos textos EN/PT no HTML.
+- Verificados links locais das três páginas HTML e respostas HTTP 200 das páginas, capas, últimos slides e PDFs.
+- Testados no navegador os carrosséis EN/PT: avanço, Home/End, primeiro e último slide, tela cheia e fechamento por Escape.
+- Inspecionados índice e páginas EN/PT em largura normal e em 320 px, sem rolagem horizontal; override de viewport removido ao terminar os testes.
+- Confirmados GA4 compartilhado, canonical, hreflang, sitemap XML válido e sem URLs duplicadas, llms.txt e robots.txt.
+- `git diff --check` passou; nenhuma alteração adicionada ao stage, nenhum commit ou push executado.
+
+## Cabeçalhos centralizados dos infográficos 001–015 — 15 de outubro de 2026
+
+- O nome `Aridio Silva` e o subtítulo `Independent Researcher · AI Systems Architecture` passam a compartilhar o mesmo eixo central no bloco de identidade do cabeçalho.
+- O subtítulo quebra naturalmente e de forma equilibrada quando a largura disponível não comporta uma linha completa; removida a restrição de nowrap nas páginas de infográficos.
+- Ajuste restrito ao CSS compartilhado da seção Infographics, incluindo seu índice; nomes, links, navegação, analytics e carrosséis preservados.
+- As 30 páginas EN/PT dos infográficos 001–015 e o índice usam `assets/infographics.css?v=20261015-headers-1` para atualização imediata em cache.
+- Sitemap com lastmod dessas páginas atualizado para 2026-10-15.
+- Backup restaurável em `C:\Users\as294\Documents\Codex\2026-10-15\lei-3\work\backup-before-centered-headers`.
+- Atualização local, sem stage, commit ou push.
+
+### Verificação dos 30 cabeçalhos EN/PT
+
+- Testadas no navegador as 30 páginas dos infográficos 001–015 em 1280, 768 e 320 px (90 combinações).
+- Nome e subtítulo centralizados no mesmo bloco, com desvio medido inferior a 1 px em todos os casos.
+- Subtítulo em uma linha a 1280 px e em duas linhas a 768 e 320 px; nenhuma rolagem horizontal nas páginas testadas.
+- Confirmado o carregamento do CSS atualizado em todas as páginas; viewport temporária removida ao finalizar.
+- Comparação com backup confirmou que a única mudança nos 30 HTMLs foi a versão do CSS, preservando conteúdo, metadados, analytics e funcionalidades.
+- Sitemap XML válido; `git diff --check` passou.
+
+## Amostra de bloco de título azul — aguardando aprovação — 15 de outubro de 2026
+
+- A pedido do usuário, preparada uma amostra somente em `/infographics/Info_015/pt/`.
+- Fundo do bloco de título `.hero` em `#315f7f`, o mesmo da seção 05 About da homepage; título, subtítulo, identificação, data e links de idioma brancos.
+- Conforme a correção do usuário, a barra fixa de navegação está excluída da amostra e mantém seu visual anterior.
+- A amostra usa `assets/infographic-hero-preview.css?v=20261015-1`, carregado apenas pela página PT do Info_015; o CSS compartilhado permanece sem alteração nesta etapa.
+- Preservadas a centralização da identidade, quebra responsiva, navegação e Analytics.
+- Propagação aos 15 infográficos EN/PT condicionada à aprovação explícita desta amostra pelo usuário.
+- Backup anterior à amostra: `C:\Users\as294\Documents\Codex\2026-10-15\lei-3\work\backup-before-blue-header-sample`.
+- Sem stage, commit ou push.
+
+## Blocos de título azuis — amostra aprovada e propagada — 15 de outubro de 2026
+
+- O usuário aprovou a amostra e autorizou a propagação aos 15 infográficos EN/PT e aos índices de infográficos e de publicações (32 páginas).
+- O CSS compartilhado `assets/editorial-hero.css?v=20261015-1` aplica fundo `#315f7f`, igual à seção 05 About da homepage, com títulos, subtítulos, textos introdutórios, datas e links de idioma brancos.
+- A alteração se limita ao bloco `.hero`; a barra fixa de navegação mantém seu estilo, centralização e comportamento anteriores.
+- A folha temporária da amostra foi substituída pela folha compartilhada; o fragmento GA4 e o conteúdo das páginas foram preservados.
+- Sitemap atualizado para registrar a modificação das 32 páginas em 2026-10-15.
+- Backup restaurável: `C:\Users\as294\Documents\Codex\2026-10-15\lei-3\work\backup-before-blue-hero-propagation`.
+- Atualização local, sem stage, commit ou push.
+
+- Complemento solicitado: links English/Português com hover e foco visível, fundo `#244b68`, sublinhado branco e respeito a movimento reduzido; CSS compartilhado atualizado para `?v=20261015-2`.
+
+- Complemento solicitado: rodapés das 30 páginas EN/PT e do índice de infográficos com fundo `#315f7f` e letras brancas, preservando conteúdo e versão; CSS compartilhado `?v=20261015-3`. O rodapé do índice de publicações permanece no padrão anterior.
+
+### Validação final do padrão azul, links e rodapés
+
+- Conferidas no navegador as 32 páginas em 1280 e 320 px (64 combinações): bloco de título azul, textos brancos e nenhuma rolagem horizontal.
+- Confirmados fundo azul e texto branco nos 31 rodapés de infográficos; barra fixa com cor anterior em todas as páginas.
+- O hover dos links de idioma compartilha a regra de destaque do foco por teclado, conferido visualmente no link Português.
+- Comparação com o backup confirmou conteúdo do body inalterado em todos os HTMLs; Analytics preservado e folha compartilhada v20261015-3 carregada uma vez em cada página.
+- Prévia temporária retirada; sitemap válido; viewport de teste removida ao finalizar.
+- `git diff --check` passou; sem stage, commit ou push.

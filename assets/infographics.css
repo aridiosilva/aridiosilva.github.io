@@ -36,6 +36,28 @@
   box-shadow: 0 3px 14px rgb(23 70 77 / .12);
 }
 
+/* Center the two-line identity and let its subtitle wrap naturally. */
+.infographic-page .site-header .identity,
+.infographic-index .site-header .identity {
+  min-width: 0;
+  max-width: 100%;
+  text-align: center;
+  white-space: normal;
+}
+
+.infographic-page .site-header .identity strong,
+.infographic-index .site-header .identity strong {
+  max-width: 100%;
+  margin-inline: auto;
+}
+
+.infographic-page .site-header .identity span,
+.infographic-index .site-header .identity span {
+  white-space: normal;
+  overflow-wrap: break-word;
+  text-wrap: balance;
+}
+
 .infographic-page .site-header .identity,
 .infographic-page .site-header nav a {
   padding: 5px 8px;

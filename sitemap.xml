@@ -14,19 +14,39 @@
   </url>
   <url>
     <loc>https://aridiosilva.com/publications.html</loc>
-    <lastmod>2026-10-11</lastmod>
+    <lastmod>2026-10-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://aridiosilva.com/infographics/</loc>
-    <lastmod>2026-10-14</lastmod>
+    <lastmod>2026-10-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://aridiosilva.com/infographics/Info_015/</loc>
+    <lastmod>2026-10-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aridiosilva.com/infographics/Info_015/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://aridiosilva.com/infographics/Info_015/pt/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aridiosilva.com/infographics/Info_015/"/>
+    <image:image><image:loc>https://aridiosilva.com/infographics/Info_015/assets/slide-01.png</image:loc><image:title>Open Letter on AI and Cybersecurity from the Scientific Community</image:title><image:caption>© 2026 Aridio Silva</image:caption></image:image>
+  </url>
+  <url>
+    <loc>https://aridiosilva.com/infographics/Info_015/pt/</loc>
+    <lastmod>2026-10-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aridiosilva.com/infographics/Info_015/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://aridiosilva.com/infographics/Info_015/pt/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aridiosilva.com/infographics/Info_015/"/>
+    <image:image><image:loc>https://aridiosilva.com/infographics/Info_015/pt/assets/slide-01.png</image:loc><image:title>Carta Aberta sobre IA e Cibersegurança da Comunidade Científica</image:title><image:caption>© 2026 Aridio Silva</image:caption></image:image>
+  </url>
+  <url>
     <loc>https://aridiosilva.com/infographics/Info_014/</loc>
-    <lastmod>2026-10-14</lastmod>
+    <lastmod>2026-10-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://aridiosilva.com/infographics/Info_014/"/>
@@ -36,7 +56,7 @@
   </url>
   <url>
     <loc>https://aridiosilva.com/infographics/Info_014/pt/</loc>
-    <lastmod>2026-10-14</lastmod>
+    <lastmod>2026-10-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://aridiosilva.com/infographics/Info_014/"/>
@@ -46,7 +66,7 @@
   </url>
   <url>
     <loc>https://aridiosilva.com/infographics/Info_013/</loc>
-    <lastmod>2026-10-14</lastmod>
+    <lastmod>2026-10-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://aridiosilva.com/infographics/Info_013/"/>
@@ -56,7 +76,7 @@
   </url>
   <url>
     <loc>https://aridiosilva.com/infographics/Info_013/pt/</loc>
-    <lastmod>2026-10-14</lastmod>
+    <lastmod>2026-10-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://aridiosilva.com/infographics/Info_013/"/>
@@ -66,7 +86,7 @@
   </url>
   <url>
     <loc>https://aridiosilva.com/infographics/Info_012/</loc>
-    <lastmod>2026-10-14</lastmod>
+    <lastmod>2026-10-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://aridiosilva.com/infographics/Info_012/"/>
@@ -76,7 +96,7 @@
   </url>
   <url>
     <loc>https://aridiosilva.com/infographics/Info_012/pt/</loc>
-    <lastmod>2026-10-14</lastmod>
+    <lastmod>2026-10-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://aridiosilva.com/infographics/Info_012/"/>
@@ -86,7 +106,7 @@
   </url>
   <url>
     <loc>https://aridiosilva.com/infographics/Info_011/</loc>
-    <lastmod>2026-10-14</lastmod>
+    <lastmod>2026-10-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://aridiosilva.com/infographics/Info_011/"/>
@@ -96,7 +116,7 @@
   </url>
   <url>
     <loc>https://aridiosilva.com/infographics/Info_011/pt/</loc>
-    <lastmod>2026-10-14</lastmod>
+    <lastmod>2026-10-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://aridiosilva.com/infographics/Info_011/"/>
@@ -106,7 +126,7 @@
   </url>
   <url>
     <loc>https://aridiosilva.com/infographics/Info_010/</loc>
-    <lastmod>2026-10-14</lastmod>
+    <lastmod>2026-10-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://aridiosilva.com/infographics/Info_010/"/>
@@ -116,7 +136,7 @@
   </url>
   <url>
     <loc>https://aridiosilva.com/infographics/Info_010/pt/</loc>
-    <lastmod>2026-10-14</lastmod>
+    <lastmod>2026-10-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://aridiosilva.com/infographics/Info_010/"/>
@@ -126,7 +146,7 @@
   </url>
   <url>
     <loc>https://aridiosilva.com/infographics/Info_009/</loc>
-    <lastmod>2026-10-14</lastmod>
+    <lastmod>2026-10-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://aridiosilva.com/infographics/Info_009/"/>
@@ -136,7 +156,7 @@
   </url>
   <url>
     <loc>https://aridiosilva.com/infographics/Info_009/pt/</loc>
-    <lastmod>2026-10-14</lastmod>
+    <lastmod>2026-10-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://aridiosilva.com/infographics/Info_009/"/>
@@ -146,7 +166,7 @@
   </url>
   <url>
     <loc>https://aridiosilva.com/infographics/Info_008/</loc>
-    <lastmod>2026-10-14</lastmod>
+    <lastmod>2026-10-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://aridiosilva.com/infographics/Info_008/"/>
@@ -156,7 +176,7 @@
   </url>
   <url>
     <loc>https://aridiosilva.com/infographics/Info_008/pt/</loc>
-    <lastmod>2026-10-14</lastmod>
+    <lastmod>2026-10-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://aridiosilva.com/infographics/Info_008/"/>
@@ -166,7 +186,7 @@
   </url>
   <url>
     <loc>https://aridiosilva.com/infographics/Info_007/</loc>
-    <lastmod>2026-10-12</lastmod>
+    <lastmod>2026-10-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://aridiosilva.com/infographics/Info_007/"/>
@@ -176,7 +196,7 @@
   </url>
   <url>
     <loc>https://aridiosilva.com/infographics/Info_007/pt/</loc>
-    <lastmod>2026-10-12</lastmod>
+    <lastmod>2026-10-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://aridiosilva.com/infographics/Info_007/"/>
@@ -186,7 +206,7 @@
   </url>
   <url>
     <loc>https://aridiosilva.com/infographics/Info_006/</loc>
-    <lastmod>2026-10-12</lastmod>
+    <lastmod>2026-10-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://aridiosilva.com/infographics/Info_006/"/>
@@ -196,7 +216,7 @@
   </url>
   <url>
     <loc>https://aridiosilva.com/infographics/Info_006/pt/</loc>
-    <lastmod>2026-10-12</lastmod>
+    <lastmod>2026-10-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://aridiosilva.com/infographics/Info_006/"/>
@@ -206,7 +226,7 @@
   </url>
   <url>
     <loc>https://aridiosilva.com/infographics/Info_005/</loc>
-    <lastmod>2026-10-12</lastmod>
+    <lastmod>2026-10-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://aridiosilva.com/infographics/Info_005/"/>
@@ -216,7 +236,7 @@
   </url>
   <url>
     <loc>https://aridiosilva.com/infographics/Info_005/pt/</loc>
-    <lastmod>2026-10-12</lastmod>
+    <lastmod>2026-10-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://aridiosilva.com/infographics/Info_005/"/>
@@ -226,7 +246,7 @@
   </url>
   <url>
     <loc>https://aridiosilva.com/infographics/Info_004/</loc>
-    <lastmod>2026-10-12</lastmod>
+    <lastmod>2026-10-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://aridiosilva.com/infographics/Info_004/"/>
@@ -236,7 +256,7 @@
   </url>
   <url>
     <loc>https://aridiosilva.com/infographics/Info_004/pt/</loc>
-    <lastmod>2026-10-12</lastmod>
+    <lastmod>2026-10-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://aridiosilva.com/infographics/Info_004/"/>
@@ -246,7 +266,7 @@
   </url>
   <url>
     <loc>https://aridiosilva.com/infographics/Info_003/</loc>
-    <lastmod>2026-10-12</lastmod>
+    <lastmod>2026-10-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://aridiosilva.com/infographics/Info_003/"/>
@@ -256,7 +276,7 @@
   </url>
   <url>
     <loc>https://aridiosilva.com/infographics/Info_003/pt/</loc>
-    <lastmod>2026-10-12</lastmod>
+    <lastmod>2026-10-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://aridiosilva.com/infographics/Info_003/"/>
@@ -266,7 +286,7 @@
   </url>
   <url>
     <loc>https://aridiosilva.com/infographics/Info_002/</loc>
-    <lastmod>2026-10-12</lastmod>
+    <lastmod>2026-10-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://aridiosilva.com/infographics/Info_002/"/>
@@ -276,7 +296,7 @@
   </url>
   <url>
     <loc>https://aridiosilva.com/infographics/Info_002/pt/</loc>
-    <lastmod>2026-10-12</lastmod>
+    <lastmod>2026-10-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://aridiosilva.com/infographics/Info_002/"/>
@@ -286,7 +306,7 @@
   </url>
   <url>
     <loc>https://aridiosilva.com/infographics/Info_001/</loc>
-    <lastmod>2026-10-12</lastmod>
+    <lastmod>2026-10-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://aridiosilva.com/infographics/Info_001/"/>
@@ -296,7 +316,7 @@
   </url>
   <url>
     <loc>https://aridiosilva.com/infographics/Info_001/pt/</loc>
-    <lastmod>2026-10-12</lastmod>
+    <lastmod>2026-10-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://aridiosilva.com/infographics/Info_001/"/>

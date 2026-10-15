@@ -1,0 +1,55 @@
+/* Match the homepage About palette for infographic and index title blocks. */
+:is(.infographic-page, .publications-index) .hero {
+  color: #fff;
+  background: #315f7f;
+}
+
+:is(.infographic-page, .publications-index) .hero :is(.eyebrow, h1, .subtitle, .lede, .meta, .language-nav, a) {
+  color: #fff;
+}
+
+:is(.infographic-page, .publications-index) .hero .language-nav a {
+  padding: 5px 8px;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color .18s ease, box-shadow .18s ease;
+}
+
+:is(.infographic-page, .publications-index) .hero .language-nav a:hover,
+:is(.infographic-page, .publications-index) .hero .language-nav a:focus-visible {
+  color: #fff;
+  background: #244b68;
+  box-shadow: inset 0 -2px 0 #fff;
+  text-decoration-line: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+}
+
+:is(.infographic-page, .publications-index) .hero a:focus-visible {
+  outline-color: #fff;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :is(.infographic-page, .publications-index) .hero .language-nav a {
+    transition: none;
+  }
+}
+
+/* Infographic footers use the same approved blue palette. */
+:is(.infographic-page, .infographic-index) footer {
+  color: #fff;
+  background: #315f7f;
+  border-top-color: rgb(255 255 255 / .34);
+}
+
+:is(.infographic-page, .infographic-index) footer a {
+  color: #fff;
+}
+
+:is(.infographic-page, .infographic-index) footer a:hover {
+  text-decoration-thickness: 2px;
+}
+
+:is(.infographic-page, .infographic-index) footer a:focus-visible {
+  outline-color: #fff;
+}
