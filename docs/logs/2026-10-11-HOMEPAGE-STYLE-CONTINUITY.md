@@ -747,3 +747,76 @@ git push origin main
 - Comparação com o backup confirmou conteúdo do body inalterado em todos os HTMLs; Analytics preservado e folha compartilhada v20261015-3 carregada uma vez em cada página.
 - Prévia temporária retirada; sitemap válido; viewport de teste removida ao finalizar.
 - `git diff --check` passou; sem stage, commit ou push.
+
+## Registro consolidado da entrega — 15 de outubro de 2026
+
+### Infográfico bilingue Info_015
+
+- Incluída a análise da Carta Aberta sobre IA e Cibersegurança da Comunidade Científica, com edições em inglês e português.
+- 55 slides por idioma, 110 PNGs em 1920 × 1080, PDFs originais preservados e textos fornecidos incorporados às páginas HTML.
+- Páginas `/infographics/Info_015/` e `/infographics/Info_015/pt/`, com links recíprocos, canonical, hreflang e inglês como x-default.
+- Card incluído no topo de `/infographics/`; atualizados `sitemap.xml`, `robots.txt` e `llms.txt`.
+
+### Padrão visual final aprovado
+
+- Nome Aridio Silva e subtítulo do cabeçalho centralizados entre si nas 30 páginas EN/PT dos infográficos 001–015; subtítulo com quebra responsiva.
+- Bloco de título azul `#315f7f`, igual ao About da homepage, com textos brancos nas 30 páginas EN/PT e nos índices de infográficos e publicações (32 páginas).
+- Barra fixa de navegação preservada, conforme instrução explícita do usuário.
+- Links English e Português com hover e foco por teclado: fundo `#244b68`, sublinhado branco e respeito a movimento reduzido.
+- Rodapés azuis com letras brancas nas 30 páginas EN/PT e no índice de infográficos (31 páginas). O rodapé do índice de publicações mantém o padrão anterior.
+- Estilos finais: `assets/infographics.css?v=20261015-headers-1` e `assets/editorial-hero.css?v=20261015-3`.
+- Folha temporária da amostra retirada após aprovação e substituída pelo CSS compartilhado.
+- Google Analytics GA4 `G-MXMJ7Z3LS7`, CSP, conteúdo, carrosséis, responsividade e identificação visível da versão 2.0 preservados.
+
+### Validações registradas nesta sessão
+
+- 110 slides conferidos visualmente e PDFs verificados por hashes SHA-256.
+- Carrosséis EN/PT testados com avanço, retorno, primeiro/último slide, Home/End, tela cheia e Escape.
+- Cabeçalhos das 30 páginas conferidos em 1280, 768 e 320 px (90 combinações).
+- Estilo final das 32 páginas conferido em 1280 e 320 px (64 combinações), incluindo textos brancos, rodapés, navegação fixa e ausência de rolagem horizontal.
+- Conteúdo do body comparado com backup e preservado nas 32 páginas; Analytics mantido; sitemap XML válido; `git diff --check` sem erros.
+- Backups e evidências da sessão mantidos em `C:\Users\as294\Documents\Codex\2026-10-15\lei-3\work\` e `outputs\`.
+
+### Estado Git observado ao gravar este registro
+
+- Commit da entrega já existente: `5263c6271d73ad361d9b3c0d1504a4da0f7457cd` — `feat: adiciona Info_015 bilingue e padroniza titulos e rodapes em azul`.
+- Referência local `origin/main`: `5263c6271d73ad361d9b3c0d1504a4da0f7457cd`; alinhada com HEAD na inspeção. Não foi realizada nova consulta ao remoto nem verificação de implantação pública nesta etapa.
+- O pedido atual altera somente este log. Este registro consolidado fica pendente de stage, commit e push; nenhum desses comandos foi executado pelo assistente.
+
+
+## Regra vigente — artigos, infográficos e índices — 16 de outubro de 2026
+
+Esta seção prevalece sobre descrições históricas conflitantes neste documento. O pedido atual do usuário define o escopo de cada trabalho; instruções históricas não autorizam ações adicionais.
+
+- Escopo: índice canônico de publicações `/publications.html`, índice de infográficos `/infographics/`, todos os artigos existentes em EN/PT e todos os infográficos existentes em EN/PT. Aplicar também a cada novo artigo e infográfico. Não criar traduções nem índices paralelos que não tenham sido solicitados.
+- Cabeçalho fixo: fundo branco `#fff`, letras pretas `#000`, identidade centralizada com subtítulo responsivo e navegação com quebra natural. Preservar controles de leitura, acessibilidade e links existentes.
+- O menu de todos os artigos deve incluir `Infographics` em EN ou `Infográficos` em PT, com destino `/infographics/`, após Publications/Publicações. O link deve ter hover e foco por teclado equivalentes aos demais itens: fundo `#c8dcdf`, texto preto, sublinhado e indicação inferior `#123b5d`.
+- Área de título `.hero`: fundo azul `#315f7f`, títulos, subtítulos, autoria, datas e links brancos. Nas edições bilingues, usar `class="language-nav"` no nav de idiomas e preservar os destinos recíprocos English/Português. Hover e foco dos idiomas: fundo `#244b68`, texto branco, sublinhado branco e foco visível. Não inventar edição alternativa para artigo disponível em um único idioma.
+- Rodapés de todas essas páginas: fundo azul `#315f7f`, texto e links brancos, conteúdo centralizado e quebra responsiva. Preservar o texto e a identificação de versão já existentes; não alterar a versão editorial por causa do estilo.
+- Carregar `assets/fixed-site-header.css?v=20261016-1`, `assets/editorial-hero.css?v=20261016-1` e `assets/fixed-site-header.js?v=20261016-1` uma única vez por página. O CSS editorial deve vir após os estilos específicos; o script mede a altura real do header para compensar o espaço superior e as âncoras. Atualizar o cache-busting coordenadamente quando um ativo mudar.
+- Marcar páginas individuais de artigos com `body.article-page`; preservar `body.infographic-page` nos infográficos e `body.publications-index` nos índices, além de outras classes existentes. Reutilizar os estilos compartilhados, evitando cópias locais divergentes.
+- Preservar conteúdo editorial, imagens, PDFs, GA4 `G-MXMJ7Z3LS7`, CSP, canonical, hreflang, sitemap, llms.txt, robots.txt, carrosséis e controles de acessibilidade. Atualizar lastmod no sitemap para páginas efetivamente alteradas.
+- Conferir desktop e 320 px: header fixo sem sobrepor o início do conteúdo, ausência de rolagem horizontal, hover/foco visíveis, idioma correto do menu e rodapés azuis. Respeitar prefers-reduced-motion. Executar `git diff --check`.
+- Trabalhar localmente com backup restaurável. Não executar stage, commit ou push sem solicitação explícita do usuário.
+
+### Aplicação local desta atualização
+
+- 24 páginas de artigos (20 EN e 4 PT), 30 páginas de infográficos (15 EN e 15 PT) e 2 índices: 56 páginas.
+- Preservada a alteração pendente que já existia no log antes desta atualização.
+- Backup restaurável: `C:\Users\as294\Documents\Codex\2026-10-16\prec\outputs\backup-before-editorial-style-2026-10-16.zip`.
+- Alterações locais; sem stage, commit ou push. O registro de validação é mantido separadamente nos resultados da sessão.
+
+### Verificação desta atualização — 16 de outubro de 2026
+
+56 páginas verificadas no navegador em 1280 e 320 px: 112 combinações sem falhas de cores, header fixo, texto preto no header, texto branco nos títulos/rodapés, sobreposição inicial ou rolagem horizontal.
+Links de idioma e Infográficos verificados por navegação de teclado, com foco visível e sublinhado. Menu com fundo #c8dcdf e idiomas com fundo #244b68; hover e foco compartilham os mesmos seletores CSS.
+Comparação automatizada confirmou preservação integral do body, salvo a nova classe de página, o link Infographics/Infográficos e a classe do nav de idiomas. Metadados, Analytics, textos, carrosséis, imagens e PDFs preservados. Sitemap XML válido e sem URLs duplicadas.
+
+## Complemento vigente — homepage e SGAEIA — 16 de outubro de 2026
+
+- A homepage `index.html` e a principal `sgaeia.html` também usam cabeçalho fixo branco `#fff`, com identidade e menu em preto.
+- O bloco inicial `.hero` usa azul `#315f7f`, com título, rótulo, introdução, metadados e links brancos, em todos os idiomas existentes EN/PT/ES/FR/DE.
+- O painel lateral do bloco inicial usa azul `#244b68`, texto branco e borda branca; botões mantêm texto e borda brancos, com destaque de hover/foco em `#173b54` e foco branco visível.
+- Em `sgaeia.html`, o banner institucional abaixo do cabeçalho acompanha o fundo azul e o texto branco; o logotipo original permanece em base branca para legibilidade.
+- Estilo compartilhado: `/assets/homepage-hero.css?v=20261016-2`, carregado após o CSS embutido nas duas páginas. Preservar esse padrão em futuras alterações, traduções, controles de leitura e responsividade.
+- Conteúdo do body preservado integralmente nas duas páginas; atualizar o lastmod dessas URLs no sitemap. Sem stage, commit ou push nesta etapa.

@@ -1,22 +1,22 @@
-/* Match the homepage About palette for infographic and index title blocks. */
-:is(.infographic-page, .publications-index) .hero {
+/* Shared editorial title blocks: articles, infographics and their indexes. */
+:is(.article-page, .infographic-page, .publications-index) .hero {
   color: #fff;
   background: #315f7f;
 }
 
-:is(.infographic-page, .publications-index) .hero :is(.eyebrow, h1, .subtitle, .lede, .meta, .language-nav, a) {
+:is(.article-page, .infographic-page, .publications-index) .hero :is(.eyebrow, h1, .subtitle, .lede, .meta, .language-nav, a) {
   color: #fff;
 }
 
-:is(.infographic-page, .publications-index) .hero .language-nav a {
+:is(.article-page, .infographic-page, .publications-index) .hero .language-nav a {
   padding: 5px 8px;
   border-radius: 5px;
   text-decoration: none;
   transition: background-color .18s ease, box-shadow .18s ease;
 }
 
-:is(.infographic-page, .publications-index) .hero .language-nav a:hover,
-:is(.infographic-page, .publications-index) .hero .language-nav a:focus-visible {
+:is(.article-page, .infographic-page, .publications-index) .hero .language-nav a:hover,
+:is(.article-page, .infographic-page, .publications-index) .hero .language-nav a:focus-visible {
   color: #fff;
   background: #244b68;
   box-shadow: inset 0 -2px 0 #fff;
@@ -25,31 +25,108 @@
   text-underline-offset: 4px;
 }
 
-:is(.infographic-page, .publications-index) .hero a:focus-visible {
+:is(.article-page, .infographic-page, .publications-index) .hero a:focus-visible {
   outline-color: #fff;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  :is(.infographic-page, .publications-index) .hero .language-nav a {
+  :is(.article-page, .infographic-page, .publications-index) .hero .language-nav a {
     transition: none;
   }
 }
 
-/* Infographic footers use the same approved blue palette. */
-:is(.infographic-page, .infographic-index) footer {
+/* All editorial footers use the approved blue palette. */
+:is(.article-page, .infographic-page, .publications-index) footer {
   color: #fff;
   background: #315f7f;
   border-top-color: rgb(255 255 255 / .34);
 }
 
-:is(.infographic-page, .infographic-index) footer a {
+:is(.article-page, .infographic-page, .publications-index) footer a {
   color: #fff;
 }
 
-:is(.infographic-page, .infographic-index) footer a:hover {
+:is(.article-page, .infographic-page, .publications-index) footer a:hover {
   text-decoration-thickness: 2px;
 }
 
-:is(.infographic-page, .infographic-index) footer a:focus-visible {
+:is(.article-page, .infographic-page, .publications-index) footer a:focus-visible {
   outline-color: #fff;
+}
+
+/* Fixed editorial navigation: white background, black text and visible hover/focus. */
+body:is(.article-page, .infographic-page, .publications-index) .site-header {
+  color: #000;
+  background: #fff;
+  border-bottom-color: #c6d4d1;
+  box-shadow: 0 3px 14px rgb(23 70 77 / .12);
+}
+body:is(.article-page, .infographic-page, .publications-index) .site-header .header-inner {
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 12px 28px;
+  padding-block: 12px;
+}
+body:is(.article-page, .infographic-page, .publications-index) .site-header .identity {
+  min-width: 0;
+  max-width: 100%;
+  text-align: center;
+  white-space: normal;
+}
+body:is(.article-page, .infographic-page, .publications-index) .site-header .identity strong {
+  margin-inline: auto;
+}
+body:is(.article-page, .infographic-page, .publications-index) .site-header .identity span {
+  white-space: normal;
+  overflow-wrap: break-word;
+  text-wrap: balance;
+}
+body:is(.article-page, .infographic-page, .publications-index) .site-header :is(.identity, .identity strong, .identity span, nav a) {
+  color: #000;
+}
+body:is(.article-page, .infographic-page, .publications-index) .site-header nav {
+  justify-content: center;
+  gap: 8px 12px;
+}
+body:is(.article-page, .infographic-page, .publications-index) .site-header :is(.identity, nav a) {
+  padding: 5px 8px;
+  border-radius: 5px;
+  transition: background-color .18s ease, box-shadow .18s ease;
+}
+body:is(.article-page, .infographic-page, .publications-index) .site-header :is(.identity, nav a):is(:hover, :focus-visible) {
+  color: #000;
+  background: #c8dcdf;
+  box-shadow: inset 0 -3px 0 #123b5d;
+  text-decoration-line: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 5px;
+}
+body:is(.article-page, .infographic-page, .publications-index) .site-header .identity:is(:hover, :focus-visible) strong {
+  color: #000;
+  border-bottom-color: #000;
+}
+.article-page .site-header .reading-tools {
+  flex-basis: 100%;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+}
+.article-page .site-header .reading-tools button { color: #000; }
+.article-page .site-header .reading-tools button[aria-pressed="true"] {
+  color: #fff;
+  background: #244b68;
+}
+.article-page .hero { overflow-wrap: break-word; }
+.article-page .hero .language-nav { gap: 8px; }
+body:is(.article-page, .infographic-page, .publications-index) footer .shell {
+  color: #fff;
+  text-align: center;
+  overflow-wrap: anywhere;
+}
+body:is(.article-page, .infographic-page, .publications-index) .skip { z-index: 1100; }
+@media (prefers-reduced-motion: reduce) {
+  body:is(.article-page, .infographic-page, .publications-index) .site-header :is(.identity, .identity strong, nav a) { transition: none; }
 }
