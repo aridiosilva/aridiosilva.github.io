@@ -136,6 +136,14 @@ Continue a evolução da homepage `aridiosilva.com` a partir da versão 2.0 cons
 - O sitemap e o `llms.txt` incluem as páginas e os PDFs do Info_007.
 - Próximos infográficos devem reutilizar o mesmo padrão de página, carrossel, metadados, descoberta, analytics e acessibilidade.
 
+## Regra adicional — conferência antes de numerar novos infográficos — 16 de outubro de 2026
+
+- Antes de criar um novo bloco no índice, procurar a pasta `infographics/Info_NNN/`, o card em `infographics/index.html`, as URLs do `sitemap.xml` e os registros correspondentes em `llms.txt`.
+- Comparar os PDFs fornecidos com os PDFs publicados por SHA-256 e conferir título, textos EN/PT, número de slides, links de idioma, PDFs, canonical, hreflang e GA4.
+- Se o infográfico já existir, manter seu número e atualizar somente o que estiver faltando. Não criar um `Info_016` duplicado nem um cartão com número diferente apontando para uma página existente.
+- No índice, o link principal do card deve abrir a edição inglesa; o botão `Português` deve abrir a edição portuguesa.
+- Ao concluir uma conferência ou inclusão, registrar no log da homepage os caminhos, a decisão de numeração, os arquivos de descoberta verificados e o estado de stage/commit/push.
+
 ## Atualização do ciclo 2.1 — Info_008 — 14 de outubro de 2026
 
 - `Info_008` publica `Agent-Assisted Peer Review` / `Revisão por Pares Assistida por Agentes de IA` em inglês e português.

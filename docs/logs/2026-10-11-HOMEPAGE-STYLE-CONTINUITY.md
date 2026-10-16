@@ -820,3 +820,12 @@ Comparação automatizada confirmou preservação integral do body, salvo a nova
 - Em `sgaeia.html`, o banner institucional abaixo do cabeçalho acompanha o fundo azul e o texto branco; o logotipo original permanece em base branca para legibilidade.
 - Estilo compartilhado: `/assets/homepage-hero.css?v=20261016-2`, carregado após o CSS embutido nas duas páginas. Preservar esse padrão em futuras alterações, traduções, controles de leitura e responsividade.
 - Conteúdo do body preservado integralmente nas duas páginas; atualizar o lastmod dessas URLs no sitemap. Sem stage, commit ou push nesta etapa.
+
+## Conferência do Infográfico 014 e encerramento da sessão — 16 de outubro de 2026
+
+- Os PDFs fornecidos para `When AI Starts Building Itself` / `Quando a IA Começa a Construir a Si Mesma` foram comparados com as cópias publicadas em `infographics/Info_014/`; os hashes SHA-256 coincidem integralmente.
+- As páginas EN/PT já existentes foram confirmadas em `/infographics/Info_014/` e `/infographics/Info_014/pt/`, com 16 slides por idioma, textos correspondentes do LinkedIn, links de PDF, canonical, hreflang e GA4 `G-MXMJ7Z3LS7`.
+- O índice `/infographics/` já contém o card do Info_014. O link principal abre a edição inglesa; o botão `Português` abre a edição portuguesa.
+- `sitemap.xml`, `llms.txt` e `robots.txt` já registram a publicação e seus mecanismos de descoberta. Não foi criado um cartão 016 duplicado.
+- As páginas EN, PT e o índice foram abertas no navegador local para revisão visual.
+- Nenhuma alteração de conteúdo foi necessária nesta conferência; não houve stage, commit ou push.
