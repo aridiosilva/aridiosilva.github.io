@@ -7,9 +7,16 @@ The primary research themes are Agentic AI, multi-agent systems, AI security, Ze
 ## Official website
 
 - [Aridio Silva — Research homepage](https://aridiosilva.com/): Research profile, selected publications, public writing, academic profiles, and links to the SGAEIA program.
-- [SGAEIA — Research program](https://aridiosilva.com/sgaeia.html): Public overview of the architecture, research principles, publication series, roadmap, and research artifacts.
+- [SGAEIA — Research program](https://aridiosilva.com/sgaeia.html): Public overview of the architecture, research principles, publication platforms, roadmap, and research artifacts.
 
 ## Publication index
+
+- [The Open Letter on AI and Cybersecurity and the Evidence for Agent Containment — Article 21, English](https://aridiosilva.com/publications/artigo21/): Complete English edition with cover, two figures and 18 references; DOI 10.5281/zenodo.23426350.
+- [Carta aberta sobre AI e cibersegurança e as evidências que sustentam a contenção de agentes — Artigo 21, Português](https://aridiosilva.com/publications/artigo21/pt/): Edição integral em português com capa, duas figuras e 18 referências; DOI 10.5281/zenodo.23426350.
+- [Article 21 — Zenodo DOI](https://zenodo.org/records/23426350): Publication distribution record.
+- [Article 21 — Medium](https://medium.com/@aridiosilva/the-open-letter-on-ai-and-cybersecurity-and-the-evidence-for-agent-containment-071f1882f34d): Publication distribution record.
+- [Article 21 — DEV Community](https://dev.to/aridiosilva/the-open-letter-on-ai-and-cybersecurity-and-the-evidence-for-agent-containment-4a19): Publication distribution record.
+- [Article 21 — Academia.edu](https://www.academia.edu/179088614/The_Open_Letter_on_AI_and_Cybersecurity_and_the_Evidence_for_Agent_Containment): Publication distribution record.
 
 - [AI Agents and Agentic AI — Article 20, English](https://aridiosilva.com/publications/artigo20/): Complete English article with cover, three figures, two comparative tables and 37 references; DOI 10.5281/zenodo.23373900.
 - [Agentes de AI e AI agêntica — Artigo 20, Português](https://aridiosilva.com/publications/artigo20/pt/): Edição integral em português com capa, três figuras, duas tabelas comparativas e 37 referências; DOI 10.5281/zenodo.23373900.

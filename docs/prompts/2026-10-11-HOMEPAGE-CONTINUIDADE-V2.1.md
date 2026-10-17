@@ -267,3 +267,140 @@ Comparação automatizada confirmou preservação integral do body, salvo a nova
 - Em `sgaeia.html`, o banner institucional abaixo do cabeçalho acompanha o fundo azul e o texto branco; o logotipo original permanece em base branca para legibilidade.
 - Estilo compartilhado: `/assets/homepage-hero.css?v=20261016-2`, carregado após o CSS embutido nas duas páginas. Preservar esse padrão em futuras alterações, traduções, controles de leitura e responsividade.
 - Conteúdo do body preservado integralmente nas duas páginas; atualizar o lastmod dessas URLs no sitemap. Sem stage, commit ou push nesta etapa.
+
+## Artigo 21 — inclusão local EN/PT — 17 de outubro de 2026
+
+- Integrado o Artigo 21, `The Open Letter on AI and Cybersecurity and the Evidence for Agent Containment`, na homepage (Publications e Writing), na Research Series da SGAEIA e no índice de publicações.
+- Novas edições integrais em `/publications/artigo21/` e `/publications/artigo21/pt/`, a partir dos masters públicos do SGAEIA_2: capa, duas figuras e 18 referências por idioma; DOI `10.5281/zenodo.23426350`.
+- Aplicados os quatro URLs de Zenodo, Medium, DEV Community e Academia.edu fornecidos pelo usuário, com navegação recíproca de idiomas e metadados de citação e descoberta. Sitemap, llms.txt e comentário informativo de robots.txt atualizados.
+- Padrão vigente de cabeçalho branco fixo, hero/rodapé azuis, Analytics, CSP e controles de leitura preservado. Nenhum ativo compartilhado alterado; reutilizados estilos e controlador de leitura genéricos do artigo 20.
+- Cinco páginas verificadas exclusivamente na prévia local `http://127.0.0.1:8765/`, em 1280 e 320 px, sem rolagem horizontal ou sobreposição inicial. Controles de fonte, leitura fácil e navegação PT→EN conferidos; viewport temporária removida.
+- Backup restaurável em `C:\Users\as294\Documents\Codex\2026-10-17\insi\work\backup-before-article21`. Detalhes em `docs/logs/2026-10-17-ARTICLE21-HOMEPAGE-PUBLICATION.md`.
+- `git diff --check` passou. Atualização local, sem stage, commit, push ou implantação.
+
+
+## Teste local do rodapé da homepage — 17 de outubro de 2026
+
+- A pedido do usuário, amostra limitada a `index.html`: logo e wordmark SGAEIA centralizados, descrição do programa centralizada e traduzida nos cinco idiomas existentes.
+- Os 13 ícones foram substituídos pelos nomes dos mesmos destinos, em Source Serif 4, negrito e tamanho menor que o wordmark. URLs, rótulos acessíveis e atributos dos links preservados.
+- Fundo azul `#315f7f`, igual ao hero, com letras brancas; hover/foco dos nomes com fundo branco, texto azul, sublinhado e foco visível.
+- Três linhas finais empilhadas e centralizadas com gap de 2 px; textos e versão existentes preservados.
+- CSS isolado em `/assets/homepage-footer-preview.css?v=20261017-1`; teste não propagado à página SGAEIA nem a outras páginas.
+- Backup restaurável em `C:\Users\as294\Documents\Codex\2026-10-17\insi\work\backup-before-footer-preview`.
+- Alteração experimental local para revisão visual; sem stage, commit, push ou acesso à homepage remota.
+
+### Amostra do bloco de identidade em azul mais claro — 17 de outubro de 2026
+
+- A pedido do usuário, somente o bloco `.footer-head` (logo, wordmark e descrição SGAEIA) passa ao azul mais claro `#477797`, com textos brancos e respiro interno de 24px × 16px. Restante do rodapé preservado em `#315f7f`.
+- CSS exclusivo da homepage atualizado para `homepage-footer-preview.css?v=20261017-2`; teste local sem publicação.
+- Backup da amostra anterior em `C:\Users\as294\Documents\Codex\2026-10-17\insi\work\backup-before-lighter-footer-block`.
+
+### Nome e subtítulo do cabeçalho da homepage — 17 de outubro de 2026
+
+- Centralizados em conjunto o nome `Aridio Silva` e o subtítulo da identidade, usando `text-align:center` no bloco e margens laterais automáticas no nome de largura ajustada ao conteúdo.
+- Preservados fonte, hover/foco, link, menu, controles e comportamento responsivo. Ajuste limitado ao CSS embutido de `index.html`.
+- Backup anterior: `C:\Users\as294\Documents\Codex\2026-10-17\insi\work\index-before-centered-header-name.html`. Atualização local, sem stage, commit ou push.
+
+### Menu Home da homepage — 17 de outubro de 2026
+
+- Inserido Home como primeiro item do menu, com `href="#top"` para o início do bloco Research Focus e as mesmas regras de hover/foco dos demais links.
+- Incluída a chave `nav_home` nos cinco idiomas existentes: Home, Início, Inicio, Accueil e Startseite.
+- Clique testado na prévia local: retorna a #top com o começo do hero abaixo do cabeçalho fixo, sem sobreposição nem rolagem horizontal. Sem stage, commit, push ou acesso à homepage remota.
+- Backup anterior em `C:\Users\as294\Documents\Codex\2026-10-17\insi\work\index-before-home-menu.html`; git diff --check passou.
+
+## Rodapé SGAEIA no padrão da homepage — 17 de outubro de 2026
+
+- Aplicado a `sgaeia.html` o mesmo rodapé da homepage: logo, wordmark e descrição centralizados em bloco #477797; restante do rodapé #315f7f, texto branco, 13 links por nome em negrito, hover/foco compartilhados e gap de 2px entre as três linhas finais.
+- Reutilizado `/assets/homepage-footer-preview.css?v=20261017-2`, sem alterar a folha nem a homepage nesta etapa. Preservados os 13 destinos, as traduções da descrição, a data e a versão existentes da SGAEIA e todo o conteúdo fora do rodapé.
+- Conferência no navegador local: cores esperadas, zero ícones, 13 nomes, texto branco e ausência de rolagem horizontal; em 320px, logo e descrição centralizados com desvio inferior a 1px. Viewport temporária removida; prévia local aberta no rodapé à direita.
+- Backup: `C:\Users\as294\Documents\Codex\2026-10-17\insi\work\sgaeia-before-matching-homepage-footer.html`. git diff --check passou. Sem stage, commit, push, publicação ou acesso à homepage remota.
+
+### Linhas dos links dos rodapés mais próximas — 17 de outubro de 2026
+
+- Reduzido o espaçamento vertical das linhas de links: gap de 2px, altura mínima de 32px e padding vertical de 4px. Mantidos tamanhos de fonte, espaçamento horizontal e hover/foco.
+- Ajuste na folha compartilhada dos rodapés de index.html e sgaeia.html, preservando o padrão comum; cache-busting atualizado nas duas páginas para `homepage-footer-preview.css?v=20261017-3`.
+- Backup anterior em `C:\Users\as294\Documents\Codex\2026-10-17\insi\work\backup-before-compact-footer-links`. Alteração local sem stage, commit ou push.
+
+### Título SGAEIA como link nos rodapés — 17 de outubro de 2026
+
+- O wordmark SGAEIA junto ao logo nos rodapés de index.html e sgaeia.html agora é um link para `/sgaeia.html`, na mesma aba.
+- Preservado o texto branco; hover/foco com fundo branco, texto azul #244b68, sublinhado e contorno de foco visível. Respeitada a preferência de movimento reduzido.
+- Cache-busting da folha compartilhada atualizado coordenadamente nas duas páginas para `homepage-footer-preview.css?v=20261017-4`.
+- Backup anterior em `C:\Users\as294\Documents\Codex\2026-10-17\insi\work\backup-before-footer-sgaeia-link`. Atualização exclusivamente local, sem stage, commit ou push.
+
+## Seção 05 — plataformas de publicação — 17 de outubro de 2026
+
+- Por pedido do usuário, substituída a lista de cards de artigos da Research Series de `sgaeia.html` por seis cards de acesso às plataformas, no mesmo modelo da seção 06 Artifacts: título, descrição e link Open/Abrir, sem capas ou bullets.
+- Destinos fornecidos preservados integralmente: registros Zenodo ordenados pelos mais recentes, DEV Community, Academia.edu, comunidade SGAEIA no Zenodo, busca OpenAIRE e perfil Medium. Os dois destinos Zenodo foram mantidos separadamente conforme a lista fornecida.
+- Seção/menu passam a Platforms/Plataformas e Publication platforms/Plataformas de publicação, com traduções EN/PT/ES/FR/DE. Âncora `#series` preservada para compatibilidade.
+- Reutilizadas as mesmas regras de grade, cards, cores, faixas laterais, hover/foco e movimento reduzido de Artifacts por seletores compartilhados. Duas colunas em desktop, uma no celular.
+- Páginas individuais dos artigos e índice de publicações preservados. Os registros individuais continuam disponíveis pela navegação Publications. Descrição da página SGAEIA em llms.txt ajustada; lastmod de sgaeia.html no sitemap já é 2026-10-17.
+- Verificação local em 1280 e 320px sem rolagem horizontal; seis URLs conferidos, zero cards de artigo remanescentes na seção, estilos dos cards iguais aos de Artifacts. Traduções dos cinco idiomas verificadas no navegador; sintaxe do script e git diff --check passaram. Override de viewport removido.
+- Backups anteriores em `C:\Users\as294\Documents\Codex\2026-10-17\insi\work\sgaeia-before-publication-platforms.html` e `llms-before-publication-platforms.txt`.
+- Alteração exclusivamente local, sem stage, commit, push ou acesso à homepage remota.
+
+### Fundo dos cards de plataformas igual a Properties — 17 de outubro de 2026
+
+- Por pedido do usuário, os seis cards da seção 05 Platforms usam agora #f9fcfb, igual aos cards da seção 03 Properties, e #fff no hover.
+- Alteração limitada ao fundo normal/hover dos cards de plataformas. Artifacts, demais estilos, conteúdo e links preservados.
+- Backup anterior em `C:\Users\as294\Documents\Codex\2026-10-17\insi\work\sgaeia-before-platforms-properties-background.html`. Atualização local, sem stage, commit ou push.
+
+### Bullets dos cards de plataformas — 17 de outubro de 2026
+
+- Inseridos bullets redondos numerados de 1 a 6 nos seis cards da seção 05 Platforms.
+- Reutilizada a regra geométrica dos bullets de 03 Properties: 38×38px, número branco centralizado, borda circular e sombra. Cor #2f7a83, igual à faixa lateral dos cards de plataformas.
+- Conteúdo, links e fundo #f9fcfb preservados. Backup anterior em `C:\Users\as294\Documents\Codex\2026-10-17\insi\work\sgaeia-before-platform-bullets.html`.
+- Alteração local, sem stage, commit ou push.
+
+### Bullets da seção 06 Artifacts — 17 de outubro de 2026
+
+- Adicionados bullets redondos de 1 a 5 aos cinco cards de Artifacts, iguais aos da seção Platforms: 38×38px, fundo #2f7a83 e número branco centralizado.
+- Reutilizados os seletores compartilhados; preservados títulos, descrições, URLs, cores dos cards e largura do último card.
+- Backup anterior em `C:\Users\as294\Documents\Codex\2026-10-17\insi\work\sgaeia-before-artifacts-bullets.html`. Atualização local sem stage, commit ou push.
+
+### Abertura centralizada do índice de publicações — 17 de outubro de 2026
+
+- Centralizados o rótulo Research publications, o título Publications e a introdução no hero abaixo do cabeçalho fixo de `publications.html`.
+- Folha exclusiva `/assets/publications-index-hero.css?v=20261017-1`, preservando o alinhamento e o conteúdo dos cards e das demais páginas.
+- Backup anterior em `C:\Users\as294\Documents\Codex\2026-10-17\insi\work\publications-before-centered-hero.html`. Alteração local, sem stage, commit ou push.
+
+### Abertura centralizada do índice de infográficos — 17 de outubro de 2026
+
+- Aplicado a `infographics/index.html` o mesmo alinhamento centralizado de Publications: rótulo Research communication, título Infographics e introdução no bloco azul abaixo do cabeçalho fixo.
+- Reutilizada a folha compartilhada `publications-index-hero.css`; comentário atualizado e cache-busting coordenado nos dois índices para v20261017-2. Conteúdo dos cards e páginas individuais preservados.
+- Lastmod do índice de infográficos no sitemap atualizado para 2026-10-17. Backup anterior em `C:\Users\as294\Documents\Codex\2026-10-17\insi\work\backup-before-centered-infographics-index`.
+- Alteração local, sem stage, commit ou push.
+
+## Rodapés dos índices no padrão compartilhado — 17 de outubro de 2026
+
+- Aplicado aos índices `publications.html` e `infographics/index.html` o mesmo rodapé da homepage e SGAEIA: logo e título SGAEIA clicável, bloco #477797, base #315f7f, texto branco, 13 links nominais em negrito, hover/foco e espaçamento compacto.
+- Os índices exibem três linhas finais: copyright, atualização de 17 October 2026 com Version 2.0 e o lema. Versão editorial preservada.
+- A folha compartilhada passou a declarar a tipografia do wordmark e dos nomes e as divisórias, para funcionar também nos índices sem depender do CSS embutido das páginas principais. Cache-busting coordenado nas quatro páginas para `homepage-footer-preview.css?v=20261017-5`.
+- Conteúdo integral do main e dos cards dos dois índices comparado com backup e preservado. Conferência em desktop e em 320px sem rolagem horizontal; logo/descrição centralizados com desvio inferior a 1px, 13 links e destino SGAEIA corretos, três linhas finais com gap 2px. Viewport temporária removida e duas prévias locais mantidas abertas.
+- Backup anterior em `C:\Users\as294\Documents\Codex\2026-10-17\insi\work\backup-before-matching-index-footers`. git diff --check passou. Sem stage, commit, push, publicação ou acesso à homepage remota.
+
+## Rodapé compartilhado em todas as páginas editoriais EN/PT — 17 de outubro de 2026
+
+- Aplicado o mesmo modelo dos índices às 56 páginas individuais existentes: 26 edições de artigos (21 EN e 5 PT) e 30 edições de infográficos (15 EN e 15 PT). Nenhuma tradução ou página adicional foi criada.
+- Todas carregam uma única vez `/assets/homepage-footer-preview.css?v=20261017-5`, com logo e título SGAEIA centralizados, link para `/sgaeia.html`, bloco #477797, fundo #315f7f, texto branco, 13 links nominais em negrito e espaçamento compacto.
+- Rodapés PT localizados (descrição, rótulos acessíveis, nomes descritivos, data e lema). Preservados os números de versão originais de cada página e todos os links CC BY 4.0 que já existiam nos rodapés. Datas de atualização visual e lastmod das 56 URLs no sitemap: 2026-10-17.
+- Comparação byte a byte confirmou que, fora da substituição do rodapé e da inclusão da referência CSS, todo o HTML original das 56 páginas permanece inalterado: conteúdo, imagens, carrosséis, metadados, canonical, hreflang, Analytics, CSP e controles preservados.
+- Validação estrutural das 56 páginas: um rodapé, um id footer, 13 links de perfil, destino SGAEIA correto, licença/versão preservadas e uma referência à folha compartilhada. Sitemap XML válido e sem URLs duplicadas.
+- Conferência das 56 páginas no navegador local a 1280 e 320px (112 combinações): nenhuma falha de cores, quantidade de links, destino, centralização de logo/descrição (desvio <1px) ou rolagem horizontal. Viewport restaurada e aba temporária de auditoria fechada.
+- Exemplos de artigo 21 EN/PT e infográfico 005 EN/PT abertos localmente à direita. Sem navegação à homepage remota, stage, commit, push ou publicação.
+- Backup integral anterior em `C:\Users\as294\Documents\Codex\2026-10-17\insi\work\backup-before-all-editorial-footers`. Inventário da operação em `work/editorial-footer-manifest.json`; git diff --check passou.
+
+### Padrão de continuidade dos rodapés editoriais
+
+Novos artigos e infográficos devem reutilizar esse rodapé compartilhado e sua folha de estilo, manter os destinos absolutos locais `/assets/` e `/sgaeia.html`, preservar versão e licença da edição e apresentar o texto do rodapé no idioma da página. Não voltar aos rodapés simples anteriores.
+
+## Blocos iniciais centralizados em artigos e infográficos EN/PT — 17 de outubro de 2026
+
+- Centralizados os textos do hero abaixo do cabeçalho fixo nas 56 páginas individuais existentes: 26 edições de artigos (21 EN e 5 PT) e 30 edições de infográficos (15 EN e 15 PT).
+- O alinhamento abrange título, rótulo, subtítulo, autoria, metadados e navegação de idiomas. Conteúdo editorial, estrutura, rodapé e controles preservados.
+- Regras restritas a `.article-page` e `.infographic-page` na folha compartilhada `assets/editorial-hero.css`; referências de cache atualizadas nas 58 páginas que a utilizam para `?v=20261017-1`. Os dois índices mantêm sua centralização já existente.
+- Comparação integral dos 58 HTMLs com o backup confirmou que a única mudança nesses arquivos é a versão da referência CSS. Não houve alteração de textos, imagens, carrosséis, metadados, Analytics ou CSP.
+- Verificadas as 56 páginas no navegador local em 1280 e 320px (112 combinações), sem rolagem horizontal, desalinhamento dos blocos de texto ou falha de centralização da navegação de idiomas. Viewport temporária removida e aba de auditoria fechada.
+- Exemplos do artigo 21 e infográfico 005 em EN/PT atualizados na prévia local à direita.
+- Backup anterior: `C:\Users\as294\Documents\Codex\2026-10-17\insi\work\backup-before-centered-editorial-heroes`. git diff --check passou. Sem stage, commit, push, publicação ou acesso à homepage remota.
+- Continuidade: novos artigos e infográficos devem reutilizar essa centralização do hero por meio da folha editorial compartilhada.

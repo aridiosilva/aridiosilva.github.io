@@ -638,7 +638,8 @@
   #properties .property-card:nth-child(2) { border-left-color: #438f92; }
   #properties .property-card:nth-child(3) { border-left-color: #377b97; }
   #properties .property-card:nth-child(4) { border-left-color: #315f7f; }
-  #properties .property-card .mini-label {
+  #properties .property-card .mini-label,
+  :is(#series, #artifacts) .resource-card .mini-label {
     display: inline-flex;
     width: 38px;
     height: 38px;
@@ -864,11 +865,11 @@
   }
 
   /* Artifact cards reuse section 04 — Agenda styling, without numbered bullets. */
-  #artifacts .resource-grid {
+  :is(#artifacts, #series) .resource-grid {
     gap: 18px;
     border-top: 0;
   }
-  #artifacts .resource-card {
+  :is(#artifacts, #series) .resource-card {
     position: relative;
     min-height: 132px;
     padding: 24px;
@@ -878,19 +879,19 @@
     box-shadow: 0 3px 12px rgb(31 72 82 / .08);
     transition: transform .18s ease, background-color .18s ease, box-shadow .18s ease, border-color .18s ease;
   }
-  #artifacts .resource-card h3 { color: #123f59; }
-  #artifacts .resource-card p { color: #3b5861; }
-  #artifacts .resource-card a {
+  :is(#artifacts, #series) .resource-card h3 { color: #123f59; }
+  :is(#artifacts, #series) .resource-card p { color: #3b5861; }
+  :is(#artifacts, #series) .resource-card a {
     transition: color .18s ease, text-decoration-color .18s ease;
   }
-  #artifacts .resource-card a:hover,
-  #artifacts .resource-card a:focus-visible {
+  :is(#artifacts, #series) .resource-card a:hover,
+  :is(#artifacts, #series) .resource-card a:focus-visible {
     color: #9a3412;
     text-decoration-color: #9a3412;
     text-decoration-thickness: 2px;
     text-underline-offset: 3px;
   }
-  #artifacts .resource-card:hover {
+  :is(#artifacts, #series) .resource-card:hover {
     z-index: 1;
     transform: translateY(-3px);
     background: #f2f8f8;
@@ -898,6 +899,10 @@
     border-left-color: #174f63;
     box-shadow: 0 10px 24px rgb(20 61 79 / .18);
   }
+  /* Publication platform cards match the Properties background. */
+  #series .resource-card { background: #f9fcfb; }
+  :is(#series, #artifacts) .resource-card .mini-label { background: #2f7a83; }
+  #series .resource-card:hover { background: #fff; }
   @media (max-width: 760px) {
     .problem-grid, .property-grid, .agenda-grid, .resource-grid { grid-template-columns: 1fr; gap: 0; }
     .resource-card-wide { grid-column: auto; }
@@ -932,8 +937,8 @@
     #series .series-cover-link { transition: none; }
     #series .series-cover-link:hover,
     #series .series-cover-link:focus-visible { transform: none; }
-    #artifacts .resource-card { transition: none; }
-    #artifacts .resource-card:hover { transform: none; }
+    :is(#artifacts, #series) .resource-card { transition: none; }
+    :is(#artifacts, #series) .resource-card:hover { transform: none; }
   }
 
   /* SGAEIA visual identity: institutional banner + transparent logo */
@@ -1252,6 +1257,7 @@
 
 </style>
 <link rel="stylesheet" href="/assets/homepage-hero.css?v=20261016-2">
+<link rel="stylesheet" href="/assets/homepage-footer-preview.css?v=20261017-5">
 </head>
 <body>
 <a class="skip-link" href="#main" data-i18n="skip" target="_blank" rel="noopener noreferrer">Skip to main content</a>
@@ -1263,7 +1269,7 @@
         <a href="index.html" data-i18n="nav_home">Home</a>
         <a href="#problem" data-i18n="nav_problem">Problem</a>
         <a href="#principles" data-i18n="nav_principles">Principles</a>
-        <a href="#series" data-i18n="nav_series">Research Series</a>
+        <a href="#series" data-i18n="nav_series">Platforms</a>
         <a href="publications.html" data-i18n="nav_publications">Publications</a>
         <a href="/infographics/" data-i18n="nav_infographics">Infographics</a>
         <a href="#artifacts" data-i18n="nav_artifacts">Artifacts</a>
@@ -1361,86 +1367,26 @@
     </div>
   </div></div></section>
 
-  <div class="series-band" id="series"><section class="section"><div class="shell section-grid"><div class="section-kicker"><span>05</span><span data-i18n="nav_series">Research Series</span></div><div>
-    <h2 data-i18n="series_title">SGAEIA Research Series</h2><p class="section-intro" data-i18n="series_intro">The research series develops the architecture incrementally through problems, principles, security properties, governance concepts, and emerging risks. Archival versions are preserved on Zenodo and public essays are published on Medium.</p>
-    <div class="editorial-list"><article class="editorial-row"><div class="editorial-year">2026-10-14</div><a class="series-cover-link" href="/publications/artigo20/" aria-label="Read AI Agents and Agentic AI: What Sets Them Apart?"><img class="series-cover" src="/assets/article20/2026-10-14-1310-SGAEIA-Article20-Cover-AI-Agents-and-Agentic-AI_EN.png" alt="Cover: AI Agents and Agentic AI: What Sets Them Apart?" width="3840" height="2160" loading="eager" fetchpriority="high" decoding="async"></a><div class="editorial-main"><h3><a href="/publications/artigo20/">AI Agents and Agentic AI: What Sets Them Apart?</a></h3><p>A critical comparison of agents, agenticness, and agentic AI across foundational research and major providers, separating entity, property, system, capability, and authority.</p><p class="series-label">SGAEIA Research Series — Article 20</p><div class="editorial-links"><a href="https://zenodo.org/records/23373900" target="_blank" rel="noopener noreferrer">Zenodo ↗</a><br><a href="https://medium.com/@aridiosilva/ai-agents-and-agentic-ai-what-sets-them-apart-e7dcdf391fbc" target="_blank" rel="noopener noreferrer">Medium ↗</a><br><a href="https://dev.to/aridiosilva/ai-agents-and-agentic-ai-what-sets-them-apart-5boj" target="_blank" rel="noopener noreferrer">DEV Community ↗</a><br><a href="https://www.academia.edu/178969947/AI_Agents_and_Agentic_AI_What_Sets_Them_Apart_Concepts_Autonomy_and_How_Major_AI_Providers_Use_the_Terms" target="_blank" rel="noopener noreferrer">Academia.edu ↗</a><br><a href="/publications/artigo20/pt/">Português ↗</a></div></div></article>
-<article class="editorial-row"><div class="editorial-year">2026-10-11</div><a class="series-cover-link" href="/publications/artigo19/" aria-label="Read LoRA in AI Agents: Efficiency, Security Risks, and Adapter Governance"><img class="series-cover" src="/assets/article19/sgaeia-article-19-cover-en.png" alt="Cover: LoRA in AI Agents: Efficiency, Security Risks, and Adapter Governance" width="3840" height="2160" loading="lazy" decoding="async"></a><div class="editorial-main"><h3><a href="/publications/artigo19/">LoRA in AI Agents: Efficiency, Security Risks, and Adapter Governance</a></h3><p>How a compact LoRA adapter becomes a behavioral dependency affecting AI-agent supply chains, composition, isolation, revocation, and governed authority.</p><p class="series-label">SGAEIA Research Series — Article 19</p><div class="editorial-links"><a href="https://doi.org/10.5281/zenodo.23300168" target="_blank" rel="noopener noreferrer">Zenodo DOI ↗</a><br><a href="https://medium.com/@aridiosilva/lora-in-ai-agents-efficiency-security-risks-and-adapter-governance-e3cbdfb3e588" target="_blank" rel="noopener noreferrer">Medium ↗</a><br><a href="https://dev.to/aridiosilva/lora-in-ai-agents-efficiency-security-risks-and-adapter-governance-lh4" target="_blank" rel="noopener noreferrer">DEV Community ↗</a><br><a href="https://www.academia.edu/178742323/LoRA_in_AI_Agents_Efficiency_Security_Risks_and_Adapter_Governance" target="_blank" rel="noopener noreferrer">Academia.edu ↗</a></div></div></article>
-<article class="editorial-row"><div class="editorial-year">2026-10-10</div><a class="series-cover-link" href="/publications/artigo18/" aria-label="Read Tracing AI Agent Execution: Foundations, State of the Art, and Implications for Distributed Multi-Agent Systems"><img class="series-cover" src="/assets/article18/sgaeia-article-18-cover-en.png" alt="Cover: Tracing AI Agent Execution: Foundations, State of the Art, and Implications for Distributed Multi-Agent Systems" width="1672" height="941" loading="lazy" decoding="async"></a><div class="editorial-main"><h3><a href="/publications/artigo18/">Tracing AI Agent Execution: Foundations, State of the Art, and Implications for Distributed Multi-Agent Systems</a></h3><p>A comparative review of 13 platforms connecting traces and spans to evaluation, governed evidence, and distributed multi-agent operation.</p><p class="series-label">SGAEIA Research Series — Article 18</p><div class="editorial-links"><a href="https://doi.org/10.5281/zenodo.23284753" target="_blank" rel="noopener noreferrer">Zenodo DOI ↗</a><br><a href="https://medium.com/@aridiosilva/tracing-ai-agent-execution-foundations-state-of-the-art-and-implications-for-distributed-cf1cda3b9cd4" target="_blank" rel="noopener noreferrer">Medium ↗</a><br><a href="https://dev.to/aridiosilva/tracing-ai-agent-execution-observability-and-evidence-in-distributed-systems-2fh0" target="_blank" rel="noopener noreferrer">DEV Community ↗</a><br><a href="https://www.academia.edu/178612201/Tracing_AI_Agent_Execution_Foundations_State_of_the_Art_and_Implications_for_Distributed_Multi_Agent_Systems" target="_blank" rel="noopener noreferrer">Academia.edu ↗</a></div></div></article>
-<article class="editorial-row"><div class="editorial-year">2026-10-06</div><a class="series-cover-link" href="/publications/artigo17/" aria-label="Read AI Jailbreaks: From Bypassing Restrictions to Governing Authority"><img class="series-cover" src="/assets/article17/cover.png" alt="Cover: AI Jailbreaks: From Bypassing Restrictions to Governing Authority" width="1672" height="941" loading="lazy" decoding="async"></a><div class="editorial-main"><h3><a href="/publications/artigo17/">AI Jailbreaks: From Bypassing Restrictions to Governing Authority</a></h3><p>From jailbreak history to autonomous agents: model resistance, bounded authority and evidence of response, action and effect.</p><p class="series-label">SGAEIA Research Series — Article 17</p><div class="editorial-links">DOI pending<br><a href="https://medium.com/@aridiosilva/ai-jailbreaks-from-bypassing-restrictions-to-governing-authority-b16efbf0c0ab" target="_blank" rel="noopener noreferrer">Medium ↗</a><br><a href="https://dev.to/aridiosilva/ai-jailbreaks-from-bypassing-restrictions-to-governing-authority-103c" target="_blank" rel="noopener noreferrer">DEV Community ↗</a><br><a href="https://www.academia.edu/178229088/AI_Jailbreaks_From_Bypassing_Restrictions_to_Governing_Authority" target="_blank" rel="noopener noreferrer">Academia.edu ↗</a></div></div></article>
-<article class="editorial-row">
-  <div class="editorial-year">2026-09-29</div><a class="series-cover-link" href="/publications/when-ai-improves-ai/" aria-label="Read When AI Improves AI: Governing Recursive Intelligence Acceleration"><img class="series-cover" src="/assets/article16/cover.png" alt="Cover: When AI Improves AI: Governing Recursive Intelligence Acceleration" width="1672" height="941" loading="lazy" decoding="async"></a>
-  <div class="editorial-main"><h3><a href="/publications/when-ai-improves-ai/">When AI Improves AI: Governing Recursive Intelligence Acceleration</a></h3><p class="series-label">SGAEIA Research Series — Article 16</p><div class="editorial-links"><a href="https://zenodo.org/records/23045620" target="_blank" rel="noopener noreferrer">Zenodo DOI ↗</a><br><a href="https://medium.com/@aridiosilva/when-ai-improves-ai-governing-recursive-intelligence-acceleration-6eb951abdbaf" target="_blank" rel="noopener noreferrer">Medium ↗</a><br><a href="https://dev.to/aridiosilva/when-ai-improves-ai-governing-recursive-intelligence-acceleration-392i" target="_blank" rel="noopener noreferrer">DEV Community ↗</a><br><a href="https://www.academia.edu/177863951/When_AI_Improves_AI_Governing_Recursive_Intelligence_Acceleration" target="_blank" rel="noopener noreferrer">Academia.edu ↗</a></div></div>
-</article>
-<article class="editorial-row">
-  <div class="editorial-year">2026-09-28</div><a class="series-cover-link" href="/publications/when-ai-agents-form-societies/" aria-label="Read When AI Agents Form Societies: Is Security a Property of the Model or the System?"><img class="series-cover" src="/assets/article15/cover.png" alt="Cover: When AI Agents Form Societies: Is Security a Property of the Model or the System?" width="1672" height="941" loading="lazy" decoding="async"></a>
-  <div class="editorial-main"><h3><a href="/publications/when-ai-agents-form-societies/">When AI Agents Form Societies: Is Security a Property of the Model or the System?</a></h3><p class="series-label">SGAEIA Research Series — Article 15</p><div class="editorial-links"><a href="https://zenodo.org/records/23022525" target="_blank" rel="noopener noreferrer">Zenodo DOI ↗</a><br><a href="https://medium.com/@aridiosilva/when-ai-agents-form-societies-448a8d06d411" target="_blank" rel="noopener noreferrer">Medium ↗</a><br><a href="https://dev.to/aridiosilva/when-ai-agents-form-societies-is-security-a-property-of-the-model-or-the-system-2mpd" target="_blank" rel="noopener noreferrer">DEV Community ↗</a><br><a href="https://www.academia.edu/177862452/When_AI_Agents_Form_Societies_Is_Security_a_Property_of_the_Model_or_the_System" target="_blank" rel="noopener noreferrer">Academia.edu ↗</a></div></div>
-</article>
-<article class="editorial-row">
-  <div class="editorial-year">2026-09-25</div><a class="series-cover-link" href="/publications/ais-alien-mind/" aria-label="Read AI&#39;s Alien Mind"><img class="series-cover" src="/assets/article14/cover.png" alt="Cover: AI's Alien Mind" width="2400" height="1350" loading="lazy" decoding="async"></a>
-  <div class="editorial-main"><h3><a href="/publications/ais-alien-mind/">AI's Alien Mind</a></h3><p class="series-label">SGAEIA Research Series — Article 14</p><div class="editorial-links"><a href="https://doi.org/10.5281/zenodo.22964672" target="_blank" rel="noopener noreferrer">Zenodo DOI ↗</a><br><a href="https://medium.com/@aridiosilva/ais-alien-mind-0c228fc0d320" target="_blank" rel="noopener noreferrer">Medium ↗</a><br><a href="https://dev.to/aridiosilva/ais-alien-mind-290n" target="_blank" rel="noopener noreferrer">DEV Community ↗</a><br><a href="https://www.academia.edu/177861373/AIs_Alien_Mind" target="_blank" rel="noopener noreferrer">Academia.edu ↗</a></div></div>
-</article>
-<article class="editorial-row">
-  <div class="editorial-year">2026-09-24</div><a class="series-cover-link" href="/publications/when-ai-hallucination-becomes-action/" aria-label="Read When AI Hallucination Becomes Action"><img class="series-cover" src="/assets/article13/cover.png" alt="Cover: When AI Hallucination Becomes Action" width="3840" height="2160" loading="lazy" decoding="async"></a>
-  <div class="editorial-main"><h3><a href="/publications/when-ai-hallucination-becomes-action/">When AI Hallucination Becomes Action</a></h3><p class="series-label">SGAEIA Research Series — Article 13</p><div class="editorial-links"><a href="https://doi.org/10.5281/zenodo.22946209" target="_blank" rel="noopener noreferrer">Zenodo DOI ↗</a><br><a href="https://medium.com/@aridiosilva/when-ai-hallucination-becomes-action-f04cc100b76a" target="_blank" rel="noopener noreferrer">Medium ↗</a><br><a href="https://dev.to/aridiosilva/when-ai-hallucination-becomes-action-2o6e" target="_blank" rel="noopener noreferrer">DEV Community ↗</a><br><a href="https://www.academia.edu/177856033/When_AI_Hallucination_Becomes_Action" target="_blank" rel="noopener noreferrer">Academia.edu ↗</a></div></div>
-</article>
-<article class="editorial-row">
-  <div class="editorial-year">2026-09-22</div><a class="series-cover-link" href="/publications/zero-trust-for-multi-agent-ai-systems/" aria-label="Read Zero Trust for Multi-Agent AI Systems"><img class="series-cover" src="/assets/article3/sgaeia-article3-cover-zero-trust-multi-agent-ai_PUBLICO_22SET2026.png" alt="Cover: Zero Trust for Multi-Agent AI Systems" width="1926" height="817" loading="lazy" decoding="async"></a>
-  <div class="editorial-main"><h3><a href="/publications/zero-trust-for-multi-agent-ai-systems/">Zero Trust for Multi-Agent AI Systems</a></h3><p class="series-label">SGAEIA Research Series — Article 3</p><div class="editorial-links"><a href="https://doi.org/10.5281/zenodo.22903766" target="_blank" rel="noopener noreferrer">Zenodo DOI ↗</a><br><a href="https://medium.com/@aridiosilva/zero-trust-for-multi-agent-ai-systems-31747c850af4" target="_blank" rel="noopener noreferrer">Medium ↗</a><br><a href="https://dev.to/aridiosilva/zero-trust-for-multi-agent-ai-systems-2081" target="_blank" rel="noopener noreferrer">DEV Community ↗</a><br><a href="https://www.academia.edu/177868017/Zero_Trust_for_Multi_Agent_AI_Systems" target="_blank" rel="noopener noreferrer">Academia.edu ↗</a></div></div>
-</article>
-<article class="editorial-row">
-  <div class="editorial-year">2026-09-21</div><a class="series-cover-link" href="/publications/sgaeia-reference-architecture/" aria-label="Read SGAEIA: A Reference Architecture for Secure Governed Autonomous Edge Intelligence"><img class="series-cover" src="/assets/article8/sgaeia-article-08-public-cover-medium.png" alt="Cover: SGAEIA: A Reference Architecture for Secure Governed Autonomous Edge Intelligence" width="1672" height="941" loading="lazy" decoding="async"></a>
-  <div class="editorial-main"><h3><a href="/publications/sgaeia-reference-architecture/">SGAEIA: A Reference Architecture for Secure Governed Autonomous Edge Intelligence</a></h3><p class="series-label">SGAEIA Research Series — Article 8</p><div class="editorial-links"><a href="https://doi.org/10.5281/zenodo.22882020" target="_blank" rel="noopener noreferrer">Zenodo DOI ↗</a><br><a href="https://medium.com/@aridiosilva/sgaeia-a-reference-architecture-for-secure-governed-autonomous-edge-intelligence-cd5466cbc29c" target="_blank" rel="noopener noreferrer">Medium ↗</a><br><a href="https://dev.to/aridiosilva/sgaeia-a-reference-architecture-for-secure-governed-autonomous-edge-intelligence-hfi" target="_blank" rel="noopener noreferrer">DEV Community ↗</a><br><a href="https://www.academia.edu/177871578/SGAEIA_A_Reference_Architecture_for_Secure_Governed_Autonomous_Edge_Intelligence" target="_blank" rel="noopener noreferrer">Academia.edu ↗</a></div></div>
-</article>
-<article class="editorial-row">
-  <div class="editorial-year">2026-09-20</div><a class="series-cover-link" href="/publications/ten-days-that-exposed-the-governance-gap/" aria-label="Read Ten Days That Exposed the Governance Gap in Frontier AI"><img class="series-cover" src="/assets/article12/cover-ten-days-governance-gap_AridioSilva_20SET2026-sgaeia-article-12-.png" alt="Cover: Ten Days That Exposed the Governance Gap in Frontier AI" width="1672" height="941" loading="lazy" decoding="async"></a>
-  <div class="editorial-main"><h3><a href="/publications/ten-days-that-exposed-the-governance-gap/">Ten Days That Exposed the Governance Gap in Frontier AI</a></h3><p class="series-label">SGAEIA Research Series — Article 12</p><div class="editorial-links"><a href="https://doi.org/10.5281/zenodo.22864340" target="_blank" rel="noopener noreferrer">Zenodo DOI ↗</a><br><a href="https://medium.com/@aridiosilva/ten-days-that-exposed-the-governance-gap-in-frontier-ai-07fbd2c278d4" target="_blank" rel="noopener noreferrer">Medium ↗</a><br><a href="https://dev.to/aridiosilva/ten-days-that-exposed-the-governance-gap-in-frontier-ai-558g" target="_blank" rel="noopener noreferrer">DEV Community ↗</a><br><a href="https://www.academia.edu/177859891/Ten_Days_That_Exposed_the_Governance_Gap_in_Frontier_AI" target="_blank" rel="noopener noreferrer">Academia.edu ↗</a></div></div>
-</article>
-<article class="editorial-row">
-  <div class="editorial-year">2026-09-18</div><a class="series-cover-link" href="/publications/from-model-capability-to-governed-action/" aria-label="Read From Model Capability to Governed Action: An Architecture for Secure Agentic AI"><img class="series-cover" src="/assets/article11/Cover_Artigo_11_image_17set2026,%2018_33_44.png" alt="Cover: From Model Capability to Governed Action: An Architecture for Secure Agentic AI" width="1672" height="941" loading="lazy" decoding="async"></a>
-  <div class="editorial-main"><h3><a href="/publications/from-model-capability-to-governed-action/">From Model Capability to Governed Action: An Architecture for Secure Agentic AI</a></h3><p class="series-label">SGAEIA Research Series — Article 11</p><div class="editorial-links"><a href="https://doi.org/10.5281/zenodo.22837908" target="_blank" rel="noopener noreferrer">Zenodo DOI ↗</a><br><a href="https://medium.com/@aridiosilva/from-model-capability-to-governed-action-an-architecture-for-secure-agentic-ai-de0bf29d0cdc" target="_blank" rel="noopener noreferrer">Medium ↗</a><br><a href="https://dev.to/aridiosilva/from-model-capability-to-governed-action-an-architecture-for-secure-agentic-ai-ke2" target="_blank" rel="noopener noreferrer">DEV Community ↗</a><br><a href="https://www.academia.edu/177853799/From_Model_Capability_to_Governed_Action_An_Architecture_for_Secure_Agentic_AI" target="_blank" rel="noopener noreferrer">Academia.edu ↗</a></div></div>
-</article>
-<article class="editorial-row">
-  <div class="editorial-year">2026-09-16</div><a class="series-cover-link" href="/publications/rogue-ai-agents/" aria-label="Read Rogue AI Agents: When Autonomous Systems Become a Collective"><img class="series-cover" src="/assets/article10/article-10-cover-rogue-ai-agents-collective.png" alt="Cover: Rogue AI Agents: When Autonomous Systems Become a Collective" width="1448" height="1086" loading="lazy" decoding="async"></a>
-  <div class="editorial-main"><h3><a href="/publications/rogue-ai-agents/">Rogue AI Agents: When Autonomous Systems Become a Collective</a></h3><p class="series-label">SGAEIA Research Series — Article 10</p><div class="editorial-links"><a href="https://doi.org/10.5281/zenodo.22796900" target="_blank" rel="noopener noreferrer">Zenodo DOI ↗</a><br><a href="https://medium.com/@aridiosilva/rogue-ai-agents-when-autonomous-systems-become-a-collective-75ddaf685938" target="_blank" rel="noopener noreferrer">Medium ↗</a><br><a href="https://dev.to/aridiosilva/rogue-ai-agents-when-autonomous-systems-become-a-collective-37oc" target="_blank" rel="noopener noreferrer">DEV Community ↗</a><br><a href="https://www.academia.edu/177869484/Rogue_AI_Agents_When_Autonomous_Systems_Become_a_Collective" target="_blank" rel="noopener noreferrer">Academia.edu ↗</a></div></div>
-</article>
-<article class="editorial-row">
-  <div class="editorial-year">2026-09-14</div><a class="series-cover-link" href="/publications/when-ai-begins-to-build-ai/" aria-label="Read When AI Begins to Build AI"><img class="series-cover" src="/assets/article9/cover-when-ai-begins-to-build-ai.png" alt="Cover: When AI Begins to Build AI" width="1672" height="941" loading="lazy" decoding="async"></a>
-  <div class="editorial-main"><h3><a href="/publications/when-ai-begins-to-build-ai/">When AI Begins to Build AI</a></h3><p class="series-label">SGAEIA Research Series — Article 9</p><div class="editorial-links"><a href="https://doi.org/10.5281/zenodo.22754885" target="_blank" rel="noopener noreferrer">Zenodo DOI ↗</a><br><a href="https://medium.com/@aridiosilva/when-ai-begins-to-build-ai-f762df34afec" target="_blank" rel="noopener noreferrer">Medium ↗</a><br><a href="https://dev.to/aridiosilva/when-ai-begins-to-build-ai-63f" target="_blank" rel="noopener noreferrer">DEV Community ↗</a><br><a href="https://www.academia.edu/177857549/When_AI_Begins_to_Build_Itself" target="_blank" rel="noopener noreferrer">Academia.edu ↗</a></div></div>
-</article>
-<article class="editorial-row">
-  <div class="editorial-year">2026-09-17</div><a class="series-cover-link" href="/publications/security-by-design-for-distributed-agentic-ai/" aria-label="Read Security-by-Design for Distributed Agentic AI"><img class="series-cover" src="/assets/article7/sgaeia-article-07-cover.png" alt="Cover: Security-by-Design for Distributed Agentic AI" width="1672" height="941" loading="lazy" decoding="async"></a>
-  <div class="editorial-main"><h3><a href="/publications/security-by-design-for-distributed-agentic-ai/">Security-by-Design for Distributed Agentic AI</a></h3><p class="series-label">SGAEIA Research Series — Article 7</p><div class="editorial-links"><a href="https://doi.org/10.5281/zenodo.22816239" target="_blank" rel="noopener noreferrer">Zenodo DOI ↗</a><br><a href="https://medium.com/@aridiosilva/security-by-design-for-distributed-agentic-ai-d8a00dfe1acd" target="_blank" rel="noopener noreferrer">Medium ↗</a><br><a href="https://dev.to/aridiosilva/security-by-design-for-distributed-agentic-ai-5b5j" target="_blank" rel="noopener noreferrer">DEV Community ↗</a><br><a href="https://www.academia.edu/177845260/Security_by_Design_for_Distributed_Agentic_AI" target="_blank" rel="noopener noreferrer">Academia.edu ↗</a></div></div>
-</article>
-<article class="editorial-row">
-  <div class="editorial-year">2026</div><a class="series-cover-link" href="/publications/evidence-as-code/" aria-label="Read Evidence-as-Code: Making AI Governance Verifiable"><img class="series-cover" src="/assets/article6/sgaeia-article-06-cover-evidence-as-code.png" alt="Cover: Evidence-as-Code: Making AI Governance Verifiable" width="1672" height="941" loading="lazy" decoding="async"></a>
-  <div class="editorial-main"><h3><a href="/publications/evidence-as-code/">Evidence-as-Code: Making AI Governance Verifiable</a></h3><p class="series-label">SGAEIA Research Series — Article 6</p><div class="editorial-links"><a href="https://doi.org/10.5281/zenodo.22736488" target="_blank" rel="noopener noreferrer">Zenodo DOI ↗</a><br><a href="https://medium.com/@aridiosilva/evidence-as-code-making-ai-governance-verifiable-db89e3105b87" target="_blank" rel="noopener noreferrer">Medium ↗</a><br><a href="https://dev.to/aridiosilva/evidence-as-code-making-ai-governance-verifiable-51pd" target="_blank" rel="noopener noreferrer">DEV Community ↗</a><br><a href="https://www.academia.edu/177842645/Evidence_as_Code_Making_AI_Governance_Verifiable" target="_blank" rel="noopener noreferrer">Academia.edu ↗</a></div></div>
-</article>
-<article class="editorial-row">
-  <div class="editorial-year">2026</div><a class="series-cover-link" href="/publications/continuous-grc-for-agentic-ai/" aria-label="Read Continuous GRC for Agentic AI"><img class="series-cover" src="/assets/article5/cover-continuous-grc-for-agentic-ai.png" alt="Cover: Continuous GRC for Agentic AI" width="3200" height="1800" loading="lazy" decoding="async"></a>
-  <div class="editorial-main"><h3><a href="/publications/continuous-grc-for-agentic-ai/">Continuous GRC for Agentic AI</a></h3><p class="series-label">SGAEIA Research Series — Article 5</p><div class="editorial-links"><a href="https://doi.org/10.5281/zenodo.22728227" target="_blank" rel="noopener noreferrer">Zenodo DOI ↗</a><br><a href="https://medium.com/@aridiosilva/continuous-grc-for-agentic-ai-ada11c2974d0" target="_blank" rel="noopener noreferrer">Medium ↗</a><br><a href="https://dev.to/aridiosilva/continuous-grc-for-agentic-ai-3hgg" target="_blank" rel="noopener noreferrer">DEV Community ↗</a><br><a href="https://www.academia.edu/177839335/Continuous_GRC_for_Agentic_AI" target="_blank" rel="noopener noreferrer">Academia.edu ↗</a></div></div>
-</article>
-<article class="editorial-row">
-  <div class="editorial-year">2026</div><a class="series-cover-link" href="/publications/authenticated-delegation-between-autonomous-ai-agents/" aria-label="Read Authenticated Delegation Between Autonomous AI Agents"><img class="series-cover" src="/assets/article4/cover_article_04.png" alt="Cover: Authenticated Delegation Between Autonomous AI Agents" width="1536" height="1024" loading="lazy" decoding="async"></a>
-  <div class="editorial-main"><h3><a href="/publications/authenticated-delegation-between-autonomous-ai-agents/">Authenticated Delegation Between Autonomous AI Agents</a></h3><p class="series-label">SGAEIA Research Series — Article 4</p><div class="editorial-links"><a href="https://doi.org/10.5281/zenodo.22727194" target="_blank" rel="noopener noreferrer">Zenodo DOI ↗</a><br><a href="https://medium.com/@aridiosilva/authenticated-delegation-between-autonomous-ai-agents-4c1281cd9e14" target="_blank" rel="noopener noreferrer">Medium ↗</a><br><a href="https://dev.to/aridiosilva/authenticated-delegation-between-autonomous-ai-agents-45ie" target="_blank" rel="noopener noreferrer">DEV Community ↗</a><br><a href="https://www.academia.edu/177680678/Authenticated_Delegation_Between_Autonomous_AI_Agents" target="_blank" rel="noopener noreferrer">Academia.edu ↗</a></div></div>
-</article>
-<article class="editorial-row">
-  <div class="editorial-year">2026</div><a class="series-cover-link" href="/publications/bounded-and-revocable-authority/" aria-label="Read Why Autonomous AI Agents Need Bounded and Revocable Authority"><img class="series-cover" src="/publications/bounded-and-revocable-authority/assets/sgaeia-article2-cover.png" alt="Cover: Why Autonomous AI Agents Need Bounded and Revocable Authority" width="1024" height="405" loading="lazy" decoding="async"></a>
-  <div class="editorial-main"><h3><a href="/publications/bounded-and-revocable-authority/" target="_blank" rel="noopener noreferrer">Why Autonomous AI Agents Need Bounded and Revocable Authority</a></h3><p class="series-label">SGAEIA Research Series — Article 2</p><div class="editorial-links"><a href="https://doi.org/10.5281/zenodo.22715664" target="_blank" rel="noopener noreferrer">Zenodo DOI ↗</a><br><a href="https://medium.com/@aridiosilva/why-autonomous-ai-agents-need-bounded-and-revocable-authority-da75656098f7" target="_blank" rel="noopener noreferrer">Medium ↗</a><br><a href="https://dev.to/aridiosilva/why-autonomous-ai-agents-need-bounded-and-revocable-authority-457b" target="_blank" rel="noopener noreferrer">DEV Community ↗</a><br><a href="https://www.academia.edu/177676840/Why_Autonomous_AI_Agents_Need_Bounded_and_Revocable_Authority" target="_blank" rel="noopener noreferrer">Academia.edu ↗</a></div></div>
-</article>
-<article class="editorial-row">
-  <div class="editorial-year">2026</div><a class="series-cover-link" href="/publications/from-edge-ai-to-governed-autonomous-edge-intelligence/" aria-label="Read From Edge AI to Governed Autonomous Edge Intelligence"><img class="series-cover" src="/publications/from-edge-ai-to-governed-autonomous-edge-intelligence/assets/page-01-01-FormXob.3524b2c62da8b5f429ef262943769f29.png" alt="Cover: From Edge AI to Governed Autonomous Edge Intelligence" width="1536" height="1024" loading="lazy" decoding="async"></a>
-  <div class="editorial-main"><h3><a href="/publications/from-edge-ai-to-governed-autonomous-edge-intelligence/" target="_blank" rel="noopener noreferrer">From Edge AI to Governed Autonomous Edge Intelligence</a></h3><p class="series-label">SGAEIA Research Series — Article 1</p><div class="editorial-links"><a href="https://doi.org/10.5281/zenodo.22715250" target="_blank" rel="noopener noreferrer">Zenodo DOI ↗</a><br><a href="https://medium.com/@aridiosilva/from-edge-ai-to-governed-autonomous-edge-intelligence-9cbe487d853a" target="_blank" rel="noopener noreferrer">Medium ↗</a><br><a href="https://dev.to/aridiosilva/from-edge-ai-to-governed-autonomous-edge-intelligence-6ld" target="_blank" rel="noopener noreferrer">DEV Community ↗</a><br><a href="https://www.academia.edu/177634450/From_Edge_AI_to_Governed_Autonomous_Edge_Intelligence" target="_blank" rel="noopener noreferrer">Academia.edu ↗</a></div></div>
-</article></div>
+  <div class="series-band" id="series"><section class="section"><div class="shell section-grid"><div class="section-kicker"><span>05</span><span data-i18n="nav_series">Platforms</span></div><div>
+    <h2 data-i18n="series_title">Publication platforms</h2><p class="section-intro" data-i18n="series_intro">Browse SGAEIA publications through the author’s profiles, archival records and research community.</p>
+    <div class="resource-grid">
+      <article class="resource-card"><span class="mini-label">1</span><h3 data-i18n="platform_records_title">Zenodo — Published records</h3><p data-i18n="platform_1_text">Browse the SGAEIA community’s publication records, with the newest records first.</p><p style="margin-top:10px"><a href="https://zenodo.org/communities/sgaeia/records?q=&amp;l=list&amp;p=1&amp;s=30&amp;sort=newest" target="_blank" rel="noopener noreferrer"><span data-i18n="open_link">Open</span> Zenodo ↗</a></p></article>
+      <article class="resource-card"><span class="mini-label">2</span><h3>DEV Community</h3><p data-i18n="platform_2_text">Read technical articles and follow the author’s publications on DEV Community.</p><p style="margin-top:10px"><a href="https://dev.to/aridiosilva" target="_blank" rel="noopener noreferrer"><span data-i18n="open_link">Open</span> DEV Community ↗</a></p></article>
+      <article class="resource-card"><span class="mini-label">3</span><h3>Academia.edu</h3><p data-i18n="platform_3_text">Browse the author’s research papers and publications on Academia.edu.</p><p style="margin-top:10px"><a href="https://independent.academia.edu/AridioSilva" target="_blank" rel="noopener noreferrer"><span data-i18n="open_link">Open</span> Academia.edu ↗</a></p></article>
+      <article class="resource-card"><span class="mini-label">4</span><h3 data-i18n="platform_community_title">Zenodo — SGAEIA Community</h3><p data-i18n="platform_4_text">Explore the SGAEIA archival community and its research collection.</p><p style="margin-top:10px"><a href="https://zenodo.org/communities/sgaeia" target="_blank" rel="noopener noreferrer"><span data-i18n="open_link">Open</span> Zenodo ↗</a></p></article>
+      <article class="resource-card"><span class="mini-label">5</span><h3>OpenAIRE</h3><p data-i18n="platform_5_text">Find the author’s research records through OpenAIRE’s discovery service.</p><p style="margin-top:10px"><a href="https://explore.openaire.eu/search/find?fv0=Aridio%20Silva&amp;f0=q" target="_blank" rel="noopener noreferrer"><span data-i18n="open_link">Open</span> OpenAIRE ↗</a></p></article>
+      <article class="resource-card"><span class="mini-label">6</span><h3>Medium</h3><p data-i18n="platform_6_text">Read the author’s research articles and essays on Medium.</p><p style="margin-top:10px"><a href="https://medium.com/@aridiosilva" target="_blank" rel="noopener noreferrer"><span data-i18n="open_link">Open</span> Medium ↗</a></p></article>
+    </div>
   </div></div></section></div>
 
   <section class="section" id="artifacts"><div class="shell section-grid"><div class="section-kicker"><span>06</span><span data-i18n="nav_artifacts">Artifacts</span></div><div>
     <h2 data-i18n="artifacts_title">Research artifacts &amp; persistent records</h2><p class="section-intro" data-i18n="artifacts_intro">SGAEIA is published as a versioned research software artifact and supported by persistent archival records, a dedicated Zenodo community, and public research writing.</p>
     <div class="resource-grid">
-      <article class="resource-card"><h3 data-i18n="artifact_software">SGAEIA software artifact</h3><p data-i18n="artifact_software_text">Versioned research software artifact and public reference architecture.</p><p style="margin-top:10px"><a href="https://doi.org/10.5281/zenodo.22557796" target="_blank" rel="noopener noreferrer"><span data-i18n="open_link">Open</span> DOI ↗</a></p></article>
-      <article class="resource-card"><h3 data-i18n="artifact_community">SGAEIA Zenodo Community</h3><p data-i18n="artifact_community_text">Archival collection for SGAEIA research outputs and related publications.</p><p style="margin-top:10px"><a href="https://zenodo.org/communities/sgaeia" target="_blank" rel="noopener noreferrer"><span data-i18n="open_link">Open</span> Zenodo ↗</a></p></article>
-      <article class="resource-card"><h3 data-i18n="artifact_repo">SGAEIA GitHub repository</h3><p data-i18n="artifact_repo_text">Public repository for the software artifact and research-facing project materials.</p><p style="margin-top:10px"><a href="https://github.com/aridiosilva/SGAEIA" target="_blank" rel="noopener noreferrer"><span data-i18n="open_link">Open</span> GitHub ↗</a></p></article>
-      <article class="resource-card"><h3 data-i18n="artifact_medium">SGAEIA Research Series on Medium</h3><p data-i18n="artifact_medium_text">Public essays and research notes developing the SGAEIA research program.</p><p style="margin-top:10px"><a href="https://medium.com/@aridiosilva" target="_blank" rel="noopener noreferrer"><span data-i18n="open_link">Open</span> Medium ↗</a></p></article>
-      <article class="resource-card resource-card-wide"><h3 data-i18n="artifact_linkedin">SGAEIA on LinkedIn</h3><p data-i18n="artifact_linkedin_text">Institutional page for SGAEIA research updates, publication announcements, and project communication.</p><p style="margin-top:10px"><a href="https://www.linkedin.com/company/sgaeia/" target="_blank" rel="noopener noreferrer"><span data-i18n="open_link">Open</span> LinkedIn ↗</a></p></article>
+      <article class="resource-card"><span class="mini-label">1</span><h3 data-i18n="artifact_software">SGAEIA software artifact</h3><p data-i18n="artifact_software_text">Versioned research software artifact and public reference architecture.</p><p style="margin-top:10px"><a href="https://doi.org/10.5281/zenodo.22557796" target="_blank" rel="noopener noreferrer"><span data-i18n="open_link">Open</span> DOI ↗</a></p></article>
+      <article class="resource-card"><span class="mini-label">2</span><h3 data-i18n="artifact_community">SGAEIA Zenodo Community</h3><p data-i18n="artifact_community_text">Archival collection for SGAEIA research outputs and related publications.</p><p style="margin-top:10px"><a href="https://zenodo.org/communities/sgaeia" target="_blank" rel="noopener noreferrer"><span data-i18n="open_link">Open</span> Zenodo ↗</a></p></article>
+      <article class="resource-card"><span class="mini-label">3</span><h3 data-i18n="artifact_repo">SGAEIA GitHub repository</h3><p data-i18n="artifact_repo_text">Public repository for the software artifact and research-facing project materials.</p><p style="margin-top:10px"><a href="https://github.com/aridiosilva/SGAEIA" target="_blank" rel="noopener noreferrer"><span data-i18n="open_link">Open</span> GitHub ↗</a></p></article>
+      <article class="resource-card"><span class="mini-label">4</span><h3 data-i18n="artifact_medium">SGAEIA Research Series on Medium</h3><p data-i18n="artifact_medium_text">Public essays and research notes developing the SGAEIA research program.</p><p style="margin-top:10px"><a href="https://medium.com/@aridiosilva" target="_blank" rel="noopener noreferrer"><span data-i18n="open_link">Open</span> Medium ↗</a></p></article>
+      <article class="resource-card resource-card-wide"><span class="mini-label">5</span><h3 data-i18n="artifact_linkedin">SGAEIA on LinkedIn</h3><p data-i18n="artifact_linkedin_text">Institutional page for SGAEIA research updates, publication announcements, and project communication.</p><p style="margin-top:10px"><a href="https://www.linkedin.com/company/sgaeia/" target="_blank" rel="noopener noreferrer"><span data-i18n="open_link">Open</span> LinkedIn ↗</a></p></article>
     </div>
   </div></div></section>
 
@@ -1449,23 +1395,29 @@
     <div class="citation-box"><code id="citationText">Silva, Aridio. (2026). SGAEIA: Secure Governed Autonomous Edge Intelligence Architecture (Version 0.3.4). Zenodo. https://doi.org/10.5281/zenodo.22557796</code><div class="copy-row"><button class="copy-button" type="button" id="copyCitation" data-i18n="copy_citation">Copy citation</button></div><div class="license-note" data-i18n="license_note">Software license: Apache-2.0. Research articles are archived separately under their published record licenses.</div></div>
   </div></div></section>
 </main>
-<footer class="site-footer">
+<footer class="site-footer footer-style-preview" id="footer">
   <div class="shell">
-    <div class="footer-head"><div class="footer-brand-lockup"><div class="sgaeia-mark sgaeia-mark-small"><img src="assets/sgaeia-logo-transparent.png" alt="" width="1254" height="1254" aria-hidden="true"></div><div class="footer-wordmark">SGAEIA</div></div><div class="footer-note" data-i18n="footer_note">SGAEIA · Research on governed autonomous and distributed AI systems.</div></div>
-    <nav class="brand-links" aria-label="Research profiles and project links">
-      <a class="brand-link" data-label="GitHub" aria-label="GitHub" title="GitHub" href="https://github.com/aridiosilva" target="_blank" rel="noopener noreferrer"><img src="https://cdn.simpleicons.org/github" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'"><span class="fallback-icon">GH</span></a>
-      <a class="brand-link" data-label="ORCID" aria-label="ORCID" title="ORCID" href="https://orcid.org/0009-0008-2411-6995" target="_blank" rel="me noopener noreferrer"><img src="https://cdn.simpleicons.org/orcid" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'"><span class="fallback-icon">iD</span></a>
-      <a class="brand-link" data-label="Google Scholar" aria-label="Google Scholar" title="Google Scholar" href="https://scholar.google.com/citations?user=rPn5O48AAAAJ" target="_blank" rel="noopener noreferrer"><img src="https://cdn.simpleicons.org/googlescholar" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'"><span class="fallback-icon">GS</span></a>
-      <a class="brand-link" data-label="Zenodo" aria-label="Zenodo" title="Zenodo" href="https://zenodo.org/search?q=metadata.creators.person_or_org.name%3A%22Silva%2C%20Aridio%22" target="_blank" rel="noopener noreferrer"><img src="https://cdn.simpleicons.org/zenodo" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'"><span class="fallback-icon">Z</span></a>
-      <a class="brand-link" data-badge="C" data-label="SGAEIA · Zenodo Community" aria-label="SGAEIA Zenodo Community" title="SGAEIA — Zenodo Community" href="https://zenodo.org/communities/sgaeia" target="_blank" rel="noopener noreferrer"><img src="https://cdn.simpleicons.org/zenodo" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'"><span class="fallback-icon">Z</span></a>
-      <a class="brand-link" data-label="OpenAIRE" aria-label="OpenAIRE" title="OpenAIRE" href="https://explore.openaire.eu/search/find?fv0=Aridio%20Silva&amp;f0=q" target="_blank" rel="noopener noreferrer"><img src="https://cdn.simpleicons.org/openaire" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'"><span class="fallback-icon">OA</span></a>
-      <a class="brand-link" data-label="Medium" aria-label="Medium" title="Medium" href="https://medium.com/@aridiosilva" target="_blank" rel="noopener noreferrer"><img src="https://cdn.simpleicons.org/medium" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'"><span class="fallback-icon">M</span></a>
-      <a class="brand-link brand-link--dev" data-label="DEV Community" aria-label="DEV Community profile" title="DEV Community" href="https://dev.to/aridiosilva" target="_blank" rel="me noopener noreferrer"><img src="https://cdn.simpleicons.org/devdotto/0A0A0A" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'"><span class="fallback-icon">DEV</span></a>
-      <a class="brand-link" data-label="LinkedIn" aria-label="LinkedIn" title="LinkedIn" href="https://www.linkedin.com/in/aridio-silva-74997111/" target="_blank" rel="noopener noreferrer"><img src="https://cdn.simpleicons.org/linkedin" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'"><span class="fallback-icon">in</span></a>
-      <a class="brand-link" data-badge="S" data-label="SGAEIA LinkedIn" aria-label="SGAEIA LinkedIn" title="SGAEIA LinkedIn" href="https://www.linkedin.com/company/sgaeia/" target="_blank" rel="noopener noreferrer"><img src="https://cdn.simpleicons.org/linkedin" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'"><span class="fallback-icon">in</span></a>
-      <a class="brand-link" data-badge="S" data-label="SGAEIA Repository" aria-label="SGAEIA GitHub Repository" title="SGAEIA Repository" href="https://github.com/aridiosilva/SGAEIA" target="_blank" rel="noopener noreferrer"><img src="https://cdn.simpleicons.org/github" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'"><span class="fallback-icon">GH</span></a>
-      <a class="brand-link" data-label="Kaggle" aria-label="Kaggle" title="Kaggle" href="https://www.kaggle.com/aridiosilva2" target="_blank" rel="noopener noreferrer"><img src="https://cdn.simpleicons.org/kaggle" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'"><span class="fallback-icon">K</span></a>
-      <a class="brand-link" data-label="SGAEIA DOI" aria-label="SGAEIA research artifact DOI" title="SGAEIA Research Artifact / DOI" href="https://doi.org/10.5281/zenodo.22557796" target="_blank" rel="noopener noreferrer"><img src="https://cdn.simpleicons.org/doi" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'"><span class="fallback-icon">DOI</span></a>
+    <div class="footer-head">
+      <div class="footer-brand-lockup">
+        <img class="footer-sgaeia-logo" src="/assets/sgaeia-logo-transparent.png" alt="" aria-hidden="true" width="1254" height="1254" loading="lazy" decoding="async">
+        <a class="footer-wordmark footer-project-link" href="/sgaeia.html">SGAEIA</a>
+      </div>
+      <div class="footer-note" data-i18n="footer_note">SGAEIA · Research on governed autonomous and distributed AI systems.</div>
+    </div>
+    <nav class="brand-links footer-name-links" aria-label="Research profiles and project links">
+      <a class="footer-profile-link" aria-label="GitHub" title="GitHub" href="https://github.com/aridiosilva" target="_blank" rel="noopener noreferrer"><strong>GitHub</strong></a>
+      <a class="footer-profile-link" aria-label="ORCID" title="ORCID" href="https://orcid.org/0009-0008-2411-6995" target="_blank" rel="me noopener noreferrer"><strong>ORCID</strong></a>
+      <a class="footer-profile-link" aria-label="Google Scholar" title="Google Scholar" href="https://scholar.google.com/citations?user=rPn5O48AAAAJ" target="_blank" rel="noopener noreferrer"><strong>Google Scholar</strong></a>
+      <a class="footer-profile-link" aria-label="Zenodo author records" title="Zenodo" href="https://zenodo.org/search?q=metadata.creators.person_or_org.name%3A%22Silva%2C%20Aridio%22" target="_blank" rel="noopener noreferrer"><strong>Zenodo</strong></a>
+      <a class="footer-profile-link" aria-label="SGAEIA Zenodo Community" title="SGAEIA — Zenodo Community" href="https://zenodo.org/communities/sgaeia" target="_blank" rel="noopener noreferrer"><strong>SGAEIA · Zenodo Community</strong></a>
+      <a class="footer-profile-link" aria-label="OpenAIRE" title="OpenAIRE" href="https://explore.openaire.eu/search/find?fv0=Aridio%20Silva&amp;f0=q" target="_blank" rel="noopener noreferrer"><strong>OpenAIRE</strong></a>
+      <a class="footer-profile-link" aria-label="Medium" title="Medium" href="https://medium.com/@aridiosilva" target="_blank" rel="noopener noreferrer"><strong>Medium</strong></a>
+      <a class="footer-profile-link" aria-label="DEV Community profile" title="DEV Community" href="https://dev.to/aridiosilva" target="_blank" rel="me noopener noreferrer"><strong>DEV Community</strong></a>
+      <a class="footer-profile-link" aria-label="LinkedIn" title="LinkedIn" href="https://www.linkedin.com/in/aridio-silva-74997111/" target="_blank" rel="noopener noreferrer"><strong>LinkedIn</strong></a>
+      <a class="footer-profile-link" aria-label="SGAEIA LinkedIn" title="SGAEIA LinkedIn" href="https://www.linkedin.com/company/sgaeia/" target="_blank" rel="noopener noreferrer"><strong>SGAEIA · LinkedIn</strong></a>
+      <a class="footer-profile-link" aria-label="SGAEIA GitHub Repository" title="SGAEIA Repository" href="https://github.com/aridiosilva/SGAEIA" target="_blank" rel="noopener noreferrer"><strong>SGAEIA Repository</strong></a>
+      <a class="footer-profile-link" aria-label="Kaggle" title="Kaggle" href="https://www.kaggle.com/aridiosilva2" target="_blank" rel="noopener noreferrer"><strong>Kaggle</strong></a>
+      <a class="footer-profile-link" aria-label="SGAEIA research artifact DOI" title="SGAEIA Research Artifact / DOI" href="https://doi.org/10.5281/zenodo.22557796" target="_blank" rel="noopener noreferrer"><strong>SGAEIA DOI</strong></a>
     </nav>
     <div class="footer-bottom"><span>© 2026 Aridio Silva</span><span data-i18n="last_updated">Last updated: 25 September 2026 — Version 2.0</span><span data-i18n="footer_motto">Autonomous AI. Governed by Design. Trusted by Evidence.</span></div>
   </div>
@@ -1474,12 +1426,25 @@
 (function() {
   const translations = {
   "en": {
+    "platform_records_title": "Zenodo — Published records",
+    "platform_community_title": "Zenodo — SGAEIA Community",
+    "platform_1_text": "Browse the SGAEIA community’s publication records, with the newest records first.",
+    "platform_2_text": "Read technical articles and follow the author’s publications on DEV Community.",
+    "platform_3_text": "Browse the author’s research papers and publications on Academia.edu.",
+    "platform_4_text": "Explore the SGAEIA archival community and its research collection.",
+    "platform_5_text": "Find the author’s research records through OpenAIRE’s discovery service.",
+    "platform_6_text": "Read the author’s research articles and essays on Medium.",
+
+      "article21_title": "The Open Letter on AI and Cybersecurity and the Evidence for Agent Containment",
+      "article21_desc": "An analysis of the scientific open letter on AI and cybersecurity, documented incidents, evaluation limits, and evidence for agent containment and governed authority.",
+      "article21_label": "SGAEIA Research Series — Article 21",
+
     "skip": "Skip to main content",
     "identity_role": "Independent Researcher <span class='role-sep'>·</span><br class='mobile-role-break'> AI Systems Architecture",
     "nav_home": "Home",
     "nav_problem": "Problem",
     "nav_principles": "Principles",
-    "nav_series": "Research Series",
+    "nav_series": "Platforms",
     "nav_publications": "Publications",
     "nav_infographics": "Infographics",
     "nav_artifacts": "Artifacts",
@@ -1539,8 +1504,8 @@
     "a3_text": "How can policy enforcement and evidence generation support continuous GRC instead of periodic compliance snapshots?",
     "a4_title": "Verifiable delegation",
     "a4_text": "How can delegation remain authenticated, bounded, revocable, and reconstructable across complex chains of autonomous action?",
-    "series_title": "SGAEIA Research Series",
-    "series_intro": "The research series develops the architecture incrementally through problems, principles, security properties, governance concepts, and emerging risks. Archival versions are preserved on Zenodo and public essays are published on Medium.",
+    "series_title": "Publication platforms",
+    "series_intro": "Browse SGAEIA publications through the author’s profiles, archival records and research community.",
     "medium_label": "Medium",
     "doi_label": "Zenodo DOI",
     "artifacts_title": "Research artifacts & persistent records",
@@ -1566,12 +1531,25 @@
     "footer_motto": "Autonomous AI. Governed by Design. Trusted by Evidence."
   },
   "pt": {
+    "platform_records_title": "Zenodo — Registros publicados",
+    "platform_community_title": "Zenodo — Comunidade SGAEIA",
+    "platform_1_text": "Consulte os registros de publicação da comunidade SGAEIA, dos mais recentes aos mais antigos.",
+    "platform_2_text": "Leia artigos técnicos e acompanhe as publicações do autor na DEV Community.",
+    "platform_3_text": "Consulte os trabalhos de pesquisa e as publicações do autor no Academia.edu.",
+    "platform_4_text": "Explore a comunidade de arquivo SGAEIA e sua coleção de pesquisa.",
+    "platform_5_text": "Encontre registros de pesquisa do autor pelo serviço de descoberta do OpenAIRE.",
+    "platform_6_text": "Leia os artigos de pesquisa e ensaios do autor no Medium.",
+
+      "article21_title": "Carta aberta sobre AI e cibersegurança e as evidências que sustentam a contenção de agentes",
+      "article21_desc": "Uma análise da carta aberta científica sobre AI e cibersegurança, dos incidentes documentados, dos limites de avaliação e das evidências para contenção de agentes e autoridade governada.",
+      "article21_label": "SGAEIA Research Series — Artigo 21",
+
     "skip": "Ir para o conteúdo principal",
     "identity_role": "Pesquisador Independente <span class='role-sep'>·</span><br class='mobile-role-break'> Arquitetura de Sistemas de IA",
     "nav_home": "Início",
     "nav_problem": "Problema",
     "nav_principles": "Princípios",
-    "nav_series": "Série de Pesquisa",
+    "nav_series": "Plataformas",
     "nav_publications": "Publicações",
     "nav_infographics": "Infográficos",
     "nav_artifacts": "Artefatos",
@@ -1631,8 +1609,8 @@
     "a3_text": "Como aplicação de políticas e geração de evidências podem sustentar GRC contínuo em vez de fotografias periódicas de conformidade?",
     "a4_title": "Delegação verificável",
     "a4_text": "Como manter a delegação autenticada, limitada, revogável e reconstruível ao longo de cadeias complexas de ação autônoma?",
-    "series_title": "Série de Pesquisa SGAEIA",
-    "series_intro": "A série de pesquisa desenvolve a arquitetura progressivamente por meio de problemas, princípios, propriedades de segurança, conceitos de governança e riscos emergentes. Versões arquivísticas são preservadas no Zenodo e os ensaios públicos são publicados no Medium.",
+    "series_title": "Plataformas de publicação",
+    "series_intro": "Acesse as publicações SGAEIA pelos perfis do autor, pelos registros arquivados e pela comunidade de pesquisa.",
     "medium_label": "Medium",
     "doi_label": "DOI Zenodo",
     "artifacts_title": "Artefatos de pesquisa e registros persistentes",
@@ -1658,12 +1636,25 @@
     "footer_motto": "Autonomous AI. Governed by Design. Trusted by Evidence."
   },
   "es": {
+    "platform_records_title": "Zenodo — Registros publicados",
+    "platform_community_title": "Zenodo — Comunidad SGAEIA",
+    "platform_1_text": "Consulte los registros de publicación de la comunidad SGAEIA, con los más recientes primero.",
+    "platform_2_text": "Lea artículos técnicos y siga las publicaciones del autor en DEV Community.",
+    "platform_3_text": "Consulte los trabajos de investigación y las publicaciones del autor en Academia.edu.",
+    "platform_4_text": "Explore la comunidad de archivo SGAEIA y su colección de investigación.",
+    "platform_5_text": "Encuentre registros de investigación del autor mediante el servicio de descubrimiento de OpenAIRE.",
+    "platform_6_text": "Lea los artículos de investigación y ensayos del autor en Medium.",
+
+      "article21_title": "La carta abierta sobre IA y ciberseguridad y las evidencias para la contención de agentes",
+      "article21_desc": "Un análisis de la carta abierta científica sobre IA y ciberseguridad, los incidentes documentados, los límites de evaluación y las evidencias para la contención de agentes y la autoridad gobernada.",
+      "article21_label": "SGAEIA Research Series — Artículo 21",
+
     "skip": "Ir al contenido principal",
     "identity_role": "Investigador Independiente <span class='role-sep'>·</span><br class='mobile-role-break'> Arquitectura de Sistemas de IA",
     "nav_home": "Inicio",
     "nav_problem": "Problema",
     "nav_principles": "Principios",
-    "nav_series": "Serie de Investigación",
+    "nav_series": "Plataformas",
     "nav_publications": "Publicaciones",
     "nav_infographics": "Infografías",
     "nav_artifacts": "Artefactos",
@@ -1723,8 +1714,8 @@
     "a3_text": "¿Cómo pueden la aplicación de políticas y la generación de evidencia sostener un GRC continuo en lugar de instantáneas periódicas de cumplimiento?",
     "a4_title": "Delegación verificable",
     "a4_text": "¿Cómo mantener la delegación autenticada, limitada, revocable y reconstruible a través de cadenas complejas de acción autónoma?",
-    "series_title": "Serie de Investigación SGAEIA",
-    "series_intro": "La serie desarrolla la arquitectura progresivamente mediante problemas, principios, propiedades de seguridad, conceptos de gobernanza y riesgos emergentes. Las versiones archivadas se preservan en Zenodo y los ensayos públicos se publican en Medium.",
+    "series_title": "Plataformas de publicación",
+    "series_intro": "Acceda a las publicaciones SGAEIA mediante los perfiles del autor, los registros archivados y la comunidad de investigación.",
     "medium_label": "Medium",
     "doi_label": "DOI Zenodo",
     "artifacts_title": "Artefactos de investigación y registros persistentes",
@@ -1750,12 +1741,25 @@
     "footer_motto": "Autonomous AI. Governed by Design. Trusted by Evidence."
   },
   "fr": {
+    "platform_records_title": "Zenodo — Publications archivées",
+    "platform_community_title": "Zenodo — Communauté SGAEIA",
+    "platform_1_text": "Parcourez les publications de la communauté SGAEIA, des plus récentes aux plus anciennes.",
+    "platform_2_text": "Lisez les articles techniques et suivez les publications de l’auteur sur DEV Community.",
+    "platform_3_text": "Consultez les travaux de recherche et les publications de l’auteur sur Academia.edu.",
+    "platform_4_text": "Explorez la communauté d’archives SGAEIA et sa collection de recherche.",
+    "platform_5_text": "Retrouvez les travaux de recherche de l’auteur grâce au service de découverte OpenAIRE.",
+    "platform_6_text": "Lisez les articles de recherche et les essais de l’auteur sur Medium.",
+
+      "article21_title": "La lettre ouverte sur l’IA et la cybersécurité et les preuves en faveur du confinement des agents",
+      "article21_desc": "Une analyse de la lettre ouverte scientifique sur l’IA et la cybersécurité, des incidents documentés, des limites de l’évaluation et des preuves pour le confinement des agents et l’autorité gouvernée.",
+      "article21_label": "SGAEIA Research Series — Article 21",
+
     "skip": "Aller au contenu principal",
     "identity_role": "Chercheur Indépendant <span class='role-sep'>·</span><br class='mobile-role-break'> Architecture des Systèmes d’IA",
     "nav_home": "Accueil",
     "nav_problem": "Problème",
     "nav_principles": "Principes",
-    "nav_series": "Série de Recherche",
+    "nav_series": "Plateformes",
     "nav_publications": "Publications",
     "nav_infographics": "Infographies",
     "nav_artifacts": "Artefacts",
@@ -1815,8 +1819,8 @@
     "a3_text": "Comment l’application des politiques et la génération de preuves peuvent-elles soutenir un GRC continu plutôt que des instantanés périodiques de conformité ?",
     "a4_title": "Délégation vérifiable",
     "a4_text": "Comment maintenir la délégation authentifiée, limitée, révocable et reconstructible à travers des chaînes complexes d’action autonome ?",
-    "series_title": "Série de Recherche SGAEIA",
-    "series_intro": "La série développe progressivement l’architecture à travers des problèmes, principes, propriétés de sécurité, concepts de gouvernance et risques émergents. Les versions archivées sont conservées sur Zenodo et les essais publics sont publiés sur Medium.",
+    "series_title": "Plateformes de publication",
+    "series_intro": "Consultez les publications SGAEIA à travers les profils de l’auteur, les archives et la communauté de recherche.",
     "medium_label": "Medium",
     "doi_label": "DOI Zenodo",
     "artifacts_title": "Artefacts de recherche et enregistrements persistants",
@@ -1842,12 +1846,25 @@
     "footer_motto": "Autonomous AI. Governed by Design. Trusted by Evidence."
   },
   "de": {
+    "platform_records_title": "Zenodo — Veröffentlichte Datensätze",
+    "platform_community_title": "Zenodo — SGAEIA-Community",
+    "platform_1_text": "Durchsuchen Sie die Publikationen der SGAEIA-Community, beginnend mit den neuesten Einträgen.",
+    "platform_2_text": "Lesen Sie Fachartikel und verfolgen Sie die Veröffentlichungen des Autors auf DEV Community.",
+    "platform_3_text": "Entdecken Sie die Forschungsarbeiten und Publikationen des Autors auf Academia.edu.",
+    "platform_4_text": "Erkunden Sie die SGAEIA-Archivgemeinschaft und ihre Forschungssammlung.",
+    "platform_5_text": "Finden Sie Forschungsdatensätze des Autors über den OpenAIRE-Suchdienst.",
+    "platform_6_text": "Lesen Sie die Forschungsartikel und Essays des Autors auf Medium.",
+
+      "article21_title": "Der offene Brief zu KI und Cybersicherheit und die Evidenz für die Eindämmung von Agenten",
+      "article21_desc": "Eine Analyse des wissenschaftlichen offenen Briefs zu KI und Cybersicherheit, dokumentierter Vorfälle, der Grenzen von Bewertungen und der Evidenz für die Eindämmung von Agenten und geregelte Befugnisse.",
+      "article21_label": "SGAEIA Research Series — Artikel 21",
+
     "skip": "Zum Hauptinhalt springen",
     "identity_role": "Unabhängiger Forscher <span class='role-sep'>·</span><br class='mobile-role-break'> Architektur von KI-Systemen",
     "nav_home": "Start",
     "nav_problem": "Problem",
     "nav_principles": "Prinzipien",
-    "nav_series": "Forschungsreihe",
+    "nav_series": "Plattformen",
     "nav_publications": "Publikationen",
     "nav_infographics": "Infografiken",
     "nav_artifacts": "Artefakte",
@@ -1907,8 +1924,8 @@
     "a3_text": "Wie können Richtliniendurchsetzung und Evidenzerzeugung Continuous GRC statt periodischer Compliance-Snapshots unterstützen?",
     "a4_title": "Überprüfbare Delegation",
     "a4_text": "Wie kann Delegation über komplexe Ketten autonomer Handlungen hinweg authentifiziert, begrenzt, widerrufbar und rekonstruierbar bleiben?",
-    "series_title": "SGAEIA-Forschungsreihe",
-    "series_intro": "Die Forschungsreihe entwickelt die Architektur schrittweise anhand von Problemen, Prinzipien, Sicherheitseigenschaften, Governance-Konzepten und aufkommenden Risiken. Archivversionen werden auf Zenodo bewahrt und öffentliche Essays auf Medium veröffentlicht.",
+    "series_title": "Publikationsplattformen",
+    "series_intro": "Entdecken Sie SGAEIA-Publikationen über die Profile des Autors, Archivdatensätze und die Forschungsgemeinschaft.",
     "medium_label": "Medium",
     "doi_label": "Zenodo DOI",
     "artifacts_title": "Forschungsartefakte & persistente Datensätze",

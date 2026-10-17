@@ -1,0 +1,8 @@
+/* Center the opening text on publication and infographic indexes. */
+.publications-index .hero {
+  text-align: center;
+}
+.publications-index .hero :is(h1, .lede) {
+  margin-inline: auto;
+  text-wrap: balance;
+}

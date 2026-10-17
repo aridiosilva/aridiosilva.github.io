@@ -130,3 +130,15 @@ body:is(.article-page, .infographic-page, .publications-index) .skip { z-index: 
 @media (prefers-reduced-motion: reduce) {
   body:is(.article-page, .infographic-page, .publications-index) .site-header :is(.identity, .identity strong, nav a) { transition: none; }
 }
+
+
+/* Center the opening text on every English/Portuguese article and infographic. */
+:is(.article-page, .infographic-page) .hero {
+  text-align: center;
+}
+:is(.article-page, .infographic-page) .hero :is(h1, .subtitle, .lede, .meta, .author) {
+  margin-inline: auto;
+}
+:is(.article-page, .infographic-page) .hero .language-nav {
+  justify-content: center;
+}
