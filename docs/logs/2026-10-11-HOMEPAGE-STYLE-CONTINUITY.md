@@ -995,3 +995,15 @@ Novos artigos e infográficos devem reutilizar esse rodapé compartilhado e sua 
 - PDFs originais preservados por hash SHA-256: EN `1B7976BE24E292B9A69B54D7C9612C205761ED6FD091D21CDE6EE603D3995CCC`; PT `41387E9A2683573F20E4F94385D8F70C05375BF2DE3359ED01EA4D915015841D`.
 - Backup restaurável: `C:\Users\as294\Documents\Codex\2026-10-21\se-2\work\backup-before-article22-info016`.
 - Alterações locais; sem stage, commit, push ou acesso à homepage remota.
+
+## Regra obrigatória de GA4 e descoberta para novas páginas — 21 de outubro de 2026
+
+- Atualizado `docs/prompts/2026-10-11-HOMEPAGE-CONTINUIDADE-V2.1.md` para transformar Analytics e descoberta em condição explícita de aceite de toda nova página HTML pública, incluindo novas traduções.
+- Registrado o fragmento compartilhado obrigatório e único `<script defer src="/assets/analytics-consent.js?v=20261011"></script>`, com propriedade GA4 `G-MXMJ7Z3LS7`, armazenamento de Analytics e publicidade negado, sem Google Signals, personalização de anúncios ou carregador `gtag.js` duplicado na página.
+- Documentados os requisitos mínimos da CSP para Google Tag Manager e Google Analytics, preservando as demais diretivas restritivas e proibindo o uso de `*` ou `unsafe-inline` apenas para acomodar a medição.
+- Consolidada a atualização coordenada de canonical, `hreflang` recíproco EN/PT, `x-default` em EN, navegação visível de idiomas, índice correspondente, metadados, dados estruturados, `sitemap.xml`, `llms.txt` e `robots.txt`.
+- Explicitado que `robots.txt` não é um índice de páginas: deve manter rastreamento permitido e a referência ao sitemap, sem registrar uma linha por nova URL nem expor caminhos privados, temporários ou de backup.
+- Acrescentada uma Definition of Done verificável: página e ativos sem 404 na prévia local; GA4 exatamente uma vez; CSP coerente; metadados e idiomas corretos; índice com EN como default quando houver EN/PT; sitemap XML válido e sem URLs duplicadas; `llms.txt` e `robots.txt` coerentes; conferência em desktop e 320px; `git diff --check`; páginas resultantes abertas nas abas locais à direita.
+- Sincronizada a cópia histórica externa `F:\#         Cursos 2026\__     SGAEIA_2\PROMPTs Diversos\2026-10-15-HOMEPAGE-STYLE-CONTINUITY - Last Version` com a nova regra.
+- Criada a cópia privada controlada `C:\Users\as294\SGAEIA_2\docs\prompts\2026-10-21-1935-SGAEIA-PROMPT-CONTINUIDADE-HOMEPAGE-V2.1_PT.md`, identificada como prompt operacional não normativo e vinculada à origem no repositório da homepage.
+- Esta etapa alterou somente o prompt e este log no repositório da homepage; nenhum HTML, CSS, JavaScript, índice público, `sitemap.xml`, `llms.txt` ou `robots.txt` foi novamente modificado.
