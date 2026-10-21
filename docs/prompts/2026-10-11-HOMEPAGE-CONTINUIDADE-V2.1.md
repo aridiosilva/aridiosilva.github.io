@@ -1,6 +1,6 @@
 # Prompt de continuidade — Homepage AridioSilva.com — padrões atuais
 
-**Atualizado em:** 17 de outubro de 2026 — BRT
+**Atualizado em:** 21 de outubro de 2026 — BRT
 
 **Ciclo de continuidade:** 2.1; preservar a versão editorial indicada em cada página.
 
@@ -8,7 +8,7 @@
 
 **Branch:** `main`
 
-**Commit de referência observado:** `eb98889` — `feat: adiciona artigo 21 e padroniza layout, rodapes e plataformas de publicacao`
+**Commit de referência observado:** `31dac92`
 
 **Remoto configurado:** `https://github.com/aridiosilva/aridiosilva.github.io`
 
@@ -20,7 +20,7 @@ Continue a evolução da homepage AridioSilva.com no repositório local indicado
 
 ## Como interpretar este documento
 
-- As seções de padrões atuais, antes do histórico, consolidam as decisões vigentes em 17/10/2026 e prevalecem sobre descrições antigas de layout ou estado Git.
+- As seções de padrões atuais, antes do histórico, consolidam as decisões vigentes em 21/10/2026 e prevalecem sobre descrições antigas de layout ou estado Git.
 - O histórico registra etapas anteriores, inclusive testes descartados e estados anteriores ao commit. Referências antigas a rodapés com ícones, Research Series com cards de artigos, Artifacts sem bullets ou hero editorial alinhado à esquerda foram superadas.
 - Confira sempre o código e o estado Git atuais. O commit de referência acima não autoriza reset, checkout ou descarte de alterações.
 - A versão 2.1 identifica o ciclo deste prompt; não alterar automaticamente os números de versão visíveis das páginas.
@@ -180,12 +180,55 @@ Versões observadas na consolidação de 17/10/2026; em alterações futuras, av
 9. Restaurar a viewport após os testes, fechar abas temporárias de auditoria e abrir ou atualizar as páginas de resultado à direita. Usar `http://127.0.0.1:8765/`, sem acessar a homepage remota.
 10. Executar `git diff --check`, registrar as decisões e fornecer um resumo do que mudou e da validação. Stage, commit e push dependem de pedido explícito de execução.
 
+## 8A. Regra obrigatória para toda nova página pública — GA4 e descoberta
+
+Esta seção é uma condição de aceite, não uma recomendação. Toda nova página HTML pública — institucional, índice, artigo, tradução, infográfico ou outra edição — somente está concluída quando cumprir integralmente os requisitos abaixo. Aplicar também ao adicionar uma nova versão linguística de uma página existente.
+
+### Google Analytics compartilhado e CSP
+
+- Inserir **exatamente uma vez** no `<head>` o carregador compartilhado, preservando a propriedade GA4 `G-MXMJ7Z3LS7`:
+
+```html
+<!-- GA4 G-MXMJ7Z3LS7: automatic cookieless audience measurement; analytics and advertising storage remain disabled. -->
+<script defer src="/assets/analytics-consent.js?v=20261011"></script>
+```
+
+- Não duplicar o snippet, não criar outro `gtag.js` inline e não carregar diretamente `https://www.googletagmanager.com/gtag/js` na página. `/assets/analytics-consent.js` é a implementação canônica: inicializa `dataLayer`/`gtag`, mantém `analytics_storage`, `ad_storage`, `ad_user_data` e `ad_personalization` negados, configura a propriedade e injeta o carregador remoto.
+- Manter a medição automática sem banner ou interface de preferências e sem habilitar Google Signals ou personalização de anúncios. Alterações de consentimento, propriedade ou estratégia de medição exigem pedido explícito do usuário.
+- A CSP da página deve continuar restritiva e permitir, no mínimo, os destinos usados pelo ativo compartilhado: `script-src 'self' https://www.googletagmanager.com`, `img-src 'self' data: https://*.google-analytics.com` e `connect-src https://*.google-analytics.com https://www.googletagmanager.com`. Preservar também as demais diretivas necessárias da família da página; nunca afrouxar a CSP para `*` ou adicionar `unsafe-inline` apenas para acomodar Analytics.
+- Ao validar, contar a referência a `/assets/analytics-consent.js` e a identificação `G-MXMJ7Z3LS7`: deve haver uma integração, sem ausência nem duplicação, e nenhuma violação de CSP causada pelo carregamento.
+
+### Canonical, idiomas, índices e metadados
+
+- Declarar canonical absoluto da própria edição. Quando houver EN/PT, declarar `hreflang="en"` e `hreflang="pt-BR"` recíprocos nas duas páginas e `hreflang="x-default"` apontando para a edição EN. A navegação visível entre English e Português deve ser recíproca e funcional.
+- Incluir `<link rel="sitemap" type="application/xml" href="/sitemap.xml">` e `<link rel="describedby" href="/llms.txt" type="text/markdown">` no `<head>`.
+- Preencher título, descrição, autor, idioma, Open Graph e dados estruturados adequados ao tipo de página. Artigos devem preservar metadados de citação, DOI, licença, datas e `ScholarlyArticle`; infográficos devem preservar imagem/capa, PDF e metadados editoriais aplicáveis. Não inventar DOI, URL externa, data ou tradução.
+- Atualizar o índice correspondente. Para conjuntos bilíngues, o card principal de `publications.html` ou `infographics/index.html` aponta para EN como edição padrão e oferece o acesso PT conforme o padrão vigente. Atualizar a homepage somente quando o escopo editorial pedir sua inclusão.
+
+### `sitemap.xml`, `llms.txt` e `robots.txt`
+
+- `sitemap.xml`: adicionar cada URL pública canônica criada, com `lastmod` correspondente à alteração efetiva, URLs únicas e alternates EN/PT/`x-default` quando aplicáveis. Registrar imagem de capa ou slide representativo quando a família já usa image sitemap. Atualizar o `lastmod` dos índices ou páginas-mãe somente se eles realmente mudaram.
+- `llms.txt`: adicionar entradas claras para cada edição web pública, com idioma, título, URL canônica e descrição fiel. Incluir PDFs ou outros downloads públicos relevantes quando fizerem parte da edição. Registrar DOI, data, versão e canais externos apenas quando confirmados. Manter EN primeiro quando for a edição padrão.
+- `robots.txt`: este arquivo **não é um índice de páginas** e não deve receber uma linha por URL. Confirmar que `User-agent: *`/`Allow: /` não bloqueiam a nova rota, preservar `Sitemap: https://aridiosilva.com/sitemap.xml` e atualizar o comentário informativo datado quando o padrão vigente registrar uma nova publicação. Não expor caminhos privados, temporários, backups ou arquivos de trabalho.
+- Não considerar apenas a existência do arquivo: conferir que todos os caminhos adicionados em HTML, índices, sitemap e `llms.txt` apontam para recursos públicos reais, com grafia, maiúsculas/minúsculas e idioma corretos.
+
+### Definition of Done de uma nova página
+
+- [ ] Página e ativos abrem pela prévia local sem 404; links internos, imagem, PDF e navegação de idioma funcionam.
+- [ ] GA4 compartilhado aparece exatamente uma vez e a CSP contém as origens necessárias, sem ser afrouxada.
+- [ ] Canonical, `hreflang`, `x-default`, sitemap e `describedby` estão coerentes com a URL pública final.
+- [ ] Metadados, dados estruturados, licença, datas, DOI e idioma correspondem ao conteúdo fornecido.
+- [ ] Índice da família atualizado, com EN como default quando houver EN/PT.
+- [ ] `sitemap.xml` válido, sem `<loc>` duplicado, com alternates e `lastmod` corretos.
+- [ ] `llms.txt` descreve as novas páginas e downloads; `robots.txt` permite rastreamento e aponta para o sitemap.
+- [ ] Página conferida em desktop e 320px, sem sobreposição ou rolagem horizontal; `git diff --check` concluído; páginas alteradas ou incluídas abertas nas abas locais à direita.
+
 ## 9. Estado desta consolidação
 
-- Antes desta atualização documental, `main` estava limpo e alinhado à referência local `origin/main`, no commit `eb98889`. Essa observação não envolve fetch nem comprova o estado da hospedagem remota.
-- As alterações visuais da sessão já constam nesse commit. Esta etapa atualiza somente o prompt e o log de continuidade e gera uma cópia Markdown datada.
+- Antes desta atualização documental, `main` estava limpo e alinhado à referência local `origin/main`, no commit `31dac92`. Essa observação não envolve fetch nem comprova o estado da hospedagem remota.
+- Esta etapa atualiza somente o prompt de continuidade para consolidar os requisitos obrigatórios de Analytics e descoberta de novas páginas.
 - As verificações visuais dos componentes estão registradas no histórico: rodapés e heroes das 56 edições individuais foram conferidos a 1280px e 320px. Não confundir essas verificações anteriores com uma nova execução de testes visuais nesta atualização documental.
-- As cópias do prompt no repositório e em `F:\#         Cursos 2026\SGAEIA_2\PROMPTs Diversos\` devem permanecer sincronizadas com o padrão consolidado.
+- As cópias do prompt no repositório e em `F:\#         Cursos 2026\__     SGAEIA_2\PROMPTs Diversos\2026-10-15-HOMEPAGE-STYLE-CONTINUITY - Last Version` devem permanecer sincronizadas com o padrão consolidado.
 
 ---
 
