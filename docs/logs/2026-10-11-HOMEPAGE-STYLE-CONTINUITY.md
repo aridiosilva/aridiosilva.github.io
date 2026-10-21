@@ -2,8 +2,12 @@
 
 **Data:** 2026-10-11 BRT  
 **Classificação:** PRIVATE WORK LOG  
-**Status:** CONTEXTO ATUALIZADO; REDESIGN SGAEIA PUBLICADO E NOVAS ALTERAÇÕES LOCAIS PENDENTES  
-**Commit funcional atual:** `d6935b2` — `Improve SGAEIA sections, cards, and footer icons`
+**Status:** PADRÕES CONSOLIDADOS EM 17/10/2026; ATUALIZAÇÃO DOCUMENTAL PENDENTE DE COMMIT
+**Commit funcional atual:** `eb98889` — `feat: adiciona artigo 21 e padroniza layout, rodapes e plataformas de publicacao`
+
+## Referência vigente — 17 de outubro de 2026
+
+O padrão atual está consolidado na abertura de `docs/prompts/2026-10-11-HOMEPAGE-CONTINUIDADE-V2.1.md`. Ele prevalece sobre descrições históricas deste log. Prévia exclusivamente local em `http://127.0.0.1:8765/`; não acessar a homepage remota, conforme determinação do usuário. Preservar hover/foco aprovados nos componentes atuais; as variantes descartadas mencionadas a seguir se referem aos testes antigos.
 
 ## Prompt pronto para iniciar outro chat
 
@@ -972,3 +976,22 @@ Novos artigos e infográficos devem reutilizar esse rodapé compartilhado e sua 
 - Exemplos do artigo 21 e infográfico 005 em EN/PT atualizados na prévia local à direita.
 - Backup anterior: `C:\Users\as294\Documents\Codex\2026-10-17\insi\work\backup-before-centered-editorial-heroes`. git diff --check passou. Sem stage, commit, push, publicação ou acesso à homepage remota.
 - Continuidade: novos artigos e infográficos devem reutilizar essa centralização do hero por meio da folha editorial compartilhada.
+
+## Consolidação do prompt de continuidade — 17 de outubro de 2026
+
+- Reescrita a abertura do prompt com os padrões vigentes: identidade centralizada e Home; rodapé compartilhado nas 60 páginas; heroes centralizados nos índices e nas edições EN/PT; plataformas 1–6 e Artifacts 1–5; cores, tipografia, espaçamentos, hover e foco.
+- Registrados os destinos do Artigo 21 e das plataformas, as versões atuais dos ativos, os requisitos de preservação e o fluxo de validação somente local na porta 8765. Mantido o histórico de implementação, explicitamente identificado como histórico.
+- Atualizadas e sincronizadas a cópia em docs/prompts e a cópia original no disco F:. Gerado o arquivo datado 2026-10-17-HOMEPAGE-CONTINUIDADE-PADROES-ATUAIS.md na pasta outputs da conversa para leitura e salvamento.
+- Estado observado antes da atualização documental: main limpo, HEAD eb98889 e referência local origin/main alinhada, sem fetch ou consulta à homepage remota. Nesta etapa, nenhum HTML, CSS ou JavaScript foi alterado; nenhuma operação de stage, commit ou push foi executada.
+- Inventários e referências dos ativos compartilhados conferidos nos arquivos locais. Backups anteriores à consolidação salvos em work/backup-before-consolidated-homepage-prompt na pasta desta conversa.
+
+## Artigo 22 e Info_016 — inclusão local EN/PT — 21 de outubro de 2026
+
+- Incluídas as edições integrais do Artigo 22 em `/publications/artigo22/` (EN, padrão e `x-default`) e `/publications/artigo22/pt/` (PT), a partir dos mestres públicos de `C:\Users\as294\SGAEIA_2\docs\articles\Publicos\ARTICLE_022`.
+- Título EN: `Opening the Black Box of LLM Inference: Foundations of Generative AI`; título PT: `Abrindo a Caixa-Preta da Inferência em LLMs: Fundamentos de AI Generativa`; DOI `10.5281/zenodo.23540392`; Zenodo `https://zenodo.org/records/23540392`; DEV Community `https://dev.to/aridiosilva/opening-the-black-box-of-llm-inference-foundations-of-generative-ai-3i9p`; Medium `https://medium.com/@aridiosilva/opening-the-black-box-of-llm-inference-foundations-of-generative-ai-65f6d3563bd2`; Academia.edu `https://www.academia.edu/179351915/Opening_the_Black_Box_of_LLM_Inference_Foundations_of_Generative_AI_Anatomy_of_the_Transformer_from_the_Inside_from_Input_to_Output_Token_SGAEIA_Research_Series_Article_22`.
+- Preservados texto integral, capa, seis figuras por idioma, tabelas, fórmulas, apêndice de códigos-fonte, glossário, 69 referências, metadados de citação, JSON-LD, CSP, GA4 e navegação recíproca EN/PT.
+- Incluído o `Info_016` em EN/PT, com 50 slides 16:9 por idioma renderizados a 1920 × 1080, PDFs originais preservados e textos LinkedIn fornecidos. EN é a edição padrão do índice.
+- Atualizados `index.html`, `publications.html`, `infographics/index.html`, `sitemap.xml`, `llms.txt`, `robots.txt` e este contexto de continuidade.
+- PDFs originais preservados por hash SHA-256: EN `1B7976BE24E292B9A69B54D7C9612C205761ED6FD091D21CDE6EE603D3995CCC`; PT `41387E9A2683573F20E4F94385D8F70C05375BF2DE3359ED01EA4D915015841D`.
+- Backup restaurável: `C:\Users\as294\Documents\Codex\2026-10-21\se-2\work\backup-before-article22-info016`.
+- Alterações locais; sem stage, commit, push ou acesso à homepage remota.

@@ -11,6 +11,13 @@ The primary research themes are Agentic AI, multi-agent systems, AI security, Ze
 
 ## Publication index
 
+- [Opening the Black Box of LLM Inference: Foundations of Generative AI — Article 22, English](https://aridiosilva.com/publications/artigo22/): Complete English edition with cover, six figures, reproducible numerical examples, glossary, source-code appendix and 69 references; DOI 10.5281/zenodo.23540392.
+- [Abrindo a Caixa-Preta da Inferência em LLMs: Fundamentos de AI Generativa — Artigo 22, Português](https://aridiosilva.com/publications/artigo22/pt/): Edição integral em português com capa, seis figuras, exemplos numéricos reproduzíveis, glossário, apêndice de códigos-fonte e 69 referências; DOI 10.5281/zenodo.23540392.
+- [Article 22 — Zenodo DOI](https://zenodo.org/records/23540392): Version-of-record publication distribution record.
+- [Article 22 — DEV Community](https://dev.to/aridiosilva/opening-the-black-box-of-llm-inference-foundations-of-generative-ai-3i9p): Technical distribution edition.
+- [Article 22 — Medium](https://medium.com/@aridiosilva/opening-the-black-box-of-llm-inference-foundations-of-generative-ai-65f6d3563bd2): Medium distribution edition.
+- [Article 22 — Academia.edu](https://www.academia.edu/179351915/Opening_the_Black_Box_of_LLM_Inference_Foundations_of_Generative_AI_Anatomy_of_the_Transformer_from_the_Inside_from_Input_to_Output_Token_SGAEIA_Research_Series_Article_22): Academia.edu distribution edition.
+
 - [The Open Letter on AI and Cybersecurity and the Evidence for Agent Containment — Article 21, English](https://aridiosilva.com/publications/artigo21/): Complete English edition with cover, two figures and 18 references; DOI 10.5281/zenodo.23426350.
 - [Carta aberta sobre AI e cibersegurança e as evidências que sustentam a contenção de agentes — Artigo 21, Português](https://aridiosilva.com/publications/artigo21/pt/): Edição integral em português com capa, duas figuras e 18 referências; DOI 10.5281/zenodo.23426350.
 - [Article 21 — Zenodo DOI](https://zenodo.org/records/23426350): Publication distribution record.
@@ -32,6 +39,10 @@ The primary research themes are Agentic AI, multi-agent systems, AI security, Ze
 ## Infographic index
 
 - [Infographics](https://aridiosilva.com/infographics/): Index of visual studies and LinkedIn carousels, with English default editions and Portuguese alternatives when available.
+- [Opening the Black Box of LLM Inference - Infographic 016, English](https://aridiosilva.com/infographics/Info_016/): English web edition with a 50-slide accessible carousel tracing Transformer inference from tokenization and embeddings through attention, multilayer processing, logits, decoding, interpretability, glossary and references, plus the supplied LinkedIn text and source PDF. Published October 21, 2026.
+- [Abrindo a Caixa-Preta da Inferência em LLMs - Infográfico 016, Português](https://aridiosilva.com/infographics/Info_016/pt/): Edição web em português com carrossel acessível de 50 slides sobre a inferência em Transformers, da tokenização e dos embeddings à atenção, ao processamento multicamadas, aos logits, à decodificação, à interpretabilidade, ao glossário e às referências, além do texto fornecido da publicação no LinkedIn e do PDF de origem. Publicado em 21 de outubro de 2026.
+- [Opening the Black Box of LLM Inference - English PDF](https://aridiosilva.com/infographics/Info_016/opening-black-box-llm-inference-en.pdf): Original 50-page English infographic PDF.
+- [Abrindo a Caixa-Preta da Inferência em LLMs - PDF em português](https://aridiosilva.com/infographics/Info_016/pt/abrindo-caixa-preta-inferencia-llms-pt.pdf): PDF original do infográfico em português, com 50 páginas.
 - [Open Letter on AI and Cybersecurity from the Scientific Community - Infographic 015, English](https://aridiosilva.com/infographics/Info_015/): English web edition with a 55-slide accessible carousel on the scientific community’s open letter, AI containment, cybersecurity incidents, international standards, incident reporting, timeline, glossary, and bibliography, plus the supplied LinkedIn publication text and source PDF. Published October 15, 2026.
 - [Carta Aberta sobre IA e Cibersegurança da Comunidade Científica - Infográfico 015, Português](https://aridiosilva.com/infographics/Info_015/pt/): Edição web em português com carrossel acessível de 55 slides sobre a carta aberta da comunidade científica, contenção de IA, incidentes de cibersegurança, padrões internacionais, relato de incidentes, linha do tempo, glossário e bibliografia, além do texto fornecido da publicação no LinkedIn e PDF de origem. Publicado em 15 de outubro de 2026.
 - [Open Letter on AI and Cybersecurity from the Scientific Community - English PDF](https://aridiosilva.com/infographics/Info_015/open-letter-ai-cybersecurity-en.pdf): Original 55-page English infographic PDF.

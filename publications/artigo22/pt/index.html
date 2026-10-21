@@ -1,0 +1,1440 @@
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light">
+<title>Abrindo a Caixa-Preta da Inferência em LLMs: Fundamentos de AI Generativa — Aridio Silva</title><meta name="description" content="Uma explicação técnica, formal e didática da inferência em Transformers, da tokenização e dos embeddings à atenção, ao processamento multicamadas, aos logits, à decodificação e à execução governada."><link rel="canonical" href="https://aridiosilva.com/publications/artigo22/pt/">
+<meta name="citation_title" content="Abrindo a Caixa-Preta da Inferência em LLMs: Fundamentos de AI Generativa"><meta name="citation_author" content="Silva, Aridio"><meta name="citation_publication_date" content="2026/10/21"><meta name="citation_online_date" content="2026/10/21"><meta name="citation_language" content="pt-BR"><meta name="citation_doi" content="10.5281/zenodo.23540392">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://www.googletagmanager.com; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https://*.google-analytics.com; connect-src https://*.google-analytics.com https://www.googletagmanager.com; media-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'; upgrade-insecure-requests"><meta name="referrer" content="strict-origin-when-cross-origin">
+<link rel="sitemap" type="application/xml" href="/sitemap.xml"><link rel="describedby" href="/llms.txt" type="text/markdown"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;family=Source+Serif+4:opsz,wght@8..60,500;6..60,700&amp;display=swap" rel="stylesheet"><link rel="stylesheet" href="/assets/publications.css?v=20261012-14"><link rel="stylesheet" href="/assets/article-header.css"><link rel="stylesheet" href="/assets/article-accessibility.css"><link rel="stylesheet" href="/assets/article20.css?v=20261014"><link rel="stylesheet" href="/assets/article22.css?v=20261021-1"><script defer src="/assets/article20-accessibility.js?v=20261014"></script>
+<meta name="author" content="Aridio Silva"><meta name="copyright" content="© 2026 Aridio Silva"><meta property="og:type" content="article"><meta property="og:title" content="Abrindo a Caixa-Preta da Inferência em LLMs: Fundamentos de AI Generativa"><meta property="og:description" content="Uma explicação técnica, formal e didática da inferência em Transformers, da tokenização e dos embeddings à atenção, ao processamento multicamadas, aos logits, à decodificação e à execução governada."><meta property="og:image" content="https://aridiosilva.com/assets/article22/cover-pt.jpg"><link rel="alternate" hreflang="en" href="https://aridiosilva.com/publications/artigo22/"><link rel="alternate" hreflang="pt-BR" href="https://aridiosilva.com/publications/artigo22/pt/"><link rel="alternate" hreflang="x-default" href="https://aridiosilva.com/publications/artigo22/"><!-- GA4 G-MXMJ7Z3LS7: automatic cookieless audience measurement; analytics and advertising storage remain disabled. --><script defer src="/assets/analytics-consent.js?v=20261011"></script><script type="application/ld+json">{"@context":"https://schema.org","@type":"ScholarlyArticle","headline":"Abrindo a Caixa-Preta da Inferência em LLMs: Fundamentos de AI Generativa","author":{"@type":"Person","name":"Aridio Silva","identifier":"https://orcid.org/0009-0008-2411-6995"},"datePublished":"2026-10-21","dateModified":"2026-10-21","inLanguage":"pt-BR","license":"https://creativecommons.org/licenses/by/4.0/","identifier":"https://doi.org/10.5281/zenodo.23540392","sameAs":["https://zenodo.org/records/23540392","https://doi.org/10.5281/zenodo.23540392","https://dev.to/aridiosilva/opening-the-black-box-of-llm-inference-foundations-of-generative-ai-3i9p","https://www.academia.edu/179351915/Opening_the_Black_Box_of_LLM_Inference_Foundations_of_Generative_AI_Anatomy_of_the_Transformer_from_the_Inside_from_Input_to_Output_Token_SGAEIA_Research_Series_Article_22","https://medium.com/@aridiosilva/opening-the-black-box-of-llm-inference-foundations-of-generative-ai-65f6d3563bd2"],"isPartOf":{"@type":"CreativeWorkSeries","name":"SGAEIA Research Series"},"url":"https://aridiosilva.com/publications/artigo22/pt/","image":"https://aridiosilva.com/assets/article22/cover-pt.jpg","description":"Uma explicação técnica, formal e didática da inferência em Transformers, da tokenização e dos embeddings à atenção, ao processamento multicamadas, aos logits, à decodificação e à execução governada."}</script>
+<link rel="stylesheet" href="/assets/fixed-site-header.css?v=20261016-1"><link rel="stylesheet" href="/assets/editorial-hero.css?v=20261017-1"><script defer src="/assets/fixed-site-header.js?v=20261016-1"></script><link rel="stylesheet" href="/assets/homepage-footer-preview.css?v=20261017-5"></head>
+<body class="article-page"><a class="skip" href="#main">Ir para o conteúdo principal</a><header class="site-header"><div class="shell header-inner"><a class="identity" href="/#top" aria-label="Aridio Silva home"><strong>Aridio Silva</strong><span>Independent Researcher · AI Systems Architecture</span></a><nav aria-label="Navegação principal"><a href="/">Início</a><a href="/sgaeia.html">SGAEIA</a><a href="/publications.html">Publicações</a><a href="/infographics/">Infográficos</a></nav><div class="reading-tools" role="group" aria-label="Controles de leitura"><button type="button" id="articleFontDecrease" aria-label="Diminuir tamanho do texto">A−</button><button type="button" id="articleFontIncrease" aria-label="Aumentar tamanho do texto">A+</button><button type="button" id="articleEasyRead" aria-pressed="false">Leitura fácil</button><button type="button" id="articleListen" aria-pressed="false">Ouvir</button></div></div></header>
+<main id="main"><section class="hero"><div class="shell article"><h1>Abrindo a Caixa-Preta da Inferência em LLMs: Fundamentos de AI Generativa</h1><p class="subtitle">Anatomia do Transformer por Dentro, da Entrada ao Token de Saída</p><p class="meta">SGAEIA Research Series — Article 22 · 2026-10-21 · DOI 10.5281/zenodo.23540392</p><nav class="language-nav" aria-label="Idiomas do artigo"><a href="/publications/artigo22/">English</a> · <a href="/publications/artigo22/pt/" aria-current="page">Português</a></nav></div></section>
+<section class="content"><article class="shell article article-body"><p><strong>SGAEIA Research Series — Article 22</strong></p>
+<p><strong>Aridio Silva</strong><br>Independent Researcher, Brazil<br>Creator of SGAEIA — Secure Governed Autonomous Edge Intelligence Architecture<br><strong>ORCID:</strong> 0009-0008-2411-6995<br><strong>DOI:</strong> <a href="https://doi.org/10.5281/zenodo.23540392" target="_blank" rel="noopener noreferrer">https://doi.org/10.5281/zenodo.23540392</a><br><strong>Publicado em:</strong> 21 de outubro de 2026<br><strong>Licença:</strong> Creative Commons Attribution 4.0 International — CC BY 4.0</p>
+<figure class="article-figure cover-figure"><img src="/assets/article22/cover-pt.jpg" alt="Capa — Abrindo a Caixa-Preta da Inferência em LLMs" width="1600" height="900" loading="eager" decoding="async" fetchpriority="high"><figcaption><strong>Capa — Abrindo a Caixa-Preta da Inferência em LLMs</strong><span class="figure-credit">© 2026 Aridio Silva · Project SGAEIA · CC BY 4.0</span></figcaption></figure>
+
+
+<h2 id="sumário">Sumário</h2>
+<ol>
+<li><a href="#resumo">Resumo</a></li>
+<li><a href="#1-introdu%C3%A7%C3%A3o-e-escopo">Introdução e escopo</a></li>
+<li><a href="#2-vis%C3%A3o-geral-do-fluxo">Visão geral do fluxo</a></li>
+<li><a href="#3-etapa-1--entrada-e-tokeniza%C3%A7%C3%A3o">Entrada e tokenização</a></li>
+<li><a href="#4-etapa-2--embeddings-e-codifica%C3%A7%C3%A3o-posicional">Embeddings e codificação posicional</a></li>
+<li><a href="#5-etapa-3--self-attention-autoaten%C3%A7%C3%A3o">Self-attention (autoatenção)</a></li>
+<li><a href="#6-etapa-4--multi-head-attention-e-m%C3%A1scaras">Multi-head attention e máscaras</a></li>
+<li><a href="#7-etapa-5--conex%C3%A3o-residual-e-normaliza%C3%A7%C3%A3o-add--norm">Conexão residual e normalização</a></li>
+<li><a href="#8-etapa-6--rede-feed-forward-ffn">Rede feed-forward (FFN)</a></li>
+<li><a href="#9-etapa-7--empilhamento-multicamadas">Empilhamento multicamadas</a></li>
+<li><a href="#10-etapa-8--pesos-o-que-s%C3%A3o-e-como-s%C3%A3o-aprendidos">Pesos: o que são e como são aprendidos</a></li>
+<li><a href="#11-etapa-9--sa%C3%ADda-logits-softmax-e-decodifica%C3%A7%C3%A3o">Saída: logits, softmax e decodificação</a></li>
+<li><a href="#12-estudo-de-caso-desambigua%C3%A7%C3%A3o-de-banco-e-interpretabilidade">Estudo de caso: desambiguação de “banco” e interpretabilidade</a></li>
+<li><a href="#13-propriedades-emergentes-e-leis-de-escala">Propriedades emergentes e leis de escala</a></li>
+<li><a href="#14-limita%C3%A7%C3%B5es-ressalvas-e-debates-em-aberto">Limitações, ressalvas e debates em aberto</a></li>
+<li><a href="#15-da-infer%C3%AAncia-%C3%A0-execu%C3%A7%C3%A3o-governada-implica%C3%A7%C3%B5es-para-o-sgaeia">Da inferência à execução governada: implicações para o SGAEIA</a></li>
+<li><a href="#16-conclus%C3%A3o">Conclusão</a></li>
+<li><a href="#17-gloss%C3%A1rio-de-termos-conceitos-e-t%C3%A9cnicas">Glossário</a></li>
+<li><a href="#18-refer%C3%AAncias-bibliogr%C3%A1ficas">Referências bibliográficas</a></li>
+<li><a href="#19-c%C3%B3digos-fonte-python">Códigos-fonte (Python)</a></li>
+<li><a href="#sobre-o-autor">Sobre o autor</a></li>
+<li><a href="#recursos-de-pesquisa-e-do-projeto">Recursos de pesquisa e do projeto</a></li>
+<li><a href="#figuras">Figuras</a></li>
+<li><a href="#licen%C3%A7a">Licença</a></li>
+<li><a href="#continuidade-da-s%C3%A9rie">Continuidade da série</a></li>
+<li><a href="#cita%C3%A7%C3%A3o-sugerida">Citação sugerida</a></li>
+</ol>
+<h2 id="resumo">Resumo</h2>
+<p>Este artigo apresenta uma explicação técnica, formal e didática do processo de inferência em modelos de linguagem baseados em Transformers, desde a tokenização da entrada até a seleção do próximo token. A exposição combina fórmulas, exemplos numéricos reproduzíveis e seis figuras para mostrar embeddings, codificação posicional, self-attention, máscaras, conexões residuais, normalização, redes feed-forward, logits, softmax e estratégias de decodificação. O estudo de caso da palavra ambígua “banco” demonstra, em escala reduzida, como o contexto altera representações sem pretender reproduzir o comportamento de um modelo treinado real. Por fim, o texto distingue a inferência do modelo da execução governada de um sistema agentivo e apresenta uma interpretação pública e não normativa de suas implicações para o SGAEIA.</p>
+<p><strong>Palavras-chave:</strong> AI; Transformer; inferência; LLM; atenção; tokenização; embeddings; softmax; propriedades emergentes; SGAEIA.</p>
+<h2 id="1-introdução-e-escopo">1. Introdução e escopo</h2>
+<p><strong>Função desta seção.</strong> Fixa o objetivo, as convenções e os limites do texto antes de qualquer técnica. É necessária porque os números e as figuras que seguem são didáticos; sem este aviso, poderiam ser lidos como medições de um modelo real.</p>
+<p>Este documento descreve, etapa por etapa, o que ocorre dentro de um modelo de linguagem baseado na arquitetura Transformer (Vaswani et al., 2017), desde o texto de entrada até o token de saída, usando como fio condutor a frase ambígua <strong>&quot;O banco estava lotado&quot;</strong>. O objetivo é tornar a &quot;caixa-preta&quot; inteligível: cada etapa traz o conceito, o mecanismo matemático, a técnica adotada, um exemplo numérico e as referências que a sustentam.</p>
+<p><strong>Convenções.</strong> Referências no texto seguem o formato (Autor, ano) e estão listadas na seção 18. Termos técnicos aparecem em <strong>negrito</strong> na primeira ocorrência e estão definidos no Glossário (seção 17). Matrizes são escritas em maiúsculas (Q, K, V) e dimensões como n (tamanho da sequência), d_model (dimensão do modelo) e d_k (dimensão de cada cabeça).</p>
+<p><strong>Aviso sobre os exemplos numéricos.</strong> Os números das seções 3 a 11 foram calculados por código (Python/NumPy) com dimensões reduzidas e vetores escolhidos à mão para fins didáticos. Eles ilustram a aritmética do mecanismo, <strong>não</strong> são medições de um modelo treinado real. Em modelos reais, os pesos são aprendidos e as dimensões são muito maiores (por exemplo, d_model = 512 no Transformer original e 768 no BERT-base).</p>
+<p><strong>Escopo.</strong> O texto descreve o Transformer em termos gerais (variantes codificador, decodificador e codificador-decodificador).</p>
+<p>© 2026 Aridio Silva – Pesquisador Independente · ORCID 0009-0008-2411-6995</p>
+<h2 id="2-visão-geral-do-fluxo">2. Visão geral do fluxo</h2>
+<p><strong>Por que o fluxo tem estas etapas, nesta ordem.</strong> Cada etapa resolve um problema que a anterior deixa em aberto. A rede só opera sobre números (tokenização); números inteiros não têm geometria nem ordem (embeddings e posição); cada token precisa de contexto (atenção); a mistura contextual precisa ser transformada, estabilizada e repetida em profundidade (FFN, Add &amp; Norm, empilhamento); o comportamento depende de pesos que precisam ser aprendidos (treino); e o resultado final precisa virar uma palavra (logits, softmax e decodificação). A tabela resume o problema que cada etapa resolve e o que faltaria sem ela.</p>
+<div class="article-table-wrap" role="region" aria-label="Scrollable table" tabindex="0"><table>
+<thead>
+<tr>
+<th align="left">Etapa</th>
+<th align="left">Problema que resolve</th>
+<th align="left">Sem ela</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">Tokenização</td>
+<td align="left">A rede só processa números, e o vocabulário precisa ser finito</td>
+<td align="left">Não há entrada numérica; palavras raras ficariam sem representação ou as sequências ficariam longas demais</td>
+</tr>
+<tr>
+<td align="left">Embedding</td>
+<td align="left">IDs inteiros são rótulos arbitrários, sem noção de similaridade</td>
+<td align="left">Cada token seria um vetor one-hot com uma dimensão por token do vocabulário (dezenas de milhares), esparso e sem similaridade entre tokens</td>
+</tr>
+<tr>
+<td align="left">Codificação posicional</td>
+<td align="left">A atenção, por construção, não usa a ordem das palavras</td>
+<td align="left">Atenção sem máscara não distingue ordens diferentes das mesmas palavras (Vaswani et al., 2017)</td>
+</tr>
+<tr>
+<td align="left">Self-attention</td>
+<td align="left">Cada token precisa de informação dos demais</td>
+<td align="left">Cada token seria interpretado isoladamente; &quot;banco&quot; teria sempre o mesmo vetor</td>
+</tr>
+<tr>
+<td align="left">Multi-head</td>
+<td align="left">Várias relações precisam ser captadas ao mesmo tempo</td>
+<td align="left">Uma única média ponderada por camada, que inibe atender a subespaços de representação distintos (Vaswani et al., 2017)</td>
+</tr>
+<tr>
+<td align="left">Add &amp; Norm</td>
+<td align="left">Sinal e gradiente precisam atravessar muitas camadas</td>
+<td align="left">Treino instável ou degradado em pilhas profundas (He et al., 2016; Ba et al., 2016; Xiong et al., 2020)</td>
+</tr>
+<tr>
+<td align="left">FFN</td>
+<td align="left">A atenção apenas combina Values; falta transformação por token</td>
+<td align="left">Sem a parte da camada que concentra cerca de dois terços dos parâmetros (Geva et al., 2021)</td>
+</tr>
+<tr>
+<td align="left">Empilhamento</td>
+<td align="left">Relações complexas exigem composição em passos</td>
+<td align="left">Só relações diretas em um passo; certos circuitos exigem duas ou mais camadas (Elhage et al., 2021; Olsson et al., 2022)</td>
+</tr>
+<tr>
+<td align="left">Treino</td>
+<td align="left">Pesos aleatórios não produzem linguagem</td>
+<td align="left">Um circuito sem comportamento útil, como nos exemplos com pesos aleatórios</td>
+</tr>
+<tr>
+<td align="left">Saída</td>
+<td align="left">Um vetor de números precisa virar um token</td>
+<td align="left">Sem logits, softmax e decodificação não há distribuição nem palavra escolhida</td>
+</tr>
+</tbody></table></div>
+<p>A <strong>inferência</strong> em um modelo de linguagem é a execução do modelo já treinado, com pesos fixos, para produzir uma saída a partir de uma entrada. No caso de um modelo gerador, essa execução é um ciclo: o modelo calcula uma distribuição de probabilidade sobre o próximo token, um token é escolhido, anexado à entrada, e o ciclo se repete (<strong>geração autorregressiva</strong>). A computação de uma passagem completa pelas camadas chama-se <strong>forward pass</strong> (propagação direta).</p>
+<figure class="article-figure"><img src="/assets/article22/figure-01-pt.png" alt="Figura 1 – Fluxo completo da inferência em um Transformer" width="1219" height="1701" loading="lazy" decoding="async"><figcaption><strong>Figura 1 – Fluxo completo da inferência em um Transformer</strong><span class="figure-credit">© 2026 Aridio Silva · Project SGAEIA · CC BY 4.0</span></figcaption></figure>
+
+<p>A arquitetura original combina um codificador e um decodificador (Vaswani et al., 2017). Duas famílias derivadas dominam o uso atual: modelos <strong>somente codificador</strong>, como o BERT (Devlin et al., 2019), que veem a sequência nos dois sentidos, e modelos <strong>somente decodificador</strong>, como a série GPT (Radford et al., 2018; Radford et al., 2019; Brown et al., 2020), que geram texto da esquerda para a direita. Os mecanismos descritos nas próximas seções valem para todas, com a diferença principal na <strong>máscara de atenção</strong> (seção 6).</p>
+<div class="article-table-wrap" role="region" aria-label="Scrollable table" tabindex="0"><table>
+<thead>
+<tr>
+<th align="left">Etapa</th>
+<th align="left">Operação</th>
+<th align="left">Técnica principal</th>
+<th align="left">Referência-chave</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">1. Tokenização</td>
+<td align="left">Texto → IDs inteiros</td>
+<td align="left">BPE, SentencePiece</td>
+<td align="left">Sennrich et al., 2016; Kudo e Richardson, 2018</td>
+</tr>
+<tr>
+<td align="left">2. Embedding e posição</td>
+<td align="left">IDs → vetores + ordem</td>
+<td align="left">Matriz de embeddings; senoidal ou RoPE</td>
+<td align="left">Mikolov et al., 2013; Vaswani et al., 2017; Su et al., 2021</td>
+</tr>
+<tr>
+<td align="left">3. Self-attention</td>
+<td align="left">Mistura contextual entre tokens</td>
+<td align="left">Produto escalar escalonado e softmax</td>
+<td align="left">Bahdanau et al., 2015; Vaswani et al., 2017</td>
+</tr>
+<tr>
+<td align="left">4. Multi-head</td>
+<td align="left">Várias relações em paralelo</td>
+<td align="left">Subespaços de dimensão d_k</td>
+<td align="left">Vaswani et al., 2017; Voita et al., 2019</td>
+</tr>
+<tr>
+<td align="left">5. Add &amp; Norm</td>
+<td align="left">Estabilidade do sinal</td>
+<td align="left">Conexão residual; LayerNorm, RMSNorm</td>
+<td align="left">He et al., 2016; Ba et al., 2016; Zhang e Sennrich, 2019</td>
+</tr>
+<tr>
+<td align="left">6. FFN</td>
+<td align="left">Transformação não linear por posição</td>
+<td align="left">MLP com ReLU, GELU ou SwiGLU</td>
+<td align="left">Geva et al., 2021; Shazeer, 2020</td>
+</tr>
+<tr>
+<td align="left">7. Empilhamento</td>
+<td align="left">Refinamento em profundidade</td>
+<td align="left">N camadas</td>
+<td align="left">Tenney et al., 2019</td>
+</tr>
+<tr>
+<td align="left">8. Saída</td>
+<td align="left">Logits → probabilidades → token</td>
+<td align="left">Softmax, temperatura, top-k, top-p</td>
+<td align="left">Holtzman et al., 2020</td>
+</tr>
+</tbody></table></div>
+<p>O treinamento (seção 10) é a etapa que define os pesos. A inferência apenas os utiliza.</p>
+<h2 id="3-etapa-1--entrada-e-tokenização">3. Etapa 1 – Entrada e tokenização</h2>
+<p><strong>Por que esta etapa é necessária.</strong> Computadores aplicam operações aritméticas a números; sem converter o texto em IDs, não há entrada para a rede. O vocabulário precisa ser finito e fixo porque a camada de saída tem uma dimensão por token (seção 11). A escolha por subpalavras resolve um compromisso real: palavras inteiras deixam termos novos sem representação, e caracteres isolados geram sequências longas, o que encarece a atenção, cujo custo cresce com o quadrado do comprimento (seção 5; Sennrich et al., 2016).</p>
+<p><strong>Conceito.</strong> Redes neurais operam sobre números, não sobre texto. A <strong>tokenização</strong> converte a cadeia de caracteres em uma sequência de <strong>tokens</strong> (unidades do vocabulário) e cada token em um <strong>ID</strong> inteiro. O <strong>vocabulário</strong> é um conjunto finito, fixado antes do treinamento, tipicamente de dezenas de milhares de entradas.</p>
+<p><strong>Por que subpalavras.</strong> Vocabulários de palavras inteiras não representam palavras raras ou novas (problema das palavras fora do vocabulário, ou OOV), e vocabulários de caracteres geram sequências longas demais. As <strong>unidades de subpalavra</strong> equilibram os dois extremos: palavras frequentes viram um token, e palavras raras são decompostas em pedaços reutilizáveis (Sennrich et al., 2016).</p>
+<p><strong>Técnicas adotadas.</strong></p>
+<ul>
+<li><strong>BPE (Byte Pair Encoding):</strong> parte de caracteres e funde, iterativamente, o par adjacente mais frequente em um novo símbolo. Foi proposto como algoritmo de compressão por Gage (1994) e adaptado à tradução automática por Sennrich et al. (2016). A variante em nível de bytes é usada em modelos da série GPT (Radford et al., 2019).</li>
+<li><strong>WordPiece:</strong> escolhe as fusões pelo ganho de verossimilhança do modelo de linguagem, em vez da simples frequência (Schuster e Nakajima, 2012; Wu et al., 2016). É usada no BERT (Devlin et al., 2019).</li>
+<li><strong>Unigram LM e SentencePiece:</strong> o Unigram parte de um vocabulário grande e poda o que contribui menos (Kudo, 2018). O SentencePiece implementa BPE e Unigram diretamente sobre o texto bruto, sem pré-tokenização por espaços, o que o torna independente de idioma (Kudo e Richardson, 2018).</li>
+</ul>
+<p><strong>Exemplo numérico (BPE em corpus didático).</strong> Corpus com a frequência de cada palavra, onde <code>&lt;/w&gt;</code> marca o fim de palavra: low (5), lower (2), newest (6), widest (3). Início: cada palavra é uma sequência de caracteres. Em cada passo, funde-se o par mais frequente (empates resolvidos pela ordem de ocorrência). Resultado calculado por código:</p>
+<div class="article-table-wrap" role="region" aria-label="Scrollable table" tabindex="0"><table>
+<thead>
+<tr>
+<th align="left">Passo</th>
+<th align="left">Par fundido</th>
+<th align="left">Frequência do par</th>
+<th align="left">Novo símbolo</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">1</td>
+<td align="left">e + s</td>
+<td align="left">9</td>
+<td align="left">es</td>
+</tr>
+<tr>
+<td align="left">2</td>
+<td align="left">es + t</td>
+<td align="left">9</td>
+<td align="left">est</td>
+</tr>
+<tr>
+<td align="left">3</td>
+<td align="left">est + <code>&lt;/w&gt;</code></td>
+<td align="left">9</td>
+<td align="left">est<code>&lt;/w&gt;</code></td>
+</tr>
+<tr>
+<td align="left">4</td>
+<td align="left">l + o</td>
+<td align="left">7</td>
+<td align="left">lo</td>
+</tr>
+<tr>
+<td align="left">5</td>
+<td align="left">lo + w</td>
+<td align="left">7</td>
+<td align="left">low</td>
+</tr>
+<tr>
+<td align="left">6</td>
+<td align="left">n + e</td>
+<td align="left">6</td>
+<td align="left">ne</td>
+</tr>
+<tr>
+<td align="left">7</td>
+<td align="left">ne + w</td>
+<td align="left">6</td>
+<td align="left">new</td>
+</tr>
+<tr>
+<td align="left">8</td>
+<td align="left">new + est<code>&lt;/w&gt;</code></td>
+<td align="left">6</td>
+<td align="left">newest<code>&lt;/w&gt;</code></td>
+</tr>
+</tbody></table></div>
+<p>Após 8 fusões, &quot;newest&quot; é um único token (newest<code>&lt;/w&gt;</code>), &quot;low&quot; tem o token low seguido de <code>&lt;/w&gt;</code>, e &quot;widest&quot; é decomposta em w, i, d, est<code>&lt;/w&gt;</code>: a palavra nunca vista inteira reaproveita o pedaço est<code>&lt;/w&gt;</code> aprendido em &quot;newest&quot;.</p>
+<p><strong>Aplicação à frase-guia.</strong> Em um vocabulário real, &quot;O banco estava lotado&quot; costuma gerar poucos tokens por palavra, pois são palavras comuns do português. Para os fins deste documento, adota-se a simplificação <strong>4 palavras = 4 tokens</strong>: [O] [banco] [estava] [lotado], com IDs inteiros ilustrativos (por exemplo, 12, 4871, 905, 23019; os valores reais dependem do tokenizador). Observe que o ID de &quot;banco&quot; é o mesmo nos dois sentidos da palavra: <strong>a tokenização não desambigua</strong>. A distinção só surgirá nas camadas de atenção (seção 12).</p>
+<h2 id="4-etapa-2--embeddings-e-codificação-posicional">4. Etapa 2 – Embeddings e codificação posicional</h2>
+<p><strong>Por que esta etapa é necessária.</strong> Um ID inteiro é um rótulo arbitrário: o ID 4871 não é &quot;mais parecido&quot; com o 4872 em significado. O embedding converte cada rótulo em um vetor no qual o treino pode organizar similaridade (Bengio et al., 2003; Mikolov et al., 2013), e as operações seguintes (somas, produtos escalares) só fazem sentido sobre vetores. A codificação posicional é necessária porque a atenção, por construção, não usa a ordem: &quot;o gato come o peixe&quot; e &quot;o peixe come o gato&quot; têm os mesmos tokens, e sem informação de posição a atenção sem máscara os trata de forma equivalente a menos de permutação (Vaswani et al., 2017). Em decodificadores com máscara causal, parte da posição pode ser inferida pelo número de tokens visíveis, mas a codificação explícita é a prática padrão.</p>
+<p><strong>Embedding.</strong> Cada ID seleciona uma linha de uma matriz de pesos W_E de dimensão |V| × d_model, produzindo um <strong>vetor denso</strong> que representa o token. A ideia de representar palavras como vetores contínuos, em que proximidade geométrica reflete similaridade de uso, vem dos modelos neurais de linguagem (Bengio et al., 2003) e do word2vec (Mikolov et al., 2013). No Transformer, a matriz é aprendida em conjunto com o resto do modelo, os vetores são multiplicados por √d_model e a mesma matriz costuma ser compartilhada com a projeção de saída (Vaswani et al., 2017; Press e Wolf, 2017). Um ponto central: o embedding de entrada é <strong>estático</strong>, ou seja, &quot;banco&quot; recebe o mesmo vetor em qualquer frase. A contextualização acontece depois, na atenção.</p>
+<p><strong>Codificação posicional.</strong> A atenção, por si só, trata a entrada como um conjunto: embaralhar os tokens embaralha a saída da mesma forma, sem distinguir ordem. Por isso se soma ao embedding um vetor que depende da posição. A proposta original usa funções senoidais de frequências geométricas (Vaswani et al., 2017):</p>
+<p>$$PE_{(pos,,2i)} = \sin!\left(\frac{pos}{10000^{2i/d_{model}}}\right), \qquad PE_{(pos,,2i+1)} = \cos!\left(\frac{pos}{10000^{2i/d_{model}}}\right)$$</p>
+<p>Cada par de dimensões oscila em uma frequência diferente, e a diferença entre posições pode ser expressa como transformação linear dos vetores, o que facilita ao modelo aprender relações de distância relativa (Vaswani et al., 2017).</p>
+<p><strong>Alternativas adotadas na literatura.</strong></p>
+<ul>
+<li><strong>Posições aprendidas:</strong> uma tabela treinável, usada no BERT e no GPT-2 (Devlin et al., 2019; Radford et al., 2019).</li>
+<li><strong>Posições relativas:</strong> a atenção passa a depender da distância entre tokens (Shaw et al., 2018).</li>
+<li><strong>RoPE (rotary embeddings):</strong> rotaciona Q e K conforme a posição, codificando posição relativa no próprio produto escalar (Su et al., 2021). É usada em modelos como o LLaMA (Touvron et al., 2023).</li>
+<li><strong>ALiBi:</strong> adiciona um viés linear por distância aos scores de atenção, melhorando a extrapolação para sequências mais longas que as do treino (Press et al., 2022).</li>
+</ul>
+<p><strong>Exemplo numérico.</strong> Com d_model = 4 (didático; o Transformer original usa 512), embeddings escolhidos à mão para os quatro tokens e a codificação senoidal calculada pela fórmula acima. Para &quot;banco&quot; (posição 1): PE = [sen(1), cos(1), sen(0,01), cos(0,01)] = [0,841; 0,540; 0,010; 1,000]. Somando ao embedding [0; 1; 0,5; 0] obtém-se x = [0,841; 1,540; 0,510; 1,000]. A Figura 2 mostra as três matrizes; X = E + P, de dimensão 4 × 4, é a entrada da primeira camada.</p>
+<figure class="article-figure"><img src="/assets/article22/figure-02-pt.png" alt="Figura 2 – Embeddings didáticos (E), codificação posicional senoidal (P) e entrada X = E + P" width="1870" height="612" loading="lazy" decoding="async"><figcaption><strong>Figura 2 – Embeddings didáticos (E), codificação posicional senoidal (P) e entrada X = E + P</strong><span class="figure-credit">© 2026 Aridio Silva · Project SGAEIA · CC BY 4.0</span></figcaption></figure>
+
+<h2 id="5-etapa-3--self-attention-autoatenção">5. Etapa 3 – Self-attention (autoatenção)</h2>
+<p><strong>Por que esta etapa é necessária.</strong> O sentido de uma palavra depende dos vizinhos, e o embedding de entrada é estático (seção 4): &quot;banco&quot; começa igual em qualquer frase. É preciso um mecanismo em que cada token consulte os demais, com pesos que dependam do conteúdo, e não de posições fixas. Modelos recorrentes passam a informação passo a passo, de modo que dependências distantes atravessam muitas operações; na atenção, quaisquer duas posições se ligam em um passo, e o cálculo é paralelizável (Vaswani et al., 2017). A separação em Query, Key e Value é uma escolha de projeto: desacopla o que o token procura, o que ele oferece para ser encontrado e o conteúdo que ele repassa. A divisão por √d_k é necessária para evitar que o softmax sature quando d_k é grande.</p>
+<p><strong>Conceito.</strong> A <strong>self-attention</strong> permite que cada token recalcule sua representação como uma média ponderada das representações de todos os tokens da sequência (incluindo ele mesmo), com pesos que dependem do conteúdo. O mecanismo de atenção surgiu na tradução automática, para alinhar palavras de saída a palavras de entrada (Bahdanau et al., 2015), e o Transformer o generalizou para operar da sequência sobre ela mesma (Vaswani et al., 2017).</p>
+<p><strong>Três papéis por token.</strong> Três matrizes de pesos treináveis projetam cada vetor de entrada:</p>
+<ul>
+<li><strong>Query (Q = X·Wq):</strong> o que este token procura.</li>
+<li><strong>Key (K = X·Wk):</strong> o que este token oferece para ser encontrado.</li>
+<li><strong>Value (V = X·Wv):</strong> o conteúdo que este token repassa se for selecionado.</li>
+</ul>
+<p><strong>Fórmula (produto escalar escalonado).</strong></p>
+<p>$$\mathrm{Attention}(Q,K,V) = \mathrm{softmax}!\left(\frac{QK^{\top}}{\sqrt{d_k}}\right)V$$</p>
+<ul>
+<li><strong>QKᵀ</strong> mede a compatibilidade entre cada Query e cada Key (produto escalar: valor alto quando os vetores apontam na mesma direção).</li>
+<li><strong>Divisão por √d_k:</strong> se as componentes de q e k têm média 0 e variância 1, o produto escalar tem variância d_k. Sem a divisão, os scores crescem com a dimensão e empurram o softmax para regiões de gradiente quase nulo (Vaswani et al., 2017).</li>
+<li><strong>Softmax:</strong> converte cada linha de scores em pesos positivos que somam 1.</li>
+<li><strong>Multiplicação por V:</strong> o resultado é a média dos Values ponderada por esses pesos, o <strong>token contextualizado</strong>.</li>
+</ul>
+<figure class="article-figure"><img src="/assets/article22/figure-03-pt.png" alt="Figura 3 – Mecanismo de atenção por produto escalar escalonado" width="1351" height="752" loading="lazy" decoding="async"><figcaption><strong>Figura 3 – Mecanismo de atenção por produto escalar escalonado</strong><span class="figure-credit">© 2026 Aridio Silva · Project SGAEIA · CC BY 4.0</span></figcaption></figure>
+
+<p><strong>Exemplo numérico (d_model = 4, d_k = 2, valores calculados por código).</strong> Usando X da seção 4 e matrizes Wq, Wk, Wv escolhidas à mão, obtém-se, para o token &quot;banco&quot; (posição 1):</p>
+<div class="article-table-wrap" role="region" aria-label="Scrollable table" tabindex="0"><table>
+<thead>
+<tr>
+<th align="left">Passo</th>
+<th align="left">O</th>
+<th align="left">banco</th>
+<th align="left">estava</th>
+<th align="left">lotado</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">Score q·k (QKᵀ)</td>
+<td align="left">4,476</td>
+<td align="left">6,130</td>
+<td align="left">5,353</td>
+<td align="left">4,375</td>
+</tr>
+<tr>
+<td align="left">Score / √2</td>
+<td align="left">3,165</td>
+<td align="left">4,334</td>
+<td align="left">3,785</td>
+<td align="left">3,093</td>
+</tr>
+<tr>
+<td align="left">Peso (softmax)</td>
+<td align="left">0,143</td>
+<td align="left">0,459</td>
+<td align="left">0,265</td>
+<td align="left">0,133</td>
+</tr>
+</tbody></table></div>
+<p>Os pesos somam 1,000. A saída para &quot;banco&quot; é Z = 0,143·v_O + 0,459·v_banco + 0,265·v_estava + 0,133·v_lotado = [1,043; 1,360], onde v_O = [1,000; 1,500], v_banco = [1,096; 2,040], v_estava = [1,419; 0,384] e v_lotado = [0,156; 0,810]. O vetor de &quot;banco&quot; deixou de ser só &quot;banco&quot;: incorporou, em proporção, informação dos demais tokens. Como os pesos deste exemplo foram escolhidos à mão, não se deve ler significado linguístico no padrão obtido; em um modelo treinado, são os próprios Wq, Wk e Wv que aprendem quais relações importam.</p>
+<figure class="article-figure"><img src="/assets/article22/figure-04-pt.png" alt="Figura 4 – Mapas de atenção calculados (4 × 4): bidirecional e causal" width="1785" height="748" loading="lazy" decoding="async"><figcaption><strong>Figura 4 – Mapas de atenção calculados (4 × 4): bidirecional e causal</strong><span class="figure-credit">© 2026 Aridio Silva · Project SGAEIA · CC BY 4.0</span></figcaption></figure>
+
+<p><strong>Como ler o mapa (Figura 4).</strong> Linhas são as Queries (quem pergunta); colunas são as Keys (para quem olha); cada linha soma 1. À esquerda, todos os tokens veem todos (estilo codificador). À direita, a <strong>máscara causal</strong> zera as posições futuras (seção 6).</p>
+<p><strong>Custo.</strong> A matriz de scores tem n × n entradas, então tempo e memória crescem quadraticamente com o comprimento da sequência. Implementações como o FlashAttention reduzem o tráfego de memória sem alterar o resultado matemático (Dao et al., 2022).</p>
+<h2 id="6-etapa-4--multi-head-attention-e-máscaras">6. Etapa 4 – Multi-head attention e máscaras</h2>
+<p><strong>Por que esta etapa é necessária.</strong> Uma única atenção produz uma só média ponderada por token, o que, segundo Vaswani et al. (2017), inibe atender ao mesmo tempo a informações de subespaços de representação diferentes. Várias cabeças permitem relações distintas em paralelo sem aumentar o custo total, pois cada cabeça trabalha em dimensão menor. A máscara causal é necessária para a geração: no treino todo o texto está disponível, e sem a máscara o modelo &quot;veria&quot; o token que deve prever, aprendendo a copiá-lo e falhando na inferência, em que o futuro não existe. A máscara de preenchimento evita que posições vazias influenciem o resultado. As variantes de K e V compartilhados e o KV cache existem porque, na geração, reler e recalcular todo o passado a cada token seria proibitivo (Pope et al., 2023).</p>
+<p><strong>Conceito.</strong> Uma única atenção produz uma só média ponderada por token. A <strong>multi-head attention</strong> executa h atenções em paralelo, cada uma com suas próprias matrizes Wq, Wk, Wv e operando em um subespaço de dimensão d_k = d_model / h. As saídas das cabeças são concatenadas e projetadas por uma matriz Wo (Vaswani et al., 2017):</p>
+<p>$$\mathrm{MultiHead}(X) = \mathrm{Concat}(\mathrm{head}_1,\dots,\mathrm{head}_h),W^{O}, \qquad \mathrm{head}_i = \mathrm{Attention}(XW^{Q}_i,,XW^{K}_i,,XW^{V}_i)$$</p>
+<p><strong>Exemplo numérico (Transformer original, versão base).</strong> Com d_model = 512 e h = 8, cada cabeça tem d_k = d_v = 64, e o custo computacional total é semelhante ao de uma única cabeça de dimensão 512 (Vaswani et al., 2017). As quatro matrizes de projeção de uma camada de atenção têm, juntas, 4 × 512 × 512 = 1.048.576 pesos (sem contar vieses). Observação de coerência: h deve dividir d_model; por isso 12 cabeças não se aplicam a d_model = 512 (o BERT-base usa 12 cabeças com d_model = 768, ou seja, d_k = 64; Devlin et al., 2019).</p>
+<p><strong>Por que várias cabeças.</strong> Cada cabeça pode aprender um tipo de relação. Estudos de análise de atenção no BERT encontraram cabeças que se concentram em delimitadores, em deslocamentos posicionais fixos e em relações sintáticas como a de verbo e objeto direto (Clark et al., 2019). Há também evidência de que muitas cabeças são redundantes: um subconjunto pequeno responde pela maior parte do desempenho, e as demais podem ser podadas com pouca perda (Voita et al., 2019; Michel et al., 2019).</p>
+<p><strong>Variantes para inferência eficiente.</strong> Em <strong>Multi-Query Attention</strong> todas as cabeças compartilham um único par de matrizes K e V (Shazeer, 2019). Em <strong>Grouped-Query Attention</strong>, grupos de cabeças compartilham K e V, em um meio-termo entre qualidade e memória (Ainslie et al., 2023). Ambas reduzem o tamanho do <strong>KV cache</strong>, o armazenamento dos K e V já calculados que evita recomputar o passado a cada novo token gerado (Pope et al., 2023).</p>
+<p><strong>Máscaras de atenção.</strong></p>
+<ul>
+<li><strong>Bidirecional (codificador):</strong> cada posição vê todas as outras. É o regime do BERT (Devlin et al., 2019).</li>
+<li><strong>Causal (decodificador):</strong> antes do softmax, os scores das posições futuras recebem −∞, e seus pesos tornam-se exatamente 0. Isso preserva a propriedade autorregressiva: a previsão da posição t depende apenas das posições até t (Vaswani et al., 2017; Radford et al., 2019).</li>
+<li><strong>De preenchimento (padding):</strong> ignora posições vazias usadas para igualar o tamanho dos lotes.</li>
+</ul>
+<p><strong>Exemplo numérico da máscara causal.</strong> Na linha de &quot;banco&quot;, os scores escalonados eram [3,165; 4,334; 3,785; 3,093]. Com máscara causal, as duas últimas posições (&quot;estava&quot; e &quot;lotado&quot;, futuras) viram −∞, e o softmax sobre [3,165; 4,334] resulta em [0,237; 0,763; 0; 0]. Portanto, <strong>em um modelo gerador, &quot;banco&quot; não pode olhar para &quot;lotado&quot;</strong>; a desambiguação por palavras posteriores só ocorre quando elas já foram lidas, ou seja, nas posições seguintes. Em modelos bidirecionais, como o da Figura 4, o olhar para a frente é permitido.</p>
+<h2 id="7-etapa-5--conexão-residual-e-normalização-add-amp-norm">7. Etapa 5 – Conexão residual e normalização (Add &amp; Norm)</h2>
+<p><strong>Por que esta etapa é necessária.</strong> Empilhar muitas camadas obriga o sinal, e o gradiente no treino, a atravessar muitas transformações. Sem um atalho, redes mais profundas passam a ter desempenho pior no treino, o chamado problema de degradação, que a conexão residual mitiga (He et al., 2016). A residual também preserva a informação original e deixa cada subcamada aprender apenas uma correção. A normalização mantém a escala dos valores estável ao longo da profundidade (Ba et al., 2016), e sua posição (Pré-LN ou Post-LN) afeta a estabilidade do treino sem aquecimento cuidadoso (Xiong et al., 2020). Sem essas etapas, a profundidade que dá capacidade ao modelo não seria treinável de forma confiável.</p>
+<p><strong>Conexão residual.</strong> Depois de cada subcamada (atenção ou FFN), a entrada da subcamada é somada à sua saída: y = x + Subcamada(x). A ideia vem das redes residuais da visão computacional (He et al., 2016). Ela cria um caminho direto para o sinal e para o gradiente, o que viabiliza o treinamento de pilhas profundas, e faz cada subcamada aprender uma <strong>correção</strong> ao que já existe, em vez de reconstruir tudo. Na interpretação de circuitos, esse caminho é o <strong>fluxo residual</strong>, um canal que todas as camadas leem e no qual escrevem (Elhage et al., 2021).</p>
+<p><strong>Normalização.</strong> Sem controle de escala, os valores podem crescer ou encolher ao longo das camadas e desestabilizar o treino. A <strong>LayerNorm</strong> normaliza cada token separadamente, ao longo de suas d_model componentes (e não ao longo do lote), e depois aplica uma escala γ e um deslocamento β aprendidos (Ba et al., 2016):</p>
+<p>$$\mathrm{LN}(x) = \gamma \odot \frac{x - \mu}{\sqrt{\sigma^{2} + \epsilon}} + \beta, \qquad \mu = \tfrac{1}{d}\sum_i x_i, \quad \sigma^{2} = \tfrac{1}{d}\sum_i (x_i - \mu)^2$$</p>
+<p>A <strong>RMSNorm</strong> omite a subtração da média e normaliza apenas pela raiz do valor quadrático médio, com custo menor e desempenho comparável (Zhang e Sennrich, 2019); é adotada em modelos como o LLaMA (Touvron et al., 2023).</p>
+<p><strong>Pós-LN e Pré-LN.</strong> O Transformer original aplica a normalização depois da soma residual (<strong>Post-LN</strong>). Muitos modelos atuais a aplicam antes de cada subcamada (<strong>Pré-LN</strong>), variante que treina de forma mais estável e dispensa o aquecimento (<em>warm-up</em>) cuidadoso da taxa de aprendizado (Xiong et al., 2020).</p>
+<p><strong>Exemplo numérico (token &quot;banco&quot;, versão causal, γ = 1, β = 0).</strong> A saída da atenção projetada por Wo é o = [1,074; 1,912; 0,537; 0,956]. A entrada era x = [0,841; 1,540; 0,510; 1,000]. Soma residual: r = x + o = [1,915; 3,453; 1,047; 1,956]. Média μ = 2,093 e variância σ² = 0,748. LayerNorm (ε = 10⁻⁵): [(1,915 − 2,093)/0,865; …] = [−0,205; 1,572; −1,209; −0,158], com média 0 e variância 1. Para comparação, a RMSNorm do mesmo vetor, com raiz do quadrático médio 2,264, dá [0,846; 1,525; 0,462; 0,864]: mantém a proporção entre componentes, sem centralizar em zero.</p>
+<h2 id="8-etapa-6--rede-feed-forward-ffn">8. Etapa 6 – Rede feed-forward (FFN)</h2>
+<p><strong>Por que esta etapa é necessária.</strong> Na atenção, os pesos dependem do conteúdo, mas a saída é uma média ponderada de Values obtidos por projeções lineares (V = X·Wv, e depois Wo); a única não linearidade ali está no softmax, que decide os pesos. A FFN acrescenta uma transformação não linear aplicada a cada token, depois que a informação de contexto foi reunida. Há também uma razão de capacidade: as FFNs concentram cerca de dois terços dos parâmetros de um Transformer e funcionam como memórias de padrões (Geva et al., 2021). A expansão para d_ff = 4 × d_model no modelo original é uma escolha de projeto que aumenta essa capacidade (Vaswani et al., 2017).</p>
+<p><strong>Conceito.</strong> Após a atenção, cada posição passa por uma pequena rede neural de duas camadas lineares com uma não linearidade no meio, aplicada <strong>independentemente a cada token</strong> e com os mesmos pesos para todas as posições da camada (Vaswani et al., 2017):</p>
+<p>$$\mathrm{FFN}(x) = \max(0,; xW_1 + b_1),W_2 + b_2$$</p>
+<p>A atenção mistura informação <strong>entre</strong> tokens. A FFN transforma a informação <strong>dentro</strong> de cada token, expandindo-a para uma dimensão maior d_ff (no original, 2048, ou seja, 4 × d_model), aplicando a não linearidade e comprimindo de volta a d_model.</p>
+<p><strong>Funções de ativação adotadas.</strong> ReLU no Transformer original; GELU no BERT e no GPT (Hendrycks e Gimpel, 2016; Devlin et al., 2019; Radford et al., 2019); variantes com porta (GLU), como a <strong>SwiGLU</strong>, em modelos recentes (Shazeer, 2020; Touvron et al., 2023).</p>
+<p><strong>Interpretação.</strong> Geva et al. (2021) propõem que a FFN funciona como uma <strong>memória chave-valor</strong>: as colunas de W1 detectam padrões no vetor de entrada (chaves), e as linhas de W2 contribuem com informação associada (valores). Essa leitura ajuda a explicar por que boa parte do conhecimento factual parece residir nas FFNs, e não na atenção. Trata-se de uma hipótese interpretativa sustentada por análise empírica, e não de um fato demonstrado em todos os modelos.</p>
+<p><strong>Exemplo numérico de parâmetros (Transformer base).</strong> W1 tem 512 × 2048 = 1.048.576 pesos e W2 tem 2048 × 512 = 1.048.576, total de 2.097.152 por camada (sem vieses). Somando os 1.048.576 da atenção (seção 6), a camada tem cerca de 3,15 milhões de pesos, dos quais a FFN responde por cerca de dois terços.</p>
+<p><strong>Exemplo numérico de cálculo (d_model = 4, d_ff = 8; W1 e W2 gerados aleatoriamente com semente fixa, sem treino).</strong> Para o token &quot;estava&quot; (posição 2), a entrada da FFN é o vetor normalizado [1,389; −0,901; −0,999; 0,511]. Após W1 e ReLU, a camada oculta é [0,907; 0,660; 0,330; 0; 0,623; 0; 1,541; 0,759]: seis das oito unidades ficaram ativas e duas foram zeradas pela ReLU. Após W2, a saída é [0,231; 0,954; 0,437; −0,291]. Somando à entrada (residual) e normalizando, obtém-se [1,613; −0,351; −1,121; −0,141]. Já para &quot;banco&quot; (posição 1), todas as oito unidades ocultas ficaram em zero neste exemplo, logo a saída da FFN é zero e o vetor atravessa a subcamada inalterado pelo caminho residual. Em um modelo treinado, o padrão de ativação esparso é aprendido, e cada token ativa um subconjunto diferente de unidades.</p>
+<h2 id="9-etapa-7--empilhamento-multicamadas">9. Etapa 7 – Empilhamento multicamadas</h2>
+<p><strong>Por que esta etapa é necessária.</strong> Uma camada capta relações em um passo. Muitas tarefas exigem composição: identificar o token, relacioná-lo ao contexto, inferir o sentido e só então prever. O empilhamento permite esse refinamento sucessivo, e as análises de sondagem mostram níveis de informação distintos ao longo das camadas (Jawahar et al., 2019; Tenney et al., 2019; Belrose et al., 2023). Alguns mecanismos documentados exigem ao menos duas camadas de atenção, como os induction heads (Elhage et al., 2021; Olsson et al., 2022). Mais camadas aumentam a capacidade, mas também o custo; por isso o número de camadas é uma escolha de projeto, como mostra a tabela abaixo.</p>
+<p><strong>Mecanismo.</strong> Um <strong>bloco Transformer</strong> é a sequência atenção → Add &amp; Norm → FFN → Add &amp; Norm. O modelo empilha N blocos: a saída da camada l é a entrada da camada l + 1, e cada camada tem seus <strong>próprios pesos</strong>. A matriz de tamanho n × d_model mantém a mesma forma ao longo de toda a pilha; o que muda é o conteúdo de cada vetor, que vai sendo refinado.</p>
+<div class="article-table-wrap" role="region" aria-label="Scrollable table" tabindex="0"><table>
+<thead>
+<tr>
+<th align="left">Modelo</th>
+<th align="left">Camadas</th>
+<th align="left">d_model</th>
+<th align="left">Cabeças</th>
+<th align="left">Parâmetros</th>
+<th align="left">Fonte</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">Transformer base (original)</td>
+<td align="left">6 + 6</td>
+<td align="left">512</td>
+<td align="left">8</td>
+<td align="left">65 milhões</td>
+<td align="left">Vaswani et al., 2017</td>
+</tr>
+<tr>
+<td align="left">BERT-base</td>
+<td align="left">12</td>
+<td align="left">768</td>
+<td align="left">12</td>
+<td align="left">110 milhões</td>
+<td align="left">Devlin et al., 2019</td>
+</tr>
+<tr>
+<td align="left">BERT-large</td>
+<td align="left">24</td>
+<td align="left">1024</td>
+<td align="left">16</td>
+<td align="left">340 milhões</td>
+<td align="left">Devlin et al., 2019</td>
+</tr>
+<tr>
+<td align="left">GPT-3 (maior versão)</td>
+<td align="left">96</td>
+<td align="left">12288</td>
+<td align="left">96</td>
+<td align="left">175 bilhões</td>
+<td align="left">Brown et al., 2020</td>
+</tr>
+</tbody></table></div>
+<p><strong>O que cada profundidade tende a representar.</strong> Estudos de sondagem (<em>probing</em>) no BERT indicam uma divisão aproximada: camadas iniciais captam padrões superficiais e de ordem local; camadas intermediárias, estrutura sintática; camadas mais altas, relações semânticas e de longo alcance (Jawahar et al., 2019). Tenney et al. (2019) observaram que as etapas do pipeline clássico de PLN (classes gramaticais, análise sintática, entidades, papéis semânticos, correferência) são recuperáveis nessa ordem ao longo das camadas. A Figura 5 resume essa tendência.</p>
+<figure class="article-figure"><img src="/assets/article22/figure-05-pt.png" alt="Figura 5 – Especialização aproximada por profundidade em Transformers empilhados" width="1276" height="900" loading="lazy" decoding="async"><figcaption><strong>Figura 5 – Especialização aproximada por profundidade em Transformers empilhados</strong><span class="figure-credit">© 2026 Aridio Silva · Project SGAEIA · CC BY 4.0</span></figcaption></figure>
+
+<p><strong>Refinamento iterativo da previsão.</strong> Técnicas como a <em>logit lens</em> e a <em>tuned lens</em> projetam o estado intermediário de cada camada sobre o vocabulário e mostram que a distribuição prevista para o próximo token vai se tornando mais precisa camada após camada (Belrose et al., 2023).</p>
+<p><strong>Circuitos que exigem profundidade.</strong> Os <strong>induction heads</strong> (cabeças de indução) são um exemplo documentado: uma cabeça na camada anterior copia informação do token anterior, e uma cabeça posterior a usa para localizar ocorrências passadas de um padrão e prever a sua continuação. Esse mecanismo requer ao menos duas camadas de atenção e foi associado ao surgimento de <em>in-context learning</em> durante o treino (Elhage et al., 2021; Olsson et al., 2022).</p>
+<p><strong>Ressalva.</strong> As fronteiras por camada variam conforme o modelo, a tarefa e o método de análise. Os intervalos de camadas usados em divulgações didáticas (por exemplo, &quot;a camada 6 resolve o sentido de banco&quot;) são ilustrações, e não resultados medidos neste documento.</p>
+<h2 id="10-etapa-8--pesos-o-que-são-e-como-são-aprendidos">10. Etapa 8 – Pesos: o que são e como são aprendidos</h2>
+<p><strong>Por que esta etapa é necessária.</strong> Com pesos aleatórios, as etapas anteriores produzem saídas sem relação com a linguagem, como nos exemplos numéricos deste documento. O treino é o que transforma a arquitetura em um modelo útil. A previsão do próximo token é um objetivo adequado porque fornece sinal de aprendizado em qualquer texto, sem rótulos humanos. A retropropagação é necessária porque milhões a bilhões de parâmetros só podem ser ajustados com gradientes calculados de modo eficiente (Rumelhart et al., 1986), e o otimizador, o aquecimento e a regularização existem para que esse ajuste seja estável (Kingma e Ba, 2015; Loshchilov e Hutter, 2019; Vaswani et al., 2017). Esta etapa também justifica a inferência com pesos fixos: o que o modelo &quot;sabe&quot; já foi gravado nos pesos.</p>
+<p><strong>O que são os pesos.</strong> Os <strong>pesos</strong> (ou <strong>parâmetros</strong>) são os números ajustáveis do modelo: a matriz de embeddings; em cada camada, Wq, Wk, Wv, Wo, W1, W2, vieses e os γ e β da normalização; e a projeção final para o vocabulário. Durante a <strong>inferência</strong> eles são fixos. Todo o &quot;conhecimento&quot; do modelo está nesses valores.</p>
+<p><strong>Objetivo de treinamento.</strong> Modelos geradores são treinados para <strong>prever o próximo token</strong>. Dada a sequência x₁…x_T, minimiza-se a <strong>entropia cruzada</strong> média entre a distribuição prevista e o token que de fato veio a seguir:</p>
+<p>$$\mathcal{L} = -\frac{1}{T}\sum_{t=1}^{T} \log p_\theta!\left(x_t \mid x_{&lt;t}\right), \qquad \mathrm{PPL} = e^{\mathcal{L}}$$</p>
+<p>O BERT usa um objetivo diferente, a <strong>predição de tokens mascarados</strong> (<em>masked language modeling</em>), em que se escondem alguns tokens e o modelo os reconstrói olhando para os dois lados (Devlin et al., 2019). Em ambos os casos não há rótulo humano de significado: o sinal é o próprio texto. Isso é o que fundamenta a ideia de que a desambiguação é uma <strong>estratégia emergente para reduzir o erro de predição</strong> (seção 13).</p>
+<p><strong>Exemplo numérico.</strong> Na saída calculada da seção 11 (pesos aleatórios), a probabilidade atribuída a &quot;lotado&quot; é p = 0,022 e a atribuída a &quot;cheio&quot; é 0,623. Se o token correto fosse &quot;lotado&quot;, a perda seria −ln(0,022) = 3,806; se fosse &quot;cheio&quot;, −ln(0,623) = 0,473. O gradiente da perda em relação aos logits é simplesmente p − y, onde y é o vetor <em>one-hot</em> do token correto: para o alvo &quot;lotado&quot;, [−0,978; 0,114; 0,623; 0,094; 0,147], ou seja, o treino empurra o logit de &quot;lotado&quot; para cima e os dos demais para baixo, proporcionalmente ao erro.</p>
+<p><strong>Retropropagação e otimização.</strong> O gradiente é propagado de volta por todas as camadas pela regra da cadeia, algoritmo conhecido como <strong>backpropagation</strong> (Rumelhart et al., 1986), e os pesos são atualizados por um otimizador. O Transformer original usou o <strong>Adam</strong> (Kingma e Ba, 2015) com taxa de aprendizado que cresce linearmente durante um período de aquecimento e depois decai, além de dropout e <em>label smoothing</em> (Vaswani et al., 2017). A variante <strong>AdamW</strong>, que desacopla a regularização por decaimento de pesos do passo adaptativo, é a escolha comum em modelos atuais (Loshchilov e Hutter, 2019).</p>
+<p><strong>Paralelismo no treino e sequência na inferência.</strong> No treino, com a máscara causal, todas as posições são calculadas ao mesmo tempo (o texto correto já é conhecido). Na inferência, o token t + 1 depende do token t escolhido, então a geração é sequencial, e o KV cache (seção 6) evita refazer o passado.</p>
+<p><strong>Fases de treinamento.</strong> Uma prática comum é o <strong>pré-treinamento</strong> em grande volume de texto bruto, seguido de ajustes para uso específico: <em>fine-tuning</em> supervisionado e alinhamento com preferências humanas, como na abordagem de aprendizado por reforço com feedback humano (Ouyang et al., 2022).</p>
+<p><strong>Escala.</strong> A perda de modelos de linguagem cai de forma regular, segundo leis de potência, com o aumento de parâmetros, dados e computação (Kaplan et al., 2020). Hoffmann et al. (2022) mostraram que, para um orçamento de computação fixo, parâmetros e volume de dados devem crescer em proporção, e que muitos modelos grandes estavam subtreinados em dados.</p>
+<h2 id="11-etapa-9--saída-logits-softmax-e-decodificação">11. Etapa 9 – Saída: logits, softmax e decodificação</h2>
+<p><strong>Por que esta etapa é necessária.</strong> A última camada entrega um vetor de d_model números, e o usuário precisa de um token. Os logits mapeiam esse vetor para uma pontuação por token do vocabulário. O softmax os converte em uma distribuição válida (positiva, somando 1), indispensável para a perda de entropia cruzada no treino e para sortear ou escolher o token na inferência. A temperatura e as regras de decodificação são necessárias porque escolher sempre o token mais provável tende a produzir texto repetitivo e degenerado, enquanto sortear sem restrição inclui tokens improváveis; as estratégias top-k e top-p equilibram esses extremos (Holtzman et al., 2020).</p>
+<p><strong>Logits.</strong> O vetor da última camada na posição atual (h_final, de dimensão d_model) é multiplicado por uma matriz de saída W_out de dimensão d_model × |V|. O resultado são os <strong>logits</strong>: um número real, sem limites, para cada token do vocabulário. Em muitos modelos, W_out é a transposta da matriz de embeddings (<em>weight tying</em>; Press e Wolf, 2017; Vaswani et al., 2017).</p>
+<p><strong>Softmax e temperatura.</strong> O <strong>softmax</strong> converte logits em probabilidades que somam 1. A <strong>temperatura</strong> T divide os logits antes do softmax: T &lt; 1 concentra a probabilidade nos tokens mais prováveis (saída mais determinística), e T &gt; 1 a espalha (saída mais variada). O uso de temperatura no softmax foi popularizado na destilação de modelos (Hinton et al., 2015).</p>
+<p>$$p_i = \frac{e^{z_i / T}}{\sum_{j} e^{z_j / T}}$$</p>
+<p><strong>Exemplo numérico.</strong> Vocabulário didático de cinco tokens e logits calculados a partir do vetor da posição &quot;estava&quot; (pesos de saída aleatórios, sem treino): lotado −0,818; vazio 0,815; cheio 2,516; aberto 0,626; verde 1,070. Com T = 1, o softmax dá lotado 0,022; vazio 0,114; cheio 0,623; aberto 0,094; verde 0,147 (soma 1,000). Com T = 0,5, &quot;cheio&quot; sobe para 0,899; com T = 2, cai para 0,402 e a distribuição se achata (Figura 6). Em um modelo treinado, esses pesos teriam sido ajustados para que palavras plausíveis após &quot;O banco estava&quot;, como &quot;lotado&quot;, recebessem probabilidade alta; aqui o exemplo serve apenas para mostrar a aritmética.</p>
+<figure class="article-figure"><img src="/assets/article22/figure-06-pt.png" alt="Figura 6 – Efeito da temperatura sobre a distribuição de probabilidade de saída" width="1870" height="612" loading="lazy" decoding="async"><figcaption><strong>Figura 6 – Efeito da temperatura sobre a distribuição de probabilidade de saída</strong><span class="figure-credit">© 2026 Aridio Silva · Project SGAEIA · CC BY 4.0</span></figcaption></figure>
+
+<p><strong>Estratégias de decodificação.</strong> A escolha do token a partir da distribuição é uma etapa separada do modelo:</p>
+<ul>
+<li><strong>Gulosa (greedy):</strong> escolhe sempre o token de maior probabilidade. No exemplo: &quot;cheio&quot;.</li>
+<li><strong>Amostragem:</strong> sorteia o token conforme as probabilidades.</li>
+<li><strong>Top-k:</strong> restringe o sorteio aos k tokens mais prováveis e renormaliza (Fan et al., 2018). Com k = 2: cheio 0,809 e verde 0,191.</li>
+<li><strong>Top-p (nucleus):</strong> restringe ao menor conjunto cuja probabilidade acumulada atinge p (Holtzman et al., 2020). Com p = 0,9, o conjunto é {cheio, verde, vazio, aberto} (acumulado 0,978), renormalizado para 0,637; 0,150; 0,117; 0,096.</li>
+<li><strong>Busca em feixe (beam search):</strong> mantém várias sequências candidatas em paralelo e escolhe a de maior probabilidade total.</li>
+</ul>
+<p><strong>Fechamento do ciclo.</strong> O token escolhido é anexado à entrada e todo o fluxo se repete, aproveitando o KV cache, até que um token de fim de sequência seja gerado ou se atinja o limite de comprimento.</p>
+<h2 id="12-estudo-de-caso-desambiguação-de-quotbancoquot-e-interpretabilidade">12. Estudo de caso: desambiguação de &quot;banco&quot; e interpretabilidade</h2>
+<p><strong>Função desta seção.</strong> Integra as etapas 3 a 9 em um único exemplo mínimo. É necessária porque, sem ela, cada mecanismo ficaria descrito isoladamente, e não se veria como eles juntos resolvem a ambiguidade de &quot;banco&quot;.</p>
+<p><strong>O problema.</strong> &quot;Banco&quot; pode designar uma instituição financeira ou um assento. A tokenização atribui o mesmo ID nos dois casos, e o embedding de entrada é o mesmo (seções 3 e 4). O modelo não consulta um dicionário nem aplica regras do tipo <em>se … então</em>. O que distingue os sentidos é o <strong>contexto</strong>: a atenção mistura no vetor de &quot;banco&quot; informação dos tokens vizinhos, e esse vetor misturado, nas camadas seguintes, passa a se comportar de modo diferente.</p>
+<p><strong>Evidência empírica.</strong> Em modelos treinados, os vetores contextualizados da mesma palavra tendem a formar agrupamentos separados conforme o sentido (Reif et al., 2019), e as representações ficam mais específicas ao contexto nas camadas mais altas (Ethayarajh, 2019).</p>
+<p><strong>Demonstração numérica (brinquedo didático).</strong> Embeddings de 4 dimensões escolhidos à mão, com eixos [dinheiro, assento, pessoas, madeira]: banco = [0,7; 0,7; 0; 0] (ambíguo), lotado = [0; 0; 1; 0], clientes = [0,8; 0; 0,7; 0], praça = [0; 0,8; 0; 0,2], madeira = [0; 0,3; 0; 1], velho = [0; 0,2; 0; 0,5], estava = [0; 0; 0,1; 0]; os artigos &quot;O&quot;, &quot;da&quot; e &quot;de&quot; são vetores nulos. Atenção de uma cabeça com Wq = Wk = 2·I, Wv = I e d_k = 4. Em cada contexto, calcula-se o vetor contextualizado de &quot;banco&quot; e compara-se, por <strong>similaridade de cosseno</strong>, com dois protótipos: instituição financeira = [1; 0; 0,5; 0] e assento = [0; 1; 0; 0,5].</p>
+<div class="article-table-wrap" role="region" aria-label="Scrollable table" tabindex="0"><table>
+<thead>
+<tr>
+<th align="left">Contexto</th>
+<th align="left">Maior peso de atenção de &quot;banco&quot;</th>
+<th align="left">Vetor contextualizado</th>
+<th align="left">Cosseno com instituição</th>
+<th align="left">Cosseno com assento</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">Isolado: &quot;banco&quot;</td>
+<td align="left">1,000 (ele mesmo)</td>
+<td align="left">[0,700; 0,700; 0; 0]</td>
+<td align="left">0,632</td>
+<td align="left">0,632</td>
+</tr>
+<tr>
+<td align="left">&quot;O banco estava lotado de clientes&quot;</td>
+<td align="left">0,501 (ele mesmo); 0,216 (clientes)</td>
+<td align="left">[0,524; 0,351; 0,229; 0]</td>
+<td align="left">0,851</td>
+<td align="left">0,468</td>
+</tr>
+<tr>
+<td align="left">&quot;O banco da praça estava velho de madeira&quot;</td>
+<td align="left">0,443 (ele mesmo); 0,191 (praça)</td>
+<td align="left">[0,310; 0,509; 0,006; 0,175]</td>
+<td align="left">0,452</td>
+<td align="left">0,858</td>
+</tr>
+</tbody></table></div>
+<p>Isolado, o vetor é equidistante dos dois sentidos (0,632 contra 0,632). No contexto de &quot;lotado de clientes&quot;, ele se aproxima da instituição (0,851 contra 0,468). No contexto de &quot;praça … madeira&quot;, aproxima-se do assento (0,858 contra 0,452). O mecanismo é o mesmo nos dois casos; só mudam os vizinhos. Em um modelo real, os pesos Wq, Wk, Wv e o conhecimento nas FFNs resultam do treino, e a distinção se distribui por muitas cabeças e camadas, não por um único passo como neste brinquedo.</p>
+<p><strong>Por que isso surge do treino.</strong> Para prever bem a palavra seguinte em frases como &quot;O banco estava lotado de ___&quot;, o modelo precisa registrar se a frase trata de uma agência ou de um assento. Estatisticamente, &quot;lotado&quot; co-ocorre com clientes, filas e agências. A representação do sentido é, portanto, um subproduto útil da minimização do erro de predição (seção 13).</p>
+<p><strong>Cuidados na interpretação dos mapas de atenção.</strong> Visualizar pesos de atenção (por exemplo, com ferramentas como a de Vig, 2019) é um primeiro passo de análise, mas <strong>peso de atenção não equivale a explicação causal</strong>: pesos diferentes podem produzir a mesma previsão, e a atenção de uma camada é apenas uma parte do cálculo (Jain e Wallace, 2019; Wiegreffe e Pinter, 2019). Conclusões sobre o que o modelo &quot;usa&quot; exigem experimentos de intervenção ou análise de circuitos (Elhage et al., 2021; Olsson et al., 2022).</p>
+<h2 id="13-propriedades-emergentes-e-leis-de-escala">13. Propriedades emergentes e leis de escala</h2>
+<p><strong>Função desta seção.</strong> Explica por que um comportamento como a desambiguação pode existir sem ter sido programado, o que liga o resultado da seção 12 ao treino da seção 10. É necessária para situar o debate sobre emergência sem afirmar mais do que a literatura sustenta.</p>
+<p><strong>Conceito.</strong> Uma <strong>propriedade emergente</strong> é uma característica do sistema como um todo que não está programada em nenhum de seus componentes e surge da interação entre eles em grande número (Anderson, 1972). No Transformer, o código contém apenas multiplicações de matrizes, somas, normalizações e softmax; a meta de treino é apenas prever o próximo token. Nada ali menciona sentidos de palavras, sintaxe ou raciocínio, e ainda assim representações desse tipo aparecem nos pesos aprendidos (seções 9 e 12). A analogia usual é a do formigueiro: nenhuma formiga individual &quot;sabe&quot; construir uma ponte, mas a colônia a constrói.</p>
+<p><strong>Habilidades emergentes com a escala.</strong> Wei et al. (2022a) definem como emergente uma habilidade ausente em modelos menores e presente em modelos maiores, de modo que não se prevê sua aparição por extrapolação simples das curvas dos modelos menores. Exemplos discutidos na literatura incluem o <em>few-shot prompting</em> em grandes modelos (Brown et al., 2020) e o raciocínio por cadeia de pensamento (Wei et al., 2022b).</p>
+<p><strong>Leis de escala.</strong> Enquanto a perda média de predição melhora de modo suave e previsível com parâmetros, dados e computação (Kaplan et al., 2020; Hoffmann et al., 2022), o desempenho em tarefas específicas pode parecer mudar de forma abrupta. Ganguli et al. (2022) discutem essa combinação de previsibilidade na perda e surpresa nas capacidades.</p>
+<p><strong>Debate: emergência real ou efeito da métrica?</strong> Schaeffer et al. (2023) argumentam que parte dos saltos observados decorre de métricas descontínuas, como acerto exato, e que métricas contínuas sobre os mesmos modelos mostram progresso gradual. O debate permanece aberto, e a literatura recomenda cautela ao afirmar que uma capacidade &quot;surge de repente&quot;.</p>
+<p><strong>Não confundir com <em>grokking</em>.</strong> O termo <em>grokking</em> designa um fenômeno distinto: em tarefas algorítmicas pequenas, a generalização aparece muito depois de o modelo já ter memorizado o conjunto de treino (Power et al., 2022), e foi analisado com técnicas de interpretabilidade mecanicista (Nanda et al., 2023). Ele ocorre ao longo do tempo de treino, e a emergência por escala ocorre ao longo do tamanho do modelo.</p>
+<p><strong>Aplicação ao caso &quot;banco&quot;.</strong> A desambiguação de sentidos comuns já é observada em modelos relativamente pequenos, como o BERT-base, com 110 milhões de parâmetros (Reif et al., 2019). Portanto, não há base para afirmar um limiar fixo de camadas ou de parâmetros a partir do qual essa capacidade &quot;aparece&quot;. O que a literatura sustenta é que a capacidade resulta do treino e que sua qualidade e abrangência crescem com a escala.</p>
+<p><strong>Implicações.</strong> Se capacidades podem surgir sem serem projetadas, a avaliação e a interpretabilidade tornam-se parte central do desenvolvimento: é preciso testar o modelo, e não apenas ler o código, para saber o que ele faz (Ganguli et al., 2022; Olsson et al., 2022).</p>
+<h2 id="14-limitações-ressalvas-e-debates-em-aberto">14. Limitações, ressalvas e debates em aberto</h2>
+<p><strong>Função desta seção.</strong> Delimita o que o documento mostra e o que não mostra. É necessária porque os exemplos são simplificados e porque o próprio mecanismo tem limites e pontos em debate que o leitor deve conhecer.</p>
+<p><strong>Limitações deste documento.</strong></p>
+<ul>
+<li>Os exemplos numéricos usam dimensões minúsculas, uma única cabeça e pesos escolhidos à mão ou aleatórios. Mostram a aritmética, não o comportamento de um modelo treinado.</li>
+<li>Foram omitidos, por simplicidade: vieses em todas as projeções, dropout, a atenção cruzada (<em>cross-attention</em>) do decodificador do modelo original, e variantes como misturas de especialistas (<em>mixture of experts</em>) e arquiteturas alternativas à atenção, como modelos de espaço de estados (Gu e Dao, 2023).</li>
+<li>Detalhes como o número exato de camadas, a função de ativação, o tipo de normalização e a codificação posicional variam entre modelos e nem sempre são divulgados.</li>
+</ul>
+<p><strong>Debates e limitações do próprio mecanismo.</strong></p>
+<ul>
+<li><strong>Atenção e explicação.</strong> Pesos de atenção não são, por si sós, uma explicação confiável do comportamento do modelo (Jain e Wallace, 2019; Wiegreffe e Pinter, 2019).</li>
+<li><strong>Custo quadrático e contexto longo.</strong> O custo da atenção cresce com o quadrado do comprimento da sequência, e modelos de contexto longo podem usar pior a informação situada no meio do contexto (Liu et al., 2024).</li>
+<li><strong>Alucinação.</strong> O modelo calcula tokens prováveis dado o contexto; não há, na arquitetura, um passo que verifique a veracidade do que gera. Saídas fluentes porém factualmente incorretas são um problema documentado (Ji et al., 2023).</li>
+<li><strong>&quot;Só estatística&quot; ou &quot;modelo de mundo&quot;?</strong> Há posições divergentes. Uma sustenta que modelos treinados apenas com forma textual não alcançam compreensão de significado (Bender e Koller, 2020). Outra reúne evidências de que modelos treinados para prever o próximo token podem construir representações internas de estruturas do domínio, como o estado de um tabuleiro de Othello (Li et al., 2023). A caracterização de &quot;compreensão&quot; permanece em discussão, e este documento se limita a descrever os mecanismos e as evidências citadas.</li>
+<li><strong>Emergência.</strong> Ver seção 13: a natureza dos saltos de capacidade com a escala é debatida (Wei et al., 2022a; Schaeffer et al., 2023).</li>
+</ul>
+<h2 id="15-da-inferência-à-execução-governada-implicações-para-o-sgaeia">15. Da inferência à execução governada: implicações para o SGAEIA</h2>
+<p><strong>Função desta seção.</strong> Esta seção estabelece a ponte entre a mecânica interna do Transformer e o problema arquitetural investigado pelo SGAEIA. Sua classificação epistemológica é <strong>SGAEIA Interpretation</strong>: trata-se de uma leitura conceitual e pública dos mecanismos descritos neste artigo, e não de evidência de implementação, eficácia, certificação ou validação em produção do SGAEIA.</p>
+<p>A inferência termina, no limite deste artigo, com uma distribuição de probabilidades e a seleção de um token. Um sistema agentivo acrescenta outras camadas: memória, planejamento, ferramentas, credenciais, delegação, políticas, runtime e capacidade de modificar estado externo. Por isso, a saída do modelo deve ser tratada como uma proposta ou sinal computacional, não como autorização para produzir um efeito. Essa separação entre capacidade do modelo e ação governada é central na arquitetura pública do SGAEIA e em sua análise da transição do modelo para o agente (Silva, 2026a; Silva, 2026b; Silva, 2026c).</p>
+<div class="article-table-wrap" role="region" aria-label="Scrollable table" tabindex="0"><table>
+<thead>
+<tr>
+<th align="left">Componente observado</th>
+<th align="left">O que o mecanismo produz</th>
+<th align="left">Questão de governança associada</th>
+<th align="left">Interpretação SGAEIA</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">Entrada, tokenização e contexto</td>
+<td align="left">Representação numérica condicionada pelos dados fornecidos</td>
+<td align="left">Origem, integridade, sensibilidade e limites do contexto</td>
+<td align="left">A proveniência da entrada deve permanecer distinguível da interpretação produzida pelo modelo</td>
+</tr>
+<tr>
+<td align="left">Atenção, camadas e KV cache</td>
+<td align="left">Estado contextual intermediário e reutilização de informação anterior</td>
+<td align="left">Confidencialidade, isolamento, retenção e contaminação de estado</td>
+<td align="left">Estado útil à inferência não equivale a memória autorizada para qualquer finalidade</td>
+</tr>
+<tr>
+<td align="left">Logits, softmax e amostragem</td>
+<td align="left">Distribuição probabilística e escolha possivelmente não determinística</td>
+<td align="left">Incerteza, repetibilidade e adequação do resultado ao risco</td>
+<td align="left">Probabilidade alta não constitui verdade, conformidade ou permissão</td>
+</tr>
+<tr>
+<td align="left">Token ou plano produzido</td>
+<td align="left">Conteúdo que pode sugerir uma decisão ou ação</td>
+<td align="left">Quem pode aceitar, rejeitar ou restringir a proposta</td>
+<td align="left"><strong>Capacidade não equivale a autoridade; proposta não equivale a permissão</strong></td>
+</tr>
+<tr>
+<td align="left">Chamada de ferramenta e efeito externo</td>
+<td align="left">Alteração potencial de dados, serviços ou ambiente</td>
+<td align="left">Identidade, escopo, política, delegação, revogação e consequência</td>
+<td align="left">O efeito deve atravessar uma fronteira de execução governada externa ao modelo</td>
+</tr>
+</tbody></table></div>
+<p>Essa separação é particularmente importante porque interpretabilidade parcial não elimina a necessidade de controles externos. Pesos de atenção, estados intermediários, explicações geradas e cadeias de raciocínio podem fornecer sinais úteis, mas nenhum deles demonstra sozinho a causa completa de uma decisão, a legitimidade de uma ação ou a estabilidade futura do comportamento. A formulação pública do SGAEIA trata essa limitação como um problema de supervisão: quanto menor a confiança na compreensão do processo interno, menos a segurança pode depender exclusivamente dessa compreensão e mais deve depender de autoridade limitada, execução mediada, revogação e recuperação (Silva, 2026d).</p>
+<p>Também é necessário distinguir observabilidade de evidência. Registrar prompt e resposta ajuda a reconstruir parte da interação, mas não basta para demonstrar qual identidade iniciou a operação, que política estava vigente, qual autoridade permitiu uma ferramenta, que delegações ocorreram e qual efeito foi realmente observado. Em sistemas distribuídos ou multiagentes, traces e spans ajudam a reconstruir trajetórias, enquanto avaliação e evidência governada respondem a perguntas diferentes sobre resultado, legitimidade e assurance. Essa relação entre rastreamento, avaliação e evidência é analisada na pesquisa pública do SGAEIA sobre execução de agentes (Silva, 2026e).</p>
+<p>O vínculo com o SGAEIA não transforma os exemplos didáticos deste artigo em controles arquiteturais. A tabela acima organiza questões de pesquisa e propriedades públicas em nível alto, preservando a fronteira entre explicação e mecanismo privado. A conclusão operacional é limitada, mas importante: entender como um LLM produz um token é condição necessária para governar um sistema baseado em LLMs, porém não é condição suficiente para autorizar, observar, conter ou assegurar os efeitos desse sistema.</p>
+<h2 id="16-conclusão">16. Conclusão</h2>
+<p>Abrir a caixa-preta da inferência permite acompanhar a transformação do texto em IDs, vetores, relações de atenção, representações contextuais, logits e probabilidades. Os exemplos reduzidos mostram a aritmética de cada etapa e tornam explícito onde entram os pesos aprendidos, as máscaras, a normalização, a não linearidade e a regra de decodificação. Eles também deixam claro o limite da demonstração: números didáticos explicam o mecanismo, mas não medem um modelo real nem sustentam, por si sós, afirmações sobre raciocínio, segurança ou confiabilidade.</p>
+<p>O estudo de caso de “banco” evidencia por que a representação de um token não permanece estática depois que o contexto atravessa as camadas. Ao mesmo tempo, as ressalvas sobre mapas de atenção, emergência e alucinação impedem que a explicação matemática seja confundida com transparência causal completa. A inferência é probabilística, contextual e dependente de pesos, configuração e estratégia de decodificação; sua análise deve preservar essas condições em vez de converter fluência em certeza.</p>
+<p>Para o SGAEIA, a principal implicação é a separação entre inferência e efeito. O modelo pode propor um caminho, mas a autoridade determina se esse caminho é alcançável, e políticas e evidências determinam se ele pode tornar-se uma ação legítima. Portanto, abrir a caixa-preta de um sistema agentivo exige explicar não apenas como o token foi produzido, mas também quem autorizou cada ação, sob quais limites, com quais registros e com que capacidade de interrupção, revogação e recuperação.</p>
+<h2 id="17-glossário-de-termos-conceitos-e-técnicas">17. Glossário de termos, conceitos e técnicas</h2>
+<p><strong>Função desta seção.</strong> Fixa a terminologia usada no texto. É necessária porque os termos vêm de áreas distintas (linguística computacional, otimização, interpretabilidade) e muitos têm nomes em inglês sem tradução consolidada.</p>
+<p>Ordem alfabética. A coluna &quot;Seção&quot; indica onde o termo é desenvolvido.</p>
+<div class="article-table-wrap" role="region" aria-label="Scrollable table" tabindex="0"><table>
+<thead>
+<tr>
+<th align="left">Termo</th>
+<th align="left">Definição</th>
+<th align="left">Seção</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">Adam / AdamW</td>
+<td align="left">Otimizadores baseados em gradiente com taxa de aprendizado adaptativa por parâmetro; o AdamW separa o decaimento de pesos do passo de atualização.</td>
+<td align="left">10</td>
+</tr>
+<tr>
+<td align="left">ALiBi</td>
+<td align="left">Técnica de posição que soma aos scores de atenção um viés linear proporcional à distância entre tokens.</td>
+<td align="left">4</td>
+</tr>
+<tr>
+<td align="left">Alucinação</td>
+<td align="left">Saída fluente porém factualmente incorreta ou sem sustentação no contexto.</td>
+<td align="left">14</td>
+</tr>
+<tr>
+<td align="left">Atenção (attention)</td>
+<td align="left">Operação que calcula uma média ponderada de vetores, com pesos obtidos por compatibilidade entre uma consulta e chaves.</td>
+<td align="left">5</td>
+</tr>
+<tr>
+<td align="left">Atenção cruzada (cross-attention)</td>
+<td align="left">Atenção em que as Queries vêm de uma sequência (decodificador) e as Keys e Values de outra (codificador).</td>
+<td align="left">14</td>
+</tr>
+<tr>
+<td align="left">Autoridade</td>
+<td align="left">Conjunto legitimamente concedido e delimitado de ações, recursos, alvos, condições e efeitos que um ator pode exercer; capacidade técnica não implica autoridade.</td>
+<td align="left">15</td>
+</tr>
+<tr>
+<td align="left">Autorregressivo</td>
+<td align="left">Que gera um elemento de cada vez, condicionado aos elementos já gerados.</td>
+<td align="left">2, 11</td>
+</tr>
+<tr>
+<td align="left">Backpropagation</td>
+<td align="left">Algoritmo que calcula gradientes da perda em relação a todos os pesos, propagando o erro da saída para a entrada pela regra da cadeia.</td>
+<td align="left">10</td>
+</tr>
+<tr>
+<td align="left">Beam search</td>
+<td align="left">Busca em feixe: mantém várias sequências candidatas e escolhe a de maior probabilidade total.</td>
+<td align="left">11</td>
+</tr>
+<tr>
+<td align="left">BERT</td>
+<td align="left">Modelo somente codificador, treinado com predição de tokens mascarados e atenção bidirecional.</td>
+<td align="left">2, 10</td>
+</tr>
+<tr>
+<td align="left">BPE (Byte Pair Encoding)</td>
+<td align="left">Algoritmo de tokenização que funde iterativamente o par de símbolos adjacentes mais frequente.</td>
+<td align="left">3</td>
+</tr>
+<tr>
+<td align="left">Cabeça de atenção (head)</td>
+<td align="left">Uma das h atenções paralelas da multi-head attention, com matrizes Wq, Wk, Wv próprias.</td>
+<td align="left">6</td>
+</tr>
+<tr>
+<td align="left">Camada (layer)</td>
+<td align="left">Um bloco Transformer completo: atenção, Add &amp; Norm, FFN, Add &amp; Norm.</td>
+<td align="left">9</td>
+</tr>
+<tr>
+<td align="left">Chain-of-thought</td>
+<td align="left">Técnica de prompt em que o modelo gera passos intermediários de raciocínio antes da resposta.</td>
+<td align="left">13</td>
+</tr>
+<tr>
+<td align="left">Codificação posicional</td>
+<td align="left">Vetor somado ao embedding para informar a posição do token na sequência.</td>
+<td align="left">4</td>
+</tr>
+<tr>
+<td align="left">Codificador / decodificador</td>
+<td align="left">Pilhas de camadas: o codificador lê a entrada com atenção bidirecional; o decodificador gera a saída com atenção causal.</td>
+<td align="left">2</td>
+</tr>
+<tr>
+<td align="left">Conexão residual</td>
+<td align="left">Soma da entrada de uma subcamada à sua saída, y = x + f(x).</td>
+<td align="left">7</td>
+</tr>
+<tr>
+<td align="left">Contexto</td>
+<td align="left">Conjunto de tokens anteriores (ou de toda a sequência, em modelos bidirecionais) que condiciona uma previsão.</td>
+<td align="left">5, 12</td>
+</tr>
+<tr>
+<td align="left">Cosseno (similaridade de)</td>
+<td align="left">Medida de alinhamento entre dois vetores: produto escalar dividido pelo produto das normas, entre −1 e 1.</td>
+<td align="left">12</td>
+</tr>
+<tr>
+<td align="left">d_model, d_k, d_ff</td>
+<td align="left">Dimensão do modelo, de cada cabeça de atenção (d_model / h) e da camada oculta da FFN, respectivamente.</td>
+<td align="left">4, 6, 8</td>
+</tr>
+<tr>
+<td align="left">Decodificação</td>
+<td align="left">Regra que escolhe o token de saída a partir da distribuição de probabilidade (gulosa, top-k, top-p, feixe).</td>
+<td align="left">11</td>
+</tr>
+<tr>
+<td align="left">Dropout</td>
+<td align="left">Regularização que zera aleatoriamente ativações durante o treino.</td>
+<td align="left">10</td>
+</tr>
+<tr>
+<td align="left">Embedding</td>
+<td align="left">Vetor denso aprendido que representa um token (ou uma posição).</td>
+<td align="left">4</td>
+</tr>
+<tr>
+<td align="left">Emergência / propriedade emergente</td>
+<td align="left">Característica do sistema que surge da interação de muitos componentes sem estar programada neles.</td>
+<td align="left">13</td>
+</tr>
+<tr>
+<td align="left">Entropia cruzada</td>
+<td align="left">Função de perda que mede o quanto a distribuição prevista se afasta do token correto: −log p(correto).</td>
+<td align="left">10</td>
+</tr>
+<tr>
+<td align="left">Evidência governada</td>
+<td align="left">Registro atribuível e verificável que conecta contexto, identidade, política, autoridade, execução e efeito observado para sustentar uma afirmação de governança ou assurance.</td>
+<td align="left">15</td>
+</tr>
+<tr>
+<td align="left">Execução governada</td>
+<td align="left">Mediação externa ao modelo que avalia identidade, autoridade, política, risco e evidência antes de permitir que uma proposta produza efeito.</td>
+<td align="left">15</td>
+</tr>
+<tr>
+<td align="left">Few-shot</td>
+<td align="left">Uso do modelo com poucos exemplos fornecidos no próprio prompt, sem atualizar pesos.</td>
+<td align="left">13</td>
+</tr>
+<tr>
+<td align="left">Fine-tuning</td>
+<td align="left">Treino adicional, após o pré-treinamento, para uma tarefa ou comportamento específico.</td>
+<td align="left">10</td>
+</tr>
+<tr>
+<td align="left">Forward pass</td>
+<td align="left">Passagem da entrada pelas camadas até a saída, sem atualizar pesos na inferência.</td>
+<td align="left">2</td>
+</tr>
+<tr>
+<td align="left">Feed-forward (FFN)</td>
+<td align="left">Rede de duas camadas lineares com não linearidade, aplicada a cada posição de forma independente.</td>
+<td align="left">8</td>
+</tr>
+<tr>
+<td align="left">GELU</td>
+<td align="left">Função de ativação suave, usada em BERT e GPT.</td>
+<td align="left">8</td>
+</tr>
+<tr>
+<td align="left">Gradiente</td>
+<td align="left">Vetor de derivadas da perda em relação aos pesos; indica como ajustá-los.</td>
+<td align="left">10</td>
+</tr>
+<tr>
+<td align="left">Grokking</td>
+<td align="left">Generalização que surge muito depois da memorização do conjunto de treino em tarefas algorítmicas pequenas.</td>
+<td align="left">13</td>
+</tr>
+<tr>
+<td align="left">Induction head</td>
+<td align="left">Circuito de duas cabeças que localiza ocorrências passadas de um padrão e prevê sua continuação.</td>
+<td align="left">9</td>
+</tr>
+<tr>
+<td align="left">Inferência</td>
+<td align="left">Execução do modelo treinado, com pesos fixos, para gerar uma saída.</td>
+<td align="left">2</td>
+</tr>
+<tr>
+<td align="left">Interpretabilidade</td>
+<td align="left">Conjunto de métodos para entender o que o modelo computa e por quê.</td>
+<td align="left">12</td>
+</tr>
+<tr>
+<td align="left">Key (chave)</td>
+<td align="left">Projeção X·Wk que representa o que cada token oferece para ser encontrado.</td>
+<td align="left">5</td>
+</tr>
+<tr>
+<td align="left">KV cache</td>
+<td align="left">Armazenamento dos Keys e Values já calculados, reaproveitados a cada novo token gerado.</td>
+<td align="left">6</td>
+</tr>
+<tr>
+<td align="left">Label smoothing</td>
+<td align="left">Suavização do alvo no treino, reduzindo a confiança extrema nas previsões.</td>
+<td align="left">10</td>
+</tr>
+<tr>
+<td align="left">LayerNorm</td>
+<td align="left">Normalização por token ao longo das dimensões, com escala γ e deslocamento β aprendidos.</td>
+<td align="left">7</td>
+</tr>
+<tr>
+<td align="left">Lei de escala</td>
+<td align="left">Relação regular (lei de potência) entre perda e parâmetros, dados e computação.</td>
+<td align="left">10, 13</td>
+</tr>
+<tr>
+<td align="left">Logit</td>
+<td align="left">Pontuação real, sem limites, atribuída a cada token do vocabulário antes do softmax.</td>
+<td align="left">11</td>
+</tr>
+<tr>
+<td align="left">Logit lens / tuned lens</td>
+<td align="left">Técnicas que projetam estados intermediários sobre o vocabulário para observar a previsão em cada camada.</td>
+<td align="left">9</td>
+</tr>
+<tr>
+<td align="left">Masked language modeling</td>
+<td align="left">Objetivo de treino em que tokens ocultados são reconstruídos a partir do contexto bilateral.</td>
+<td align="left">10</td>
+</tr>
+<tr>
+<td align="left">Máscara causal</td>
+<td align="left">Máscara que impede cada posição de atender a posições futuras, atribuindo −∞ aos scores correspondentes.</td>
+<td align="left">6</td>
+</tr>
+<tr>
+<td align="left">Mixture of experts (MoE)</td>
+<td align="left">Arquitetura em que cada token ativa apenas um subconjunto de subredes FFN especializadas.</td>
+<td align="left">14</td>
+</tr>
+<tr>
+<td align="left">Multi-head attention</td>
+<td align="left">Execução de h atenções em paralelo em subespaços distintos, com saídas concatenadas e projetadas por Wo.</td>
+<td align="left">6</td>
+</tr>
+<tr>
+<td align="left">One-hot</td>
+<td align="left">Vetor com 1 na posição do token correto e 0 nas demais.</td>
+<td align="left">10</td>
+</tr>
+<tr>
+<td align="left">Parâmetro / peso</td>
+<td align="left">Número ajustável aprendido durante o treino.</td>
+<td align="left">10</td>
+</tr>
+<tr>
+<td align="left">Perplexidade (PPL)</td>
+<td align="left">Exponencial da perda média por token; mede a &quot;surpresa&quot; do modelo com o texto.</td>
+<td align="left">10</td>
+</tr>
+<tr>
+<td align="left">Pré-LN / Post-LN</td>
+<td align="left">Posição da normalização: antes (Pré-LN) ou depois (Post-LN) da soma residual.</td>
+<td align="left">7</td>
+</tr>
+<tr>
+<td align="left">Pré-treinamento</td>
+<td align="left">Fase inicial de treino em grande volume de texto bruto.</td>
+<td align="left">10</td>
+</tr>
+<tr>
+<td align="left">Probing (sondagem)</td>
+<td align="left">Treino de classificadores simples sobre representações internas para testar que informação elas contêm.</td>
+<td align="left">9</td>
+</tr>
+<tr>
+<td align="left">Produto escalar</td>
+<td align="left">Soma dos produtos componente a componente de dois vetores; mede alinhamento.</td>
+<td align="left">5</td>
+</tr>
+<tr>
+<td align="left">Query (consulta)</td>
+<td align="left">Projeção X·Wq que representa o que cada token procura.</td>
+<td align="left">5</td>
+</tr>
+<tr>
+<td align="left">ReLU</td>
+<td align="left">Função de ativação max(0, x).</td>
+<td align="left">8</td>
+</tr>
+<tr>
+<td align="left">RLHF</td>
+<td align="left">Aprendizado por reforço com feedback humano, usado para alinhar o modelo a preferências.</td>
+<td align="left">10</td>
+</tr>
+<tr>
+<td align="left">RMSNorm</td>
+<td align="left">Normalização pela raiz do valor quadrático médio, sem subtrair a média.</td>
+<td align="left">7</td>
+</tr>
+<tr>
+<td align="left">RoPE</td>
+<td align="left">Codificação posicional que rotaciona Q e K conforme a posição, expressando posição relativa.</td>
+<td align="left">4</td>
+</tr>
+<tr>
+<td align="left">Self-attention</td>
+<td align="left">Atenção em que Queries, Keys e Values vêm da mesma sequência.</td>
+<td align="left">5</td>
+</tr>
+<tr>
+<td align="left">SentencePiece</td>
+<td align="left">Biblioteca de tokenização de subpalavras (BPE ou Unigram) que opera sobre texto bruto.</td>
+<td align="left">3</td>
+</tr>
+<tr>
+<td align="left">SGAEIA</td>
+<td align="left">Secure Governed Autonomous Edge Intelligence Architecture; programa de pesquisa e arquitetura de referência aberta para AI autônoma e distribuída governada.</td>
+<td align="left">15</td>
+</tr>
+<tr>
+<td align="left">Softmax</td>
+<td align="left">Função que converte um vetor de números em probabilidades positivas que somam 1.</td>
+<td align="left">5, 11</td>
+</tr>
+<tr>
+<td align="left">SwiGLU</td>
+<td align="left">Ativação com porta (GLU) usando a função Swish, comum em modelos recentes.</td>
+<td align="left">8</td>
+</tr>
+<tr>
+<td align="left">Temperatura (T)</td>
+<td align="left">Divisor dos logits antes do softmax; controla o grau de concentração da distribuição.</td>
+<td align="left">11</td>
+</tr>
+<tr>
+<td align="left">Token</td>
+<td align="left">Unidade do vocabulário (palavra, subpalavra, byte ou símbolo) tratada como elemento da sequência.</td>
+<td align="left">3</td>
+</tr>
+<tr>
+<td align="left">Token contextualizado</td>
+<td align="left">Vetor de um token após a atenção, que incorpora informação dos demais tokens.</td>
+<td align="left">5</td>
+</tr>
+<tr>
+<td align="left">Tokenização</td>
+<td align="left">Conversão de texto em sequência de tokens e IDs.</td>
+<td align="left">3</td>
+</tr>
+<tr>
+<td align="left">Top-k / Top-p (nucleus)</td>
+<td align="left">Estratégias de amostragem que restringem a escolha aos k tokens mais prováveis ou ao menor conjunto com probabilidade acumulada p.</td>
+<td align="left">11</td>
+</tr>
+<tr>
+<td align="left">Transformer</td>
+<td align="left">Arquitetura de rede neural baseada em atenção, sem recorrência nem convolução.</td>
+<td align="left">1, 2</td>
+</tr>
+<tr>
+<td align="left">Unigram LM</td>
+<td align="left">Método de tokenização que parte de um vocabulário grande e poda os itens menos úteis.</td>
+<td align="left">3</td>
+</tr>
+<tr>
+<td align="left">Value (valor)</td>
+<td align="left">Projeção X·Wv que representa o conteúdo repassado por cada token.</td>
+<td align="left">5</td>
+</tr>
+<tr>
+<td align="left">Vocabulário</td>
+<td align="left">Conjunto finito de tokens reconhecidos pelo modelo.</td>
+<td align="left">3</td>
+</tr>
+<tr>
+<td align="left">Warm-up</td>
+<td align="left">Fase inicial do treino em que a taxa de aprendizado cresce gradualmente.</td>
+<td align="left">7, 10</td>
+</tr>
+<tr>
+<td align="left">Weight tying</td>
+<td align="left">Compartilhamento da matriz de embeddings com a projeção de saída.</td>
+<td align="left">4, 11</td>
+</tr>
+<tr>
+<td align="left">WordPiece</td>
+<td align="left">Tokenização de subpalavras que escolhe fusões pelo ganho de verossimilhança.</td>
+<td align="left">3</td>
+</tr>
+</tbody></table></div>
+<h2 id="18-referências-bibliográficas">18. Referências bibliográficas</h2>
+<p><strong>Função desta seção.</strong> Permite que cada afirmação técnica seja rastreada até a fonte. É necessária para que o leitor verifique os fatos e para distinguir o que foi conferido em fonte do que ainda precisa de conferência.</p>
+<p><strong>Nota de conferência (20/10/2026).</strong> Os itens marcados com [conferido] tiveram título, autores, veículo e, quando indicado, páginas verificados em página oficial ou de indexação durante a elaboração deste documento. Foram conferidos 12 dos 69 itens; os 57 demais não foram verificados em fonte e seguem os dados bibliográficos usuais de cada publicação; recomenda-se conferir páginas, volumes e DOI antes de qualquer submissão formal. <strong>Auditoria de links (20/10/2026).</strong> Cada entrada recebeu um endereço https. Os marcados com [link auditado] (14 de 69) foram devolvidos por busca na web e a página corresponde ao título e ao identificador citados; não foi feita verificação de resposta HTTP. Os demais foram formados a partir do identificador (arXiv, ACL Anthology, DOI ou página do editor) e <strong>não puderam ser abertos neste ambiente</strong>; devem ser tratados como não auditados. O link do item Gage (1994) aponta para uma cópia hospedada por terceiros. Os identificadores arXiv permitem localizar cada trabalho.</p>
+<ul>
+<li>Ainslie, J.; Lee-Thorp, J.; de Jong, M.; Zemlyanskiy, Y.; Lebrón, F.; Sanghai, S. (2023). GQA: Training generalized multi-query Transformer models from multi-head checkpoints. In: EMNLP 2023. arXiv:2305.13245. <a href="https://arxiv.org/abs/2305.13245" target="_blank" rel="noopener noreferrer">https://arxiv.org/abs/2305.13245</a></li>
+<li>Anderson, P. W. (1972). More is different. Science, 177(4047), 393–396. <a href="https://doi.org/10.1126/science.177.4047.393" target="_blank" rel="noopener noreferrer">https://doi.org/10.1126/science.177.4047.393</a></li>
+<li>Ba, J. L.; Kiros, J. R.; Hinton, G. E. (2016). Layer normalization. arXiv:1607.06450. <a href="https://arxiv.org/abs/1607.06450" target="_blank" rel="noopener noreferrer">https://arxiv.org/abs/1607.06450</a></li>
+<li>Bahdanau, D.; Cho, K.; Bengio, Y. (2015). Neural machine translation by jointly learning to align and translate. In: ICLR 2015. arXiv:1409.0473. <a href="https://arxiv.org/abs/1409.0473" target="_blank" rel="noopener noreferrer">https://arxiv.org/abs/1409.0473</a></li>
+<li>Belrose, N.; Furman, Z.; Smith, L.; Halawi, D.; Ostrovsky, I.; McKinney, L.; Biderman, S.; Steinhardt, J. (2023). Eliciting latent predictions from Transformers with the tuned lens. arXiv:2303.08112. <a href="https://arxiv.org/abs/2303.08112" target="_blank" rel="noopener noreferrer">https://arxiv.org/abs/2303.08112</a> [link auditado] [conferido]</li>
+<li>Bender, E. M.; Koller, A. (2020). Climbing towards NLU: On meaning, form, and understanding in the age of data. In: ACL 2020, p. 5185–5198. <a href="https://aclanthology.org/2020.acl-main.463/" target="_blank" rel="noopener noreferrer">https://aclanthology.org/2020.acl-main.463/</a></li>
+<li>Bengio, Y.; Ducharme, R.; Vincent, P.; Jauvin, C. (2003). A neural probabilistic language model. Journal of Machine Learning Research, 3, 1137–1155. <a href="https://www.jmlr.org/papers/v3/bengio03a.html" target="_blank" rel="noopener noreferrer">https://www.jmlr.org/papers/v3/bengio03a.html</a></li>
+<li>Brown, T. B. et al. (2020). Language models are few-shot learners. In: NeurIPS 33. arXiv:2005.14165. <a href="https://arxiv.org/abs/2005.14165" target="_blank" rel="noopener noreferrer">https://arxiv.org/abs/2005.14165</a></li>
+<li>Clark, K.; Khandelwal, U.; Levy, O.; Manning, C. D. (2019). What does BERT look at? An analysis of BERT&#39;s attention. In: BlackboxNLP Workshop at ACL 2019, p. 276–286. arXiv:1906.04341. <a href="https://arxiv.org/abs/1906.04341" target="_blank" rel="noopener noreferrer">https://arxiv.org/abs/1906.04341</a> [link auditado]</li>
+<li>Dao, T.; Fu, D. Y.; Ermon, S.; Rudra, A.; Ré, C. (2022). FlashAttention: Fast and memory-efficient exact attention with IO-awareness. In: NeurIPS 35. arXiv:2205.14135. <a href="https://arxiv.org/abs/2205.14135" target="_blank" rel="noopener noreferrer">https://arxiv.org/abs/2205.14135</a></li>
+<li>Devlin, J.; Chang, M.-W.; Lee, K.; Toutanova, K. (2019). BERT: Pre-training of deep bidirectional Transformers for language understanding. In: NAACL-HLT 2019, p. 4171–4186. arXiv:1810.04805. <a href="https://arxiv.org/abs/1810.04805" target="_blank" rel="noopener noreferrer">https://arxiv.org/abs/1810.04805</a></li>
+<li>Elhage, N. et al. (2021). A mathematical framework for Transformer circuits. Transformer Circuits Thread. <a href="https://transformer-circuits.pub/2021/framework/index.html" target="_blank" rel="noopener noreferrer">https://transformer-circuits.pub/2021/framework/index.html</a></li>
+<li>Ethayarajh, K. (2019). How contextual are contextualized word representations? Comparing the geometry of BERT, ELMo, and GPT-2 embeddings. In: EMNLP-IJCNLP 2019, p. 55–65. arXiv:1909.00512. <a href="https://aclanthology.org/D19-1006/" target="_blank" rel="noopener noreferrer">https://aclanthology.org/D19-1006/</a> [link auditado] [conferido]</li>
+<li>Fan, A.; Lewis, M.; Dauphin, Y. (2018). Hierarchical neural story generation. In: ACL 2018, p. 889–898. arXiv:1805.04833. <a href="https://arxiv.org/abs/1805.04833" target="_blank" rel="noopener noreferrer">https://arxiv.org/abs/1805.04833</a></li>
+<li>Gage, P. (1994). A new algorithm for data compression. The C Users Journal, 12(2), 23–38. <a href="https://www.derczynski.com/papers/archive/BPE_Gage.pdf" target="_blank" rel="noopener noreferrer">https://www.derczynski.com/papers/archive/BPE_Gage.pdf</a></li>
+<li>Ganguli, D. et al. (2022). Predictability and surprise in large generative models. In: ACM FAccT 2022, p. 1747–1764. arXiv:2202.07785. <a href="https://arxiv.org/abs/2202.07785" target="_blank" rel="noopener noreferrer">https://arxiv.org/abs/2202.07785</a></li>
+<li>Geva, M.; Schuster, R.; Berant, J.; Levy, O. (2021). Transformer feed-forward layers are key-value memories. In: EMNLP 2021, p. 5484–5495. arXiv:2012.14913. <a href="https://aclanthology.org/2021.emnlp-main.446" target="_blank" rel="noopener noreferrer">https://aclanthology.org/2021.emnlp-main.446</a> [link auditado] [conferido]</li>
+<li>Gu, A.; Dao, T. (2023). Mamba: Linear-time sequence modeling with selective state spaces. arXiv:2312.00752. <a href="https://arxiv.org/abs/2312.00752" target="_blank" rel="noopener noreferrer">https://arxiv.org/abs/2312.00752</a></li>
+<li>He, K.; Zhang, X.; Ren, S.; Sun, J. (2016). Deep residual learning for image recognition. In: CVPR 2016, p. 770–778. arXiv:1512.03385. <a href="https://arxiv.org/abs/1512.03385" target="_blank" rel="noopener noreferrer">https://arxiv.org/abs/1512.03385</a></li>
+<li>Hendrycks, D.; Gimpel, K. (2016). Gaussian error linear units (GELUs). arXiv:1606.08415. <a href="https://arxiv.org/abs/1606.08415" target="_blank" rel="noopener noreferrer">https://arxiv.org/abs/1606.08415</a></li>
+<li>Hinton, G.; Vinyals, O.; Dean, J. (2015). Distilling the knowledge in a neural network. arXiv:1503.02531. <a href="https://arxiv.org/abs/1503.02531" target="_blank" rel="noopener noreferrer">https://arxiv.org/abs/1503.02531</a></li>
+<li>Hoffmann, J. et al. (2022). Training compute-optimal large language models. In: NeurIPS 35. arXiv:2203.15556. <a href="https://arxiv.org/abs/2203.15556" target="_blank" rel="noopener noreferrer">https://arxiv.org/abs/2203.15556</a></li>
+<li>Holtzman, A.; Buys, J.; Du, L.; Forbes, M.; Choi, Y. (2020). The curious case of neural text degeneration. In: ICLR 2020. arXiv:1904.09751. <a href="https://arxiv.org/abs/1904.09751" target="_blank" rel="noopener noreferrer">https://arxiv.org/abs/1904.09751</a></li>
+<li>Jain, S.; Wallace, B. C. (2019). Attention is not explanation. In: NAACL-HLT 2019, p. 3543–3556. arXiv:1902.10186. <a href="https://aclanthology.org/N19-1357/" target="_blank" rel="noopener noreferrer">https://aclanthology.org/N19-1357/</a> [link auditado] [conferido]</li>
+<li>Jawahar, G.; Sagot, B.; Seddah, D. (2019). What does BERT learn about the structure of language? In: ACL 2019, p. 3651–3657. <a href="https://aclanthology.org/P19-1356/" target="_blank" rel="noopener noreferrer">https://aclanthology.org/P19-1356/</a> [link auditado] [conferido]</li>
+<li>Ji, Z. et al. (2023). Survey of hallucination in natural language generation. ACM Computing Surveys, 55(12), art. 248. arXiv:2202.03629. <a href="https://arxiv.org/abs/2202.03629" target="_blank" rel="noopener noreferrer">https://arxiv.org/abs/2202.03629</a> [link auditado]</li>
+<li>Kaplan, J. et al. (2020). Scaling laws for neural language models. arXiv:2001.08361. <a href="https://arxiv.org/abs/2001.08361" target="_blank" rel="noopener noreferrer">https://arxiv.org/abs/2001.08361</a></li>
+<li>Kingma, D. P.; Ba, J. (2015). Adam: A method for stochastic optimization. In: ICLR 2015. arXiv:1412.6980. <a href="https://arxiv.org/abs/1412.6980" target="_blank" rel="noopener noreferrer">https://arxiv.org/abs/1412.6980</a></li>
+<li>Kudo, T. (2018). Subword regularization: Improving neural network translation models with multiple subword candidates. In: ACL 2018, p. 66–75. arXiv:1804.10959. <a href="https://arxiv.org/abs/1804.10959" target="_blank" rel="noopener noreferrer">https://arxiv.org/abs/1804.10959</a></li>
+<li>Kudo, T.; Richardson, J. (2018). SentencePiece: A simple and language independent subword tokenizer and detokenizer for neural text processing. In: EMNLP 2018 (System Demonstrations), p. 66–71. arXiv:1808.06226. <a href="https://arxiv.org/abs/1808.06226" target="_blank" rel="noopener noreferrer">https://arxiv.org/abs/1808.06226</a></li>
+<li>Li, K.; Hopkins, A. K.; Bau, D.; Viégas, F.; Pfister, H.; Wattenberg, M. (2023). Emergent world representations: Exploring a sequence model trained on a synthetic task. In: ICLR 2023. arXiv:2210.13382. <a href="https://arxiv.org/abs/2210.13382" target="_blank" rel="noopener noreferrer">https://arxiv.org/abs/2210.13382</a></li>
+<li>Liu, N. F. et al. (2024). Lost in the middle: How language models use long contexts. Transactions of the ACL, 12, 157–173. arXiv:2307.03172. <a href="https://aclanthology.org/2024.tacl-1.9/" target="_blank" rel="noopener noreferrer">https://aclanthology.org/2024.tacl-1.9/</a> [link auditado] [conferido]</li>
+<li>Loshchilov, I.; Hutter, F. (2019). Decoupled weight decay regularization. In: ICLR 2019. arXiv:1711.05101. <a href="https://arxiv.org/abs/1711.05101" target="_blank" rel="noopener noreferrer">https://arxiv.org/abs/1711.05101</a></li>
+<li>Michel, P.; Levy, O.; Neubig, G. (2019). Are sixteen heads really better than one? In: NeurIPS 32. arXiv:1905.10650. <a href="https://arxiv.org/abs/1905.10650" target="_blank" rel="noopener noreferrer">https://arxiv.org/abs/1905.10650</a></li>
+<li>Mikolov, T.; Chen, K.; Corrado, G.; Dean, J. (2013). Efficient estimation of word representations in vector space. arXiv:1301.3781. <a href="https://arxiv.org/abs/1301.3781" target="_blank" rel="noopener noreferrer">https://arxiv.org/abs/1301.3781</a></li>
+<li>Nanda, N.; Chan, L.; Lieberum, T.; Smith, J.; Steinhardt, J. (2023). Progress measures for grokking via mechanistic interpretability. In: ICLR 2023. arXiv:2301.05217. <a href="https://arxiv.org/abs/2301.05217" target="_blank" rel="noopener noreferrer">https://arxiv.org/abs/2301.05217</a></li>
+<li>Olsson, C. et al. (2022). In-context learning and induction heads. Transformer Circuits Thread. arXiv:2209.11895. <a href="https://arxiv.org/abs/2209.11895" target="_blank" rel="noopener noreferrer">https://arxiv.org/abs/2209.11895</a></li>
+<li>Ouyang, L. et al. (2022). Training language models to follow instructions with human feedback. In: NeurIPS 35. arXiv:2203.02155. <a href="https://arxiv.org/abs/2203.02155" target="_blank" rel="noopener noreferrer">https://arxiv.org/abs/2203.02155</a></li>
+<li>Pope, R.; Douglas, S.; Chowdhery, A.; Devlin, J.; Bradbury, J.; Levskaya, A.; Heek, J.; Xiao, K.; Agrawal, S.; Dean, J. (2023). Efficiently scaling Transformer inference. Proceedings of Machine Learning and Systems, 5 (MLSys 2023). arXiv:2211.05102. <a href="https://arxiv.org/abs/2211.05102" target="_blank" rel="noopener noreferrer">https://arxiv.org/abs/2211.05102</a> [link auditado] [conferido]</li>
+<li>Power, A.; Burda, Y.; Edwards, H.; Babuschkin, I.; Misra, V. (2022). Grokking: Generalization beyond overfitting on small algorithmic datasets. arXiv:2201.02177. <a href="https://arxiv.org/abs/2201.02177" target="_blank" rel="noopener noreferrer">https://arxiv.org/abs/2201.02177</a></li>
+<li>Press, O.; Smith, N. A.; Lewis, M. (2022). Train short, test long: Attention with linear biases enables input length extrapolation. In: ICLR 2022. arXiv:2108.12409. <a href="https://arxiv.org/abs/2108.12409" target="_blank" rel="noopener noreferrer">https://arxiv.org/abs/2108.12409</a></li>
+<li>Press, O.; Wolf, L. (2017). Using the output embedding to improve language models. In: EACL 2017, p. 157–163. arXiv:1608.05859. <a href="https://arxiv.org/abs/1608.05859" target="_blank" rel="noopener noreferrer">https://arxiv.org/abs/1608.05859</a></li>
+<li>Radford, A.; Narasimhan, K.; Salimans, T.; Sutskever, I. (2018). Improving language understanding by generative pre-training. OpenAI, relatório técnico. <a href="https://cdn.openai.com/research-covers/language-unsupervised/language_understanding_paper.pdf" target="_blank" rel="noopener noreferrer">https://cdn.openai.com/research-covers/language-unsupervised/language_understanding_paper.pdf</a></li>
+<li>Radford, A.; Wu, J.; Child, R.; Luan, D.; Amodei, D.; Sutskever, I. (2019). Language models are unsupervised multitask learners. OpenAI, relatório técnico. <a href="https://cdn.openai.com/better-language-models/language_models_are_unsupervised_multitask_learners.pdf" target="_blank" rel="noopener noreferrer">https://cdn.openai.com/better-language-models/language_models_are_unsupervised_multitask_learners.pdf</a></li>
+<li>Reif, E.; Yuan, A.; Wattenberg, M.; Viegas, F. B.; Coenen, A.; Pearce, A.; Kim, B. (2019). Visualizing and measuring the geometry of BERT. In: NeurIPS 32, p. 8594–8603. arXiv:1906.02715. <a href="https://arxiv.org/abs/1906.02715" target="_blank" rel="noopener noreferrer">https://arxiv.org/abs/1906.02715</a> [link auditado] [conferido]</li>
+<li>Rumelhart, D. E.; Hinton, G. E.; Williams, R. J. (1986). Learning representations by back-propagating errors. Nature, 323, 533–536. <a href="https://doi.org/10.1038/323533a0" target="_blank" rel="noopener noreferrer">https://doi.org/10.1038/323533a0</a></li>
+<li>Schaeffer, R.; Miranda, B.; Koyejo, S. (2023). Are emergent abilities of large language models a mirage? In: NeurIPS 2023 (v. 36). arXiv:2304.15004. <a href="https://arxiv.org/abs/2304.15004" target="_blank" rel="noopener noreferrer">https://arxiv.org/abs/2304.15004</a> [link auditado] [conferido]</li>
+<li>Schuster, M.; Nakajima, K. (2012). Japanese and Korean voice search. In: ICASSP 2012, p. 5149–5152. <a href="https://doi.org/10.1109/ICASSP.2012.6289079" target="_blank" rel="noopener noreferrer">https://doi.org/10.1109/ICASSP.2012.6289079</a></li>
+<li>Sennrich, R.; Haddow, B.; Birch, A. (2016). Neural machine translation of rare words with subword units. In: ACL 2016, p. 1715–1725. arXiv:1508.07909. <a href="https://arxiv.org/abs/1508.07909" target="_blank" rel="noopener noreferrer">https://arxiv.org/abs/1508.07909</a></li>
+<li>Shaw, P.; Uszkoreit, J.; Vaswani, A. (2018). Self-attention with relative position representations. In: NAACL-HLT 2018, p. 464–468. arXiv:1803.02155. <a href="https://arxiv.org/abs/1803.02155" target="_blank" rel="noopener noreferrer">https://arxiv.org/abs/1803.02155</a></li>
+<li>Shazeer, N. (2019). Fast Transformer decoding: One write-head is all you need. arXiv:1911.02150. <a href="https://arxiv.org/abs/1911.02150" target="_blank" rel="noopener noreferrer">https://arxiv.org/abs/1911.02150</a></li>
+<li>Shazeer, N. (2020). GLU variants improve Transformer. arXiv:2002.05202. <a href="https://arxiv.org/abs/2002.05202" target="_blank" rel="noopener noreferrer">https://arxiv.org/abs/2002.05202</a></li>
+<li>Silva, Aridio. (2026a). SGAEIA: Secure Governed Autonomous Edge Intelligence Architecture (Version 0.3.4). Zenodo. <a href="https://doi.org/10.5281/zenodo.22557796" target="_blank" rel="noopener noreferrer">https://doi.org/10.5281/zenodo.22557796</a></li>
+<li>Silva, Aridio. (2026b). SGAEIA: A Reference Architecture for Secure Governed Autonomous Edge Intelligence. SGAEIA Research Series, Article 8. Zenodo. <a href="https://doi.org/10.5281/zenodo.22882020" target="_blank" rel="noopener noreferrer">https://doi.org/10.5281/zenodo.22882020</a></li>
+<li>Silva, Aridio. (2026c). From Model Capability to Governed Action: An Architecture for Secure Agentic AI. SGAEIA Research Series, Article 11. Zenodo. <a href="https://doi.org/10.5281/zenodo.22837908" target="_blank" rel="noopener noreferrer">https://doi.org/10.5281/zenodo.22837908</a></li>
+<li>Silva, Aridio. (2026d). AI&#39;s Alien Mind. SGAEIA Research Series, Article 14. Zenodo. <a href="https://doi.org/10.5281/zenodo.22964672" target="_blank" rel="noopener noreferrer">https://doi.org/10.5281/zenodo.22964672</a></li>
+<li>Silva, Aridio. (2026e). Tracing AI Agent Execution: Foundations, State of the Art, and Implications for Distributed Multi-Agent Systems. SGAEIA Research Series, Article 18. Zenodo. <a href="https://doi.org/10.5281/zenodo.23284753" target="_blank" rel="noopener noreferrer">https://doi.org/10.5281/zenodo.23284753</a></li>
+<li>Su, J.; Lu, Y.; Pan, S.; Murtadha, A.; Wen, B.; Liu, Y. (2021). RoFormer: Enhanced Transformer with rotary position embedding. arXiv:2104.09864. <a href="https://arxiv.org/abs/2104.09864" target="_blank" rel="noopener noreferrer">https://arxiv.org/abs/2104.09864</a></li>
+<li>Tenney, I.; Das, D.; Pavlick, E. (2019). BERT rediscovers the classical NLP pipeline. In: ACL 2019, p. 4593–4601. arXiv:1905.05950. <a href="https://aclanthology.org/P19-1452/" target="_blank" rel="noopener noreferrer">https://aclanthology.org/P19-1452/</a> [link auditado] [conferido]</li>
+<li>Touvron, H. et al. (2023). LLaMA: Open and efficient foundation language models. arXiv:2302.13971. <a href="https://arxiv.org/abs/2302.13971" target="_blank" rel="noopener noreferrer">https://arxiv.org/abs/2302.13971</a></li>
+<li>Vaswani, A.; Shazeer, N.; Parmar, N.; Uszkoreit, J.; Jones, L.; Gomez, A. N.; Kaiser, Ł.; Polosukhin, I. (2017). Attention is all you need. In: Advances in Neural Information Processing Systems 30 (NIPS 2017), p. 5998–6008. arXiv:1706.03762. <a href="https://papers.neurips.cc/paper/7181-attention-is-all-you-need" target="_blank" rel="noopener noreferrer">https://papers.neurips.cc/paper/7181-attention-is-all-you-need</a> [link auditado] [conferido]</li>
+<li>Vig, J. (2019). A multiscale visualization of attention in the Transformer model. In: ACL 2019 (System Demonstrations), p. 37–42. arXiv:1906.05714. <a href="https://arxiv.org/abs/1906.05714" target="_blank" rel="noopener noreferrer">https://arxiv.org/abs/1906.05714</a></li>
+<li>Voita, E.; Talbot, D.; Moiseev, F.; Sennrich, R.; Titov, I. (2019). Analyzing multi-head self-attention: Specialized heads do the heavy lifting, the rest can be pruned. In: ACL 2019, p. 5797–5808. arXiv:1905.09418. <a href="https://arxiv.org/abs/1905.09418" target="_blank" rel="noopener noreferrer">https://arxiv.org/abs/1905.09418</a></li>
+<li>Wei, J.; Tay, Y.; Bommasani, R. et al. (2022a). Emergent abilities of large language models. Transactions on Machine Learning Research. arXiv:2206.07682. <a href="https://arxiv.org/abs/2206.07682" target="_blank" rel="noopener noreferrer">https://arxiv.org/abs/2206.07682</a> [link auditado] [conferido]</li>
+<li>Wei, J.; Wang, X.; Schuurmans, D. et al. (2022b). Chain-of-thought prompting elicits reasoning in large language models. In: NeurIPS 35. arXiv:2201.11903. <a href="https://arxiv.org/abs/2201.11903" target="_blank" rel="noopener noreferrer">https://arxiv.org/abs/2201.11903</a></li>
+<li>Wiegreffe, S.; Pinter, Y. (2019). Attention is not not explanation. In: EMNLP-IJCNLP 2019, p. 11–20. arXiv:1908.04626. <a href="https://arxiv.org/abs/1908.04626" target="_blank" rel="noopener noreferrer">https://arxiv.org/abs/1908.04626</a></li>
+<li>Wu, Y. et al. (2016). Google&#39;s neural machine translation system: Bridging the gap between human and machine translation. arXiv:1609.08144. <a href="https://arxiv.org/abs/1609.08144" target="_blank" rel="noopener noreferrer">https://arxiv.org/abs/1609.08144</a></li>
+<li>Xiong, R. et al. (2020). On layer normalization in the Transformer architecture. In: ICML 2020 (PMLR 119). arXiv:2002.04745. <a href="https://arxiv.org/abs/2002.04745" target="_blank" rel="noopener noreferrer">https://arxiv.org/abs/2002.04745</a></li>
+<li>Zhang, B.; Sennrich, R. (2019). Root mean square layer normalization. In: NeurIPS 32. arXiv:1910.07467. <a href="https://arxiv.org/abs/1910.07467" target="_blank" rel="noopener noreferrer">https://arxiv.org/abs/1910.07467</a></li>
+</ul>
+<p><strong>Reprodutibilidade.</strong> Os exemplos numéricos das seções 3 a 12 foram calculados em Python 3 com NumPy; W1, W2 e W_out foram gerados com semente aleatória fixa (0) e distribuição normal de desvio-padrão 0,5 (W1, W2) e 0,8 (W_out). Os programas estão reproduzidos na seção 19; as contagens de parâmetros das seções 6 e 8 são aritmética direta, sem script.</p>
+<h2 id="19-códigos-fonte-python">19. Códigos-fonte (Python)</h2>
+<p><strong>Função desta seção.</strong> Torna reproduzíveis os números, as figuras e os arquivos auxiliares do documento. É necessária porque os exemplos numéricos só têm valor didático se o leitor puder reexecutá-los e obter os mesmos resultados.</p>
+<p>Os programas abaixo estão reproduzidos como foram executados. Ordem de execução: 19.1, depois 19.2 (que lê o arquivo gravado por 19.1); os códigos 19.3 e 19.4 podem ser executados em seguida; 19.5 usa os arquivos de 19.1 e 19.2. Dependências: Python 3, NumPy, Matplotlib e requests. Os cálculos de 19.1 a 19.4 foram reexecutados do zero antes desta publicação e reproduziram os valores citados nas seções 4 a 7, 11 e 12. Conforme a política editorial desta edição, rotinas exclusivamente destinadas a gravar metadados em PNG ou PDF não integram o documento.</p>
+<p>Não estão reproduzidos: (a) as contagens de parâmetros das seções 6 e 8, que são aritmética direta e foram feitas sem script; (b) as ferramentas de edição usadas para inserir texto e links no documento; (c) os comandos de conversão com pandoc e XeLaTeX.</p>
+<div class="article-table-wrap" role="region" aria-label="Scrollable table" tabindex="0"><table>
+<thead>
+<tr>
+<th align="left">Item</th>
+<th align="left">O que realiza</th>
+<th align="left">Alimenta</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">19.1</td>
+<td align="left">Embeddings, posição, Q/K/V, atenção, máscara, LayerNorm, FFN e saída</td>
+<td align="left">Seções 4 a 6; Figuras 2 e 4</td>
+</tr>
+<tr>
+<td align="left">19.2</td>
+<td align="left">Cadeia causal, logits, temperatura e desambiguação</td>
+<td align="left">Seções 7, 8, 10 a 12; Figura 6</td>
+</tr>
+<tr>
+<td align="left">19.3</td>
+<td align="left">Fusões do BPE</td>
+<td align="left">Seção 3</td>
+</tr>
+<tr>
+<td align="left">19.4</td>
+<td align="left">Conferência de LayerNorm e RMSNorm</td>
+<td align="left">Seção 7</td>
+</tr>
+<tr>
+<td align="left">19.5</td>
+<td align="left">Figuras 1 a 6</td>
+<td align="left">Figuras do documento</td>
+</tr>
+<tr>
+<td align="left">19.6</td>
+<td align="left">CSV de links da bibliografia</td>
+<td align="left">Código 19.7</td>
+</tr>
+<tr>
+<td align="left">19.7</td>
+<td align="left">Auditoria HTTP dos links</td>
+<td align="left">Seção 18</td>
+</tr>
+</tbody></table></div>
+<h3 id="191-núcleo-numérico-do-exemplo-didático">19.1 Núcleo numérico do exemplo didático</h3>
+<p><strong>Arquivo:</strong> <code>01_nucleo_numerico_calc.py</code>. <strong>O que realiza.</strong> Define os quatro tokens (&quot;O&quot;, &quot;banco&quot;, &quot;estava&quot;, &quot;lotado&quot;) com embeddings de 4 dimensões escolhidos à mão; calcula a codificação posicional senoidal e a entrada X = E + P; aplica as projeções Q, K e V (matrizes fixas, d_k = 2), os scores QKᵀ, a divisão por √d_k e o softmax (atenção bidirecional), e repete o softmax com máscara causal. Em seguida percorre o resto do bloco (projeção Wo, soma residual, LayerNorm, RMSNorm, FFN com d_ff = 8 e pesos aleatórios de semente 0, logits sobre cinco palavras, softmax com T = 0,5, 1 e 2, e ordenação para top-p) e grava tudo em <code>toy.npz</code>.</p>
+<p><strong>Alimenta.</strong> Números das seções 4, 5 e 6 e Figuras 2 e 4. Os resultados de FFN e de saída produzidos aqui (cadeia bidirecional) não são os usados no texto; os das seções 7 a 11 vêm do código 19.2, que refaz a cadeia com a máscara causal.</p>
+<pre><code class="language-python">import numpy as np, json
+np.set_printoptions(precision=3, suppress=True)
+tok=[&quot;O&quot;,&quot;banco&quot;,&quot;estava&quot;,&quot;lotado&quot;]
+# Embeddings didáticos d_model=4
+E=np.array([[1.0,0.0,0.0,0.0],
+            [0.0,1.0,0.5,0.0],
+            [0.0,0.3,1.0,0.0],
+            [0.0,0.8,0.0,1.0]])
+d=4
+def pe(n,d):
+    P=np.zeros((n,d))
+    for pos in range(n):
+        for i in range(0,d,2):
+            P[pos,i]=np.sin(pos/10000**(i/d)); P[pos,i+1]=np.cos(pos/10000**(i/d))
+    return P
+P=pe(4,d); print(&quot;PE\n&quot;,P)
+X=E+P; print(&quot;X\n&quot;,X)
+Wq=np.array([[1,0],[0,1],[1,0],[0,1]],float)*0.9
+Wk=np.array([[0.5,0.2],[1,0],[0,1],[0.3,0.8]],float)
+Wv=np.array([[1,0],[0,1],[0.5,0],[0,0.5]],float)
+Q=X@Wq;K=X@Wk;V=X@Wv
+print(&quot;Q\n&quot;,Q,&quot;\nK\n&quot;,K,&quot;\nV\n&quot;,V)
+S=Q@K.T; print(&quot;S\n&quot;,S)
+dk=2; Ss=S/np.sqrt(dk); print(&quot;S/sqrt\n&quot;,Ss)
+def sm(z): z=z-z.max(-1,keepdims=True); e=np.exp(z); return e/e.sum(-1,keepdims=True)
+A=sm(Ss); print(&quot;A\n&quot;,A, A.sum(1))
+Z=A@V; print(&quot;Z\n&quot;,Z)
+# causal
+mask=np.triu(np.ones((4,4)),1).astype(bool)
+Sc=Ss.copy(); Sc[mask]=-np.inf; Ac=sm(Sc); print(&quot;Acausal\n&quot;,Ac)
+# project back with Wo (2-&gt;4)
+Wo=np.array([[1,0,0.5,0],[0,1,0,0.5]],float)
+O=Z@Wo; print(&quot;O\n&quot;,O)
+R=X+O; print(&quot;R\n&quot;,R)
+def ln(x,eps=1e-5): m=x.mean(-1,keepdims=True); v=x.var(-1,keepdims=True); return (x-m)/np.sqrt(v+eps)
+Y=ln(R); print(&quot;LN\n&quot;,Y)
+# rms
+rms=R/np.sqrt((R**2).mean(-1,keepdims=True)+1e-5); print(&quot;RMS\n&quot;,rms)
+# FFN d_ff=8 ReLU
+rng=np.random.default_rng(0)
+W1=rng.normal(0,0.5,(4,8)); b1=np.zeros(8); W2=rng.normal(0,0.5,(8,4)); b2=np.zeros(4)
+H=np.maximum(0,Y@W1+b1); F=H@W2+b2
+print(&quot;W1\n&quot;,W1,&quot;\nW2\n&quot;,W2)
+print(&quot;H\n&quot;,H,&quot;\nF\n&quot;,F)
+Y2=ln(Y+F); print(&quot;Y2\n&quot;,Y2)
+# output: vocab
+vocab=[&quot;lotado&quot;,&quot;vazio&quot;,&quot;cheio&quot;,&quot;aberto&quot;,&quot;verde&quot;]
+Wout=rng.normal(0,0.8,(4,5))
+lg=Y2[2]@Wout  # posição de &quot;estava&quot; prevê próxima palavra
+print(&quot;Wout\n&quot;,Wout,&quot;\nlogits&quot;,lg)
+p=sm(lg); print(&quot;p&quot;,p, p.sum())
+for T in [0.5,1.0,2.0]:
+    print(T, sm(lg/T))
+tgt=0; print(&quot;CE&quot;,-np.log(p[tgt]))
+# top-p
+order=np.argsort(-p); cs=np.cumsum(p[order]); print([vocab[i] for i in order],cs)
+np.savez(&quot;toy.npz&quot;,E=E,P=P,X=X,Q=Q,K=K,V=V,S=S,Ss=Ss,A=A,Ac=Ac,Z=Z,O=O,R=R,Y=Y,H=H,F=F,Y2=Y2,lg=lg,p=p)
+</code></pre>
+<h3 id="192-cadeia-causal-saída-e-desambiguação-de-quotbancoquot">19.2 Cadeia causal, saída e desambiguação de &quot;banco&quot;</h3>
+<p><strong>Arquivo:</strong> <code>02_cadeia_causal_e_desambiguacao_calc2.py</code>. <strong>O que realiza.</strong> Lê <code>toy.npz</code> e refaz a cadeia a partir da atenção causal: saída da atenção (Zc, Oc), soma residual (Rc), LayerNorm (Yc), FFN, logits da posição &quot;estava&quot;, softmax com temperatura, entropia cruzada e ordenação para top-k e top-p; grava <code>toy2.npz</code>. Depois executa a demonstração da seção 12: embeddings de quatro eixos (dinheiro, assento, pessoas, madeira), atenção de uma cabeça com Wq = Wk = 2·I, Wv = I e d_k = 4, e similaridade de cosseno entre o vetor contextualizado de &quot;banco&quot; e dois protótipos de sentido.</p>
+<p><strong>Alimenta.</strong> Seções 7, 8, 10, 11 e 12 e Figura 6. Observação: o gradiente p − y (seção 10) e as renormalizações de top-k e top-p (seção 11) foram calculados à mão a partir das probabilidades impressas por este programa, não por código. Requer <code>toy.npz</code> (19.1).</p>
+<pre><code class="language-python">import numpy as np
+np.set_printoptions(precision=3, suppress=True)
+d=np.load(&quot;toy.npz&quot;); 
+def sm(z): z=z-z.max(-1,keepdims=True); e=np.exp(z); return e/e.sum(-1,keepdims=True)
+def ln(x,eps=1e-5): m=x.mean(-1,keepdims=True); v=x.var(-1,keepdims=True); return (x-m)/np.sqrt(v+eps)
+X,V,Ac=d[&quot;X&quot;],d[&quot;V&quot;],d[&quot;Ac&quot;]
+Wo=np.array([[1,0,0.5,0],[0,1,0,0.5]],float)
+Zc=Ac@V; Oc=Zc@Wo; Rc=X+Oc; Yc=ln(Rc)
+print(&quot;Zc\n&quot;,Zc,&quot;\nOc\n&quot;,Oc,&quot;\nRc\n&quot;,Rc,&quot;\nYc\n&quot;,Yc)
+rng=np.random.default_rng(0)
+W1=rng.normal(0,0.5,(4,8)); W2=rng.normal(0,0.5,(8,4))
+H=np.maximum(0,Yc@W1); F=H@W2; Y2=ln(Yc+F)
+print(&quot;H\n&quot;,H,&quot;\nF\n&quot;,F,&quot;\nY2\n&quot;,Y2)
+Wout=rng.normal(0,0.8,(4,5)); vocab=[&quot;lotado&quot;,&quot;vazio&quot;,&quot;cheio&quot;,&quot;aberto&quot;,&quot;verde&quot;]
+lg=Y2[2]@Wout; p=sm(lg)
+print(&quot;Wout\n&quot;,Wout,&quot;\nlg&quot;,lg,&quot;\np&quot;,p)
+for T in [0.5,1,2]: print(T,sm(lg/T))
+print(&quot;CE lotado&quot;,-np.log(p[0]),&quot;CE cheio&quot;,-np.log(p[2]))
+o=np.argsort(-p); print([vocab[i] for i in o], np.cumsum(p[o]))
+np.savez(&quot;toy2.npz&quot;,Zc=Zc,Oc=Oc,Rc=Rc,Yc=Yc,H=H,F=F,Y2=Y2,Wout=Wout,lg=lg,p=p,W1=W1,W2=W2)
+# desambiguação
+feat=[&quot;dinheiro&quot;,&quot;assento&quot;,&quot;pessoas&quot;,&quot;madeira&quot;]
+emb={&quot;O&quot;:[0,0,0,0],&quot;banco&quot;:[.7,.7,0,0],&quot;estava&quot;:[0,0,.1,0],&quot;lotado&quot;:[0,0,1,0],
+&quot;de&quot;:[0,0,0,0],&quot;clientes&quot;:[.8,0,.7,0],&quot;da&quot;:[0,0,0,0],&quot;praça&quot;:[0,.8,0,.2],&quot;madeira&quot;:[0,.3,0,1],&quot;velho&quot;:[0,.2,0,.5],&quot;gerente&quot;:[.9,0,.3,0],&quot;fila&quot;:[.5,0,.9,0]}
+def ctx(words, scale=2.0):
+    Em=np.array([emb[w] for w in words],float)
+    # Q=K=E*scale + vetor de sentinela p/ evitar nulos
+    Q=K=Em*scale
+    S=Q@K.T/np.sqrt(4)
+    bi=words.index(&quot;banco&quot;)
+    S[bi,:]+=0  # sem alteração
+    A=sm(S)
+    Z=A@Em
+    return A[bi],Z[bi]
+protoF=np.array([1,0,.5,0]);protoP=np.array([0,1,0,.5])
+cos=lambda a,b:a@b/np.linalg.norm(a)/np.linalg.norm(b)
+for name,w in [(&quot;fin&quot;,[&quot;O&quot;,&quot;banco&quot;,&quot;estava&quot;,&quot;lotado&quot;,&quot;de&quot;,&quot;clientes&quot;]),(&quot;praca&quot;,[&quot;O&quot;,&quot;banco&quot;,&quot;da&quot;,&quot;praça&quot;,&quot;estava&quot;,&quot;velho&quot;,&quot;madeira&quot;]),(&quot;isolado&quot;,[&quot;banco&quot;])]:
+    a,z=ctx(w); print(name,w,a,z,&quot;cosFin&quot;,cos(z,protoF),&quot;cosPraca&quot;,cos(z,protoP))
+</code></pre>
+<h3 id="193-fusões-do-bpe-em-corpus-didático">19.3 Fusões do BPE em corpus didático</h3>
+<p><strong>Arquivo:</strong> <code>03_bpe_didatico.py</code>. <strong>O que realiza.</strong> Executa 8 passos do algoritmo BPE sobre o corpus low (5), lower (2), newest (6) e widest (3), com o marcador <code>&lt;/w&gt;</code> de fim de palavra. Em cada passo imprime o par fundido, sua frequência, os três pares mais frequentes e o vocabulário resultante. Os empates são resolvidos pela ordem de ocorrência.</p>
+<p><strong>Alimenta.</strong> Tabela de fusões da seção 3.</p>
+<pre><code class="language-python">import re, collections
+vocab={&quot;l o w &lt;/w&gt;&quot;:5,&quot;l o w e r &lt;/w&gt;&quot;:2,&quot;n e w e s t &lt;/w&gt;&quot;:6,&quot;w i d e s t &lt;/w&gt;&quot;:3}
+def stats(v):
+    p=collections.Counter()
+    for w,f in v.items():
+        s=w.split()
+        for a,b in zip(s,s[1:]): p[(a,b)]+=f
+    return p
+def merge(pair,v):
+    out={}
+    bg=re.escape(&quot; &quot;.join(pair)); pat=re.compile(r&#39;(?&lt;!\S)&#39;+bg+r&#39;(?!\S)&#39;)
+    for w,f in v.items(): out[pat.sub(&quot;&quot;.join(pair),w)]=f
+    return out
+for i in range(8):
+    p=stats(vocab); best=max(p,key=lambda k:(p[k],))
+    top=p.most_common(3)
+    print(i+1,best,p[best],top[:3]); vocab=merge(best,vocab); print(&quot;  &quot;,vocab)
+</code></pre>
+<h3 id="194-conferência-da-layernorm-e-da-rmsnorm-para-quotbancoquot">19.4 Conferência da LayerNorm e da RMSNorm para &quot;banco&quot;</h3>
+<p><strong>Arquivo:</strong> <code>04_verificar_ln_rms.py</code>. <strong>O que realiza.</strong> Recalcula, para o token &quot;banco&quot; (posição 1, versão causal), a média, a variância, a LayerNorm e a RMSNorm do vetor da soma residual, e confere que a LayerNorm resulta em média 0 e variância 1.</p>
+<p><strong>Alimenta.</strong> Exemplo numérico da seção 7. Requer <code>toy.npz</code> e <code>toy2.npz</code> (19.1 e 19.2).</p>
+<pre><code class="language-python">import numpy as np
+d=np.load(&quot;toy2.npz&quot;); R=d[&quot;Rc&quot;]; r=R[1]
+print(&quot;R&quot;,r,&quot;mean&quot;,r.mean(),&quot;var&quot;,r.var(),&quot;std&quot;,np.sqrt(r.var()+1e-5))
+print(&quot;LN&quot;,(r-r.mean())/np.sqrt(r.var()+1e-5))
+print(&quot;RMS&quot;,np.sqrt((r**2).mean()+1e-5), r/np.sqrt((r**2).mean()+1e-5))
+X=np.load(&quot;toy.npz&quot;)[&quot;X&quot;]; print(&quot;X1&quot;,X[1],&quot;O1&quot;,d[&quot;Oc&quot;][1])
+print(d[&quot;Yc&quot;][1].mean(), d[&quot;Yc&quot;][1].var())
+</code></pre>
+<h3 id="195-geração-das-figuras-1-a-6">19.5 Geração das Figuras 1 a 6</h3>
+<p><strong>Arquivo:</strong> <code>05_figuras.py</code>. <strong>O que realiza.</strong> Desenha com Matplotlib o diagrama de fluxo (Figura 1), os mapas de calor de E, P e X (Figura 2), o diagrama do mecanismo Q/K/V (Figura 3), os mapas de atenção bidirecional e causal (Figura 4), o esquema de especialização por camadas (Figura 5) e as barras de probabilidade por temperatura (Figura 6). Lê <code>toy.npz</code> e <code>toy2.npz</code> e grava na pasta <code>fig/</code>, que deve existir antes da execução.</p>
+<p><strong>Alimenta.</strong> Figuras do documento. O programa salva com nomes internos (<code>fig2_embedding.png</code>, <code>fig4_qkv.png</code>, <code>fig3_atencao.png</code>, <code>fig6_saida.png</code>), renomeados na entrega para <code>fig2_embeddings.png</code>, <code>fig3_mecanismo.png</code>, <code>fig4_mapas_atencao.png</code> e <code>fig6_temperatura.png</code>; os títulos dentro das imagens já trazem a numeração final.</p>
+<pre><code class="language-python">import numpy as np, matplotlib
+matplotlib.use(&quot;Agg&quot;)
+import matplotlib.pyplot as plt
+from matplotlib.patches import FancyBboxPatch, FancyArrowPatch
+plt.rcParams.update({&quot;font.family&quot;:&quot;DejaVu Sans&quot;,&quot;font.size&quot;:10})
+CR=&quot;© 2026 Aridio Silva – Pesquisador Independente · ORCID 0009-0008-2411-6995&quot;
+d=np.load(&quot;toy.npz&quot;); d2=np.load(&quot;toy2.npz&quot;)
+tok=[&quot;O&quot;,&quot;banco&quot;,&quot;estava&quot;,&quot;lotado&quot;]
+C={&quot;in&quot;:&quot;#dbe9f6&quot;,&quot;tok&quot;:&quot;#e3f1df&quot;,&quot;emb&quot;:&quot;#fdf0d5&quot;,&quot;att&quot;:&quot;#f9dcdc&quot;,&quot;ffn&quot;:&quot;#e8e0f4&quot;,&quot;out&quot;:&quot;#d9f0ee&quot;,&quot;gray&quot;:&quot;#f0f0f0&quot;}
+def foot(fig): fig.text(0.5,0.01,CR,ha=&quot;center&quot;,fontsize=7.5,color=&quot;#666&quot;)
+def box(ax,x,y,w,h,txt,fc,fs=9,bold=False):
+    ax.add_patch(FancyBboxPatch((x,y),w,h,boxstyle=&quot;round,pad=0.02,rounding_size=0.08&quot;,fc=fc,ec=&quot;#444&quot;,lw=1))
+    ax.text(x+w/2,y+h/2,txt,ha=&quot;center&quot;,va=&quot;center&quot;,fontsize=fs,fontweight=&quot;bold&quot; if bold else &quot;normal&quot;,wrap=True)
+def arrow(ax,x1,y1,x2,y2):
+    ax.add_patch(FancyArrowPatch((x1,y1),(x2,y2),arrowstyle=&quot;-|&gt;&quot;,mutation_scale=12,color=&quot;#333&quot;,lw=1.2))
+
+# FIG 1 fluxo
+fig,ax=plt.subplots(figsize=(9,11)); ax.set_xlim(0,10); ax.set_ylim(0,14.2); ax.axis(&quot;off&quot;)
+box(ax,2,12.9,6,0.9,&quot;1. TEXTO DE ENTRADA\n\&quot;O banco estava lotado\&quot;&quot;,C[&quot;in&quot;],bold=True)
+box(ax,2,11.3,6,0.9,&quot;2. TOKENIZAÇÃO (BPE / SentencePiece)\n[O] [banco] [estava] [lotado] → IDs inteiros&quot;,C[&quot;tok&quot;],bold=True)
+box(ax,2,9.8,6,0.9,&quot;3. EMBEDDING + CODIFICAÇÃO POSICIONAL\nmatriz X ∈ ℝ^(n × d_model)&quot;,C[&quot;emb&quot;],bold=True)
+ax.add_patch(FancyBboxPatch((1.1,3.9),7.8,5.4,boxstyle=&quot;round,pad=0.02,rounding_size=0.1&quot;,fc=&quot;#fafafa&quot;,ec=&quot;#222&quot;,lw=1.6,ls=&quot;--&quot;))
+ax.text(5,8.95,&quot;4. BLOCO TRANSFORMER  ×  N camadas (pesos próprios por camada)&quot;,ha=&quot;center&quot;,fontsize=9.5,fontweight=&quot;bold&quot;)
+box(ax,2.3,7.65,5.6,0.8,&quot;Self-Attention multi-cabeça\n(Q, K, V = X·Wq, X·Wk, X·Wv)&quot;,C[&quot;att&quot;],fs=8.8)
+box(ax,2.3,6.55,5.6,0.6,&quot;Add &amp; Norm (residual + normalização)&quot;,C[&quot;gray&quot;],fs=8.8)
+box(ax,2.3,5.3,5.6,0.8,&quot;Rede Feed-Forward (FFN) por posição&quot;,C[&quot;ffn&quot;],fs=8.8)
+box(ax,2.3,4.2,5.6,0.6,&quot;Add &amp; Norm (residual + normalização)&quot;,C[&quot;gray&quot;],fs=8.8)
+arrow(ax,5,12.9,5,12.2);arrow(ax,5,11.3,5,10.7);arrow(ax,5,9.8,5,9.3)
+arrow(ax,5,7.65,5,7.15);arrow(ax,5,6.55,5,6.1);arrow(ax,5,5.3,5,4.8)
+for (ya,yb) in [(8.6,6.85),(6.35,4.5)]:
+    ax.plot([1.6,1.6],[ya,yb],color=&quot;#c0392b&quot;,lw=1.4)
+    ax.plot([1.6,2.3],[ya,ya],color=&quot;#c0392b&quot;,lw=1.4)
+    ax.add_patch(FancyArrowPatch((1.6,yb),(2.3,yb),arrowstyle=&quot;-|&gt;&quot;,mutation_scale=11,color=&quot;#c0392b&quot;,lw=1.4))
+ax.text(1.45,7.3,&quot;conexão\nresidual&quot;,rotation=90,fontsize=7.5,color=&quot;#c0392b&quot;,ha=&quot;right&quot;,va=&quot;center&quot;)
+ax.text(1.45,5.4,&quot;conexão\nresidual&quot;,rotation=90,fontsize=7.5,color=&quot;#c0392b&quot;,ha=&quot;right&quot;,va=&quot;center&quot;)
+box(ax,2,2.5,6,0.9,&quot;5. PROJEÇÃO PARA O VOCABULÁRIO → LOGITS\nh_final · W_out  (um valor por token do vocabulário)&quot;,C[&quot;out&quot;],bold=True,fs=8.8)
+box(ax,2,1.2,6,0.9,&quot;6. SOFTMAX (com temperatura T) → PROBABILIDADES\nP(próximo token | contexto)&quot;,C[&quot;out&quot;],bold=True,fs=8.8)
+box(ax,2,-0.1,6,0.9,&quot;7. DECODIFICAÇÃO (guloso, top-k, top-p, amostragem)\n→ token de saída (anexado à entrada; o ciclo se repete)&quot;,C[&quot;out&quot;],bold=True,fs=8.8)
+arrow(ax,5,3.9,5,3.4);arrow(ax,5,2.5,5,2.1);arrow(ax,5,1.2,5,0.8)
+ax.set_ylim(-0.6,14.2)
+ax.set_title(&quot;Figura 1 – Fluxo completo da inferência em um Transformer (visão geral)&quot;,fontsize=11,fontweight=&quot;bold&quot;,loc=&quot;left&quot;)
+foot(fig); fig.savefig(&quot;fig/fig1_fluxo.png&quot;,dpi=170,bbox_inches=&quot;tight&quot;); plt.close()
+
+# FIG 2 embeddings + PE
+fig,axs=plt.subplots(1,3,figsize=(11,3.6))
+for a,M,t in zip(axs,[d[&quot;E&quot;],d[&quot;P&quot;],d[&quot;X&quot;]],[&quot;E: embeddings didáticos (n=4, d=4)&quot;,&quot;P: codificação posicional senoidal&quot;,&quot;X = E + P (entrada da camada 1)&quot;]):
+    im=a.imshow(M,cmap=&quot;RdBu_r&quot;,vmin=-2,vmax=2)
+    a.set_xticks(range(4));a.set_xticklabels([f&quot;d{i+1}&quot; for i in range(4)])
+    a.set_yticks(range(4));a.set_yticklabels([f&quot;{i}: {t_}&quot; for i,t_ in enumerate(tok)])
+    for i in range(4):
+        for j in range(4): a.text(j,i,f&quot;{M[i,j]:.2f}&quot;,ha=&quot;center&quot;,va=&quot;center&quot;,fontsize=8.5,color=&quot;white&quot; if abs(M[i,j])&gt;1.3 else &quot;black&quot;)
+    a.set_title(t,fontsize=9)
+fig.suptitle(&quot;Figura 2 – Etapa 2: embeddings e codificação posicional (valores calculados; pesos didáticos)&quot;,fontsize=10.5,fontweight=&quot;bold&quot;,x=0.01,ha=&quot;left&quot;)
+fig.tight_layout(rect=[0,0.08,1,0.93]); foot(fig); fig.savefig(&quot;fig/fig2_embedding.png&quot;,dpi=170); plt.close()
+
+# FIG 3 atenção
+fig,axs=plt.subplots(1,2,figsize=(10.5,4.4))
+for a,M,t in zip(axs,[d[&quot;A&quot;],d[&quot;Ac&quot;]],[&quot;Atenção bidirecional (estilo codificador)&quot;,&quot;Atenção causal (estilo decodificador)&quot;]):
+    im=a.imshow(M,cmap=&quot;YlOrBr&quot;,vmin=0,vmax=1)
+    a.set_xticks(range(4));a.set_xticklabels(tok);a.set_yticks(range(4));a.set_yticklabels(tok)
+    a.set_xlabel(&quot;Key (para quem olha)&quot;);a.set_ylabel(&quot;Query (quem pergunta)&quot;)
+    for i in range(4):
+        for j in range(4):
+            a.text(j,i,f&quot;{M[i,j]:.2f}&quot;,ha=&quot;center&quot;,va=&quot;center&quot;,fontsize=10,color=&quot;black&quot; if M[i,j]&lt;0.6 else &quot;white&quot;)
+    a.set_title(t,fontsize=10)
+fig.suptitle(&quot;Figura 4 – Mapa de atenção softmax(QKᵀ/√d_k): cada linha soma 1,00&quot;,fontsize=11,fontweight=&quot;bold&quot;,x=0.01,ha=&quot;left&quot;)
+fig.tight_layout(rect=[0,0.04,1,0.92]); foot(fig); fig.savefig(&quot;fig/fig3_atencao.png&quot;,dpi=170); plt.close()
+
+# FIG 4 mecanismo QKV
+fig,ax=plt.subplots(figsize=(10,4.6)); ax.set_xlim(0,12); ax.set_ylim(0,6); ax.axis(&quot;off&quot;)
+box(ax,0.1,2.4,1.5,1.2,&quot;X\n(n × d_model)&quot;,C[&quot;emb&quot;],bold=True)
+for k,(lab,y) in enumerate([(&quot;Q = X·Wq&quot;,4.3),(&quot;K = X·Wk&quot;,2.5),(&quot;V = X·Wv&quot;,0.7)]):
+    box(ax,2.4,y,1.8,0.9,lab,C[&quot;att&quot;] if k&lt;2 else C[&quot;ffn&quot;],bold=True); arrow(ax,1.6,3.0,2.4,y+0.45)
+box(ax,5.3,3.4,2.1,1.0,&quot;Scores\nS = Q·Kᵀ / √d_k&quot;,C[&quot;gray&quot;],fs=9); arrow(ax,4.2,4.75,5.3,4.0);arrow(ax,4.2,2.95,5.3,3.7)
+box(ax,5.3,1.9,2.1,0.9,&quot;(máscara causal\nopcional: −∞)&quot;,C[&quot;gray&quot;],fs=8.5); arrow(ax,6.35,2.8,6.35,3.4)
+box(ax,8.2,3.4,1.5,1.0,&quot;A = softmax(S)\nlinhas somam 1&quot;,C[&quot;out&quot;],fs=8.5); arrow(ax,7.4,3.9,8.2,3.9)
+box(ax,8.2,1.0,1.5,1.0,&quot;Z = A·V&quot;,C[&quot;out&quot;],bold=True); arrow(ax,8.95,3.4,8.95,2.0); arrow(ax,4.2,1.15,8.2,1.4)
+box(ax,10.2,1.0,1.7,1.0,&quot;Z·Wo\n(saída da\ncamada)&quot;,C[&quot;emb&quot;],fs=8.5); arrow(ax,9.7,1.5,10.3,1.5)
+ax.set_title(&quot;Figura 3 – Mecanismo de atenção por produto escalar escalonado (Vaswani et al., 2017)&quot;,fontsize=11,fontweight=&quot;bold&quot;,loc=&quot;left&quot;)
+foot(fig); fig.savefig(&quot;fig/fig4_qkv.png&quot;,dpi=170,bbox_inches=&quot;tight&quot;); plt.close()
+
+# FIG 5 camadas (esquema conceitual)
+fig,ax=plt.subplots(figsize=(9,5.6)); ax.set_xlim(0,10); ax.set_ylim(0,10); ax.axis(&quot;off&quot;)
+L=[(&quot;Camadas finais (ex.: 9–12 em modelo de 12)&quot;,&quot;Representações próximas da tarefa de saída;\ncombinação de informação global; preparação do logit&quot;,C[&quot;out&quot;],0.5),
+   (&quot;Camadas intermediárias (ex.: 4–8)&quot;,&quot;Semântica lexical e contextual; desambiguação de sentido;\nrelações entre palavras e entidades&quot;,C[&quot;att&quot;],3.4),
+   (&quot;Camadas iniciais (ex.: 1–3)&quot;,&quot;Padrões superficiais e sintáticos locais;\nvizinhança, posição, classe gramatical&quot;,C[&quot;in&quot;],6.3)]
+for t,s,c,y in L:
+    box(ax,1.2,y,7.6,2.4,&quot;&quot;,c); ax.text(5,y+1.75,t,ha=&quot;center&quot;,fontsize=10.5,fontweight=&quot;bold&quot;); ax.text(5,y+0.8,s,ha=&quot;center&quot;,fontsize=9.3)
+arrow(ax,0.6,6.3,0.6,2.9); ax.text(0.45,4.6,&quot;profundidade&quot;,rotation=90,va=&quot;center&quot;,ha=&quot;right&quot;,fontsize=8.5)
+ax.text(5,9.3,&quot;Esquema conceitual: tendência observada em estudos de sondagem em BERT\n(Tenney et al., 2019); as fronteiras entre camadas NÃO são exatas.&quot;,ha=&quot;center&quot;,fontsize=8.6,style=&quot;italic&quot;,color=&quot;#444&quot;)
+ax.set_title(&quot;Figura 5 – Especialização aproximada por profundidade em Transformers empilhados&quot;,fontsize=11,fontweight=&quot;bold&quot;,loc=&quot;left&quot;)
+foot(fig); fig.savefig(&quot;fig/fig5_camadas.png&quot;,dpi=170,bbox_inches=&quot;tight&quot;); plt.close()
+
+# FIG 6 saída
+vocab=[&quot;lotado&quot;,&quot;vazio&quot;,&quot;cheio&quot;,&quot;aberto&quot;,&quot;verde&quot;]
+lg=d2[&quot;lg&quot;]
+def sm(z): e=np.exp(z-z.max()); return e/e.sum()
+fig,axs=plt.subplots(1,3,figsize=(11,3.6),sharey=True)
+for a,T in zip(axs,[0.5,1.0,2.0]):
+    p=sm(lg/T); a.bar(vocab,p,color=&quot;#4a90a4&quot;); a.set_title(f&quot;T = {T}&quot;,fontsize=10); a.set_ylim(0,1)
+    for i,v in enumerate(p): a.text(i,v+0.02,f&quot;{v:.3f}&quot;,ha=&quot;center&quot;,fontsize=8.5)
+    a.tick_params(axis=&quot;x&quot;,labelrotation=30)
+axs[0].set_ylabel(&quot;Probabilidade&quot;)
+fig.suptitle(&quot;Figura 6 – Efeito da temperatura sobre softmax(logits/T) (logits calculados; pesos de saída aleatórios)&quot;,fontsize=10.5,fontweight=&quot;bold&quot;,x=0.01,ha=&quot;left&quot;)
+fig.tight_layout(rect=[0,0.05,1,0.92]); foot(fig); fig.savefig(&quot;fig/fig6_saida.png&quot;,dpi=170); plt.close()
+</code></pre>
+<h3 id="196-extração-dos-links-da-bibliografia">19.6 Extração dos links da bibliografia</h3>
+<p><strong>Arquivo:</strong> <code>07_gerar_csv_links.py</code>. <strong>O que realiza.</strong> Lê a seção 18 do arquivo Markdown e gera <code>links_bibliografia.csv</code> com autor, ano, título esperado, URL e situação da auditoria de cada entrada.</p>
+<p><strong>Alimenta.</strong> Entrada do código 19.7.</p>
+<pre><code class="language-python">import re,csv
+s=open(&quot;abrindo-a-caixa-preta-da-inferencia-em-llms.md&quot;,encoding=&quot;utf-8&quot;).read()
+# delimita a seção 18 antes do apêndice de códigos
+ref=s.split(&quot;## 18. Referências bibliográficas&quot;)[1].split(&quot;## 19.&quot;)[0]
+items=[l[2:] for l in ref.splitlines() if l.startswith(&quot;- &quot;)]
+rows=[]
+for it in items:
+    cite=it.split(&quot;(&quot;)[0].strip().rstrip(&quot;,;. &quot;)
+    yr=re.search(r&quot;\((\d{4}[ab]?)\)\.\s+(.*)&quot;,it)
+    rest=yr.group(2)
+    m=re.match(r&quot;(.*?[?!])\s|(.*?)\.\s&quot;,rest)
+    titulo=(m.group(1) or m.group(2)) if m else rest[:80]
+    urls=re.findall(r&quot;&lt;(https?://[^&gt;]+)&gt;&quot;,it)
+    aud=&quot;link auditado&quot; in it
+    rows.append([len(rows)+1,cite.split(&quot;;&quot;)[0]+(&quot; et al.&quot; if &quot;;&quot; in cite else &quot;&quot;),yr.group(1),titulo,urls[0],&quot;auditado (busca)&quot; if aud else &quot;nao auditado&quot;])
+with open(&quot;links_bibliografia.csv&quot;,&quot;w&quot;,newline=&quot;&quot;,encoding=&quot;utf-8-sig&quot;) as f:
+    w=csv.writer(f); w.writerow([&quot;n&quot;,&quot;autor&quot;,&quot;ano&quot;,&quot;titulo_esperado&quot;,&quot;url&quot;,&quot;status_auditoria_20261020&quot;]); w.writerows(rows)
+</code></pre>
+<h3 id="197-auditoria-dos-links-por-requisição-http">19.7 Auditoria dos links por requisição HTTP</h3>
+<p><strong>Arquivo:</strong> <code>08_auditar_links.py</code>. <strong>O que realiza.</strong> Abre cada URL do CSV, registra o código HTTP e a URL final, extrai o título da página e o compara com o título esperado, classificando cada entrada como OK ou REVISAR. Requer a biblioteca <code>requests</code> e acesso à internet. Foi testado apenas contra um servidor local, e não contra os sites reais.</p>
+<p><strong>Alimenta.</strong> Arquivo <code>auditoria_links_resultado.csv</code>, a ser gerado pelo leitor (seção 18).</p>
+<pre><code class="language-python">#!/usr/bin/env python3
+&quot;&quot;&quot;Audita os links da bibliografia: abre cada URL, registra o código HTTP, a URL final
+e compara o &lt;title&gt; da página com o título esperado. Uso: python3 auditar_links.py
+Requer: pip install requests. Saída: auditoria_links_resultado.csv&quot;&quot;&quot;
+import csv, re, sys, time, difflib, html
+import requests
+
+H = {&quot;User-Agent&quot;: &quot;Mozilla/5.0 (auditoria-bibliografia; contato: ORCID 0009-0008-2411-6995)&quot;}
+
+def norm(t):
+    return re.sub(r&quot;[^a-z0-9 ]&quot;, &quot;&quot;, html.unescape(t).lower())
+
+def titulo(txt):
+    m = re.search(r&quot;&lt;title[^&gt;]*&gt;(.*?)&lt;/title&gt;&quot;, txt, re.S | re.I)
+    return re.sub(r&quot;\s+&quot;, &quot; &quot;, m.group(1)).strip() if m else &quot;&quot;
+
+rows = list(csv.DictReader(open(&quot;links_bibliografia.csv&quot;, encoding=&quot;utf-8-sig&quot;)))
+out = []
+for r in rows:
+    url, esp = r[&quot;url&quot;], r[&quot;titulo_esperado&quot;]
+    try:
+        resp = requests.get(url, headers=H, timeout=25, allow_redirects=True)
+        t = titulo(resp.text) if &quot;html&quot; in resp.headers.get(&quot;content-type&quot;, &quot;&quot;) else &quot;&quot;
+        sim = difflib.SequenceMatcher(None, norm(esp), norm(t)).ratio() if t else 0.0
+        contem = norm(esp)[:40] in norm(t) if t else False
+        # PDFs não têm &lt;title&gt;: apenas o status é verificável automaticamente
+        ok = resp.status_code == 200 and (contem or sim &gt;= 0.6 or not t)
+        res = [r[&quot;n&quot;], r[&quot;autor&quot;], url, resp.status_code, resp.url, t[:90], round(sim, 2),
+               &quot;OK&quot; if ok else &quot;REVISAR (conferir título manualmente)&quot;]
+    except Exception as e:
+        res = [r[&quot;n&quot;], r[&quot;autor&quot;], url, &quot;erro&quot;, &quot;&quot;, str(e)[:90], 0, &quot;REVISAR (falha de acesso)&quot;]
+    out.append(res); print(res[0], res[3], res[7], url)
+    time.sleep(1.0)
+with open(&quot;auditoria_links_resultado.csv&quot;, &quot;w&quot;, newline=&quot;&quot;, encoding=&quot;utf-8-sig&quot;) as f:
+    w = csv.writer(f)
+    w.writerow([&quot;n&quot;, &quot;autor&quot;, &quot;url&quot;, &quot;http&quot;, &quot;url_final&quot;, &quot;titulo_da_pagina&quot;, &quot;similaridade&quot;, &quot;resultado&quot;])
+    w.writerows(out)
+print(&quot;\nConcluído:&quot;, sum(1 for o in out if o[7] == &quot;OK&quot;), &quot;OK de&quot;, len(out))
+</code></pre>
+<h2 id="sobre-o-autor">Sobre o autor</h2>
+<p><strong>Aridio Silva</strong> é pesquisador independente no Brasil, dedicado à arquitetura, segurança, governança e confiabilidade de sistemas de inteligência artificial autônomos e distribuídos.</p>
+<p>Sua pesquisa concentra-se em <strong>Agentic AI, Multi-Agent Systems, Edge AI, AI Security, Zero Trust, Security-by-Design, AI Governance, Spec-Driven Development e continuous security assurance</strong>.</p>
+<p>É criador e pesquisador responsável pelo <strong>SGAEIA — Secure Governed Autonomous Edge Intelligence Architecture</strong>, iniciativa de pesquisa que investiga fundamentos arquiteturais para sistemas autônomos de AI seguros, governados, auditáveis e confiáveis em ambientes distribuídos de edge e cloud.</p>
+<h2 id="recursos-de-pesquisa-e-do-projeto">Recursos de pesquisa e do projeto</h2>
+<ol>
+<li><strong>ORCID:</strong> <a href="https://orcid.org/0009-0008-2411-6995" target="_blank" rel="noopener noreferrer">https://orcid.org/0009-0008-2411-6995</a></li>
+<li><strong>Google Scholar:</strong> <a href="https://scholar.google.com/citations?user=rPn5O48AAAAJ" target="_blank" rel="noopener noreferrer">https://scholar.google.com/citations?user=rPn5O48AAAAJ</a></li>
+<li><strong>Zenodo — SGAEIA Community:</strong> <a href="https://zenodo.org/communities/sgaeia" target="_blank" rel="noopener noreferrer">https://zenodo.org/communities/sgaeia</a></li>
+<li><strong>OpenAIRE:</strong> <a href="https://explore.openaire.eu/search/find?fv0=Aridio%20Silva&f0=q" target="_blank" rel="noopener noreferrer">https://explore.openaire.eu/search/find?fv0=Aridio%20Silva&amp;f0=q</a></li>
+<li><strong>Medium:</strong> <a href="https://medium.com/@aridiosilva" target="_blank" rel="noopener noreferrer">https://medium.com/@aridiosilva</a></li>
+<li><strong>DEV Community:</strong> <a href="https://dev.to/aridiosilva" target="_blank" rel="noopener noreferrer">https://dev.to/aridiosilva</a></li>
+<li><strong>GitHub:</strong> <a href="https://github.com/aridiosilva" target="_blank" rel="noopener noreferrer">https://github.com/aridiosilva</a></li>
+<li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/aridio-silva-74997111/" target="_blank" rel="noopener noreferrer">https://www.linkedin.com/in/aridio-silva-74997111/</a></li>
+<li><strong>SGAEIA — DOI canônico do projeto:</strong> <a href="https://doi.org/10.5281/zenodo.22557796" target="_blank" rel="noopener noreferrer">https://doi.org/10.5281/zenodo.22557796</a></li>
+<li><strong>Homepage:</strong> <a href="https://aridiosilva.com" target="_blank" rel="noopener noreferrer">https://aridiosilva.com</a></li>
+<li><strong>SGAEIA Homepage:</strong> <a href="https://aridiosilva.com/sgaeia" target="_blank" rel="noopener noreferrer">https://aridiosilva.com/sgaeia</a></li>
+<li><strong>SGAEIA LinkedIn:</strong> <a href="https://www.linkedin.com/company/sgaeia/" target="_blank" rel="noopener noreferrer">https://www.linkedin.com/company/sgaeia/</a></li>
+</ol>
+<h2 id="figuras">Figuras</h2>
+<p>A capa não é numerada. As Figuras 1–6 são ilustrações técnicas e didáticas públicas. Seus números e pesos são explicitamente identificados como exemplos reduzidos; eles não representam medições de um modelo treinado nem revelam protocolos, algoritmos, máquinas de estado, políticas internas, limiares ou mecanismos privados do SGAEIA. As imagens finais incluem crédito visível e devem preservar metadados de criador, copyright, projeto, título, descrição e licença.</p>
+<h2 id="licença">Licença</h2>
+<p>Exceto quando indicado de outro modo, o texto, os exemplos e as ilustrações originais deste artigo são licenciados sob a <strong>Creative Commons Attribution 4.0 International (CC BY 4.0)</strong>.</p>
+<p>© 2026 Aridio Silva. É permitido compartilhar e adaptar esta obra para qualquer finalidade, desde que seja atribuída a autoria adequada.</p>
+<p>O artefato de software e pesquisa do SGAEIA permanece sujeito à sua própria licença <strong>Apache 2.0</strong>.</p>
+<p><strong>Autonomous AI. Governed by Design. Trusted by Evidence.</strong></p>
+<h2 id="continuidade-da-série">Continuidade da série</h2>
+<p>Este trabalho é o <strong>SGAEIA Research Series — Article 22</strong>. Sua edição de registro está publicada no Zenodo sob o DOI <strong>10.5281/zenodo.23540392</strong>. As edições em português e inglês compartilham o mesmo registro bibliográfico e distinguem-se pelo idioma indicado no arquivo e nos metadados.</p>
+<h2 id="citação-sugerida">Citação sugerida</h2>
+<p>Silva, Aridio. (2026). <em>Abrindo a Caixa-Preta da Inferência em LLMs: Fundamentos de AI Generativa — Anatomia do Transformer por Dentro, da Entrada ao Token de Saída</em>. SGAEIA Research Series, Article 22. Zenodo. <a href="https://doi.org/10.5281/zenodo.23540392" target="_blank" rel="noopener noreferrer">https://doi.org/10.5281/zenodo.23540392</a></p>
+<hr>
+<p>© 2026 Aridio Silva | Project SGAEIA | CC BY 4.0<br>ORCID 0009-0008-2411-6995 | DOI 10.5281/zenodo.23540392</p>
+<p class="article-distribution-links"><a href="https://zenodo.org/records/23540392" target="_blank" rel="noopener noreferrer">Zenodo DOI</a> · <a href="https://dev.to/aridiosilva/opening-the-black-box-of-llm-inference-foundations-of-generative-ai-3i9p" target="_blank" rel="noopener noreferrer">DEV Community</a> · <a href="https://medium.com/@aridiosilva/opening-the-black-box-of-llm-inference-foundations-of-generative-ai-65f6d3563bd2" target="_blank" rel="noopener noreferrer">Medium</a> · <a href="https://www.academia.edu/179351915/Opening_the_Black_Box_of_LLM_Inference_Foundations_of_Generative_AI_Anatomy_of_the_Transformer_from_the_Inside_from_Input_to_Output_Token_SGAEIA_Research_Series_Article_22" target="_blank" rel="noopener noreferrer">Academia.edu</a></p></article></section></main><footer class="site-footer footer-style-preview" id="footer">
+  <div class="shell">
+    <div class="footer-head">
+      <div class="footer-brand-lockup">
+        <img class="footer-sgaeia-logo" src="/assets/sgaeia-logo-transparent.png" alt="" aria-hidden="true" width="1254" height="1254" loading="lazy" decoding="async">
+        <a class="footer-wordmark footer-project-link" href="/sgaeia.html">SGAEIA</a>
+      </div>
+      <div class="footer-note">SGAEIA · Pesquisa sobre sistemas de IA autônomos e distribuídos sob governança.</div>
+    </div>
+
+    <nav class="brand-links footer-name-links" aria-label="Perfis de pesquisa e links do projeto">
+      <a class="footer-profile-link" aria-label="GitHub" title="GitHub" href="https://github.com/aridiosilva" target="_blank" rel="noopener noreferrer"><strong>GitHub</strong></a>
+      <a class="footer-profile-link" aria-label="ORCID" title="ORCID" href="https://orcid.org/0009-0008-2411-6995" target="_blank" rel="me noopener noreferrer"><strong>ORCID</strong></a>
+      <a class="footer-profile-link" aria-label="Google Scholar" title="Google Scholar" href="https://scholar.google.com/citations?user=rPn5O48AAAAJ" target="_blank" rel="noopener noreferrer"><strong>Google Scholar</strong></a>
+      <a class="footer-profile-link" aria-label="Registros do autor no Zenodo" title="Zenodo" href="https://zenodo.org/search?q=metadata.creators.person_or_org.name%3A%22Silva%2C%20Aridio%22" target="_blank" rel="noopener noreferrer"><strong>Zenodo</strong></a>
+      <a class="footer-profile-link" aria-label="Comunidade SGAEIA no Zenodo" title="SGAEIA — Comunidade Zenodo" href="https://zenodo.org/communities/sgaeia" target="_blank" rel="noopener noreferrer"><strong>SGAEIA · Comunidade Zenodo</strong></a>
+      <a class="footer-profile-link" aria-label="OpenAIRE" title="OpenAIRE" href="https://explore.openaire.eu/search/find?fv0=Aridio%20Silva&amp;f0=q" target="_blank" rel="noopener noreferrer"><strong>OpenAIRE</strong></a>
+      <a class="footer-profile-link" aria-label="Medium" title="Medium" href="https://medium.com/@aridiosilva" target="_blank" rel="noopener noreferrer"><strong>Medium</strong></a>
+      <a class="footer-profile-link" aria-label="Perfil na DEV Community" title="DEV Community" href="https://dev.to/aridiosilva" target="_blank" rel="me noopener noreferrer"><strong>DEV Community</strong></a>
+      <a class="footer-profile-link" aria-label="LinkedIn" title="LinkedIn" href="https://www.linkedin.com/in/aridio-silva-74997111/" target="_blank" rel="noopener noreferrer"><strong>LinkedIn</strong></a>
+      <a class="footer-profile-link" aria-label="SGAEIA LinkedIn" title="SGAEIA LinkedIn" href="https://www.linkedin.com/company/sgaeia/" target="_blank" rel="noopener noreferrer"><strong>SGAEIA · LinkedIn</strong></a>
+      <a class="footer-profile-link" aria-label="Repositório SGAEIA no GitHub" title="Repositório SGAEIA" href="https://github.com/aridiosilva/SGAEIA" target="_blank" rel="noopener noreferrer"><strong>Repositório SGAEIA</strong></a>
+      <a class="footer-profile-link" aria-label="Kaggle" title="Kaggle" href="https://www.kaggle.com/aridiosilva2" target="_blank" rel="noopener noreferrer"><strong>Kaggle</strong></a>
+      <a class="footer-profile-link" aria-label="DOI do artefato de pesquisa SGAEIA" title="Artefato de pesquisa SGAEIA / DOI" href="https://doi.org/10.5281/zenodo.22557796" target="_blank" rel="noopener noreferrer"><strong>SGAEIA DOI</strong></a>
+    </nav>
+
+    <div class="footer-bottom">
+      <span>© 2026 Aridio Silva · <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></span>
+      <span>Atualizado em: 21 de outubro de 2026 — Versão 1.0.0</span>
+      <span>IA autônoma. Governada por concepção. Confiável pela evidência.</span>
+    </div>
+  </div>
+</footer></body></html>

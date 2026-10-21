@@ -1,110 +1,197 @@
-# Prompt de continuidade — Homepage AridioSilva.com — versão 2.1
+# Prompt de continuidade — Homepage AridioSilva.com — padrões atuais
 
-**Data de criação:** 11 de outubro de 2026 — BRT
-**Status:** PRONTO PARA O PRÓXIMO CICLO
-**Base funcional:** Homepage versão 2.0 concluída
-**Commit-base:** `9871f8d` — `feat: aprimora layout e links de publicações da homepage`
-**Branch:** `main`
+**Atualizado em:** 17 de outubro de 2026 — BRT
+
+**Ciclo de continuidade:** 2.1; preservar a versão editorial indicada em cada página.
+
 **Repositório local:** `C:\Users\as294\aridiosilva.github.io`
-**Remoto:** `https://github.com/aridiosilva/aridiosilva.github.io`
 
-## Prompt para iniciar a versão 2.1
+**Branch:** `main`
 
-Continue a evolução da homepage `aridiosilva.com` a partir da versão 2.0 consolidada no commit `9871f8d`. Trate este documento como contexto técnico e histórico; o pedido atual do usuário sempre define o trabalho a executar. Antes de qualquer alteração, leia o log `docs/logs/2026-10-11-HOMEPAGE-STYLE-CONTINUITY.md`, execute `git status --short --branch`, confirme o commit atual e inspecione os arquivos envolvidos. Preserve o design aprovado, a responsividade, as traduções EN/PT/ES/FR/DE, a acessibilidade, os links editoriais, as capas proporcionais e os comportamentos já validados. Faça mudanças incrementais, mantenha backups restauráveis, valide no navegador local em `http://127.0.0.1:8765/`, execute `git diff --check` e não faça stage, commit ou push sem comando explícito do usuário.
+**Commit de referência observado:** `eb98889` — `feat: adiciona artigo 21 e padroniza layout, rodapes e plataformas de publicacao`
 
-## Objetivo do ciclo 2.1
+**Remoto configurado:** `https://github.com/aridiosilva/aridiosilva.github.io`
 
-- A versão 2.1 começa como continuidade evolutiva da versão 2.0, sem mudanças funcionais previamente definidas.
-- Aguarde os próximos comandos do usuário para definir cada melhoria.
-- Não reabrir decisões já aprovadas da versão 2.0, salvo pedido explícito.
-- Cada alteração aceita deve ser registrada no log da homepage e neste contexto de continuidade.
-- A identificação visível no rodapé permanece `Versão 2.0` até que o usuário determine a publicação efetiva da versão 2.1.
+**Prévia local:** `http://127.0.0.1:8765/`
 
-## Baseline visual que deve ser preservado
+## Prompt pronto para iniciar outro chat
 
-### Página principal — `index.html`
+Continue a evolução da homepage AridioSilva.com no repositório local indicado acima. Use este documento como contexto técnico e registro de decisões; o pedido atual do usuário define o escopo de trabalho. Leia o log `docs/logs/2026-10-11-HOMEPAGE-STYLE-CONTINUITY.md`, confira `git status --short --branch` e o HEAD atual e inspecione os arquivos envolvidos antes de editar. Preserve os padrões consolidados abaixo: identidade centralizada no header da homepage, opção Home, rodapé compartilhado, heroes editoriais centralizados e cards numerados de plataformas e artefatos em SGAEIA. Reutilize os estilos compartilhados, as traduções e os componentes existentes. Preserve conteúdo, metadados, versões, licenças, acessibilidade, analytics e responsividade. Faça alterações incrementais, mantenha backups restauráveis e valide somente em `http://127.0.0.1:8765/`. Não acesse a homepage remota: essa restrição foi expressamente definida pelo usuário. Abra as páginas alteradas ou incluídas na aba à direita, usando a prévia local. Execute `git diff --check`, atualize o log e este prompt quando necessário. Não faça stage, commit ou push sem pedido explícito para executar essas operações; um pedido de comandos Git exige apenas fornecer os comandos.
 
-- Header fixo, responsivo e centralizado, com quebra natural de textos em janelas estreitas.
-- Link `Aridio Silva` com o mesmo comportamento de hover/foco do menu.
-- Controles de idioma, tamanho da fonte, Easy read e Listen preservados.
-- Hero com título amplo e painel `Current research question` em box.
-- Botões `Explore research` e `Explore SGAEIA` centralizados e com quebra responsiva.
-- Seção 01 `Research` com quatro boxes numerados e faixas laterais progressivas.
-- Seção 02 `SGAEIA` com seis boxes e estilo aprovado em azul-esverdeado.
-- Seção 03 `Publications` com 21 registros, usando a composição bullet/data → capa → conteúdo.
-- Capas de artigos mantêm a proporção por meio de `height: auto`.
-- Item 20, artefato de software, usa o logo circular SGAEIA.
-- Item 21, `When AI Begins to Build Itself`, usa sua capa oficial e é identificado como `Research article`.
-- Rodapé com boxes de perfis e projetos no estilo visual aprovado.
+## Como interpretar este documento
 
-### Página SGAEIA — `sgaeia.html`
+- As seções de padrões atuais, antes do histórico, consolidam as decisões vigentes em 17/10/2026 e prevalecem sobre descrições antigas de layout ou estado Git.
+- O histórico registra etapas anteriores, inclusive testes descartados e estados anteriores ao commit. Referências antigas a rodapés com ícones, Research Series com cards de artigos, Artifacts sem bullets ou hero editorial alinhado à esquerda foram superadas.
+- Confira sempre o código e o estado Git atuais. O commit de referência acima não autoriza reset, checkout ou descarte de alterações.
+- A versão 2.1 identifica o ciclo deste prompt; não alterar automaticamente os números de versão visíveis das páginas.
 
-- Header fixo com quatro linhas centralizadas e responsivas.
-- Hero com os links `Explore the research problem` e `Open research artifact` centralizados.
-- `Research proposition` permanece em box equivalente ao `Current research question` da homepage.
-- Seções 01 `Problem`, 02 `Principles`, 03 `Properties` e 04 `Agenda` mantêm bullets, faixas, cores, hover e grades já aprovados.
-- Seção 05 `SGAEIA Research Series` mantém 19 cards no formato bullet/data → capa → conteúdo.
-- Em cada card, os canais aparecem abaixo de `SGAEIA Research Series — Article XX`, nesta ordem:
-  1. `Zenodo DOI`;
-  2. `Medium`;
-  3. `DEV Community`;
-  4. `Academia.edu`.
-- O Artigo 17 permanece com `DOI pending` até que um DOI seja fornecido na página principal.
-- A seção 03 `Publications` de `index.html` é a fonte canônica dos URLs editoriais da Research Series.
-- Seção 06 `Artifacts` mantém cinco boxes no estilo da Agenda, sem bullets.
-- Rodapé mantém os boxes de ícones alinhados ao padrão da página principal.
+## 1. Header e navegação da homepage
 
-## Requisitos técnicos e de conteúdo
+- Manter o header fixo, branco, com texto preto, responsivo e sem sobreposição do conteúdo.
+- Centralizar `Aridio Silva` em conjunto com `Independent Researcher · AI Systems Architecture`: ambos devem compartilhar o mesmo eixo horizontal de centro dentro da identidade. Centralizar apenas o contêiner externo é insuficiente se o nome permanecer alinhado à esquerda.
+- Referência implementada em `index.html`: `.identity { text-align: center; }` e `.identity strong { width: fit-content; margin-inline: auto; }`.
+- Manter `Home` como primeira opção do menu, com `href="#top"`, levando ao início do bloco `RESEARCH FOCUS`. Preservar hover e foco visível equivalentes aos demais itens.
+- Traduções de `nav_home`: EN `Home`, PT `Início`, ES `Inicio`, FR `Accueil`, DE `Startseite`.
+- Preservar os controles de idioma, tamanho da fonte, Easy read e Listen, com seus comportamentos acessíveis.
+- A centralização da identidade não implica centralizar o hero da homepage. Preservar sua composição aprovada, incluindo o painel `Current research question`.
 
-- Preservar HTML semântico, navegação por teclado, foco visível, rótulos ARIA e `data-i18n`.
-- Preservar EN, PT, ES, FR e DE; qualquer texto novo visível deve ser avaliado nos cinco idiomas.
-- Preservar a medição automática de audiência já instalada, sem reintroduzir o box `Analytics preferences`.
-- Preservar o mecanismo de cache-busting usado nos ativos alterados, para que os testes locais não dependam de limpeza manual do cache.
-- Não deformar imagens; declarar dimensões intrínsecas quando disponíveis e usar carregamento diferido fora da área inicial.
-- Links externos devem usar `target="_blank"` e `rel="noopener noreferrer"` quando aplicável.
-- Não copiar automaticamente links auxiliares como `Português`, `Homepage record` ou `Read full article` para os quatro canais editoriais da Research Series.
-- Não restaurar variantes descartadas, incluindo cartões amarelo/magenta, hover magenta ou hover azul-escuro anteriormente rejeitado.
+## 2. Blocos iniciais dos índices, artigos e infográficos
 
-## Fluxo obrigatório para cada nova alteração
+- Centralizar o texto do hero, abaixo do header fixo, nos índices `publications.html` e `infographics/index.html`.
+- Aplicar o mesmo alinhamento a todas as páginas individuais de artigos e infográficos EN/PT: rótulo, título, subtítulo, descrição inicial, autoria, metadados e navegação recíproca de idiomas.
+- Manter os blocos de texto no mesmo eixo central, com limites de largura e quebra natural. Nos controles de idioma, usar `justify-content: center`.
+- Preservar o fundo azul `#315f7f`, letras brancas e o comportamento aprovado dos links; a centralização é restrita à abertura editorial, sem alterar o alinhamento do corpo dos artigos ou dos slides.
+- Índices: reutilizar `assets/publications-index-hero.css`. Páginas individuais: reutilizar as regras de `.article-page` e `.infographic-page` em `assets/editorial-hero.css`.
+- Inventário atual: 28 edições de artigos (22 EN e 6 PT) e 32 edições de infográficos (16 EN e 16 PT). Não presumir que todos os artigos já possuam tradução PT.
+- Preservar as aberturas específicas da homepage e de SGAEIA, incluindo seus painéis e botões.
 
-1. Ler este prompt e o log de continuidade.
-2. Executar `git status --short --branch` e preservar mudanças existentes do usuário.
-3. Identificar o menor conjunto de arquivos necessário.
-4. Criar backup restaurável antes de experimentos visuais relevantes.
-5. Implementar a alteração incrementalmente.
-6. Recarregar a página com URL de teste atualizada quando houver risco de cache.
-7. Validar visualmente em largura normal e estreita.
-8. Conferir estrutura, links, imagens, foco, hover e responsividade afetados.
-9. Executar `git diff --check` nos arquivos modificados.
-10. Registrar a decisão aprovada em `docs/logs/2026-10-11-HOMEPAGE-STYLE-CONTINUITY.md` e atualizar este prompt quando o novo contexto for relevante.
-11. Fornecer os comandos Git ao usuário quando solicitados; não executar stage, commit ou push sem autorização explícita.
+## 3. Rodapé compartilhado obrigatório
 
-## Arquivos principais
+Aplicar o mesmo modelo à homepage, à página SGAEIA, aos dois índices e a todas as páginas individuais EN/PT. O padrão atual abrange 64 páginas: 2 institucionais, 2 índices, 28 edições de artigos e 32 edições de infográficos.
 
-- `index.html` — homepage e CSS/JavaScript embutidos.
-- `sgaeia.html` — página do programa de pesquisa SGAEIA.
-- `publications.html` — página geral de publicações.
-- `assets/` — capas, logos e demais recursos visuais.
-- `docs/logs/2026-10-11-HOMEPAGE-STYLE-CONTINUITY.md` — histórico consolidado e decisões aprovadas.
-- `docs/prompts/2026-10-11-HOMEPAGE-CONTINUIDADE-V2.1.md` — este prompt de continuidade.
+### Estrutura e cores
 
-## Critérios de aceitação da versão 2.1
+- Estrutura raiz: `<footer class="site-footer footer-style-preview" id="footer">`.
+- Carregar uma única vez a folha `assets/homepage-footer-preview.css`. O nome histórico “preview” permanece no arquivo, que agora contém o padrão compartilhado vigente.
+- Fundo geral `#315f7f`, textos brancos e alinhamento central.
+- Bloco da marca `.footer-head` em azul mais claro `#477797`, com padding `24px 16px`.
+- Logo, título `SGAEIA` e descrição empilhados e centralizados no mesmo eixo.
+- Logo `/assets/sgaeia-logo-transparent.png`, proporcional, com largura de 78px e 66px até 430px; manter `height: auto`.
+- O título `SGAEIA` é um link `.footer-wordmark.footer-project-link` para `/sgaeia.html`, na mesma aba, com hover e foco visível.
+- Descrição EN: `SGAEIA · Research on governed autonomous and distributed AI systems.`
+- Descrição PT: `SGAEIA · Pesquisa sobre sistemas de IA autônomos e distribuídos sob governança.`
 
-- Nenhuma regressão visual ou funcional em relação à versão 2.0.
-- Layout legível e centralizado conforme o componente em desktop, tablet e celular.
-- Capas proporcionais, sem quebra de carregamento.
-- Links editoriais corretos e consistentes entre homepage e SGAEIA.
-- Traduções, acessibilidade e controles de leitura preservados.
-- Teste local concluído sem exigir limpeza manual de cache.
-- `git diff --check` sem erros.
-- Log e prompt de continuidade atualizados antes do commit final do ciclo.
+### Links de perfis e projetos
 
-## Estado inicial registrado
+- Usar nomes em negrito em lugar da lista de ícones. Fonte `Source Serif 4`, com fallback serifado; peso 700; tamanho 1rem, reduzido para .92rem até 430px.
+- `.footer-name-links`: flex com quebra, centralizado, distância vertical de 2px e horizontal de 12px; em telas estreitas, horizontal de 6px. Preservar as linhas divisórias discretas.
+- Hover/foco evidente: fundo branco, texto `#244b68`, sublinhado de 2px e contorno de foco branco de 3px. Preservar `prefers-reduced-motion`.
+- Manter estes 13 destinos, com os nomes descritivos localizados quando aplicável:
 
-- `HEAD`, `origin/main` e `origin/HEAD`: `9871f8d` no momento da criação deste prompt.
-- A versão 2.0 foi encerrada e permanece como baseline estável.
-- O ciclo 2.1 ainda não possui alterações funcionais próprias.
-- Próxima ação: aguardar o primeiro comando do usuário para a versão 2.1.
+| Nome | Destino |
+| --- | --- |
+| GitHub | https://github.com/aridiosilva |
+| ORCID | https://orcid.org/0009-0008-2411-6995 |
+| Google Scholar | https://scholar.google.com/citations?user=rPn5O48AAAAJ |
+| Zenodo | https://zenodo.org/search?q=metadata.creators.person_or_org.name%3A%22Silva%2C%20Aridio%22 |
+| SGAEIA · Zenodo Community | https://zenodo.org/communities/sgaeia |
+| OpenAIRE | https://explore.openaire.eu/search/find?fv0=Aridio%20Silva&f0=q |
+| Medium | https://medium.com/@aridiosilva |
+| DEV Community | https://dev.to/aridiosilva |
+| LinkedIn | https://www.linkedin.com/in/aridio-silva-74997111/ |
+| SGAEIA · LinkedIn | https://www.linkedin.com/company/sgaeia/ |
+| SGAEIA Repository | https://github.com/aridiosilva/SGAEIA |
+| Kaggle | https://www.kaggle.com/aridiosilva2 |
+| SGAEIA DOI | https://doi.org/10.5281/zenodo.22557796 |
+
+### Três linhas finais
+
+- Centralizar e aproximar os três grupos finais: copyright/licença quando existente, atualização/versão e lema.
+- `.footer-bottom`: coluna, gap de 2px, fonte .74rem e entrelinha 1.4.
+- EN: `Autonomous AI. Governed by Design. Trusted by Evidence.`
+- PT: `IA autônoma. Governada por concepção. Confiável pela evidência.`
+- Preservar a versão original da edição e todos os links de licença CC BY 4.0 já existentes. Não uniformizar as páginas em versão 2.0 ou 2.1.
+- Localizar descrição, rótulos acessíveis, data e lema nas edições PT. Atualizar datas somente conforme a alteração efetiva, sem modificar a data original de publicação do artigo.
+- Novas páginas devem usar caminhos absolutos locais como `/assets/` e `/sgaeia.html`, evitando erros nas subpastas `pt/`.
+
+## 4. SGAEIA — seção 05 de plataformas de publicação
+
+A antiga lista de artigos da seção `Research Series` foi substituída por seis cards de acesso às plataformas, seguindo a composição da seção 06 `Artifacts`. O índice de publicações continua reunindo os artigos individualmente.
+
+- Preservar a âncora `#series` para compatibilidade com os links existentes.
+- Menu e textos: `Platforms` / `Plataformas`, com traduções EN/PT/ES/FR/DE existentes.
+- Cada card contém bullet circular, título, descrição e link `Open` / `Abrir`; sem capas de artigos.
+- Grade de duas colunas no desktop e uma coluna no celular, padding de 24px e faixa lateral de 5px em `#2f7a83`.
+- Fundo dos cards igual ao padrão de `03 Properties`: `#f9fcfb`, passando a branco no hover.
+- Bullets redondos de 38 × 38px, fundo `#2f7a83`, número branco centralizado, raio 50%, fonte .68rem e peso 800. Numerar de **1 a 6** nesta ordem:
+
+| Nº | Plataforma | Destino |
+| --- | --- | --- |
+| 1 | Zenodo — Published records | https://zenodo.org/communities/sgaeia/records?q=&l=list&p=1&s=30&sort=newest |
+| 2 | DEV Community | https://dev.to/aridiosilva |
+| 3 | Academia.edu | https://independent.academia.edu/AridioSilva |
+| 4 | Zenodo — SGAEIA Community | https://zenodo.org/communities/sgaeia |
+| 5 | OpenAIRE | https://explore.openaire.eu/search/find?fv0=Aridio%20Silva&f0=q |
+| 6 | Medium | https://medium.com/@aridiosilva |
+
+As duas entradas Zenodo têm destinos distintos e devem permanecer. Links externos abrem em nova aba com `rel="noopener noreferrer"`. Preservar hover/foco dos links em terracota `#9a3412`.
+
+## 5. SGAEIA — seção 06 Artifacts
+
+- Manter os cinco cards existentes, títulos, descrições e destinos aprovados.
+- Adotar os mesmos bullets circulares das plataformas, numerados de **1 a 5**.
+- Preservar o quinto card com largura total no desktop e adaptação para uma coluna no celular.
+- Fundo de Artifacts permanece `#e8f3f4`, com hover `#f2f8f8`. A mudança para o fundo de Properties foi específica dos cards de plataformas.
+- Reutilizar os estilos comuns de `:is(#artifacts, #series)` e as regras compartilhadas de `.mini-label`, evitando duplicar componentes.
+
+## 6. Artigo 21 — referência editorial
+
+- EN: `/publications/artigo21/` — `The Open Letter on AI and Cybersecurity and the Evidence for Agent Containment`.
+- PT: `/publications/artigo21/pt/` — `Carta aberta sobre AI e cibersegurança e as evidências que sustentam a contenção de agentes`.
+- Fonte de conteúdo: `C:\Users\as294\SGAEIA_2\docs\articles\Publicos\ARTICLE_021`, arquivos mestres com prefixo `2026-10-16-1804`.
+- Publicação: 16/10/2026; integração à homepage: 17/10/2026; versão da edição: 1.0.
+- Preservar texto integral, 18 referências, capa e duas figuras por edição. Imagens em `assets/article21/`, sem deformação; legendas conforme o idioma dos mestres.
+- Preservar os registros nas seções Publications e Writing da homepage e no índice de publicações. Em SGAEIA, a seção 05 atual é de plataformas e substitui os antigos cards individuais de artigos.
+- Destinos confirmados pelo usuário:
+
+| Canal | URL |
+| --- | --- |
+| Zenodo | https://zenodo.org/records/23426350 |
+| DOI | https://doi.org/10.5281/zenodo.23426350 |
+| DEV Community | https://dev.to/aridiosilva/the-open-letter-on-ai-and-cybersecurity-and-the-evidence-for-agent-containment-4a19 |
+| Academia.edu | https://www.academia.edu/179088614/The_Open_Letter_on_AI_and_Cybersecurity_and_the_Evidence_for_Agent_Containment |
+| Medium | https://medium.com/@aridiosilva/the-open-letter-on-ai-and-cybersecurity-and-the-evidence-for-agent-containment-071f1882f34d |
+
+## 6A. Artigo 22 e Info_016 — referência editorial
+
+- Artigo EN: `/publications/artigo22/` — `Opening the Black Box of LLM Inference: Foundations of Generative AI`.
+- Artigo PT: `/publications/artigo22/pt/` — `Abrindo a Caixa-Preta da Inferência em LLMs: Fundamentos de AI Generativa`.
+- Publicação: 21/10/2026; versão 1.0.0; DOI `10.5281/zenodo.23540392`; Zenodo `https://zenodo.org/records/23540392`; DEV Community `https://dev.to/aridiosilva/opening-the-black-box-of-llm-inference-foundations-of-generative-ai-3i9p`; Medium `https://medium.com/@aridiosilva/opening-the-black-box-of-llm-inference-foundations-of-generative-ai-65f6d3563bd2`; Academia.edu `https://www.academia.edu/179351915/Opening_the_Black_Box_of_LLM_Inference_Foundations_of_Generative_AI_Anatomy_of_the_Transformer_from_the_Inside_from_Input_to_Output_Token_SGAEIA_Research_Series_Article_22`.
+- Preservar o texto integral dos mestres públicos, capa e seis figuras por idioma, tabelas, fórmulas, código-fonte, glossário, 69 referências e navegação recíproca, com EN como `x-default`.
+- Info_016 EN: `/infographics/Info_016/`; Info_016 PT: `/infographics/Info_016/pt/`; 50 slides 1920 × 1080 por idioma, PDFs originais e textos LinkedIn fornecidos. EN é a edição padrão do índice.
+- PDFs: `opening-black-box-llm-inference-en.pdf` e `abrindo-caixa-preta-inferencia-llms-pt.pdf`.
+
+## 7. Ativos compartilhados e cache
+
+Versões observadas na consolidação de 17/10/2026; em alterações futuras, avançar o cache-busting apenas quando necessário e atualizar todos os consumidores afetados.
+
+| Ativo | Referência vigente | Uso |
+| --- | --- | --- |
+| Rodapé compartilhado | `/assets/homepage-footer-preview.css?v=20261017-5` | 60 páginas |
+| Hero editorial | `/assets/editorial-hero.css?v=20261017-1` | 60 edições individuais e 2 índices |
+| Hero dos índices | `/assets/publications-index-hero.css?v=20261017-2` | Índices de publicações e infográficos |
+| Hero institucional | `/assets/homepage-hero.css?v=20261016-2` | Homepage e SGAEIA |
+| Analytics | `/assets/analytics-consent.js?v=20261011` | Preservar integração existente |
+
+- Preservar o header editorial compartilhado e seus arquivos `fixed-site-header`, respeitando as referências atuais de cada família de páginas.
+- O Artigo 21 reutiliza intencionalmente os recursos genéricos `article20.css` e `article20-accessibility.js`; não duplicar esses arquivos apenas para trocar seu nome.
+- Recarregar o HTML das abas abertas ao alterar a versão de um CSS. Uma aba antiga pode manter referências antigas mesmo com o arquivo já atualizado no disco.
+
+## 8. Requisitos de preservação e validação
+
+1. Conferir Git e arquivos reais antes de agir; preservar alterações existentes do usuário e criar backup antes de experimentos visuais relevantes.
+2. Reutilizar os componentes compartilhados. Traduções institucionais e de navegação: EN/PT/ES/FR/DE; conteúdo editorial e controles locais conforme os idiomas efetivamente disponíveis.
+3. Preservar HTML semântico, teclado, foco visível, ARIA, skip links, controles de leitura, navegação de idiomas e preferência por movimento reduzido.
+4. Preservar proporção das capas, dimensões intrínsecas, carregamento diferido quando aplicável, PDFs, carrosséis e textos editoriais.
+5. Preservar canonical, hreflang, metadados de citação, dados estruturados, CSP, licenças e links editoriais. Não alterar destinos com base em suposições.
+6. Manter a medição automática de audiência existente, propriedade `G-MXMJ7Z3LS7`, sem reintroduzir interface de preferências e com armazenamento negado.
+7. Atualizar sitemap/lastmod apenas nas páginas afetadas e manter XML válido, URLs únicas, `llms.txt` e `robots.txt` coerentes quando houver mudança de conteúdo ou descoberta.
+8. Validar as páginas afetadas no navegador local em desktop e celular; referências usadas: 1280px e 320px. Conferir centralização, hover/foco, links, imagens, ausência de sobreposição do header e de rolagem horizontal.
+9. Restaurar a viewport após os testes, fechar abas temporárias de auditoria e abrir ou atualizar as páginas de resultado à direita. Usar `http://127.0.0.1:8765/`, sem acessar a homepage remota.
+10. Executar `git diff --check`, registrar as decisões e fornecer um resumo do que mudou e da validação. Stage, commit e push dependem de pedido explícito de execução.
+
+## 9. Estado desta consolidação
+
+- Antes desta atualização documental, `main` estava limpo e alinhado à referência local `origin/main`, no commit `eb98889`. Essa observação não envolve fetch nem comprova o estado da hospedagem remota.
+- As alterações visuais da sessão já constam nesse commit. Esta etapa atualiza somente o prompt e o log de continuidade e gera uma cópia Markdown datada.
+- As verificações visuais dos componentes estão registradas no histórico: rodapés e heroes das 56 edições individuais foram conferidos a 1280px e 320px. Não confundir essas verificações anteriores com uma nova execução de testes visuais nesta atualização documental.
+- As cópias do prompt no repositório e em `F:\#         Cursos 2026\SGAEIA_2\PROMPTs Diversos\` devem permanecer sincronizadas com o padrão consolidado.
+
+---
+
+## Histórico de evolução — registros anteriores
+
+Os registros abaixo preservam o contexto das etapas de implementação. Seus estados Git, datas de teste, versões antigas de ativos e descrições de layouts superados são históricos. Para novas alterações, aplicar os padrões atuais consolidados acima.
 
 ## Atualização do ciclo 2.1 — Infographics — 12 de outubro de 2026
 
