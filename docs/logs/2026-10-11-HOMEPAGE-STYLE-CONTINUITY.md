@@ -1033,7 +1033,7 @@ Novos artigos e infográficos devem reutilizar esse rodapé compartilhado e sua 
 
 ## Vídeo do SlothGuard — remoção da imagem adicional EN/PT — 26 de outubro de 2026
 
-- Removidas das edições EN e PT a miniatura adicional e a incorporação do player que haviam sido acrescentadas ao final do conteúdo.
-- Mantido somente um link textual para a demo completa no YouTube, conforme o texto original e a correção solicitada pelo autor.
+- Removida das edições EN e PT a miniatura adicional que havia sido acrescentada antes do vídeo.
+- Após revisão do autor, mantido o player incorporado do YouTube em modo de privacidade no final das duas páginas, reproduzindo a apresentação existente no post do DEV Community.
 - As oito figuras efetivamente usadas no corpo do texto e a capa permanecem inalteradas.
 - Alterações exclusivamente locais; sem stage, commit, push ou publicação remota.
