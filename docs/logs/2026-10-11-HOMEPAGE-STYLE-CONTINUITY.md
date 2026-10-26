@@ -1007,3 +1007,33 @@ Novos artigos e infográficos devem reutilizar esse rodapé compartilhado e sua 
 - Sincronizada a cópia histórica externa `F:\#         Cursos 2026\__     SGAEIA_2\PROMPTs Diversos\2026-10-15-HOMEPAGE-STYLE-CONTINUITY - Last Version` com a nova regra.
 - Criada a cópia privada controlada `C:\Users\as294\SGAEIA_2\docs\prompts\2026-10-21-1935-SGAEIA-PROMPT-CONTINUIDADE-HOMEPAGE-V2.1_PT.md`, identificada como prompt operacional não normativo e vinculada à origem no repositório da homepage.
 - Esta etapa alterou somente o prompt e este log no repositório da homepage; nenhum HTML, CSS, JavaScript, índice público, `sitemap.xml`, `llms.txt` ou `robots.txt` foi novamente modificado.
+
+## Challenges e SlothGuard Challenge 001 — inclusão local EN/PT — 26 de outubro de 2026
+
+- Criado o índice público `/challenges/`, no padrão visual dos índices de Publications e Infographics, com o primeiro card dedicado ao SlothGuard e a capa `image_cover.webp`.
+- Criadas as páginas integrais do Challenge 001 em `/challenges/challenge001/` (EN, padrão e `x-default`) e `/challenges/challenge001/pt/` (PT), a partir dos rascunhos fornecidos em Markdown. A mesma capa aparece imediatamente antes do início do texto nas duas edições.
+- O card do índice registra os três destinos solicitados: Hackathon DEV Hacktoberfest Week 3, post publicado no DEV Community e Zenodo pelo DOI persistente `10.5281/zenodo.23665904`. As páginas de detalhe também registram repositório GitHub, demonstração em vídeo e referências externas do projeto.
+- Incorporados os ativos visuais fornecidos para o desafio, com textos alternativos, legendas, imagens responsivas, tabelas com rolagem controlada e vídeo do YouTube em modo de privacidade. As páginas de detalhe apresentam nove figuras, três tabelas, bloco do repositório e controles de leitura.
+- Acrescentado o item `Challenges` ao cabeçalho fixo de todas as 67 páginas HTML, com hover e foco do sistema editorial compartilhado; preservado o rótulo solicitado em todas as navegações, inclusive nas páginas traduzidas. A página ativa usa `aria-current="page"`.
+- Criada a folha específica `/assets/challenges.css?v=20261026-1`, sem alterar as regras compartilhadas vigentes de identidade, cabeçalho, hero e rodapé.
+- As três páginas novas incluem uma única referência ao Analytics compartilhado `/assets/analytics-consent.js?v=20261011`, CSP compatível, canonical, `hreflang` recíproco EN/PT, `x-default`, Open Graph, metadados de citação e dados estruturados JSON-LD com o DOI do Zenodo.
+- Atualizados `sitemap.xml`, `llms.txt` e `robots.txt`. O sitemap contém 67 URLs únicas, inclui as três novas páginas e usa `lastmod` 2026-10-26 em todas as URLs porque todos os cabeçalhos HTML foram alterados nesta inclusão.
+- Validação local: 67 páginas HTML com Analytics exatamente uma vez e navegação Challenges; 67 URLs únicas no sitemap; XML e JSON-LD válidos; todos os destinos locais das três páginas novos existentes; ausência de rolagem horizontal nas três prévias desktop; `git diff --check` aprovado, com apenas avisos informativos de conversão LF/CRLF.
+- Índice, edição EN e edição PT abertos na prévia local da porta 8765. Backup restaurável anterior às alterações: `C:\Users\as294\Documents\Codex\2026-10-26\g\work\backup-before-challenges-20261026.zip`.
+- Alterações exclusivamente locais; sem stage, commit, push, publicação ou acesso à homepage remota.
+
+## Imagens publicadas do SlothGuard — correção de carregamento EN/PT — 26 de outubro de 2026
+
+- Consultado o post público do DEV Community pela API oficial e extraída a sequência canônica de oito figuras da publicação.
+- Baixadas para conferência as oito imagens apontadas pelo post: diagramas das fases 1 e 2, página de achados, solicitação no Guardian, composição dos três desfechos, trilha de auditoria, composição de evidências e contexto de pair-programming.
+- Verificação SHA-256 confirmou que as oito cópias locais já eram byte a byte idênticas às imagens canônicas publicadas. Não havia arquivo ausente ou corrompido no repositório.
+- O diagnóstico no navegador identificou que as figuras abaixo da dobra permaneciam com dimensões naturais 0 × 0 enquanto aguardavam o carregamento tardio. Para garantir sua presença durante a leitura e na captura integral das páginas, as oito figuras passaram de `loading="lazy"` para `loading="eager"` nas edições EN e PT.
+- Preservados textos alternativos, legendas, ordem das figuras, imagens locais, capa, miniatura e incorporação do vídeo. Nenhum endereço externo foi usado como dependência de renderização das páginas.
+- Alterações exclusivamente locais; sem stage, commit, push ou publicação remota.
+
+## Vídeo do SlothGuard — remoção da imagem adicional EN/PT — 26 de outubro de 2026
+
+- Removidas das edições EN e PT a miniatura adicional e a incorporação do player que haviam sido acrescentadas ao final do conteúdo.
+- Mantido somente um link textual para a demo completa no YouTube, conforme o texto original e a correção solicitada pelo autor.
+- As oito figuras efetivamente usadas no corpo do texto e a capa permanecem inalteradas.
+- Alterações exclusivamente locais; sem stage, commit, push ou publicação remota.

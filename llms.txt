@@ -2,13 +2,23 @@
 
 > Official website of Aridio Silva, an independent researcher working on secure, governed autonomous and distributed AI systems. The site documents the SGAEIA research program: Secure Governed Autonomous Edge Intelligence Architecture.
 
-The primary research themes are Agentic AI, multi-agent systems, AI security, Zero Trust, bounded and revocable authority, authenticated delegation, Continuous GRC, Evidence-as-Code, Edge AI, Context Language Models, and governance for autonomous systems. Use the publication pages on this site for canonical open web reading and the infographic pages for bilingual visual research communication. Zenodo records provide persistent citation metadata and archived publications; Medium, DEV Community, and LinkedIn provide distribution editions. Licenses are stated in each linked record; the SGAEIA reference software is distributed under the Apache License 2.0.
+The primary research themes are Agentic AI, multi-agent systems, AI security, Zero Trust, bounded and revocable authority, authenticated delegation, Continuous GRC, Evidence-as-Code, Edge AI, Context Language Models, and governance for autonomous systems. Use the publication pages on this site for canonical open web reading, the infographic pages for bilingual visual research communication, and the challenge pages for documented Kaggle and hackathon projects. Zenodo records provide persistent citation metadata and archived publications; Medium, DEV Community, and LinkedIn provide distribution editions. Licenses are stated in each linked record; the SGAEIA reference software is distributed under the Apache License 2.0.
 
 ## Official website
 
 - [Aridio Silva — Research homepage](https://aridiosilva.com/): Research profile, selected publications, public writing, academic profiles, and links to the SGAEIA program.
 - [SGAEIA — Research program](https://aridiosilva.com/sgaeia.html): Public overview of the architecture, research principles, publication platforms, roadmap, and research artifacts.
 
+## Challenge index
+
+- [Challenges](https://aridiosilva.com/challenges/): Index of Kaggle and hackathon projects, with English default editions and Portuguese alternatives when available.
+- [SlothGuard — Challenge 001, English](https://aridiosilva.com/challenges/challenge001/): Complete English challenge report for the DEV Hacktoberfest 2026 Open-Source AI Challenge, Week 3. Deterministic segregation-of-duties rules detect conflicts, Gemma 4 E2B explains each finding locally, and Auth0 CIBA with Guardian asks a human to approve any revocation.
+- [SlothGuard — Desafio 001, Português](https://aridiosilva.com/challenges/challenge001/pt/): Relato integral em português do desafio DEV Hacktoberfest 2026. Regras determinísticas detectam conflitos de segregação de funções, o Gemma 4 E2B explica cada achado localmente e o Auth0 CIBA com Guardian pede aprovação humana antes de qualquer revogação.
+- [SlothGuard — Zenodo DOI](https://doi.org/10.5281/zenodo.23665904): Persistent record for the challenge solution text.
+- [SlothGuard — DEV Community post](https://dev.to/aridiosilva/slothguard-a-lazy-access-reviewer-that-asks-your-phone-before-it-revokes-anything-4k1a): Official DEV challenge submission.
+- [Hacktoberfest Open-Source AI Challenge — Week 3](https://dev.to/challenges/hacktoberfest-week3-2026-10-19): Hackathon challenge page.
+- [SlothGuard — GitHub repository](https://github.com/aridiosilva/SlothGuard): Source code, tests, implementation documentation, and evidence.
+- [SlothGuard — full demo](https://youtu.be/9JlqE3jBITk): Full demonstration video with English captions.
 ## Publication index
 
 - [Opening the Black Box of LLM Inference: Foundations of Generative AI — Article 22, English](https://aridiosilva.com/publications/artigo22/): Complete English edition with cover, six figures, reproducible numerical examples, glossary, source-code appendix and 69 references; DOI 10.5281/zenodo.23540392.

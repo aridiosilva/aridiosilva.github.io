@@ -1,0 +1,351 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>SlothGuard: a lazy access reviewer that asks your phone before it revokes anything — Aridio Silva</title>
+  <meta name="description" content="A DEV Hacktoberfest 2026 challenge submission: deterministic segregation-of-duties rules detect conflicts, local Gemma explains them, and Auth0 asks a human to approve any revocation.">
+  <meta name="author" content="Aridio Silva">
+  <meta name="copyright" content="© 2026 Aridio Silva">
+  <meta name="citation_title" content="SlothGuard: a lazy access reviewer that asks your phone before it revokes anything">
+  <meta name="citation_author" content="Silva, Aridio">
+  <meta name="citation_publication_date" content="2026/10/26">
+  <meta name="citation_language" content="en">
+  <meta name="citation_doi" content="10.5281/zenodo.23665904">
+  <link rel="canonical" href="https://aridiosilva.com/challenges/challenge001/">
+  <link rel="alternate" hreflang="en" href="https://aridiosilva.com/challenges/challenge001/">
+  <link rel="alternate" hreflang="pt-BR" href="https://aridiosilva.com/challenges/challenge001/pt/">
+  <link rel="alternate" hreflang="x-default" href="https://aridiosilva.com/challenges/challenge001/">
+  <link rel="sitemap" type="application/xml" href="/sitemap.xml">
+  <link rel="describedby" href="/llms.txt" type="text/markdown">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://www.googletagmanager.com; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https://*.google-analytics.com; connect-src https://*.google-analytics.com https://www.googletagmanager.com; frame-src https://www.youtube-nocookie.com; media-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'; upgrade-insecure-requests">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="SlothGuard: a lazy access reviewer that asks your phone before it revokes anything">
+  <meta property="og:description" content="A DEV Hacktoberfest 2026 challenge submission: deterministic segregation-of-duties rules detect conflicts, local Gemma explains them, and Auth0 asks a human to approve any revocation.">
+  <meta property="og:url" content="https://aridiosilva.com/challenges/challenge001/">
+  <meta property="og:image" content="https://aridiosilva.com/challenges/challenge001/assets/image_cover.webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;family=Source+Serif+4:opsz,wght@8..60,500;6..60,700&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/publications.css?v=20261012-14">
+  <link rel="stylesheet" href="/assets/article-accessibility.css">
+  <link rel="stylesheet" href="/assets/fixed-site-header.css?v=20261016-1">
+  <link rel="stylesheet" href="/assets/editorial-hero.css?v=20261017-1">
+  <link rel="stylesheet" href="/assets/homepage-footer-preview.css?v=20261017-5">
+  <link rel="stylesheet" href="/assets/challenges.css?v=20261026-1">
+  <script defer src="/assets/article20-accessibility.js?v=20261014"></script>
+  <script defer src="/assets/fixed-site-header.js?v=20261016-1"></script>
+  <!-- GA4 G-MXMJ7Z3LS7: automatic cookieless audience measurement; analytics and advertising storage remain disabled. -->
+  <script defer src="/assets/analytics-consent.js?v=20261011"></script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"SlothGuard: a lazy access reviewer that asks your phone before it revokes anything","author":{"@type":"Person","name":"Aridio Silva","identifier":"https://orcid.org/0009-0008-2411-6995"},"dateCreated":"2026-10-24","datePublished":"2026-10-26","dateModified":"2026-10-26","inLanguage":"en","identifier":"https://doi.org/10.5281/zenodo.23665904","url":"https://aridiosilva.com/challenges/challenge001/","image":"https://aridiosilva.com/challenges/challenge001/assets/image_cover.webp","description":"A DEV Hacktoberfest 2026 challenge submission: deterministic segregation-of-duties rules detect conflicts, local Gemma explains them, and Auth0 asks a human to approve any revocation.","sameAs":["https://doi.org/10.5281/zenodo.23665904","https://dev.to/aridiosilva/slothguard-a-lazy-access-reviewer-that-asks-your-phone-before-it-revokes-anything-4k1a","https://github.com/aridiosilva/SlothGuard","https://youtu.be/9JlqE3jBITk"],"isPartOf":{"@type":"CollectionPage","name":"Challenges","url":"https://aridiosilva.com/challenges/"}}</script>
+</head>
+<body class="article-page challenge-page">
+  <a class="skip" href="#main">Skip to main content</a>
+  <header class="site-header"><div class="shell header-inner">
+    <a class="identity" href="/#top" aria-label="Aridio Silva home"><strong>Aridio Silva</strong><span>Independent Researcher · AI Systems Architecture</span></a>
+    <nav aria-label="Primary navigation"><a href="/">Home</a><a href="/sgaeia.html">SGAEIA</a><a href="/publications.html">Publications</a><a href="/infographics/">Infographics</a><a href="/challenges/" aria-current="page">Challenges</a></nav>
+    <div class="reading-tools" role="group" aria-label="Reading controls"><button type="button" id="articleFontDecrease" aria-label="Decrease text size">A−</button><button type="button" id="articleFontIncrease" aria-label="Increase text size">A+</button><button type="button" id="articleEasyRead" aria-pressed="false">Easy read</button><button type="button" id="articleListen" aria-pressed="false">Listen</button></div>
+  </div></header>
+  <main id="main">
+    <section class="hero"><div class="shell article"><p class="eyebrow">Challenge 001 · DEV Hacktoberfest 2026</p><h1>SlothGuard: a lazy access reviewer that asks your phone before it revokes anything</h1><p class="subtitle">Rules detect · Gemma explains · A human approves</p><p class="meta">DEV Hacktoberfest 2026 · Open-Source AI Challenge · Week 3 · October 2026 · DOI 10.5281/zenodo.23665904</p><nav class="language-nav" aria-label="Challenge languages"><a href="/challenges/challenge001/" lang="en" aria-current="page">English</a><span aria-hidden="true">·</span><a href="/challenges/challenge001/pt/" lang="pt-BR">Português</a></nav></div></section>
+    <section class="content"><article class="shell article article-body">
+      <figure class="challenge-cover cover-figure"><img src="/challenges/challenge001/assets/image_cover.webp" alt="SlothGuard — a lazy access reviewer" width="1000" height="420" loading="eager" decoding="async" fetchpriority="high"><figcaption><strong>Cover — SlothGuard</strong><span class="figure-credit">© 2026 Aridio Silva · DEV Hacktoberfest Open-Source AI Challenge</span></figcaption></figure>
+<p><em>This is a submission for the <a href="https://dev.to/challenges/hacktoberfest-week3-2026-10-19" target="_blank" rel="noopener noreferrer">Hacktoberfest Open-Source AI Challenge Week 3: Slow and Steady</a></em></p>
+<h2 id="what-i-built">What I Built</h2>
+<p><strong>Be lazy when you read. Be careful when you approve.</strong></p>
+<p>Access reviews are the chore everyone postpones. Someone hands you a long list of who can do what, and hidden in it is one question: which pairs of permissions should never belong to the same person? Security people call it segregation of duties (SoD). A user who can both create a vendor and release payments to that vendor is the textbook case.</p>
+<p>SlothGuard does the dull part and keeps the human for the one decision that matters.</p>
+<ul>
+<li><strong>Rules detect.</strong> Deterministic rules check 40 synthetic users against 9 SoD rules and find 8 conflicts (5 high, 2 medium, 1 low).</li>
+<li><strong>A local model explains.</strong> Gemma 4 E2B, an open-weight model running on my own PC through Ollama, writes a short explanation for each finding. The code caps it at 4 sentences and falls back to a default text if the model fails.</li>
+<li><strong>A person approves.</strong> To revoke a role, the app asks for approval on a phone through Auth0 (Universal Login, CIBA, Guardian). Approve, deny or ignore it: the three outcomes are in the video.</li>
+</ul>
+<p>One rule holds the whole design together: <strong>the model never decides findings or severity, and it never touches a permission.</strong> It only explains. Everything is synthetic data, and a &quot;revocation&quot; changes a copy kept in memory.</p>
+<figure><img src="/challenges/challenge001/assets/slothguard_fig1_detect_explain.png" alt="Sequence diagram of Phase 1: rules detect, Gemma explains" loading="eager" decoding="async"><figcaption>Figure 1. Phase 1 (detect and explain): the rules engine finds the conflicts and Gemma writes a short explanation for each one. If an answer is missing or breaks the 4-sentence limit, a fixed template is used and the reason is recorded.</figcaption></figure>
+<figure><img src="/challenges/challenge001/assets/slothguard_fig2_human_approval.png" alt="Sequence diagram of Phase 2: human approval through Auth0" loading="eager" decoding="async"><figcaption>Figure 2. Phase 2 (human approval): nothing is revoked unless the approver answers Approve on the phone. A denial, no answer in 120 s or a failure all mean nothing is revoked, and every step is logged.</figcaption></figure>
+<h2 id="demo">Demo</h2>
+<p>Full demo, with English captions burned in (7 min 55 s): <a href="https://youtu.be/9JlqE3jBITk" target="_blank" rel="noopener noreferrer">https://youtu.be/9JlqE3jBITk</a>. The approval on the phone starts at <a href="https://youtu.be/9JlqE3jBITk?t=254" target="_blank" rel="noopener noreferrer">4:14</a>.</p>
+<p>Phase 1 turned 40 synthetic users and 9 rules into 8 findings, each explained by Gemma. Rule, user and roles come from the data, severity comes from the rule, and the last column is how long the model took in the run of 23 Oct (97.1 s in total, <code>docs/evidence/review-run.md</code>):</p>
+<div class="table-wrap" role="region" aria-label="Scrollable data table" tabindex="0"><table>
+<thead>
+<tr>
+<th>Rule</th>
+<th>User</th>
+<th>Conflicting roles</th>
+<th>Severity (from the rule)</th>
+<th>Explanation time</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SOD-001</td>
+<td>U001</td>
+<td>Vendor_Master_Maintain + Payment_Release</td>
+<td>High</td>
+<td>23.9 s *</td>
+</tr>
+<tr>
+<td>SOD-002</td>
+<td>U002</td>
+<td>Purchase_Requester + Purchase_Approver</td>
+<td>High</td>
+<td>10.6 s</td>
+</tr>
+<tr>
+<td>SOD-003</td>
+<td>U003</td>
+<td>Journal_Entry_Create + Journal_Entry_Approve</td>
+<td>High</td>
+<td>10.4 s</td>
+</tr>
+<tr>
+<td>SOD-006</td>
+<td>U004</td>
+<td>User_Admin + Audit_Log_Admin</td>
+<td>High</td>
+<td>11.5 s</td>
+</tr>
+<tr>
+<td>SOD-004</td>
+<td>U010</td>
+<td>Payroll_Maintain + Payroll_Approve</td>
+<td>High</td>
+<td>10.7 s</td>
+</tr>
+<tr>
+<td>SOD-005</td>
+<td>U007</td>
+<td>Bank_Reconcile + Payment_Release</td>
+<td>Medium</td>
+<td>9.8 s</td>
+</tr>
+<tr>
+<td>SOD-007</td>
+<td>U008</td>
+<td>Dev_Commit + Prod_Deploy</td>
+<td>Medium</td>
+<td>10.4 s</td>
+</tr>
+<tr>
+<td>SOD-008</td>
+<td>U009</td>
+<td>Inventory_Adjust + Inventory_Count_Approve</td>
+<td>Low</td>
+<td>9.9 s</td>
+</tr>
+</tbody>
+</table></div>
+<p>* The first explanation includes loading the model.</p>
+<figure><img src="/challenges/challenge001/assets/slothguard_frame_03_phase2_findings.png" alt="The findings page: severity comes from the rules, the explanation from the model" loading="eager" decoding="async"><figcaption>Figure 3. The findings page. Severity comes from the rules; the Explanation column comes from Gemma. Frame from the demo video.</figcaption></figure>
+<p>Here is the first finding in full. This is what Gemma wrote in the committed run of 23 Oct, in 4 sentences (<code>docs/evidence/report-sample.md</code>). The frame above comes from a later run, so its wording differs:</p>
+<blockquote>
+<p>Holding both the Vendor_Master_Maintain and Payment_Release roles creates a significant risk because a single user has the ability to create a vendor and then process payments for that vendor. This conflict violates the Separation of Duties (SOD-001) principle, allowing for potential fraud, such as creating fictitious vendors and issuing payments. To mitigate this, review the access controls to ensure that the authority to maintain vendor master data is strictly separated from the authority to release payments. Consider restricting the Payment_Release role to only payments against existing, approved vendors.</p>
+</blockquote>
+<p>When a person proposes revoking a role, the request reaches the phone as a Guardian push. The page shows Waiting and refreshes by itself.</p>
+<figure><img src="/challenges/challenge001/assets/slothguard_frame_05_phone_approve_request.png" alt="The Guardian request on the phone" loading="eager" decoding="async"><figcaption>Figure 4. The request on the phone: revoke <code>Vendor_Master_Maintain</code> from U001. &quot;Negar&quot; is Deny, &quot;Permitir&quot; is Allow. Tenant and e-mail are hidden.</figcaption></figure>
+<p>The request can end three ways, and each one ends differently:</p>
+<figure><img src="/challenges/challenge001/assets/slothguard_outcomes_composite.png" alt="Three outcomes: Approved, Denied and Expired" loading="eager" decoding="async"><figcaption>Figure 5. The three outcomes. Approved: the role was revoked from U001 in the program's memory only. Denied: the request for U003 was denied on the phone. Expired: nobody answered the request for U002, so nothing was revoked. Frames from the demo video.</figcaption></figure>
+<figure><img src="/challenges/challenge001/assets/slothguard_frame_09_audit_trail.png" alt="Audit trail" loading="eager" decoding="async"><figcaption>Figure 6. The audit trail after the runs: U001 proposed, approved, executed; U002 proposed and expired (two attempts); U003 proposed and denied.</figcaption></figure>
+<h2 id="code">Code</h2>
+<p>Repository: <a href="https://github.com/aridiosilva/SlothGuard" target="_blank" rel="noopener noreferrer">https://github.com/aridiosilva/SlothGuard</a></p>
+<aside class="repository-callout"><span><strong>Source code and evidence</strong><br>Tests, implementation, documentation, and recorded evidence are available in the public repository.</span><a class="button primary" href="https://github.com/aridiosilva/SlothGuard" target="_blank" rel="noopener noreferrer">Open GitHub repository</a></aside>
+<p>To run it (PowerShell, from the project folder):</p>
+<pre><code class="language-powershell">ollama pull gemma4:e2b
+.\.venv\Scripts\python scripts\run_review.py   # Phase 1: needs Ollama running
+.\.venv\Scripts\python scripts\run_app.py      # Phase 2: open http://localhost:8000
+</code></pre>
+<p>Use <code>localhost</code>, not <code>127.0.0.1</code>: it is the address registered in Auth0. The Auth0 settings go in a local <code>.env</code> file, which git ignores; the README section &quot;Auth0 setup&quot; lists exactly what to configure.</p>
+<p>Tests: 177 passed and 1 skipped, as the README reports (the skipped one needs a running Ollama: set <code>RUN_OLLAMA_TESTS=1</code>). The git history shows the <code>test:</code> commits before the matching <code>feat:</code> ones.</p>
+<p>The central idea, the cap and the fallback around the model, from <code>src/slothguard/llm/__init__.py</code>:</p>
+<pre><code class="language-python">def explain_finding(
+    finding: Finding,
+    rule: SoDRule,
+    client: LLMClient,
+    cache: Optional[ExplanationCache] = None,
+    max_sentences: int = MAX_SENTENCES,
+) -&gt; Explanation:
+    if cache is not None:
+        hit = cache.get(finding)
+        if hit:
+            return Explanation(text=hit, source=&quot;cache&quot;)
+
+    try:
+        answer = client.generate(build_prompt(finding, rule, max_sentences))
+    except Exception:
+        return Explanation(text=fallback_text(finding, rule), source=&quot;fallback&quot;, reason=&quot;model_error&quot;)
+
+    text = clean_model_text(answer) if isinstance(answer, str) else &quot;&quot;
+    if not text:
+        return Explanation(text=fallback_text(finding, rule), source=&quot;fallback&quot;, reason=&quot;empty_answer&quot;)
+
+    if count_sentences(text) &gt; max_sentences:
+        return Explanation(text=fallback_text(finding, rule), source=&quot;fallback&quot;, reason=&quot;too_many_sentences&quot;)
+
+    if cache is not None:
+        cache.put(finding, text)
+    return Explanation(text=text, source=&quot;model&quot;)
+</code></pre>
+<p>The prompt asks the model to keep to 4 sentences and not to change the severity. The code does not rely on the model listening: severity comes from the rule, and the cap is checked afterwards.</p>
+<h2 id="how-i-built-it">How I Built It</h2>
+<p><strong>First, can this PC run it?</strong> Before building the explanation step (22 and 23 Oct), I checked whether this machine could carry a model at all. On paper it looked tight: 15.7 GB of usable RAM in a single channel, and a back-of-the-envelope speed ceiling of about 14 tokens per second from memory bandwidth. Then I measured six requests with Gemma 4 E2B: 13.0 to 21.6 tokens per second, with only 4.2 GB of RAM free before the first one. My ceiling was wrong, so I trusted the measurement over the estimate.</p>
+<p><strong>Phase 1: rules first, model second.</strong> The rules run before the model and decide everything that matters: which user, which rule, which severity. Only then does Gemma 4 E2B (the <code>gemma4:e2b</code> tag in Ollama, a 4.6 GB download) get the finding and write a short explanation, with thinking turned off. The limit is enforced by the code, not only requested in the prompt: in my first measurements one answer out of six broke it. If one answer fails, comes back empty or goes over the limit, a fixed template is used for that finding and the reason is recorded, so a bad answer never blocks the report. The fallback is not hypothetical: in my first real run of the review script (23 Oct), Ollama was not running, all 8 findings came out as the fixed template in 32.9 s, and the report was still written. Today, if Ollama cannot be reached at all, <code>run_review.py</code> stops at once instead of writing a report made only of templates.</p>
+<p><strong>Phase 2: the human step.</strong> The web app lets a reviewer log in through Auth0 Universal Login and propose a revocation from the findings page. The app starts a CIBA request, and Auth0 sends a push to the Guardian app on the phone, carrying a short message such as <code>SoD#SOD-001:revoke-Vendor_Master_Maintain-from-U001</code>. The page polls <code>GET /proposals/&lt;id&gt;</code> about every 3 seconds until the answer arrives. Approved, denied or expired, each outcome goes to the audit trail. The gateway fails closed: an error, an unknown answer or a timeout (120 s) all mean &quot;do not revoke&quot;. The text on the phone is the text shown on the page, so the approver sees what they are approving. I checked all three outcomes in the real interface.</p>
+<figure><img src="/challenges/challenge001/assets/slothguard_evidence_composite.png" alt="Web server log and Auth0 log" loading="eager" decoding="async"><figcaption>Figure 7. Evidence. Top: the web server log, one POST per proposal and then a GET about every 3 seconds (login callback values hidden). Bottom: the Auth0 log, from CIBA start to token exchange. Tenant name and address are hidden.</figcaption></figure>
+<p><strong>Tests first.</strong> For each piece I wrote the tests before the code and committed them separately, so the history shows <code>test:</code> commits before the matching <code>feat:</code> ones. The Auth0 and Ollama calls are covered with fakes, and I checked the real services by hand.</p>
+<p><strong>Pair-programming with an AI.</strong> I built SlothGuard as the human developer, in pair-programming with an AI coding assistant, Claude (Anthropic). I set the goal, the requirements and the architecture, made the project decisions, reviewed and verified the code, and did every manual step myself: the Auth0 configuration, the Guardian and Ollama setup, and running the commands. Claude helped with code suggestions, debugging, tests and documentation drafts. It did not set the direction, and it is not part of the product: the AI inside the product is Gemma 4 E2B. Figure 8 shows the split; the full account is in the <a href="https://github.com/aridiosilva/SlothGuard#credits" target="_blank" rel="noopener noreferrer">README</a>.</p>
+<figure><img src="/challenges/challenge001/assets/slothguard_pair_programming_context.png" alt="Pair-programming context" loading="eager" decoding="async"><figcaption>Figure 8. Diagram redrawn and extended with Claude at the author's direction.</figcaption></figure>
+<h2 id="why-does-open-innovation-matter">Why Does Open Innovation Matter?</h2>
+<p><strong>The data stays on my machine.</strong> The explanation comes from a model I run myself. The list of who holds which role never goes to a model provider. What leaves the machine is the login and one short approval message that Auth0 delivers to the phone. That is the whole trade, and it is visible on the phone screen in the video.</p>
+<p><strong>Phase 1 works offline.</strong> I ran it with the PC in airplane mode, after a connectivity check returned <code>False</code>: 8 of 8 explanations came from the local model, in 63.5 s. Only Phase 2 needs the internet, because Auth0 does.</p>
+<p><strong>I can measure and tune it.</strong> Because I run the model, I could look at tokens and seconds on the machine that does the work. Gemma writes a long thinking trace before each answer. Turning it off cut the generated tokens by about 81% (506 to 94 on average, three runs each) and took a warm explanation from about 27 s to about 6 s, at the same speed per token (13 to 22 tokens per second). I measured it, I did not assume it (<code>docs/evidence/ollama-baseline.md</code>).</p>
+<p><strong>It is small enough for an ordinary PC.</strong> Everything ran on a Dell 24 All-in-One (EC24250). The workbook <code>docs/recursos_hardware_e_limitacoes_v2.xlsx</code> in the repository has the full table of resources and limits (in Portuguese). In short:</p>
+<div class="table-wrap" role="region" aria-label="Scrollable data table" tabindex="0"><table>
+<thead>
+<tr>
+<th>Item</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Machine</td>
+<td>Dell 24 All-in-One EC24250, Windows 11</td>
+</tr>
+<tr>
+<td>CPU</td>
+<td>Intel Core i5-1334U (13th gen), 10 cores (2 performance + 8 efficiency), 15 W base</td>
+</tr>
+<tr>
+<td>RAM</td>
+<td>16 GB (15.7 GB usable), SODIMM at 5200 MT/s, single channel (1 of 2 slots used)</td>
+</tr>
+<tr>
+<td>GPU</td>
+<td>Intel UHD Graphics, 128 MB dedicated, borrows system RAM; I did not verify whether Ollama used it</td>
+</tr>
+<tr>
+<td>Software</td>
+<td>Ollama 0.40.8 (0.40.10 later), <code>gemma4:e2b</code> (4.6 GB on disk), Python 3.14.7</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>I can swap the model.</strong> The client sends one request to a local server, so trying another open-weight model is a change of the model name. I only tested Gemma 4 E2B, and a model without a thinking mode may need the thinking switch removed.</p>
+<p><strong>Where open did not clearly win.</strong> I did not compare against a closed model, so I make no claim that Gemma explains better or cheaper. A small local model is slow here (63.5 to 157.4 s for eight explanations, depending on the run) and sometimes picks words I would not: in my baseline it wrote &quot;critical&quot; in 4 of 6 answers for findings the rule rates &quot;high&quot;. That is why it only explains. Auth0 is a hosted service and the approval step needs the internet. What the open model gives me is control over where the sensitive part runs, not a benchmark.</p>
+<h2 id="the-lazy-payoff">The Lazy Payoff</h2>
+<p>Only numbers I measured. Phase 1, 40 users against 9 rules, 8 findings, all 8 explained by the model. The table lists the runs that have a file in the repository or in its history, plus the run shown in the video:</p>
+<div class="table-wrap" role="region" aria-label="Scrollable data table" tabindex="0"><table>
+<thead>
+<tr>
+<th>Run</th>
+<th>Total time</th>
+<th>Conditions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>23 Oct, <code>review-run.md</code></td>
+<td>97.1 s</td>
+<td>Free RAM 6.1 GB; Ollama started by hand; ChatGPT closed. The first finding takes 23.9 s because it includes loading the model; the other seven take 9.8 to 11.5 s</td>
+</tr>
+<tr>
+<td>23 Oct, <code>review-run-4.3gb-2026-10-23.md</code></td>
+<td>139.0 s</td>
+<td>Free RAM 4.3 GB; power mode not checked; ChatGPT closed, but Claude and a browser still open; model unloaded before the run; Ollama started by hand. The first finding takes 52.8 s; the other seven take 10.5 to 13.9 s</td>
+</tr>
+<tr>
+<td>23 Oct, <code>review-run-low-ram.md</code></td>
+<td>157.4 s</td>
+<td>Free RAM 1.1 GB; Windows just restarted and other apps open, so not a clean run. The first finding takes 57.8 s</td>
+</tr>
+<tr>
+<td>24 Oct, the run shown in the video</td>
+<td>98.9 s</td>
+<td>Conditions not recorded; this run is not committed</td>
+</tr>
+<tr>
+<td>25 Oct, <code>review-run-airplane-two-browsers-2026-10-25.md</code></td>
+<td>104.1 s</td>
+<td>Airplane mode on, two browsers open; free RAM not measured; connectivity not tested. The first finding takes 26.4 s</td>
+</tr>
+<tr>
+<td>25 Oct, <code>review-run-offline-2026-10-25.md</code></td>
+<td>63.5 s</td>
+<td>Offline (connectivity check returned <code>False</code>); free RAM 2.1 GB before the run. The first finding takes only 6.8 s, so the model was probably still loaded from the previous run (my inference); the other seven take 6.0 to 8.9 s</td>
+</tr>
+</tbody>
+</table></div>
+<p>In the three runs of 23 Oct, more free memory meant a faster run (97.1 s, 139.0 s, 157.4 s). The offline run of 25 Oct shows it is not the whole story: it was the fastest, with only 2.1 GB free, although the model was probably already loaded. So the reviewer's wait is a range, from 63.5 s to 157.4 s, and I have not diagnosed why. Before building the pipeline I had estimated 54 to 73 s for eight findings from a small benchmark (an estimate, not a measurement; same workbook). The offline run falls inside that range and the other recorded runs fall above it.</p>
+<p>Quality check (<code>docs/evidence/review-quality.md</code>): 8 findings, 8 explained, all 8 within 4 sentences. One explanation (SOD-007, U008) used the word &quot;critical&quot; for a finding the rule rates medium.</p>
+<p>I did not measure how much time this saves compared with reviewing by hand, and I do not claim a number.</p>
+<h2 id="limits">Limits</h2>
+<ul>
+<li><strong>Synthetic data only.</strong> 40 users and 9 rules. This is a prototype, not a product.</li>
+<li><strong>The revocation changes a copy in memory.</strong> Nothing touches a real identity system, and the audit trail resets when the app restarts.</li>
+<li><strong>A small model drifts.</strong> In the final run all 8 explanations stayed within 4 sentences, but one called a medium finding &quot;critical&quot;; in my baseline &quot;critical&quot; appeared in 4 of 6 answers for &quot;high&quot; findings, and one answer had 5 sentences. That is why severity comes from the rules and the code enforces the limit. My quality check counts sentences and severity words; it does not judge whether an explanation is correct.</li>
+<li><strong>Timing varies.</strong> See the table above.</li>
+<li><strong>The timeout.</strong> U002's request expired after 120 s with no answer; the audit trail shows two such attempts.</li>
+<li><strong>Rough edges in my own recording.</strong> The first login attempt ended in a 400 error page, and the second one worked. The Auth0 log also warns that development keys are in use for the Google connection. The phone clips are from separate runs, recorded at 22:20, 22:29 and 22:33. The captions say so.</li>
+<li><strong>GPU use not verified.</strong> The machine has only Intel UHD graphics, which borrow system RAM. I ran Ollama with its default settings and did not check whether the integrated GPU was used.</li>
+<li><strong>One person can play both roles.</strong> In my demo the proposer and the approver can be the same Auth0 user. A real deployment needs two people.</li>
+<li><strong>The approval message leaves the machine.</strong> It contains the user id and the role name, and that text goes to Auth0. With real data I would send opaque ids.</li>
+<li><strong>Auth0 free trial.</strong> I checked the asynchronous approval on an Auth0 tenant during its free trial period. I have not verified whether it is available after the trial.</li>
+<li><strong>Development server.</strong> The web server is Flask's development server, meant for local use.</li>
+<li><strong>No claim of novelty.</strong> I did not search for prior work, so I do not call the project new in any way beyond &quot;built this week&quot;.</li>
+<li><strong>Commits after the deadline.</strong> None.</li>
+</ul>
+<h2 id="prize-categories">Prize Categories</h2>
+<ul>
+<li><strong>Best Use of Auth0 for AI Agents.</strong> The challenge page lists &quot;ask a person to approve a risky action before the agent takes it&quot; as a use. SlothGuard applies that step: a revocation is only proposed until a person answers through Auth0 CIBA and Guardian, with Universal Login for the sign-in. Honest notes: SlothGuard is not an autonomous agent. Gemma only explains findings and never proposes or executes a revocation; a person proposes it in the web app. What I borrowed from Auth0 for AI Agents is the approval pattern, which is the step an agent would need if it were ever allowed to propose revocations itself. I did not use Token Vault or fine-grained authorization. Also, the asynchronous approval worked on my Auth0 tenant during its free trial period, and I have not checked whether it is available after the trial.</li>
+<li><strong>Best Use of Gemma.</strong> Gemma 4 E2B runs locally through Ollama and writes every explanation in the demo, with no cloud call for the model.</li>
+</ul>
+<h2 id="primary-sources">Primary sources</h2>
+<ul>
+<li><a href="https://dev.to/challenges/hacktoberfest-week3-2026-10-19" target="_blank" rel="noopener noreferrer">Hacktoberfest Open-Source AI Challenge: Week 3</a></li>
+<li><a href="https://dev.to/page/official-hackathon-rules" target="_blank" rel="noopener noreferrer">General Contest Official Rules</a></li>
+<li><a href="https://auth0.com/ai/docs" target="_blank" rel="noopener noreferrer">Auth0 for AI Agents</a></li>
+<li><a href="https://ai.google.dev/gemma" target="_blank" rel="noopener noreferrer">Gemma</a></li>
+</ul>
+<h2 id="credits">Credits</h2>
+<p>Built by Aridio Silva, Independent Researcher (@aridiosilva), ORCID 0009-0008-2411-6995, with AI help (pair-programmed with Claude). Libraries: Flask, Authlib, Requests, pytest. Model: Gemma 4 E2B, run through Ollama. Identity and approval: Auth0 (Universal Login, CIBA, Guardian). The Auth0 and Ollama documentation were used for the request formats.</p>
+<p>Images, video and metadata: © Aridio Silva @aridiosilva, 24 Oct 2026.</p>
+<h2 id="full-demo-video">Full demo video</h2>
+<p><a class="button primary" href="https://youtu.be/9JlqE3jBITk" target="_blank" rel="noopener noreferrer">Watch the full SlothGuard demo on YouTube</a></p>
+
+<p class="challenge-distribution-links"><a class="button primary" href="https://dev.to/aridiosilva/slothguard-a-lazy-access-reviewer-that-asks-your-phone-before-it-revokes-anything-4k1a" target="_blank" rel="noopener noreferrer">DEV Community post</a><a class="button" href="https://dev.to/challenges/hacktoberfest-week3-2026-10-19" target="_blank" rel="noopener noreferrer">Hackathon page</a><a class="button" href="https://doi.org/10.5281/zenodo.23665904" target="_blank" rel="noopener noreferrer">Zenodo DOI</a><a class="button" href="https://github.com/aridiosilva/SlothGuard" target="_blank" rel="noopener noreferrer">GitHub repository</a></p>
+    </article></section>
+  </main>
+<footer class="site-footer footer-style-preview" id="footer">
+  <div class="shell">
+    <div class="footer-head">
+      <div class="footer-brand-lockup">
+        <img class="footer-sgaeia-logo" src="/assets/sgaeia-logo-transparent.png" alt="" aria-hidden="true" width="1254" height="1254" loading="lazy" decoding="async">
+        <a class="footer-wordmark footer-project-link" href="/sgaeia.html">SGAEIA</a>
+      </div>
+      <div class="footer-note">SGAEIA · Research on governed autonomous and distributed AI systems.</div>
+    </div>
+    <nav class="brand-links footer-name-links" aria-label="Research profiles and project links">
+      <a class="footer-profile-link" aria-label="GitHub" title="GitHub" href="https://github.com/aridiosilva" target="_blank" rel="noopener noreferrer"><strong>GitHub</strong></a>
+      <a class="footer-profile-link" aria-label="ORCID" title="ORCID" href="https://orcid.org/0009-0008-2411-6995" target="_blank" rel="me noopener noreferrer"><strong>ORCID</strong></a>
+      <a class="footer-profile-link" aria-label="Google Scholar" title="Google Scholar" href="https://scholar.google.com/citations?user=rPn5O48AAAAJ" target="_blank" rel="noopener noreferrer"><strong>Google Scholar</strong></a>
+      <a class="footer-profile-link" aria-label="Zenodo author records" title="Zenodo" href="https://zenodo.org/search?q=metadata.creators.person_or_org.name%3A%22Silva%2C%20Aridio%22" target="_blank" rel="noopener noreferrer"><strong>Zenodo</strong></a>
+      <a class="footer-profile-link" aria-label="SGAEIA Zenodo Community" title="SGAEIA — Zenodo Community" href="https://zenodo.org/communities/sgaeia" target="_blank" rel="noopener noreferrer"><strong>SGAEIA · Zenodo Community</strong></a>
+      <a class="footer-profile-link" aria-label="OpenAIRE" title="OpenAIRE" href="https://explore.openaire.eu/search/find?fv0=Aridio%20Silva&amp;f0=q" target="_blank" rel="noopener noreferrer"><strong>OpenAIRE</strong></a>
+      <a class="footer-profile-link" aria-label="Medium" title="Medium" href="https://medium.com/@aridiosilva" target="_blank" rel="noopener noreferrer"><strong>Medium</strong></a>
+      <a class="footer-profile-link" aria-label="DEV Community profile" title="DEV Community" href="https://dev.to/aridiosilva" target="_blank" rel="me noopener noreferrer"><strong>DEV Community</strong></a>
+      <a class="footer-profile-link" aria-label="LinkedIn" title="LinkedIn" href="https://www.linkedin.com/in/aridio-silva-74997111/" target="_blank" rel="noopener noreferrer"><strong>LinkedIn</strong></a>
+      <a class="footer-profile-link" aria-label="SGAEIA LinkedIn" title="SGAEIA LinkedIn" href="https://www.linkedin.com/company/sgaeia/" target="_blank" rel="noopener noreferrer"><strong>SGAEIA · LinkedIn</strong></a>
+      <a class="footer-profile-link" aria-label="SGAEIA GitHub Repository" title="SGAEIA Repository" href="https://github.com/aridiosilva/SGAEIA" target="_blank" rel="noopener noreferrer"><strong>SGAEIA Repository</strong></a>
+      <a class="footer-profile-link" aria-label="Kaggle" title="Kaggle" href="https://www.kaggle.com/aridiosilva2" target="_blank" rel="noopener noreferrer"><strong>Kaggle</strong></a>
+      <a class="footer-profile-link" aria-label="SGAEIA research artifact DOI" title="SGAEIA Research Artifact / DOI" href="https://doi.org/10.5281/zenodo.22557796" target="_blank" rel="noopener noreferrer"><strong>SGAEIA DOI</strong></a>
+    </nav>
+    <div class="footer-bottom">
+      <span>© 2026 Aridio Silva</span>
+      <span>Last updated: 26 October 2026 — Version 2.0</span>
+      <span>Autonomous AI. Governed by Design. Trusted by Evidence.</span>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
