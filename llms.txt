@@ -181,6 +181,7 @@ Use the matching language's homepage record as the canonical reading edition. Th
 - [ORCID record](https://orcid.org/0009-0008-2411-6995): Public researcher identity and works record.
 - [Google Scholar profile](https://scholar.google.com/citations?user=rPn5O48AAAAJ): Scholarly publications and citations.
 - [Medium profile](https://medium.com/@aridiosilva): Public research articles and technical essays.
+- [Academia.edu profile](https://independent.academia.edu/AridioSilva): Public distribution profile for articles from the SGAEIA research project.
 - [GitHub profile](https://github.com/aridiosilva): Public software repositories and research artifacts.
 
 ## Featured publication

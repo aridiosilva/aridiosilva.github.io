@@ -1048,3 +1048,13 @@ Novos artigos e infográficos devem reutilizar esse rodapé compartilhado e sua 
 - As páginas novas carregam uma única referência ao Analytics compartilhado `/assets/analytics-consent.js?v=20261011`; CSP, canonical, `hreflang` e `x-default` seguem o padrão atual.
 - PDFs preservados por SHA-256: EN `D934B1AA2485082E524E12CB8A9A469146523281208D9C0A52220FD05C8F4A61`; PT `8A8EBDD1E8AFFC676B53407106F3F313475B63DDE2E8E2ED49355C2C2137C868`.
 - Nenhum ativo CSS ou JavaScript compartilhado foi alterado. Nenhum stage, commit ou push foi executado pelo assistente.
+
+## Academia.edu nos rodapés de todas as páginas — 28 de outubro de 2026
+
+- Adicionado `Academia.edu` à navegação de perfis dos rodapés das 69 páginas HTML públicas, com destino `https://independent.academia.edu/AridioSilva`.
+- O novo item usa a classe compartilhada `footer-profile-link`, abre em nova aba com `target="_blank"` e preserva `rel="noopener noreferrer"`.
+- Hover, foco visível, tipografia, contraste, quebra responsiva e movimento reduzido continuam herdados do sistema de rodapé existente; nenhum CSS ou JavaScript precisou ser alterado.
+- A inclusão foi posicionada após `Medium` e antes de `DEV Community`, mantendo a mesma ordem em páginas EN e PT.
+- `llms.txt` passou a registrar o perfil Academia.edu entre os arquivos e perfis de pesquisa; `robots.txt` recebeu o comentário informativo e todas as 69 URLs do sitemap receberam `lastmod` 2026-10-28.
+- Auditoria estrutural confirmou exatamente um link Academia.edu dentro do rodapé de cada HTML, sem duplicações. Alterações anteriores do Info_017 foram preservadas.
+- Nenhum stage, commit ou push foi executado pelo assistente.
