@@ -584,6 +584,26 @@
     </image:image>
   </url>
   <url>
+    <loc>https://aridiosilva.com/publications/artigo23/</loc>
+    <lastmod>2026-10-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aridiosilva.com/publications/artigo23/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://aridiosilva.com/publications/artigo23/pt/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aridiosilva.com/publications/artigo23/"/>
+    <image:image><image:loc>https://aridiosilva.com/assets/article23/en/sgaeia-article-23-cover_EN.png</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://aridiosilva.com/publications/artigo23/pt/</loc>
+    <lastmod>2026-10-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aridiosilva.com/publications/artigo23/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://aridiosilva.com/publications/artigo23/pt/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aridiosilva.com/publications/artigo23/"/>
+    <image:image><image:loc>https://aridiosilva.com/assets/article23/pt/sgaeia-article-23-cover_PT.png</image:loc></image:image>
+  </url>
+  <url>
     <loc>https://aridiosilva.com/publications/artigo22/</loc>
     <lastmod>2026-10-28</lastmod>
     <changefreq>monthly</changefreq>

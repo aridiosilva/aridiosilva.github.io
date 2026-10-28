@@ -19,8 +19,8 @@ The website brings together:
 
 The latest consolidated log entry is dated **28 October 2026**. At that point, the repository recorded:
 
-- **69 public HTML pages** using the shared navigation and footer system;
-- SGAEIA Research Series publications through **Article 22**;
+- **71 public HTML pages** using the shared navigation and footer system;
+- SGAEIA Research Series publications through **Article 23**;
 - bilingual infographics through **Info_017**;
 - the **Challenges** index and **SlothGuard Challenge 001** in English and Portuguese;
 - English as the canonical and `x-default` edition for bilingual content;
@@ -89,6 +89,7 @@ This section summarizes the detailed records under [`docs/logs/`](docs/logs/). T
 - **21 October — Article 22 and Info_016.** Added the complete bilingual Article 22 reading editions and the 50-slide bilingual Info_016 edition. The update reinforced the mandatory GA4, CSP, canonical, `hreflang`, `x-default`, structured-data, sitemap, LLM, and robots requirements for every new public page.
 - **26 October — Challenges and SlothGuard Challenge 001.** Added the public Challenges index and bilingual challenge pages, project links, responsive media, tables, privacy-enhanced video, citation metadata, DOI records, and a Challenges item in all then-current page headers. Published-image loading and the challenge video presentation were subsequently corrected.
 - **28 October — Info_017.** Added *Cutting LLM Cost by 70% Without Losing Quality* / *Reduzir 70% do Custo com LLMs sem Perder Qualidade* as a bilingual edition with 41 slides per language, original PDFs, accessible carousels, LinkedIn publication text, an index card, analytics, security metadata, and coordinated discovery. The preserved PDF SHA-256 values are `D934B1AA2485082E524E12CB8A9A469146523281208D9C0A52220FD05C8F4A61` (EN) and `8A8EBDD1E8AFFC676B53407106F3F313475B63DDE2E8E2ED49355C2C2137C868` (PT).
+- **28 October — Article 23.** Added the complete English-default and Portuguese editions of *How to Reduce the Cost of AI Systems with LLMs Without Sacrificing Quality*, including the two 26-page PDFs, localized PNG/SVG covers and 13 figures per language, 56 audited references, GA4, CSP, citation metadata, JSON-LD, reciprocal language navigation, homepage and publication-index cards, and coordinated sitemap/robots/LLM discovery.
 - **28 October — Academia.edu footer integration.** Added `Academia.edu` to the shared profile navigation of all 69 public HTML pages, linked to `https://independent.academia.edu/AridioSilva`. The item inherits the approved hover, focus, contrast, responsive wrapping, and reduced-motion behavior. Discovery records and sitemap modification dates were updated.
 
 ## Detailed log index
@@ -112,6 +113,7 @@ This section summarizes the detailed records under [`docs/logs/`](docs/logs/). T
 - [Homepage style and operational continuity](docs/logs/2026-10-11-HOMEPAGE-STYLE-CONTINUITY.md)
 - [Article 20 publication](docs/logs/2026-10-14-1537-ARTICLE20-HOMEPAGE-PUBLICATION.md)
 - [Article 21 publication](docs/logs/2026-10-17-ARTICLE21-HOMEPAGE-PUBLICATION.md)
+- [Article 23 publication](docs/logs/2026-10-28-ARTICLE23-HOMEPAGE-PUBLICATION.md)
 
 ### Infographics
 

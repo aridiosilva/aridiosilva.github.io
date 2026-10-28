@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 658" width="1200" height="658" role="img" aria-label="Figure 5. Context optimisation engine: from 100 candidates to one budgeted prompt">
+<title>Figure 5. Context optimisation engine: from 100 candidates to one budgeted prompt</title>
+<desc>© Aridio Silva @aridiosilva · Outubro 2026 · Independent Researcher · ORCID 0009-0008-2411-6995 · All figures licensed CC BY 4.0</desc>
+<metadata><rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:xmpRights="http://ns.adobe.com/xap/1.0/rights/"><rdf:Description rdf:about=""><dc:title>Figure 5. Context optimisation engine: from 100 candidates to one budgeted prompt</dc:title><dc:creator>Aridio Silva (@aridiosilva), ORCID 0009-0008-2411-6995</dc:creator><dc:rights>© Aridio Silva @aridiosilva · Outubro 2026. Licensed under CC BY 4.0.</dc:rights><dc:date>2026-10</dc:date><dc:language>en</dc:language><xmpRights:Marked>True</xmpRights:Marked><xmpRights:Owner>Aridio Silva</xmpRights:Owner><cc:license rdf:resource="https://creativecommons.org/licenses/by/4.0/"/><cc:attributionName>Aridio Silva (@aridiosilva)</cc:attributionName><dc:subject>Project SGAEIA</dc:subject><dc:identifier>https://doi.org/10.5281/zenodo.23732760</dc:identifier></rdf:Description></rdf:RDF></metadata>
+<defs><marker id="m14213d" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#14213d"/></marker></defs>
+<rect width="1200" height="658" fill="#ffffff"/>
+<rect x="30" y="22" width="6" height="52" rx="3" fill="#0e6e6a"/>
+<text x="48" y="44" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="13" font-weight="700" fill="#0e6e6a" letter-spacing="1.2">FIGURE 5</text>
+<text x="48" y="70" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="23" font-weight="700" fill="#14213d">Context optimisation engine: from 100 candidates to one budgeted prompt</text>
+<text x="1170" y="44" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="13" fill="#5b6474" text-anchor="end">Counts are illustrative</text>
+<g transform="translate(0,96)">
+<rect x="30.0" y="10.0" width="170.0" height="120.0" rx="10" fill="#d9efec" stroke="#0e6e6a" stroke-width="1.2"/>
+<text x="44.0" y="36.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="14.5" fill="#0e6e6a" font-weight="700" text-anchor="start"><tspan x="44.0" dy="0.0">Hybrid retrieval</tspan></text>
+<text x="44.0" y="60.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="12.5" fill="#14213d" font-weight="400" text-anchor="start"><tspan x="44.0" dy="0.0">BM25 top-50 + dense</tspan><tspan x="44.0" dy="16.2">top-50</tspan></text>
+<path d="M202.0,70.0 L222.0,70.0" fill="none" stroke="#14213d" stroke-width="1.8" marker-end="url(#m14213d)"/>
+<path d="M30.0,300.0 L200.0,300.0" fill="none" stroke="#c9d1dc" stroke-width="1"/>
+<rect x="75.0" y="190.0" width="80.0" height="110.0" rx="3" fill="#0e6e6a" stroke="none" stroke-width="1.2"/>
+<text x="115.0" y="182.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="14" fill="#14213d" font-weight="700" text-anchor="middle"><tspan x="115.0" dy="0.0">100</tspan></text>
+<rect x="224.0" y="10.0" width="170.0" height="120.0" rx="10" fill="#d9efec" stroke="#0e6e6a" stroke-width="1.2"/>
+<text x="238.0" y="36.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="14.5" fill="#0e6e6a" font-weight="700" text-anchor="start"><tspan x="238.0" dy="0.0">Fusion</tspan></text>
+<text x="238.0" y="60.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="12.5" fill="#14213d" font-weight="400" text-anchor="start"><tspan x="238.0" dy="0.0">Reciprocal rank fusion</tspan><tspan x="238.0" dy="16.2">(k = 60)</tspan></text>
+<path d="M396.0,70.0 L416.0,70.0" fill="none" stroke="#14213d" stroke-width="1.8" marker-end="url(#m14213d)"/>
+<path d="M224.0,300.0 L394.0,300.0" fill="none" stroke="#c9d1dc" stroke-width="1"/>
+<rect x="269.0" y="256.0" width="80.0" height="44.0" rx="3" fill="#0e6e6a" stroke="none" stroke-width="1.2"/>
+<text x="309.0" y="248.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="14" fill="#14213d" font-weight="700" text-anchor="middle"><tspan x="309.0" dy="0.0">40</tspan></text>
+<rect x="418.0" y="10.0" width="170.0" height="120.0" rx="10" fill="#d9efec" stroke="#0e6e6a" stroke-width="1.2"/>
+<text x="432.0" y="36.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="14.5" fill="#0e6e6a" font-weight="700" text-anchor="start"><tspan x="432.0" dy="0.0">Rerank</tspan></text>
+<text x="432.0" y="60.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="12.5" fill="#14213d" font-weight="400" text-anchor="start"><tspan x="432.0" dy="0.0">Cross-encoder scores</tspan><tspan x="432.0" dy="16.2">query–passage pairs</tspan></text>
+<path d="M590.0,70.0 L610.0,70.0" fill="none" stroke="#14213d" stroke-width="1.8" marker-end="url(#m14213d)"/>
+<path d="M418.0,300.0 L588.0,300.0" fill="none" stroke="#c9d1dc" stroke-width="1"/>
+<rect x="463.0" y="289.0" width="80.0" height="11.0" rx="3" fill="#0e6e6a" stroke="none" stroke-width="1.2"/>
+<text x="503.0" y="281.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="14" fill="#14213d" font-weight="700" text-anchor="middle"><tspan x="503.0" dy="0.0">10</tspan></text>
+<rect x="612.0" y="10.0" width="170.0" height="120.0" rx="10" fill="#d9efec" stroke="#0e6e6a" stroke-width="1.2"/>
+<text x="626.0" y="36.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="14.5" fill="#0e6e6a" font-weight="700" text-anchor="start"><tspan x="626.0" dy="0.0">Filter</tspan></text>
+<text x="626.0" y="60.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="12.5" fill="#14213d" font-weight="400" text-anchor="start"><tspan x="626.0" dy="0.0">Dedup, ACL, freshness,</tspan><tspan x="626.0" dy="16.2">min score</tspan></text>
+<path d="M784.0,70.0 L804.0,70.0" fill="none" stroke="#14213d" stroke-width="1.8" marker-end="url(#m14213d)"/>
+<path d="M612.0,300.0 L782.0,300.0" fill="none" stroke="#c9d1dc" stroke-width="1"/>
+<rect x="657.0" y="293.4" width="80.0" height="6.6" rx="3" fill="#0e6e6a" stroke="none" stroke-width="1.2"/>
+<text x="697.0" y="285.4" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="14" fill="#14213d" font-weight="700" text-anchor="middle"><tspan x="697.0" dy="0.0">6</tspan></text>
+<rect x="806.0" y="10.0" width="170.0" height="120.0" rx="10" fill="#d9efec" stroke="#0e6e6a" stroke-width="1.2"/>
+<text x="820.0" y="36.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="14.5" fill="#0e6e6a" font-weight="700" text-anchor="start"><tspan x="820.0" dy="0.0">Token budget</tspan></text>
+<text x="820.0" y="60.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="12.5" fill="#14213d" font-weight="400" text-anchor="start"><tspan x="820.0" dy="0.0">Pack ≤ 3k tokens;</tspan><tspan x="820.0" dy="16.2">compress if over</tspan></text>
+<path d="M978.0,70.0 L998.0,70.0" fill="none" stroke="#14213d" stroke-width="1.8" marker-end="url(#m14213d)"/>
+<path d="M806.0,300.0 L976.0,300.0" fill="none" stroke="#c9d1dc" stroke-width="1"/>
+<rect x="851.0" y="293.4" width="80.0" height="6.6" rx="3" fill="#0e6e6a" stroke="none" stroke-width="1.2"/>
+<text x="891.0" y="285.4" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="14" fill="#14213d" font-weight="700" text-anchor="middle"><tspan x="891.0" dy="0.0">6</tspan></text>
+<rect x="1000.0" y="10.0" width="170.0" height="120.0" rx="10" fill="#d9efec" stroke="#0e6e6a" stroke-width="1.2"/>
+<text x="1014.0" y="36.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="14.5" fill="#0e6e6a" font-weight="700" text-anchor="start"><tspan x="1014.0" dy="0.0">Layout</tspan></text>
+<text x="1014.0" y="60.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="12.5" fill="#14213d" font-weight="400" text-anchor="start"><tspan x="1014.0" dy="0.0">Stable prefix first;</tspan><tspan x="1014.0" dy="16.2">best evidence at the</tspan><tspan x="1014.0" dy="16.2">edges</tspan></text>
+<path d="M1000.0,300.0 L1170.0,300.0" fill="none" stroke="#c9d1dc" stroke-width="1"/>
+<text x="1085.0" y="280.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="13" fill="#14213d" font-weight="700" text-anchor="middle"><tspan x="1085.0" dy="0.0">≈ 3,000 tokens</tspan></text>
+<text x="30.0" y="165.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="12" fill="#5b6474" font-weight="600" text-anchor="start"><tspan x="30.0" dy="0.0">Candidate passages kept</tspan></text>
+<text x="30.0" y="330.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="13.5" fill="#14213d" font-weight="700" text-anchor="start"><tspan x="30.0" dy="0.0">Prompt layout sent to the model</tspan></text>
+<rect x="30.0" y="340.0" width="500.0" height="52.0" rx="4" fill="#5b3fa8" stroke="#fff" stroke-width="2"/>
+<text x="280.0" y="371.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="12" fill="#fff" font-weight="600" text-anchor="middle"><tspan x="280.0" dy="0.0">Stable prefix: system, tool schemas, examples (cacheable)</tspan></text>
+<rect x="530.0" y="340.0" width="110.0" height="52.0" rx="4" fill="#0e6e6a" stroke="#fff" stroke-width="2"/>
+<text x="585.0" y="371.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="12" fill="#fff" font-weight="600" text-anchor="middle"><tspan x="585.0" dy="0.0">Evidence #1</tspan></text>
+<rect x="640.0" y="340.0" width="200.0" height="52.0" rx="4" fill="#d9efec" stroke="#fff" stroke-width="2"/>
+<text x="740.0" y="371.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="12" fill="#14213d" font-weight="600" text-anchor="middle"><tspan x="740.0" dy="0.0">Evidence #3…#6</tspan></text>
+<rect x="840.0" y="340.0" width="110.0" height="52.0" rx="4" fill="#0e6e6a" stroke="#fff" stroke-width="2"/>
+<text x="895.0" y="371.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="12" fill="#fff" font-weight="600" text-anchor="middle"><tspan x="895.0" dy="0.0">Evidence #2</tspan></text>
+<rect x="950.0" y="340.0" width="220.0" height="52.0" rx="4" fill="#1f3a68" stroke="#fff" stroke-width="2"/>
+<text x="1060.0" y="371.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="12" fill="#fff" font-weight="600" text-anchor="middle"><tspan x="1060.0" dy="0.0">User query + output format</tspan></text>
+<path d="M530.0,334.0 L530.0,406.0" fill="none" stroke="#b42318" stroke-width="2" stroke-dasharray="4 3"/>
+<text x="536.0" y="420.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="12" fill="#b42318" font-weight="700" text-anchor="start"><tspan x="536.0" dy="0.0">cache breakpoint</tspan></text>
+<text x="30.0" y="444.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="12.5" fill="#5b6474" font-weight="400" text-anchor="start"><tspan x="30.0" dy="0.0">Strongest evidence goes first and last: models use mid-context information worst (Liu et al. 2023). The cacheable prefix must stay byte-identical across requests.</tspan></text>
+</g>
+<line x1="30" y1="608" x2="1170" y2="608" stroke="#c9d1dc"/>
+<text x="30" y="628" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="12" fill="#5b6474">Sources: Robertson &amp; Zaragoza 2009 (BM25); Cormack et al. 2009 (RRF); Nogueira &amp; Cho 2019 (rerank); Liu et al. 2023; Jiang et al. 2023.</text>
+<text x="30" y="646" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="12" font-weight="600" fill="#14213d">© Aridio Silva @aridiosilva · Outubro 2026 · Independent Researcher · ORCID 0009-0008-2411-6995 · All figures licensed CC BY 4.0</text>
+</svg>

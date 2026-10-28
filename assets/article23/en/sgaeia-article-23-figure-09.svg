@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 628" width="1200" height="628" role="img" aria-label="Figure 9. Quality gate: cheapest checks first, bounded escalation">
+<title>Figure 9. Quality gate: cheapest checks first, bounded escalation</title>
+<desc>© Aridio Silva @aridiosilva · Outubro 2026 · Independent Researcher · ORCID 0009-0008-2411-6995 · All figures licensed CC BY 4.0</desc>
+<metadata><rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:xmpRights="http://ns.adobe.com/xap/1.0/rights/"><rdf:Description rdf:about=""><dc:title>Figure 9. Quality gate: cheapest checks first, bounded escalation</dc:title><dc:creator>Aridio Silva (@aridiosilva), ORCID 0009-0008-2411-6995</dc:creator><dc:rights>© Aridio Silva @aridiosilva · Outubro 2026. Licensed under CC BY 4.0.</dc:rights><dc:date>2026-10</dc:date><dc:language>en</dc:language><xmpRights:Marked>True</xmpRights:Marked><xmpRights:Owner>Aridio Silva</xmpRights:Owner><cc:license rdf:resource="https://creativecommons.org/licenses/by/4.0/"/><cc:attributionName>Aridio Silva (@aridiosilva)</cc:attributionName><dc:subject>Project SGAEIA</dc:subject><dc:identifier>https://doi.org/10.5281/zenodo.23732760</dc:identifier></rdf:Description></rdf:RDF></metadata>
+<defs><marker id="m14213d" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#14213d"/></marker></defs>
+<rect width="1200" height="628" fill="#ffffff"/>
+<rect x="30" y="22" width="6" height="52" rx="3" fill="#0e6e6a"/>
+<text x="48" y="44" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="13" font-weight="700" fill="#0e6e6a" letter-spacing="1.2">FIGURE 9</text>
+<text x="48" y="70" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="23" font-weight="700" fill="#14213d">Quality gate: cheapest checks first, bounded escalation</text>
+<text x="1170" y="44" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="13" fill="#5b6474" text-anchor="end">Check tiers and outcomes</text>
+<g transform="translate(0,96)">
+<rect x="30.0" y="0.0" width="400.0" height="82.0" rx="10" fill="#ddf1e4" stroke="#1d7a3e" stroke-width="1.2"/>
+<text x="46.0" y="26.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="14.5" fill="#1d7a3e" font-weight="700" text-anchor="start"><tspan x="46.0" dy="0.0">1 · Deterministic</tspan></text>
+<text x="46.0" y="48.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="12.5" fill="#14213d" font-weight="400" text-anchor="start"><tspan x="46.0" dy="0.0">JSON schema, required fields, cited IDs</tspan><tspan x="46.0" dy="16.2">exist, length limits</tspan></text>
+<text x="416.0" y="26.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="11.5" fill="#5b6474" font-weight="600" text-anchor="end"><tspan x="416.0" dy="0.0">≈ 0 cost · ms</tspan></text>
+<path d="M70.0,82.0 L70.0,96.0" fill="none" stroke="#14213d" stroke-width="1.5" marker-end="url(#m14213d)"/>
+<rect x="30.0" y="98.0" width="470.0" height="82.0" rx="10" fill="#d9efec" stroke="#0e6e6a" stroke-width="1.2"/>
+<text x="46.0" y="124.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="14.5" fill="#0e6e6a" font-weight="700" text-anchor="start"><tspan x="46.0" dy="0.0">2 · Classifiers</tspan></text>
+<text x="46.0" y="146.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="12.5" fill="#14213d" font-weight="400" text-anchor="start"><tspan x="46.0" dy="0.0">Safety, PII, prompt-injection signals, policy</tspan><tspan x="46.0" dy="16.2">rules</tspan></text>
+<text x="486.0" y="124.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="11.5" fill="#5b6474" font-weight="600" text-anchor="end"><tspan x="486.0" dy="0.0">low cost · tens of ms</tspan></text>
+<path d="M70.0,180.0 L70.0,194.0" fill="none" stroke="#14213d" stroke-width="1.5" marker-end="url(#m14213d)"/>
+<rect x="30.0" y="196.0" width="540.0" height="82.0" rx="10" fill="#fbecd6" stroke="#a35a06" stroke-width="1.2"/>
+<text x="46.0" y="222.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="14.5" fill="#a35a06" font-weight="700" text-anchor="start"><tspan x="46.0" dy="0.0">3 · Grounding</tspan></text>
+<text x="46.0" y="244.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="12.5" fill="#14213d" font-weight="400" text-anchor="start"><tspan x="46.0" dy="0.0">Each claim supported by retrieved evidence (NLI, RAGAS</tspan><tspan x="46.0" dy="16.2">faithfulness), citation coverage</tspan></text>
+<text x="556.0" y="222.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="11.5" fill="#5b6474" font-weight="600" text-anchor="end"><tspan x="556.0" dy="0.0">medium cost</tspan></text>
+<path d="M70.0,278.0 L70.0,292.0" fill="none" stroke="#14213d" stroke-width="1.5" marker-end="url(#m14213d)"/>
+<rect x="30.0" y="294.0" width="610.0" height="82.0" rx="10" fill="#ebe5f8" stroke="#5b3fa8" stroke-width="1.2"/>
+<text x="46.0" y="320.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="14.5" fill="#5b3fa8" font-weight="700" text-anchor="start"><tspan x="46.0" dy="0.0">4 · Model judgement</tspan></text>
+<text x="46.0" y="342.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="12.5" fill="#14213d" font-weight="400" text-anchor="start"><tspan x="46.0" dy="0.0">LLM-as-judge rubric, self-consistency (SelfCheckGPT); sampled or high-</tspan><tspan x="46.0" dy="16.2">risk only</tspan></text>
+<text x="626.0" y="320.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="11.5" fill="#5b6474" font-weight="600" text-anchor="end"><tspan x="626.0" dy="0.0">highest cost</tspan></text>
+<text x="30.0" y="404.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="12.5" fill="#5b6474" font-weight="600" text-anchor="start"><tspan x="30.0" dy="0.0">Run in order; stop at the first hard failure. Cost grows downwards.</tspan></text>
+<path d="M640.0,190.0 L752.0,190.0" fill="none" stroke="#14213d" stroke-width="2" marker-end="url(#m14213d)"/>
+<rect x="760.0" y="6.0" width="410.0" height="80.0" rx="10" fill="#fff" stroke="#1d7a3e" stroke-width="1.6"/>
+<rect x="760.0" y="6.0" width="8.0" height="80.0" rx="3" fill="#1d7a3e" stroke="none" stroke-width="1.2"/>
+<text x="784.0" y="34.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="15" fill="#1d7a3e" font-weight="700" text-anchor="start"><tspan x="784.0" dy="0.0">PASS</tspan></text>
+<text x="784.0" y="58.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="12.5" fill="#14213d" font-weight="400" text-anchor="start"><tspan x="784.0" dy="0.0">Respond, log trace and cost, write to cache if eligible</tspan></text>
+<rect x="760.0" y="98.0" width="410.0" height="80.0" rx="10" fill="#fff" stroke="#a35a06" stroke-width="1.6"/>
+<rect x="760.0" y="98.0" width="8.0" height="80.0" rx="3" fill="#a35a06" stroke="none" stroke-width="1.2"/>
+<text x="784.0" y="126.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="15" fill="#a35a06" font-weight="700" text-anchor="start"><tspan x="784.0" dy="0.0">REPAIR</tspan></text>
+<text x="784.0" y="150.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="12.5" fill="#14213d" font-weight="400" text-anchor="start"><tspan x="784.0" dy="0.0">One retry with the validator&#x27;s error message as</tspan><tspan x="784.0" dy="16.2">feedback</tspan></text>
+<rect x="760.0" y="190.0" width="410.0" height="80.0" rx="10" fill="#fff" stroke="#1f3a68" stroke-width="1.6"/>
+<rect x="760.0" y="190.0" width="8.0" height="80.0" rx="3" fill="#1f3a68" stroke="none" stroke-width="1.2"/>
+<text x="784.0" y="218.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="15" fill="#1f3a68" font-weight="700" text-anchor="start"><tspan x="784.0" dy="0.0">ESCALATE</tspan></text>
+<text x="784.0" y="242.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="12.5" fill="#14213d" font-weight="400" text-anchor="start"><tspan x="784.0" dy="0.0">Send to the next tier; at most one hop</tspan></text>
+<rect x="760.0" y="282.0" width="410.0" height="80.0" rx="10" fill="#fff" stroke="#b42318" stroke-width="1.6"/>
+<rect x="760.0" y="282.0" width="8.0" height="80.0" rx="3" fill="#b42318" stroke="none" stroke-width="1.2"/>
+<text x="784.0" y="310.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="15" fill="#b42318" font-weight="700" text-anchor="start"><tspan x="784.0" dy="0.0">ABSTAIN / HUMAN</tspan></text>
+<text x="784.0" y="334.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="12.5" fill="#14213d" font-weight="400" text-anchor="start"><tspan x="784.0" dy="0.0">Refuse safely or hand off with context</tspan></text>
+<rect x="760.0" y="380.0" width="410.0" height="76.0" rx="10" fill="#f4f7fa" stroke="#c9d1dc" stroke-width="1.2"/>
+<text x="776.0" y="404.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="12" fill="#14213d" font-weight="400" text-anchor="start"><tspan x="776.0" dy="0.0">Budget guard: ≤ 1 retry, ≤ 1 escalation, per-request cost</tspan><tspan x="776.0" dy="15.6">cap. Calibrate judges on human labels: position, verbosity</tspan><tspan x="776.0" dy="15.6">and self-preference biases (Zheng et al. 2023).</tspan></text>
+</g>
+<line x1="30" y1="578" x2="1170" y2="578" stroke="#c9d1dc"/>
+<text x="30" y="598" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="12" fill="#5b6474">Sources: Es et al. 2023 (RAGAS); Manakul et al. 2023 (SelfCheckGPT); Zheng et al. 2023 (LLM-as-judge); Asai et al. 2023; Yan et al. 2024; OWASP 2025.</text>
+<text x="30" y="616" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="12" font-weight="600" fill="#14213d">© Aridio Silva @aridiosilva · Outubro 2026 · Independent Researcher · ORCID 0009-0008-2411-6995 · All figures licensed CC BY 4.0</text>
+</svg>

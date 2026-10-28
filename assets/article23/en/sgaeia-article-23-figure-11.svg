@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 598" width="1200" height="598" role="img" aria-label="Figure 11. Sensitivity: how robust is the 70% claim?">
+<title>Figure 11. Sensitivity: how robust is the 70% claim?</title>
+<desc>© Aridio Silva @aridiosilva · Outubro 2026 · Independent Researcher · ORCID 0009-0008-2411-6995 · All figures licensed CC BY 4.0</desc>
+<metadata><rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:xmpRights="http://ns.adobe.com/xap/1.0/rights/"><rdf:Description rdf:about=""><dc:title>Figure 11. Sensitivity: how robust is the 70% claim?</dc:title><dc:creator>Aridio Silva (@aridiosilva), ORCID 0009-0008-2411-6995</dc:creator><dc:rights>© Aridio Silva @aridiosilva · Outubro 2026. Licensed under CC BY 4.0.</dc:rights><dc:date>2026-10</dc:date><dc:language>en</dc:language><xmpRights:Marked>True</xmpRights:Marked><xmpRights:Owner>Aridio Silva</xmpRights:Owner><cc:license rdf:resource="https://creativecommons.org/licenses/by/4.0/"/><cc:attributionName>Aridio Silva (@aridiosilva)</cc:attributionName><dc:subject>Project SGAEIA</dc:subject><dc:identifier>https://doi.org/10.5281/zenodo.23732760</dc:identifier></rdf:Description></rdf:RDF></metadata>
+<defs></defs>
+<rect width="1200" height="598" fill="#ffffff"/>
+<rect x="30" y="22" width="6" height="52" rx="3" fill="#0e6e6a"/>
+<text x="48" y="44" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="13" font-weight="700" fill="#0e6e6a" letter-spacing="1.2">FIGURE 11</text>
+<text x="48" y="70" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="23" font-weight="700" fill="#14213d">Sensitivity: how robust is the 70% claim?</text>
+<text x="1170" y="44" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="13" fill="#5b6474" text-anchor="end">Final monthly cost, varying one assumption at a time</text>
+<g transform="translate(0,96)">
+<path d="M330.0,20.0 L330.0,330.0" fill="none" stroke="#e6ebf1" stroke-width="1"/>
+<text x="330.0" y="348.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="11.5" fill="#5b6474" font-weight="400" text-anchor="middle"><tspan x="330.0" dy="0.0">$2,000</tspan></text>
+<path d="M479.1,20.0 L479.1,330.0" fill="none" stroke="#e6ebf1" stroke-width="1"/>
+<text x="479.1" y="348.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="11.5" fill="#5b6474" font-weight="400" text-anchor="middle"><tspan x="479.1" dy="0.0">$2,400</tspan></text>
+<path d="M628.2,20.0 L628.2,330.0" fill="none" stroke="#e6ebf1" stroke-width="1"/>
+<text x="628.2" y="348.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="11.5" fill="#5b6474" font-weight="400" text-anchor="middle"><tspan x="628.2" dy="0.0">$2,800</tspan></text>
+<path d="M777.3,20.0 L777.3,330.0" fill="none" stroke="#e6ebf1" stroke-width="1"/>
+<text x="777.3" y="348.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="11.5" fill="#5b6474" font-weight="400" text-anchor="middle"><tspan x="777.3" dy="0.0">$3,200</tspan></text>
+<path d="M926.4,20.0 L926.4,330.0" fill="none" stroke="#e6ebf1" stroke-width="1"/>
+<text x="926.4" y="348.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="11.5" fill="#5b6474" font-weight="400" text-anchor="middle"><tspan x="926.4" dy="0.0">$3,600</tspan></text>
+<path d="M1075.5,20.0 L1075.5,330.0" fill="none" stroke="#e6ebf1" stroke-width="1"/>
+<text x="1075.5" y="348.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="11.5" fill="#5b6474" font-weight="400" text-anchor="middle"><tspan x="1075.5" dy="0.0">$4,000</tspan></text>
+<path d="M702.7,16.0 L702.7,330.0" fill="none" stroke="#a35a06" stroke-width="1.8" stroke-dasharray="6 4"/>
+<text x="708.7" y="14.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="12" fill="#a35a06" font-weight="700" text-anchor="start"><tspan x="708.7" dy="0.0">−70% line</tspan></text>
+<path d="M675.2,16.0 L675.2,330.0" fill="none" stroke="#14213d" stroke-width="1.8"/>
+<text x="669.2" y="14.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="12" fill="#14213d" font-weight="700" text-anchor="end"><tspan x="669.2" dy="0.0">post: $2,926</tspan></text>
+<text x="316.0" y="59.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="13" fill="#14213d" font-weight="600" text-anchor="end"><tspan x="316.0" dy="0.0">Routing factor 0.45–0.75</tspan></text>
+<rect x="402.5" y="38.0" width="545.3" height="32.0" rx="4" fill="#d9efec" stroke="#0e6e6a" stroke-width="1"/>
+<text x="396.5" y="59.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="11.5" fill="#0e6e6a" font-weight="700" text-anchor="end"><tspan x="396.5" dy="0.0">$2,195</tspan></text>
+<text x="953.9" y="59.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="11.5" fill="#0e6e6a" font-weight="700" text-anchor="start"><tspan x="953.9" dy="0.0">$3,658</tspan></text>
+<text x="316.0" y="109.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="13" fill="#14213d" font-weight="600" text-anchor="end"><tspan x="316.0" dy="0.0">Token factor 0.65–0.85</tspan></text>
+<rect x="529.8" y="88.0" width="290.8" height="32.0" rx="4" fill="#d9efec" stroke="#0e6e6a" stroke-width="1"/>
+<text x="523.8" y="109.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="11.5" fill="#0e6e6a" font-weight="700" text-anchor="end"><tspan x="523.8" dy="0.0">$2,536</tspan></text>
+<text x="826.6" y="109.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="11.5" fill="#0e6e6a" font-weight="700" text-anchor="start"><tspan x="826.6" dy="0.0">$3,316</tspan></text>
+<text x="316.0" y="159.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="13" fill="#14213d" font-weight="600" text-anchor="end"><tspan x="316.0" dy="0.0">Caching factor 0.75–0.95</tspan></text>
+<rect x="546.9" y="138.0" width="256.6" height="32.0" rx="4" fill="#d9efec" stroke="#0e6e6a" stroke-width="1"/>
+<text x="540.9" y="159.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="11.5" fill="#0e6e6a" font-weight="700" text-anchor="end"><tspan x="540.9" dy="0.0">$2,582</tspan></text>
+<text x="809.5" y="159.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="11.5" fill="#0e6e6a" font-weight="700" text-anchor="start"><tspan x="809.5" dy="0.0">$3,270</tspan></text>
+<text x="316.0" y="209.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="13" fill="#14213d" font-weight="600" text-anchor="end"><tspan x="316.0" dy="0.0">Hypothetical overhead +3% to +9% of baseline</tspan></text>
+<rect x="787.0" y="188.0" width="223.6" height="32.0" rx="4" fill="#d9efec" stroke="#0e6e6a" stroke-width="1"/>
+<text x="781.0" y="209.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="11.5" fill="#0e6e6a" font-weight="700" text-anchor="end"><tspan x="781.0" dy="0.0">$3,226</tspan></text>
+<text x="1016.6" y="209.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="11.5" fill="#0e6e6a" font-weight="700" text-anchor="start"><tspan x="1016.6" dy="0.0">$3,826</tspan></text>
+<text x="316.0" y="259.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="13" fill="#14213d" font-weight="600" text-anchor="end"><tspan x="316.0" dy="0.0">Dedup factor 0.80–0.90</tspan></text>
+<rect x="611.0" y="238.0" width="128.3" height="32.0" rx="4" fill="#d9efec" stroke="#0e6e6a" stroke-width="1"/>
+<text x="605.0" y="259.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="11.5" fill="#0e6e6a" font-weight="700" text-anchor="end"><tspan x="605.0" dy="0.0">$2,754</tspan></text>
+<text x="745.3" y="259.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="11.5" fill="#0e6e6a" font-weight="700" text-anchor="start"><tspan x="745.3" dy="0.0">$3,098</tspan></text>
+<text x="316.0" y="309.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="13" fill="#14213d" font-weight="600" text-anchor="end"><tspan x="316.0" dy="0.0">Batch factor 0.85–0.95</tspan></text>
+<rect x="614.6" y="288.0" width="121.2" height="32.0" rx="4" fill="#d9efec" stroke="#0e6e6a" stroke-width="1"/>
+<text x="608.6" y="309.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="11.5" fill="#0e6e6a" font-weight="700" text-anchor="end"><tspan x="608.6" dy="0.0">$2,764</tspan></text>
+<text x="741.8" y="309.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="11.5" fill="#0e6e6a" font-weight="700" text-anchor="start"><tspan x="741.8" dy="0.0">$3,089</tspan></text>
+<text x="330.0" y="380.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="13" fill="#14213d" font-weight="600" text-anchor="start"><tspan x="330.0" dy="0.0">Routing alone moves the result from −64% to −78%. Adding realistic overhead puts the net saving at about 61–68%.</tspan></text>
+</g>
+<line x1="30" y1="548" x2="1170" y2="548" stroke="#c9d1dc"/>
+<text x="30" y="568" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="12" fill="#5b6474">Model and ranges by the author (one-at-a-time sensitivity around the post&#x27;s step factors). Illustrative, not measured.</text>
+<text x="30" y="586" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="12" font-weight="600" fill="#14213d">© Aridio Silva @aridiosilva · Outubro 2026 · Independent Researcher · ORCID 0009-0008-2411-6995 · All figures licensed CC BY 4.0</text>
+</svg>

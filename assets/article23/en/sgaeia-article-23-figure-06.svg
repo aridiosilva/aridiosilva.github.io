@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 598" width="1200" height="598" role="img" aria-label="Figure 6. Three caching layers that are often confused">
+<title>Figure 6. Three caching layers that are often confused</title>
+<desc>© Aridio Silva @aridiosilva · Outubro 2026 · Independent Researcher · ORCID 0009-0008-2411-6995 · All figures licensed CC BY 4.0</desc>
+<metadata><rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:xmpRights="http://ns.adobe.com/xap/1.0/rights/"><rdf:Description rdf:about=""><dc:title>Figure 6. Three caching layers that are often confused</dc:title><dc:creator>Aridio Silva (@aridiosilva), ORCID 0009-0008-2411-6995</dc:creator><dc:rights>© Aridio Silva @aridiosilva · Outubro 2026. Licensed under CC BY 4.0.</dc:rights><dc:date>2026-10</dc:date><dc:language>en</dc:language><xmpRights:Marked>True</xmpRights:Marked><xmpRights:Owner>Aridio Silva</xmpRights:Owner><cc:license rdf:resource="https://creativecommons.org/licenses/by/4.0/"/><cc:attributionName>Aridio Silva (@aridiosilva)</cc:attributionName><dc:subject>Project SGAEIA</dc:subject><dc:identifier>https://doi.org/10.5281/zenodo.23732760</dc:identifier></rdf:Description></rdf:RDF></metadata>
+<defs></defs>
+<rect width="1200" height="598" fill="#ffffff"/>
+<rect x="30" y="22" width="6" height="52" rx="3" fill="#0e6e6a"/>
+<text x="48" y="44" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="13" font-weight="700" fill="#0e6e6a" letter-spacing="1.2">FIGURE 6</text>
+<text x="48" y="70" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="23" font-weight="700" fill="#14213d">Three caching layers that are often confused</text>
+<text x="1170" y="44" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="13" fill="#5b6474" text-anchor="end">What each layer reuses and risks</text>
+<g transform="translate(0,96)">
+<rect x="30.0" y="0.0" width="1140.0" height="36.0" rx="8" fill="#14213d" stroke="none" stroke-width="1.2"/>
+<text x="46.0" y="24.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="13" fill="#fff" font-weight="700" text-anchor="start"><tspan x="46.0" dy="0.0">Layer</tspan></text>
+<text x="250.0" y="24.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="13" fill="#fff" font-weight="700" text-anchor="start"><tspan x="250.0" dy="0.0">Reuses</tspan></text>
+<text x="480.0" y="24.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="13" fill="#fff" font-weight="700" text-anchor="start"><tspan x="480.0" dy="0.0">Match rule</tspan></text>
+<text x="710.0" y="24.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="13" fill="#fff" font-weight="700" text-anchor="start"><tspan x="710.0" dy="0.0">Saves</tspan></text>
+<text x="930.0" y="24.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="13" fill="#fff" font-weight="700" text-anchor="start"><tspan x="930.0" dy="0.0">Main risk</tspan></text>
+<rect x="30.0" y="46.0" width="1140.0" height="116.0" rx="10" fill="#fbecd6" stroke="#a35a06" stroke-width="1"/>
+<text x="46.0" y="76.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="16" fill="#a35a06" font-weight="700" text-anchor="start"><tspan x="46.0" dy="0.0">Semantic cache</tspan></text>
+<text x="46.0" y="98.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="12.5" fill="#5b6474" font-weight="400" text-anchor="start"><tspan x="46.0" dy="0.0">Application layer (L4)</tspan></text>
+<text x="250.0" y="76.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="12.5" fill="#14213d" font-weight="400" text-anchor="start"><tspan x="250.0" dy="0.0">The whole final answer</tspan></text>
+<text x="480.0" y="76.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="12.5" fill="#14213d" font-weight="400" text-anchor="start"><tspan x="480.0" dy="0.0">Embedding similarity ≥ τ inside</tspan><tspan x="480.0" dy="16.2">a tenant/ACL/version scope</tspan></text>
+<text x="710.0" y="76.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="12.5" fill="#14213d" font-weight="400" text-anchor="start"><tspan x="710.0" dy="0.0">The entire pipeline: cost and</tspan><tspan x="710.0" dy="16.2">latency</tspan></text>
+<text x="930.0" y="76.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="12.5" fill="#14213d" font-weight="400" text-anchor="start"><tspan x="930.0" dy="0.0">False hits, stale answers,</tspan><tspan x="930.0" dy="16.2">cross-tenant leakage</tspan></text>
+<rect x="30.0" y="172.0" width="1140.0" height="116.0" rx="10" fill="#ebe5f8" stroke="#5b3fa8" stroke-width="1"/>
+<text x="46.0" y="202.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="16" fill="#5b3fa8" font-weight="700" text-anchor="start"><tspan x="46.0" dy="0.0">Prompt / prefix cache</tspan></text>
+<text x="46.0" y="224.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="12.5" fill="#5b6474" font-weight="400" text-anchor="start"><tspan x="46.0" dy="0.0">Provider API (L3)</tspan></text>
+<text x="250.0" y="202.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="12.5" fill="#14213d" font-weight="400" text-anchor="start"><tspan x="250.0" dy="0.0">Processed prompt prefix</tspan><tspan x="250.0" dy="16.2">(attention states)</tspan></text>
+<text x="480.0" y="202.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="12.5" fill="#14213d" font-weight="400" text-anchor="start"><tspan x="480.0" dy="0.0">Exact prefix match; ≥ 1,024</tspan><tspan x="480.0" dy="16.2">tokens (OpenAI), explicit</tspan><tspan x="480.0" dy="16.2">breakpoints (Anthropic)</tspan></text>
+<text x="710.0" y="202.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="12.5" fill="#14213d" font-weight="400" text-anchor="start"><tspan x="710.0" dy="0.0">Input price (reads 0.1× on</tspan><tspan x="710.0" dy="16.2">Anthropic) and time to first</tspan><tspan x="710.0" dy="16.2">token</tspan></text>
+<text x="930.0" y="202.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="12.5" fill="#14213d" font-weight="400" text-anchor="start"><tspan x="930.0" dy="0.0">Write premium, short TTL, timing</tspan><tspan x="930.0" dy="16.2">side channel if shared</tspan></text>
+<rect x="30.0" y="298.0" width="1140.0" height="116.0" rx="10" fill="#e5e9ef" stroke="#475569" stroke-width="1"/>
+<text x="46.0" y="328.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="16" fill="#475569" font-weight="700" text-anchor="start"><tspan x="46.0" dy="0.0">KV cache</tspan></text>
+<text x="46.0" y="350.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="12.5" fill="#5b6474" font-weight="400" text-anchor="start"><tspan x="46.0" dy="0.0">Inference engine (self-</tspan><tspan x="46.0" dy="16.2">hosted)</tspan></text>
+<text x="250.0" y="328.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="12.5" fill="#14213d" font-weight="400" text-anchor="start"><tspan x="250.0" dy="0.0">Key/value tensors within and</tspan><tspan x="250.0" dy="16.2">across requests</tspan></text>
+<text x="480.0" y="328.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="12.5" fill="#14213d" font-weight="400" text-anchor="start"><tspan x="480.0" dy="0.0">Token-level prefix tree</tspan><tspan x="480.0" dy="16.2">(RadixAttention), paged blocks</tspan><tspan x="480.0" dy="16.2">(PagedAttention)</tspan></text>
+<text x="710.0" y="328.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="12.5" fill="#14213d" font-weight="400" text-anchor="start"><tspan x="710.0" dy="0.0">GPU memory and throughput</tspan></text>
+<text x="930.0" y="328.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="12.5" fill="#14213d" font-weight="400" text-anchor="start"><tspan x="930.0" dy="0.0">Memory pressure and eviction</tspan><tspan x="930.0" dy="16.2">policy</tspan></text>
+</g>
+<line x1="30" y1="548" x2="1170" y2="548" stroke="#c9d1dc"/>
+<text x="30" y="568" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="12" fill="#5b6474">Sources: Bang 2023; Gill et al. 2024; Gim et al. 2024; Kwon et al. 2023; Zheng et al. 2024; Gu et al. 2025; Anthropic and OpenAI docs (2026).</text>
+<text x="30" y="586" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="12" font-weight="600" fill="#14213d">© Aridio Silva @aridiosilva · Outubro 2026 · Independent Researcher · ORCID 0009-0008-2411-6995 · All figures licensed CC BY 4.0</text>
+</svg>

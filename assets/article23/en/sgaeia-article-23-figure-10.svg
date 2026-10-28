@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 628" width="1200" height="628" role="img" aria-label="Figure 10. Cost decomposition: five sequential reductions (re-drawn to scale)">
+<title>Figure 10. Cost decomposition: five sequential reductions (re-drawn to scale)</title>
+<desc>© Aridio Silva @aridiosilva · Outubro 2026 · Independent Researcher · ORCID 0009-0008-2411-6995 · All figures licensed CC BY 4.0</desc>
+<metadata><rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:xmpRights="http://ns.adobe.com/xap/1.0/rights/"><rdf:Description rdf:about=""><dc:title>Figure 10. Cost decomposition: five sequential reductions (re-drawn to scale)</dc:title><dc:creator>Aridio Silva (@aridiosilva), ORCID 0009-0008-2411-6995</dc:creator><dc:rights>© Aridio Silva @aridiosilva · Outubro 2026. Licensed under CC BY 4.0.</dc:rights><dc:date>2026-10</dc:date><dc:language>en</dc:language><xmpRights:Marked>True</xmpRights:Marked><xmpRights:Owner>Aridio Silva</xmpRights:Owner><cc:license rdf:resource="https://creativecommons.org/licenses/by/4.0/"/><cc:attributionName>Aridio Silva (@aridiosilva)</cc:attributionName><dc:subject>Project SGAEIA</dc:subject><dc:identifier>https://doi.org/10.5281/zenodo.23732760</dc:identifier></rdf:Description></rdf:RDF></metadata>
+<defs></defs>
+<rect width="1200" height="628" fill="#ffffff"/>
+<rect x="30" y="22" width="6" height="52" rx="3" fill="#0e6e6a"/>
+<text x="48" y="44" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="13" font-weight="700" fill="#0e6e6a" letter-spacing="1.2">FIGURE 10</text>
+<text x="48" y="70" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="23" font-weight="700" fill="#14213d">Cost decomposition: five sequential reductions (re-drawn to scale)</text>
+<text x="1170" y="44" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="13" fill="#5b6474" text-anchor="end">US$ per month; values from the post</text>
+<g transform="translate(0,96)">
+<path d="M110.0,360.0 L1160.0,360.0" fill="none" stroke="#e6ebf1" stroke-width="1"/>
+<text x="100.0" y="364.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="11.5" fill="#5b6474" font-weight="400" text-anchor="end"><tspan x="100.0" dy="0.0">$0</tspan></text>
+<path d="M110.0,292.0 L1160.0,292.0" fill="none" stroke="#e6ebf1" stroke-width="1"/>
+<text x="100.0" y="296.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="11.5" fill="#5b6474" font-weight="400" text-anchor="end"><tspan x="100.0" dy="0.0">$2,000</tspan></text>
+<path d="M110.0,224.0 L1160.0,224.0" fill="none" stroke="#e6ebf1" stroke-width="1"/>
+<text x="100.0" y="228.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="11.5" fill="#5b6474" font-weight="400" text-anchor="end"><tspan x="100.0" dy="0.0">$4,000</tspan></text>
+<path d="M110.0,156.0 L1160.0,156.0" fill="none" stroke="#e6ebf1" stroke-width="1"/>
+<text x="100.0" y="160.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="11.5" fill="#5b6474" font-weight="400" text-anchor="end"><tspan x="100.0" dy="0.0">$6,000</tspan></text>
+<path d="M110.0,88.0 L1160.0,88.0" fill="none" stroke="#e6ebf1" stroke-width="1"/>
+<text x="100.0" y="92.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="11.5" fill="#5b6474" font-weight="400" text-anchor="end"><tspan x="100.0" dy="0.0">$8,000</tspan></text>
+<path d="M110.0,20.0 L1160.0,20.0" fill="none" stroke="#e6ebf1" stroke-width="1"/>
+<text x="100.0" y="24.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="11.5" fill="#5b6474" font-weight="400" text-anchor="end"><tspan x="100.0" dy="0.0">$10,000</tspan></text>
+<rect x="136.0" y="20.0" width="123.0" height="340.0" rx="3" fill="#1f3a68" stroke="none" stroke-width="1.2"/>
+<text x="197.5" y="10.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="14" fill="#14213d" font-weight="700" text-anchor="middle"><tspan x="197.5" dy="0.0">$10,000</tspan></text>
+<text x="197.5" y="380.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="12.5" fill="#14213d" font-weight="600" text-anchor="middle"><tspan x="197.5" dy="0.0">Current cost</tspan></text>
+<rect x="311.0" y="71.0" width="123.0" height="289.0" rx="3" fill="#0e6e6a" stroke="none" stroke-width="1.2"/>
+<text x="372.5" y="93.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="14" fill="#fff" font-weight="700" text-anchor="middle"><tspan x="372.5" dy="0.0">$8,500</tspan></text>
+<rect x="311.0" y="20.0" width="123.0" height="51.0" rx="3" fill="#fde4e1" stroke="#b42318" stroke-width="1" stroke-dasharray="4 3"/>
+<text x="372.5" y="50.5" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="13" fill="#b42318" font-weight="700" text-anchor="middle"><tspan x="372.5" dy="0.0">−15%</tspan></text>
+<path d="M261.0,20.0 L311.0,20.0" fill="none" stroke="#5b6474" stroke-width="1" stroke-dasharray="3 3"/>
+<text x="372.5" y="416.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="11.5" fill="#5b6474" font-weight="400" text-anchor="middle"><tspan x="372.5" dy="0.0">cumulative −15.0%</tspan></text>
+<text x="372.5" y="380.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="12.5" fill="#14213d" font-weight="600" text-anchor="middle"><tspan x="372.5" dy="0.0">Remove duplicate calls</tspan></text>
+<rect x="486.0" y="186.6" width="123.0" height="173.4" rx="3" fill="#0e6e6a" stroke="none" stroke-width="1.2"/>
+<text x="547.5" y="208.6" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="14" fill="#fff" font-weight="700" text-anchor="middle"><tspan x="547.5" dy="0.0">$5,100</tspan></text>
+<rect x="486.0" y="71.0" width="123.0" height="115.6" rx="3" fill="#fde4e1" stroke="#b42318" stroke-width="1" stroke-dasharray="4 3"/>
+<text x="547.5" y="133.8" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="13" fill="#b42318" font-weight="700" text-anchor="middle"><tspan x="547.5" dy="0.0">−40%</tspan></text>
+<path d="M436.0,71.0 L486.0,71.0" fill="none" stroke="#5b6474" stroke-width="1" stroke-dasharray="3 3"/>
+<text x="547.5" y="416.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="11.5" fill="#5b6474" font-weight="400" text-anchor="middle"><tspan x="547.5" dy="0.0">cumulative −49.0%</tspan></text>
+<text x="547.5" y="380.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="12.5" fill="#14213d" font-weight="600" text-anchor="middle"><tspan x="547.5" dy="0.0">Model routing</tspan></text>
+<rect x="661.0" y="229.9" width="123.0" height="130.1" rx="3" fill="#0e6e6a" stroke="none" stroke-width="1.2"/>
+<text x="722.5" y="251.9" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="14" fill="#fff" font-weight="700" text-anchor="middle"><tspan x="722.5" dy="0.0">$3,825</tspan></text>
+<rect x="661.0" y="186.6" width="123.0" height="43.3" rx="3" fill="#fde4e1" stroke="#b42318" stroke-width="1" stroke-dasharray="4 3"/>
+<text x="722.5" y="213.3" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="13" fill="#b42318" font-weight="700" text-anchor="middle"><tspan x="722.5" dy="0.0">−25%</tspan></text>
+<path d="M611.0,186.6 L661.0,186.6" fill="none" stroke="#5b6474" stroke-width="1" stroke-dasharray="3 3"/>
+<text x="722.5" y="416.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="11.5" fill="#5b6474" font-weight="400" text-anchor="middle"><tspan x="722.5" dy="0.0">cumulative −61.8%</tspan></text>
+<text x="722.5" y="380.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="12.5" fill="#14213d" font-weight="600" text-anchor="middle"><tspan x="722.5" dy="0.0">Reduce tokens</tspan></text>
+<rect x="836.0" y="249.5" width="123.0" height="110.5" rx="3" fill="#0e6e6a" stroke="none" stroke-width="1.2"/>
+<text x="897.5" y="271.5" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="14" fill="#fff" font-weight="700" text-anchor="middle"><tspan x="897.5" dy="0.0">$3,251</tspan></text>
+<rect x="836.0" y="229.9" width="123.0" height="19.5" rx="3" fill="#fde4e1" stroke="#b42318" stroke-width="1" stroke-dasharray="4 3"/>
+<text x="897.5" y="221.9" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="13" fill="#b42318" font-weight="700" text-anchor="middle"><tspan x="897.5" dy="0.0">−15%</tspan></text>
+<path d="M786.0,229.9 L836.0,229.9" fill="none" stroke="#5b6474" stroke-width="1" stroke-dasharray="3 3"/>
+<text x="897.5" y="416.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="11.5" fill="#5b6474" font-weight="400" text-anchor="middle"><tspan x="897.5" dy="0.0">cumulative −67.5%</tspan></text>
+<text x="897.5" y="380.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="12.5" fill="#14213d" font-weight="600" text-anchor="middle"><tspan x="897.5" dy="0.0">Caching</tspan></text>
+<rect x="1011.0" y="260.5" width="123.0" height="99.5" rx="3" fill="#1d7a3e" stroke="none" stroke-width="1.2"/>
+<text x="1072.5" y="282.5" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="14" fill="#fff" font-weight="700" text-anchor="middle"><tspan x="1072.5" dy="0.0">$2,926</tspan></text>
+<rect x="1011.0" y="249.5" width="123.0" height="11.1" rx="3" fill="#fde4e1" stroke="#b42318" stroke-width="1" stroke-dasharray="4 3"/>
+<text x="1072.5" y="241.5" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="13" fill="#b42318" font-weight="700" text-anchor="middle"><tspan x="1072.5" dy="0.0">−10%</tspan></text>
+<path d="M961.0,249.5 L1011.0,249.5" fill="none" stroke="#5b6474" stroke-width="1" stroke-dasharray="3 3"/>
+<text x="1072.5" y="416.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="11.5" fill="#5b6474" font-weight="400" text-anchor="middle"><tspan x="1072.5" dy="0.0">cumulative −70.7%</tspan></text>
+<text x="1072.5" y="380.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="12.5" fill="#14213d" font-weight="600" text-anchor="middle"><tspan x="1072.5" dy="0.0">Batch processing</tspan></text>
+<text x="1160.0" y="24.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="13" fill="#14213d" font-weight="700" text-anchor="end"><tspan x="1160.0" dy="0.0">Total: −70.7% (0.85 × 0.60 × 0.75 × 0.85 × 0.90 = 0.293)</tspan></text>
+</g>
+<line x1="30" y1="578" x2="1170" y2="578" stroke="#c9d1dc"/>
+<text x="30" y="598" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="12" fill="#5b6474">Based on R. Bhardwaj (2026), LinkedIn post, re-drawn and extended. Step percentages computed by the author; the post labels the chart as illustrative.</text>
+<text x="30" y="616" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="12" font-weight="600" fill="#14213d">© Aridio Silva @aridiosilva · Outubro 2026 · Independent Researcher · ORCID 0009-0008-2411-6995 · All figures licensed CC BY 4.0</text>
+</svg>

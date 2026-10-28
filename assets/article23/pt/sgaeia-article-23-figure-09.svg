@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 628" width="1200" height="628" role="img" aria-label="Figura 9. Portão de qualidade: checagens mais baratas primeiro, escalonamento limitado">
+<title>Figura 9. Portão de qualidade: checagens mais baratas primeiro, escalonamento limitado</title>
+<desc>© Aridio Silva @aridiosilva · Outubro 2026 · Pesquisador Independente · ORCID 0009-0008-2411-6995 · Figuras sob licença CC BY 4.0</desc>
+<metadata><rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:xmpRights="http://ns.adobe.com/xap/1.0/rights/"><rdf:Description rdf:about=""><dc:title>Figura 9. Portão de qualidade: checagens mais baratas primeiro, escalonamento limitado</dc:title><dc:creator>Aridio Silva (@aridiosilva), ORCID 0009-0008-2411-6995</dc:creator><dc:rights>© Aridio Silva @aridiosilva · Outubro 2026. Licensed under CC BY 4.0.</dc:rights><dc:date>2026-10</dc:date><dc:language>pt-BR</dc:language><xmpRights:Marked>True</xmpRights:Marked><xmpRights:Owner>Aridio Silva</xmpRights:Owner><cc:license rdf:resource="https://creativecommons.org/licenses/by/4.0/"/><cc:attributionName>Aridio Silva (@aridiosilva)</cc:attributionName><dc:subject>Project SGAEIA</dc:subject><dc:identifier>https://doi.org/10.5281/zenodo.23732760</dc:identifier></rdf:Description></rdf:RDF></metadata>
+<defs><marker id="m14213d" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#14213d"/></marker></defs>
+<rect width="1200" height="628" fill="#ffffff"/>
+<rect x="30" y="22" width="6" height="52" rx="3" fill="#0e6e6a"/>
+<text x="48" y="44" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="13" font-weight="700" fill="#0e6e6a" letter-spacing="1.2">FIGURA 9</text>
+<text x="48" y="70" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="23" font-weight="700" fill="#14213d">Portão de qualidade: checagens mais baratas primeiro, escalonamento limitado</text>
+<text x="1170" y="44" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="13" fill="#5b6474" text-anchor="end">Camadas de checagem e desfechos</text>
+<g transform="translate(0,96)">
+<rect x="30.0" y="0.0" width="400.0" height="82.0" rx="10" fill="#ddf1e4" stroke="#1d7a3e" stroke-width="1.2"/>
+<text x="46.0" y="26.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="14.5" fill="#1d7a3e" font-weight="700" text-anchor="start"><tspan x="46.0" dy="0.0">1 · Determinísticas</tspan></text>
+<text x="46.0" y="48.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="12.5" fill="#14213d" font-weight="400" text-anchor="start"><tspan x="46.0" dy="0.0">JSON schema, campos obrigatórios, IDs</tspan><tspan x="46.0" dy="16.2">citados existem, limites de tamanho</tspan></text>
+<text x="416.0" y="26.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="11.5" fill="#5b6474" font-weight="600" text-anchor="end"><tspan x="416.0" dy="0.0">custo ≈ 0 · ms</tspan></text>
+<path d="M70.0,82.0 L70.0,96.0" fill="none" stroke="#14213d" stroke-width="1.5" marker-end="url(#m14213d)"/>
+<rect x="30.0" y="98.0" width="470.0" height="82.0" rx="10" fill="#d9efec" stroke="#0e6e6a" stroke-width="1.2"/>
+<text x="46.0" y="124.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="14.5" fill="#0e6e6a" font-weight="700" text-anchor="start"><tspan x="46.0" dy="0.0">2 · Classificadores</tspan></text>
+<text x="46.0" y="146.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="12.5" fill="#14213d" font-weight="400" text-anchor="start"><tspan x="46.0" dy="0.0">Segurança, PII, sinais de prompt injection,</tspan><tspan x="46.0" dy="16.2">regras de política</tspan></text>
+<text x="486.0" y="124.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="11.5" fill="#5b6474" font-weight="600" text-anchor="end"><tspan x="486.0" dy="0.0">custo baixo · dezenas de ms</tspan></text>
+<path d="M70.0,180.0 L70.0,194.0" fill="none" stroke="#14213d" stroke-width="1.5" marker-end="url(#m14213d)"/>
+<rect x="30.0" y="196.0" width="540.0" height="82.0" rx="10" fill="#fbecd6" stroke="#a35a06" stroke-width="1.2"/>
+<text x="46.0" y="222.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="14.5" fill="#a35a06" font-weight="700" text-anchor="start"><tspan x="46.0" dy="0.0">3 · Fundamentação</tspan></text>
+<text x="46.0" y="244.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="12.5" fill="#14213d" font-weight="400" text-anchor="start"><tspan x="46.0" dy="0.0">Cada afirmação apoiada pela evidência (NLI, faithfulness do</tspan><tspan x="46.0" dy="16.2">RAGAS), cobertura de citações</tspan></text>
+<text x="556.0" y="222.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="11.5" fill="#5b6474" font-weight="600" text-anchor="end"><tspan x="556.0" dy="0.0">custo médio</tspan></text>
+<path d="M70.0,278.0 L70.0,292.0" fill="none" stroke="#14213d" stroke-width="1.5" marker-end="url(#m14213d)"/>
+<rect x="30.0" y="294.0" width="610.0" height="82.0" rx="10" fill="#ebe5f8" stroke="#5b3fa8" stroke-width="1.2"/>
+<text x="46.0" y="320.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="14.5" fill="#5b3fa8" font-weight="700" text-anchor="start"><tspan x="46.0" dy="0.0">4 · Julgamento por modelo</tspan></text>
+<text x="46.0" y="342.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="12.5" fill="#14213d" font-weight="400" text-anchor="start"><tspan x="46.0" dy="0.0">Rubrica com LLM-juiz, autoconsistência (SelfCheckGPT); amostral ou só</tspan><tspan x="46.0" dy="16.2">alto risco</tspan></text>
+<text x="626.0" y="320.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="11.5" fill="#5b6474" font-weight="600" text-anchor="end"><tspan x="626.0" dy="0.0">custo mais alto</tspan></text>
+<text x="30.0" y="404.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="12.5" fill="#5b6474" font-weight="600" text-anchor="start"><tspan x="30.0" dy="0.0">Execute em ordem; pare na primeira falha grave. O custo cresce para baixo.</tspan></text>
+<path d="M640.0,190.0 L752.0,190.0" fill="none" stroke="#14213d" stroke-width="2" marker-end="url(#m14213d)"/>
+<rect x="760.0" y="6.0" width="410.0" height="80.0" rx="10" fill="#fff" stroke="#1d7a3e" stroke-width="1.6"/>
+<rect x="760.0" y="6.0" width="8.0" height="80.0" rx="3" fill="#1d7a3e" stroke="none" stroke-width="1.2"/>
+<text x="784.0" y="34.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="15" fill="#1d7a3e" font-weight="700" text-anchor="start"><tspan x="784.0" dy="0.0">PASSA</tspan></text>
+<text x="784.0" y="58.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="12.5" fill="#14213d" font-weight="400" text-anchor="start"><tspan x="784.0" dy="0.0">Responde, registra trace e custo, grava no cache se</tspan><tspan x="784.0" dy="16.2">elegível</tspan></text>
+<rect x="760.0" y="98.0" width="410.0" height="80.0" rx="10" fill="#fff" stroke="#a35a06" stroke-width="1.6"/>
+<rect x="760.0" y="98.0" width="8.0" height="80.0" rx="3" fill="#a35a06" stroke="none" stroke-width="1.2"/>
+<text x="784.0" y="126.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="15" fill="#a35a06" font-weight="700" text-anchor="start"><tspan x="784.0" dy="0.0">REPARA</tspan></text>
+<text x="784.0" y="150.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="12.5" fill="#14213d" font-weight="400" text-anchor="start"><tspan x="784.0" dy="0.0">Uma nova tentativa com a mensagem de erro do validador</tspan></text>
+<rect x="760.0" y="190.0" width="410.0" height="80.0" rx="10" fill="#fff" stroke="#1f3a68" stroke-width="1.6"/>
+<rect x="760.0" y="190.0" width="8.0" height="80.0" rx="3" fill="#1f3a68" stroke="none" stroke-width="1.2"/>
+<text x="784.0" y="218.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="15" fill="#1f3a68" font-weight="700" text-anchor="start"><tspan x="784.0" dy="0.0">ESCALA</tspan></text>
+<text x="784.0" y="242.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="12.5" fill="#14213d" font-weight="400" text-anchor="start"><tspan x="784.0" dy="0.0">Envia ao próximo nível; no máximo um salto</tspan></text>
+<rect x="760.0" y="282.0" width="410.0" height="80.0" rx="10" fill="#fff" stroke="#b42318" stroke-width="1.6"/>
+<rect x="760.0" y="282.0" width="8.0" height="80.0" rx="3" fill="#b42318" stroke="none" stroke-width="1.2"/>
+<text x="784.0" y="310.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="15" fill="#b42318" font-weight="700" text-anchor="start"><tspan x="784.0" dy="0.0">ABSTÉM / HUMANO</tspan></text>
+<text x="784.0" y="334.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="12.5" fill="#14213d" font-weight="400" text-anchor="start"><tspan x="784.0" dy="0.0">Recusa com segurança ou repassa com contexto</tspan></text>
+<rect x="760.0" y="380.0" width="410.0" height="76.0" rx="10" fill="#f4f7fa" stroke="#c9d1dc" stroke-width="1.2"/>
+<text x="776.0" y="404.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="12" fill="#14213d" font-weight="400" text-anchor="start"><tspan x="776.0" dy="0.0">Guarda de orçamento: ≤ 1 nova tentativa, ≤ 1 escalonamento,</tspan><tspan x="776.0" dy="15.6">teto de custo por requisição. Calibre juízes com rótulos</tspan><tspan x="776.0" dy="15.6">humanos: vieses de posição, verbosidade e autopreferência</tspan><tspan x="776.0" dy="15.6">(Zheng et al. 2023).</tspan></text>
+</g>
+<line x1="30" y1="578" x2="1170" y2="578" stroke="#c9d1dc"/>
+<text x="30" y="598" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="12" fill="#5b6474">Fontes: Es et al. 2023 (RAGAS); Manakul et al. 2023 (SelfCheckGPT); Zheng et al. 2023 (LLM-as-judge); Asai et al. 2023; Yan et al. 2024; OWASP 2025.</text>
+<text x="30" y="616" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="12" font-weight="600" fill="#14213d">© Aridio Silva @aridiosilva · Outubro 2026 · Pesquisador Independente · ORCID 0009-0008-2411-6995 · Figuras sob licença CC BY 4.0</text>
+</svg>

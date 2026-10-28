@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 658" width="1200" height="658" role="img" aria-label="Figure 2. Cost model: each lever attacks a different factor">
+<title>Figure 2. Cost model: each lever attacks a different factor</title>
+<desc>© Aridio Silva @aridiosilva · Outubro 2026 · Independent Researcher · ORCID 0009-0008-2411-6995 · All figures licensed CC BY 4.0</desc>
+<metadata><rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:xmpRights="http://ns.adobe.com/xap/1.0/rights/"><rdf:Description rdf:about=""><dc:title>Figure 2. Cost model: each lever attacks a different factor</dc:title><dc:creator>Aridio Silva (@aridiosilva), ORCID 0009-0008-2411-6995</dc:creator><dc:rights>© Aridio Silva @aridiosilva · Outubro 2026. Licensed under CC BY 4.0.</dc:rights><dc:date>2026-10</dc:date><dc:language>en</dc:language><xmpRights:Marked>True</xmpRights:Marked><xmpRights:Owner>Aridio Silva</xmpRights:Owner><cc:license rdf:resource="https://creativecommons.org/licenses/by/4.0/"/><cc:attributionName>Aridio Silva (@aridiosilva)</cc:attributionName><dc:subject>Project SGAEIA</dc:subject><dc:identifier>https://doi.org/10.5281/zenodo.23732760</dc:identifier></rdf:Description></rdf:RDF></metadata>
+<defs></defs>
+<rect width="1200" height="658" fill="#ffffff"/>
+<rect x="30" y="22" width="6" height="52" rx="3" fill="#0e6e6a"/>
+<text x="48" y="44" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="13" font-weight="700" fill="#0e6e6a" letter-spacing="1.2">FIGURE 2</text>
+<text x="48" y="70" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="23" font-weight="700" fill="#14213d">Cost model: each lever attacks a different factor</text>
+<text x="1170" y="44" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="13" fill="#5b6474" text-anchor="end">Monthly LLM spend decomposed</text>
+<g transform="translate(0,96)">
+<rect x="30.0" y="6.0" width="1140.0" height="50.0" rx="10" fill="#f4f7fa" stroke="#c9d1dc" stroke-width="1.2"/>
+<text x="600.0" y="39.0" font-family="Consolas,'SF Mono',Menlo,monospace" font-size="19" fill="#14213d" font-weight="600" text-anchor="middle"><tspan x="600.0" dy="0.0">C = N · (1 − h) · k · [ p_in(m)·(T_u + δ·T_c) + p_out(m)·T_out ] · (1 − β·b) + C_ovh</tspan></text>
+<rect x="30.0" y="76.0" width="368.0" height="124.0" rx="10" fill="#fff" stroke="#c9d1dc" stroke-width="1.2"/>
+<rect x="30.0" y="76.0" width="6.0" height="124.0" rx="3" fill="#475569" stroke="none" stroke-width="1.2"/>
+<text x="52.0" y="110.0" font-family="Consolas,'SF Mono',Menlo,monospace" font-size="21" fill="#475569" font-weight="700" text-anchor="start"><tspan x="52.0" dy="0.0">N</tspan></text>
+<rect x="299.8" y="90.0" width="86.2" height="21.0" rx="10.5" fill="#e5e9ef" stroke="#475569" stroke-width="1"/>
+<text x="342.9" y="103.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="11" fill="#475569" font-weight="600" text-anchor="middle"><tspan x="342.9" dy="0.0">Not a lever</tspan></text>
+<text x="52.0" y="138.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="14" fill="#14213d" font-weight="700" text-anchor="start"><tspan x="52.0" dy="0.0">Requests per month</tspan></text>
+<text x="52.0" y="160.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="12.5" fill="#5b6474" font-weight="400" text-anchor="start"><tspan x="52.0" dy="0.0">Demand is given. The levers act on the cost of</tspan><tspan x="52.0" dy="16.2">each request.</tspan></text>
+<rect x="416.0" y="76.0" width="368.0" height="124.0" rx="10" fill="#fff" stroke="#c9d1dc" stroke-width="1.2"/>
+<rect x="416.0" y="76.0" width="6.0" height="124.0" rx="3" fill="#a35a06" stroke="none" stroke-width="1.2"/>
+<text x="438.0" y="110.0" font-family="Consolas,'SF Mono',Menlo,monospace" font-size="21" fill="#a35a06" font-weight="700" text-anchor="start"><tspan x="438.0" dy="0.0">1 − h</tspan></text>
+<rect x="647.5" y="90.0" width="124.5" height="21.0" rx="10.5" fill="#fbecd6" stroke="#a35a06" stroke-width="1"/>
+<text x="709.8" y="103.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="11" fill="#a35a06" font-weight="600" text-anchor="middle"><tspan x="709.8" dy="0.0">L4 Semantic cache</tspan></text>
+<text x="438.0" y="138.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="14" fill="#14213d" font-weight="700" text-anchor="start"><tspan x="438.0" dy="0.0">Semantic-cache miss rate</tspan></text>
+<text x="438.0" y="160.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="12.5" fill="#5b6474" font-weight="400" text-anchor="start"><tspan x="438.0" dy="0.0">A hit skips retrieval, generation and checks</tspan><tspan x="438.0" dy="16.2">after one lookup.</tspan></text>
+<rect x="802.0" y="76.0" width="368.0" height="124.0" rx="10" fill="#fff" stroke="#c9d1dc" stroke-width="1.2"/>
+<rect x="802.0" y="76.0" width="6.0" height="124.0" rx="3" fill="#1d7a3e" stroke="none" stroke-width="1.2"/>
+<text x="824.0" y="110.0" font-family="Consolas,'SF Mono',Menlo,monospace" font-size="21" fill="#1d7a3e" font-weight="700" text-anchor="start"><tspan x="824.0" dy="0.0">k</tspan></text>
+<rect x="1059.1" y="90.0" width="98.9" height="21.0" rx="10.5" fill="#ddf1e4" stroke="#1d7a3e" stroke-width="1"/>
+<text x="1108.5" y="103.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="11" fill="#1d7a3e" font-weight="600" text-anchor="middle"><tspan x="1108.5" dy="0.0">L5 Agent loop</tspan></text>
+<text x="824.0" y="138.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="14" fill="#14213d" font-weight="700" text-anchor="start"><tspan x="824.0" dy="0.0">LLM calls per request</tspan></text>
+<text x="824.0" y="160.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="12.5" fill="#5b6474" font-weight="400" text-anchor="start"><tspan x="824.0" dy="0.0">Agent steps, tool loops, retries and duplicate</tspan><tspan x="824.0" dy="16.2">calls.</tspan></text>
+<rect x="30.0" y="214.0" width="368.0" height="124.0" rx="10" fill="#fff" stroke="#c9d1dc" stroke-width="1.2"/>
+<rect x="30.0" y="214.0" width="6.0" height="124.0" rx="3" fill="#1f3a68" stroke="none" stroke-width="1.2"/>
+<text x="52.0" y="248.0" font-family="Consolas,'SF Mono',Menlo,monospace" font-size="21" fill="#1f3a68" font-weight="700" text-anchor="start"><tspan x="52.0" dy="0.0">m → p(m)</tspan></text>
+<rect x="306.2" y="228.0" width="79.8" height="21.0" rx="10.5" fill="#dfe7f3" stroke="#1f3a68" stroke-width="1"/>
+<text x="346.1" y="241.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="11" fill="#1f3a68" font-weight="600" text-anchor="middle"><tspan x="346.1" dy="0.0">L1 Routing</tspan></text>
+<text x="52.0" y="276.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="14" fill="#14213d" font-weight="700" text-anchor="start"><tspan x="52.0" dy="0.0">Model chosen → token prices</tspan></text>
+<text x="52.0" y="298.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="12.5" fill="#5b6474" font-weight="400" text-anchor="start"><tspan x="52.0" dy="0.0">API prices differed by up to two orders of</tspan><tspan x="52.0" dy="16.2">magnitude (Chen et al. 2023).</tspan></text>
+<rect x="416.0" y="214.0" width="368.0" height="124.0" rx="10" fill="#fff" stroke="#c9d1dc" stroke-width="1.2"/>
+<rect x="416.0" y="214.0" width="6.0" height="124.0" rx="3" fill="#0e6e6a" stroke="none" stroke-width="1.2"/>
+<text x="438.0" y="248.0" font-family="Consolas,'SF Mono',Menlo,monospace" font-size="21" fill="#0e6e6a" font-weight="700" text-anchor="start"><tspan x="438.0" dy="0.0">T_u</tspan></text>
+<rect x="692.2" y="228.0" width="79.8" height="21.0" rx="10.5" fill="#d9efec" stroke="#0e6e6a" stroke-width="1"/>
+<text x="732.1" y="241.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="11" fill="#0e6e6a" font-weight="600" text-anchor="middle"><tspan x="732.1" dy="0.0">L2 Context</tspan></text>
+<text x="438.0" y="276.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="14" fill="#14213d" font-weight="700" text-anchor="start"><tspan x="438.0" dy="0.0">Uncached input tokens</tspan></text>
+<text x="438.0" y="298.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="12.5" fill="#5b6474" font-weight="400" text-anchor="start"><tspan x="438.0" dy="0.0">Retrieved chunks, history and instructions billed</tspan><tspan x="438.0" dy="16.2">at full price.</tspan></text>
+<rect x="802.0" y="214.0" width="368.0" height="124.0" rx="10" fill="#fff" stroke="#c9d1dc" stroke-width="1.2"/>
+<rect x="802.0" y="214.0" width="6.0" height="124.0" rx="3" fill="#5b3fa8" stroke="none" stroke-width="1.2"/>
+<text x="824.0" y="248.0" font-family="Consolas,'SF Mono',Menlo,monospace" font-size="21" fill="#5b3fa8" font-weight="700" text-anchor="start"><tspan x="824.0" dy="0.0">δ · T_c</tspan></text>
+<rect x="1046.3" y="228.0" width="111.7" height="21.0" rx="10.5" fill="#ebe5f8" stroke="#5b3fa8" stroke-width="1"/>
+<text x="1102.1" y="241.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="11" fill="#5b3fa8" font-weight="600" text-anchor="middle"><tspan x="1102.1" dy="0.0">L3 Prompt cache</tspan></text>
+<text x="824.0" y="276.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="14" fill="#14213d" font-weight="700" text-anchor="start"><tspan x="824.0" dy="0.0">Cached prefix tokens</tspan></text>
+<text x="824.0" y="298.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="12.5" fill="#5b6474" font-weight="400" text-anchor="start"><tspan x="824.0" dy="0.0">Anthropic: reads δ = 0.1×, 5-min writes 1.25×.</tspan><tspan x="824.0" dy="16.2">OpenAI: up to 95% off.</tspan></text>
+<rect x="30.0" y="352.0" width="368.0" height="124.0" rx="10" fill="#fff" stroke="#c9d1dc" stroke-width="1.2"/>
+<rect x="30.0" y="352.0" width="6.0" height="124.0" rx="3" fill="#0e6e6a" stroke="none" stroke-width="1.2"/>
+<text x="52.0" y="386.0" font-family="Consolas,'SF Mono',Menlo,monospace" font-size="21" fill="#0e6e6a" font-weight="700" text-anchor="start"><tspan x="52.0" dy="0.0">T_out</tspan></text>
+<rect x="306.2" y="366.0" width="79.8" height="21.0" rx="10.5" fill="#d9efec" stroke="#0e6e6a" stroke-width="1"/>
+<text x="346.1" y="379.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="11" fill="#0e6e6a" font-weight="600" text-anchor="middle"><tspan x="346.1" dy="0.0">L2 Context</tspan></text>
+<text x="52.0" y="414.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="14" fill="#14213d" font-weight="700" text-anchor="start"><tspan x="52.0" dy="0.0">Output tokens</tspan></text>
+<text x="52.0" y="436.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="12.5" fill="#5b6474" font-weight="400" text-anchor="start"><tspan x="52.0" dy="0.0">Often priced several times the input rate. Cap</tspan><tspan x="52.0" dy="16.2">with formats and max_tokens.</tspan></text>
+<rect x="416.0" y="352.0" width="368.0" height="124.0" rx="10" fill="#fff" stroke="#c9d1dc" stroke-width="1.2"/>
+<rect x="416.0" y="352.0" width="6.0" height="124.0" rx="3" fill="#475569" stroke="none" stroke-width="1.2"/>
+<text x="438.0" y="386.0" font-family="Consolas,'SF Mono',Menlo,monospace" font-size="21" fill="#475569" font-weight="700" text-anchor="start"><tspan x="438.0" dy="0.0">1 − β·b</tspan></text>
+<rect x="705.0" y="366.0" width="67.0" height="21.0" rx="10.5" fill="#e5e9ef" stroke="#475569" stroke-width="1"/>
+<text x="738.5" y="379.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="11" fill="#475569" font-weight="600" text-anchor="middle"><tspan x="738.5" dy="0.0">L6 Batch</tspan></text>
+<text x="438.0" y="414.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="14" fill="#14213d" font-weight="700" text-anchor="start"><tspan x="438.0" dy="0.0">Batch discount on batched share</tspan></text>
+<text x="438.0" y="436.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="12.5" fill="#5b6474" font-weight="400" text-anchor="start"><tspan x="438.0" dy="0.0">β = 0.5 at Anthropic, OpenAI and Google. b =</tspan><tspan x="438.0" dy="16.2">share that can wait up to 24 h.</tspan></text>
+<rect x="802.0" y="352.0" width="368.0" height="124.0" rx="10" fill="#fff" stroke="#c9d1dc" stroke-width="1.2"/>
+<rect x="802.0" y="352.0" width="6.0" height="124.0" rx="3" fill="#b42318" stroke="none" stroke-width="1.2"/>
+<text x="824.0" y="386.0" font-family="Consolas,'SF Mono',Menlo,monospace" font-size="21" fill="#b42318" font-weight="700" text-anchor="start"><tspan x="824.0" dy="0.0">C_ovh</tspan></text>
+<rect x="1091.0" y="366.0" width="67.0" height="21.0" rx="10.5" fill="#fde4e1" stroke="#b42318" stroke-width="1"/>
+<text x="1124.5" y="379.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="11" fill="#b42318" font-weight="600" text-anchor="middle"><tspan x="1124.5" dy="0.0">New cost</tspan></text>
+<text x="824.0" y="414.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="14" fill="#14213d" font-weight="700" text-anchor="start"><tspan x="824.0" dy="0.0">Overhead the levers add</tspan></text>
+<text x="824.0" y="436.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="12.5" fill="#5b6474" font-weight="400" text-anchor="start"><tspan x="824.0" dy="0.0">Embeddings, vector DB, router, judges and</tspan><tspan x="824.0" dy="16.2">evaluation runs.</tspan></text>
+</g>
+<line x1="30" y1="608" x2="1170" y2="608" stroke="#c9d1dc"/>
+<text x="30" y="628" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="12" fill="#5b6474">Cost model by the author. Price multipliers: Anthropic, OpenAI and Google API documentation (accessed 2026-10-27).</text>
+<text x="30" y="646" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="12" font-weight="600" fill="#14213d">© Aridio Silva @aridiosilva · Outubro 2026 · Independent Researcher · ORCID 0009-0008-2411-6995 · All figures licensed CC BY 4.0</text>
+</svg>

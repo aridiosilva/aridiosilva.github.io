@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 718" width="1200" height="718" role="img" aria-label="Figure 12. KPI tree: one north-star metric, three families of drivers">
+<title>Figure 12. KPI tree: one north-star metric, three families of drivers</title>
+<desc>© Aridio Silva @aridiosilva · Outubro 2026 · Independent Researcher · ORCID 0009-0008-2411-6995 · All figures licensed CC BY 4.0</desc>
+<metadata><rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:xmpRights="http://ns.adobe.com/xap/1.0/rights/"><rdf:Description rdf:about=""><dc:title>Figure 12. KPI tree: one north-star metric, three families of drivers</dc:title><dc:creator>Aridio Silva (@aridiosilva), ORCID 0009-0008-2411-6995</dc:creator><dc:rights>© Aridio Silva @aridiosilva · Outubro 2026. Licensed under CC BY 4.0.</dc:rights><dc:date>2026-10</dc:date><dc:language>en</dc:language><xmpRights:Marked>True</xmpRights:Marked><xmpRights:Owner>Aridio Silva</xmpRights:Owner><cc:license rdf:resource="https://creativecommons.org/licenses/by/4.0/"/><cc:attributionName>Aridio Silva (@aridiosilva)</cc:attributionName><dc:subject>Project SGAEIA</dc:subject><dc:identifier>https://doi.org/10.5281/zenodo.23732760</dc:identifier></rdf:Description></rdf:RDF></metadata>
+<defs><marker id="m0e6e6a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#0e6e6a"/></marker><marker id="m5b3fa8" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#5b3fa8"/></marker><marker id="ma35a06" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#a35a06"/></marker></defs>
+<rect width="1200" height="718" fill="#ffffff"/>
+<rect x="30" y="22" width="6" height="52" rx="3" fill="#0e6e6a"/>
+<text x="48" y="44" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="13" font-weight="700" fill="#0e6e6a" letter-spacing="1.2">FIGURE 12</text>
+<text x="48" y="70" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="23" font-weight="700" fill="#14213d">KPI tree: one north-star metric, three families of drivers</text>
+<text x="1170" y="44" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="13" fill="#5b6474" text-anchor="end">What to measure before and after</text>
+<g transform="translate(0,96)">
+<rect x="330.0" y="0.0" width="540.0" height="72.0" rx="12" fill="#14213d" stroke="none" stroke-width="1.2"/>
+<text x="600.0" y="30.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="18" fill="#fff" font-weight="700" text-anchor="middle"><tspan x="600.0" dy="0.0">Cost per successful task (CPST)</tspan></text>
+<text x="600.0" y="54.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="13" fill="#dfe7f3" font-weight="400" text-anchor="middle"><tspan x="600.0" dy="0.0">= total cost ÷ number of successful tasks  ≈  cost-of-pass</tspan></text>
+<path d="M600,72 C600,100 214,96 214,118" fill="none" stroke="#0e6e6a" stroke-width="2" marker-end="url(#m0e6e6a)"/>
+<rect x="30.0" y="120.0" width="368.0" height="48.0" rx="10" fill="#0e6e6a" stroke="none" stroke-width="1.2"/>
+<text x="214.0" y="150.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="15" fill="#fff" font-weight="700" text-anchor="middle"><tspan x="214.0" dy="0.0">Cost drivers</tspan></text>
+<path d="M50.0,168.0 L50.0,510.0" fill="none" stroke="#0e6e6a" stroke-width="1.5"/>
+<path d="M50.0,206.0 L66.0,206.0" fill="none" stroke="#0e6e6a" stroke-width="1.5"/>
+<rect x="66.0" y="184.0" width="332.0" height="46.0" rx="8" fill="#d9efec" stroke="#0e6e6a" stroke-width="1"/>
+<text x="80.0" y="212.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="13" fill="#14213d" font-weight="600" text-anchor="start"><tspan x="80.0" dy="0.0">Input / output tokens per request</tspan></text>
+<path d="M50.0,268.0 L66.0,268.0" fill="none" stroke="#0e6e6a" stroke-width="1.5"/>
+<rect x="66.0" y="246.0" width="332.0" height="46.0" rx="8" fill="#d9efec" stroke="#0e6e6a" stroke-width="1"/>
+<text x="80.0" y="274.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="13" fill="#14213d" font-weight="600" text-anchor="start"><tspan x="80.0" dy="0.0">Traffic share per model tier</tspan></text>
+<path d="M50.0,330.0 L66.0,330.0" fill="none" stroke="#0e6e6a" stroke-width="1.5"/>
+<rect x="66.0" y="308.0" width="332.0" height="46.0" rx="8" fill="#d9efec" stroke="#0e6e6a" stroke-width="1"/>
+<text x="80.0" y="336.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="13" fill="#14213d" font-weight="600" text-anchor="start"><tspan x="80.0" dy="0.0">Prompt-cache read share T_c / T_in</tspan></text>
+<path d="M50.0,392.0 L66.0,392.0" fill="none" stroke="#0e6e6a" stroke-width="1.5"/>
+<rect x="66.0" y="370.0" width="332.0" height="46.0" rx="8" fill="#d9efec" stroke="#0e6e6a" stroke-width="1"/>
+<text x="80.0" y="398.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="13" fill="#14213d" font-weight="600" text-anchor="start"><tspan x="80.0" dy="0.0">Semantic-cache hit rate h</tspan></text>
+<path d="M50.0,454.0 L66.0,454.0" fill="none" stroke="#0e6e6a" stroke-width="1.5"/>
+<rect x="66.0" y="432.0" width="332.0" height="46.0" rx="8" fill="#d9efec" stroke="#0e6e6a" stroke-width="1"/>
+<text x="80.0" y="460.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="13" fill="#14213d" font-weight="600" text-anchor="start"><tspan x="80.0" dy="0.0">LLM calls per request k</tspan></text>
+<path d="M50.0,516.0 L66.0,516.0" fill="none" stroke="#0e6e6a" stroke-width="1.5"/>
+<rect x="66.0" y="494.0" width="332.0" height="46.0" rx="8" fill="#d9efec" stroke="#0e6e6a" stroke-width="1"/>
+<text x="80.0" y="522.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="13" fill="#14213d" font-weight="600" text-anchor="start"><tspan x="80.0" dy="0.0">Batch share b · overhead share</tspan></text>
+<path d="M600,72 C600,100 600,96 600,118" fill="none" stroke="#5b3fa8" stroke-width="2" marker-end="url(#m5b3fa8)"/>
+<rect x="416.0" y="120.0" width="368.0" height="48.0" rx="10" fill="#5b3fa8" stroke="none" stroke-width="1.2"/>
+<text x="600.0" y="150.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="15" fill="#fff" font-weight="700" text-anchor="middle"><tspan x="600.0" dy="0.0">Quality guards</tspan></text>
+<path d="M436.0,168.0 L436.0,510.0" fill="none" stroke="#5b3fa8" stroke-width="1.5"/>
+<path d="M436.0,206.0 L452.0,206.0" fill="none" stroke="#5b3fa8" stroke-width="1.5"/>
+<rect x="452.0" y="184.0" width="332.0" height="46.0" rx="8" fill="#ebe5f8" stroke="#5b3fa8" stroke-width="1"/>
+<text x="466.0" y="212.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="13" fill="#14213d" font-weight="600" text-anchor="start"><tspan x="466.0" dy="0.0">Task success rate (95% CI)</tspan></text>
+<path d="M436.0,268.0 L452.0,268.0" fill="none" stroke="#5b3fa8" stroke-width="1.5"/>
+<rect x="452.0" y="246.0" width="332.0" height="46.0" rx="8" fill="#ebe5f8" stroke="#5b3fa8" stroke-width="1"/>
+<text x="466.0" y="274.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="13" fill="#14213d" font-weight="600" text-anchor="start"><tspan x="466.0" dy="0.0">Groundedness / faithfulness</tspan></text>
+<path d="M436.0,330.0 L452.0,330.0" fill="none" stroke="#5b3fa8" stroke-width="1.5"/>
+<rect x="452.0" y="308.0" width="332.0" height="46.0" rx="8" fill="#ebe5f8" stroke="#5b3fa8" stroke-width="1"/>
+<text x="466.0" y="336.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="13" fill="#14213d" font-weight="600" text-anchor="start"><tspan x="466.0" dy="0.0">Critical-error rate</tspan></text>
+<path d="M436.0,392.0 L452.0,392.0" fill="none" stroke="#5b3fa8" stroke-width="1.5"/>
+<rect x="452.0" y="370.0" width="332.0" height="46.0" rx="8" fill="#ebe5f8" stroke="#5b3fa8" stroke-width="1"/>
+<text x="466.0" y="398.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="13" fill="#14213d" font-weight="600" text-anchor="start"><tspan x="466.0" dy="0.0">Escalation rate r</tspan></text>
+<path d="M436.0,454.0 L452.0,454.0" fill="none" stroke="#5b3fa8" stroke-width="1.5"/>
+<rect x="452.0" y="432.0" width="332.0" height="46.0" rx="8" fill="#ebe5f8" stroke="#5b3fa8" stroke-width="1"/>
+<text x="466.0" y="460.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="13" fill="#14213d" font-weight="600" text-anchor="start"><tspan x="466.0" dy="0.0">Semantic-cache false-hit rate</tspan></text>
+<path d="M436.0,516.0 L452.0,516.0" fill="none" stroke="#5b3fa8" stroke-width="1.5"/>
+<rect x="452.0" y="494.0" width="332.0" height="46.0" rx="8" fill="#ebe5f8" stroke="#5b3fa8" stroke-width="1"/>
+<text x="466.0" y="522.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="13" fill="#14213d" font-weight="600" text-anchor="start"><tspan x="466.0" dy="0.0">Abstention / hand-off rate</tspan></text>
+<path d="M600,72 C600,100 986,96 986,118" fill="none" stroke="#a35a06" stroke-width="2" marker-end="url(#ma35a06)"/>
+<rect x="802.0" y="120.0" width="368.0" height="48.0" rx="10" fill="#a35a06" stroke="none" stroke-width="1.2"/>
+<text x="986.0" y="150.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="15" fill="#fff" font-weight="700" text-anchor="middle"><tspan x="986.0" dy="0.0">Experience and operations</tspan></text>
+<path d="M822.0,168.0 L822.0,510.0" fill="none" stroke="#a35a06" stroke-width="1.5"/>
+<path d="M822.0,206.0 L838.0,206.0" fill="none" stroke="#a35a06" stroke-width="1.5"/>
+<rect x="838.0" y="184.0" width="332.0" height="46.0" rx="8" fill="#fbecd6" stroke="#a35a06" stroke-width="1"/>
+<text x="852.0" y="212.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="13" fill="#14213d" font-weight="600" text-anchor="start"><tspan x="852.0" dy="0.0">P50 / P95 end-to-end latency</tspan></text>
+<path d="M822.0,268.0 L838.0,268.0" fill="none" stroke="#a35a06" stroke-width="1.5"/>
+<rect x="838.0" y="246.0" width="332.0" height="46.0" rx="8" fill="#fbecd6" stroke="#a35a06" stroke-width="1"/>
+<text x="852.0" y="274.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="13" fill="#14213d" font-weight="600" text-anchor="start"><tspan x="852.0" dy="0.0">Time to first token</tspan></text>
+<path d="M822.0,330.0 L838.0,330.0" fill="none" stroke="#a35a06" stroke-width="1.5"/>
+<rect x="838.0" y="308.0" width="332.0" height="46.0" rx="8" fill="#fbecd6" stroke="#a35a06" stroke-width="1"/>
+<text x="852.0" y="336.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="13" fill="#14213d" font-weight="600" text-anchor="start"><tspan x="852.0" dy="0.0">Error and timeout rate</tspan></text>
+<path d="M822.0,392.0 L838.0,392.0" fill="none" stroke="#a35a06" stroke-width="1.5"/>
+<rect x="838.0" y="370.0" width="332.0" height="46.0" rx="8" fill="#fbecd6" stroke="#a35a06" stroke-width="1"/>
+<text x="852.0" y="398.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="13" fill="#14213d" font-weight="600" text-anchor="start"><tspan x="852.0" dy="0.0">Cost per tenant and feature</tspan></text>
+<path d="M822.0,454.0 L838.0,454.0" fill="none" stroke="#a35a06" stroke-width="1.5"/>
+<rect x="838.0" y="432.0" width="332.0" height="46.0" rx="8" fill="#fbecd6" stroke="#a35a06" stroke-width="1"/>
+<text x="852.0" y="460.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="13" fill="#14213d" font-weight="600" text-anchor="start"><tspan x="852.0" dy="0.0">SLO error-budget burn rate</tspan></text>
+<path d="M822.0,516.0 L838.0,516.0" fill="none" stroke="#a35a06" stroke-width="1.5"/>
+<rect x="838.0" y="494.0" width="332.0" height="46.0" rx="8" fill="#fbecd6" stroke="#a35a06" stroke-width="1"/>
+<text x="852.0" y="522.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="13" fill="#14213d" font-weight="600" text-anchor="start"><tspan x="852.0" dy="0.0">Trace coverage (% of requests)</tspan></text>
+</g>
+<line x1="30" y1="668" x2="1170" y2="668" stroke="#c9d1dc"/>
+<text x="30" y="688" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="12" fill="#5b6474">Sources: Erol et al. 2025 (cost-of-pass); Miller 2024 (error bars); Liang et al. 2022 (HELM); Beyer et al. 2016 (SLOs); OpenTelemetry GenAI.</text>
+<text x="30" y="706" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="12" font-weight="600" fill="#14213d">© Aridio Silva @aridiosilva · Outubro 2026 · Independent Researcher · ORCID 0009-0008-2411-6995 · All figures licensed CC BY 4.0</text>
+</svg>

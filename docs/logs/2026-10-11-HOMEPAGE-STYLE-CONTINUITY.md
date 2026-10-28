@@ -1058,3 +1058,15 @@ Novos artigos e infográficos devem reutilizar esse rodapé compartilhado e sua 
 - `llms.txt` passou a registrar o perfil Academia.edu entre os arquivos e perfis de pesquisa; `robots.txt` recebeu o comentário informativo e todas as 69 URLs do sitemap receberam `lastmod` 2026-10-28.
 - Auditoria estrutural confirmou exatamente um link Academia.edu dentro do rodapé de cada HTML, sem duplicações. Alterações anteriores do Info_017 foram preservadas.
 - Nenhum stage, commit ou push foi executado pelo assistente.
+
+## Artigo 23 — inclusão local EN/PT — 28 de outubro de 2026
+
+- Incluídas as edições integrais do Artigo 23 em `/publications/artigo23/` (EN, padrão e `x-default`) e `/publications/artigo23/pt/` (PT), a partir dos mestres finais fornecidos pelo autor.
+- Título EN: `How to Reduce the Cost of AI Systems with LLMs Without Sacrificing Quality`; título PT: `Como Reduzir Custos de Sistemas de AI com LLMs sem Sacrificar Qualidade`; DOI `10.5281/zenodo.23732760`.
+- Preservados texto integral, glossário, 56 referências auditadas, capa localizada e 13 figuras por idioma em PNG/SVG, além dos PDFs técnicos de 26 páginas.
+- As páginas novas carregam exatamente uma referência ao Analytics compartilhado `/assets/analytics-consent.js?v=20261011`, com CSP compatível, canonical, `hreflang` recíproco EN/PT, `x-default` em EN, metadados de citação, Open Graph e JSON-LD `ScholarlyArticle`.
+- Adicionado o Artigo 23 ao início das seções de publicações e textos da homepage e ao início de `publications.html`, com links para Zenodo, DEV Community, Medium, Academia.edu e edição PT.
+- Atualizados `sitemap.xml`, `llms.txt`, `robots.txt`, `README.md`, `README.pt-BR.md` e este log de continuidade. O sitemap passa a conter 71 URLs únicas.
+- Hashes SHA-256 preservados: master EN `03116B37C062E0C00A6F4A2E79E80BBCFD989F2ED7AD40368F0F0A7BDC646FE7`; master PT `3E0FBC2BCFE94F0B89EABC8A2341F001FC3CEBA6EB3A4BD6AFC57294F6C905B9`; PDF EN `F04C3EE10EDDE3FA6CBF0291107885B02F4A84E23C192D8D86F18E9E519B76B1`; PDF PT `E0B0D89013960F3F1C60EFD0E5155AD837A127D7E069E21715AE6BD3205513FB`.
+- Registro detalhado: `docs/logs/2026-10-28-ARTICLE23-HOMEPAGE-PUBLICATION.md`.
+- Nenhum stage, commit ou push foi executado pelo assistente.

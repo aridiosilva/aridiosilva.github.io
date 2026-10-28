@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 588" width="1200" height="588" role="img" aria-label="Figure 13. Implementation roadmap: low-risk levers first, each phase gated">
+<title>Figure 13. Implementation roadmap: low-risk levers first, each phase gated</title>
+<desc>© Aridio Silva @aridiosilva · Outubro 2026 · Independent Researcher · ORCID 0009-0008-2411-6995 · All figures licensed CC BY 4.0</desc>
+<metadata><rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:xmpRights="http://ns.adobe.com/xap/1.0/rights/"><rdf:Description rdf:about=""><dc:title>Figure 13. Implementation roadmap: low-risk levers first, each phase gated</dc:title><dc:creator>Aridio Silva (@aridiosilva), ORCID 0009-0008-2411-6995</dc:creator><dc:rights>© Aridio Silva @aridiosilva · Outubro 2026. Licensed under CC BY 4.0.</dc:rights><dc:date>2026-10</dc:date><dc:language>en</dc:language><xmpRights:Marked>True</xmpRights:Marked><xmpRights:Owner>Aridio Silva</xmpRights:Owner><cc:license rdf:resource="https://creativecommons.org/licenses/by/4.0/"/><cc:attributionName>Aridio Silva (@aridiosilva)</cc:attributionName><dc:subject>Project SGAEIA</dc:subject><dc:identifier>https://doi.org/10.5281/zenodo.23732760</dc:identifier></rdf:Description></rdf:RDF></metadata>
+<defs></defs>
+<rect width="1200" height="588" fill="#ffffff"/>
+<rect x="30" y="22" width="6" height="52" rx="3" fill="#0e6e6a"/>
+<text x="48" y="44" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="13" font-weight="700" fill="#0e6e6a" letter-spacing="1.2">FIGURE 13</text>
+<text x="48" y="70" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="23" font-weight="700" fill="#14213d">Implementation roadmap: low-risk levers first, each phase gated</text>
+<text x="1170" y="44" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="13" fill="#5b6474" text-anchor="end">Weeks are indicative</text>
+<g transform="translate(0,96)">
+<path d="M270.0,18.0 L270.0,380.0" fill="none" stroke="#e6ebf1" stroke-width="1"/>
+<text x="297.8" y="12.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="11" fill="#5b6474" font-weight="400" text-anchor="middle"><tspan x="297.8" dy="0.0">1</tspan></text>
+<path d="M325.6,18.0 L325.6,380.0" fill="none" stroke="#e6ebf1" stroke-width="1"/>
+<text x="353.4" y="12.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="11" fill="#5b6474" font-weight="400" text-anchor="middle"><tspan x="353.4" dy="0.0">2</tspan></text>
+<path d="M381.2,18.0 L381.2,380.0" fill="none" stroke="#e6ebf1" stroke-width="1"/>
+<text x="409.1" y="12.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="11" fill="#5b6474" font-weight="400" text-anchor="middle"><tspan x="409.1" dy="0.0">3</tspan></text>
+<path d="M436.9,18.0 L436.9,380.0" fill="none" stroke="#e6ebf1" stroke-width="1"/>
+<text x="464.7" y="12.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="11" fill="#5b6474" font-weight="400" text-anchor="middle"><tspan x="464.7" dy="0.0">4</tspan></text>
+<path d="M492.5,18.0 L492.5,380.0" fill="none" stroke="#e6ebf1" stroke-width="1"/>
+<text x="520.3" y="12.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="11" fill="#5b6474" font-weight="400" text-anchor="middle"><tspan x="520.3" dy="0.0">5</tspan></text>
+<path d="M548.1,18.0 L548.1,380.0" fill="none" stroke="#e6ebf1" stroke-width="1"/>
+<text x="575.9" y="12.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="11" fill="#5b6474" font-weight="400" text-anchor="middle"><tspan x="575.9" dy="0.0">6</tspan></text>
+<path d="M603.8,18.0 L603.8,380.0" fill="none" stroke="#e6ebf1" stroke-width="1"/>
+<text x="631.6" y="12.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="11" fill="#5b6474" font-weight="400" text-anchor="middle"><tspan x="631.6" dy="0.0">7</tspan></text>
+<path d="M659.4,18.0 L659.4,380.0" fill="none" stroke="#e6ebf1" stroke-width="1"/>
+<text x="687.2" y="12.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="11" fill="#5b6474" font-weight="400" text-anchor="middle"><tspan x="687.2" dy="0.0">8</tspan></text>
+<path d="M715.0,18.0 L715.0,380.0" fill="none" stroke="#e6ebf1" stroke-width="1"/>
+<text x="742.8" y="12.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="11" fill="#5b6474" font-weight="400" text-anchor="middle"><tspan x="742.8" dy="0.0">9</tspan></text>
+<path d="M770.6,18.0 L770.6,380.0" fill="none" stroke="#e6ebf1" stroke-width="1"/>
+<text x="798.4" y="12.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="11" fill="#5b6474" font-weight="400" text-anchor="middle"><tspan x="798.4" dy="0.0">10</tspan></text>
+<path d="M826.2,18.0 L826.2,380.0" fill="none" stroke="#e6ebf1" stroke-width="1"/>
+<text x="854.1" y="12.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="11" fill="#5b6474" font-weight="400" text-anchor="middle"><tspan x="854.1" dy="0.0">11</tspan></text>
+<path d="M881.9,18.0 L881.9,380.0" fill="none" stroke="#e6ebf1" stroke-width="1"/>
+<text x="909.7" y="12.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="11" fill="#5b6474" font-weight="400" text-anchor="middle"><tspan x="909.7" dy="0.0">12</tspan></text>
+<path d="M937.5,18.0 L937.5,380.0" fill="none" stroke="#e6ebf1" stroke-width="1"/>
+<text x="965.3" y="12.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="11" fill="#5b6474" font-weight="400" text-anchor="middle"><tspan x="965.3" dy="0.0">13</tspan></text>
+<path d="M993.1,18.0 L993.1,380.0" fill="none" stroke="#e6ebf1" stroke-width="1"/>
+<text x="1020.9" y="12.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="11" fill="#5b6474" font-weight="400" text-anchor="middle"><tspan x="1020.9" dy="0.0">14</tspan></text>
+<path d="M1048.8,18.0 L1048.8,380.0" fill="none" stroke="#e6ebf1" stroke-width="1"/>
+<text x="1076.6" y="12.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="11" fill="#5b6474" font-weight="400" text-anchor="middle"><tspan x="1076.6" dy="0.0">15</tspan></text>
+<path d="M1104.4,18.0 L1104.4,380.0" fill="none" stroke="#e6ebf1" stroke-width="1"/>
+<text x="1132.2" y="12.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="11" fill="#5b6474" font-weight="400" text-anchor="middle"><tspan x="1132.2" dy="0.0">16</tspan></text>
+<path d="M1160.0,18.0 L1160.0,380.0" fill="none" stroke="#e6ebf1" stroke-width="1"/>
+<text x="260.0" y="12.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="11" fill="#5b6474" font-weight="600" text-anchor="end"><tspan x="260.0" dy="0.0">week</tspan></text>
+<text x="30.0" y="56.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="14" fill="#475569" font-weight="700" text-anchor="start"><tspan x="30.0" dy="0.0">0 · Baseline</tspan></text>
+<rect x="270.0" y="30.0" width="166.9" height="56.0" rx="8" fill="#e5e9ef" stroke="#475569" stroke-width="1.2"/>
+<text x="280.0" y="52.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="12" fill="#14213d" font-weight="600" text-anchor="start"><tspan x="280.0" dy="0.0">Cost traces; eval set</tspan><tspan x="280.0" dy="15.6">with CIs</tspan></text>
+<path d="M436.875,44 L450.875,58 L436.875,72 L422.875,58 z" fill="#fff" stroke="#475569" stroke-width="1"/>
+<text x="30.0" y="76.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="11.5" fill="#5b6474" font-weight="400" text-anchor="start"><tspan x="30.0" dy="0.0">Exit: baseline CPST known ± CI</tspan></text>
+<text x="30.0" y="126.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="14" fill="#1d7a3e" font-weight="700" text-anchor="start"><tspan x="30.0" dy="0.0">1 · Quick wins</tspan></text>
+<rect x="381.2" y="100.0" width="222.5" height="56.0" rx="8" fill="#ddf1e4" stroke="#1d7a3e" stroke-width="1.2"/>
+<text x="391.2" y="122.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="12" fill="#14213d" font-weight="600" text-anchor="start"><tspan x="391.2" dy="0.0">Dedup, loop and retry limits,</tspan><tspan x="391.2" dy="15.6">prompt caching</tspan></text>
+<path d="M603.75,114 L617.75,128 L603.75,142 L589.75,128 z" fill="#fff" stroke="#1d7a3e" stroke-width="1"/>
+<text x="30.0" y="146.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="11.5" fill="#5b6474" font-weight="400" text-anchor="start"><tspan x="30.0" dy="0.0">Exit: no quality regression</tspan></text>
+<text x="30.0" y="196.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="14" fill="#0e6e6a" font-weight="700" text-anchor="start"><tspan x="30.0" dy="0.0">2 · Context + batch</tspan></text>
+<rect x="492.5" y="170.0" width="333.8" height="56.0" rx="8" fill="#d9efec" stroke="#0e6e6a" stroke-width="1.2"/>
+<text x="502.5" y="192.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="12" fill="#14213d" font-weight="600" text-anchor="start"><tspan x="502.5" dy="0.0">Token budget, rerank, compression; batch async</tspan><tspan x="502.5" dy="15.6">jobs</tspan></text>
+<path d="M826.25,184 L840.25,198 L826.25,212 L812.25,198 z" fill="#fff" stroke="#0e6e6a" stroke-width="1"/>
+<text x="30.0" y="216.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="11.5" fill="#5b6474" font-weight="400" text-anchor="start"><tspan x="30.0" dy="0.0">Exit: tokens/request down,</tspan><tspan x="30.0" dy="15.0">groundedness ≥ base</tspan></text>
+<text x="30.0" y="266.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="14" fill="#1f3a68" font-weight="700" text-anchor="start"><tspan x="30.0" dy="0.0">3 · Routing + gates</tspan></text>
+<rect x="659.4" y="240.0" width="389.4" height="56.0" rx="8" fill="#dfe7f3" stroke="#1f3a68" stroke-width="1.2"/>
+<text x="669.4" y="262.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="12" fill="#14213d" font-weight="600" text-anchor="start"><tspan x="669.4" dy="0.0">2–3 tier router, gates, escalation; shadow mode first</tspan></text>
+<path d="M1048.75,254 L1062.75,268 L1048.75,282 L1034.75,268 z" fill="#fff" stroke="#1f3a68" stroke-width="1"/>
+<text x="30.0" y="286.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="11.5" fill="#5b6474" font-weight="400" text-anchor="start"><tspan x="30.0" dy="0.0">Exit: CPST down, success non-inferior</tspan></text>
+<text x="30.0" y="336.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="14" fill="#a35a06" font-weight="700" text-anchor="start"><tspan x="30.0" dy="0.0">4 · Semantic cache</tspan></text>
+<rect x="881.9" y="310.0" width="278.1" height="56.0" rx="8" fill="#fbecd6" stroke="#a35a06" stroke-width="1.2"/>
+<text x="891.9" y="332.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="12" fill="#14213d" font-weight="600" text-anchor="start"><tspan x="891.9" dy="0.0">Scoped cache, τ calibration, TTL, leak</tspan><tspan x="891.9" dy="15.6">tests</tspan></text>
+<path d="M1160.0,324 L1174.0,338 L1160.0,352 L1146.0,338 z" fill="#fff" stroke="#a35a06" stroke-width="1"/>
+<text x="30.0" y="356.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="11.5" fill="#5b6474" font-weight="400" text-anchor="start"><tspan x="30.0" dy="0.0">Exit: false-hit rate below limit</tspan></text>
+<text x="30.0" y="410.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="12.5" fill="#14213d" font-weight="600" text-anchor="start"><tspan x="30.0" dy="0.0">◇ = phase gate: move on only when the exit criterion holds on the evaluation set.</tspan></text>
+</g>
+<line x1="30" y1="538" x2="1170" y2="538" stroke="#c9d1dc"/>
+<text x="30" y="558" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="12" fill="#5b6474">Roadmap by the author; sequencing follows Sculley et al. 2015, Kapoor et al. 2024, Miller 2024 and NIST AI 600-1.</text>
+<text x="30" y="576" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="12" font-weight="600" fill="#14213d">© Aridio Silva @aridiosilva · Outubro 2026 · Independent Researcher · ORCID 0009-0008-2411-6995 · All figures licensed CC BY 4.0</text>
+</svg>

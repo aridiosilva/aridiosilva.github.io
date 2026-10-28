@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 638" width="1200" height="638" role="img" aria-label="Figure 8. Routing vs. cascade, and when a cascade stops paying">
+<title>Figure 8. Routing vs. cascade, and when a cascade stops paying</title>
+<desc>© Aridio Silva @aridiosilva · Outubro 2026 · Independent Researcher · ORCID 0009-0008-2411-6995 · All figures licensed CC BY 4.0</desc>
+<metadata><rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:xmpRights="http://ns.adobe.com/xap/1.0/rights/"><rdf:Description rdf:about=""><dc:title>Figure 8. Routing vs. cascade, and when a cascade stops paying</dc:title><dc:creator>Aridio Silva (@aridiosilva), ORCID 0009-0008-2411-6995</dc:creator><dc:rights>© Aridio Silva @aridiosilva · Outubro 2026. Licensed under CC BY 4.0.</dc:rights><dc:date>2026-10</dc:date><dc:language>en</dc:language><xmpRights:Marked>True</xmpRights:Marked><xmpRights:Owner>Aridio Silva</xmpRights:Owner><cc:license rdf:resource="https://creativecommons.org/licenses/by/4.0/"/><cc:attributionName>Aridio Silva (@aridiosilva)</cc:attributionName><dc:subject>Project SGAEIA</dc:subject><dc:identifier>https://doi.org/10.5281/zenodo.23732760</dc:identifier></rdf:Description></rdf:RDF></metadata>
+<defs><marker id="m14213d" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#14213d"/></marker><marker id="m1d7a3e" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#1d7a3e"/></marker><marker id="mb42318" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#b42318"/></marker></defs>
+<rect width="1200" height="638" fill="#ffffff"/>
+<rect x="30" y="22" width="6" height="52" rx="3" fill="#0e6e6a"/>
+<text x="48" y="44" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="13" font-weight="700" fill="#0e6e6a" letter-spacing="1.2">FIGURE 8</text>
+<text x="48" y="70" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="23" font-weight="700" fill="#14213d">Routing vs. cascade, and when a cascade stops paying</text>
+<text x="1170" y="44" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="13" fill="#5b6474" text-anchor="end">Expected cost relative to always using the large model</text>
+<g transform="translate(0,96)">
+<text x="30.0" y="20.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="14" fill="#1f3a68" font-weight="700" text-anchor="start"><tspan x="30.0" dy="0.0">A · Router: decide before calling</tspan></text>
+<rect x="30.0" y="36.0" width="90.0" height="40.0" rx="8" fill="#e5e9ef" stroke="#475569" stroke-width="1.2"/>
+<text x="75.0" y="61.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="12.5" fill="#14213d" font-weight="600" text-anchor="middle"><tspan x="75.0" dy="0.0">query</tspan></text>
+<path d="M122.0,56.0 L146.0,56.0" fill="none" stroke="#14213d" stroke-width="1.5" marker-end="url(#m14213d)"/>
+<rect x="148.0" y="36.0" width="130.0" height="40.0" rx="8" fill="#dfe7f3" stroke="#1f3a68" stroke-width="1.2"/>
+<text x="213.0" y="61.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="12.5" fill="#14213d" font-weight="600" text-anchor="middle"><tspan x="213.0" dy="0.0">router</tspan></text>
+<path d="M280.0,50.0 L318.0,34.0" fill="none" stroke="#14213d" stroke-width="1.5" marker-end="url(#m14213d)"/>
+<path d="M280.0,62.0 L318.0,80.0" fill="none" stroke="#14213d" stroke-width="1.5" marker-end="url(#m14213d)"/>
+<rect x="320.0" y="10.0" width="110.0" height="40.0" rx="8" fill="#d9efec" stroke="#0e6e6a" stroke-width="1.2"/>
+<text x="375.0" y="35.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="12.5" fill="#14213d" font-weight="600" text-anchor="middle"><tspan x="375.0" dy="0.0">small</tspan></text>
+<rect x="320.0" y="64.0" width="110.0" height="40.0" rx="8" fill="#ebe5f8" stroke="#5b3fa8" stroke-width="1.2"/>
+<text x="375.0" y="89.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="12.5" fill="#14213d" font-weight="600" text-anchor="middle"><tspan x="375.0" dy="0.0">large</tspan></text>
+<text x="450.0" y="30.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="12" fill="#0e6e6a" font-weight="700" text-anchor="start"><tspan x="450.0" dy="0.0">1 − q</tspan></text>
+<text x="450.0" y="92.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="12" fill="#5b3fa8" font-weight="700" text-anchor="start"><tspan x="450.0" dy="0.0">q</tspan></text>
+<rect x="30.0" y="116.0" width="540.0" height="34.0" rx="6" fill="#f4f7fa" stroke="#c9d1dc" stroke-width="1.2"/>
+<text x="42.0" y="138.0" font-family="Consolas,'SF Mono',Menlo,monospace" font-size="14" fill="#14213d" font-weight="600" text-anchor="start"><tspan x="42.0" dy="0.0">E[C_router] = c_r + (1 − q)·c_s + q·c_L</tspan></text>
+<text x="30.0" y="190.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="14" fill="#0e6e6a" font-weight="700" text-anchor="start"><tspan x="30.0" dy="0.0">B · Cascade: try small, verify, escalate</tspan></text>
+<rect x="30.0" y="206.0" width="90.0" height="40.0" rx="8" fill="#e5e9ef" stroke="#475569" stroke-width="1.2"/>
+<text x="75.0" y="231.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="12.5" fill="#14213d" font-weight="600" text-anchor="middle"><tspan x="75.0" dy="0.0">query</tspan></text>
+<path d="M122.0,226.0 L146.0,226.0" fill="none" stroke="#14213d" stroke-width="1.5" marker-end="url(#m14213d)"/>
+<rect x="148.0" y="206.0" width="100.0" height="40.0" rx="8" fill="#d9efec" stroke="#0e6e6a" stroke-width="1.2"/>
+<text x="198.0" y="231.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="12.5" fill="#14213d" font-weight="600" text-anchor="middle"><tspan x="198.0" dy="0.0">small</tspan></text>
+<path d="M250.0,226.0 L274.0,226.0" fill="none" stroke="#14213d" stroke-width="1.5" marker-end="url(#m14213d)"/>
+<rect x="276.0" y="206.0" width="110.0" height="40.0" rx="8" fill="#fbecd6" stroke="#a35a06" stroke-width="1.2"/>
+<text x="331.0" y="231.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="12.5" fill="#14213d" font-weight="600" text-anchor="middle"><tspan x="331.0" dy="0.0">verify</tspan></text>
+<path d="M388.0,226.0 L412.0,226.0" fill="none" stroke="#1d7a3e" stroke-width="1.5" marker-end="url(#m1d7a3e)"/>
+<rect x="414.0" y="206.0" width="110.0" height="40.0" rx="8" fill="#ddf1e4" stroke="#1d7a3e" stroke-width="1.2"/>
+<text x="469.0" y="231.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="12.5" fill="#14213d" font-weight="600" text-anchor="middle"><tspan x="469.0" dy="0.0">answer</tspan></text>
+<path d="M331.0,248.0 L331.0,272.0" fill="none" stroke="#b42318" stroke-width="1.5" marker-end="url(#mb42318)"/>
+<text x="338.0" y="266.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="12" fill="#b42318" font-weight="700" text-anchor="start"><tspan x="338.0" dy="0.0">fail: r</tspan></text>
+<rect x="276.0" y="274.0" width="110.0" height="40.0" rx="8" fill="#ebe5f8" stroke="#5b3fa8" stroke-width="1.2"/>
+<text x="331.0" y="299.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="12.5" fill="#14213d" font-weight="600" text-anchor="middle"><tspan x="331.0" dy="0.0">large</tspan></text>
+<rect x="30.0" y="330.0" width="540.0" height="34.0" rx="6" fill="#f4f7fa" stroke="#c9d1dc" stroke-width="1.2"/>
+<text x="42.0" y="352.0" font-family="Consolas,'SF Mono',Menlo,monospace" font-size="14" fill="#14213d" font-weight="600" text-anchor="start"><tspan x="42.0" dy="0.0">E[C_cascade] = c_s + c_v + r·c_L</tspan></text>
+<text x="30.0" y="392.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="12.5" fill="#14213d" font-weight="400" text-anchor="start"><tspan x="30.0" dy="0.0">Cascade saves money only while r &lt; 1 − (c_s + c_v)/c_L. Escalated requests also</tspan><tspan x="30.0" dy="16.2">pay the small model&#x27;s latency.</tspan></text>
+<path d="M680.0,20.0 L680.0,380.0" fill="none" stroke="#e6ebf1" stroke-width="1"/>
+<text x="680.0" y="398.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="11" fill="#5b6474" font-weight="400" text-anchor="middle"><tspan x="680.0" dy="0.0">0%</tspan></text>
+<path d="M774.0,20.0 L774.0,380.0" fill="none" stroke="#e6ebf1" stroke-width="1"/>
+<text x="774.0" y="398.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="11" fill="#5b6474" font-weight="400" text-anchor="middle"><tspan x="774.0" dy="0.0">20%</tspan></text>
+<path d="M868.0,20.0 L868.0,380.0" fill="none" stroke="#e6ebf1" stroke-width="1"/>
+<text x="868.0" y="398.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="11" fill="#5b6474" font-weight="400" text-anchor="middle"><tspan x="868.0" dy="0.0">40%</tspan></text>
+<path d="M962.0,20.0 L962.0,380.0" fill="none" stroke="#e6ebf1" stroke-width="1"/>
+<text x="962.0" y="398.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="11" fill="#5b6474" font-weight="400" text-anchor="middle"><tspan x="962.0" dy="0.0">60%</tspan></text>
+<path d="M1056.0,20.0 L1056.0,380.0" fill="none" stroke="#e6ebf1" stroke-width="1"/>
+<text x="1056.0" y="398.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="11" fill="#5b6474" font-weight="400" text-anchor="middle"><tspan x="1056.0" dy="0.0">80%</tspan></text>
+<path d="M1150.0,20.0 L1150.0,380.0" fill="none" stroke="#e6ebf1" stroke-width="1"/>
+<text x="1150.0" y="398.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="11" fill="#5b6474" font-weight="400" text-anchor="middle"><tspan x="1150.0" dy="0.0">100%</tspan></text>
+<path d="M680.0,380.0 L1150.0,380.0" fill="none" stroke="#e6ebf1" stroke-width="1"/>
+<text x="672.0" y="384.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="11" fill="#5b6474" font-weight="400" text-anchor="end"><tspan x="672.0" dy="0.0">0.0</tspan></text>
+<path d="M680.0,320.0 L1150.0,320.0" fill="none" stroke="#e6ebf1" stroke-width="1"/>
+<text x="672.0" y="324.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="11" fill="#5b6474" font-weight="400" text-anchor="end"><tspan x="672.0" dy="0.0">0.2</tspan></text>
+<path d="M680.0,260.0 L1150.0,260.0" fill="none" stroke="#e6ebf1" stroke-width="1"/>
+<text x="672.0" y="264.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="11" fill="#5b6474" font-weight="400" text-anchor="end"><tspan x="672.0" dy="0.0">0.4</tspan></text>
+<path d="M680.0,200.0 L1150.0,200.0" fill="none" stroke="#e6ebf1" stroke-width="1"/>
+<text x="672.0" y="204.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="11" fill="#5b6474" font-weight="400" text-anchor="end"><tspan x="672.0" dy="0.0">0.6</tspan></text>
+<path d="M680.0,140.0 L1150.0,140.0" fill="none" stroke="#e6ebf1" stroke-width="1"/>
+<text x="672.0" y="144.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="11" fill="#5b6474" font-weight="400" text-anchor="end"><tspan x="672.0" dy="0.0">0.8</tspan></text>
+<path d="M680.0,80.0 L1150.0,80.0" fill="none" stroke="#e6ebf1" stroke-width="1"/>
+<text x="672.0" y="84.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="11" fill="#5b6474" font-weight="400" text-anchor="end"><tspan x="672.0" dy="0.0">1.0</tspan></text>
+<path d="M680.0,20.0 L1150.0,20.0" fill="none" stroke="#e6ebf1" stroke-width="1"/>
+<text x="672.0" y="24.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="11" fill="#5b6474" font-weight="400" text-anchor="end"><tspan x="672.0" dy="0.0">1.2</tspan></text>
+<path d="M680.0,80.0 L1150.0,80.0" fill="none" stroke="#1f3a68" stroke-width="2.4"/>
+<text x="686.0" y="72.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="12" fill="#1f3a68" font-weight="700" text-anchor="start"><tspan x="686.0" dy="0.0">always large = 1.0</tspan></text>
+<path d="M680.0,344.0 L1150.0,44.0" fill="none" stroke="#0e6e6a" stroke-width="2.4"/>
+<path d="M689.4,29.0 L717.6,29.0" fill="none" stroke="#0e6e6a" stroke-width="2.4"/>
+<text x="727.0" y="33.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="12" fill="#0e6e6a" font-weight="700" text-anchor="start"><tspan x="727.0" dy="0.0">cascade (c_s = 0.10, c_v = 0.02), x-axis = r</tspan></text>
+<path d="M680.0,347.0 L1150.0,77.0" fill="none" stroke="#a35a06" stroke-width="2" stroke-dasharray="6 4"/>
+<path d="M689.4,50.0 L717.6,50.0" fill="none" stroke="#a35a06" stroke-width="2" stroke-dasharray="6 4"/>
+<text x="727.0" y="54.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="12" fill="#a35a06" font-weight="700" text-anchor="start"><tspan x="727.0" dy="0.0">router (c_r = 0.01), x-axis = q</tspan></text>
+<circle cx="1093.6" cy="80.0" r="6" fill="#b42318" stroke="none" stroke-width="1.5"/>
+<text x="1084.2" y="56.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="12" fill="#b42318" font-weight="700" text-anchor="end"><tspan x="1084.2" dy="0.0">break-even r* = 0.88</tspan></text>
+<circle cx="821.0" cy="254.0" r="6" fill="#14213d" stroke="none" stroke-width="1.5"/>
+<text x="830.4" y="258.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="12" fill="#14213d" font-weight="700" text-anchor="start"><tspan x="830.4" dy="0.0">r = 30% → 0.42 (−58%)</tspan></text>
+<text x="915.0" y="422.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="12" fill="#14213d" font-weight="600" text-anchor="middle"><tspan x="915.0" dy="0.0">escalation rate r (cascade) or large-model share q (router)</tspan></text>
+<text x="634.0" y="200.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="12" fill="#14213d" font-weight="600" text-anchor="middle" transform="rotate(-90 634 200.0)"><tspan x="634.0" dy="0.0">relative cost</tspan></text>
+</g>
+<line x1="30" y1="588" x2="1170" y2="588" stroke="#c9d1dc"/>
+<text x="30" y="608" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="12" fill="#5b6474">Sources: Chen et al. 2023; Ding et al. 2024; Ong et al. 2024; Aggarwal et al. 2023; Yue et al. 2023; Gupta et al. 2024. Cost ratios are illustrative.</text>
+<text x="30" y="626" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="12" font-weight="600" fill="#14213d">© Aridio Silva @aridiosilva · Outubro 2026 · Independent Researcher · ORCID 0009-0008-2411-6995 · All figures licensed CC BY 4.0</text>
+</svg>

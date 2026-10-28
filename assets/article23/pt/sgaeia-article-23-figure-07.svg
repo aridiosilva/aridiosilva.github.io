@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 778" width="1200" height="778" role="img" aria-label="Figura 7. Cache semântico: um acerto precisa ser similar, atual e autorizado">
+<title>Figura 7. Cache semântico: um acerto precisa ser similar, atual e autorizado</title>
+<desc>© Aridio Silva @aridiosilva · Outubro 2026 · Pesquisador Independente · ORCID 0009-0008-2411-6995 · Figuras sob licença CC BY 4.0</desc>
+<metadata><rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:xmpRights="http://ns.adobe.com/xap/1.0/rights/"><rdf:Description rdf:about=""><dc:title>Figura 7. Cache semântico: um acerto precisa ser similar, atual e autorizado</dc:title><dc:creator>Aridio Silva (@aridiosilva), ORCID 0009-0008-2411-6995</dc:creator><dc:rights>© Aridio Silva @aridiosilva · Outubro 2026. Licensed under CC BY 4.0.</dc:rights><dc:date>2026-10</dc:date><dc:language>pt-BR</dc:language><xmpRights:Marked>True</xmpRights:Marked><xmpRights:Owner>Aridio Silva</xmpRights:Owner><cc:license rdf:resource="https://creativecommons.org/licenses/by/4.0/"/><cc:attributionName>Aridio Silva (@aridiosilva)</cc:attributionName><dc:subject>Project SGAEIA</dc:subject><dc:identifier>https://doi.org/10.5281/zenodo.23732760</dc:identifier></rdf:Description></rdf:RDF></metadata>
+<defs><marker id="m14213d" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#14213d"/></marker><marker id="m1d7a3e" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#1d7a3e"/></marker><marker id="mb42318" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#b42318"/></marker></defs>
+<rect width="1200" height="778" fill="#ffffff"/>
+<rect x="30" y="22" width="6" height="52" rx="3" fill="#0e6e6a"/>
+<text x="48" y="44" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="13" font-weight="700" fill="#0e6e6a" letter-spacing="1.2">FIGURA 7</text>
+<text x="48" y="70" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="23" font-weight="700" fill="#14213d">Cache semântico: um acerto precisa ser similar, atual e autorizado</text>
+<text x="1170" y="44" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="13" fill="#5b6474" text-anchor="end">Fluxo de decisão e trade-off do limiar</text>
+<g transform="translate(0,96)">
+<rect x="40.0" y="0.0" width="330.0" height="50.0" rx="10" fill="#dfe7f3" stroke="#1f3a68" stroke-width="1.2"/>
+<text x="205.0" y="30.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="13" fill="#14213d" font-weight="600" text-anchor="middle"><tspan x="205.0" dy="0.0">Requisição + identidade + contexto</tspan></text>
+<path d="M205.0,50.0 L205.0,64.0" fill="none" stroke="#14213d" stroke-width="1.6" marker-end="url(#m14213d)"/>
+<rect x="40.0" y="66.0" width="330.0" height="50.0" rx="10" fill="#dfe7f3" stroke="#1f3a68" stroke-width="1.2"/>
+<text x="205.0" y="96.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="13" fill="#14213d" font-weight="600" text-anchor="middle"><tspan x="205.0" dy="0.0">Normalizar e gerar embedding da consulta</tspan></text>
+<path d="M205.0,116.0 L205.0,130.0" fill="none" stroke="#14213d" stroke-width="1.6" marker-end="url(#m14213d)"/>
+<rect x="40.0" y="132.0" width="330.0" height="58.0" rx="10" fill="#ebe5f8" stroke="#5b3fa8" stroke-width="1.2"/>
+<text x="205.0" y="158.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="13" fill="#14213d" font-weight="600" text-anchor="middle"><tspan x="205.0" dy="0.0">Chave de escopo = tenant · ACL · versão do</tspan><tspan x="205.0" dy="15.6">corpus · versão do prompt/modelo</tspan></text>
+<path d="M205.0,190.0 L205.0,204.0" fill="none" stroke="#14213d" stroke-width="1.6" marker-end="url(#m14213d)"/>
+<rect x="40.0" y="206.0" width="330.0" height="50.0" rx="10" fill="#dfe7f3" stroke="#1f3a68" stroke-width="1.2"/>
+<text x="205.0" y="236.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="13" fill="#14213d" font-weight="600" text-anchor="middle"><tspan x="205.0" dy="0.0">Busca ANN dentro do escopo (HNSW)</tspan></text>
+<path d="M205.0,256.0 L205.0,270.0" fill="none" stroke="#14213d" stroke-width="1.6" marker-end="url(#m14213d)"/>
+<path d="M205.0,272 L355.0,302 L205.0,332 L55.0,302 z" fill="#fbecd6" stroke="#a35a06" stroke-width="1.4"/>
+<text x="205.0" y="307.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="13" fill="#14213d" font-weight="700" text-anchor="middle"><tspan x="205.0" dy="0.0">similaridade ≥ τ ?</tspan></text>
+<path d="M205.0,332.0 L205.0,346.0" fill="none" stroke="#14213d" stroke-width="1.6" marker-end="url(#m14213d)"/>
+<text x="213.0" y="344.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="11" fill="#1d7a3e" font-weight="700" text-anchor="start"><tspan x="213.0" dy="0.0">sim</tspan></text>
+<path d="M205.0,348 L355.0,378 L205.0,408 L55.0,378 z" fill="#fbecd6" stroke="#a35a06" stroke-width="1.4"/>
+<text x="205.0" y="383.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="13" fill="#14213d" font-weight="700" text-anchor="middle"><tspan x="205.0" dy="0.0">atual (TTL, versão da fonte)?</tspan></text>
+<path d="M205.0,408.0 L205.0,422.0" fill="none" stroke="#14213d" stroke-width="1.6" marker-end="url(#m14213d)"/>
+<text x="213.0" y="420.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="11" fill="#1d7a3e" font-weight="700" text-anchor="start"><tspan x="213.0" dy="0.0">sim</tspan></text>
+<path d="M205.0,424 L355.0,454 L205.0,484 L55.0,454 z" fill="#fbecd6" stroke="#a35a06" stroke-width="1.4"/>
+<text x="205.0" y="459.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="13" fill="#14213d" font-weight="700" text-anchor="middle"><tspan x="205.0" dy="0.0">re-checagem de autorização ok?</tspan></text>
+<path d="M205.0,484.0 L205.0,498.0" fill="none" stroke="#1d7a3e" stroke-width="1.8" marker-end="url(#m1d7a3e)"/>
+<text x="213.0" y="496.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="11" fill="#1d7a3e" font-weight="700" text-anchor="start"><tspan x="213.0" dy="0.0">sim</tspan></text>
+<rect x="40.0" y="500.0" width="330.0" height="46.0" rx="10" fill="#1d7a3e" stroke="none" stroke-width="1.2"/>
+<text x="205.0" y="529.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="13.5" fill="#fff" font-weight="700" text-anchor="middle"><tspan x="205.0" dy="0.0">ACERTO → devolve resposta salva + log</tspan></text>
+<path d="M355.0,302.0 L430.0,302.0" fill="none" stroke="#b42318" stroke-width="1.5" marker-end="url(#mb42318)"/>
+<text x="363.0" y="296.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="11" fill="#b42318" font-weight="700" text-anchor="start"><tspan x="363.0" dy="0.0">não</tspan></text>
+<path d="M355.0,378.0 L430.0,378.0" fill="none" stroke="#b42318" stroke-width="1.5" marker-end="url(#mb42318)"/>
+<text x="363.0" y="372.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="11" fill="#b42318" font-weight="700" text-anchor="start"><tspan x="363.0" dy="0.0">não</tspan></text>
+<path d="M355.0,454.0 L430.0,454.0" fill="none" stroke="#b42318" stroke-width="1.5" marker-end="url(#mb42318)"/>
+<text x="363.0" y="448.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="11" fill="#b42318" font-weight="700" text-anchor="start"><tspan x="363.0" dy="0.0">não</tspan></text>
+<path d="M432.0,302.0 L432.0,454.0" fill="none" stroke="#b42318" stroke-width="1.5"/>
+<rect x="440.0" y="282.0" width="250.0" height="74.0" rx="10" fill="#fde4e1" stroke="#b42318" stroke-width="1.2"/>
+<text x="565.0" y="306.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="13.5" fill="#b42318" font-weight="700" text-anchor="middle"><tspan x="565.0" dy="0.0">FALHA → pipeline completo</tspan></text>
+<text x="565.0" y="328.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="12" fill="#14213d" font-weight="400" text-anchor="middle"><tspan x="565.0" dy="0.0">motor de contexto → roteador →</tspan><tspan x="565.0" dy="15.6">portão</tspan></text>
+<path d="M565.0,356.0 L565.0,446.0" fill="none" stroke="#14213d" stroke-width="1.6" marker-end="url(#m14213d)"/>
+<rect x="440.0" y="448.0" width="250.0" height="86.0" rx="10" fill="#ddf1e4" stroke="#1d7a3e" stroke-width="1.2"/>
+<text x="565.0" y="472.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="13" fill="#1d7a3e" font-weight="700" text-anchor="middle"><tspan x="565.0" dy="0.0">Passou no portão e é cacheável?</tspan></text>
+<text x="565.0" y="494.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="12" fill="#14213d" font-weight="400" text-anchor="middle"><tspan x="565.0" dy="0.0">grava resposta + TTL + proveniência</tspan><tspan x="565.0" dy="15.6">+ chave</tspan></text>
+<rect x="740.0" y="0.0" width="430.0" height="620.0" rx="10" fill="#f4f7fa" stroke="#c9d1dc" stroke-width="1.2"/>
+<text x="760.0" y="22.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="14" fill="#14213d" font-weight="700" text-anchor="start"><tspan x="760.0" dy="0.0">Escolhendo τ (ilustrativo)</tspan></text>
+<path d="M780.0,30.0 L780.0,330.0" fill="none" stroke="#e6ebf1" stroke-width="1"/>
+<text x="780.0" y="348.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="11" fill="#5b6474" font-weight="400" text-anchor="middle"><tspan x="780.0" dy="0.0">0,80</tspan></text>
+<path d="M877.4,30.0 L877.4,330.0" fill="none" stroke="#e6ebf1" stroke-width="1"/>
+<text x="877.4" y="348.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="11" fill="#5b6474" font-weight="400" text-anchor="middle"><tspan x="877.4" dy="0.0">0,85</tspan></text>
+<path d="M974.7,30.0 L974.7,330.0" fill="none" stroke="#e6ebf1" stroke-width="1"/>
+<text x="974.7" y="348.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="11" fill="#5b6474" font-weight="400" text-anchor="middle"><tspan x="974.7" dy="0.0">0,90</tspan></text>
+<path d="M1072.1,30.0 L1072.1,330.0" fill="none" stroke="#e6ebf1" stroke-width="1"/>
+<text x="1072.1" y="348.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="11" fill="#5b6474" font-weight="400" text-anchor="middle"><tspan x="1072.1" dy="0.0">0,95</tspan></text>
+<path d="M1150.0,30.0 L1150.0,330.0" fill="none" stroke="#e6ebf1" stroke-width="1"/>
+<text x="1150.0" y="348.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="11" fill="#5b6474" font-weight="400" text-anchor="middle"><tspan x="1150.0" dy="0.0">0,99</tspan></text>
+<path d="M780.0,330.0 L1150.0,330.0" fill="none" stroke="#e6ebf1" stroke-width="1"/>
+<text x="774.0" y="334.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="11" fill="#5b6474" font-weight="400" text-anchor="end"><tspan x="774.0" dy="0.0">0%</tspan></text>
+<path d="M780.0,270.0 L1150.0,270.0" fill="none" stroke="#e6ebf1" stroke-width="1"/>
+<text x="774.0" y="274.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="11" fill="#5b6474" font-weight="400" text-anchor="end"><tspan x="774.0" dy="0.0">10%</tspan></text>
+<path d="M780.0,210.0 L1150.0,210.0" fill="none" stroke="#e6ebf1" stroke-width="1"/>
+<text x="774.0" y="214.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="11" fill="#5b6474" font-weight="400" text-anchor="end"><tspan x="774.0" dy="0.0">20%</tspan></text>
+<path d="M780.0,150.0 L1150.0,150.0" fill="none" stroke="#e6ebf1" stroke-width="1"/>
+<text x="774.0" y="154.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="11" fill="#5b6474" font-weight="400" text-anchor="end"><tspan x="774.0" dy="0.0">30%</tspan></text>
+<path d="M780.0,90.0 L1150.0,90.0" fill="none" stroke="#e6ebf1" stroke-width="1"/>
+<text x="774.0" y="94.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="11" fill="#5b6474" font-weight="400" text-anchor="end"><tspan x="774.0" dy="0.0">40%</tspan></text>
+<path d="M780.0,30.0 L1150.0,30.0" fill="none" stroke="#e6ebf1" stroke-width="1"/>
+<text x="774.0" y="34.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="11" fill="#5b6474" font-weight="400" text-anchor="end"><tspan x="774.0" dy="0.0">50%</tspan></text>
+<path d="M780.0,60.0 L799.5,65.8 L818.9,77.1 L838.4,91.7 L857.9,108.5 L877.4,126.6 L896.8,145.2 L916.3,163.8 L935.8,181.9 L955.3,199.3 L974.7,215.6 L994.2,230.7 L1013.7,244.5 L1033.2,256.9 L1052.6,268.0 L1072.1,277.8 L1091.6,286.3 L1111.1,293.7 L1130.5,300.1 L1150.0,305.4" fill="none" stroke="#0e6e6a" stroke-width="2.4"/>
+<path d="M780.0,246.0 L799.5,264.6 L818.9,279.1 L838.4,290.3 L857.9,299.1 L877.4,305.9 L896.8,311.3 L916.3,315.4 L935.8,318.6 L955.3,321.1 L974.7,323.1 L994.2,324.6 L1013.7,325.8 L1033.2,326.7 L1052.6,327.5 L1072.1,328.0 L1091.6,328.5 L1111.1,328.8 L1130.5,329.1 L1150.0,329.3" fill="none" stroke="#b42318" stroke-width="2.4"/>
+<rect x="1013.7" y="30.0" width="68.2" height="300.0" rx="0" fill="#a35a06" fill-opacity="0.12" stroke="none" stroke-width="0"/>
+<text x="1047.8" y="46.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="13" fill="#a35a06" font-weight="700" text-anchor="middle"><tspan x="1047.8" dy="0.0">τ*</tspan></text>
+<text x="799.5" y="72.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="12" fill="#0e6e6a" font-weight="700" text-anchor="start"><tspan x="799.5" dy="0.0">taxa de acerto</tspan></text>
+<text x="809.2" y="270.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="12" fill="#b42318" font-weight="700" text-anchor="start"><tspan x="809.2" dy="0.0">taxa de acerto falso</tspan></text>
+<text x="965.0" y="370.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="12" fill="#14213d" font-weight="600" text-anchor="middle"><tspan x="965.0" dy="0.0">limiar de similaridade τ</tspan></text>
+<text x="760.0" y="410.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="12.5" fill="#14213d" font-weight="400" text-anchor="start"><tspan x="760.0" dy="0.0">τ não é universal. Calibre por domínio em pares de</tspan><tspan x="760.0" dy="16.2">consultas rotulados e defina o limite de acerto falso como</tspan><tspan x="760.0" dy="16.2">SLO antes de otimizar a taxa de acerto.</tspan></text>
+<text x="760.0" y="516.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="12.5" fill="#5b6474" font-weight="400" text-anchor="start"><tspan x="760.0" dy="0.0">No estudo do MeanCache cerca de 31% das consultas eram</tspan><tspan x="760.0" dy="16.2">repetidas; a sua parcela precisa ser medida.</tspan></text>
+</g>
+<line x1="30" y1="728" x2="1170" y2="728" stroke="#c9d1dc"/>
+<text x="30" y="748" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="12" fill="#5b6474">Fontes: Bang 2023 (GPTCache); Gill et al. 2024 (MeanCache); Malkov &amp; Yashunin 2016 (HNSW); Reimers &amp; Gurevych 2019. Curvas ilustrativas.</text>
+<text x="30" y="766" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="12" font-weight="600" fill="#14213d">© Aridio Silva @aridiosilva · Outubro 2026 · Pesquisador Independente · ORCID 0009-0008-2411-6995 · Figuras sob licença CC BY 4.0</text>
+</svg>

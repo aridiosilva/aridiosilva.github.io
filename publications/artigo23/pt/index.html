@@ -1,0 +1,736 @@
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light">
+<title>Como Reduzir Custos de Sistemas de AI com LLMs sem Sacrificar Qualidade — Aridio Silva</title><meta name="description" content="Uma revisão baseada em evidências de seis alavancas para reduzir custos de sistemas de AI com LLMs, seus limites, overheads, portões de qualidade e relação com a arquitetura governada SGAEIA."><link rel="canonical" href="https://aridiosilva.com/publications/artigo23/pt/">
+<meta name="citation_title" content="Como Reduzir Custos de Sistemas de AI com LLMs sem Sacrificar Qualidade"><meta name="citation_author" content="Silva, Aridio"><meta name="citation_publication_date" content="2026/10/28"><meta name="citation_online_date" content="2026/10/28"><meta name="citation_language" content="pt-BR"><meta name="citation_doi" content="10.5281/zenodo.23732760"><meta name="citation_pdf_url" content="https://aridiosilva.com/assets/article23/article23-pt.pdf">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://www.googletagmanager.com; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https://*.google-analytics.com; connect-src https://*.google-analytics.com https://www.googletagmanager.com; media-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'; upgrade-insecure-requests"><meta name="referrer" content="strict-origin-when-cross-origin">
+<link rel="sitemap" type="application/xml" href="/sitemap.xml"><link rel="describedby" href="/llms.txt" type="text/markdown"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;family=Source+Serif+4:opsz,wght@8..60,500;6..60,700&amp;display=swap" rel="stylesheet"><link rel="stylesheet" href="/assets/publications.css?v=20261012-14"><link rel="stylesheet" href="/assets/article-header.css"><link rel="stylesheet" href="/assets/article-accessibility.css"><link rel="stylesheet" href="/assets/article20.css?v=20261014"><link rel="stylesheet" href="/assets/article23.css?v=20261028-1"><script defer src="/assets/article20-accessibility.js?v=20261014"></script>
+<meta name="author" content="Aridio Silva"><meta name="copyright" content="© 2026 Aridio Silva"><meta property="og:type" content="article"><meta property="og:title" content="Como Reduzir Custos de Sistemas de AI com LLMs sem Sacrificar Qualidade"><meta property="og:description" content="Uma revisão baseada em evidências de seis alavancas para reduzir custos de sistemas de AI com LLMs, seus limites, overheads, portões de qualidade e relação com a arquitetura governada SGAEIA."><meta property="og:image" content="https://aridiosilva.com/assets/article23/pt/sgaeia-article-23-cover_PT.png"><link rel="alternate" hreflang="en" href="https://aridiosilva.com/publications/artigo23/"><link rel="alternate" hreflang="pt-BR" href="https://aridiosilva.com/publications/artigo23/pt/"><link rel="alternate" hreflang="x-default" href="https://aridiosilva.com/publications/artigo23/"><!-- GA4 G-MXMJ7Z3LS7: automatic cookieless audience measurement; analytics and advertising storage remain disabled. --><script defer src="/assets/analytics-consent.js?v=20261011"></script><script type="application/ld+json">{"@context":"https://schema.org","@type":"ScholarlyArticle","headline":"Como Reduzir Custos de Sistemas de AI com LLMs sem Sacrificar Qualidade","author":{"@type":"Person","name":"Aridio Silva","identifier":"https://orcid.org/0009-0008-2411-6995"},"datePublished":"2026-10-28","dateModified":"2026-10-28","inLanguage":"pt-BR","license":"https://creativecommons.org/licenses/by/4.0/","identifier":"https://doi.org/10.5281/zenodo.23732760","sameAs":["https://zenodo.org/records/23732760","https://doi.org/10.5281/zenodo.23732760","https://dev.to/aridiosilva/how-to-reduce-the-cost-of-ai-systems-with-llms-without-sacrificing-quality-2mip-temp-slug-1129271","https://medium.com/@aridiosilva/how-to-reduce-the-cost-of-ai-systems-with-llms-without-sacrificing-quality-b097cecce482","https://www.academia.edu/179778431/How_to_Reduce_the_Cost_of_AI_Systems_with_LLMs_Without_Sacrificing_Quality"],"isPartOf":{"@type":"CreativeWorkSeries","name":"SGAEIA Research Series"},"url":"https://aridiosilva.com/publications/artigo23/pt/","image":"https://aridiosilva.com/assets/article23/pt/sgaeia-article-23-cover_PT.png","description":"Uma revisão baseada em evidências de seis alavancas para reduzir custos de sistemas de AI com LLMs, seus limites, overheads, portões de qualidade e relação com a arquitetura governada SGAEIA.","version":"1.1"}</script>
+<link rel="stylesheet" href="/assets/fixed-site-header.css?v=20261016-1"><link rel="stylesheet" href="/assets/editorial-hero.css?v=20261017-1"><script defer src="/assets/fixed-site-header.js?v=20261016-1"></script><link rel="stylesheet" href="/assets/homepage-footer-preview.css?v=20261017-5"></head><body class="article-page"><a class="skip" href="#main">Ir para o conteúdo principal</a><header class="site-header"><div class="shell header-inner"><a class="identity" href="/#top" aria-label="Aridio Silva home"><strong>Aridio Silva</strong><span>Independent Researcher · AI Systems Architecture</span></a><nav aria-label="Navegação principal"><a href="/">Início</a><a href="/sgaeia.html">SGAEIA</a><a href="/publications.html">Publicações</a><a href="/infographics/">Infográficos</a><a href="/challenges/">Challenges</a></nav><div class="reading-tools" role="group" aria-label="Controles de leitura"><button type="button" id="articleFontDecrease" aria-label="Diminuir tamanho do texto">A−</button><button type="button" id="articleFontIncrease" aria-label="Aumentar tamanho do texto">A+</button><button type="button" id="articleEasyRead" aria-pressed="false">Leitura fácil</button><button type="button" id="articleListen" aria-pressed="false">Ouvir</button></div></div></header><main id="main"><section class="hero"><div class="shell article"><h1>Como Reduzir Custos de Sistemas de AI com LLMs sem Sacrificar Qualidade</h1><p class="subtitle">Uma revisão baseada em evidências de seis alavancas, seus limites e uma arquitetura de referência governada</p><p class="meta">SGAEIA Research Series — Artigo 23 · 2026-10-28 · DOI 10.5281/zenodo.23732760</p><nav class="language-nav" aria-label="Idiomas do artigo"><a href="/publications/artigo23/">English</a> · <a href="/publications/artigo23/pt/" aria-current="page">Português</a></nav></div></section><section class="content"><article class="shell article article-body"><p><strong>SGAEIA Research Series — Artigo 23</strong></p>
+<p><strong>Aridio Silva</strong><br>Pesquisador Independente, Brasil<br>Criador da SGAEIA — Secure Governed Autonomous Edge Intelligence Architecture<br><strong>ORCID:</strong> 0009-0008-2411-6995<br><strong>DOI:</strong> <a href="https://doi.org/10.5281/zenodo.23732760" target="_blank" rel="noopener noreferrer">https://doi.org/10.5281/zenodo.23732760</a><br><strong>Publicado em:</strong> 28 de outubro de 2026<br><strong>Licença:</strong> Creative Commons Attribution 4.0 International — CC BY 4.0</p>
+<p class="article-downloads"><a href="/assets/article23/article23-pt.pdf" target="_blank" rel="noopener noreferrer">Baixar PDF em português</a><a href="/assets/article23/article23-en.pdf" target="_blank" rel="noopener noreferrer">Baixar PDF em inglês</a></p>
+<figure class="article-figure cover-figure"><img src="/assets/article23/pt/sgaeia-article-23-cover_PT.png" alt="Capa — Como Reduzir Custos de Sistemas de AI com LLMs sem Sacrificar Qualidade" width="3840" height="2160" loading="eager" decoding="async" fetchpriority="high"><figcaption><strong>Capa — Como Reduzir Custos de Sistemas de AI com LLMs sem Sacrificar Qualidade</strong><span class="figure-credit">© 2026 Aridio Silva · Projeto SGAEIA · CC BY 4.0</span></figcaption></figure>
+<h2>Resumo</h2>
+<p>Em 26 de outubro de 2026, R. Bhardwaj publicou um infográfico afirmando que uma stack de GenAI e IA agêntica bem projetada pode cortar o gasto mensal com LLMs em 70%, de US$ 10.000 para US$ 2.926, mantendo a qualidade das respostas igual ou melhor [<a href="#pt-ref-bhardwaj2026">9</a>]. Este relatório decompõe a proposta em suas partes: uma tese central, seis alavancas de custo, uma arquitetura de referência, uma decomposição de custo e uma tabela de qualidade antes e depois. Em seguida, confronta cada parte com fontes primárias: artigos revisados por pares, preprints do arXiv e a documentação atual das APIs dos três maiores provedores de modelos. A literatura sustenta todas as alavancas, muitas vezes com efeitos maiores do que o post assume. Cascatas e roteadores igualaram a acurácia do modelo mais forte por uma fração do custo em [<a href="#pt-ref-chen2023">10</a>, <a href="#pt-ref-ding2024">13</a>, <a href="#pt-ref-ong2024">39</a>, <a href="#pt-ref-yue2023">51</a>]. Os provedores cobram 50% menos por trabalho em lote [<a href="#pt-ref-anthropicBatch">4</a>, <a href="#pt-ref-googleBatch">18</a>, <a href="#pt-ref-openaiBatch">40</a>] e apenas 0,1× o preço de entrada nas leituras de prompt em cache [<a href="#pt-ref-anthropicCache">5</a>]. Três fragilidades se destacam. O número de 70% é ilustrativo, não medido. Ele omite o custo extra que as próprias alavancas trazem (embeddings, roteadores, juízes, avaliação). E a tabela de qualidade reporta diferenças menores que o erro amostral de um conjunto de avaliação típico [<a href="#pt-ref-miller2024">35</a>]. O relatório acrescenta um modelo formal de custo, condições de equilíbrio para cascatas e caches, uma análise de sensibilidade que produz um cenário ilustrativo de economia líquida de 61–68% sob premissas declaradas, sem o apresentar como estimativa empírica, uma árvore de KPIs centrada no custo por tarefa bem-sucedida [<a href="#pt-ref-erol2025">14</a>], um roteiro de implementação em fases, um glossário e uma bibliografia auditada de 56 fontes com links verificados em 27 de outubro de 2026.</p>
+<p><strong>Palavras-chave:</strong> LLMOps; custo de inferência; roteamento de modelos; cascatas de LLM; geração aumentada por recuperação; prompt caching; cache semântico; portões de qualidade; cost-of-pass; governança de IA.</p>
+<h2>Sumário</h2>
+<ol>
+<li><a href="#pt-s1">Introdução</a></li>
+<li><a href="#pt-s2">Método</a></li>
+<li><a href="#pt-s3">A tese central</a></li>
+<li><a href="#pt-s4">Um modelo de custo para sistemas com LLM</a></li>
+<li><a href="#pt-s5">As seis alavancas</a></li>
+<li><a href="#pt-s6">Arquitetura de referência</a></li>
+<li><a href="#pt-s7">Motor de otimização de contexto</a></li>
+<li><a href="#pt-s8">Cache: de prompt, semântico e KV</a></li>
+<li><a href="#pt-s9">Roteamento de modelos e cascatas</a></li>
+<li><a href="#pt-s10">Portões de qualidade e escalonamento</a></li>
+<li><a href="#pt-s11">Decomposição do custo e sensibilidade</a></li>
+<li><a href="#pt-s12">Avaliação e KPIs</a></li>
+<li><a href="#pt-s13">Observabilidade e governança</a></li>
+<li><a href="#pt-s14">Relação com o SGAEIA</a></li>
+<li><a href="#pt-s15">Roteiro de implementação</a></li>
+<li><a href="#pt-s16">Discussão e ameaças à validade</a></li>
+<li><a href="#pt-s17">Conclusão</a></li>
+<li><a href="#pt-gloss">Glossário</a></li>
+<li><a href="#pt-refs">Referências (auditadas)</a></li>
+</ol>
+<p><a id="pt-s1"></a></p>
+<h2>1 Introdução</h2>
+<h3>1.1 Contexto</h3>
+<p>A inferência de LLMs virou custo operacional recorrente, não despesa de pesquisa. Cada requisição é cobrada por token, e os preços por token entre modelos diferiam em até duas ordens de grandeza quando o FrugalGPT os levantou [<a href="#pt-ref-chen2023">10</a>]. Sistemas agênticos agravam o quadro. Uma única requisição de usuário pode disparar muitas chamadas de modelo, chamadas de ferramentas e novas tentativas [<a href="#pt-ref-anthropic2024">2</a>, <a href="#pt-ref-yao2022">50</a>]. As equipes enfrentam, portanto, um problema de engenharia: entregar a qualidade de que a tarefa precisa pelo menor custo por resultado bem-sucedido.</p>
+<h3>1.2 Objeto de análise</h3>
+<p>O objeto é um post e infográfico de Rajeev Bhardwaj no LinkedIn [<a href="#pt-ref-bhardwaj2026">9</a>]. O texto diz: cortar custos com LLMs &quot;em até 70%&quot;, sem comprometer a inteligência, por meio de roteamento de modelos, contexto, cache e fluxos agênticos mais inteligentes. O infográfico tem seis partes:</p>
+<ul>
+<li>um resultado de destaque (de US$ 10.000 para US$ 2.926 por mês);</li>
+<li>seis &quot;alavancas-chave&quot;;</li>
+<li>uma arquitetura de referência com seis etapas e uma camada de governança;</li>
+<li>uma cascata de &quot;decomposição ilustrativa do custo&quot;;</li>
+<li>uma tabela de qualidade comparando métricas de base e otimizadas;</li>
+<li>uma mensagem central: <em>gaste mais inteligência só quando a tarefa realmente precisar</em>.</li>
+</ul>
+<h3>1.3 Contribuições</h3>
+<ol>
+<li>Uma reapresentação estruturada da proposta, redesenhada em 13 figuras originais em inglês e português.</li>
+<li>Para cada componente, a literatura primária que o sustenta, qualifica ou contradiz, com os conceitos explicados para um leitor técnico não especialista.</li>
+<li>Um modelo formal de custo (Eq. 1) que liga cada alavanca a um fator do gasto, mais as condições de equilíbrio para cascatas (Eq. 4) e para prompt caching (Eq. 3).</li>
+<li>Uma conferência da aritmética do post e uma análise de sensibilidade da afirmação de 70% que inclui o custo extra trazido pelas alavancas.</li>
+<li>Uma árvore de KPIs, um roteiro em fases com portões de saída, um glossário e uma bibliografia auditada.</li>
+</ol>
+<p><a id="pt-s2"></a></p>
+<h2>2 Método</h2>
+<p>A revisão seguiu quatro passos.</p>
+<ol>
+<li><strong>Decomposição da fonte.</strong> Cada afirmação do infográfico foi transcrita e agrupada por componente: tese, alavancas, arquitetura, decomposição, tabela de qualidade, mensagem central. O texto e a data de publicação do post foram lidos da página pública do LinkedIn.</li>
+<li><strong>Seleção da literatura.</strong> Para cada componente buscamos (a) artigos revisados por pares ou preprints do arXiv bem citados que definem ou medem a técnica, (b) a documentação dos próprios provedores para preços e limites e (c) normas reconhecidas de governança e confiabilidade. Fontes primárias tiveram preferência sobre resumos em blogs.</li>
+<li><strong>Auditoria.</strong> Todas as referências foram resolvidas em 27 de outubro de 2026. Os registros do arXiv foram conferidos na API do arXiv quanto a título, autores e data de submissão. Cada uma das demais URLs foi acessada e seu status HTTP registrado. Os números citados neste relatório (por exemplo, &quot;até 98%&quot; para o FrugalGPT, ou o multiplicador de 0,1× na leitura de cache) foram copiados do resumo da fonte ou da página de documentação, não de resumos secundários.</li>
+<li><strong>Síntese e ampliação.</strong> As afirmações foram reconstruídas em um modelo de custo e testadas com cálculos analíticos e de sensibilidade simples. Onde o post não traz dados, as figuras são marcadas como <em>ilustrativas</em>.</li>
+</ol>
+<p>Técnicas de eficiência do lado do modelo, como quantização, decodificação especulativa e escalonamento em sistemas de serving, são revisadas em outros trabalhos [<a href="#pt-ref-miao2023">33</a>, <a href="#pt-ref-zhou2024">54</a>] e ficam fora do escopo deste relatório, que trata o modelo como uma API com preço.</p>
+<p><strong>Limitações do método.</strong> Esta é uma revisão estruturada, não uma revisão sistemática com protocolo registrado. Nenhum experimento foi executado. Os preços dos provedores mudam com frequência e são citados como lidos na data da auditoria.</p>
+<p><a id="pt-s3"></a></p>
+<h2>3 A tese central</h2>
+<h3>3.1 Enunciado</h3>
+<p>A tese é que custo e qualidade não precisam ser trocados um pelo outro de forma geral. A maioria das requisições de uma carga real é fácil. Pagar preço de modelo de fronteira por elas compra capacidade que não é usada. Um sistema que ajusta a capacidade à dificuldade pode, portanto, ocupar um ponto melhor da curva custo–qualidade do que outro que usa sempre o maior modelo.</p>
+<figure class="article-figure"><img src="/assets/article23/pt/sgaeia-article-23-figure-01.png" alt="Figura 1. A tese central no plano custo–qualidade. Os dois pontos cheios são os valores de base e otimizado informados no post; os pontos vazados e a fronteira são ilustrativos." width="2400" height="1316" loading="lazy" decoding="async"><figcaption><strong>Figura 1. A tese central no plano custo–qualidade. Os dois pontos cheios são os valores de base e otimizado informados no post; os pontos vazados e a fronteira são ilustrativos.</strong><span class="figure-credit">© 2026 Aridio Silva · Projeto SGAEIA · CC BY 4.0</span></figcaption></figure>
+<h3>3.2 A visão de Pareto</h3>
+<p>Uma configuração é <em>Pareto-ótima</em> quando nenhuma outra é mais barata sem também ser pior. Kapoor et al. mostraram que benchmarks de agentes que reportam só acurácia empurram a área para agentes &quot;desnecessariamente complexos e caros&quot;, e defendem otimizar custo e acurácia em conjunto [<a href="#pt-ref-kapoor2024">25</a>]. O HELM já defendia avaliação multimétrica que inclua eficiência [<a href="#pt-ref-liang2022">28</a>]. Nessa visão, o baseline &quot;sempre fronteira&quot; do post é um ponto <em>dominado</em> (Figura 1). O mix roteado alcança a mesma faixa de sucesso com 29% do custo por tarefa bem-sucedida.</p>
+<h3>3.3 A unidade certa: custo por tarefa bem-sucedida</h3>
+<p>A escolha mais importante do infográfico é a última linha da tabela de qualidade: <strong>custo por tarefa bem-sucedida</strong> (de US$ 1,00 para US$ 0,29). Erol et al. formalizam a mesma ideia como <em>cost-of-pass</em>: o gasto esperado para obter uma solução correta [<a href="#pt-ref-erol2025">14</a>]. Com custo por tentativa <em>c</em> e probabilidade de sucesso <em>p</em>:</p>
+<p>CPTS = <em>c</em> / <em>p</em></p>
+<p>Essa métrica impede que um modelo barato mas pouco confiável pareça bom. Um modelo que custa um décimo mas acerta metade das vezes é só cinco vezes mais barato por sucesso, e isso antes do custo de tratar suas falhas.</p>
+<h4>Pontos fortes da tese</h4>
+<ul>
+<li>Coincide com o achado empírico de que roteadores e cascatas mantêm a qualidade por uma fração do custo [<a href="#pt-ref-chen2023">10</a>, <a href="#pt-ref-ding2024">13</a>, <a href="#pt-ref-ong2024">39</a>].</li>
+<li>Oferece uma única métrica-alvo legível pelo negócio.</li>
+<li>Vale para agentes tanto quanto para chat [<a href="#pt-ref-kapoor2024">25</a>].</li>
+</ul>
+<h4>Limites</h4>
+<ul>
+<li>Depende da carga. Se a maioria das requisições for difícil, há pouco a desviar.</li>
+<li>&quot;Mesma qualidade&quot; precisa ser demonstrada estatisticamente, não afirmada (Seção 12).</li>
+<li>A qualidade na cauda longa de consultas raras e críticas pode cair enquanto a média parece boa.</li>
+</ul>
+<p><a id="pt-s4"></a></p>
+<h2>4 Um modelo de custo para sistemas com LLM</h2>
+<p>O post lista alavancas mas não diz sobre qual parte da conta cada uma age. Tornamos isso explícito com um modelo de custo mensal:</p>
+<p><em>C</em> = <em>N</em> · (1 − <em>h</em>) · <em>k</em> · [ <em>p</em>in(<em>m</em>) · (<em>T</em>u + δ·<em>T</em>c) + <em>p</em>out(<em>m</em>) · <em>T</em>out ] · (1 − β·<em>b</em>) + <em>C</em>ovh(1)</p>
+<p>Aqui <em>N</em> é o número de requisições por mês, <em>h</em> a taxa de acerto do cache semântico, <em>k</em> o número médio de chamadas de LLM por requisição, <em>m</em> o modelo escolhido com seus preços de entrada e saída <em>p</em>, <em>T</em>u e <em>T</em>c os tokens de entrada sem e com cache, δ o multiplicador de preço da leitura em cache, <em>T</em>out os tokens de saída, β o desconto de lote, <em>b</em> a parcela do tráfego enviada em lote e <em>C</em>ovh o custo extra que a própria otimização acrescenta.</p>
+<figure class="article-figure"><img src="/assets/article23/pt/sgaeia-article-23-figure-02.png" alt="Figura 2. Cada alavanca ataca um fator diferente da Eq. 1. O cartão vermelho é o custo extra que as próprias alavancas introduzem e que o post omite." width="2400" height="1316" loading="lazy" decoding="async"><figcaption><strong>Figura 2. Cada alavanca ataca um fator diferente da Eq. 1. O cartão vermelho é o custo extra que as próprias alavancas introduzem e que o post omite.</strong><span class="figure-credit">© 2026 Aridio Silva · Projeto SGAEIA · CC BY 4.0</span></figcaption></figure>
+<p>Duas propriedades da Eq. 1 explicam o formato da cascata do post. Primeiro, os fatores se <strong>multiplicam</strong>, então as economias se compõem: cinco reduções de 15%, 40%, 25%, 15% e 10% dão 1 − 0,85·0,60·0,75·0,85·0,90 = 70,7%, e não os 105% que uma soma ingênua sugeriria. Segundo, alavancas sobre o mesmo fator <strong>não se acumulam por inteiro</strong>. Depois que o roteamento levou o tráfego para um modelo mais barato, cortar seus tokens economiza dinheiro ao preço mais barato. A ordem em que as economias são contadas muda quanto cada etapa parece contribuir, mas não o produto final.</p>
+<p>O processamento em lote mostra como ler o modelo. Os três grandes provedores dão 50% de desconto ao trabalho em lote [<a href="#pt-ref-anthropicBatch">4</a>, <a href="#pt-ref-googleBatch">18</a>, <a href="#pt-ref-openaiBatch">40</a>], então β = 0,5. A etapa de 10% do post implica, portanto, <em>b</em> = 20%: uma requisição em cada cinco pode esperar até 24 horas.</p>
+<p><a id="pt-s5"></a></p>
+<h2>5 As seis alavancas</h2>
+<figure class="article-figure"><img src="/assets/article23/pt/sgaeia-article-23-figure-03.png" alt="Figura 3. As seis alavancas, o fator da Eq. 1 que cada uma ataca, o efeito mais forte relatado na literatura e o principal trade-off." width="2400" height="1436" loading="lazy" decoding="async"><figcaption><strong>Figura 3. As seis alavancas, o fator da Eq. 1 que cada uma ataca, o efeito mais forte relatado na literatura e o principal trade-off.</strong><span class="figure-credit">© 2026 Aridio Silva · Projeto SGAEIA · CC BY 4.0</span></figcaption></figure>
+<h3>5.1 Alavanca 1: roteamento inteligente de modelos</h3>
+<p><strong>Conceito.</strong> Um roteador envia cada requisição ao modelo mais barato do qual se espera uma boa resposta. A cascata é uma variante sequencial: tenta primeiro um modelo barato, verifica a resposta e escala só se a verificação falhar.</p>
+<p><strong>Evidências.</strong></p>
+<ul>
+<li>O FrugalGPT aprendeu qual combinação de APIs de LLM consultar por requisição. Igualou o desempenho do GPT-4 &quot;com até 98% de redução de custo&quot;, ou melhorou a acurácia em 4% pelo mesmo custo [<a href="#pt-ref-chen2023">10</a>].</li>
+<li>O Hybrid LLM roteou entre um modelo pequeno e um grande pela dificuldade prevista e fez &quot;até 40% menos chamadas ao modelo grande, sem queda na qualidade da resposta&quot; [<a href="#pt-ref-ding2024">13</a>].</li>
+<li>O RouteLLM treinou roteadores com dados de preferência humana e reduziu o custo &quot;em mais de 2 vezes em certos casos&quot;. Seus roteadores continuaram funcionando quando os modelos forte e fraco foram trocados no teste [<a href="#pt-ref-routellmRepo">30</a>, <a href="#pt-ref-ong2024">39</a>].</li>
+<li>Cascatas por consistência de resposta atingiram acurácia de raciocínio no nível do GPT-4 com cerca de 40% do seu custo [<a href="#pt-ref-yue2023">51</a>].</li>
+<li>O AutoMix usou autoverificação few-shot e um roteador POMDP para cortar o custo em mais de 50% com desempenho comparável [<a href="#pt-ref-aggarwal2023">1</a>].</li>
+</ul>
+<p><strong>Trade-offs.</strong> Roteadores precisam de dados rotulados ou de preferência e se desatualizam quando os modelos mudam. Um veredito &quot;fácil&quot; errado sobre uma requisição difícil prejudica mais a qualidade justamente nas consultas raras e críticas. Cascatas pagam duas vezes por cada requisição escalada (Seção 9).</p>
+<h3>5.2 Alavanca 2: engenharia de contexto</h3>
+<p><strong>Conceito.</strong> Engenharia de contexto é decidir quais tokens entram na janela de contexto do modelo e em que ordem. A Anthropic a descreve como encontrar o menor conjunto possível de tokens de alto sinal para a tarefa [<a href="#pt-ref-anthropic2025">3</a>].</p>
+<p><strong>Evidências.</strong></p>
+<ul>
+<li>Os modelos usam pior a informação colocada no meio de um contexto longo do que a informação no início ou no fim (&quot;lost in the middle&quot;) [<a href="#pt-ref-liu2023">29</a>].</li>
+<li>O desempenho cai à medida que a entrada cresce, mesmo em tarefas simples [<a href="#pt-ref-chroma2025">11</a>].</li>
+<li>O LLMLingua comprimiu prompts &quot;até 20x&quot; com pouca perda [<a href="#pt-ref-jiang2023a">23</a>, <a href="#pt-ref-llmlinguaRepo">34</a>]. O LongLLMLingua estendeu isso para RAG de contexto longo [<a href="#pt-ref-jiang2023b">24</a>].</li>
+<li>Prompting com consciência de orçamento também pode encurtar a saída de raciocínio [<a href="#pt-ref-han2024">22</a>].</li>
+</ul>
+<p>Menos tokens economizam dinheiro e podem também <em>elevar</em> a qualidade.</p>
+<p><strong>Trade-offs.</strong> Cortar demais perde justamente o trecho que importava (perda de recall). A compressão acrescenta uma chamada de modelo e latência. Orçamentos agressivos exigem avaliação por tipo de tarefa.</p>
+<h3>5.3 Alavanca 3: prompt caching</h3>
+<p><strong>Conceito.</strong> Quando muitas requisições compartilham o mesmo prefixo de prompt (instruções de sistema, schemas de ferramentas, exemplos few-shot, um documento longo), o provedor pode reutilizar o estado de atenção já processado desse prefixo em vez de recalculá-lo. Gim et al. mostraram a base de sistemas disso: reutilizar estados de atenção reduziu o tempo até o primeiro token em 8× na GPU e 60× na CPU, sem alterar as saídas [<a href="#pt-ref-gim2023">17</a>].</p>
+<p><strong>Condições atuais dos provedores (auditadas em 27/10/2026).</strong></p>
+<ul>
+<li><strong>Anthropic:</strong> leitura em cache a 0,1× do preço base de entrada (menos em alguns modelos novos). Escrita a 1,25× com TTL de 5 minutos ou 2× com TTL de 1 hora. Esses multiplicadores se acumulam com o desconto de lote [<a href="#pt-ref-anthropicCache">5</a>].</li>
+<li><strong>OpenAI:</strong> o cache é ativado por padrão nos modelos suportados, com a entrada em cache &quot;com desconto de até 95%&quot; e prefixo mínimo cacheável de 1.024 tokens nos modelos recentes [<a href="#pt-ref-openaiCache">41</a>].</li>
+<li><strong>Google:</strong> cache implícito no Gemini, com cache explícito disponível em alguns modelos [<a href="#pt-ref-googleCache">19</a>].</li>
+</ul>
+<p><strong>Trade-offs.</strong> O prefixo precisa ser idêntico byte a byte entre requisições, então os templates devem pôr o conteúdo estável primeiro e o variável por último. A escrita custa mais que a entrada comum. Gu et al. constataram que caches compartilhados entre usuários em sete provedores de API criam um canal lateral de tempo que pode vazar informação sobre prompts de outros usuários [<a href="#pt-ref-gu2025">20</a>].</p>
+<h3>5.4 Alavanca 4: cache semântico</h3>
+<p><strong>Conceito.</strong> Um cache semântico guarda respostas inteiras e devolve uma delas quando uma nova consulta tem <em>significado próximo</em> ao de uma anterior, medido por similaridade de embeddings [<a href="#pt-ref-reimers2019">45</a>]. O GPTCache é a implementação open source de referência [<a href="#pt-ref-bang2023">7</a>, <a href="#pt-ref-gptcacheRepo">55</a>]. O MeanCache relata que cerca de 31% das consultas em seu cenário eram repetidas, e alerta que caches semânticos ingênuos têm taxas de acerto e falha falsos &quot;inaceitáveis&quot; [<a href="#pt-ref-gill2024">16</a>].</p>
+<p><strong>Trade-offs.</strong> Um acerto falso devolve uma resposta confiante a outra pergunta. As respostas ficam desatualizadas quando as fontes mudam. Um cache compartilhado entre tenants pode vazar dados. A Seção 8 traz os controles necessários.</p>
+<h3>5.5 Alavanca 5: otimização do loop agêntico</h3>
+<p><strong>Conceito.</strong> Agentes intercalam raciocínio e uso de ferramentas [<a href="#pt-ref-yao2022">50</a>]. Cada passo é uma chamada paga, e passos redundantes, novas tentativas e repasses multiplicam o <em>k</em> da Eq. 1.</p>
+<p><strong>Evidências.</strong> Kapoor et al. constataram que baselines simples igualaram agentes de ponta em acurácia com custo muito menor [<a href="#pt-ref-kapoor2024">25</a>]. A orientação da Anthropic é começar pelo padrão mais simples que funcione (uma única chamada, depois um fluxo fixo) e acrescentar autonomia só quando ela se paga [<a href="#pt-ref-anthropic2024">2</a>].</p>
+<p><strong>Trade-offs.</strong> Limites rígidos de passos e tentativas podem interromper um agente pouco antes de ele ter sucesso. Os limites devem ser definidos por tipo de tarefa a partir dos traces.</p>
+<h3>5.6 Alavanca 6: processamento em lote</h3>
+<p><strong>Conceito.</strong> O trabalho que não precisa de resposta imediata é enviado de forma assíncrona, em bloco. Exemplos são enriquecimento de dados, classificação de backlogs, rodadas de avaliação e geração de relatórios.</p>
+<p><strong>Evidências.</strong> Anthropic, OpenAI e Google cobram requisições em lote a 50% do preço síncrono e devolvem os resultados em até 24 horas, muitas vezes bem antes [<a href="#pt-ref-anthropicBatch">4</a>, <a href="#pt-ref-googleBatch">18</a>, <a href="#pt-ref-openaiBatch">40</a>].</p>
+<p><strong>Trade-offs.</strong> Só se aplica a trabalho que tolera latência, e acrescenta código de fila e de tratamento de resultados.</p>
+<p><a id="pt-s6"></a></p>
+<h2>6 Arquitetura de referência</h2>
+<p>O post organiza as alavancas em um pipeline. Nós o redesenhamos com os laços de controle explícitos (Figura 4).</p>
+<figure class="article-figure"><img src="/assets/article23/pt/sgaeia-article-23-figure-04.png" alt="Figura 4. Arquitetura de referência redesenhada a partir do post. Três laços de controle aparecem de forma explícita: desvio por acerto no cache (âmbar), escalonamento (violeta) e gravação no cache após o portão (verde)." width="2400" height="1436" loading="lazy" decoding="async"><figcaption><strong>Figura 4. Arquitetura de referência redesenhada a partir do post. Três laços de controle aparecem de forma explícita: desvio por acerto no cache (âmbar), escalonamento (violeta) e gravação no cache após o portão (verde).</strong><span class="figure-credit">© 2026 Aridio Silva · Projeto SGAEIA · CC BY 4.0</span></figcaption></figure>
+<ol>
+<li><strong>Requisição.</strong> Leva a consulta, o tenant, a identidade e os direitos de acesso, e o tipo de tarefa. O tipo de tarefa é o sinal de roteamento mais barato e deve ser capturado na borda.</li>
+<li><strong>Cache semântico e checagem de política.</strong> Devolve uma resposta salva só se ela for autorizada, atual e semanticamente equivalente (Seção 8).</li>
+<li><strong>Motor de otimização de contexto.</strong> Busca híbrida, rerank, filtro e orçamento de tokens (Seção 7). É a geração aumentada por recuperação introduzida por Lewis et al. [<a href="#pt-ref-lewis2020">27</a>].</li>
+<li><strong>Roteador com consciência de qualidade.</strong> Escolhe um modelo pequeno, médio ou de fronteira (Seção 9).</li>
+<li><strong>Portão de qualidade.</strong> Verifica formato, fundamentação, completude e segurança, e escala em caso de falha (Seção 10).</li>
+<li><strong>Resposta final.</strong> Devolve a resposta com citações e emite um trace com custo.</li>
+</ol>
+<p>Uma camada transversal de <strong>observabilidade e governança</strong> registra tokens, custo, qualidade e latência por etapa (Seção 13).</p>
+<p>Três princípios de projeto decorrem da literatura:</p>
+<ul>
+<li><strong>Decisões baratas primeiro.</strong> A busca no cache e as checagens determinísticas custam muito menos que uma chamada de modelo, então rodam antes dela.</li>
+<li><strong>Fechar o laço.</strong> Só respostas que passaram no portão são gravadas no cache, o que evita que erros sejam repetidos.</li>
+<li><strong>Preferir recuperação autocorretiva.</strong> Self-RAG [<a href="#pt-ref-asai2023">6</a>] e Corrective RAG [<a href="#pt-ref-yan2024">49</a>] acrescentam checagens da qualidade da recuperação dentro do laço de geração. São extensões naturais das etapas 3 e 5.</li>
+</ul>
+<p><a id="pt-s7"></a></p>
+<h2>7 Motor de otimização de contexto</h2>
+<figure class="article-figure"><img src="/assets/article23/pt/sgaeia-article-23-figure-05.png" alt="Figura 5. O motor de contexto reduz cerca de 100 trechos candidatos a um prompt com orçamento. Contagens ilustrativas. O layout põe o prefixo cacheável primeiro e a evidência mais forte nas pontas." width="2400" height="1316" loading="lazy" decoding="async"><figcaption><strong>Figura 5. O motor de contexto reduz cerca de 100 trechos candidatos a um prompt com orçamento. Contagens ilustrativas. O layout põe o prefixo cacheável primeiro e a evidência mais forte nas pontas.</strong><span class="figure-credit">© 2026 Aridio Silva · Projeto SGAEIA · CC BY 4.0</span></figcaption></figure>
+<h3>7.1 Busca híbrida</h3>
+<p>A busca lexical com BM25 pontua documentos por frequência do termo, frequência inversa nos documentos e normalização por tamanho [<a href="#pt-ref-robertson2009">46</a>]. Ela lida bem com identificadores exatos, códigos e termos raros. A busca densa projeta consultas e trechos em um espaço vetorial [<a href="#pt-ref-reimers2019">45</a>] e encontra paráfrases. Índices de vizinhos mais próximos aproximados, como o HNSW, a tornam rápida em escala [<a href="#pt-ref-malkov2016">31</a>]. Rodar as duas e fundir os resultados cobre as fraquezas de cada uma.</p>
+<h3>7.2 Fusão com RRF</h3>
+<p>A reciprocal rank fusion funde listas ranqueadas sem calibrar seus scores [<a href="#pt-ref-cormack2009">12</a>]:</p>
+<p>RRF(<em>d</em>) = Σ<em>r</em> ∈ R 1 / (<em>k</em> + rank<em>r</em>(<em>d</em>)), <em>k</em> = 60(2)</p>
+<h3>7.3 Rerank e filtragem</h3>
+<p>Um cross-encoder lê a consulta e cada trecho candidato em conjunto e pontua a relevância com muito mais precisão que o recuperador de primeira etapa, a um custo maior por par [<a href="#pt-ref-nogueira2019">38</a>]. LLMs também podem atuar como rerankers [<a href="#pt-ref-sun2023">48</a>]. Depois do rerank, filtros removem quase duplicatas, trechos que o usuário não pode ver (ACL), versões desatualizadas e trechos abaixo de um score mínimo.</p>
+<h3>7.4 Orçamento de tokens e layout</h3>
+<p>O empacotador preenche um orçamento fixo com os melhores trechos. Se o orçamento for excedido, ele comprime [<a href="#pt-ref-jiang2023b">24</a>] em vez de truncar às cegas. O layout segue duas regras:</p>
+<ul>
+<li>O conteúdo estável (prompt de sistema, schemas de ferramentas, exemplos) vem primeiro para poder ser cacheado [<a href="#pt-ref-anthropicCache">5</a>].</li>
+<li>A evidência mais forte vai no início e no fim da parte dinâmica, onde os modelos a usam melhor [<a href="#pt-ref-liu2023">29</a>].</li>
+</ul>
+<p>Tabela 1. Técnicas do motor de contexto: benefício e custo</p>
+<div class="article-table-wrap" role="region" aria-label="Scrollable table" tabindex="0"><table>
+<thead>
+<tr>
+<th>Técnica</th>
+<th>Principal benefício</th>
+<th>Principal custo ou risco</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Híbrida BM25 + densa</td>
+<td>Recall em termos exatos e em paráfrases</td>
+<td>Dois índices para manter</td>
+</tr>
+<tr>
+<td>Fusão RRF</td>
+<td>Dispensa calibração de scores</td>
+<td>Ignora a magnitude dos scores</td>
+</tr>
+<tr>
+<td>Rerank com cross-encoder</td>
+<td>Mais precisão nos primeiros resultados</td>
+<td>Latência cresce com o nº de candidatos</td>
+</tr>
+<tr>
+<td>Compressão de prompt</td>
+<td>Até 20× menos tokens [<a href="#pt-ref-jiang2023a">23</a>]</td>
+<td>Chamada extra de modelo; pode perder detalhes</td>
+</tr>
+<tr>
+<td>Orçamento de tokens</td>
+<td>Custo previsível por requisição</td>
+<td>Perda de recall se for baixo demais</td>
+</tr>
+</tbody>
+</table></div>
+<p><a id="pt-s8"></a></p>
+<h2>8 Cache: de prompt, semântico e KV</h2>
+<p>O post cita &quot;prompt caching&quot; e &quot;cache semântico&quot; como alavancas separadas, e eles são frequentemente confundidos entre si e com o KV cache do motor de inferência. A Figura 6 os separa.</p>
+<figure class="article-figure"><img src="/assets/article23/pt/sgaeia-article-23-figure-06.png" alt="Figura 6. Três camadas de cache. Elas reutilizam coisas diferentes, casam por regras diferentes e carregam riscos diferentes." width="2400" height="1196" loading="lazy" decoding="async"><figcaption><strong>Figura 6. Três camadas de cache. Elas reutilizam coisas diferentes, casam por regras diferentes e carregam riscos diferentes.</strong><span class="figure-credit">© 2026 Aridio Silva · Projeto SGAEIA · CC BY 4.0</span></figcaption></figure>
+<p>A terceira camada só importa para equipes que hospedam seus próprios modelos. Os motores de inferência guardam na memória da GPU os tensores key-value (KV) de atenção de cada requisição. O PagedAttention os gerencia em blocos de tamanho fixo para reduzir a fragmentação [<a href="#pt-ref-kwon2023">26</a>], e o RadixAttention os compartilha entre requisições por meio de uma árvore de prefixos [<a href="#pt-ref-zheng2024">53</a>]. O prompt caching do provedor é a forma gerenciada e precificada da mesma ideia.</p>
+<h3>8.1 A economia do prompt caching</h3>
+<p>Considere um prefixo de <em>P</em> tokens reutilizado por <em>n</em> requisições dentro do tempo de vida do cache, com os multiplicadores da Anthropic (escrita 1,25×, leitura 0,1×) [<a href="#pt-ref-anthropicCache">5</a>]. O custo relativo do prefixo é:</p>
+<p>custocom cache / custosem cache = [1,25 + 0,1·(<em>n</em> − 1)] / <em>n</em>(3)</p>
+<p>O cache se paga a partir do segundo uso (1,35 contra 2,0). Com <em>n</em> = 10, o prefixo custa 21,5% do preço sem cache. A alavanca tem baixo risco e alto retorno quando os prefixos são longos e o tráfego é constante. Só dá prejuízo quando um prefixo gravado nunca é reutilizado antes de expirar.</p>
+<h3>8.2 Cache semântico com segurança</h3>
+<figure class="article-figure"><img src="/assets/article23/pt/sgaeia-article-23-figure-07.png" alt="Figura 7. Fluxo de decisão do cache semântico. Um acerto exige similaridade, atualidade e uma nova checagem de autorização. O gráfico do limiar é ilustrativo." width="2400" height="1556" loading="lazy" decoding="async"><figcaption><strong>Figura 7. Fluxo de decisão do cache semântico. Um acerto exige similaridade, atualidade e uma nova checagem de autorização. O gráfico do limiar é ilustrativo.</strong><span class="figure-credit">© 2026 Aridio Silva · Projeto SGAEIA · CC BY 4.0</span></figcaption></figure>
+<p>O fluxo da Figura 7 acrescenta quatro controles que o infográfico apenas sugere (&quot;autorizada, atual, semanticamente equivalente&quot;).</p>
+<ol>
+<li><strong>Chave de escopo.</strong> Buscar só entre entradas com o mesmo tenant, direitos de acesso, versão do corpus e versão do prompt ou modelo. Isso evita vazamento entre tenants, que a OWASP enquadra em divulgação de informação sensível e em fraquezas de vetores e embeddings [<a href="#pt-ref-owasp2025">43</a>].</li>
+<li><strong>Limiar τ calibrado.</strong> Elevar τ reduz os acertos falsos mais depressa do que reduz a taxa de acerto, até certo ponto. τ deve ser ajustado por domínio em pares rotulados [<a href="#pt-ref-gill2024">16</a>].</li>
+<li><strong>Atualidade.</strong> Usar TTL mais invalidação quando muda a versão do documento de origem.</li>
+<li><strong>Gravação só após o portão.</strong> Guardar a proveniência junto com a resposta para que ela possa ser auditada ou expurgada.</li>
+</ol>
+<h4>Benefícios</h4>
+<ul>
+<li>Um acerto evita o pipeline inteiro: a maior economia por evento.</li>
+<li>Menor latência em perguntas repetidas.</li>
+</ul>
+<h4>Riscos</h4>
+<ul>
+<li>Acertos falsos são respostas erradas ditas com confiança.</li>
+<li>Desatualização e vazamento entre tenants.</li>
+<li>Respostas personalizadas ou sensíveis ao tempo são más candidatas.</li>
+</ul>
+<p><a id="pt-s9"></a></p>
+<h2>9 Roteamento de modelos e cascatas</h2>
+<figure class="article-figure"><img src="/assets/article23/pt/sgaeia-article-23-figure-08.png" alt="Figura 8. Roteador e cascata, seus custos esperados e a taxa de escalonamento de equilíbrio. Razões de custo ilustrativas." width="2400" height="1276" loading="lazy" decoding="async"><figcaption><strong>Figura 8. Roteador e cascata, seus custos esperados e a taxa de escalonamento de equilíbrio. Razões de custo ilustrativas.</strong><span class="figure-credit">© 2026 Aridio Silva · Projeto SGAEIA · CC BY 4.0</span></figcaption></figure>
+<p>Sejam <em>c</em>s, <em>c</em>L, <em>c</em>v e <em>c</em>r os custos do modelo pequeno, do modelo grande, do verificador e do roteador. Um roteador envia uma parcela <em>q</em> do tráfego ao modelo grande. Uma cascata escala uma parcela <em>r</em> após a verificação.</p>
+<p>E[<em>C</em>roteador] = <em>c</em>r + (1 − <em>q</em>)·<em>c</em>s + <em>q</em>·<em>c</em>L E[<em>C</em>cascata] = <em>c</em>s + <em>c</em>v + <em>r</em>·<em>c</em>L(4)</p>
+<p>A cascata supera &quot;sempre grande&quot; só enquanto <em>r</em> &lt; 1 − (<em>c</em>s + <em>c</em>v)/<em>c</em>L. Com <em>c</em>s = 0,10 e <em>c</em>v = 0,02 (relativos a <em>c</em>L), o equilíbrio é <em>r</em>* = 0,88. Com <em>r</em> = 30%, a cascata custa 0,42, uma economia de 58%. Isso é próximo da etapa de 40% de roteamento do post, uma vez incluído o nível médio.</p>
+<p><strong>Sinais de roteamento na literatura.</strong></p>
+<ul>
+<li>Dificuldade prevista por um classificador treinado [<a href="#pt-ref-ding2024">13</a>].</li>
+<li>Roteadores treinados com preferência humana [<a href="#pt-ref-ong2024">39</a>].</li>
+<li>Consistência das respostas entre caminhos de raciocínio amostrados [<a href="#pt-ref-yue2023">51</a>].</li>
+<li>Autoverificação com uma política POMDP [<a href="#pt-ref-aggarwal2023">1</a>].</li>
+<li>Incerteza por token, que corrige o viés de tamanho da confiança da sequência inteira [<a href="#pt-ref-gupta2024">21</a>].</li>
+</ul>
+<p>Tabela 2. Roteador versus cascata</p>
+<div class="article-table-wrap" role="region" aria-label="Scrollable table" tabindex="0"><table>
+<thead>
+<tr>
+<th></th>
+<th>Roteador (decide antes)</th>
+<th>Cascata (tenta e depois escala)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Latência</td>
+<td>Uma chamada de modelo mais um roteador pequeno</td>
+<td>Requisições escaladas pagam duas chamadas em série</td>
+</tr>
+<tr>
+<td>Qualidade do sinal</td>
+<td>Precisa prever a dificuldade antes de ver a resposta</td>
+<td>Julga uma resposta real, o que é mais confiável</td>
+</tr>
+<tr>
+<td>Necessidade de dados</td>
+<td>Dados rotulados ou de preferência para treinar</td>
+<td>Um verificador ou checagem de consistência</td>
+</tr>
+<tr>
+<td>Melhor para</td>
+<td>Tráfego interativo, sensível à latência</td>
+<td>Tráfego em lote ou sensível à acurácia</td>
+</tr>
+</tbody>
+</table></div>
+<p><a id="pt-s10"></a></p>
+<h2>10 Portões de qualidade e escalonamento</h2>
+<figure class="article-figure"><img src="/assets/article23/pt/sgaeia-article-23-figure-09.png" alt="Figura 9. Portão de qualidade: quatro camadas de checagem, da mais barata à mais cara, com quatro desfechos possíveis e uma guarda de orçamento." width="2400" height="1256" loading="lazy" decoding="async"><figcaption><strong>Figura 9. Portão de qualidade: quatro camadas de checagem, da mais barata à mais cara, com quatro desfechos possíveis e uma guarda de orçamento.</strong><span class="figure-credit">© 2026 Aridio Silva · Projeto SGAEIA · CC BY 4.0</span></figcaption></figure>
+<p>O portão é o que torna seguro o roteamento agressivo. Ele deve rodar as checagens em ordem de custo e parar na primeira falha grave.</p>
+<ol>
+<li><strong>Checagens determinísticas.</strong> JSON schema, campos obrigatórios e se cada ID citado de fato existe. São baratas e pegam as falhas mais frequentes de agentes.</li>
+<li><strong>Classificadores.</strong> Sinais de segurança, PII e prompt injection (OWASP LLM01 e LLM02) [<a href="#pt-ref-owasp2025">43</a>].</li>
+<li><strong>Checagens de fundamentação.</strong> Cada afirmação é apoiada pela evidência recuperada? O RAGAS define métricas sem referência, como fidelidade (faithfulness) e relevância do contexto [<a href="#pt-ref-es2023">15</a>, <a href="#pt-ref-ragasRepo">44</a>].</li>
+<li><strong>Julgamento por modelo.</strong> O LLM-como-juiz chega a mais de 80% de concordância com preferências humanas, mas mostra vieses de posição, verbosidade e autopreferência [<a href="#pt-ref-zheng2023">52</a>]. O SelfCheckGPT detecta alucinações checando a consistência entre amostras [<a href="#pt-ref-manakul2023">32</a>]. Como essas checagens custam tanto quanto uma geração, devem rodar por amostragem ou só nas rotas de alto risco.</li>
+</ol>
+<p><strong>Desfechos.</strong> Cada resposta termina em um de quatro estados:</p>
+<ul>
+<li><strong>passa:</strong> responde, registra e possivelmente grava no cache;</li>
+<li><strong>repara:</strong> uma nova tentativa com a mensagem de erro do validador;</li>
+<li><strong>escala:</strong> envia ao próximo nível de modelo, com no máximo um salto;</li>
+<li><strong>abstém ou repassa:</strong> recusa com segurança ou repassa a um humano.</li>
+</ul>
+<p>Uma <em>guarda de orçamento</em> limita novas tentativas, escalonamentos e gasto por requisição, o que trata o risco de &quot;consumo ilimitado&quot; da OWASP (LLM10) [<a href="#pt-ref-owasp2025">43</a>].</p>
+<p><a id="pt-s11"></a></p>
+<h2>11 Decomposição do custo e sensibilidade</h2>
+<figure class="article-figure"><img src="/assets/article23/pt/sgaeia-article-23-figure-10.png" alt="Figura 10. A cascata do post, redesenhada em escala. Os percentuais por etapa e acumulados foram calculados pelo autor a partir dos valores do post." width="2400" height="1256" loading="lazy" decoding="async"><figcaption><strong>Figura 10. A cascata do post, redesenhada em escala. Os percentuais por etapa e acumulados foram calculados pelo autor a partir dos valores do post.</strong><span class="figure-credit">© 2026 Aridio Silva · Projeto SGAEIA · CC BY 4.0</span></figcaption></figure>
+<h3>11.1 Conferindo a aritmética</h3>
+<p>Os valores do post são internamente consistentes: 10.000 × 0,85 × 0,60 × 0,75 × 0,85 × 0,90 = 2.926. O roteamento é a maior etapa isolada (−40% do que resta; 34 dos 70,7 pontos percentuais). O post rotula o gráfico como <em>ilustrativo</em>, então esses números são metas de projeto, não medições.</p>
+<h3>11.2 Sensibilidade</h3>
+<figure class="article-figure"><img src="/assets/article23/pt/sgaeia-article-23-figure-11.png" alt="Figura 11. Sensibilidade uma-a-uma do custo mensal final. As faixas são premissas do autor em torno dos fatores de cada etapa do post. As cinco linhas verde-azuladas variam esses fatores para mais e para menos; a linha âmbar não é uma variação, e sim o overhead que as alavancas acrescentam, por isso só aumenta o custo." width="2400" height="1196" loading="lazy" decoding="async"><figcaption><strong>Figura 11. Sensibilidade uma-a-uma do custo mensal final. As faixas são premissas do autor em torno dos fatores de cada etapa do post. As cinco linhas verde-azuladas variam esses fatores para mais e para menos; a linha âmbar não é uma variação, e sim o overhead que as alavancas acrescentam, por isso só aumenta o custo.</strong><span class="figure-credit">© 2026 Aridio Silva · Projeto SGAEIA · CC BY 4.0</span></figcaption></figure>
+<p>Variar cada fator dentro de uma faixa hipotética escolhida pelo autor mostra, nesse cenário, que o roteamento domina o resultado (de −64% a −78%). Lote e deduplicação são os que menos pesam. O post omite o custo extra: embeddings e o banco vetorial do cache semântico, o roteador, as chamadas de juiz e as rodadas de avaliação. Se esse custo extra somar, por hipótese, 3–9% do baseline original, a <strong>economia líquida do cenário cai para cerca de 61–68%</strong>. O cálculo demonstra sensibilidade, não uma faixa esperada para cargas reais; essa faixa depende de medição por workload.</p>
+<p>Tabela 3. Custos que as alavancas acrescentam (não aparecem no post)</p>
+<div class="article-table-wrap" role="region" aria-label="Scrollable table" tabindex="0"><table>
+<thead>
+<tr>
+<th>Item</th>
+<th>Introduzido por</th>
+<th>Como mantê-lo pequeno</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Embeddings de consulta, busca vetorial</td>
+<td>A4, A2</td>
+<td>Modelo de embedding pequeno; cachear embeddings</td>
+</tr>
+<tr>
+<td>Inferência do roteador</td>
+<td>A1</td>
+<td>Classificador leve, não um LLM</td>
+</tr>
+<tr>
+<td>Chamadas de verificador e juiz</td>
+<td>Portão</td>
+<td>Checagens determinísticas primeiro; juízes por amostragem</td>
+</tr>
+<tr>
+<td>Escritas no cache (1,25×–2×)</td>
+<td>A3</td>
+<td>Cachear só prefixos que serão reutilizados</td>
+</tr>
+<tr>
+<td>Rodadas de avaliação e rotulagem</td>
+<td>Todas</td>
+<td>Rodar avaliações pela API de lote (−50%)</td>
+</tr>
+<tr>
+<td>Tempo de engenharia e operação</td>
+<td>Todas</td>
+<td>Fasear o trabalho; ganhos rápidos primeiro (Seção 15)</td>
+</tr>
+</tbody>
+</table></div>
+<p><a id="pt-s12"></a></p>
+<h2>12 Avaliação e KPIs</h2>
+<figure class="article-figure"><img src="/assets/article23/pt/sgaeia-article-23-figure-12.png" alt="Figura 12. Árvore de KPIs. O custo por tarefa bem-sucedida é a métrica norte; direcionadores de custo, guardas de qualidade e métricas operacionais explicam seu movimento." width="2400" height="1436" loading="lazy" decoding="async"><figcaption><strong>Figura 12. Árvore de KPIs. O custo por tarefa bem-sucedida é a métrica norte; direcionadores de custo, guardas de qualidade e métricas operacionais explicam seu movimento.</strong><span class="figure-credit">© 2026 Aridio Silva · Projeto SGAEIA · CC BY 4.0</span></figcaption></figure>
+<h3>12.1 Lendo a tabela de qualidade com olhar crítico</h3>
+<p>O post reporta sucesso da tarefa 92% → 92–93%, fundamentação 90% → 90–91% e erros críticos 0,5% → 0,4%. Miller recomenda tratar os itens de avaliação como uma amostra de uma população maior e reportar intervalos de confiança [<a href="#pt-ref-miller2024">35</a>]. Com 500 itens, o erro-padrão de uma taxa de sucesso de 92% é √(0,92 · 0,08 / 500) ≈ 1,2 ponto, então o intervalo de 95% é de cerca de ±2,4 pontos. As variações reportadas estão dentro desse ruído. &quot;Mesma qualidade&quot; é plausível, mas não está demonstrada.</p>
+<p>Uma versão rigorosa deveria:</p>
+<ul>
+<li>avaliar os dois sistemas nos <em>mesmos</em> itens (desenho pareado);</li>
+<li>pré-registrar uma margem de não inferioridade, por exemplo &quot;sucesso no máximo 1 ponto menor&quot;;</li>
+<li>dimensionar o conjunto de avaliação para que o intervalo fique mais estreito que essa margem.</li>
+</ul>
+<h3>12.2 Definição dos KPIs</h3>
+<p>Tabela 4. KPIs recomendados</p>
+<div class="article-table-wrap" role="region" aria-label="Scrollable table" tabindex="0"><table>
+<thead>
+<tr>
+<th>KPI</th>
+<th>Definição</th>
+<th>Por que importa</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Custo por tarefa bem-sucedida</td>
+<td>Custo total ÷ tarefas bem-sucedidas [<a href="#pt-ref-erol2025">14</a>]</td>
+<td>Métrica norte; impede que o &quot;barato mas errado&quot; pareça bom</td>
+</tr>
+<tr>
+<td>Tokens por requisição (entrada/saída)</td>
+<td>Média e P95, por rota</td>
+<td>Revela inchaço de contexto e saídas verbosas</td>
+</tr>
+<tr>
+<td>Mix de níveis de modelo</td>
+<td>Parcela das requisições por nível</td>
+<td>Principal direcionador de p(m)</td>
+</tr>
+<tr>
+<td>Parcela lida do prompt cache</td>
+<td>Tokens de entrada em cache ÷ total</td>
+<td>Confirma que a Alavanca 3 funciona</td>
+</tr>
+<tr>
+<td>Taxas de acerto e de acerto falso do cache semântico</td>
+<td>Acertos ÷ buscas; acertos errados ÷ acertos auditados</td>
+<td>Economia e segurança da Alavanca 4</td>
+</tr>
+<tr>
+<td>Taxa de escalonamento r</td>
+<td>Escaladas ÷ requisições que passaram pelo portão</td>
+<td>Equilíbrio da cascata (Eq. 4)</td>
+</tr>
+<tr>
+<td>Sucesso da tarefa, fundamentação, erros críticos</td>
+<td>Em conjunto fixo de avaliação, com IC 95% [<a href="#pt-ref-miller2024">35</a>]</td>
+<td>Guardas de qualidade</td>
+</tr>
+<tr>
+<td>Latência P50/P95 e TTFT</td>
+<td>Ponta a ponta e por etapa</td>
+<td>Experiência do usuário; SLOs de latência [<a href="#pt-ref-beyer2016">8</a>]</td>
+</tr>
+<tr>
+<td>Chamadas por requisição k</td>
+<td>Chamadas de LLM ÷ requisições</td>
+<td>Eficiência do loop agêntico (Alavanca 5)</td>
+</tr>
+</tbody>
+</table></div>
+<p><a id="pt-s13"></a></p>
+<h2>13 Observabilidade e governança</h2>
+<p>Nenhuma das alavancas pode ser ajustada sem telemetria por requisição. As convenções semânticas do OpenTelemetry para IA generativa definem atributos de span padronizados para modelo, uso de tokens e operações [<a href="#pt-ref-otel">42</a>]. Usá-las torna o custo por span portável entre fornecedores.</p>
+<p>A governança tem três âncoras:</p>
+<ul>
+<li>o NIST AI Risk Management Framework, com suas funções Govern, Map, Measure e Manage [<a href="#pt-ref-nist2023">36</a>];</li>
+<li>o Perfil de IA Generativa do NIST [<a href="#pt-ref-nist2024">37</a>];</li>
+<li>o OWASP Top 10 for LLM Applications 2025, que nomeia os principais riscos que esta arquitetura precisa controlar: prompt injection, divulgação de informação sensível, fraquezas de vetores e embeddings e consumo ilimitado [<a href="#pt-ref-owasp2025">43</a>].</li>
+</ul>
+<p>O alerta de Sculley et al. sobre a dívida técnica oculta em sistemas de ML se aplica diretamente [<a href="#pt-ref-sculley2015">47</a>]. Cada cache, roteador e juiz é mais um componente cuja configuração pode se desviar. Cada um precisa de um responsável, uma métrica e um alerta.</p>
+<p><a id="pt-s14"></a></p>
+<h2>14 Relação com o SGAEIA: eficiência sob governança e evidência</h2>
+<p><strong>Classificação desta seção:</strong> SGAEIA INTERPRETATION — conexão conceitual pública, não arquitetura normativa nem evidência de implementação.</p>
+<p>Para o SGAEIA — Secure Governed Autonomous Edge Intelligence Architecture — reduzir custo não é um objetivo isolado. Uma otimização só é aceitável quando preserva limites de autoridade, aplicação de políticas, rastreabilidade, revogação, separação entre tenants e evidência suficiente para explicar por que cada requisição seguiu determinada rota. Por isso, a métrica de custo por tarefa bem-sucedida deve ser acompanhada por erros críticos, falsos positivos e negativos dos portões, latência por rota, completude dos traces e risco residual; uma resposta mais barata que enfraquece esses controles não representa ganho líquido para um sistema autônomo governado [<a href="#pt-ref-sgaeia2026">56</a>].</p>
+<p>As seis alavancas analisadas se relacionam principalmente com quatro planos de responsabilidade do projeto. O roteamento e as cascatas pertencem à integração e substituição: trocar o modelo não pode ampliar silenciosamente a autoridade disponível nem invalidar pressupostos de segurança. Os caches e o motor de contexto atravessam identidade e confiança, autoridade e delegação, porque uma resposta reutilizada precisa respeitar o tenant, a autorização atual, a proveniência e a versão do corpus. Os limites de passos, tentativas e gastos integram a execução governada, enquanto telemetria por requisição, decisões de rota e resultados dos portões integram observabilidade e evidência.</p>
+<p>Dessa conexão decorre uma propriedade candidata, ainda não normativa: <strong>a otimização de custo de um sistema de AI não deve degradar as fronteiras de autoridade, a aplicação de políticas, a capacidade de revogação nem a completude da evidência necessária à auditoria</strong>. A arquitetura de seis alavancas deste relatório é evidência externa e um padrão de engenharia possível; ela não se torna componente do SGAEIA por aparecer nesta publicação. Qualquer adoção exigiria auditoria de cobertura existente, análise de impacto, passagem pelos gates Research-to-Architecture aplicáveis, critérios de aceitação e verificação adversarial antes de uma decisão do proprietário do projeto.</p>
+<p>Essa leitura também altera a ordem prática das alavancas. Instrumentação, eliminação de chamadas redundantes, limites de loop e prompt caching oferecem ganhos com menor superfície de risco. Roteamento, juízes e cache semântico exigem avaliação de não inferioridade, testes de vazamento, análise de falsos acertos, verificação de substituição de modelo e modo de falha seguro. O objetivo não é obter a menor fatura possível, mas o menor custo compatível com execução governada e assurance contínua sustentada por evidências.</p>
+<p><a id="pt-s15"></a></p>
+<h2>15 Roteiro de implementação</h2>
+<figure class="article-figure"><img src="/assets/article23/pt/sgaeia-article-23-figure-13.png" alt="Figura 13. Roteiro em fases. Cada fase termina em um portão cujo critério de saída precisa se confirmar no conjunto de avaliação antes de a próxima começar. Semanas indicativas." width="2400" height="1176" loading="lazy" decoding="async"><figcaption><strong>Figura 13. Roteiro em fases. Cada fase termina em um portão cujo critério de saída precisa se confirmar no conjunto de avaliação antes de a próxima começar. Semanas indicativas.</strong><span class="figure-credit">© 2026 Aridio Silva · Projeto SGAEIA · CC BY 4.0</span></figcaption></figure>
+<p>Tabela 5. Fases, ações e fontes de apoio</p>
+<div class="article-table-wrap" role="region" aria-label="Scrollable table" tabindex="0"><table>
+<thead>
+<tr>
+<th>Fase</th>
+<th>Ações</th>
+<th>Critério de saída</th>
+<th>Apoio</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0 · Linha de base</td>
+<td>Registrar cada chamada com tokens e custo; montar um conjunto de avaliação com intervalos de confiança</td>
+<td>Custo de base por tarefa bem-sucedida conhecido ± IC</td>
+<td>[<a href="#pt-ref-erol2025">14</a>, <a href="#pt-ref-miller2024">35</a>, <a href="#pt-ref-otel">42</a>]</td>
+</tr>
+<tr>
+<td>1 · Ganhos rápidos</td>
+<td>Remover chamadas duplicadas; limitar loops e novas tentativas; reestruturar prompts para cache de prefixo</td>
+<td>Sem regressão de qualidade; parcela lida do cache na meta</td>
+<td>[<a href="#pt-ref-anthropic2024">2</a>, <a href="#pt-ref-anthropicCache">5</a>, <a href="#pt-ref-kapoor2024">25</a>, <a href="#pt-ref-openaiCache">41</a>]</td>
+</tr>
+<tr>
+<td>2 · Contexto e lote</td>
+<td>Busca híbrida, rerank, orçamento de tokens, compressão; levar jobs assíncronos para lote</td>
+<td>Tokens por requisição menores; fundamentação ≥ base</td>
+<td>[<a href="#pt-ref-cormack2009">12</a>, <a href="#pt-ref-jiang2023b">24</a>, <a href="#pt-ref-liu2023">29</a>, <a href="#pt-ref-nogueira2019">38</a>, <a href="#pt-ref-openaiBatch">40</a>]</td>
+</tr>
+<tr>
+<td>3 · Roteamento e portões</td>
+<td>Roteador de 2–3 níveis; camadas do portão; escalonamento limitado; modo sombra antes da virada</td>
+<td>Custo por tarefa bem-sucedida menor; sucesso não inferior</td>
+<td>[<a href="#pt-ref-ding2024">13</a>, <a href="#pt-ref-es2023">15</a>, <a href="#pt-ref-ong2024">39</a>, <a href="#pt-ref-yue2023">51</a>, <a href="#pt-ref-zheng2023">52</a>]</td>
+</tr>
+<tr>
+<td>4 · Cache semântico</td>
+<td>Cache com escopo; calibração de τ em pares rotulados; TTL e invalidação; testes de vazamento</td>
+<td>Taxa de acerto falso abaixo do limite acordado</td>
+<td>[<a href="#pt-ref-bang2023">7</a>, <a href="#pt-ref-gill2024">16</a>, <a href="#pt-ref-owasp2025">43</a>]</td>
+</tr>
+</tbody>
+</table></div>
+<p>A ordem inverte de propósito a ordem visual do post: as alavancas de menor risco e maior certeza vêm primeiro. O cache semântico fica por último porque é a única alavanca capaz de devolver uma resposta errada sem nenhum modelo envolvido, por isso exige a governança mais madura.</p>
+<p><a id="pt-s16"></a></p>
+<h2>16 Discussão e ameaças à validade</h2>
+<ul>
+<li><strong>Dependência da carga.</strong> Todos os números do post dependem do mix de requisições. Uma carga de tarefas difíceis, únicas e com várias etapas tem pouco a rotear ou cachear.</li>
+<li><strong>Volatilidade de preços.</strong> Os preços e multiplicadores de cache dos provedores mudam várias vezes por ano, e a diferença entre níveis de modelo pode diminuir [<a href="#pt-ref-erol2025">14</a>]. A arquitetura continua válida; o tamanho da economia não.</li>
+<li><strong>Afirmação sobre latência.</strong> O post reporta latência P95 menor (2,8 s → 2,6 s). É plausível se os acertos de cache e os modelos menores compensarem as etapas extras, mas cascatas acrescentam chamadas em série nas requisições escaladas. Isso precisa ser medido por rota.</li>
+<li><strong>Validade da avaliação.</strong> Benchmarks de agentes muitas vezes não têm conjuntos de holdout adequados [<a href="#pt-ref-kapoor2024">25</a>]. Roteadores ajustados no próprio conjunto de avaliação vão superestimar os ganhos.</li>
+<li><strong>Segurança dos caches.</strong> Os dois tipos de cache criam canais de informação entre usuários se forem compartilhados [<a href="#pt-ref-gu2025">20</a>, <a href="#pt-ref-owasp2025">43</a>].</li>
+<li><strong>Escopo deste relatório.</strong> É uma análise fundamentada na literatura, não um experimento. Suas ampliações numéricas (Figuras 8 e 11) são modelos ilustrativos.</li>
+</ul>
+<p><a id="pt-s17"></a></p>
+<h2>17 Conclusão</h2>
+<p>A proposta de Bhardwaj é tecnicamente sólida e condiz com as evidências publicadas. Cada uma das seis alavancas tem apoio em fontes primárias, e vários resultados publicados superam as reduções que ela assume. Sua principal contribuição é um princípio: gastar inteligência onde a tarefa precisa, e medir o resultado como custo por tarefa bem-sucedida. Sua principal fragilidade é o número da manchete. Ele é ilustrativo, omite o custo extra que as alavancas trazem, e sua comparação de qualidade carece de apoio estatístico.</p>
+<p>Acrescentadas essas peças, o cenário modelado produz economia líquida de 61–68% sob as premissas escolhidas, mas não estabelece uma faixa esperada para produção. Demonstrar uma redução próxima de 70% exige telemetria de workload, custos completos e um teste de não inferioridade pareado. O caminho mais seguro é o da Seção 15: medir primeiro, colher as alavancas de baixo risco e só então introduzir roteamento e cache semântico, sempre atrás de portões de qualidade e de um teste de não inferioridade.</p>
+<p><a id="pt-gloss"></a></p>
+<h2>Glossário</h2>
+<p><strong>Acerto falso</strong> - Um acerto do cache semântico que devolve a resposta de uma pergunta diferente.</p>
+<p><strong>Alucinação</strong> - Saída fluente que não é apoiada pela entrada nem pelos fatos.</p>
+<p><strong>ANN (vizinho mais próximo aproximado)</strong> - Busca que encontra rapidamente vetores próximos ao vetor da consulta, ao custo de às vezes não achar exatamente o mais próximo.</p>
+<p><strong>API de lote (Batch API)</strong> - Endpoint assíncrono que processa muitas requisições dentro de uma janela (24 h) com desconto (50% nos grandes provedores).</p>
+<p><strong>BM25</strong> - Função de ranqueamento lexical baseada em frequência do termo, frequência inversa nos documentos e tamanho do documento.</p>
+<p><strong>Busca densa / embedding</strong> - Representar textos como vetores de modo que textos de sentido parecido fiquem próximos, e então buscar por similaridade vetorial.</p>
+<p><strong>Busca híbrida</strong> - Rodar busca lexical (BM25) e densa em conjunto e fundir os resultados.</p>
+<p><strong>Cache semântico</strong> - Cache na aplicação que devolve uma resposta salva quando uma nova consulta tem significado suficientemente parecido com uma anterior.</p>
+<p><strong>Cascata</strong> - Sequência de modelos do mais barato ao mais caro. A requisição só passa ao próximo modelo quando uma checagem da resposta atual falha.</p>
+<p><strong>Compressão de prompt</strong> - Remover tokens de pouca informação de um prompt com um modelo menor, preservando o sentido.</p>
+<p><strong>Cost-of-pass / custo por tarefa bem-sucedida</strong> - Gasto esperado para obter um resultado correto: custo por tentativa dividido pela probabilidade de sucesso.</p>
+<p><strong>Cross-encoder</strong> - Modelo que lê consulta e trecho juntos para pontuar a relevância. Mais preciso e mais lento que comparar embeddings separados.</p>
+<p><strong>Engenharia de contexto</strong> - Escolher quais tokens entram na janela de contexto do modelo, e em que ordem, em cada passo.</p>
+<p><strong>Escalonamento</strong> - Reenviar uma requisição a um modelo mais capaz depois que uma checagem de qualidade falha.</p>
+<p><strong>Fronteira de Pareto</strong> - O conjunto de opções em que nenhuma é melhor num objetivo sem ser pior em outro.</p>
+<p><strong>Fundamentação / fidelidade</strong> - O grau em que cada afirmação da resposta é apoiada pela evidência entregue ao modelo.</p>
+<p><strong>HNSW</strong> - Hierarchical navigable small world: índice muito usado para busca rápida de vizinhos mais próximos aproximados.</p>
+<p><strong>Intervalo de confiança (IC)</strong> - Faixa que, em amostragens repetidas, contém o valor verdadeiro na taxa declarada (por exemplo, 95%).</p>
+<p><strong>Janela de contexto</strong> - O número máximo de tokens que um modelo lê numa chamada, incluindo instruções, evidências e histórico.</p>
+<p><strong>KV cache</strong> - Os tensores key e value da atenção que o motor de inferência mantém em memória para não recalcular tokens anteriores.</p>
+<p><strong>LLM-como-juiz</strong> - Usar um modelo de linguagem para avaliar a saída de outro modelo segundo uma rubrica.</p>
+<p><strong>Loop agêntico</strong> - O ciclo em que um agente raciocina, chama uma ferramenta, lê o resultado e decide o próximo passo. Cada passo é uma chamada paga ao modelo.</p>
+<p><strong>Lost in the middle</strong> - A constatação de que os modelos usam pior a informação do meio de um contexto longo do que a do início ou do fim.</p>
+<p><strong>Modelo de fronteira</strong> - O nível de modelo mais capaz, e geralmente mais caro, disponível num dado momento.</p>
+<p><strong>Modo sombra</strong> - Rodar um novo componente sobre o tráfego real sem usar sua saída, para compará-lo com o atual.</p>
+<p><strong>Observabilidade / trace / span</strong> - Registrar cada requisição como um trace composto de spans (um por etapa), com atributos como tokens, custo e latência.</p>
+<p><strong>Orçamento de tokens</strong> - Um teto fixo de tokens que uma etapa pode enviar ou gerar.</p>
+<p><strong>Prompt caching (cache de prefixo)</strong> - Reuso, no provedor, do estado já processado de um prefixo de prompt que se repete entre requisições, cobrado com desconto.</p>
+<p><strong>Prompt injection</strong> - Entrada elaborada para sobrepor as instruções do modelo. O principal risco da OWASP para aplicações com LLM.</p>
+<p><strong>RAG (geração aumentada por recuperação)</strong> - Recuperar documentos relevantes e incluí-los no prompt para que o modelo responda a partir deles.</p>
+<p><strong>Regra de adiamento (deferral)</strong> - A regra que a cascata usa para decidir se mantém a resposta ou passa a requisição a um modelo mais forte.</p>
+<p><strong>Rerank (reordenação)</strong> - Uma segunda pontuação, mais precisa, sobre os melhores candidatos de um recuperador de primeira etapa.</p>
+<p><strong>Roteamento de modelos</strong> - Escolher, por requisição, qual modelo deve respondê-la, antes de chamar qualquer modelo.</p>
+<p><strong>RRF (reciprocal rank fusion)</strong> - Fundir listas ranqueadas somando 1/(k + posição) para cada documento.</p>
+<p><strong>SLO / error budget</strong> - Uma meta para uma métrica do serviço e a quantidade de falha tolerada antes de exigir ação.</p>
+<p><strong>Teste de não inferioridade</strong> - Teste que mostra que o novo sistema não é pior que o antigo por mais que uma margem pré-definida.</p>
+<p><strong>Token</strong> - A unidade de texto que o modelo lê e escreve, e a unidade de cobrança. Cerca de ¾ de uma palavra em inglês.</p>
+<p><strong>TTFT (tempo até o primeiro token)</strong> - Latência entre enviar a requisição e receber o primeiro token de saída.</p>
+<p><strong>TTL (tempo de vida)</strong> - Quanto tempo uma entrada de cache permanece válida antes de expirar.</p>
+<p><a id="pt-refs"></a></p>
+<h2>Referências (auditadas)</h2>
+<p>Todos os links foram resolvidos em 27 de outubro de 2026. Os registros do arXiv foram conferidos na API do arXiv (título, autores, data). Os demais links foram acessados e seu status HTTP registrado. Quando a editora bloqueia acesso automatizado (HTTP 403), confirmou-se que o DOI resolve para o registro da editora. O veículo de publicação é informado só quando confirmado; caso contrário, cita-se a versão do arXiv.</p>
+<p><a id="pt-ref-aggarwal2023"></a></p>
+<ol>
+<li>Aggarwal, P., Madaan, A., Anand, A., Potharaju, S. P., et al. (2023). <em>AutoMix: Automatically mixing language models</em>. arXiv preprint arXiv:2310.12963. <a href="https://arxiv.org/abs/2310.12963" target="_blank" rel="noopener noreferrer">https://arxiv.org/abs/2310.12963</a>Verificado: metadados conferidos na API do arXiv, HTTP 200 · Acesso em 2026-10-27
+<a id="pt-ref-anthropic2024"></a></li>
+<li>Anthropic (2024, dezembro 19). <em>Building effective AI agents</em>. Anthropic Engineering. <a href="https://www.anthropic.com/research/building-effective-agents" target="_blank" rel="noopener noreferrer">https://www.anthropic.com/research/building-effective-agents</a>Verificado: HTTP 200 na URL atual indicada · Acesso em 2026-10-27
+<a id="pt-ref-anthropic2025"></a></li>
+<li>Anthropic (2025, setembro 29). <em>Effective context engineering for AI agents</em>. Anthropic Engineering. <a href="https://www.anthropic.com/research/effective-context-engineering-for-ai-agents" target="_blank" rel="noopener noreferrer">https://www.anthropic.com/research/effective-context-engineering-for-ai-agents</a>Verificado: HTTP 200 na URL atual indicada · Acesso em 2026-10-27
+<a id="pt-ref-anthropicBatch"></a></li>
+<li>Anthropic (2026). <em>Batch processing</em>. Claude Developer Platform documentation. <a href="https://platform.claude.com/docs/en/build-with-claude/batch-processing" target="_blank" rel="noopener noreferrer">https://platform.claude.com/docs/en/build-with-claude/batch-processing</a>Verificado: HTTP 200 na URL atual indicada · Acesso em 2026-10-27
+<a id="pt-ref-anthropicCache"></a></li>
+<li>Anthropic (2026). <em>Prompt caching</em>. Claude Developer Platform documentation. <a href="https://platform.claude.com/docs/en/build-with-claude/prompt-caching" target="_blank" rel="noopener noreferrer">https://platform.claude.com/docs/en/build-with-claude/prompt-caching</a>Verificado: HTTP 200 na URL atual indicada · Acesso em 2026-10-27
+<a id="pt-ref-asai2023"></a></li>
+<li>Asai, A., Wu, Z., Wang, Y., Sil, A., &amp; Hajishirzi, H. (2023). <em>Self-RAG: Learning to retrieve, generate, and critique through self-reflection</em>. ICLR 2024. arXiv:2310.11511. <a href="https://arxiv.org/abs/2310.11511" target="_blank" rel="noopener noreferrer">https://arxiv.org/abs/2310.11511</a>Verificado: metadados conferidos na API do arXiv, HTTP 200 · Acesso em 2026-10-27
+<a id="pt-ref-bang2023"></a></li>
+<li>Bang, F. (2023). <em>GPTCache: An open-source semantic cache for LLM applications enabling faster answers and cost savings</em>. Proceedings of the 3rd Workshop for Natural Language Processing Open Source Software (NLP-OSS 2023), ACL. <a href="https://aclanthology.org/2023.nlposs-1.24/" target="_blank" rel="noopener noreferrer">https://aclanthology.org/2023.nlposs-1.24/</a>Verificado: HTTP 200, título conferido · Acesso em 2026-10-27
+<a id="pt-ref-beyer2016"></a></li>
+<li>Beyer, B., Jones, C., Petoff, J., &amp; Murphy, N. R. (Eds.) (2016). <em>Site reliability engineering: How Google runs production systems. Chapter 4: Service level objectives</em>. O'Reilly Media. <a href="https://sre.google/sre-book/service-level-objectives/" target="_blank" rel="noopener noreferrer">https://sre.google/sre-book/service-level-objectives/</a>Verificado: HTTP 200, título conferido · Acesso em 2026-10-27
+<a id="pt-ref-bhardwaj2026"></a></li>
+<li>Bhardwaj, R. (2026, outubro 26). <em>Cut LLM costs by up to 70%, not by compromising intelligence, but by engineering smarter model routing, context, caching, and agentic workflows [Post with infographic]</em>. LinkedIn. <a href="https://www.linkedin.com/posts/rajeev-bhardwaj_genai-agenticai-llmoptimization-share-7520411441674387456-qL-Q" target="_blank" rel="noopener noreferrer">https://www.linkedin.com/posts/rajeev-bhardwaj_genai-agenticai-llmoptimization-share-7520411441674387456-qL-Q</a>Verificado: HTTP 200, título conferido · Acesso em 2026-10-27
+<a id="pt-ref-chen2023"></a></li>
+<li>Chen, L., Zaharia, M., &amp; Zou, J. (2023). <em>FrugalGPT: How to use large language models while reducing cost and improving performance</em>. arXiv preprint arXiv:2305.05176. <a href="https://arxiv.org/abs/2305.05176" target="_blank" rel="noopener noreferrer">https://arxiv.org/abs/2305.05176</a>Verificado: metadados conferidos na API do arXiv, HTTP 200 · Acesso em 2026-10-27
+<a id="pt-ref-chroma2025"></a></li>
+<li>Chroma Research (2025). <em>Context rot: How increasing input tokens impacts LLM performance</em>. Chroma technical report. <a href="https://www.trychroma.com/research/context-rot" target="_blank" rel="noopener noreferrer">https://www.trychroma.com/research/context-rot</a>Verificado: HTTP 200 na URL atual indicada · Acesso em 2026-10-27
+<a id="pt-ref-cormack2009"></a></li>
+<li>Cormack, G. V., Clarke, C. L. A., &amp; Büttcher, S. (2009). <em>Reciprocal rank fusion outperforms Condorcet and individual rank learning methods</em>. Proceedings of the 32nd ACM SIGIR Conference, 758–759. <a href="https://doi.org/10.1145/1571941.1572114" target="_blank" rel="noopener noreferrer">https://doi.org/10.1145/1571941.1572114</a>Verificado: DOI resolve; a editora bloqueia acesso automatizado (HTTP 403) · Acesso em 2026-10-27
+<a id="pt-ref-ding2024"></a></li>
+<li>Ding, D., Mallick, A., Wang, C., Sim, R., et al. (2024). <em>Hybrid LLM: Cost-efficient and quality-aware query routing</em>. ICLR 2024. arXiv:2404.14618. <a href="https://arxiv.org/abs/2404.14618" target="_blank" rel="noopener noreferrer">https://arxiv.org/abs/2404.14618</a>Verificado: metadados conferidos na API do arXiv, HTTP 200 · Acesso em 2026-10-27
+<a id="pt-ref-erol2025"></a></li>
+<li>Erol, M. H., El, B., Suzgun, M., Yuksekgonul, M., et al. (2025). <em>Cost-of-pass: An economic framework for evaluating language models</em>. arXiv preprint arXiv:2504.13359. <a href="https://arxiv.org/abs/2504.13359" target="_blank" rel="noopener noreferrer">https://arxiv.org/abs/2504.13359</a>Verificado: metadados conferidos na API do arXiv, HTTP 200 · Acesso em 2026-10-27
+<a id="pt-ref-es2023"></a></li>
+<li>Es, S., James, J., Espinosa-Anke, L., &amp; Schockaert, S. (2023). <em>RAGAS: Automated evaluation of retrieval augmented generation</em>. EACL 2024 System Demonstrations. arXiv:2309.15217. <a href="https://arxiv.org/abs/2309.15217" target="_blank" rel="noopener noreferrer">https://arxiv.org/abs/2309.15217</a>Verificado: metadados conferidos na API do arXiv, HTTP 200 · Acesso em 2026-10-27
+<a id="pt-ref-gill2024"></a></li>
+<li>Gill, W., Elidrisi, M., Kalapatapu, P., Ahmed, A., et al. (2024). <em>MeanCache: User-centric semantic caching for LLM web services</em>. arXiv preprint arXiv:2403.02694. <a href="https://arxiv.org/abs/2403.02694" target="_blank" rel="noopener noreferrer">https://arxiv.org/abs/2403.02694</a>Verificado: metadados conferidos na API do arXiv, HTTP 200 · Acesso em 2026-10-27
+<a id="pt-ref-gim2023"></a></li>
+<li>Gim, I., Chen, G., Lee, S., Sarda, N., et al. (2023). <em>Prompt cache: Modular attention reuse for low-latency inference</em>. MLSys 2024. arXiv:2311.04934. <a href="https://arxiv.org/abs/2311.04934" target="_blank" rel="noopener noreferrer">https://arxiv.org/abs/2311.04934</a>Verificado: metadados conferidos na API do arXiv, HTTP 200 · Acesso em 2026-10-27
+<a id="pt-ref-googleBatch"></a></li>
+<li>Google (2026). <em>Batch API</em>. Gemini API documentation. <a href="https://ai.google.dev/gemini-api/docs/batch-api" target="_blank" rel="noopener noreferrer">https://ai.google.dev/gemini-api/docs/batch-api</a>Verificado: HTTP 200 na URL atual indicada · Acesso em 2026-10-27
+<a id="pt-ref-googleCache"></a></li>
+<li>Google (2026). <em>Context caching</em>. Gemini API documentation. <a href="https://ai.google.dev/gemini-api/docs/caching" target="_blank" rel="noopener noreferrer">https://ai.google.dev/gemini-api/docs/caching</a>Verificado: HTTP 200, título conferido · Acesso em 2026-10-27
+<a id="pt-ref-gu2025"></a></li>
+<li>Gu, C., Li, X. L., Kuditipudi, R., Liang, P., &amp; Hashimoto, T. (2025). <em>Auditing prompt caching in language model APIs</em>. arXiv preprint arXiv:2502.07776. <a href="https://arxiv.org/abs/2502.07776" target="_blank" rel="noopener noreferrer">https://arxiv.org/abs/2502.07776</a>Verificado: metadados conferidos na API do arXiv, HTTP 200 · Acesso em 2026-10-27
+<a id="pt-ref-gupta2024"></a></li>
+<li>Gupta, N., Narasimhan, H., Jitkrittum, W., Rawat, A. S., et al. (2024). <em>Language model cascades: Token-level uncertainty and beyond</em>. arXiv preprint arXiv:2404.10136. <a href="https://arxiv.org/abs/2404.10136" target="_blank" rel="noopener noreferrer">https://arxiv.org/abs/2404.10136</a>Verificado: metadados conferidos na API do arXiv, HTTP 200 · Acesso em 2026-10-27
+<a id="pt-ref-han2024"></a></li>
+<li>Han, T., Wang, Z., Fang, C., Zhao, S., et al. (2024). <em>Token-budget-aware LLM reasoning</em>. arXiv preprint arXiv:2412.18547. <a href="https://arxiv.org/abs/2412.18547" target="_blank" rel="noopener noreferrer">https://arxiv.org/abs/2412.18547</a>Verificado: metadados conferidos na API do arXiv, HTTP 200 · Acesso em 2026-10-27
+<a id="pt-ref-jiang2023a"></a></li>
+<li>Jiang, H., Wu, Q., Lin, C.-Y., Yang, Y., &amp; Qiu, L. (2023). <em>LLMLingua: Compressing prompts for accelerated inference of large language models</em>. EMNLP 2023. arXiv:2310.05736. <a href="https://arxiv.org/abs/2310.05736" target="_blank" rel="noopener noreferrer">https://arxiv.org/abs/2310.05736</a>Verificado: metadados conferidos na API do arXiv, HTTP 200 · Acesso em 2026-10-27
+<a id="pt-ref-jiang2023b"></a></li>
+<li>Jiang, H., Wu, Q., Luo, X., Li, D., et al. (2023). <em>LongLLMLingua: Accelerating and enhancing LLMs in long context scenarios via prompt compression</em>. ACL 2024. arXiv:2310.06839. <a href="https://arxiv.org/abs/2310.06839" target="_blank" rel="noopener noreferrer">https://arxiv.org/abs/2310.06839</a>Verificado: metadados conferidos na API do arXiv, HTTP 200 · Acesso em 2026-10-27
+<a id="pt-ref-kapoor2024"></a></li>
+<li>Kapoor, S., Stroebl, B., Siegel, Z. S., Nadgir, N., &amp; Narayanan, A. (2024). <em>AI agents that matter</em>. arXiv preprint arXiv:2407.01502. <a href="https://arxiv.org/abs/2407.01502" target="_blank" rel="noopener noreferrer">https://arxiv.org/abs/2407.01502</a>Verificado: metadados conferidos na API do arXiv, HTTP 200 · Acesso em 2026-10-27
+<a id="pt-ref-kwon2023"></a></li>
+<li>Kwon, W., Li, Z., Zhuang, S., Sheng, Y., et al. (2023). <em>Efficient memory management for large language model serving with PagedAttention</em>. SOSP 2023. arXiv:2309.06180. <a href="https://arxiv.org/abs/2309.06180" target="_blank" rel="noopener noreferrer">https://arxiv.org/abs/2309.06180</a>Verificado: metadados conferidos na API do arXiv, HTTP 200 · Acesso em 2026-10-27
+<a id="pt-ref-lewis2020"></a></li>
+<li>Lewis, P., Perez, E., Piktus, A., Petroni, F., et al. (2020). <em>Retrieval-augmented generation for knowledge-intensive NLP tasks</em>. NeurIPS 2020. arXiv:2005.11401. <a href="https://arxiv.org/abs/2005.11401" target="_blank" rel="noopener noreferrer">https://arxiv.org/abs/2005.11401</a>Verificado: metadados conferidos na API do arXiv, HTTP 200 · Acesso em 2026-10-27
+<a id="pt-ref-liang2022"></a></li>
+<li>Liang, P., Bommasani, R., Lee, T., Tsipras, D., et al. (2022). <em>Holistic evaluation of language models</em>. Transactions on Machine Learning Research. arXiv:2211.09110. <a href="https://arxiv.org/abs/2211.09110" target="_blank" rel="noopener noreferrer">https://arxiv.org/abs/2211.09110</a>Verificado: metadados conferidos na API do arXiv, HTTP 200 · Acesso em 2026-10-27
+<a id="pt-ref-liu2023"></a></li>
+<li>Liu, N. F., Lin, K., Hewitt, J., Paranjape, A., et al. (2024). <em>Lost in the middle: How language models use long contexts</em>. Transactions of the ACL, 12. https://doi.org/10.1162/tacl_a_00638. <a href="https://arxiv.org/abs/2307.03172" target="_blank" rel="noopener noreferrer">https://arxiv.org/abs/2307.03172</a>Verificado: metadados conferidos na API do arXiv, HTTP 200 · Acesso em 2026-10-27
+<a id="pt-ref-routellmRepo"></a></li>
+<li>LMSYS (2024–2026). <em>RouteLLM: A framework for serving and evaluating LLM routers [Software]</em>. GitHub. <a href="https://github.com/lm-sys/RouteLLM" target="_blank" rel="noopener noreferrer">https://github.com/lm-sys/RouteLLM</a>Verificado: HTTP 200, título conferido · Acesso em 2026-10-27
+<a id="pt-ref-malkov2016"></a></li>
+<li>Malkov, Y. A., &amp; Yashunin, D. A. (2016). <em>Efficient and robust approximate nearest neighbor search using hierarchical navigable small world graphs</em>. IEEE TPAMI (2020). arXiv:1603.09320. <a href="https://arxiv.org/abs/1603.09320" target="_blank" rel="noopener noreferrer">https://arxiv.org/abs/1603.09320</a>Verificado: metadados conferidos na API do arXiv, HTTP 200 · Acesso em 2026-10-27
+<a id="pt-ref-manakul2023"></a></li>
+<li>Manakul, P., Liusie, A., &amp; Gales, M. J. F. (2023). <em>SelfCheckGPT: Zero-resource black-box hallucination detection for generative large language models</em>. EMNLP 2023. arXiv:2303.08896. <a href="https://arxiv.org/abs/2303.08896" target="_blank" rel="noopener noreferrer">https://arxiv.org/abs/2303.08896</a>Verificado: metadados conferidos na API do arXiv, HTTP 200 · Acesso em 2026-10-27
+<a id="pt-ref-miao2023"></a></li>
+<li>Miao, X., Oliaro, G., Zhang, Z., Cheng, X., et al. (2023). <em>Towards efficient generative large language model serving: A survey from algorithms to systems</em>. arXiv preprint arXiv:2312.15234. <a href="https://arxiv.org/abs/2312.15234" target="_blank" rel="noopener noreferrer">https://arxiv.org/abs/2312.15234</a>Verificado: metadados conferidos na API do arXiv, HTTP 200 · Acesso em 2026-10-27
+<a id="pt-ref-llmlinguaRepo"></a></li>
+<li>Microsoft (2023–2026). <em>LLMLingua [Software]</em>. GitHub. <a href="https://github.com/microsoft/LLMLingua" target="_blank" rel="noopener noreferrer">https://github.com/microsoft/LLMLingua</a>Verificado: HTTP 200, título conferido · Acesso em 2026-10-27
+<a id="pt-ref-miller2024"></a></li>
+<li>Miller, E. (2024). <em>Adding error bars to evals: A statistical approach to language model evaluations</em>. arXiv preprint arXiv:2411.00640. <a href="https://arxiv.org/abs/2411.00640" target="_blank" rel="noopener noreferrer">https://arxiv.org/abs/2411.00640</a>Verificado: metadados conferidos na API do arXiv, HTTP 200 · Acesso em 2026-10-27
+<a id="pt-ref-nist2023"></a></li>
+<li>National Institute of Standards and Technology (2023). <em>Artificial intelligence risk management framework (AI RMF 1.0)</em>. NIST AI 100-1. <a href="https://doi.org/10.6028/NIST.AI.100-1" target="_blank" rel="noopener noreferrer">https://doi.org/10.6028/NIST.AI.100-1</a>Verificado: HTTP 200 na URL atual indicada · Acesso em 2026-10-27
+<a id="pt-ref-nist2024"></a></li>
+<li>National Institute of Standards and Technology (2024). <em>Artificial intelligence risk management framework: Generative artificial intelligence profile</em>. NIST AI 600-1. <a href="https://doi.org/10.6028/NIST.AI.600-1" target="_blank" rel="noopener noreferrer">https://doi.org/10.6028/NIST.AI.600-1</a>Verificado: HTTP 200 na URL atual indicada · Acesso em 2026-10-27
+<a id="pt-ref-nogueira2019"></a></li>
+<li>Nogueira, R., &amp; Cho, K. (2019). <em>Passage re-ranking with BERT</em>. arXiv preprint arXiv:1901.04085. <a href="https://arxiv.org/abs/1901.04085" target="_blank" rel="noopener noreferrer">https://arxiv.org/abs/1901.04085</a>Verificado: metadados conferidos na API do arXiv, HTTP 200 · Acesso em 2026-10-27
+<a id="pt-ref-ong2024"></a></li>
+<li>Ong, I., Almahairi, A., Wu, V., Chiang, W.-L., et al. (2024). <em>RouteLLM: Learning to route LLMs with preference data</em>. arXiv preprint arXiv:2406.18665. <a href="https://arxiv.org/abs/2406.18665" target="_blank" rel="noopener noreferrer">https://arxiv.org/abs/2406.18665</a>Verificado: metadados conferidos na API do arXiv, HTTP 200 · Acesso em 2026-10-27
+<a id="pt-ref-openaiBatch"></a></li>
+<li>OpenAI (2026). <em>Batch API</em>. OpenAI API documentation. <a href="https://developers.openai.com/api/docs/guides/batch" target="_blank" rel="noopener noreferrer">https://developers.openai.com/api/docs/guides/batch</a>Verificado: HTTP 200 na URL atual indicada · Acesso em 2026-10-27
+<a id="pt-ref-openaiCache"></a></li>
+<li>OpenAI (2026). <em>Prompt caching</em>. OpenAI API documentation. <a href="https://developers.openai.com/api/docs/guides/prompt-caching" target="_blank" rel="noopener noreferrer">https://developers.openai.com/api/docs/guides/prompt-caching</a>Verificado: HTTP 200 na URL atual indicada · Acesso em 2026-10-27
+<a id="pt-ref-otel"></a></li>
+<li>OpenTelemetry (2026). <em>Semantic conventions for generative AI systems</em>. GitHub: open-telemetry/semantic-conventions-genai. <a href="https://github.com/open-telemetry/semantic-conventions-genai" target="_blank" rel="noopener noreferrer">https://github.com/open-telemetry/semantic-conventions-genai</a>Verificado: HTTP 200, título conferido · Acesso em 2026-10-27
+<a id="pt-ref-owasp2025"></a></li>
+<li>OWASP GenAI Security Project (2025). <em>OWASP Top 10 for LLM applications 2025</em>. OWASP Foundation. <a href="https://genai.owasp.org/llm-top-10/" target="_blank" rel="noopener noreferrer">https://genai.owasp.org/llm-top-10/</a>Verificado: HTTP 200, título conferido · Acesso em 2026-10-27
+<a id="pt-ref-ragasRepo"></a></li>
+<li>Ragas contributors (2023–2026). <em>Ragas: Evaluation toolkit for LLM applications [Software]</em>. GitHub. <a href="https://github.com/vibrantlabsai/ragas" target="_blank" rel="noopener noreferrer">https://github.com/vibrantlabsai/ragas</a>Verificado: HTTP 200 na URL atual indicada · Acesso em 2026-10-27
+<a id="pt-ref-reimers2019"></a></li>
+<li>Reimers, N., &amp; Gurevych, I. (2019). <em>Sentence-BERT: Sentence embeddings using Siamese BERT-networks</em>. EMNLP-IJCNLP 2019, ACL. https://doi.org/10.18653/v1/D19-1410. <a href="https://aclanthology.org/D19-1410/" target="_blank" rel="noopener noreferrer">https://aclanthology.org/D19-1410/</a>Verificado: HTTP 200 na URL atual indicada · Acesso em 2026-10-27
+<a id="pt-ref-robertson2009"></a></li>
+<li>Robertson, S., &amp; Zaragoza, H. (2009). <em>The probabilistic relevance framework: BM25 and beyond</em>. Foundations and Trends in Information Retrieval, 3(4), 333–389. <a href="https://doi.org/10.1561/1500000019" target="_blank" rel="noopener noreferrer">https://doi.org/10.1561/1500000019</a>Verificado: DOI resolve; a editora bloqueia acesso automatizado (HTTP 403) · Acesso em 2026-10-27
+<a id="pt-ref-sculley2015"></a></li>
+<li>Sculley, D., Holt, G., Golovin, D., Davydov, E., et al. (2015). <em>Hidden technical debt in machine learning systems</em>. Advances in Neural Information Processing Systems 28. <a href="https://proceedings.neurips.cc/paper/2015/hash/86df7dcfd896fcaf2674f757a2463eba-Abstract.html" target="_blank" rel="noopener noreferrer">https://proceedings.neurips.cc/paper/2015/hash/86df7dcfd896fcaf2674f757a2463eba-Abstract.html</a>Verificado: HTTP 200, título conferido · Acesso em 2026-10-27
+<a id="pt-ref-sun2023"></a></li>
+<li>Sun, W., Yan, L., Ma, X., Wang, S., et al. (2023). <em>Is ChatGPT good at search? Investigating large language models as re-ranking agents</em>. EMNLP 2023. arXiv:2304.09542. <a href="https://arxiv.org/abs/2304.09542" target="_blank" rel="noopener noreferrer">https://arxiv.org/abs/2304.09542</a>Verificado: metadados conferidos na API do arXiv, HTTP 200 · Acesso em 2026-10-27
+<a id="pt-ref-yan2024"></a></li>
+<li>Yan, S.-Q., Gu, J.-C., Zhu, Y., &amp; Ling, Z.-H. (2024). <em>Corrective retrieval augmented generation</em>. arXiv preprint arXiv:2401.15884. <a href="https://arxiv.org/abs/2401.15884" target="_blank" rel="noopener noreferrer">https://arxiv.org/abs/2401.15884</a>Verificado: metadados conferidos na API do arXiv, HTTP 200 · Acesso em 2026-10-27
+<a id="pt-ref-yao2022"></a></li>
+<li>Yao, S., Zhao, J., Yu, D., Du, N., et al. (2022). <em>ReAct: Synergizing reasoning and acting in language models</em>. ICLR 2023. arXiv:2210.03629. <a href="https://arxiv.org/abs/2210.03629" target="_blank" rel="noopener noreferrer">https://arxiv.org/abs/2210.03629</a>Verificado: metadados conferidos na API do arXiv, HTTP 200 · Acesso em 2026-10-27
+<a id="pt-ref-yue2023"></a></li>
+<li>Yue, M., Zhao, J., Zhang, M., Du, L., &amp; Yao, Z. (2023). <em>Large language model cascades with mixture of thoughts representations for cost-efficient reasoning</em>. ICLR 2024. arXiv:2310.03094. <a href="https://arxiv.org/abs/2310.03094" target="_blank" rel="noopener noreferrer">https://arxiv.org/abs/2310.03094</a>Verificado: metadados conferidos na API do arXiv, HTTP 200 · Acesso em 2026-10-27
+<a id="pt-ref-zheng2023"></a></li>
+<li>Zheng, L., Chiang, W.-L., Sheng, Y., Zhuang, S., et al. (2023). <em>Judging LLM-as-a-judge with MT-Bench and Chatbot Arena</em>. NeurIPS 2023 Datasets and Benchmarks. arXiv:2306.05685. <a href="https://arxiv.org/abs/2306.05685" target="_blank" rel="noopener noreferrer">https://arxiv.org/abs/2306.05685</a>Verificado: metadados conferidos na API do arXiv, HTTP 200 · Acesso em 2026-10-27
+<a id="pt-ref-zheng2024"></a></li>
+<li>Zheng, L., Yin, L., Xie, Z., Sun, C., et al. (2024). <em>SGLang: Efficient execution of structured language model programs</em>. NeurIPS 2024. arXiv:2312.07104. <a href="https://arxiv.org/abs/2312.07104" target="_blank" rel="noopener noreferrer">https://arxiv.org/abs/2312.07104</a>Verificado: metadados conferidos na API do arXiv, HTTP 200 · Acesso em 2026-10-27
+<a id="pt-ref-zhou2024"></a></li>
+<li>Zhou, Z., Ning, X., Hong, K., Fu, T., et al. (2024). <em>A survey on efficient inference for large language models</em>. arXiv preprint arXiv:2404.14294. <a href="https://arxiv.org/abs/2404.14294" target="_blank" rel="noopener noreferrer">https://arxiv.org/abs/2404.14294</a>Verificado: metadados conferidos na API do arXiv, HTTP 200 · Acesso em 2026-10-27
+<a id="pt-ref-gptcacheRepo"></a></li>
+<li>Zilliz (2023–2026). <em>GPTCache: Semantic cache for LLMs [Software]</em>. GitHub. <a href="https://github.com/zilliztech/GPTCache" target="_blank" rel="noopener noreferrer">https://github.com/zilliztech/GPTCache</a>Verificado: HTTP 200, título conferido · Acesso em 2026-10-27</li>
+</ol>
+<p><a id="pt-ref-sgaeia2026"></a>
+56. Silva, Aridio. (2026). <em>SGAEIA: Secure Governed Autonomous Edge Intelligence Architecture</em> (Version 0.3.4) [Research software artifact]. Zenodo. <a href="https://doi.org/10.5281/zenodo.22557796" target="_blank" rel="noopener noreferrer">https://doi.org/10.5281/zenodo.22557796</a></p>
+<h2>Como citar</h2>
+<p>Silva, Aridio. (2026). <em>Como Reduzir Custos de Sistemas de AI com LLMs sem Sacrificar Qualidade: Uma revisão baseada em evidências de seis alavancas, seus limites e uma arquitetura de referência governada</em> (Versão 1.1) [Relatório técnico]. Pesquisa independente. ORCID 0009-0008-2411-6995. DOI: <a href="https://doi.org/10.5281/zenodo.23732760" target="_blank" rel="noopener noreferrer">https://doi.org/10.5281/zenodo.23732760</a>.</p>
+<p>Análise original, figuras e tradução de Aridio Silva (@aridiosilva). A proposta analisada pertence a seu autor, R. Bhardwaj [<a href="#pt-ref-bhardwaj2026">9</a>]; as figuras a redesenham e ampliam com atribuição.</p>
+<h2>Sobre o autor</h2>
+<p><strong>Aridio Silva</strong> é pesquisador independente no Brasil e trabalha com arquitetura, segurança, governança e confiabilidade de sistemas de inteligência artificial autônomos e distribuídos.</p>
+<p>Sua pesquisa se concentra em <strong>Agentic AI, sistemas multiagentes, Edge AI, segurança de AI, Zero Trust, Security-by-Design, governança de AI, Spec-Driven Development e assurance contínua de segurança</strong>.</p>
+<p>É criador e pesquisador responsável pelo <strong>SGAEIA — Secure Governed Autonomous Edge Intelligence Architecture</strong>, uma iniciativa aberta de pesquisa sobre fundamentos arquiteturais para sistemas de AI autônomos seguros, governados, auditáveis e confiáveis em ambientes distribuídos edge-cloud.</p>
+<h2>Perfis de pesquisa</h2>
+<p><strong>Aridio Silva</strong> — Pesquisador Independente, Brasil</p>
+<ul>
+<li><strong>ORCID:</strong> <a href="https://orcid.org/0009-0008-2411-6995" target="_blank" rel="noopener noreferrer">https://orcid.org/0009-0008-2411-6995</a></li>
+<li><strong>Google Scholar:</strong> <a href="https://scholar.google.com/citations?user=rPn5O48AAAAJ" target="_blank" rel="noopener noreferrer">https://scholar.google.com/citations?user=rPn5O48AAAAJ</a></li>
+<li><strong>Zenodo — Comunidade SGAEIA:</strong> <a href="https://zenodo.org/communities/sgaeia" target="_blank" rel="noopener noreferrer">https://zenodo.org/communities/sgaeia</a></li>
+<li><strong>OpenAIRE:</strong> <a href="https://explore.openaire.eu/search/find?fv0=Aridio%20Silva&amp;f0=q" target="_blank" rel="noopener noreferrer">https://explore.openaire.eu/search/find?fv0=Aridio%20Silva&amp;f0=q</a></li>
+<li><strong>Medium:</strong> <a href="https://medium.com/@aridiosilva" target="_blank" rel="noopener noreferrer">https://medium.com/@aridiosilva</a></li>
+<li><strong>GitHub:</strong> <a href="https://github.com/aridiosilva" target="_blank" rel="noopener noreferrer">https://github.com/aridiosilva</a></li>
+<li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/aridio-silva-74997111/" target="_blank" rel="noopener noreferrer">https://www.linkedin.com/in/aridio-silva-74997111/</a></li>
+<li><strong>Repositório SGAEIA:</strong> <a href="https://github.com/aridiosilva/SGAEIA" target="_blank" rel="noopener noreferrer">https://github.com/aridiosilva/SGAEIA</a></li>
+<li><strong>Artefato de pesquisa SGAEIA / DOI:</strong> <a href="https://doi.org/10.5281/zenodo.22557796" target="_blank" rel="noopener noreferrer">https://doi.org/10.5281/zenodo.22557796</a></li>
+<li><strong>Homepage:</strong> <a href="https://aridiosilva.com" target="_blank" rel="noopener noreferrer">https://aridiosilva.com</a></li>
+<li><strong>Homepage SGAEIA:</strong> <a href="https://aridiosilva.com/sgaeia" target="_blank" rel="noopener noreferrer">https://aridiosilva.com/sgaeia</a></li>
+<li><strong>SGAEIA no LinkedIn:</strong> <a href="https://www.linkedin.com/company/sgaeia/" target="_blank" rel="noopener noreferrer">https://www.linkedin.com/company/sgaeia/</a></li>
+<li><strong>Kaggle:</strong> <a href="https://www.kaggle.com/aridiosilva2" target="_blank" rel="noopener noreferrer">https://www.kaggle.com/aridiosilva2</a></li>
+<li><strong>DEV Community:</strong> <a href="https://dev.to/aridiosilva" target="_blank" rel="noopener noreferrer">https://dev.to/aridiosilva</a></li>
+<li><strong>Academia.edu:</strong> <a href="https://independent.academia.edu/AridioSilva" target="_blank" rel="noopener noreferrer">https://independent.academia.edu/AridioSilva</a></li>
+<li><strong>Artigo 23 — Zenodo / DOI:</strong> <a href="https://doi.org/10.5281/zenodo.23732760" target="_blank" rel="noopener noreferrer">https://doi.org/10.5281/zenodo.23732760</a></li>
+<li><strong>Artigo 23 — Academia.edu:</strong> <a href="https://www.academia.edu/179778431/How_to_Reduce_the_Cost_of_AI_Systems_with_LLMs_Without_Sacrificing_Quality" target="_blank" rel="noopener noreferrer">How to Reduce the Cost of AI Systems with LLMs Without Sacrificing Quality</a></li>
+<li><strong>Artigo 23 — DEV Community:</strong> <a href="https://dev.to/aridiosilva/how-to-reduce-the-cost-of-ai-systems-with-llms-without-sacrificing-quality-2mip-temp-slug-1129271" target="_blank" rel="noopener noreferrer">How to Reduce the Cost of AI Systems with LLMs Without Sacrificing Quality</a></li>
+<li><strong>Artigo 23 — Medium:</strong> <a href="https://medium.com/@aridiosilva/how-to-reduce-the-cost-of-ai-systems-with-llms-without-sacrificing-quality-b097cecce482" target="_blank" rel="noopener noreferrer">How to Reduce the Cost of AI Systems with LLMs Without Sacrificing Quality</a></li>
+</ul>
+<h2>Figuras</h2>
+<p>A capa não é numerada. As Figuras 1–13 são numeradas em sequência, referenciadas no texto e fornecidas em PNG e SVG. Os ativos conceituais permanecem no limite de divulgação pública e estão licenciados sob CC BY 4.0.</p>
+<h2>Licença</h2>
+<p>Salvo indicação em contrário, o texto e as ilustrações conceituais originais deste artigo estão licenciados sob a <strong>Creative Commons Attribution 4.0 International (CC BY 4.0)</strong>.</p>
+<p>© Aridio Silva @aridiosilva · Outubro 2026. O software e o artefato de pesquisa SGAEIA permanecem sujeitos à sua própria licença Apache 2.0.</p>
+<p><strong>Autonomous AI. Governed by Design. Trusted by Evidence.</strong></p>
+<h2>Continuidade da série</h2>
+<p>Este trabalho integra a <strong>SGAEIA Research Series — Article 23</strong>. O catálogo público da série está disponível em <a href="https://aridiosilva.com" target="_blank" rel="noopener noreferrer">https://aridiosilva.com</a> e a presença institucional do projeto em <a href="https://aridiosilva.com/sgaeia" target="_blank" rel="noopener noreferrer">https://aridiosilva.com/sgaeia</a>. Registro persistente do artigo: <a href="https://doi.org/10.5281/zenodo.23732760" target="_blank" rel="noopener noreferrer">https://doi.org/10.5281/zenodo.23732760</a>.</p>
+<p class="article-distribution-links"><a href="https://zenodo.org/records/23732760" target="_blank" rel="noopener noreferrer">Zenodo DOI</a> · <a href="https://dev.to/aridiosilva/how-to-reduce-the-cost-of-ai-systems-with-llms-without-sacrificing-quality-2mip-temp-slug-1129271" target="_blank" rel="noopener noreferrer">DEV Community</a> · <a href="https://medium.com/@aridiosilva/how-to-reduce-the-cost-of-ai-systems-with-llms-without-sacrificing-quality-b097cecce482" target="_blank" rel="noopener noreferrer">Medium</a> · <a href="https://www.academia.edu/179778431/How_to_Reduce_the_Cost_of_AI_Systems_with_LLMs_Without_Sacrificing_Quality" target="_blank" rel="noopener noreferrer">Academia.edu</a></p></article></section></main><footer class="site-footer footer-style-preview" id="footer">
+  <div class="shell">
+    <div class="footer-head">
+      <div class="footer-brand-lockup">
+        <img class="footer-sgaeia-logo" src="/assets/sgaeia-logo-transparent.png" alt="" aria-hidden="true" width="1254" height="1254" loading="lazy" decoding="async">
+        <a class="footer-wordmark footer-project-link" href="/sgaeia.html">SGAEIA</a>
+      </div>
+      <div class="footer-note">SGAEIA · Pesquisa sobre sistemas de IA autônomos e distribuídos sob governança.</div>
+    </div>
+
+    <nav class="brand-links footer-name-links" aria-label="Perfis de pesquisa e links do projeto">
+      <a class="footer-profile-link" aria-label="GitHub" title="GitHub" href="https://github.com/aridiosilva" target="_blank" rel="noopener noreferrer"><strong>GitHub</strong></a>
+      <a class="footer-profile-link" aria-label="ORCID" title="ORCID" href="https://orcid.org/0009-0008-2411-6995" target="_blank" rel="me noopener noreferrer"><strong>ORCID</strong></a>
+      <a class="footer-profile-link" aria-label="Google Scholar" title="Google Scholar" href="https://scholar.google.com/citations?user=rPn5O48AAAAJ" target="_blank" rel="noopener noreferrer"><strong>Google Scholar</strong></a>
+      <a class="footer-profile-link" aria-label="Registros do autor no Zenodo" title="Zenodo" href="https://zenodo.org/search?q=metadata.creators.person_or_org.name%3A%22Silva%2C%20Aridio%22" target="_blank" rel="noopener noreferrer"><strong>Zenodo</strong></a>
+      <a class="footer-profile-link" aria-label="Comunidade SGAEIA no Zenodo" title="SGAEIA — Comunidade Zenodo" href="https://zenodo.org/communities/sgaeia" target="_blank" rel="noopener noreferrer"><strong>SGAEIA · Comunidade Zenodo</strong></a>
+      <a class="footer-profile-link" aria-label="OpenAIRE" title="OpenAIRE" href="https://explore.openaire.eu/search/find?fv0=Aridio%20Silva&amp;f0=q" target="_blank" rel="noopener noreferrer"><strong>OpenAIRE</strong></a>
+      <a class="footer-profile-link" aria-label="Medium" title="Medium" href="https://medium.com/@aridiosilva" target="_blank" rel="noopener noreferrer"><strong>Medium</strong></a>
+      <a class="footer-profile-link" aria-label="Academia.edu" title="Academia.edu" href="https://independent.academia.edu/AridioSilva" target="_blank" rel="noopener noreferrer"><strong>Academia.edu</strong></a>
+      <a class="footer-profile-link" aria-label="Perfil na DEV Community" title="DEV Community" href="https://dev.to/aridiosilva" target="_blank" rel="me noopener noreferrer"><strong>DEV Community</strong></a>
+      <a class="footer-profile-link" aria-label="LinkedIn" title="LinkedIn" href="https://www.linkedin.com/in/aridio-silva-74997111/" target="_blank" rel="noopener noreferrer"><strong>LinkedIn</strong></a>
+      <a class="footer-profile-link" aria-label="SGAEIA LinkedIn" title="SGAEIA LinkedIn" href="https://www.linkedin.com/company/sgaeia/" target="_blank" rel="noopener noreferrer"><strong>SGAEIA · LinkedIn</strong></a>
+      <a class="footer-profile-link" aria-label="Repositório SGAEIA no GitHub" title="Repositório SGAEIA" href="https://github.com/aridiosilva/SGAEIA" target="_blank" rel="noopener noreferrer"><strong>Repositório SGAEIA</strong></a>
+      <a class="footer-profile-link" aria-label="Kaggle" title="Kaggle" href="https://www.kaggle.com/aridiosilva2" target="_blank" rel="noopener noreferrer"><strong>Kaggle</strong></a>
+      <a class="footer-profile-link" aria-label="DOI do artefato de pesquisa SGAEIA" title="Artefato de pesquisa SGAEIA / DOI" href="https://doi.org/10.5281/zenodo.22557796" target="_blank" rel="noopener noreferrer"><strong>SGAEIA DOI</strong></a>
+    </nav>
+
+    <div class="footer-bottom">
+      <span>© 2026 Aridio Silva · <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></span>
+      <span>Última atualização: 28 de outubro de 2026 — Versão 1.1.0</span>
+      <span>IA autônoma. Governada por concepção. Confiável pela evidência.</span>
+    </div>
+  </div>
+</footer></body></html>

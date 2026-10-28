@@ -21,6 +21,15 @@ The primary research themes are Agentic AI, multi-agent systems, AI security, Ze
 - [SlothGuard — full demo](https://youtu.be/9JlqE3jBITk): Full demonstration video with English captions.
 ## Publication index
 
+- [How to Reduce the Cost of AI Systems with LLMs Without Sacrificing Quality — Article 23, English](https://aridiosilva.com/publications/artigo23/): Complete English edition with cover, 13 figures, cost model, implementation roadmap, glossary and 56 audited references; DOI 10.5281/zenodo.23732760.
+- [Como Reduzir Custos de Sistemas de AI com LLMs sem Sacrificar Qualidade — Artigo 23, Português](https://aridiosilva.com/publications/artigo23/pt/): Edição integral em português com capa, 13 figuras, modelo de custo, roteiro de implementação, glossário e 56 referências auditadas; DOI 10.5281/zenodo.23732760.
+- [Article 23 — English PDF](https://aridiosilva.com/assets/article23/article23-en.pdf): English version-of-record technical-report PDF.
+- [Artigo 23 — PDF em português](https://aridiosilva.com/assets/article23/article23-pt.pdf): PDF do relatório técnico em português.
+- [Article 23 — Zenodo DOI](https://zenodo.org/records/23732760): Persistent publication record.
+- [Article 23 — DEV Community](https://dev.to/aridiosilva/how-to-reduce-the-cost-of-ai-systems-with-llms-without-sacrificing-quality-2mip-temp-slug-1129271): Complete technical distribution edition.
+- [Article 23 — Medium](https://medium.com/@aridiosilva/how-to-reduce-the-cost-of-ai-systems-with-llms-without-sacrificing-quality-b097cecce482): Complete technical distribution edition.
+- [Article 23 — Academia.edu](https://www.academia.edu/179778431/How_to_Reduce_the_Cost_of_AI_Systems_with_LLMs_Without_Sacrificing_Quality): Academia.edu distribution edition.
+
 - [Opening the Black Box of LLM Inference: Foundations of Generative AI — Article 22, English](https://aridiosilva.com/publications/artigo22/): Complete English edition with cover, six figures, reproducible numerical examples, glossary, source-code appendix and 69 references; DOI 10.5281/zenodo.23540392.
 - [Abrindo a Caixa-Preta da Inferência em LLMs: Fundamentos de AI Generativa — Artigo 22, Português](https://aridiosilva.com/publications/artigo22/pt/): Edição integral em português com capa, seis figuras, exemplos numéricos reproduzíveis, glossário, apêndice de códigos-fonte e 69 referências; DOI 10.5281/zenodo.23540392.
 - [Article 22 — Zenodo DOI](https://zenodo.org/records/23540392): Version-of-record publication distribution record.

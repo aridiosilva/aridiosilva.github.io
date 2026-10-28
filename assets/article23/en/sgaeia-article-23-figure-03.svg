@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 718" width="1200" height="718" role="img" aria-label="Figure 3. The six levers: target, evidence, risk and trade-off">
+<title>Figure 3. The six levers: target, evidence, risk and trade-off</title>
+<desc>© Aridio Silva @aridiosilva · Outubro 2026 · Independent Researcher · ORCID 0009-0008-2411-6995 · All figures licensed CC BY 4.0</desc>
+<metadata><rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:xmpRights="http://ns.adobe.com/xap/1.0/rights/"><rdf:Description rdf:about=""><dc:title>Figure 3. The six levers: target, evidence, risk and trade-off</dc:title><dc:creator>Aridio Silva (@aridiosilva), ORCID 0009-0008-2411-6995</dc:creator><dc:rights>© Aridio Silva @aridiosilva · Outubro 2026. Licensed under CC BY 4.0.</dc:rights><dc:date>2026-10</dc:date><dc:language>en</dc:language><xmpRights:Marked>True</xmpRights:Marked><xmpRights:Owner>Aridio Silva</xmpRights:Owner><cc:license rdf:resource="https://creativecommons.org/licenses/by/4.0/"/><cc:attributionName>Aridio Silva (@aridiosilva)</cc:attributionName><dc:subject>Project SGAEIA</dc:subject><dc:identifier>https://doi.org/10.5281/zenodo.23732760</dc:identifier></rdf:Description></rdf:RDF></metadata>
+<defs></defs>
+<rect width="1200" height="718" fill="#ffffff"/>
+<rect x="30" y="22" width="6" height="52" rx="3" fill="#0e6e6a"/>
+<text x="48" y="44" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="13" font-weight="700" fill="#0e6e6a" letter-spacing="1.2">FIGURE 3</text>
+<text x="48" y="70" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="23" font-weight="700" fill="#14213d">The six levers: target, evidence, risk and trade-off</text>
+<text x="1170" y="44" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="13" fill="#5b6474" text-anchor="end">Synthesis of the literature review</text>
+<g transform="translate(0,96)">
+<rect x="30.0" y="0.0" width="1140.0" height="38.0" rx="8" fill="#14213d" stroke="none" stroke-width="1.2"/>
+<text x="42.0" y="25.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="13" fill="#fff" font-weight="700" text-anchor="start"><tspan x="42.0" dy="0.0">Lever</tspan></text>
+<text x="252.0" y="25.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="13" fill="#fff" font-weight="700" text-anchor="start"><tspan x="252.0" dy="0.0">Factor</tspan></text>
+<text x="382.0" y="25.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="13" fill="#fff" font-weight="700" text-anchor="start"><tspan x="382.0" dy="0.0">Reported effect (source)</tspan></text>
+<text x="742.0" y="25.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="13" fill="#fff" font-weight="700" text-anchor="start"><tspan x="742.0" dy="0.0">Risk</tspan></text>
+<text x="842.0" y="25.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="13" fill="#fff" font-weight="700" text-anchor="start"><tspan x="842.0" dy="0.0">Effort</tspan></text>
+<text x="932.0" y="25.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="13" fill="#fff" font-weight="700" text-anchor="start"><tspan x="932.0" dy="0.0">Main trade-off</tspan></text>
+<rect x="30.0" y="44.0" width="1140.0" height="80.0" rx="6" fill="#fff" stroke="#c9d1dc" stroke-width="0.8"/>
+<rect x="30.0" y="44.0" width="6.0" height="80.0" rx="3" fill="#1f3a68" stroke="none" stroke-width="1.2"/>
+<circle cx="58.0" cy="68.0" r="13" fill="#1f3a68" stroke="none" stroke-width="1.5"/>
+<text x="58.0" y="73.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="13" fill="#fff" font-weight="700" text-anchor="middle"><tspan x="58.0" dy="0.0">1</tspan></text>
+<text x="80.0" y="73.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="13.5" fill="#14213d" font-weight="700" text-anchor="start"><tspan x="80.0" dy="0.0">Intelligent model</tspan><tspan x="80.0" dy="17.6">routing</tspan></text>
+<text x="252.0" y="73.0" font-family="Consolas,'SF Mono',Menlo,monospace" font-size="14" fill="#1f3a68" font-weight="700" text-anchor="start"><tspan x="252.0" dy="0.0">p(m)</tspan></text>
+<text x="382.0" y="68.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="12" fill="#14213d" font-weight="400" text-anchor="start"><tspan x="382.0" dy="0.0">Up to 98% cost cut at GPT-4 accuracy (FrugalGPT); &gt;2×</tspan><tspan x="382.0" dy="15.6">cheaper (RouteLLM); 40% fewer large-model calls</tspan><tspan x="382.0" dy="15.6">(Hybrid LLM).</tspan></text>
+<rect x="742.0" y="58.0" width="67.0" height="21.0" rx="10.5" fill="#fbecd6" stroke="#a35a06" stroke-width="1"/>
+<text x="775.5" y="71.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="11" fill="#a35a06" font-weight="600" text-anchor="middle"><tspan x="775.5" dy="0.0">med–high</tspan></text>
+<rect x="842.0" y="58.0" width="41.5" height="21.0" rx="10.5" fill="#fde4e1" stroke="#b42318" stroke-width="1"/>
+<text x="862.8" y="71.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="11" fill="#b42318" font-weight="600" text-anchor="middle"><tspan x="862.8" dy="0.0">high</tspan></text>
+<text x="932.0" y="68.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="12" fill="#5b6474" font-weight="400" text-anchor="start"><tspan x="932.0" dy="0.0">Misrouted hard queries; router</tspan><tspan x="932.0" dy="15.6">needs data and upkeep.</tspan></text>
+<rect x="30.0" y="130.0" width="1140.0" height="80.0" rx="6" fill="#f4f7fa" stroke="#c9d1dc" stroke-width="0.8"/>
+<rect x="30.0" y="130.0" width="6.0" height="80.0" rx="3" fill="#0e6e6a" stroke="none" stroke-width="1.2"/>
+<circle cx="58.0" cy="154.0" r="13" fill="#0e6e6a" stroke="none" stroke-width="1.5"/>
+<text x="58.0" y="159.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="13" fill="#fff" font-weight="700" text-anchor="middle"><tspan x="58.0" dy="0.0">2</tspan></text>
+<text x="80.0" y="159.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="13.5" fill="#14213d" font-weight="700" text-anchor="start"><tspan x="80.0" dy="0.0">Context engineering</tspan></text>
+<text x="252.0" y="159.0" font-family="Consolas,'SF Mono',Menlo,monospace" font-size="14" fill="#0e6e6a" font-weight="700" text-anchor="start"><tspan x="252.0" dy="0.0">T_u, T_out</tspan></text>
+<text x="382.0" y="154.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="12" fill="#14213d" font-weight="400" text-anchor="start"><tspan x="382.0" dy="0.0">Up to 20× prompt compression with little loss</tspan><tspan x="382.0" dy="15.6">(LLMLingua); mid-context evidence is used worst (Liu</tspan><tspan x="382.0" dy="15.6">2023).</tspan></text>
+<rect x="742.0" y="144.0" width="54.3" height="21.0" rx="10.5" fill="#fbecd6" stroke="#a35a06" stroke-width="1"/>
+<text x="769.1" y="157.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="11" fill="#a35a06" font-weight="600" text-anchor="middle"><tspan x="769.1" dy="0.0">medium</tspan></text>
+<rect x="842.0" y="144.0" width="54.3" height="21.0" rx="10.5" fill="#fbecd6" stroke="#a35a06" stroke-width="1"/>
+<text x="869.1" y="157.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="11" fill="#a35a06" font-weight="600" text-anchor="middle"><tspan x="869.1" dy="0.0">medium</tspan></text>
+<text x="932.0" y="154.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="12" fill="#5b6474" font-weight="400" text-anchor="start"><tspan x="932.0" dy="0.0">Cutting too much loses recall; too</tspan><tspan x="932.0" dy="15.6">much context adds noise.</tspan></text>
+<rect x="30.0" y="216.0" width="1140.0" height="80.0" rx="6" fill="#fff" stroke="#c9d1dc" stroke-width="0.8"/>
+<rect x="30.0" y="216.0" width="6.0" height="80.0" rx="3" fill="#5b3fa8" stroke="none" stroke-width="1.2"/>
+<circle cx="58.0" cy="240.0" r="13" fill="#5b3fa8" stroke="none" stroke-width="1.5"/>
+<text x="58.0" y="245.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="13" fill="#fff" font-weight="700" text-anchor="middle"><tspan x="58.0" dy="0.0">3</tspan></text>
+<text x="80.0" y="245.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="13.5" fill="#14213d" font-weight="700" text-anchor="start"><tspan x="80.0" dy="0.0">Prompt caching</tspan></text>
+<text x="252.0" y="245.0" font-family="Consolas,'SF Mono',Menlo,monospace" font-size="14" fill="#5b3fa8" font-weight="700" text-anchor="start"><tspan x="252.0" dy="0.0">δ·T_c</tspan></text>
+<text x="382.0" y="240.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="12" fill="#14213d" font-weight="400" text-anchor="start"><tspan x="382.0" dy="0.0">Cache reads at 0.1× input price (Anthropic); up to</tspan><tspan x="382.0" dy="15.6">95% off cached input (OpenAI); 8× faster TTFT on GPU</tspan><tspan x="382.0" dy="15.6">(Prompt Cache).</tspan></text>
+<rect x="742.0" y="230.0" width="35.1" height="21.0" rx="10.5" fill="#ddf1e4" stroke="#1d7a3e" stroke-width="1"/>
+<text x="759.6" y="243.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="11" fill="#1d7a3e" font-weight="600" text-anchor="middle"><tspan x="759.6" dy="0.0">low</tspan></text>
+<rect x="842.0" y="230.0" width="35.1" height="21.0" rx="10.5" fill="#ddf1e4" stroke="#1d7a3e" stroke-width="1"/>
+<text x="859.6" y="243.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="11" fill="#1d7a3e" font-weight="600" text-anchor="middle"><tspan x="859.6" dy="0.0">low</tspan></text>
+<text x="932.0" y="240.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="12" fill="#5b6474" font-weight="400" text-anchor="start"><tspan x="932.0" dy="0.0">Needs a stable prefix; write</tspan><tspan x="932.0" dy="15.6">premium; shared caches leak timing.</tspan></text>
+<rect x="30.0" y="302.0" width="1140.0" height="80.0" rx="6" fill="#f4f7fa" stroke="#c9d1dc" stroke-width="0.8"/>
+<rect x="30.0" y="302.0" width="6.0" height="80.0" rx="3" fill="#a35a06" stroke="none" stroke-width="1.2"/>
+<circle cx="58.0" cy="326.0" r="13" fill="#a35a06" stroke="none" stroke-width="1.5"/>
+<text x="58.0" y="331.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="13" fill="#fff" font-weight="700" text-anchor="middle"><tspan x="58.0" dy="0.0">4</tspan></text>
+<text x="80.0" y="331.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="13.5" fill="#14213d" font-weight="700" text-anchor="start"><tspan x="80.0" dy="0.0">Semantic caching</tspan></text>
+<text x="252.0" y="331.0" font-family="Consolas,'SF Mono',Menlo,monospace" font-size="14" fill="#a35a06" font-weight="700" text-anchor="start"><tspan x="252.0" dy="0.0">h</tspan></text>
+<text x="382.0" y="326.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="12" fill="#14213d" font-weight="400" text-anchor="start"><tspan x="382.0" dy="0.0">~31% of queries were repeats in the MeanCache study;</tspan><tspan x="382.0" dy="15.6">open-source GPTCache.</tspan></text>
+<rect x="742.0" y="316.0" width="41.5" height="21.0" rx="10.5" fill="#fde4e1" stroke="#b42318" stroke-width="1"/>
+<text x="762.8" y="329.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="11" fill="#b42318" font-weight="600" text-anchor="middle"><tspan x="762.8" dy="0.0">high</tspan></text>
+<rect x="842.0" y="316.0" width="54.3" height="21.0" rx="10.5" fill="#fbecd6" stroke="#a35a06" stroke-width="1"/>
+<text x="869.1" y="329.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="11" fill="#a35a06" font-weight="600" text-anchor="middle"><tspan x="869.1" dy="0.0">medium</tspan></text>
+<text x="932.0" y="326.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="12" fill="#5b6474" font-weight="400" text-anchor="start"><tspan x="932.0" dy="0.0">False hits, stale answers and</tspan><tspan x="932.0" dy="15.6">cross-tenant leaks.</tspan></text>
+<rect x="30.0" y="388.0" width="1140.0" height="80.0" rx="6" fill="#fff" stroke="#c9d1dc" stroke-width="0.8"/>
+<rect x="30.0" y="388.0" width="6.0" height="80.0" rx="3" fill="#1d7a3e" stroke="none" stroke-width="1.2"/>
+<circle cx="58.0" cy="412.0" r="13" fill="#1d7a3e" stroke="none" stroke-width="1.5"/>
+<text x="58.0" y="417.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="13" fill="#fff" font-weight="700" text-anchor="middle"><tspan x="58.0" dy="0.0">5</tspan></text>
+<text x="80.0" y="417.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="13.5" fill="#14213d" font-weight="700" text-anchor="start"><tspan x="80.0" dy="0.0">Agentic loop</tspan><tspan x="80.0" dy="17.6">optimisation</tspan></text>
+<text x="252.0" y="417.0" font-family="Consolas,'SF Mono',Menlo,monospace" font-size="14" fill="#1d7a3e" font-weight="700" text-anchor="start"><tspan x="252.0" dy="0.0">k</tspan></text>
+<text x="382.0" y="412.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="12" fill="#14213d" font-weight="400" text-anchor="start"><tspan x="382.0" dy="0.0">Simple baselines matched costly SOTA agents at a</tspan><tspan x="382.0" dy="15.6">fraction of the cost (Kapoor 2024).</tspan></text>
+<rect x="742.0" y="402.0" width="60.7" height="21.0" rx="10.5" fill="#ddf1e4" stroke="#1d7a3e" stroke-width="1"/>
+<text x="772.3" y="415.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="11" fill="#1d7a3e" font-weight="600" text-anchor="middle"><tspan x="772.3" dy="0.0">low–med</tspan></text>
+<rect x="842.0" y="402.0" width="54.3" height="21.0" rx="10.5" fill="#fbecd6" stroke="#a35a06" stroke-width="1"/>
+<text x="869.1" y="415.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="11" fill="#a35a06" font-weight="600" text-anchor="middle"><tspan x="869.1" dy="0.0">medium</tspan></text>
+<text x="932.0" y="412.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="12" fill="#5b6474" font-weight="400" text-anchor="start"><tspan x="932.0" dy="0.0">Fewer steps and retries vs.</tspan><tspan x="932.0" dy="15.6">robustness on hard tasks.</tspan></text>
+<rect x="30.0" y="474.0" width="1140.0" height="80.0" rx="6" fill="#f4f7fa" stroke="#c9d1dc" stroke-width="0.8"/>
+<rect x="30.0" y="474.0" width="6.0" height="80.0" rx="3" fill="#475569" stroke="none" stroke-width="1.2"/>
+<circle cx="58.0" cy="498.0" r="13" fill="#475569" stroke="none" stroke-width="1.5"/>
+<text x="58.0" y="503.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="13" fill="#fff" font-weight="700" text-anchor="middle"><tspan x="58.0" dy="0.0">6</tspan></text>
+<text x="80.0" y="503.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="13.5" fill="#14213d" font-weight="700" text-anchor="start"><tspan x="80.0" dy="0.0">Batch processing</tspan></text>
+<text x="252.0" y="503.0" font-family="Consolas,'SF Mono',Menlo,monospace" font-size="14" fill="#475569" font-weight="700" text-anchor="start"><tspan x="252.0" dy="0.0">β·b</tspan></text>
+<text x="382.0" y="498.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="12" fill="#14213d" font-weight="400" text-anchor="start"><tspan x="382.0" dy="0.0">50% discount, results within 24 h (Anthropic, OpenAI,</tspan><tspan x="382.0" dy="15.6">Google); stacks with caching (Anthropic).</tspan></text>
+<rect x="742.0" y="488.0" width="35.1" height="21.0" rx="10.5" fill="#ddf1e4" stroke="#1d7a3e" stroke-width="1"/>
+<text x="759.6" y="501.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="11" fill="#1d7a3e" font-weight="600" text-anchor="middle"><tspan x="759.6" dy="0.0">low</tspan></text>
+<rect x="842.0" y="488.0" width="35.1" height="21.0" rx="10.5" fill="#ddf1e4" stroke="#1d7a3e" stroke-width="1"/>
+<text x="859.6" y="501.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="11" fill="#1d7a3e" font-weight="600" text-anchor="middle"><tspan x="859.6" dy="0.0">low</tspan></text>
+<text x="932.0" y="498.0" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="12" fill="#5b6474" font-weight="400" text-anchor="start"><tspan x="932.0" dy="0.0">Only for work that can wait; adds</tspan><tspan x="932.0" dy="15.6">queueing.</tspan></text>
+</g>
+<line x1="30" y1="668" x2="1170" y2="668" stroke="#c9d1dc"/>
+<text x="30" y="688" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="12" fill="#5b6474">Sources: Chen 2023; Ong 2024; Ding 2024; Jiang 2023; Gill 2024; Kapoor 2024; Anthropic, OpenAI and Google docs (2026).</text>
+<text x="30" y="706" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="12" font-weight="600" fill="#14213d">© Aridio Silva @aridiosilva · Outubro 2026 · Independent Researcher · ORCID 0009-0008-2411-6995 · All figures licensed CC BY 4.0</text>
+</svg>

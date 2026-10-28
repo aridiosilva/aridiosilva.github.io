@@ -19,8 +19,8 @@ O site reúne:
 
 A entrada consolidada mais recente do log é de **28 de outubro de 2026**. Nesse ponto, o repositório registrava:
 
-- **69 páginas HTML públicas** usando o sistema compartilhado de navegação e rodapé;
-- publicações da SGAEIA Research Series até o **Artigo 22**;
+- **71 páginas HTML públicas** usando o sistema compartilhado de navegação e rodapé;
+- publicações da SGAEIA Research Series até o **Artigo 23**;
 - infográficos bilíngues até o **Info_017**;
 - o índice **Challenges** e o **SlothGuard Challenge 001** em inglês e português;
 - inglês como edição canônica e `x-default` dos conteúdos bilíngues;
@@ -89,6 +89,7 @@ Esta seção resume os registros detalhados existentes em [`docs/logs/`](docs/lo
 - **21 de outubro — Artigo 22 e Info_016.** Foram adicionadas as edições bilíngues integrais do Artigo 22 e a edição bilíngue de 50 slides do Info_016. A atualização reforçou os requisitos obrigatórios de GA4, CSP, canonical, `hreflang`, `x-default`, dados estruturados, sitemap, LLMs e robots para cada nova página pública.
 - **26 de outubro — Challenges e SlothGuard Challenge 001.** Foram adicionados o índice público de Challenges e as páginas bilíngues do desafio, links do projeto, mídias responsivas, tabelas, vídeo com privacidade aprimorada, metadados de citação, registros DOI e um item Challenges nos cabeçalhos de todas as páginas então existentes. Posteriormente foram corrigidos o carregamento das imagens publicadas e a apresentação do vídeo do desafio.
 - **28 de outubro — Info_017.** Foi incluído *Cutting LLM Cost by 70% Without Losing Quality* / *Reduzir 70% do Custo com LLMs sem Perder Qualidade* como edição bilíngue com 41 slides por idioma, PDFs originais, carrosséis acessíveis, texto de publicação no LinkedIn, card no índice, Analytics, metadados de segurança e descoberta coordenada. Os SHA-256 preservados dos PDFs são `D934B1AA2485082E524E12CB8A9A469146523281208D9C0A52220FD05C8F4A61` (EN) e `8A8EBDD1E8AFFC676B53407106F3F313475B63DDE2E8E2ED49355C2C2137C868` (PT).
+- **28 de outubro — Artigo 23.** Foram adicionadas as edições integrais em inglês — padrão — e português de *How to Reduce the Cost of AI Systems with LLMs Without Sacrificing Quality*, incluindo os dois PDFs de 26 páginas, capas e 13 figuras por idioma em PNG/SVG, 56 referências auditadas, GA4, CSP, metadados de citação, JSON-LD, navegação recíproca de idiomas, cards na homepage e no índice de publicações e descoberta coordenada em sitemap, robots e LLMs.
 - **28 de outubro — integração do Academia.edu nos rodapés.** `Academia.edu` foi adicionado à navegação compartilhada de perfis das 69 páginas HTML públicas, apontando para `https://independent.academia.edu/AridioSilva`. O item herda os comportamentos aprovados de hover, foco, contraste, quebra responsiva e movimento reduzido. Os registros de descoberta e as datas de modificação do sitemap foram atualizados.
 
 ## Índice dos logs detalhados
@@ -112,6 +113,7 @@ Esta seção resume os registros detalhados existentes em [`docs/logs/`](docs/lo
 - [Continuidade visual e operacional da homepage](docs/logs/2026-10-11-HOMEPAGE-STYLE-CONTINUITY.md)
 - [Publicação do Artigo 20](docs/logs/2026-10-14-1537-ARTICLE20-HOMEPAGE-PUBLICATION.md)
 - [Publicação do Artigo 21](docs/logs/2026-10-17-ARTICLE21-HOMEPAGE-PUBLICATION.md)
+- [Publicação do Artigo 23](docs/logs/2026-10-28-ARTICLE23-HOMEPAGE-PUBLICATION.md)
 
 ### Infográficos
 
