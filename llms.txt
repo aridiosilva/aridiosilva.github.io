@@ -26,7 +26,7 @@ The primary research themes are Agentic AI, multi-agent systems, AI security, Ze
 - [Article 23 — English PDF](https://aridiosilva.com/assets/article23/article23-en.pdf): English version-of-record technical-report PDF.
 - [Artigo 23 — PDF em português](https://aridiosilva.com/assets/article23/article23-pt.pdf): PDF do relatório técnico em português.
 - [Article 23 — Zenodo DOI](https://zenodo.org/records/23732760): Persistent publication record.
-- [Article 23 — DEV Community](https://dev.to/aridiosilva/how-to-reduce-the-cost-of-ai-systems-with-llms-without-sacrificing-quality-2mip-temp-slug-1129271): Complete technical distribution edition.
+- [Article 23 — DEV Community](https://dev.to/aridiosilva/how-to-reduce-the-cost-of-ai-systems-with-llms-without-sacrificing-quality-2hj9): Complete technical distribution edition.
 - [Article 23 — Medium](https://medium.com/@aridiosilva/how-to-reduce-the-cost-of-ai-systems-with-llms-without-sacrificing-quality-b097cecce482): Complete technical distribution edition.
 - [Article 23 — Academia.edu](https://www.academia.edu/179778431/How_to_Reduce_the_Cost_of_AI_Systems_with_LLMs_Without_Sacrificing_Quality): Academia.edu distribution edition.
 

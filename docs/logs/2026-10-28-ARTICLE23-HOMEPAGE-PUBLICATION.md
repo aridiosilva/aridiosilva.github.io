@@ -15,7 +15,7 @@ Added SGAEIA Research Series Article 23 in English and Portuguese, with English 
 - License: CC BY 4.0.
 - DOI: `10.5281/zenodo.23732760`.
 - Zenodo: `https://zenodo.org/records/23732760`.
-- DEV Community: `https://dev.to/aridiosilva/how-to-reduce-the-cost-of-ai-systems-with-llms-without-sacrificing-quality-2mip-temp-slug-1129271`.
+- DEV Community: `https://dev.to/aridiosilva/how-to-reduce-the-cost-of-ai-systems-with-llms-without-sacrificing-quality-2hj9`.
 - Medium: `https://medium.com/@aridiosilva/how-to-reduce-the-cost-of-ai-systems-with-llms-without-sacrificing-quality-b097cecce482`.
 - Academia.edu: `https://www.academia.edu/179778431/How_to_Reduce_the_Cost_of_AI_Systems_with_LLMs_Without_Sacrificing_Quality`.
 
