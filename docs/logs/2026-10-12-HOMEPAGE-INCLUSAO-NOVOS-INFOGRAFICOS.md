@@ -430,6 +430,22 @@ Em 14 de outubro de 2026 foi incluído o `Info_014 — When AI Starts Building I
 
 ---
 
+## 23. Inclusão do Info_017 — Cutting LLM Cost by 70% Without Losing Quality / Reduzir 70% do Custo com LLMs sem Perder Qualidade
+
+Em 28 de outubro de 2026 foi incluído o `Info_017`, seguindo o padrão bilíngue, visual, responsivo, acessível e de descoberta já aprovado.
+
+- Foram criadas as páginas EN padrão/canônica e PT-BR, com navegação recíproca, `x-default` em inglês, carrossel acessível e o texto integral fornecido para a publicação no LinkedIn.
+- Cada edição contém 41 slides, renderizados dos PDFs finais em 1920 × 1080 px; as 82 páginas foram inspecionadas em folhas de contato sem cortes, páginas vazias, inversões ou falhas visuais.
+- Os PDFs originais foram copiados sem alteração e preservados por SHA-256: EN `D934B1AA2485082E524E12CB8A9A469146523281208D9C0A52220FD05C8F4A61`; PT `8A8EBDD1E8AFFC676B53407106F3F313475B63DDE2E8E2ED49355C2C2137C868`.
+- Como as fontes editoriais registram apenas outubro de 2026, páginas e card usam mês e ano sem inventar um dia de publicação.
+- O card do Info_017 foi inserido no início de `infographics/index.html`; somente a nova capa usa carregamento prioritário e a capa do Info_016 passou a carregamento preguiçoso.
+- `sitemap.xml` recebeu as URLs EN/PT, `lastmod`, `hreflang`, `x-default` e capas localizadas; `llms.txt` recebeu páginas e PDFs; `robots.txt` recebeu o comentário informativo de atualização.
+- As duas páginas carregam exatamente `/assets/analytics-consent.js?v=20261011`, preservando o GA4 `G-MXMJ7Z3LS7`, a medição cookieless e a CSP vigente.
+- Os ativos compartilhados de estilo e comportamento não precisaram ser alterados.
+- O registro detalhado está em `docs/logs/2026-10-28-INFO-017-LLM-COST-REDUCTION.md`.
+
+---
+
 ## Referências internas
 
 - `docs/logs/2026-10-11-HOMEPAGE-STYLE-CONTINUITY.md`

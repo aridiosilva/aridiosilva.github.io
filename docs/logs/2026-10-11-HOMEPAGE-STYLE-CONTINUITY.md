@@ -1037,3 +1037,14 @@ Novos artigos e infográficos devem reutilizar esse rodapé compartilhado e sua 
 - Após revisão do autor, mantido o player incorporado do YouTube em modo de privacidade no final das duas páginas, reproduzindo a apresentação existente no post do DEV Community.
 - As oito figuras efetivamente usadas no corpo do texto e a capa permanecem inalteradas.
 - Alterações exclusivamente locais; sem stage, commit, push ou publicação remota.
+
+## Info_017 — redução de custos de LLMs EN/PT — 28 de outubro de 2026
+
+- Incluído `Info_017 — Cutting LLM Cost by 70% Without Losing Quality / Reduzir 70% do Custo com LLMs sem Perder Qualidade` como nova edição bilíngue, com inglês em `/infographics/Info_017/` como página padrão e português em `/infographics/Info_017/pt/`.
+- Cada edição contém 41 slides 16:9 em 1920 × 1080 px, PDF original preservado, carrossel acessível, texto fornecido da publicação no LinkedIn e o rodapé editorial compartilhado vigente.
+- Como as fontes informam apenas outubro de 2026, nenhum dia editorial foi inventado. O `lastmod` técnico da inclusão é 2026-10-28.
+- Adicionado o card do Info_017 no início do índice de infográficos, com EN como destino primário, PT e PDF EN. A capa do Info_016 passou a carregamento preguiçoso.
+- Atualizados `infographics/index.html`, `sitemap.xml`, `llms.txt`, `robots.txt`, o log operacional de inclusão de infográficos e o registro detalhado `docs/logs/2026-10-28-INFO-017-LLM-COST-REDUCTION.md`.
+- As páginas novas carregam uma única referência ao Analytics compartilhado `/assets/analytics-consent.js?v=20261011`; CSP, canonical, `hreflang` e `x-default` seguem o padrão atual.
+- PDFs preservados por SHA-256: EN `D934B1AA2485082E524E12CB8A9A469146523281208D9C0A52220FD05C8F4A61`; PT `8A8EBDD1E8AFFC676B53407106F3F313475B63DDE2E8E2ED49355C2C2137C868`.
+- Nenhum ativo CSS ou JavaScript compartilhado foi alterado. Nenhum stage, commit ou push foi executado pelo assistente.

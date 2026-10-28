@@ -20,7 +20,7 @@
   </url>
   <url>
     <loc>https://aridiosilva.com/infographics/</loc>
-    <lastmod>2026-10-26</lastmod>
+    <lastmod>2026-10-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -50,7 +50,28 @@
     <xhtml:link rel="alternate" hreflang="pt-BR" href="https://aridiosilva.com/challenges/challenge001/pt/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://aridiosilva.com/challenges/challenge001/"/>
     <image:image><image:loc>https://aridiosilva.com/challenges/challenge001/assets/image_cover.webp</image:loc><image:title>SlothGuard: um revisor de acessos preguiçoso que pede ao seu celular antes de revogar qualquer coisa</image:title><image:caption>© 2026 Aridio Silva</image:caption></image:image>
-  </url>  <url>
+  </url>
+  <url>
+    <loc>https://aridiosilva.com/infographics/Info_017/</loc>
+    <lastmod>2026-10-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aridiosilva.com/infographics/Info_017/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://aridiosilva.com/infographics/Info_017/pt/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aridiosilva.com/infographics/Info_017/"/>
+    <image:image><image:loc>https://aridiosilva.com/infographics/Info_017/assets/slide-01.png</image:loc><image:title>Cutting LLM Cost by 70% Without Losing Quality</image:title><image:caption>© 2026 Aridio Silva</image:caption></image:image>
+  </url>
+  <url>
+    <loc>https://aridiosilva.com/infographics/Info_017/pt/</loc>
+    <lastmod>2026-10-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aridiosilva.com/infographics/Info_017/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://aridiosilva.com/infographics/Info_017/pt/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aridiosilva.com/infographics/Info_017/"/>
+    <image:image><image:loc>https://aridiosilva.com/infographics/Info_017/pt/assets/slide-01.png</image:loc><image:title>Reduzir 70% do Custo com LLMs sem Perder Qualidade</image:title><image:caption>© 2026 Aridio Silva</image:caption></image:image>
+  </url>
+  <url>
     <loc>https://aridiosilva.com/infographics/Info_016/</loc>
     <lastmod>2026-10-26</lastmod>
     <changefreq>monthly</changefreq>
