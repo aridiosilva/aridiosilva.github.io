@@ -21,6 +21,19 @@ The primary research themes are Agentic AI, multi-agent systems, AI security, Ze
 - [SlothGuard — full demo](https://youtu.be/9JlqE3jBITk): Full demonstration video with English captions.
 ## Publication index
 
+- [LLM Routers for AI Systems: Architecture, Governance, Multi-Agent Systems, Swarms, and Security — Article 24, English](https://aridiosilva.com/publications/artigo24/): Complete English edition with cover, 11 figures, 11 accessible comparison tables, six equations, glossary and 27 references; published 29 October 2026; DOI 10.5281/zenodo.23763978.
+- [Roteadores de LLMs para Sistemas de AI: Arquitetura, Governança, Multiagentes, Enxames e Segurança — Artigo 24, Português](https://aridiosilva.com/publications/artigo24/pt/): Edição integral em português com capa, 11 figuras, 11 tabelas comparativas acessíveis, seis equações, glossário e 27 referências; publicada em 29 de outubro de 2026; DOI 10.5281/zenodo.23763978.
+- [Article 24 — English PDF](https://aridiosilva.com/assets/article24/article24-en.pdf): English version-of-record PDF.
+- [Artigo 24 — PDF em português](https://aridiosilva.com/assets/article24/article24-pt.pdf): PDF da edição em português.
+- [Article 24 — Zenodo](https://zenodo.org/records/23763978): Persistent publication record.
+- [Article 24 — DOI](https://doi.org/10.5281/zenodo.23763978): Persistent identifier.
+- [Article 24 — DEV.to](https://dev.to/aridiosilva/llm-routers-for-ai-systems-architecture-governance-multi-agent-systems-swarms-and-security-3g7f): Technical distribution edition.
+- [Article 24 — Academia.edu](https://www.academia.edu/179879094/LLM_Routers_for_AI_Systems): Academia.edu distribution edition.
+- [Article 24 — Medium.com](https://medium.com/@aridiosilva/llm-routers-for-ai-systems-architecture-governance-multi-agent-systems-swarms-and-security-57b492be7cb8): Medium distribution edition.
+- [Article 24 — English cover](https://aridiosilva.com/assets/article24/en/sgaeia-article-24-cover_EN.png): English cover with visible attribution and embedded copyright metadata.
+- [Artigo 24 — capa em português](https://aridiosilva.com/assets/article24/pt/sgaeia-article-24-cover_PT.png): Capa em português com atribuição visível e metadados de copyright incorporados.
+
+
 - [How to Reduce the Cost of AI Systems with LLMs Without Sacrificing Quality — Article 23, English](https://aridiosilva.com/publications/artigo23/): Complete English edition with cover, 13 figures, cost model, implementation roadmap, glossary and 56 audited references; DOI 10.5281/zenodo.23732760.
 - [Como Reduzir Custos de Sistemas de AI com LLMs sem Sacrificar Qualidade — Artigo 23, Português](https://aridiosilva.com/publications/artigo23/pt/): Edição integral em português com capa, 13 figuras, modelo de custo, roteiro de implementação, glossário e 56 referências auditadas; DOI 10.5281/zenodo.23732760.
 - [Article 23 — English PDF](https://aridiosilva.com/assets/article23/article23-en.pdf): English version-of-record technical-report PDF.

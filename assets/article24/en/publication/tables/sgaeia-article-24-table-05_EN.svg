@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="3400" height="1096" viewBox="0 0 3400 1096">
+<metadata id="sgaeia-publication-metadata"><rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#"><rdf:Description rdf:about=""><dc:title>Article 24 table 5</dc:title><dc:description>Evidence | What it supports | What it does not establish; FrugalGPT, Hybrid LLM, and AutoMix [[2](#ref-2)][[3](#ref-3)][[4](#ref-4)] | Some selection or escalation configurations lower cost while preserving their chosen quality measure | Transferable or directly comparable savings percentages; RouteLLM [[1](#ref-1)] | Preferences can guide efficient selection between models | A published threshold suitable for another organization's traffic; RouterBench [[5](#ref-5)] | Precomputed responses allow comparison against common references | Simulation of complete service behavior; LLMRouterBench [[6](#ref-6)] | Complementarity can coexist with difficulty beating simple baselines | Universal superiority of learned routing over a fixed policy; LLMRouter [[8](#ref-8)] | Common infrastructure supports study of different routing formulations | Operational readiness merely because an implementation exists</dc:description><dc:creator><rdf:Seq><rdf:li>Aridio Silva</rdf:li></rdf:Seq></dc:creator><dc:rights>© 2026 Aridio Silva — CC BY 4.0</dc:rights><dc:subject>SGAEIA</dc:subject><cc:license rdf:resource="https://creativecommons.org/licenses/by/4.0/"/></rdf:Description></rdf:RDF></metadata>
+<rect width="100%" height="100%" fill="white"/>
+<text x="55" y="68" font-family="Arial" font-size="41" font-weight="bold" fill="#b91c1c">Table 5</text>
+<rect x="55" y="110" width="1096" height="101" fill="#132742" stroke="#b9c7d8"/>
+<text x="72" y="165" font-family="Arial" font-size="41" font-weight="bold" fill="white">Evidence</text>
+<rect x="1151" y="110" width="1096" height="101" fill="#132742" stroke="#b9c7d8"/>
+<text x="1168" y="165" font-family="Arial" font-size="41" font-weight="bold" fill="white">What it supports</text>
+<rect x="2247" y="110" width="1096" height="101" fill="#132742" stroke="#b9c7d8"/>
+<text x="2264" y="165" font-family="Arial" font-size="41" font-weight="bold" fill="white">What it does not establish</text>
+<rect x="55" y="211" width="1096" height="157" fill="#edf3fa" stroke="#b9c7d8"/>
+<text x="72" y="266" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">FrugalGPT, Hybrid LLM, and AutoMix [2][3][4]</text>
+<rect x="1151" y="211" width="1096" height="157" fill="#edf3fa" stroke="#b9c7d8"/>
+<text x="1168" y="266" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">Some selection or escalation configurations lower</text>
+<text x="1168" y="322" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">cost while preserving their chosen quality measure</text>
+<rect x="2247" y="211" width="1096" height="157" fill="#edf3fa" stroke="#b9c7d8"/>
+<text x="2264" y="266" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">Transferable or directly comparable savings</text>
+<text x="2264" y="322" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">percentages</text>
+<rect x="55" y="368" width="1096" height="157" fill="#f8fafc" stroke="#b9c7d8"/>
+<text x="72" y="423" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">RouteLLM [1]</text>
+<rect x="1151" y="368" width="1096" height="157" fill="#f8fafc" stroke="#b9c7d8"/>
+<text x="1168" y="423" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">Preferences can guide efficient selection between</text>
+<text x="1168" y="479" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">models</text>
+<rect x="2247" y="368" width="1096" height="157" fill="#f8fafc" stroke="#b9c7d8"/>
+<text x="2264" y="423" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">A published threshold suitable for another</text>
+<text x="2264" y="479" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">organization&#x27;s traffic</text>
+<rect x="55" y="525" width="1096" height="157" fill="#edf3fa" stroke="#b9c7d8"/>
+<text x="72" y="580" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">RouterBench [5]</text>
+<rect x="1151" y="525" width="1096" height="157" fill="#edf3fa" stroke="#b9c7d8"/>
+<text x="1168" y="580" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">Precomputed responses allow comparison against</text>
+<text x="1168" y="636" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">common references</text>
+<rect x="2247" y="525" width="1096" height="157" fill="#edf3fa" stroke="#b9c7d8"/>
+<text x="2264" y="580" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">Simulation of complete service behavior</text>
+<rect x="55" y="682" width="1096" height="157" fill="#f8fafc" stroke="#b9c7d8"/>
+<text x="72" y="737" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">LLMRouterBench [6]</text>
+<rect x="1151" y="682" width="1096" height="157" fill="#f8fafc" stroke="#b9c7d8"/>
+<text x="1168" y="737" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">Complementarity can coexist with difficulty</text>
+<text x="1168" y="793" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">beating simple baselines</text>
+<rect x="2247" y="682" width="1096" height="157" fill="#f8fafc" stroke="#b9c7d8"/>
+<text x="2264" y="737" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">Universal superiority of learned routing over a</text>
+<text x="2264" y="793" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">fixed policy</text>
+<rect x="55" y="839" width="1096" height="157" fill="#edf3fa" stroke="#b9c7d8"/>
+<text x="72" y="894" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">LLMRouter [8]</text>
+<rect x="1151" y="839" width="1096" height="157" fill="#edf3fa" stroke="#b9c7d8"/>
+<text x="1168" y="894" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">Common infrastructure supports study of different</text>
+<text x="1168" y="950" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">routing formulations</text>
+<rect x="2247" y="839" width="1096" height="157" fill="#edf3fa" stroke="#b9c7d8"/>
+<text x="2264" y="894" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">Operational readiness merely because an</text>
+<text x="2264" y="950" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">implementation exists</text>
+<text x="55" y="1061" font-family="Arial" font-size="25" fill="#536476">© 2026 Aridio Silva | Project SGAEIA | CC BY 4.0 | DOI: 10.5281/zenodo.23763978</text>
+</svg>

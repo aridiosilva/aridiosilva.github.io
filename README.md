@@ -17,15 +17,16 @@ The website brings together:
 
 ## Current recorded state
 
-The latest consolidated log entry is dated **28 October 2026**. At that point, the repository recorded:
+The latest consolidated log entry is dated **29 October 2026**. At that point, the repository recorded:
 
-- **71 public HTML pages** using the shared navigation and footer system;
-- SGAEIA Research Series publications through **Article 23**;
+- **73 public HTML pages** using the shared navigation and footer system;
+- SGAEIA Research Series publications through **Article 24**;
 - bilingual infographics through **Info_017**;
 - the **Challenges** index and **SlothGuard Challenge 001** in English and Portuguese;
 - English as the canonical and `x-default` edition for bilingual content;
 - reciprocal `hreflang` navigation between English and Portuguese editions;
 - a shared GA4 loader with privacy-preserving default storage settings;
+- a compact fixed-header layout for mobile viewports, propagated through the shared stylesheet and cache-busted across all 73 HTML pages;
 - coordinated discovery through `sitemap.xml`, `robots.txt`, and `llms.txt`;
 - the Academia.edu profile in every HTML footer, after Medium and before DEV Community.
 
@@ -90,6 +91,8 @@ This section summarizes the detailed records under [`docs/logs/`](docs/logs/). T
 - **26 October — Challenges and SlothGuard Challenge 001.** Added the public Challenges index and bilingual challenge pages, project links, responsive media, tables, privacy-enhanced video, citation metadata, DOI records, and a Challenges item in all then-current page headers. Published-image loading and the challenge video presentation were subsequently corrected.
 - **28 October — Info_017.** Added *Cutting LLM Cost by 70% Without Losing Quality* / *Reduzir 70% do Custo com LLMs sem Perder Qualidade* as a bilingual edition with 41 slides per language, original PDFs, accessible carousels, LinkedIn publication text, an index card, analytics, security metadata, and coordinated discovery. The preserved PDF SHA-256 values are `D934B1AA2485082E524E12CB8A9A469146523281208D9C0A52220FD05C8F4A61` (EN) and `8A8EBDD1E8AFFC676B53407106F3F313475B63DDE2E8E2ED49355C2C2137C868` (PT).
 - **28 October — Article 23.** Added the complete English-default and Portuguese editions of *How to Reduce the Cost of AI Systems with LLMs Without Sacrificing Quality*, including the two 26-page PDFs, localized PNG/SVG covers and 13 figures per language, 56 audited references, GA4, CSP, citation metadata, JSON-LD, reciprocal language navigation, homepage and publication-index cards, and coordinated sitemap/robots/LLM discovery.
+- **29 October — Article 24.** Added the complete English-default and Portuguese editions of *LLM Routers for AI Systems: Architecture, Governance, Multi-Agent Systems, Swarms, and Security*. The integration includes preserved PDFs and original visual assets, 18 visual plates and 11 accessible tables per language, GA4, CSP, citation metadata, JSON-LD, reciprocal language navigation, Zenodo/DEV.to/Academia.edu/Medium.com distribution links, homepage and publication-index cards with the Article 24 cover, and coordinated sitemap/robots/LLM discovery.
+- **29 October — mobile fixed-header compaction and homepage card correction.** Reduced mobile-only header spacing, navigation gaps, and reading-control padding without changing desktop layout or responsive behavior. The cache-busted shared header stylesheet is referenced exactly once by all 73 HTML pages. Representative 320 px checks covered the homepage, SGAEIA, Publications, Article 24 EN/PT, Infographics, and Challenges with no header overlap or horizontal scrolling. The duplicate text-only Article 24 block was removed from the homepage Publications section; the single remaining publication card uses the original cover and established numbered-card layout.
 - **28 October — Academia.edu footer integration.** Added `Academia.edu` to the shared profile navigation of all 69 public HTML pages, linked to `https://independent.academia.edu/AridioSilva`. The item inherits the approved hover, focus, contrast, responsive wrapping, and reduced-motion behavior. Discovery records and sitemap modification dates were updated.
 
 ## Detailed log index

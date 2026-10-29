@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="3400" height="1253" viewBox="0 0 3400 1253">
+<metadata id="sgaeia-publication-metadata"><rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#"><rdf:Description rdf:about=""><dc:title>Article 24 table 2</dc:title><dc:description>Strategy | Generation calls | Training or supervision | Main advantage | Main dependency; Rules | Usually one | Explicit policies and criteria | Transparency and low selection cost | Rule coverage and exception handling; Classifier or preferences | Usually one, plus any embeddings | Labeled data and calibration | Selection without generating alternative answers | Representative data; Similarity | Usually one, plus vector representation | Evaluated history | Incremental use of examples | Neighbor coverage and relevance; Cascade | One or more | Acceptance criterion | Escalation only when needed | Validation reliability and cost; Self-verification or judge | Two or more operations, depending on design | Examples, rubric, or evaluator | Assessment conditioned on the result | Correlated errors and additional cost; Adaptive or generative | Variable | Observed feedback or selection instructions | Adaptation to state and context | Exploration cost, stability, and explanation</dc:description><dc:creator><rdf:Seq><rdf:li>Aridio Silva</rdf:li></rdf:Seq></dc:creator><dc:rights>© 2026 Aridio Silva — CC BY 4.0</dc:rights><dc:subject>SGAEIA</dc:subject><cc:license rdf:resource="https://creativecommons.org/licenses/by/4.0/"/></rdf:Description></rdf:RDF></metadata>
+<rect width="100%" height="100%" fill="white"/>
+<text x="55" y="68" font-family="Arial" font-size="41" font-weight="bold" fill="#b91c1c">Table 2</text>
+<rect x="55" y="110" width="658" height="101" fill="#132742" stroke="#b9c7d8"/>
+<text x="72" y="165" font-family="Arial" font-size="41" font-weight="bold" fill="white">Strategy</text>
+<rect x="713" y="110" width="658" height="101" fill="#132742" stroke="#b9c7d8"/>
+<text x="730" y="165" font-family="Arial" font-size="41" font-weight="bold" fill="white">Generation calls</text>
+<rect x="1371" y="110" width="658" height="101" fill="#132742" stroke="#b9c7d8"/>
+<text x="1388" y="165" font-family="Arial" font-size="41" font-weight="bold" fill="white">Training or supervision</text>
+<rect x="2029" y="110" width="658" height="101" fill="#132742" stroke="#b9c7d8"/>
+<text x="2046" y="165" font-family="Arial" font-size="41" font-weight="bold" fill="white">Main advantage</text>
+<rect x="2687" y="110" width="658" height="101" fill="#132742" stroke="#b9c7d8"/>
+<text x="2704" y="165" font-family="Arial" font-size="41" font-weight="bold" fill="white">Main dependency</text>
+<rect x="55" y="211" width="658" height="157" fill="#edf3fa" stroke="#b9c7d8"/>
+<text x="72" y="266" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">Rules</text>
+<rect x="713" y="211" width="658" height="157" fill="#edf3fa" stroke="#b9c7d8"/>
+<text x="730" y="266" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">Usually one</text>
+<rect x="1371" y="211" width="658" height="157" fill="#edf3fa" stroke="#b9c7d8"/>
+<text x="1388" y="266" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">Explicit policies and</text>
+<text x="1388" y="322" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">criteria</text>
+<rect x="2029" y="211" width="658" height="157" fill="#edf3fa" stroke="#b9c7d8"/>
+<text x="2046" y="266" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">Transparency and low</text>
+<text x="2046" y="322" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">selection cost</text>
+<rect x="2687" y="211" width="658" height="157" fill="#edf3fa" stroke="#b9c7d8"/>
+<text x="2704" y="266" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">Rule coverage and exception</text>
+<text x="2704" y="322" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">handling</text>
+<rect x="55" y="368" width="658" height="157" fill="#f8fafc" stroke="#b9c7d8"/>
+<text x="72" y="423" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">Classifier or preferences</text>
+<rect x="713" y="368" width="658" height="157" fill="#f8fafc" stroke="#b9c7d8"/>
+<text x="730" y="423" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">Usually one, plus any</text>
+<text x="730" y="479" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">embeddings</text>
+<rect x="1371" y="368" width="658" height="157" fill="#f8fafc" stroke="#b9c7d8"/>
+<text x="1388" y="423" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">Labeled data and calibration</text>
+<rect x="2029" y="368" width="658" height="157" fill="#f8fafc" stroke="#b9c7d8"/>
+<text x="2046" y="423" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">Selection without generating</text>
+<text x="2046" y="479" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">alternative answers</text>
+<rect x="2687" y="368" width="658" height="157" fill="#f8fafc" stroke="#b9c7d8"/>
+<text x="2704" y="423" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">Representative data</text>
+<rect x="55" y="525" width="658" height="157" fill="#edf3fa" stroke="#b9c7d8"/>
+<text x="72" y="580" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">Similarity</text>
+<rect x="713" y="525" width="658" height="157" fill="#edf3fa" stroke="#b9c7d8"/>
+<text x="730" y="580" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">Usually one, plus vector</text>
+<text x="730" y="636" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">representation</text>
+<rect x="1371" y="525" width="658" height="157" fill="#edf3fa" stroke="#b9c7d8"/>
+<text x="1388" y="580" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">Evaluated history</text>
+<rect x="2029" y="525" width="658" height="157" fill="#edf3fa" stroke="#b9c7d8"/>
+<text x="2046" y="580" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">Incremental use of examples</text>
+<rect x="2687" y="525" width="658" height="157" fill="#edf3fa" stroke="#b9c7d8"/>
+<text x="2704" y="580" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">Neighbor coverage and</text>
+<text x="2704" y="636" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">relevance</text>
+<rect x="55" y="682" width="658" height="157" fill="#f8fafc" stroke="#b9c7d8"/>
+<text x="72" y="737" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">Cascade</text>
+<rect x="713" y="682" width="658" height="157" fill="#f8fafc" stroke="#b9c7d8"/>
+<text x="730" y="737" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">One or more</text>
+<rect x="1371" y="682" width="658" height="157" fill="#f8fafc" stroke="#b9c7d8"/>
+<text x="1388" y="737" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">Acceptance criterion</text>
+<rect x="2029" y="682" width="658" height="157" fill="#f8fafc" stroke="#b9c7d8"/>
+<text x="2046" y="737" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">Escalation only when needed</text>
+<rect x="2687" y="682" width="658" height="157" fill="#f8fafc" stroke="#b9c7d8"/>
+<text x="2704" y="737" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">Validation reliability and</text>
+<text x="2704" y="793" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">cost</text>
+<rect x="55" y="839" width="658" height="157" fill="#edf3fa" stroke="#b9c7d8"/>
+<text x="72" y="894" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">Self-verification or judge</text>
+<rect x="713" y="839" width="658" height="157" fill="#edf3fa" stroke="#b9c7d8"/>
+<text x="730" y="894" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">Two or more operations,</text>
+<text x="730" y="950" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">depending on design</text>
+<rect x="1371" y="839" width="658" height="157" fill="#edf3fa" stroke="#b9c7d8"/>
+<text x="1388" y="894" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">Examples, rubric, or</text>
+<text x="1388" y="950" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">evaluator</text>
+<rect x="2029" y="839" width="658" height="157" fill="#edf3fa" stroke="#b9c7d8"/>
+<text x="2046" y="894" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">Assessment conditioned on the</text>
+<text x="2046" y="950" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">result</text>
+<rect x="2687" y="839" width="658" height="157" fill="#edf3fa" stroke="#b9c7d8"/>
+<text x="2704" y="894" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">Correlated errors and</text>
+<text x="2704" y="950" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">additional cost</text>
+<rect x="55" y="996" width="658" height="157" fill="#f8fafc" stroke="#b9c7d8"/>
+<text x="72" y="1051" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">Adaptive or generative</text>
+<rect x="713" y="996" width="658" height="157" fill="#f8fafc" stroke="#b9c7d8"/>
+<text x="730" y="1051" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">Variable</text>
+<rect x="1371" y="996" width="658" height="157" fill="#f8fafc" stroke="#b9c7d8"/>
+<text x="1388" y="1051" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">Observed feedback or</text>
+<text x="1388" y="1107" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">selection instructions</text>
+<rect x="2029" y="996" width="658" height="157" fill="#f8fafc" stroke="#b9c7d8"/>
+<text x="2046" y="1051" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">Adaptation to state and</text>
+<text x="2046" y="1107" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">context</text>
+<rect x="2687" y="996" width="658" height="157" fill="#f8fafc" stroke="#b9c7d8"/>
+<text x="2704" y="1051" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">Exploration cost, stability,</text>
+<text x="2704" y="1107" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">and explanation</text>
+<text x="55" y="1218" font-family="Arial" font-size="25" fill="#536476">© 2026 Aridio Silva | Project SGAEIA | CC BY 4.0 | DOI: 10.5281/zenodo.23763978</text>
+</svg>

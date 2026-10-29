@@ -1,0 +1,943 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>Roteadores de LLMs para Sistemas de AI: Arquitetura, Governança, Multiagentes, Enxames e Segurança — Aridio Silva</title>
+  <meta name="description" content="Revisão técnica de roteamento de LLMs, gateways, benchmarks, governança, segurança e evidência de trajetórias em sistemas agênticos e multiagentes.">
+  <meta name="author" content="Aridio Silva">
+  <meta name="copyright" content="© 2026 Aridio Silva">
+  <meta name="keywords" content="AI, LLM routing, AI gateway, multi-agent systems, swarms, security, governance, evaluation, SGAEIA">
+  <link rel="canonical" href="https://aridiosilva.com/publications/artigo24/pt/">
+  <link rel="license" href="https://creativecommons.org/licenses/by/4.0/">
+  <meta name="citation_title" content="Roteadores de LLMs para Sistemas de AI: Arquitetura, Governança, Multiagentes, Enxames e Segurança">
+  <meta name="citation_author" content="Silva, Aridio">
+  <meta name="citation_publication_date" content="2026/10/29">
+  <meta name="citation_online_date" content="2026/10/29">
+  <meta name="citation_language" content="pt-BR">
+  <meta name="citation_doi" content="10.5281/zenodo.23763978">
+  <meta name="citation_pdf_url" content="https://aridiosilva.com/assets/article24/article24-pt.pdf">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://www.googletagmanager.com; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https://*.google-analytics.com; connect-src https://*.google-analytics.com https://www.googletagmanager.com; media-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'; upgrade-insecure-requests">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <link rel="sitemap" type="application/xml" href="/sitemap.xml">
+  <link rel="describedby" href="/llms.txt" type="text/markdown">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;family=Source+Serif+4:opsz,wght@8..60,500;6..60,700&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/publications.css?v=20261012-14">
+  <link rel="stylesheet" href="/assets/article-header.css">
+  <link rel="stylesheet" href="/assets/article-accessibility.css">
+  <link rel="stylesheet" href="/assets/article20.css?v=20261014">
+  <link rel="stylesheet" href="/assets/article24.css?v=20261029-1">
+  <script defer src="/assets/article20-accessibility.js?v=20261014"></script>
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Roteadores de LLMs para Sistemas de AI: Arquitetura, Governança, Multiagentes, Enxames e Segurança">
+  <meta property="og:description" content="Revisão técnica de roteamento de LLMs, gateways, benchmarks, governança, segurança e evidência de trajetórias em sistemas agênticos e multiagentes.">
+  <meta property="og:url" content="https://aridiosilva.com/publications/artigo24/pt/">
+  <meta property="og:image" content="https://aridiosilva.com/assets/article24/pt/sgaeia-article-24-cover_PT.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="alternate" hreflang="en" href="https://aridiosilva.com/publications/artigo24/">
+  <link rel="alternate" hreflang="pt-BR" href="https://aridiosilva.com/publications/artigo24/pt/">
+  <link rel="alternate" hreflang="x-default" href="https://aridiosilva.com/publications/artigo24/">
+  <!-- GA4 G-MXMJ7Z3LS7: automatic cookieless audience measurement; analytics and advertising storage remain disabled. -->
+  <script defer src="/assets/analytics-consent.js?v=20261011"></script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"ScholarlyArticle","headline":"Roteadores de LLMs para Sistemas de AI: Arquitetura, Governança, Multiagentes, Enxames e Segurança","author":{"@type":"Person","name":"Aridio Silva","identifier":"https://orcid.org/0009-0008-2411-6995"},"datePublished":"2026-10-29","dateModified":"2026-10-29","inLanguage":"pt-BR","license":"https://creativecommons.org/licenses/by/4.0/","identifier":"https://doi.org/10.5281/zenodo.23763978","sameAs":["https://zenodo.org/records/23763978","https://doi.org/10.5281/zenodo.23763978","https://dev.to/aridiosilva/llm-routers-for-ai-systems-architecture-governance-multi-agent-systems-swarms-and-security-3g7f","https://medium.com/@aridiosilva/llm-routers-for-ai-systems-architecture-governance-multi-agent-systems-swarms-and-security-57b492be7cb8","https://www.academia.edu/179879094/LLM_Routers_for_AI_Systems"],"isPartOf":{"@type":"CreativeWorkSeries","name":"SGAEIA Research Series"},"url":"https://aridiosilva.com/publications/artigo24/pt/","image":"https://aridiosilva.com/assets/article24/pt/sgaeia-article-24-cover_PT.png","description":"Revisão técnica de roteamento de LLMs, gateways, benchmarks, governança, segurança e evidência de trajetórias em sistemas agênticos e multiagentes.","version":"1.0"}</script>
+  <link rel="stylesheet" href="/assets/fixed-site-header.css?v=20261029-2">
+  <link rel="stylesheet" href="/assets/editorial-hero.css?v=20261017-1">
+  <script defer src="/assets/fixed-site-header.js?v=20261016-1"></script>
+  <link rel="stylesheet" href="/assets/homepage-footer-preview.css?v=20261017-5">
+</head>
+<body class="article-page"><a class="skip" href="#main">Ir para o conteúdo principal</a><header class="site-header"><div class="shell header-inner"><a class="identity" href="/#top" aria-label="Aridio Silva home"><strong>Aridio Silva</strong><span>Independent Researcher · AI Systems Architecture</span></a><nav aria-label="Navegação principal"><a href="/">Início</a><a href="/sgaeia.html">SGAEIA</a><a href="/publications.html">Publicações</a><a href="/infographics/">Infográficos</a><a href="/challenges/">Challenges</a></nav><div class="reading-tools" role="group" aria-label="Controles de leitura"><button type="button" id="articleFontDecrease" aria-label="Diminuir tamanho do texto">A−</button><button type="button" id="articleFontIncrease" aria-label="Aumentar tamanho do texto">A+</button><button type="button" id="articleEasyRead" aria-pressed="false">Leitura fácil</button><button type="button" id="articleListen" aria-pressed="false">Ouvir</button></div></div></header><main id="main"><section class="hero"><div class="shell article"><h1>Roteadores de LLMs para Sistemas de AI: Arquitetura, Governança, Multiagentes, Enxames e Segurança</h1><p class="subtitle">Da otimização de custo à decisão governada sobre modelos, dados e trajetórias</p><p class="meta">Série de Pesquisa SGAEIA — Artigo 24 · 2026-10-29 · DOI 10.5281/zenodo.23763978</p><nav class="language-nav" aria-label="Article languages"><a href="/publications/artigo24/">English</a> · <a href="/publications/artigo24/pt/" aria-current="page">Português</a></nav></div></section><section class="content"><article class="shell article article-body"><p><strong>Série de Pesquisa SGAEIA — Artigo 24</strong></p><p><strong>Aridio Silva</strong><br>Pesquisador Independente, Brasil<br>Creator of SGAEIA — Secure Governed Autonomous Edge Intelligence Architecture<br><strong>ORCID:</strong> <a href="https://orcid.org/0009-0008-2411-6995" target="_blank" rel="noopener noreferrer">0009-0008-2411-6995</a><br><strong>DOI:</strong> <a href="https://doi.org/10.5281/zenodo.23763978" target="_blank" rel="noopener noreferrer">10.5281/zenodo.23763978</a><br><strong>Publicado:</strong> 29 de outubro de 2026<br><strong>Licença:</strong> Creative Commons Attribution 4.0 International — CC BY 4.0</p><p class="article-downloads"><a href="/assets/article24/article24-en.pdf" target="_blank" rel="noopener noreferrer">Baixar PDF em inglês</a><a href="/assets/article24/article24-pt.pdf" target="_blank" rel="noopener noreferrer">Baixar PDF em português</a></p><figure class="article-figure cover-figure"><img src="/assets/article24/pt/sgaeia-article-24-cover_PT.png" alt="Capa — Roteadores de LLMs para Sistemas de AI: Arquitetura, Governança, Multiagentes, Enxames e Segurança" width="1672" height="941" loading="eager" decoding="async" fetchpriority="high"><figcaption><strong>Capa — Roteadores de LLMs para Sistemas de AI: Arquitetura, Governança, Multiagentes, Enxames e Segurança</strong><span class="figure-credit">© Aridio Silva @aridiosilva · October 2026 · CC BY 4.0</span></figcaption></figure><h2>Resumo</h2>
+<p>O roteamento de modelos de linguagem permite distribuir requisições entre modelos, provedores e configurações com diferentes capacidades, custos e tempos de resposta. Sua utilidade, porém, depende de duas decisões distintas: determinar quais alternativas são admissíveis para a tarefa e escolher, entre elas, a configuração mais adequada. Este artigo apresenta uma revisão técnica do tema e sustenta que, em sistemas agênticos e multiagentes, o roteamento integra uma fronteira de decisão sobre autoridade, dados, recursos e continuidade das políticas. A análise distingue roteador, gateway e plano de controle; compara regras, classificadores, similaridade, cascatas e seleção orientada por modelos; e examina o que os benchmarks permitem concluir sobre qualidade, custo, latência e robustez. A contribuição analítica consiste em um quadro de avaliação de roteamento governado ligado ao SGAEIA, aplicado a cenários de substituição de modelos, orçamento e execução multiagente. A análise mostra por que economia por chamada não equivale a economia por tarefa, disponibilidade não assegura substituição admissível e acurácia média não demonstra integridade de uma trajetória. A adoção deve depender de ganhos observados contra referências simples, acompanhados de evidência suficiente sobre os limites e as consequências das decisões.</p>
+<p><strong>Palavras-chave:</strong> AI; roteamento de LLMs; AI gateway; sistemas multiagentes; segurança; governança; avaliação; SGAEIA.</p>
+<h2>Sumário</h2>
+<ol>
+<li><a href="#section-1">O problema vai além de escolher o modelo mais barato</a></li>
+<li><a href="#section-2">Roteador, gateway e plano de controle</a></li>
+<li><a href="#section-3">Como a evidência foi organizada</a></li>
+<li><a href="#section-4">Estratégias de roteamento e seus compromissos</a></li>
+<li><a href="#section-5">Qualidade, custo e latência precisam da mesma unidade de análise</a></li>
+<li><a href="#section-6">Integração e escolha de infraestrutura</a></li>
+<li><a href="#section-7">O que os benchmarks demonstram</a></li>
+<li><a href="#section-8">Comparação transversal das estratégias</a></li>
+<li><a href="#section-9">Identidade, autoridade e substituição governada</a></li>
+<li><a href="#section-10">Agentes, multiagentes e enxames</a></li>
+<li><a href="#section-11">Governança, segurança e evidências</a></li>
+<li><a href="#section-12">Quadro SGAEIA de análise de roteamento governado</a></li>
+<li><a href="#section-13">Evolução e maturidade devem ser avaliadas por dimensão</a></li>
+<li><a href="#section-14">Quando adotar e quando manter uma solução mais simples</a></li>
+<li><a href="#section-15">Discussão e limites da análise</a></li>
+<li><a href="#section-16">Conclusão</a></li>
+</ol>
+<p><a id="section-1"></a></p>
+<h2>1. O problema vai além de escolher o modelo mais barato</h2>
+<p>Uma aplicação que usa modelos de linguagem precisa decidir onde investir capacidade de inferência. Um modelo adequado para extrair campos de um documento pode ser insuficiente para verificar uma solução complexa; um modelo competente nessa verificação pode apresentar custo ou tempo de resposta incompatível com tarefas repetitivas. A literatura de roteamento explora essa heterogeneidade para distribuir consultas entre alternativas, em vez de manter uma escolha fixa para todo o tráfego. O potencial econômico nasce da complementaridade dos modelos e da diversidade das tarefas, mas depende da capacidade de antecipar ou reconhecer onde cada alternativa funciona [<a href="#ref-1">1</a>][<a href="#ref-5">5</a>][<a href="#ref-6">6</a>].</p>
+<p>O problema muda quando a resposta produzida participa de uma ação. Num assistente de consulta, a seleção inadequada pode gerar uma resposta insatisfatória; num agente que consulta sistemas, escreve código ou delega trabalho, a mesma decisão pode alterar dados transmitidos, ferramentas utilizadas e efeitos posteriores. A escolha do modelo passa a depender do estado da tarefa, de quem autorizou a execução e dos limites que devem acompanhar essa autorização. O SGAEIA oferece a perspectiva arquitetural adotada neste artigo: capacidade de produzir uma resposta e autoridade para conduzir uma ação são propriedades diferentes [<a href="#ref-27">27</a>].</p>
+<p>A tese central é que <strong>o roteamento em sistemas agênticos deixa de ser apenas uma otimização de inferência e integra uma fronteira crítica de decisão, governança e produção de evidências</strong>. Isso não transforma todo roteador em um sistema de segurança nem torna obrigatório usar um algoritmo aprendido. O estudo de Shafran e colaboradores já situa roteadores entre os planos de controle de LLMs e demonstra ataques dirigidos à seleção do modelo [<a href="#ref-9">9</a>]. O passo desenvolvido aqui é organizar as implicações desse entendimento em critérios comparáveis, decisões de engenharia e evidências verificáveis.</p>
+<p>Seis perguntas orientam a análise: em quais condições o roteamento economiza preservando a qualidade; quando uma estratégia supera alternativas simples; que valor o gateway oferece independentemente do algoritmo; quais riscos decorrem da concentração de credenciais e políticas; o que muda em agentes e enxames; e que evidência permite governar seleção, substituição e revogação. A contribuição do artigo está na síntese dessas perguntas em um mesmo quadro de decisão, apresentado e aplicado na Seção 12. Seu valor é analítico: permitir examinar uma configuração, identificar seus pressupostos e explicar uma decisão de adoção ou rejeição. A eficácia de uma implementação concreta exige avaliação no ambiente em que será utilizada.</p>
+<p><a id="section-2"></a></p>
+<h2>2. Roteador, gateway e plano de controle</h2>
+<p>Um <strong>roteador de LLMs</strong> é uma função de seleção: recebe informações sobre uma tarefa e escolhe um modelo, uma implantação ou uma configuração de execução. Essa função pode consistir em regras locais, um classificador, um cálculo de similaridade ou uma política que usa resultados intermediários. Sua existência não pressupõe um servidor HTTP ou uma API pública; a seleção pode ocorrer dentro do próprio processo da aplicação. A representação como decisão sequencial, adotada pelo LLMRouter, ajuda a compreender casos que incluem histórico, personalização e múltiplas etapas [<a href="#ref-8">8</a>].</p>
+<p>Um <strong>AI gateway</strong> medeia o acesso aos modelos. Pode adaptar protocolos, verificar credenciais, aplicar limites, encaminhar requisições e produzir telemetria, além de hospedar uma função de roteamento. Essas responsabilidades continuam úteis mesmo quando todas as consultas seguem para um único modelo. A documentação de chaves virtuais do LiteLLM, por exemplo, descreve controle de acesso a modelos e acompanhamento de gastos; isso caracteriza uma capacidade de mediação, não uma demonstração de que seu seletor obtenha a melhor relação entre custo e qualidade [<a href="#ref-10">10</a>].</p>
+<p>O <strong>plano de controle</strong> administra as decisões que governam o ambiente: políticas, configurações, permissões, versões e critérios de substituição. O plano de dados executa o tráfego correspondente. Um gateway participa da aplicação dessas decisões, mas seus componentes administrativos, seu caminho de inferência e seu armazenamento de evidências não precisam compartilhar o mesmo domínio de privilégios. A distinção tem consequências práticas: comprometer uma aplicação cliente não deveria permitir editar a política do gateway, e observar uma resposta não deveria conceder acesso às credenciais que a tornaram possível [<a href="#ref-16">16</a>].</p>
+<div class="article-table-wrap"><table>
+<thead>
+<tr>
+<th>Elemento</th>
+<th>Pergunta principal</th>
+<th>Responsabilidade</th>
+<th>Evidência de avaliação</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Roteador</td>
+<td>Qual alternativa deve atender esta tarefa?</td>
+<td>Selecionar modelo, configuração ou próxima etapa</td>
+<td>Qualidade da escolha, custo de decisão e generalização</td>
+</tr>
+<tr>
+<td>Gateway</td>
+<td>Como mediar a execução autorizada?</td>
+<td>Adaptar acesso, aplicar controles e observar o tráfego</td>
+<td>Isolamento, disponibilidade, limites e registros</td>
+</tr>
+<tr>
+<td>Plano de controle</td>
+<td>Quem pode definir e alterar essas decisões?</td>
+<td>Administrar políticas, permissões e ciclo de vida</td>
+<td>Autorização das mudanças, versões e possibilidade de revogação</td>
+</tr>
+</tbody></table></div>
+<figure class="article-figure"><img src="/assets/article24/pt/sgaeia-article-24-figure-01-governed-routing-decision_PT.png" alt="Figura 1. Seleção de modelo condicionada por políticas e validação" width="4800" height="2700" loading="lazy" decoding="async"><figcaption><strong>Figura 1.</strong> O fluxo distingue análise da tarefa, decisão de roteamento e validação do resultado. A seleção deve considerar as restrições aplicáveis antes de otimizar desempenho. O desenho é conceitual: a presença desses blocos não comprova que uma implantação aplique as políticas corretamente.<span class="figure-credit">© 2026 Aridio Silva · Project SGAEIA · CC BY 4.0</span></figcaption></figure>
+<p>Confundir essas camadas produz dois erros de avaliação. O primeiro é atribuir ao algoritmo de seleção benefícios que vêm da infraestrutura, como inventário de chaves ou auditoria centralizada. O segundo é considerar que um gateway com muitos recursos já resolveu qualidade, autorização e segurança de agentes. Uma arquitetura consistente define a responsabilidade de cada componente e verifica suas interações, inclusive quando o componente está indisponível ou opera com informação incompleta.</p>
+<p><a id="section-3"></a></p>
+<h2>3. Como a evidência foi organizada</h2>
+<p>A análise é uma revisão técnica narrativa, orientada pelas seis perguntas da introdução. O corpus de partida foi o material do Artigo 24, complementado pela consulta a trabalhos originais, registros editoriais, documentação oficial, referências de gestão de riscos e relatos técnicos de incidentes. A seleção privilegia fontes que explicam um mecanismo, apresentam avaliação comparável ou documentam uma condição operacional relevante. A data de referência desta revisão é 29 de outubro de 2026; ela não corresponde a uma busca exaustiva de toda a produção sobre roteamento.</p>
+<p>Foram separadas quatro classes de afirmação. Resultados de métodos e benchmarks são atribuídos aos seus autores e às condições avaliadas. Recursos de produtos são descritos como funcionalidades documentadas pelos fornecedores, enquanto requisitos legais e de gestão de riscos permanecem vinculados às suas fontes oficiais. As comparações transversais, a matriz de governança e os cenários de decisão são sínteses analíticas desenvolvidas neste artigo. Essa separação permite distinguir o que foi observado por terceiros do que é uma consequência argumentada ou uma proposta de avaliação.</p>
+<p>Um mesmo percentual de economia pode representar menos chamadas ao modelo caro, menor cobrança de API ou menor custo computacional. Por isso, a comparação registra a unidade, a referência usada e o limite de generalização, em vez de ordenar trabalhos pelos maiores percentuais. Também distingue estudos que propõem um método de trabalhos que reavaliam vários métodos sob um protocolo comum. Nenhuma dessas classes dispensa examinar dados, modelos, avaliadores e possíveis interesses comerciais.</p>
+<p>O artigo não reapresenta os resultados publicados como experimentos próprios. Os cálculos da Seção 5 são cenários hipotéticos com entradas explícitas e aritmética reproduzível. A contribuição é demonstrada pela consistência da comparação e pela aplicação do quadro de governança a decisões em que critérios isolados levam a conclusões insuficientes. Uma avaliação empírica de redução de risco, desempenho de controles ou segurança de produção pertence a uma etapa posterior, com protocolo e resultados próprios.</p>
+<p><a id="section-4"></a></p>
+<h2>4. Estratégias de roteamento e seus compromissos</h2>
+<h3>4.1 Escolher antes da geração</h3>
+<p>O roteamento preditivo escolhe o destino usando informações disponíveis antes da resposta: conteúdo da consulta, domínio, tamanho, identidade, histórico ou uma representação vetorial. Regras explícitas podem encaminhar documentos de determinada classe a uma implantação autorizada ou reservar um modelo a tarefas que exigem uma capacidade específica. Sua transparência facilita explicar a decisão e verificar exceções; sua limitação é a dificuldade de representar fronteiras complexas sem proliferar regras. Uma regra por palavra-chave, por exemplo, pode confundir uma pergunta sobre programação com uma solicitação que apenas menciona uma linguagem.</p>
+<p>Classificadores e modelos de preferência substituem parte dessas regras por uma estimativa aprendida. O RouteLLM utiliza dados de preferências para estimar quando vale recorrer ao modelo mais capaz e investiga diferentes arquiteturas de seleção [<a href="#ref-1">1</a>]. O Hybrid LLM também ajusta o encaminhamento entre alternativas menores e maiores segundo uma qualidade desejada [<a href="#ref-4">4</a>]. A vantagem é economizar sem gerar previamente todas as respostas; a dependência é possuir supervisão representativa e recalibrar a seleção quando mudam modelos, tarefas ou critérios de qualidade.</p>
+<p>O roteamento por similaridade compara a tarefa atual com exemplos anteriores e usa seu histórico para recomendar um modelo. Isso permite aproveitar a estrutura de domínios, mas proximidade no espaço de embeddings não equivale a igualdade de dificuldade ou de consequência. Uma questão simples e uma questão crítica podem compartilhar vocabulário e exigir tratamentos diferentes. A similaridade pode informar a expectativa de desempenho; a autorização para processar os dados deve vir de critérios próprios.</p>
+<h3>4.2 Decidir depois de observar uma resposta</h3>
+<p>Nas cascatas, um modelo é consultado antes que se decida encerrar ou escalar. O FrugalGPT explora combinações de modelos e critérios de aceitação para reduzir o custo de inferência [<a href="#ref-2">2</a>]. A estratégia é atraente quando a primeira alternativa resolve parte expressiva das tarefas e o resultado pode ser avaliado de maneira suficientemente confiável. Quando quase tudo escala, o sistema paga pelo modelo inicial e pelo seguinte, além do avaliador e da latência acumulada.</p>
+<p>O AutoMix combina uma resposta inicial, autoverificação e decisão sob incerteza, reconhecendo que a avaliação intermediária pode ser ruidosa [<a href="#ref-3">3</a>]. A questão central deixa de ser apenas a capacidade do modelo pequeno e passa a incluir a capacidade do verificador de reconhecer seus erros. Um JSON válido pode conter dados errados, e uma resposta confiante pode carecer de sustentação. Validar formato, avaliar conteúdo e autorizar uma ação são verificações diferentes, ainda que compartilhem parte da infraestrutura.</p>
+<p>Um LLM usado como juiz amplia a flexibilidade da avaliação, mas também introduz custo, dependência e possíveis erros correlacionados. Trocar o fornecedor do juiz pode ampliar diversidade, porém não demonstra independência efetiva: instruções, referências e critérios podem continuar compartilhados. Para tarefas importantes, o sistema precisa medir desacordos, falsos aceites e falsos bloqueios, além da nota média. A identidade do avaliador deve integrar o registro da decisão, sobretudo quando sua nota determina uma ação posterior.</p>
+<h3>4.3 Adaptar a política e usar modelos para selecionar modelos</h3>
+<p>Estratégias adaptativas podem atualizar decisões a partir de resultados observados, enquanto estratégias generativas usam um LLM para interpretar, decompor ou planejar a própria seleção. Bandits e abordagens semelhantes enfrentam um compromisso adicional: explorar alternativas para aprender pode produzir custo e respostas inferiores durante a exploração. Um seletor generativo, por sua vez, acrescenta inferência antes da inferência principal e pode tornar a decisão mais difícil de explicar. Esses métodos precisam justificar o custo e o risco adicionais em relação a uma alternativa simples.</p>
+<p>A revisão de Jiangeng e colaboradores organiza o campo em operações preditivas, adaptativas e generativas e distingue o trabalho de infraestrutura que avalia ou sustenta o roteamento [<a href="#ref-7">7</a>]. Essa classificação complementa a divisão entre decidir antes e depois da geração. Um gateway pode combinar regras obrigatórias, classificador preditivo e escalonamento adaptativo sem que esses mecanismos sejam concorrentes em todos os aspectos. A taxonomia deve identificar qual decisão cada mecanismo toma e qual informação utiliza.</p>
+<figure class="article-figure"><img src="/assets/article24/pt/sgaeia-article-24-figure-02-routing-taxonomy_PT.png" alt="Figura 2. Famílias de estratégias e momento da decisão" width="4800" height="2700" loading="lazy" decoding="async"><figcaption><strong>Figura 2.</strong> A taxonomia relaciona seleção prévia, cascatas e avaliação intermediária. Ela ajuda a identificar onde surgem chamadas adicionais e dependência de supervisão. As categorias podem coexistir numa aplicação; sua presença não determina uma ordem universal de qualidade.<span class="figure-credit">© 2026 Aridio Silva · Project SGAEIA · CC BY 4.0</span></figcaption></figure>
+<div class="article-table-wrap"><table>
+<thead>
+<tr>
+<th>Estratégia</th>
+<th>Chamadas de geração</th>
+<th>Treinamento ou supervisão</th>
+<th>Principal vantagem</th>
+<th>Principal dependência</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Regras</td>
+<td>Em geral, uma</td>
+<td>Política e critérios explícitos</td>
+<td>Transparência e baixo custo de seleção</td>
+<td>Cobertura das regras e tratamento de exceções</td>
+</tr>
+<tr>
+<td>Classificador ou preferência</td>
+<td>Em geral, uma, além de eventuais embeddings</td>
+<td>Dados rotulados e calibração</td>
+<td>Seleção sem gerar respostas alternativas</td>
+<td>Representatividade dos dados</td>
+</tr>
+<tr>
+<td>Similaridade</td>
+<td>Em geral, uma, além da representação vetorial</td>
+<td>Histórico avaliado</td>
+<td>Aproveitamento incremental de exemplos</td>
+<td>Cobertura e relevância dos vizinhos</td>
+</tr>
+<tr>
+<td>Cascata</td>
+<td>Uma ou mais</td>
+<td>Critério de aceitação</td>
+<td>Escalar somente quando necessário</td>
+<td>Confiabilidade e custo da validação</td>
+</tr>
+<tr>
+<td>Autoverificação ou juiz</td>
+<td>Duas ou mais operações, conforme o desenho</td>
+<td>Exemplos, rubrica ou avaliador</td>
+<td>Avaliação condicionada ao resultado</td>
+<td>Erros correlacionados e custo adicional</td>
+</tr>
+<tr>
+<td>Adaptativo ou generativo</td>
+<td>Variável</td>
+<td>Retorno observado ou instruções de seleção</td>
+<td>Adaptação a estado e contexto</td>
+<td>Custo de exploração, estabilidade e explicação</td>
+</tr>
+</tbody></table></div>
+<p><a id="section-5"></a></p>
+<h2>5. Qualidade, custo e latência precisam da mesma unidade de análise</h2>
+<h3>5.1 O custo relevante é o da tarefa concluída</h3>
+<p>O preço de uma chamada não descreve o custo de um sistema. A conta inclui tokens de entrada e saída, tentativas repetidas, embeddings, verificadores, infraestrutura e trabalho de operação. Em fluxos agênticos, também depende de quantas chamadas são necessárias para concluir uma tarefa e de quantas trajetórias precisam ser refeitas. Um modelo barato por token pode tornar a tarefa mais cara se exigir mais correções, gerar respostas excessivamente longas ou aumentar as chamadas a ferramentas.</p>
+<p>Uma decomposição útil, proposta aqui para a avaliação operacional, é:</p>
+<figure class="article-figure formula-figure"><img src="/assets/article24/pt/publication/formulas/sgaeia-article-24-formula-01_PT.png" alt="Equação 1. Decomposição do custo total da tarefa." width="2640" height="242" loading="lazy" decoding="async"><figcaption><strong>Equação 1. Decomposição do custo total da tarefa.</strong><span class="figure-credit">© 2026 Aridio Silva · Project SGAEIA · CC BY 4.0</span></figcaption></figure>
+
+<p>Essa expressão organiza os componentes a medir; não presume que sejam constantes ou independentes. O custo de repetição depende da qualidade das respostas e da política de recuperação, enquanto o custo de operação pode conter uma parcela fixa relevante. Para comparar alternativas, é preciso manter a mesma definição de tarefa concluída e os mesmos critérios de aceitação. Sem isso, a economia pode resultar apenas de aceitar respostas piores ou encerrar tarefas prematuramente.</p>
+<p>Considere um cenário hipotético em que a chamada ao modelo compacto custa US$ 0,002 e a chamada ao modelo mais capaz custa US$ 0,020, com comprimentos de entrada e saída já incorporados nesses valores. Um seletor envia 80% das consultas ao primeiro e 20% ao segundo, acrescentando US$ 0,0004 por consulta para decidir. O custo variável médio será US$ 0,006, uma redução de 70% em relação ao envio de todas as consultas ao modelo mais caro. Esse cálculo pressupõe que a distribuição, os custos por chamada e a qualidade exigida permaneçam os mesmos.</p>
+<figure class="article-figure formula-figure"><img src="/assets/article24/pt/publication/formulas/sgaeia-article-24-formula-02_PT.png" alt="Equação 2. Custo variável médio da configuração roteada hipotética." width="2640" height="242" loading="lazy" decoding="async"><figcaption><strong>Equação 2. Custo variável médio da configuração roteada hipotética.</strong><span class="figure-credit">© 2026 Aridio Silva · Project SGAEIA · CC BY 4.0</span></figcaption></figure>
+
+<p>Se a operação do roteador acrescentar US$ 500 mensais, a redução variável não se converte integralmente em economia total. Com 10 mil consultas, o gasto passa de US$ 200 para US$ 560; com 50 mil, de US$ 1.000 para US$ 800. O ponto de equilíbrio é aproximadamente 35.715 consultas mensais, sob as premissas do cenário. O exemplo demonstra por que volume e custo fixo devem acompanhar qualquer percentual de economia apresentado a quem decide a adoção.</p>
+<div class="article-table-wrap"><table>
+<thead>
+<tr>
+<th>Volume mensal hipotético</th>
+<th>Sempre o modelo mais caro</th>
+<th>Roteamento, incluindo US$ 500 fixos</th>
+<th>Diferença para a referência</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>10.000 consultas</td>
+<td>US$ 200</td>
+<td>US$ 560</td>
+<td>Aumento de US$ 360</td>
+</tr>
+<tr>
+<td>50.000 consultas</td>
+<td>US$ 1.000</td>
+<td>US$ 800</td>
+<td>Economia de US$ 200</td>
+</tr>
+<tr>
+<td>100.000 consultas</td>
+<td>US$ 2.000</td>
+<td>US$ 1.100</td>
+<td>Economia de US$ 900</td>
+</tr>
+</tbody></table></div>
+<figure class="article-figure formula-figure"><img src="/assets/article24/pt/publication/formulas/sgaeia-article-24-formula-03_PT.png" alt="Equação 3. Volume de equilíbrio sob um custo operacional fixo." width="2640" height="242" loading="lazy" decoding="async"><figcaption><strong>Equação 3. Volume de equilíbrio sob um custo operacional fixo.</strong><span class="figure-credit">© 2026 Aridio Silva · Project SGAEIA · CC BY 4.0</span></figcaption></figure>
+
+<p>O ponto de equilíbrio existe nessa forma somente quando o custo variável roteado é inferior ao custo da referência e a parcela fixa pode ser representada por F. Ele muda se o próprio gateway atender outros objetivos, como gestão de acesso, cujo custo já existiria sem seleção dinâmica. Nesse caso, deve-se avaliar o custo incremental de ativar o roteamento, evitando imputar duas vezes a mesma infraestrutura. A decisão econômica fica mais precisa quando separa o valor da mediação do valor do seletor.</p>
+<h3>5.2 Medir o compromisso sem confundir suas escalas</h3>
+<p>O RouteLLM define PGR como a fração da diferença de desempenho entre dois modelos recuperada pelo roteador. APGR resume a curva de recuperação ao variar o uso do modelo mais caro, e CPT indica a fração de chamadas necessária para alcançar uma recuperação especificada [<a href="#ref-1">1</a>]. Esses indicadores ajudam a analisar uma configuração binária, mas não equivalem automaticamente a redução de cobrança em dólares. O custo real depende também dos comprimentos gerados, das tarifas e das operações auxiliares.</p>
+<figure class="article-figure formula-figure"><img src="/assets/article24/pt/publication/formulas/sgaeia-article-24-formula-04_PT.png" alt="Equação 4. Recuperação da diferença de desempenho entre as referências compacta e forte." width="2640" height="242" loading="lazy" decoding="async"><figcaption><strong>Equação 4. Recuperação da diferença de desempenho entre as referências compacta e forte.</strong><span class="figure-credit">© 2026 Aridio Silva · Project SGAEIA · CC BY 4.0</span></figcaption></figure>
+
+<p>A expressão exige que a diferença no denominador seja relevante e diferente de zero. PGR de 50% significa recuperar metade da diferença entre as referências, não alcançar 50% da nota do modelo mais capaz. Se as notas das referências forem próximas, pequenas variações de avaliação podem alterar bastante o indicador. Por isso, a nota absoluta, a variabilidade e a curva de custo devem acompanhar o valor normalizado.</p>
+<p>RouterBench e LLMRouterBench ampliam a análise para conjuntos de modelos e fronteiras de custo e qualidade [<a href="#ref-5">5</a>][<a href="#ref-6">6</a>]. Uma configuração é dominada quando outra oferece qualidade pelo menos igual com custo não superior, melhorando ao menos uma dimensão. A fronteira de Pareto reúne alternativas não dominadas, mas sua posição depende do conjunto comparado e das medidas escolhidas. Estar nessa fronteira não demonstra que uma alternativa respeite autorização, residência de dados ou requisitos de segurança.</p>
+<p>A latência precisa incluir seleção, fila, rede, geração e validação. Em cascatas, a sequência pode acumular esperas; na execução paralela, o tempo pode diminuir à custa de chamadas simultâneas. Devem ser observados o tempo até o primeiro token e o tempo total, com percentis como p50, p95 e p99 e sob uma carga declarada. O número de parâmetros do modelo, isoladamente, não determina o tempo percebido: infraestrutura, concorrência, contexto e extensão da saída podem alterar a comparação.</p>
+<p><a id="section-6"></a></p>
+<h2>6. Integração e escolha de infraestrutura</h2>
+<p>Uma API comum reduz o trabalho de integração, mas compatibilidade sintática não significa equivalência funcional. Modelos e provedores podem diferir no tratamento de ferramentas, saídas estruturadas, imagens, contexto, parâmetros de amostragem e configurações de raciocínio. A aplicação precisa verificar as capacidades que utiliza e definir como tratar recursos ausentes. Uma troca bem-sucedida no transporte pode falhar na semântica da tarefa, mesmo quando a resposta HTTP indica sucesso.</p>
+<figure class="article-figure"><img src="/assets/article24/pt/sgaeia-article-24-figure-03-ai-gateway-reference-architecture_PT.png" alt="Figura 3. Separação entre aplicação, mediação, seleção e provedores" width="4800" height="2700" loading="lazy" decoding="async"><figcaption><strong>Figura 3.</strong> A arquitetura de referência organiza responsabilidades de mediação e observação em torno da seleção. Os componentes são papéis conceituais, que podem ser distribuídos em serviços e domínios de privilégio distintos. O gateway não substitui o controle de ferramentas nem a autorização das ações executadas pela aplicação.<span class="figure-credit">© 2026 Aridio Silva · Project SGAEIA · CC BY 4.0</span></figcaption></figure>
+<p>O esforço de raciocínio pode integrar a configuração selecionada quando o provedor oferece esse controle. Nesse caso, a unidade avaliada deixa de ser somente o nome do modelo e passa a incluir modelo, versão, configuração e condições de execução. Uma mesma família pode produzir custos e tempos diferentes conforme o esforço, o contexto e a extensão da resposta. Os valores aceitos e seu significado precisam ser obtidos na documentação da versão utilizada, em vez de presumidos por uma interface multiprovedor.</p>
+<p>O ecossistema também reúne ferramentas com finalidades diferentes. RouteLLM e LLMRouter oferecem recursos para desenvolver e avaliar seletores [<a href="#ref-1">1</a>][<a href="#ref-8">8</a>]; LiteLLM documenta mediação de acesso e gestão de chaves [<a href="#ref-10">10</a>]; OpenRouter documenta substituição de modelos e seleção de provedores [<a href="#ref-12">12</a>][<a href="#ref-13">13</a>]. Portkey descreve funcionalidades de gateway, incluindo opções de resiliência e controle de tráfego [<a href="#ref-15">15</a>]. A documentação comprova o recurso anunciado e suas condições declaradas, mas não oferece uma avaliação independente de adequação ao ambiente do leitor.</p>
+<div class="article-table-wrap"><table>
+<thead>
+<tr>
+<th>Tipo de solução</th>
+<th>Valor esperado</th>
+<th>Responsabilidade que permanece com o adotante</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Biblioteca de pesquisa</td>
+<td>Implementações comparáveis e instrumentos de avaliação</td>
+<td>Integração, autorização, operação e validação no domínio</td>
+</tr>
+<tr>
+<td>Gateway operado pela organização</td>
+<td>Controle sobre implantação, configuração e integração de políticas</td>
+<td>Atualização, capacidade, isolamento, observabilidade e resposta a incidentes</td>
+</tr>
+<tr>
+<td>Serviço gerenciado ou agregador</td>
+<td>Redução do trabalho de integração e acesso a alternativas</td>
+<td>Avaliação contratual, tratamento de dados, dependência e recuperação</td>
+</tr>
+<tr>
+<td>Seleção incorporada a um produto</td>
+<td>Adaptação já integrada à experiência de uso</td>
+<td>Compreender limites de escolha, visibilidade e controles efetivamente disponíveis</td>
+</tr>
+</tbody></table></div>
+<p>Hospedagem própria não assegura soberania se embeddings, telemetria ou mecanismos de suporte transmitirem dados a terceiros. Um serviço gerenciado também não deve ser avaliado apenas pelo número de modelos disponíveis: importam localização efetiva, retenção, suboperadores, administração e possibilidade de exportar evidências. A lista de candidatos deve corresponder a implantações identificáveis, e não somente a nomes comerciais de modelos. Duas implantações do mesmo modelo podem ter condições de tratamento de dados diferentes.</p>
+<p>O desempenho do gateway deve ser medido separadamente do tempo do modelo. Testes com servidor simulado ajudam a isolar sobrecarga de mediação, mas não descrevem toda a aplicação; autenticação, banco, logs, filtros e concorrência alteram o resultado. A documentação de benchmarks do LiteLLM deve ser lida com suas configurações e condições de carga [<a href="#ref-14">14</a>]. Comparações publicadas por fornecedores concorrentes exigem ainda atenção a versões, paridade da configuração e interesse comercial, antes de se concluir que diferenças de milissegundos persistirão em produção.</p>
+<p><a id="section-7"></a></p>
+<h2>7. O que os benchmarks demonstram</h2>
+<p>Os estudos revisados sustentam a possibilidade de economizar com seleção de modelos, mas seus resultados respondem a perguntas diferentes. FrugalGPT relata reduções de custo de até 98% em configurações de cascata estudadas pelos autores [<a href="#ref-2">2</a>]. Hybrid LLM relata até 40% menos chamadas ao modelo maior, e AutoMix relata redução superior a 50% no custo computacional para desempenho comparável nos cenários avaliados [<a href="#ref-3">3</a>][<a href="#ref-4">4</a>]. Esses números não formam uma classificação de superioridade: medem objetos diferentes e usam tarefas, modelos e avaliadores distintos.</p>
+<p>O RouteLLM mostra o potencial de aprender a seleção com preferências. Na configuração de fatoração de matrizes com dados aumentados por juiz, a tabela de MT-Bench apresenta CPT de 13,40% para recuperar 50% da diferença de desempenho e de 31,31% para recuperar 80% [<a href="#ref-1">1</a>]. A Figura 4 representa esse tipo de comparação entre fração de chamadas e recuperação da diferença. O resultado demonstra eficiência naquele protocolo; não determina a fração adequada para outro domínio ou outra geração de modelos.</p>
+<figure class="article-figure"><img src="/assets/article24/pt/sgaeia-article-24-figure-04-routellm-cpt_PT.png" alt="Figura 4. Fração de chamadas para metas de recuperação no RouteLLM" width="4800" height="2700" loading="lazy" decoding="async"><figcaption><strong>Figura 4.</strong> A comparação usa resultados de MT-Bench do estudo RouteLLM. CPT se refere à recuperação da diferença entre as duas referências, e não à porcentagem da nota absoluta do modelo forte. Os valores pertencem ao par de modelos, aos dados e à avaliação do estudo [<a href="#ref-1">1</a>].<span class="figure-credit">© 2026 Aridio Silva · Project SGAEIA · CC BY 4.0</span></figcaption></figure>
+<p>RouterBench contribui com resultados de inferência pré-computados e um protocolo para comparar políticas no espaço de custo e qualidade [<a href="#ref-5">5</a>]. Esse desenho reduz o custo de testar seletores sobre as mesmas respostas e permite identificar ganhos que não dependem de uma nova geração a cada avaliação. Ao mesmo tempo, uma matriz estática não reproduz automaticamente filas, indisponibilidades, mudanças de API ou adaptações que ocorrem durante uma trajetória real. O benchmark torna uma comparação controlável; a avaliação operacional precisa acrescentar as dimensões ausentes.</p>
+<p>LLMRouterBench oferece um contraponto importante aos estudos proponentes. Seu protocolo reúne 33 modelos e 21 conjuntos de dados, confirma complementaridade entre modelos e encontra vários métodos com desempenho semelhante, incluindo casos que não superam referências simples de forma confiável [<a href="#ref-6">6</a>]. A conclusão útil é que a existência de alternativas complementares não assegura que um seletor consiga explorá-las. Melhorar o conjunto de modelos e a cobertura dos dados pode ser mais relevante que trocar o nome do algoritmo.</p>
+<div class="article-table-wrap"><table>
+<thead>
+<tr>
+<th>Evidência</th>
+<th>O que sustenta</th>
+<th>O que não autoriza concluir</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>FrugalGPT, Hybrid LLM e AutoMix [<a href="#ref-2">2</a>][<a href="#ref-3">3</a>][<a href="#ref-4">4</a>]</td>
+<td>Existem configurações em que seleção ou escalonamento reduzem custo preservando a medida de qualidade adotada</td>
+<td>Que os percentuais sejam transferíveis ou diretamente comparáveis</td>
+</tr>
+<tr>
+<td>RouteLLM [<a href="#ref-1">1</a>]</td>
+<td>Preferências podem orientar seleção eficiente entre modelos</td>
+<td>Que um limiar publicado sirva ao tráfego de outra organização</td>
+</tr>
+<tr>
+<td>RouterBench [<a href="#ref-5">5</a>]</td>
+<td>Respostas pré-computadas permitem comparar políticas sob referências comuns</td>
+<td>Que a simulação reproduza o comportamento completo do serviço</td>
+</tr>
+<tr>
+<td>LLMRouterBench [<a href="#ref-6">6</a>]</td>
+<td>Complementaridade e dificuldade de superar referências simples podem coexistir</td>
+<td>Que qualquer roteador aprendido supere uma política fixa</td>
+</tr>
+<tr>
+<td>LLMRouter [<a href="#ref-8">8</a>]</td>
+<td>Uma infraestrutura comum permite estudar diferentes formulações de roteamento</td>
+<td>Que disponibilidade de uma implementação demonstre prontidão operacional</td>
+</tr>
+</tbody></table></div>
+<p>A avaliação local deve incluir roteamento aleatório, sempre o modelo de menor custo, sempre o melhor modelo fixo para a amostra, regras simples e um classificador pequeno. Um oráculo retrospectivo pode estimar o potencial do conjunto, usando a informação das respostas que não estaria disponível antes da execução. Esse oráculo é uma referência analítica e não um sistema implantável sem custo. A comparação precisa usar os mesmos dados, modelos e critérios de aceitação, mantendo dados de calibração separados dos utilizados para decidir se a estratégia trouxe ganho.</p>
+<p><a id="section-8"></a></p>
+<h2>8. Comparação transversal das estratégias</h2>
+<p>As estratégias não devem ser escolhidas apenas pela sua melhor nota publicada. O mesmo método pode ser apropriado para uma tarefa repetitiva e inadequado para outra em que a verificação é difícil ou a consequência de um erro é elevada. Para tornar essa diferença explícita, o quadro abaixo compara necessidades operacionais, comportamento de validação e governabilidade. As classificações são uma síntese de engenharia baseada nos mecanismos discutidos, não resultados de um experimento comum realizado neste artigo.</p>
+<div class="article-table-wrap"><table>
+<thead>
+<tr>
+<th>Estratégia</th>
+<th>Qualidade e calibração</th>
+<th>Custo e latência</th>
+<th>Generalização</th>
+<th>Auditabilidade</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Regras</td>
+<td>Critérios explícitos; exceções precisam de revisão</td>
+<td>Baixo custo de decisão; uma geração usual</td>
+<td>Limitada pela cobertura da política</td>
+<td>Boa explicação da regra aplicada</td>
+</tr>
+<tr>
+<td>Classificador</td>
+<td>Depende da supervisão e do limiar</td>
+<td>Treinamento e representação somam custo; evita gerar alternativas</td>
+<td>Precisa de avaliação fora da distribuição</td>
+<td>Requer versão, sinais e decisão registrados</td>
+</tr>
+<tr>
+<td>Similaridade</td>
+<td>Depende de exemplos comparáveis</td>
+<td>Busca e embeddings podem ser relevantes</td>
+<td>Sensível à cobertura da base</td>
+<td>É possível registrar vizinhos e critérios</td>
+</tr>
+<tr>
+<td>Cascata</td>
+<td>Depende de reconhecer respostas inadequadas</td>
+<td>Pode acumular geração, validação e escalonamento</td>
+<td>Verificador também precisa generalizar</td>
+<td>Permite rastrear aceitação e escalada</td>
+</tr>
+<tr>
+<td>Juiz ou autoverificação</td>
+<td>Exige rubrica e medida de falsos aceites</td>
+<td>Chamadas adicionais podem dominar o custo</td>
+<td>Pode repetir erros do gerador</td>
+<td>Nota e justificativa não substituem evidência</td>
+</tr>
+<tr>
+<td>Adaptativo ou generativo</td>
+<td>Depende de retorno, estabilidade e contexto</td>
+<td>Exploração ou planejamento acrescentam operações</td>
+<td>Pode adaptar-se, com risco de instabilidade</td>
+<td>Exige observar mudanças de política e estado</td>
+</tr>
+</tbody></table></div>
+<div class="article-table-wrap"><table>
+<thead>
+<tr>
+<th>Estratégia</th>
+<th>Robustez adversarial</th>
+<th>Agentes e enxames</th>
+<th>Maturidade a verificar</th>
+<th>Complexidade operacional</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Regras</td>
+<td>Entradas podem explorar exceções e fronteiras</td>
+<td>Úteis para restrições obrigatórias e limites</td>
+<td>Cobertura e consistência das regras</td>
+<td>Cresce com o número de exceções</td>
+</tr>
+<tr>
+<td>Classificador</td>
+<td>Sujeito a manipulação dos sinais de seleção [<a href="#ref-9">9</a>]</td>
+<td>Deve considerar papel, estado e consequência</td>
+<td>Calibração no fluxo real</td>
+<td>Dados, treino, versões e monitoramento</td>
+</tr>
+<tr>
+<td>Similaridade</td>
+<td>Vizinhança pode ser influenciada por conteúdo adversarial</td>
+<td>Histórico e isolamento de contexto são decisivos</td>
+<td>Cobertura e atualização da base</td>
+<td>Gestão do índice e dos dados de supervisão</td>
+</tr>
+<tr>
+<td>Cascata</td>
+<td>Critério de escalada pode ser explorado</td>
+<td>Precisa de orçamento para toda a trajetória</td>
+<td>Taxa de escalonamento e qualidade do aceite</td>
+<td>Tratamento de estados e falhas parciais</td>
+</tr>
+<tr>
+<td>Juiz ou autoverificação</td>
+<td>O avaliador também recebe conteúdo potencialmente hostil</td>
+<td>Revisão cruzada não assegura independência</td>
+<td>Erros do avaliador e correlação</td>
+<td>Rubricas, reavaliação e desacordos</td>
+</tr>
+<tr>
+<td>Adaptativo ou generativo</td>
+<td>A decisão de controle pode absorver instruções da tarefa</td>
+<td>Maior contexto não elimina limites de autoridade</td>
+<td>Estabilidade sob mudança e falha</td>
+<td>Exploração, reversão e observação contínua</td>
+</tr>
+</tbody></table></div>
+<p>O quadro mostra por que auditabilidade e qualidade são dimensões relacionadas, mas diferentes. Uma regra pode ser fácil de explicar e ainda selecionar mal; um classificador pode escolher bem numa distribuição e ser difícil de calibrar fora dela. Também mostra por que não existe uma ordem fixa de complexidade útil: o custo de manter centenas de exceções pode superar o de um classificador estável. A seleção deve considerar o ciclo completo de configuração, operação, investigação e atualização.</p>
+<p>Para agentes, a questão decisiva é se a estratégia considera informações relevantes para a próxima ação. Para enxames, acrescentam-se concorrência, estado compartilhado e consequências acumuladas. A política de acesso e os limites coletivos devem continuar aplicáveis qualquer que seja o método de seleção. Essa separação permite melhorar o algoritmo sem transformar cada atualização num aumento implícito de autoridade.</p>
+<p><a id="section-9"></a></p>
+<h2>9. Identidade, autoridade e substituição governada</h2>
+<p>Uma chave válida identifica uma credencial aceita pelo gateway. Ela não informa, por si só, se o titular pode enviar aqueles dados, usar determinada implantação ou desencadear uma ação. A distinção entre autenticação e autorização é central à arquitetura Zero Trust [<a href="#ref-16">16</a>]. Em sistemas agênticos, também é necessário identificar em nome de quem o agente atua e qual parte da autoridade pode delegar.</p>
+<figure class="article-figure"><img src="/assets/article24/pt/sgaeia-article-24-figure-05-two-layer-authentication_PT.png" alt="Figura 5. Credenciais de cliente e de provedor em domínios distintos" width="4800" height="2700" loading="lazy" decoding="async"><figcaption><strong>Figura 5.</strong> A separação entre credenciais externas e internas reduz a necessidade de distribuir chaves de provedores aos clientes. Sua eficácia depende do isolamento do gateway, da autorização por objeto e da proteção das operações administrativas. Uma chave virtual continua sendo um segredo com alcance e ciclo de vida próprios.<span class="figure-credit">© 2026 Aridio Silva · Project SGAEIA · CC BY 4.0</span></figcaption></figure>
+<p>Uma implantação deve limitar o conjunto de destinos acessíveis por usuário, serviço ou agente, além de proteger as credenciais que abrem acesso a esses destinos. Parâmetros fornecidos pelo cliente não devem conceder a capacidade de substituir endpoints administrativos ou redirecionar segredos para hosts arbitrários. A autorização também precisa abranger leitura de logs, alteração de orçamento e emissão de novas credenciais. A concentração de segredos no gateway reduz sua dispersão, mas aumenta o impacto potencial de uma falha no mediador.</p>
+<p>O fallback merece atenção especial porque costuma ser apresentado como uma propriedade de disponibilidade. A documentação do OpenRouter descreve tentativas sucessivas de modelos conforme a prioridade e as condições de erro, incluindo situações de moderação [<a href="#ref-12">12</a>]. Do ponto de vista da organização, a existência de uma alternativa tecnicamente acessível não a torna admissível para aquela requisição. Uma recusa de segurança tampouco deve ser tratada automaticamente como indisponibilidade a superar por um modelo menos restritivo.</p>
+<p>O conjunto admissível pode ser representado por A(x, h, i, p), em que x é a tarefa, h o histórico relevante, i a identidade e autoridade do solicitante, e p as políticas vigentes. Cada elemento desse conjunto deve representar uma implantação e configuração permitidas nas condições atuais. A otimização de qualidade, custo e latência ocorre dentro desse conjunto, e não por compensação de uma violação obrigatória com uma vantagem econômica. Trata-se de uma formalização de alto nível proposta para organizar a análise, sem especificar mecanismos privados do SGAEIA.</p>
+<figure class="article-figure formula-figure"><img src="/assets/article24/pt/publication/formulas/sgaeia-article-24-formula-05_PT.png" alt="Equação 5. Objetivo de roteamento governado sobre configurações admissíveis." width="2640" height="242" loading="lazy" decoding="async"><figcaption><strong>Equação 5. Objetivo de roteamento governado sobre configurações admissíveis.</strong><span class="figure-credit">© 2026 Aridio Silva · Project SGAEIA · CC BY 4.0</span></figcaption></figure>
+
+<p>Os pesos representam preferências entre alternativas já admissíveis; não atribuem preço a uma autorização ausente. Se o conjunto estiver vazio, a aplicação precisa de um comportamento definido, como suspender, reduzir a funcionalidade permitida ou encaminhar a decisão a uma instância autorizada. Se política, identidade ou estado mudarem, uma escolha antes válida pode deixar de ser válida. A revogação deve alcançar requisições em fila, caches e execuções em andamento conforme os limites definidos para a aplicação.</p>
+<p><a id="section-10"></a></p>
+<h2>10. Agentes, multiagentes e enxames</h2>
+<p>Um agente pode executar várias interações com um modelo, usar ferramentas e revisar seu plano. Um sistema multiagente distribui parte desse trabalho entre agentes que trocam informações ou compartilham recursos; um enxame pode intensificar a descentralização e a coordenação coletiva. O número de agentes, sozinho, não determina criticidade. Uma única ação com amplo privilégio pode ser mais arriscada que muitas consultas limitadas, enquanto a combinação de ações aparentemente pequenas pode produzir um efeito que nenhuma delas revela isoladamente.</p>
+<figure class="article-figure"><img src="/assets/article24/pt/sgaeia-article-24-figure-06-multi-agent-swarm-routing_PT.png" alt="Figura 6. Papéis, coordenação e recursos compartilhados" width="4800" height="2700" loading="lazy" decoding="async"><figcaption><strong>Figura 6.</strong> A distribuição por papéis ilustra como diferentes agentes podem demandar capacidades distintas. Planejamento, execução e revisão não constituem, por si só, separação efetiva de funções. A análise também precisa considerar autoridade, dependências, memória, orçamento coletivo e possibilidade de conter a execução.<span class="figure-credit">© 2026 Aridio Silva · Project SGAEIA · CC BY 4.0</span></figcaption></figure>
+<p>Selecionar modelos por papel é uma primeira aproximação: triagem pode exigir baixa latência; planejamento, maior capacidade de analisar alternativas; execução, aderência a formatos; revisão, capacidade de verificar o resultado. Essas associações precisam ser avaliadas por tarefa, evitando assumir que o modelo mais caro seja sempre o melhor revisor ou que um modelo pequeno baste para toda triagem. Uma classificação incorreta no início pode encaminhar dados ou autoridade de maneira inadequada antes de qualquer revisão. O roteamento sensível ao histórico amplia a informação disponível, mas não substitui controles de acesso [<a href="#ref-8">8</a>].</p>
+<p>Em trajetórias longas, medir apenas chamadas isoladas pode esconder gasto e risco acumulados. Se uma política reduz o custo por chamada em 30%, mas eleva em 60% o número de chamadas necessárias para concluir a tarefa, o custo variável torna-se 1,12 vez o anterior, sob essas hipóteses. A redução local transforma-se em aumento de 12% por tarefa. O exemplo aritmético mostra por que conclusão, retrabalho, ferramentas e validação precisam integrar a unidade de análise.</p>
+<figure class="article-figure formula-figure"><img src="/assets/article24/pt/publication/formulas/sgaeia-article-24-formula-06_PT.png" alt="Equação 6. Exemplo de aumento do custo agregado apesar da redução por chamada." width="2640" height="242" loading="lazy" decoding="async"><figcaption><strong>Equação 6. Exemplo de aumento do custo agregado apesar da redução por chamada.</strong><span class="figure-credit">© 2026 Aridio Silva · Project SGAEIA · CC BY 4.0</span></figcaption></figure>
+
+<p>A concorrência acrescenta efeitos coletivos: várias tentativas de recuperação podem gerar uma onda de requisições, disputar a mesma cota e atrasar o caminho crítico. Limites por agente precisam ser combinados com limites por tarefa, equipe e serviço, pois contas individuais não impedem esgotamento agregado. Filas, contrapressão, cotas de concorrência e interrupção controlada devem considerar prioridades e justiça entre cargas. A resposta a uma falha precisa evitar que todos os agentes reproduzam simultaneamente a mesma decisão de escalonamento.</p>
+<p>O cache exige cuidado semelhante. A documentação do LiteLLM alerta que o cache semântico voltado a prompts independentes pode reproduzir respostas obsoletas em tráfego multiturno ou agêntico [<a href="#ref-11">11</a>]. Dois prompts parecidos podem corresponder a identidades, permissões, documentos ou estados diferentes. O benefício de reutilizar uma resposta só se sustenta quando o escopo da reutilização preserva essas condições, inclusive após revogação ou mudança de política.</p>
+<p>A integridade da trajetória também exige observar relações entre ações. Um agente pode preparar dados, outro selecionar um destino e um terceiro transmitir o resultado; avaliar cada etapa isoladamente pode não revelar a transferência indevida produzida pelo conjunto. A taxonomia OWASP para aplicações agênticas reforça a necessidade de examinar riscos ligados a objetivos, ferramentas, identidade, memória e coordenação [<a href="#ref-24">24</a>]. O vínculo com o SGAEIA está em preservar autoridade limitada e evidência ao longo dessas relações, em vez de considerar apenas a qualidade linguística de cada resposta [<a href="#ref-27">27</a>].</p>
+<p><a id="section-11"></a></p>
+<h2>11. Governança, segurança e evidências</h2>
+<figure class="article-figure"><img src="/assets/article24/pt/sgaeia-article-24-figure-07-governance-evidence-pipeline_PT.png" alt="Figura 7. Relação entre controles e evidências de governança" width="4800" height="2700" loading="lazy" decoding="async"><figcaption><strong>Figura 7.</strong> A relação entre classificação, política, execução e evidência mostra como o gateway pode apoiar a gestão de riscos. A correspondência com marcos de governança é interpretativa e depende da aplicação. Ela não demonstra conformidade jurídica nem certificação de um sistema de gestão.<span class="figure-credit">© 2026 Aridio Silva · Project SGAEIA · CC BY 4.0</span></figcaption></figure>
+<h3>11.1 Um ponto de mediação também concentra risco</h3>
+<p>O gateway pode reduzir dispersão de credenciais e permitir controles consistentes, mas concentra tráfego, segredos e decisões valiosas para um atacante. O registro CVE-2026-42208 descreve injeção de SQL na verificação de chaves da API do proxy LiteLLM [<a href="#ref-25">25</a>]. O relato sobre a versão 1.107.0 documenta um incidente de distribuição de pacote comprometido no ecossistema do projeto [<a href="#ref-26">26</a>]. São evidências de classes de falha e condições específicas; não constituem uma avaliação comparativa da segurança de todos os gateways.</p>
+<p>Há ainda ataques dirigidos ao seletor, que independem de uma vulnerabilidade tradicional de software. Shafran e colaboradores demonstram sequências que alteram o encaminhamento para modelos mais caros, inclusive em condições de caixa-preta, e discutem limites de filtragem por perplexidade [<a href="#ref-9">9</a>]. Uma entrada pode preservar o sentido aparente da tarefa e mudar seu custo de execução. O monitoramento precisa observar decisões de roteamento e padrões de consumo, além do conteúdo da resposta final.</p>
+<figure class="article-figure"><img src="/assets/article24/pt/sgaeia-article-24-figure-08-gateway-router-threat-model_PT.png" alt="Figura 8. Superfícies de ameaça do gateway e do roteamento" width="4800" height="2700" loading="lazy" decoding="async"><figcaption><strong>Figura 8.</strong> O modelo organiza ameaças sobre entrada, decisão, credenciais, execução e observação. As relações indicam onde uma falha pode afetar outras responsabilidades. Os controles associados precisam ser verificados separadamente; uma caixa de proteção no diagrama não comprova prevenção de todos os ataques.<span class="figure-credit">© 2026 Aridio Silva · Project SGAEIA · CC BY 4.0</span></figcaption></figure>
+<p>A taxonomia de consumo ilimitado do OWASP inclui cenários de esgotamento financeiro e degradação do serviço [<a href="#ref-23">23</a>]. Orçamentos, limites de saída e de concorrência, detecção de desvios e tratamento de tentativas repetidas ajudam a limitar esse impacto. Esses controles também podem bloquear uso legítimo, especialmente durante picos ou tarefas excepcionalmente complexas. A avaliação deve registrar falsos bloqueios, recursos consumidos antes da contenção e a capacidade de recuperar o serviço sem reabrir o mesmo caminho de abuso.</p>
+<h3>11.2 Conformidade exige contexto e responsabilidade</h3>
+<p>NIST AI RMF organiza a gestão de riscos por funções de governar, mapear, medir e gerenciar; o perfil NIST AI 600-1 trata sua aplicação à AI generativa [<a href="#ref-17">17</a>][<a href="#ref-18">18</a>]. ISO/IEC 42001 trata do sistema de gestão de AI da organização [<a href="#ref-19">19</a>]. Essas referências ajudam a distribuir responsabilidades e organizar evidências, mas não certificam automaticamente uma ferramenta ou um fluxo por possuir logs, filtros ou chaves virtuais. O enquadramento precisa considerar finalidade, pessoas afetadas, dependências e consequências.</p>
+<p>A localização dos dados também não se resume à região declarada do modelo. Pode haver tratamento em embeddings, observabilidade, suporte e armazenamento de respostas, além da inferência. No contexto brasileiro, a LGPD e o regulamento de transferência internacional de dados da ANPD exigem examinar condições e mecanismos aplicáveis ao tratamento e à transferência [<a href="#ref-20">20</a>][<a href="#ref-21">21</a>]. Um filtro geográfico no gateway pode apoiar uma decisão de engenharia, mas não substitui a análise da operação e de suas bases jurídicas.</p>
+<p>O artigo 12 do AI Act trata do registro de eventos para os sistemas de alto risco aos quais se aplica [<a href="#ref-22">22</a>]. Essa referência ilustra a importância da rastreabilidade contextualizada, sem tornar toda aplicação de LLM um sistema de alto risco ou impor o mesmo desenho de log a todos os casos. O calendário e o enquadramento regulatório devem ser verificados na versão aplicável à operação. O papel do gateway é produzir parte da evidência técnica necessária, sob responsabilidades que vão além do componente.</p>
+<p>Um registro útil associa a tarefa à identidade, à política aplicável, à versão da configuração, ao destino efetivo e ao resultado da validação. O conteúdo necessário varia com o risco e deve respeitar minimização e retenção. Registrar indiscriminadamente prompts, respostas e segredos pode transformar observabilidade em uma superfície de exposição. O valor da trilha está em permitir reconstruir uma decisão relevante sem coletar mais dados do que sua finalidade exige.</p>
+<p>Encadeamento de hashes pode revelar alterações em relação a uma referência confiável, mas não torna o armazenamento imutável. Um administrador comprometido pode reescrever registros e recalcular uma cadeia que não tenha proteção ou ancoragem independentes. Controle de acesso, retenção, proteção de chaves e mecanismos de verificação precisam ser avaliados em conjunto. A evidência também perde valor se omitir tentativas malsucedidas, mudanças de destino ou decisões tomadas durante uma indisponibilidade.</p>
+<p><a id="section-12"></a></p>
+<h2>12. Quadro SGAEIA de análise de roteamento governado</h2>
+<h3>12.1 A contribuição analítica e seu limite</h3>
+<p>O <strong>SGAEIA Governed AI Routing Assurance Model</strong>, desenvolvido neste artigo como quadro analítico, relaciona quatro objetos: a restrição que deve permanecer válida, a decisão de roteamento que pode afetá-la, a evidência necessária para examinar a decisão e a resposta a uma violação. Seu ponto de partida é a distinção entre capacidade, autoridade e evidência presente na perspectiva pública do SGAEIA [<a href="#ref-27">27</a>]. A literatura de roteamento fornece mecanismos e resultados; Zero Trust e gestão de riscos fornecem antecedentes para a separação entre acesso, decisão e responsabilidade [<a href="#ref-16">16</a>][<a href="#ref-17">17</a>]. O quadro articula esses elementos para a avaliação de seleção e substituição em fluxos com modelos e agentes.</p>
+<p>A contribuição não está em afirmar que roteadores possuem riscos, nem em reivindicar a invenção de autorização ou auditoria. Está em explicitar relações que uma avaliação exclusivamente econômica não representa e aplicá-las à mesma configuração que se deseja otimizar. A unidade de comparação passa a ser uma decisão admissível com consequência observável, incluindo a opção de não prosseguir quando os pressupostos não puderem ser preservados. Trata-se de síntese analítica proposta pelo autor para este artigo, sem atribuir ao quadro implementação normativa ou validação operacional do SGAEIA.</p>
+<div class="article-table-wrap"><table>
+<thead>
+<tr>
+<th>Ameaça ou condição</th>
+<th>Decisão afetada</th>
+<th>Propriedade a preservar</th>
+<th>Evidência exigida</th>
+<th>Métrica de avaliação</th>
+<th>Resposta prevista</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Uso fora do escopo delegado</td>
+<td>Seleção de modelo, dados e ferramentas</td>
+<td>Autoridade limitada à tarefa</td>
+<td>Identidade, delegação e decisão de autorização</td>
+<td>Decisões aceitas fora do escopo</td>
+<td>Bloquear ou interromper o alcance indevido</td>
+</tr>
+<tr>
+<td>Fallback para destino não permitido</td>
+<td>Troca de implantação ou provedor</td>
+<td>Continuidade das restrições</td>
+<td>Destino inicial e efetivo, regra aplicável e motivo da troca</td>
+<td>Substituições incompatíveis com a política</td>
+<td>Usar alternativa admissível ou suspender</td>
+</tr>
+<tr>
+<td>Exposição de dados</td>
+<td>Escolha de inferência, embedding e telemetria</td>
+<td>Minimização e tratamento autorizado</td>
+<td>Classe do dado, destinos e condições de retenção</td>
+<td>Transferências indevidas e dados excedentes</td>
+<td>Impedir a saída e tratar a exposição</td>
+</tr>
+<tr>
+<td>Escalada de custo adversarial</td>
+<td>Modelo, esforço e repetição</td>
+<td>Limites por tarefa e por organização</td>
+<td>Consumo acumulado e decisões de escalada</td>
+<td>Gasto antes da contenção e falsos bloqueios</td>
+<td>Conter a trajetória e rever a política</td>
+</tr>
+<tr>
+<td>Estado ou permissão revogados</td>
+<td>Uso de cache, fila ou decisão anterior</td>
+<td>Atualidade da autorização</td>
+<td>Versão da política e tempos de revogação e execução</td>
+<td>Ações posteriores à revogação e atraso de propagação</td>
+<td>Invalidar reutilização e interromper ações afetadas</td>
+</tr>
+<tr>
+<td>Falha do avaliador</td>
+<td>Aceitar, escalar ou liberar uma ação</td>
+<td>Critério de aceite adequado ao efeito</td>
+<td>Rubrica, resultado e verificação posterior</td>
+<td>Falsos aceites, falsos bloqueios e desacordos</td>
+<td>Reavaliar e limitar o efeito autorizado</td>
+</tr>
+<tr>
+<td>Efeito coletivo não permitido</td>
+<td>Distribuição de subtarefas</td>
+<td>Limites sobre a trajetória compartilhada</td>
+<td>Relações entre agentes, ações e recursos</td>
+<td>Violações por tarefa e tempo até contenção</td>
+<td>Conter o conjunto afetado e reconciliar estado</td>
+</tr>
+<tr>
+<td>Comprometimento do gateway</td>
+<td>Seleção, acesso e registro</td>
+<td>Separação de privilégios e recuperação</td>
+<td>Versões, mudanças e registros protegidos</td>
+<td>Alcance do comprometimento e tempo de revogação</td>
+<td>Isolar componentes e recuperar credenciais e políticas</td>
+</tr>
+<tr>
+<td>Perda ou adulteração de evidência</td>
+<td>Investigar e liberar continuidade</td>
+<td>Possibilidade de verificar decisões críticas</td>
+<td>Integridade, origem e completude da trilha</td>
+<td>Eventos críticos sem evidência suficiente</td>
+<td>Reduzir a operação permitida e reconstruir o incidente</td>
+</tr>
+</tbody></table></div>
+<p>As métricas da matriz precisam de denominadores e critérios de observação. Uma taxa de fallback incompatível deve indicar quantas substituições foram examinadas e como se determinou a incompatibilidade; latência de revogação requer um marco de início e um evento observável de aplicação. Uma taxa igual a zero numa amostra não prova ausência de falhas em toda a operação. O quadro torna essas perguntas visíveis e evita usar o simples número de registros como medida de qualidade da evidência.</p>
+<h3>12.2 Aplicação a três decisões de engenharia</h3>
+<p>Considere uma tarefa com dados cuja política permite apenas uma implantação aprovada. Há um modelo equivalente numa região não permitida, com preço menor e disponibilidade superior. Uma comparação restrita a custo, qualidade e latência favoreceria a segunda alternativa; a análise de admissibilidade a exclui antes dessa otimização. Se a implantação aprovada falhar e não houver outra opção admissível, manter o serviço a qualquer custo alteraria a decisão de tratamento de dados, não apenas o provedor.</p>
+<p>No segundo cenário, um agente inicia uma tarefa com orçamento compatível com poucas chamadas, mas passa a repetir correções e revisões entre vários modelos. Cada chamada respeita seu limite individual, e o fluxo ultrapassa o orçamento da tarefa. A evidência exigida pela matriz associa consumo e resultado à trajetória, permitindo reconhecer a falha que o indicador por chamada não revela. A resposta apropriada pode ser interromper tentativas sem progresso, reduzir a funcionalidade permitida ou obter nova autorização para ampliar o trabalho.</p>
+<p>No terceiro cenário, dois agentes usam respostas semanticamente semelhantes para decidir ações sobre documentos diferentes. O cache devolve uma resposta produzida com outro estado de permissões, e a similaridade textual parece justificar a reutilização. A análise distingue eficiência de cache de validade da decisão: identidade, estado e escopo precisam continuar compatíveis. Uma resposta anterior correta pode ser inadequada para o novo contexto sem que seu texto tenha mudado.</p>
+<div class="article-table-wrap"><table>
+<thead>
+<tr>
+<th>Cenário</th>
+<th>Conclusão por um indicador isolado</th>
+<th>Conclusão com o quadro proposto</th>
+<th>Evidência decisiva</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Substituição de implantação</td>
+<td>Menor custo e maior disponibilidade justificam a troca</td>
+<td>A alternativa precisa satisfazer as restrições da tarefa</td>
+<td>Política aplicável e destino efetivamente usado</td>
+</tr>
+<tr>
+<td>Repetição multiagente</td>
+<td>Todas as chamadas estão dentro do limite</td>
+<td>O gasto agregado e a conclusão da tarefa precisam ser observados</td>
+<td>Consumo por trajetória, tentativas e progresso</td>
+</tr>
+<tr>
+<td>Reutilização de resposta</td>
+<td>Alta similaridade favorece o cache</td>
+<td>A validade depende também do contexto e da autorização</td>
+<td>Estado, identidade e escopo da resposta reutilizada</td>
+</tr>
+</tbody></table></div>
+<p>Esses casos demonstram a utilidade analítica do quadro: ele identifica a informação ausente e explica por que uma decisão economicamente atraente pode ser inadequada. Não medem frequência de incidentes nem quantificam redução de risco em produção. A verificação empírica deverá observar se os controles identificam violações e preservam tarefas legítimas, com seus custos e erros. Para o artigo técnico, a contribuição fica delimitada na comparação, na rastreabilidade das decisões e nos contraexemplos apresentados.</p>
+<p><a id="section-13"></a></p>
+<h2>13. Evolução e maturidade devem ser avaliadas por dimensão</h2>
+<p>O desenvolvimento do campo combina linhas que amadurecem em ritmos diferentes. Cascatas e seleção por custo ganharam formulações explícitas em trabalhos como FrugalGPT, AutoMix e Hybrid LLM; RouteLLM ampliou o estudo da seleção com preferências; RouterBench e LLMRouterBench fortaleceram comparações comuns [<a href="#ref-1">1</a>][<a href="#ref-2">2</a>][<a href="#ref-3">3</a>][<a href="#ref-4">4</a>][<a href="#ref-5">5</a>][<a href="#ref-6">6</a>]. Em paralelo, a análise adversarial mostrou que a camada de seleção também pode ser manipulada [<a href="#ref-9">9</a>]. Esses movimentos não descrevem uma progressão automática para segurança: cada capacidade exige sua própria evidência.</p>
+<figure class="article-figure"><img src="/assets/article24/pt/sgaeia-article-24-figure-09-router-evolution_PT.png" alt="Figura 9. Marcos selecionados da evolução do roteamento" width="4800" height="2700" loading="lazy" decoding="async"><figcaption><strong>Figura 9.</strong> A periodização destaca trabalhos sobre economia, comparação e integridade da seleção. Os marcos indicam publicações e temas selecionados, sem representar uma história exaustiva ou medir adoção de mercado. A separação por fases é uma organização interpretativa do autor.<span class="figure-credit">© 2026 Aridio Silva · Project SGAEIA · CC BY 4.0</span></figcaption></figure>
+<figure class="article-figure"><img src="/assets/article24/pt/sgaeia-article-24-figure-10-thematic-timeline_PT.png" alt="Figura 10. Marcos de pesquisa e governança por ano" width="4800" height="2700" loading="lazy" decoding="async"><figcaption><strong>Figura 10.</strong> As faixas mostram que métodos, avaliação, segurança e governança tratam dimensões complementares. As divisões anuais facilitam a leitura cronológica; proximidade temporal não implica que uma publicação tenha causado outra. Datas se referem aos marcos indicados, e não à prontidão de produtos.<span class="figure-credit">© 2026 Aridio Silva · Project SGAEIA · CC BY 4.0</span></figcaption></figure>
+<p>A disponibilidade de um recurso documentado é evidência diferente de estabilidade sob carga, avaliação independente ou resistência a ataques. Uma organização pode dominar API, quotas e fallback e ainda não possuir dados para calibrar um seletor aprendido. Pode também obter boa qualidade média e desconhecer o comportamento após revogação, atualização de modelo ou perda de telemetria. A maturidade deve ser registrada por dimensão e pelo ambiente observado, evitando converter uma nota editorial em certificação externa.</p>
+<figure class="article-figure"><img src="/assets/article24/pt/sgaeia-article-24-figure-11-router-maturity_PT.png" alt="Figura 11. Dimensões de prontidão e evidências necessárias" width="4800" height="3300" loading="lazy" decoding="async"><figcaption><strong>Figura 11.</strong> O quadro distingue disponibilidade funcional, medição local e verificação sob condições adversas. Ele orienta perguntas de prontidão, sem atribuir um nível universal a um produto ou ao mercado. As linhas e colunas permitem examinar lacunas que uma classificação única ocultaria.<span class="figure-credit">© 2026 Aridio Silva · Project SGAEIA · CC BY 4.0</span></figcaption></figure>
+<p>O custo da manutenção merece o mesmo cuidado. Mudanças em modelos, preços, parâmetros e padrões de tráfego podem invalidar limiares e tornar o histórico menos representativo. A gestão de versões deve associar uma decisão à configuração realmente executada, inclusive quando um alias aponta para um modelo atualizado. O processo de atualização precisa permitir comparar, limitar a exposição e recuperar uma configuração anterior quando a nova alternativa não atender aos critérios definidos.</p>
+<p><a id="section-14"></a></p>
+<h2>14. Quando adotar e quando manter uma solução mais simples</h2>
+<p>Um gateway pode ser justificado por necessidades de acesso, orçamento e observação mesmo que o tráfego permaneça num modelo fixo. Um seletor dinâmico exige uma justificativa adicional: o ganho obtido com tarefas heterogêneas deve superar seu custo e sua complexidade. Se um único modelo atende bem ao domínio, o volume é baixo ou os dados para calibração são insuficientes, uma política fixa pode ser a escolha mais consistente. A adoção deve responder a um problema observado, como gasto, latência ou capacidade de governar o acesso.</p>
+<p>O primeiro passo é definir conclusão e qualidade aceitável por classe de tarefa. O segundo é determinar destinos, dados e configurações admissíveis, antes de otimizar suas combinações. Em seguida, deve-se medir referências simples e avaliar uma estratégia candidata nas mesmas condições, incluindo o custo da decisão e da validação. A comparação precisa preservar tarefas difíceis e classes pouco frequentes, pois uma média favorável pode esconder a deterioração de um subconjunto importante.</p>
+<div class="article-table-wrap"><table>
+<thead>
+<tr>
+<th>Condição observada</th>
+<th>Decisão inicial razoável</th>
+<th>Evidência para avançar</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Necessidade de centralizar acesso e gastos</td>
+<td>Avaliar mediação com modelo fixo</td>
+<td>Isolamento, limites e custo operacional</td>
+</tr>
+<tr>
+<td>Tarefas repetitivas e baixo volume</td>
+<td>Manter modelo ou regras simples</td>
+<td>Qualidade suficiente e economia total demonstrada</td>
+</tr>
+<tr>
+<td>Tráfego heterogêneo e volume relevante</td>
+<td>Comparar seletor preditivo com referências</td>
+<td>Curva de qualidade e custo por tarefa</td>
+</tr>
+<tr>
+<td>Resultado verificável com confiabilidade</td>
+<td>Avaliar cascata</td>
+<td>Falsos aceites, escalonamento e latência total</td>
+</tr>
+<tr>
+<td>Dados ou ações com restrições relevantes</td>
+<td>Restringir candidatos antes da seleção</td>
+<td>Continuidade de política e evidência de substituição</td>
+</tr>
+<tr>
+<td>Agentes com muitas etapas</td>
+<td>Avaliar a trajetória completa</td>
+<td>Conclusão, custo agregado, autoridade e contenção</td>
+</tr>
+<tr>
+<td>Pouca visibilidade sobre falhas e mudanças</td>
+<td>Melhorar observação antes de automatizar novas decisões</td>
+<td>Registro do destino efetivo e recuperação verificável</td>
+</tr>
+</tbody></table></div>
+<p>A entrada em operação deve usar exposição gradual e critérios prévios de continuidade. Custo por tarefa, aceitação de respostas, retrabalho, latência de cauda, violações de política e completude da evidência precisam ser observados em conjunto. Quando o comportamento muda, pode ser necessário recalibrar, restringir o conjunto de modelos ou retornar a uma política mais simples. A possibilidade de recuar faz parte do projeto da adoção, assim como a possibilidade de escalar.</p>
+<p><a id="section-15"></a></p>
+<h2>15. Discussão e limites da análise</h2>
+<p>As seis perguntas iniciais permitem reunir os resultados sem reduzir o artigo a um catálogo. Há condições favoráveis para economia, mas a complementaridade dos modelos é apenas uma oportunidade; o seletor precisa conseguir explorá-la. O gateway oferece valor operacional próprio, ao mesmo tempo que concentra responsabilidades e amplia o alcance de uma falha. Em agentes, o resultado relevante é uma tarefa concluída sob seus limites, e não uma coleção de respostas individualmente bem avaliadas.</p>
+<div class="article-table-wrap"><table>
+<thead>
+<tr>
+<th>Pergunta orientadora</th>
+<th>Resposta sustentada pela análise</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Quando economiza preservando qualidade?</td>
+<td>Quando heterogeneidade, calibração e capacidade de validação compensam decisão, repetição e operação</td>
+</tr>
+<tr>
+<td>Quando supera referências simples?</td>
+<td>Quando o ganho aparece no mesmo protocolo e permanece nas classes de tarefa relevantes; complexidade não o assegura</td>
+</tr>
+<tr>
+<td>Que valor independe do algoritmo?</td>
+<td>Mediação de acesso, gestão de recursos, observação e aplicação consistente de controles</td>
+</tr>
+<tr>
+<td>Que risco decorre da concentração?</td>
+<td>Uma falha pode alcançar credenciais, dados, configuração e evidências de muitas aplicações</td>
+</tr>
+<tr>
+<td>O que muda com agentes e enxames?</td>
+<td>Estado, delegação, concorrência e efeitos acumulados tornam a trajetória uma unidade necessária de avaliação</td>
+</tr>
+<tr>
+<td>Que evidência permite governar?</td>
+<td>Registros verificáveis de autoridade, política, destino efetivo, consumo, validação e resposta a mudanças</td>
+</tr>
+</tbody></table></div>
+<p>Os resultados publicados continuam limitados pelos modelos, tarefas e avaliadores de seus protocolos. Uma matriz de respostas pode favorecer análise econômica sem capturar comportamento de filas, ferramentas e falhas parciais; uma nota de juiz pode medir preferência sem representar correção ou segurança. Documentação de produto descreve condições declaradas pelo fornecedor, e relatos de incidentes não estimam a prevalência de vulnerabilidades no mercado. A análise deve preservar essas diferenças para que o leitor não transforme evidência localizada em promessa geral.</p>
+<p>O quadro proposto também possui limites. Ele depende de políticas identificáveis, observação suficiente e uma definição do que constitui violação ou conclusão válida. Não elimina erros de classificação de risco, lacunas nas políticas ou comprometimento de componentes que deveriam aplicar os controles. Seu uso permite estruturar a avaliação e tornar explícita a informação ausente; demonstrar redução de risco exige observar controles funcionando e falhando em condições previamente definidas.</p>
+<p>Há questões abertas que merecem avaliação futura: seleção conjunta de modelo e configuração; efeitos da revogação sobre trajetórias já iniciadas; robustez do avaliador; custo de evidência e minimização; comportamento sob falhas simultâneas; e transferência para novos modelos e domínios. Essas questões derivam das limitações identificadas, em vez de serem apresentadas como resultados alcançados. A contribuição do artigo fica preservada ao distinguir a orientação prática disponível das hipóteses que ainda precisam de experimentação.</p>
+<p><a id="section-16"></a></p>
+<h2>16. Conclusão</h2>
+<p>Roteadores de LLMs tornam a heterogeneidade de modelos uma possibilidade de decisão por tarefa, mas não asseguram economia nem qualidade por sua mera presença. Estratégias preditivas, cascatas e seleção adaptativa utilizam informações diferentes e distribuem custo e risco de maneiras distintas. A evidência publicada sustenta ganhos em configurações específicas e, simultaneamente, a dificuldade de superar referências simples em avaliações comuns. A consequência é exigir comparação local com critérios coerentes de conclusão, qualidade e custo total.</p>
+<p>A análise também estabelece que a decisão deve ocorrer sobre alternativas admissíveis. Fallback, troca de modelo, reutilização de resposta e ampliação de esforço podem alterar tratamento de dados, consumo e continuidade da autorização. Em sistemas multiagentes, essas mudanças precisam ser acompanhadas na trajetória e nos recursos compartilhados. Um componente que melhora disponibilidade enquanto viola as condições da tarefa não preserva o resultado que a organização pretendia obter.</p>
+<p>O quadro SGAEIA de análise de roteamento governado explicita essa relação entre restrição, decisão, evidência e resposta. Sua aplicação aos três cenários mostra informações e consequências que custo por chamada, similaridade textual ou disponibilidade isolados não revelam. Essa é a contribuição analítica do artigo: reunir a comparação técnica e a governança no mesmo processo de avaliação, com limites que podem ser examinados. Adotar roteamento significa, portanto, demonstrar utilidade sob condições definidas e manter a capacidade de observar, restringir, revogar e revisar suas decisões.</p>
+<h2>Apêndice A — Glossário técnico</h2>
+<p><strong>Admissibilidade</strong> — Condição de uma implantação ou configuração satisfazer as restrições aplicáveis à tarefa antes da otimização.</p>
+<p><strong>Agente de AI</strong> — Componente que utiliza capacidade de decisão ou geração para conduzir etapas de uma tarefa, eventualmente com ferramentas e estado persistente.</p>
+<p><strong>AI gateway</strong> — Camada de mediação de acesso a modelos e serviços, que pode reunir adaptação, controles e observabilidade.</p>
+<p><strong>APGR</strong> — Resumo da recuperação de desempenho ao longo da variação do uso do modelo mais caro no protocolo RouteLLM [<a href="#ref-1">1</a>].</p>
+<p><strong>Autenticação</strong> — Verificação de uma identidade ou credencial apresentada.</p>
+<p><strong>Autorização</strong> — Decisão sobre o acesso ou ação permitidos a uma identidade nas condições aplicáveis.</p>
+<p><strong>Baseline</strong> — Referência de comparação, como política fixa, regras simples ou seleção aleatória.</p>
+<p><strong>Cache de prefixo</strong> — Reutilização de processamento de partes comuns de entrada quando suportada pelo serviço.</p>
+<p><strong>Cache semântico</strong> — Reutilização de resposta com base em similaridade de entradas; exige examinar a validade do contexto reutilizado.</p>
+<p><strong>Cascata</strong> — Execução que consulta uma alternativa e decide, a partir do resultado ou da avaliação, se deve escalar.</p>
+<p><strong>Chave virtual</strong> — Credencial de mediação associada a permissões e limites, distinta da credencial do provedor.</p>
+<p><strong>Contrapressão</strong> — Controle que reduz ou adia a entrada de trabalho quando a capacidade disponível é insuficiente.</p>
+<p><strong>CPT</strong> — Fração de chamadas ao modelo forte necessária para uma meta de recuperação da diferença de desempenho [<a href="#ref-1">1</a>].</p>
+<p><strong>Delegação</strong> — Concessão limitada de autoridade para executar parte de uma tarefa em nome de outra identidade.</p>
+<p><strong>Denial of Wallet</strong> — Consumo abusivo que explora a cobrança por uso para esgotar recursos financeiros [<a href="#ref-23">23</a>].</p>
+<p><strong>Embedding</strong> — Representação vetorial usada para comparar ou caracterizar conteúdo; similaridade não demonstra equivalência de autorização.</p>
+<p><strong>Esforço de raciocínio</strong> — Configuração de recursos de inferência oferecida por determinados modelos, cujo significado depende da interface e da versão.</p>
+<p><strong>Fallback</strong> — Tentativa de uma alternativa quando a execução inicial não é concluída nas condições definidas; requer preservar as restrições da tarefa.</p>
+<p><strong>Fronteira de Pareto</strong> — Conjunto de alternativas não dominadas nos critérios considerados.</p>
+<p><strong>Implantação</strong> — Instância de acesso a um modelo, associada a provedor, região, versão e condições operacionais.</p>
+<p><strong>LLM-as-a-Judge</strong> — Uso de um modelo de linguagem para avaliar uma resposta ou apoiar uma decisão de aceitação.</p>
+<p><strong>Oráculo</strong> — Referência retrospectiva que utiliza informação indisponível ao seletor antes de executar ou observar as respostas.</p>
+<p><strong>PGR</strong> — Fração da diferença de desempenho entre duas referências recuperada pelo roteador [<a href="#ref-1">1</a>].</p>
+<p><strong>Plano de controle</strong> — Responsabilidades de administrar políticas, configuração, permissões e ciclo de vida.</p>
+<p><strong>Plano de dados</strong> — Caminho que executa as requisições e transporta os dados conforme as decisões aplicáveis.</p>
+<p><strong>Revogação</strong> — Retirada de uma permissão ou condição de acesso, com necessidade de propagação às execuções afetadas.</p>
+<p><strong>Roteador preditivo</strong> — Seletor que decide antes de gerar a resposta principal.</p>
+<p><strong>Roteamento adaptativo</strong> — Seleção que ajusta decisões com base em resultados ou informação observada durante a execução.</p>
+<p><strong>Roteamento generativo</strong> — Uso de um modelo generativo para apoiar ou produzir a decisão de seleção.</p>
+<p><strong>Trajetória</strong> — Sequência relacionada de decisões, interações, ferramentas e mudanças de estado necessárias a uma tarefa.</p>
+<p><strong>TTFT</strong> — Tempo decorrido até o primeiro token, distinto do tempo necessário para concluir a resposta ou tarefa.</p>
+<p><strong>Zero Trust</strong> — Perspectiva de arquitetura que evita confiança implícita por localização ou propriedade do recurso e distingue autenticação de autorização [<a href="#ref-16">16</a>].</p>
+<h2>Referências</h2>
+<p><a id="ref-1"></a></p>
+<ol>
+<li>ONG, Isaac et al. <em>RouteLLM: Learning to Route LLMs with Preference Data</em>. ICLR, 2025. arXiv:2406.18665v4. <a href="https://arxiv.org/html/2406.18665v4" target="_blank" rel="noopener noreferrer">Texto integral</a>.</li>
+</ol>
+<p><a id="ref-2"></a></p>
+<ol start="2">
+<li>CHEN, Lingjiao; ZAHARIA, Matei; ZOU, James. <em>FrugalGPT: How to Use Large Language Models While Reducing Cost and Improving Performance</em>. Preprint, 2023. <a href="https://arxiv.org/abs/2305.05176" target="_blank" rel="noopener noreferrer">arXiv:2305.05176</a>.</li>
+</ol>
+<p><a id="ref-3"></a></p>
+<ol start="3">
+<li>AGGARWAL, Pranjal et al. <em>AutoMix: Automatically Mixing Language Models</em>. NeurIPS, 2024; versão arXiv v5, 2025. <a href="https://arxiv.org/abs/2310.12963" target="_blank" rel="noopener noreferrer">arXiv:2310.12963</a>.</li>
+</ol>
+<p><a id="ref-4"></a></p>
+<ol start="4">
+<li>DING, Dujian et al. <em>Hybrid LLM: Cost-Efficient and Quality-Aware Query Routing</em>. ICLR, 2024. <a href="https://arxiv.org/abs/2404.14618" target="_blank" rel="noopener noreferrer">arXiv:2404.14618</a>.</li>
+</ol>
+<p><a id="ref-5"></a></p>
+<ol start="5">
+<li>HU, Qitian Jason et al. <em>RouterBench: A Benchmark for Multi-LLM Routing System</em>. Preprint, 2024. <a href="https://arxiv.org/abs/2403.12031" target="_blank" rel="noopener noreferrer">arXiv:2403.12031</a>.</li>
+</ol>
+<p><a id="ref-6"></a></p>
+<ol start="6">
+<li>LI, Hao et al. <em>LLMRouterBench: A Massive Benchmark and Unified Framework for LLM Routing</em>. Findings of ACL, 2026, p. 37733–37754. <a href="https://aclanthology.org/2026.findings-acl.1881/" target="_blank" rel="noopener noreferrer">Registro e texto</a>.</li>
+</ol>
+<p><a id="ref-7"></a></p>
+<ol start="7">
+<li>JIANGENG, Chang; WU, Xingyu; TAN, KC; FENG, Mengling. <em>A Systematic Survey of Large Language Model Routing</em>. Findings of EMNLP, 2026, p. 44102–44134. <a href="https://aclanthology.org/2026.findings-emnlp.2072/" target="_blank" rel="noopener noreferrer">Registro e texto</a>.</li>
+</ol>
+<p><a id="ref-8"></a></p>
+<ol start="8">
+<li>FENG, Tao et al. <em>LLMRouter: Unified Infrastructure for Developing, Evaluating, and Deploying LLM Routers</em>. Preprint, 2026. <a href="https://arxiv.org/abs/2608.06867" target="_blank" rel="noopener noreferrer">arXiv:2608.06867</a>.</li>
+</ol>
+<p><a id="ref-9"></a></p>
+<ol start="9">
+<li>SHAFRAN, Avital; SCHUSTER, Roei; RISTENPART, Thomas; SHMATIKOV, Vitaly. <em>Rerouting LLM Routers</em>. Preprint, 2025. <a href="https://arxiv.org/abs/2501.01818" target="_blank" rel="noopener noreferrer">arXiv:2501.01818</a>.</li>
+</ol>
+<p><a id="ref-10"></a></p>
+<ol start="10">
+<li>BERRIAI. <em>Virtual Keys</em>. Documentação do LiteLLM. <a href="https://docs.litellm.ai/docs/proxy/virtual_keys" target="_blank" rel="noopener noreferrer">Documento oficial</a>. Consulta: 29 out. 2026.</li>
+</ol>
+<p><a id="ref-11"></a></p>
+<ol start="11">
+<li>BERRIAI. <em>Semantic Caching</em>. Documentação do LiteLLM. <a href="https://docs.litellm.ai/docs/proxy/caching_semantic" target="_blank" rel="noopener noreferrer">Documento oficial</a>. Consulta: 29 out. 2026.</li>
+</ol>
+<p><a id="ref-12"></a></p>
+<ol start="12">
+<li>OPENROUTER. <em>Model Fallbacks</em>. <a href="https://openrouter.ai/docs/guides/routing/model-fallbacks" target="_blank" rel="noopener noreferrer">Documentação oficial</a>. Consulta: 29 out. 2026.</li>
+</ol>
+<p><a id="ref-13"></a></p>
+<ol start="13">
+<li>OPENROUTER. <em>Provider Routing</em>. <a href="https://openrouter.ai/docs/guides/routing/provider-selection" target="_blank" rel="noopener noreferrer">Documentação oficial</a>. Consulta: 29 out. 2026.</li>
+</ol>
+<p><a id="ref-14"></a></p>
+<ol start="14">
+<li>BERRIAI. <em>Benchmarks</em>. Documentação do LiteLLM. <a href="https://docs.litellm.ai/docs/benchmarks" target="_blank" rel="noopener noreferrer">Documento oficial</a>. Consulta: 29 out. 2026.</li>
+</ol>
+<p><a id="ref-15"></a></p>
+<ol start="15">
+<li>PORTKEY. <em>AI Gateway</em>. <a href="https://portkey.ai/docs/product/ai-gateway" target="_blank" rel="noopener noreferrer">Documentação oficial</a>. Consulta: 29 out. 2026.</li>
+</ol>
+<p><a id="ref-16"></a></p>
+<ol start="16">
+<li>ROSE, Scott; BORCHERT, Oliver; MITCHELL, Stu; CONNELLY, Sean. <em>Zero Trust Architecture</em>. NIST SP 800-207, 2020. DOI: <a href="https://doi.org/10.6028/NIST.SP.800-207" target="_blank" rel="noopener noreferrer">10.6028/NIST.SP.800-207</a>.</li>
+</ol>
+<p><a id="ref-17"></a></p>
+<ol start="17">
+<li>NIST. <em>Artificial Intelligence Risk Management Framework — AI RMF 1.0</em>. NIST AI 100-1, 2023. <a href="https://www.nist.gov/itl/ai-risk-management-framework" target="_blank" rel="noopener noreferrer">Fonte oficial</a>.</li>
+</ol>
+<p><a id="ref-18"></a></p>
+<ol start="18">
+<li>NIST. <em>Artificial Intelligence Risk Management Framework: Generative Artificial Intelligence Profile</em>. NIST AI 600-1, 2024. DOI: <a href="https://doi.org/10.6028/NIST.AI.600-1" target="_blank" rel="noopener noreferrer">10.6028/NIST.AI.600-1</a>.</li>
+</ol>
+<p><a id="ref-19"></a></p>
+<ol start="19">
+<li>ISO; IEC. <em>ISO/IEC 42001:2023 — Information technology — Artificial intelligence — Management system</em>. <a href="https://www.iso.org/standard/42001" target="_blank" rel="noopener noreferrer">Registro oficial</a>.</li>
+</ol>
+<p><a id="ref-20"></a></p>
+<ol start="20">
+<li>BRASIL. <em>Lei nº 13.709/2018 — Lei Geral de Proteção de Dados Pessoais</em>, art. 33. <a href="https://normas.leg.br/?urn=urn%3Alex%3Abr%3Afederal%3Alei%3A2018-08-14%3B13709%21art33" target="_blank" rel="noopener noreferrer">Legislação federal</a>.</li>
+</ol>
+<p><a id="ref-21"></a></p>
+<ol start="21">
+<li>ANPD. <em>Resolução CD/ANPD nº 19, de 23 de agosto de 2024 — Regulamento de Transferência Internacional de Dados</em>. <a href="https://www.gov.br/anpd/pt-br/acesso-a-informacao/institucional/atos-normativos/regulamentacoes_anpd/resolucao-cd-anpd-no-19-de-23-de-agosto-de-2024" target="_blank" rel="noopener noreferrer">Fonte oficial</a>.</li>
+</ol>
+<p><a id="ref-22"></a></p>
+<ol start="22">
+<li>UNIÃO EUROPEIA. <em>Regulamento (UE) 2024/1689 — AI Act</em>, art. 12, versão consolidada disponibilizada pela Comissão Europeia. <a href="https://ai-act-service-desk.ec.europa.eu/en/ai-act/article-12" target="_blank" rel="noopener noreferrer">AI Act Service Desk</a>.</li>
+</ol>
+<p><a id="ref-23"></a></p>
+<ol start="23">
+<li>OWASP GENAI SECURITY PROJECT. <em>LLM10:2025 — Unbounded Consumption</em>. <a href="https://genai.owasp.org/llmrisk/llm102025-unbounded-consumption/" target="_blank" rel="noopener noreferrer">Fonte oficial</a>.</li>
+</ol>
+<p><a id="ref-24"></a></p>
+<ol start="24">
+<li>OWASP GENAI SECURITY PROJECT. <em>OWASP Top 10 for Agentic Applications for 2026</em>. 9 dez. 2025. <a href="https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/" target="_blank" rel="noopener noreferrer">Fonte oficial</a>.</li>
+</ol>
+<p><a id="ref-25"></a></p>
+<ol start="25">
+<li>GITHUB ADVISORY DATABASE. <em>LiteLLM has SQL Injection in Proxy API key verification — CVE-2026-42208 / GHSA-r75f-5x8p-qvmc</em>. <a href="https://github.com/advisories/GHSA-r75f-5x8p-qvmc" target="_blank" rel="noopener noreferrer">Registro</a>. Consulta: 29 out. 2026.</li>
+</ol>
+<p><a id="ref-26"></a></p>
+<ol start="26">
+<li>BERRIAI/LITELLM. <em>Security report concerning compromised litellm 1.107.0 distribution</em>. Issue nº 47826. Relato técnico e discussão no repositório do projeto. <a href="https://github.com/BerriAI/litellm/issues/47826" target="_blank" rel="noopener noreferrer">Registro original</a>. Consulta: 29 out. 2026.</li>
+</ol>
+<p><a id="ref-27"></a></p>
+<ol start="27">
+<li>SILVA, Aridio. <em>SGAEIA: Secure Governed Autonomous Edge Intelligence Architecture</em>. Versão 0.3.4. Zenodo, 2026. DOI: <a href="https://doi.org/10.5281/zenodo.22557796" target="_blank" rel="noopener noreferrer">10.5281/zenodo.22557796</a>.</li>
+</ol>
+<h2>Sobre o Autor</h2>
+<p><strong>Aridio Silva</strong> é pesquisador independente no Brasil e trabalha com arquitetura, segurança, governança e confiabilidade de sistemas de inteligência artificial autônomos e distribuídos.</p>
+<p>Sua pesquisa concentra-se em <strong>Agentic AI, Sistemas Multiagentes, Edge AI, Segurança de AI, Zero Trust, Security-by-Design, Governança de AI, Spec-Driven Development e garantia contínua de segurança</strong>.</p>
+<p>É criador e pesquisador principal do <strong>SGAEIA — Secure Governed Autonomous Edge Intelligence Architecture</strong>, iniciativa aberta de pesquisa sobre fundamentos arquiteturais para sistemas de AI autônomos seguros, governados, auditáveis e confiáveis em ambientes distribuídos edge-cloud.</p>
+<h2>Perfis de Pesquisa</h2>
+<p><strong>Aridio Silva</strong> — Pesquisador Independente, Brasil</p>
+<ul>
+<li><strong>ORCID:</strong> <a href="https://orcid.org/0009-0008-2411-6995" target="_blank" rel="noopener noreferrer">https://orcid.org/0009-0008-2411-6995</a></li>
+<li><strong>Google Scholar:</strong> <a href="https://scholar.google.com/citations?user=rPn5O48AAAAJ" target="_blank" rel="noopener noreferrer">https://scholar.google.com/citations?user=rPn5O48AAAAJ</a></li>
+<li><strong>Zenodo — Comunidade SGAEIA:</strong> <a href="https://zenodo.org/communities/sgaeia" target="_blank" rel="noopener noreferrer">https://zenodo.org/communities/sgaeia</a></li>
+<li><strong>OpenAIRE:</strong> <a href="https://explore.openaire.eu/search/find?fv0=Aridio%20Silva&f0=q" target="_blank" rel="noopener noreferrer">https://explore.openaire.eu/search/find?fv0=Aridio%20Silva&amp;f0=q</a></li>
+<li><strong>Medium:</strong> <a href="https://medium.com/@aridiosilva" target="_blank" rel="noopener noreferrer">https://medium.com/@aridiosilva</a></li>
+<li><strong>GitHub:</strong> <a href="https://github.com/aridiosilva" target="_blank" rel="noopener noreferrer">https://github.com/aridiosilva</a></li>
+<li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/aridio-silva-74997111/" target="_blank" rel="noopener noreferrer">https://www.linkedin.com/in/aridio-silva-74997111/</a></li>
+<li><strong>Repositório público SGAEIA:</strong> <a href="https://github.com/aridiosilva/SGAEIA" target="_blank" rel="noopener noreferrer">https://github.com/aridiosilva/SGAEIA</a></li>
+<li><strong>Artefato de Pesquisa SGAEIA / DOI:</strong> <a href="https://doi.org/10.5281/zenodo.22557796" target="_blank" rel="noopener noreferrer">https://doi.org/10.5281/zenodo.22557796</a></li>
+<li><strong>Homepage:</strong> <a href="https://aridiosilva.com" target="_blank" rel="noopener noreferrer">https://aridiosilva.com</a></li>
+<li><strong>Homepage SGAEIA:</strong> <a href="https://aridiosilva.com/sgaeia" target="_blank" rel="noopener noreferrer">https://aridiosilva.com/sgaeia</a></li>
+<li><strong>SGAEIA no LinkedIn:</strong> <a href="https://www.linkedin.com/company/sgaeia/" target="_blank" rel="noopener noreferrer">https://www.linkedin.com/company/sgaeia/</a></li>
+<li><strong>Kaggle:</strong> <a href="https://www.kaggle.com/aridiosilva2" target="_blank" rel="noopener noreferrer">https://www.kaggle.com/aridiosilva2</a></li>
+<li><strong>DEV Community:</strong> <a href="https://dev.to/aridiosilva" target="_blank" rel="noopener noreferrer">https://dev.to/aridiosilva</a></li>
+<li><strong>Academia.edu:</strong> <a href="https://independent.academia.edu/AridioSilva" target="_blank" rel="noopener noreferrer">https://independent.academia.edu/AridioSilva</a></li>
+</ul>
+<h2>Figuras</h2>
+<p>A capa não é numerada. As Figuras 1–11 são numeradas sequencialmente, citadas no texto e fornecidas em PNG e SVG. Os ativos conceituais permanecem dentro da fronteira de divulgação pública e são licenciados sob CC BY 4.0. A composição visual da capa foi feita com assistência de AI.</p>
+<h2>Licença</h2>
+<p>Exceto onde indicado de outra forma, o texto e as ilustrações conceituais originais deste artigo são licenciados sob a <strong>Creative Commons Attribution 4.0 International License (CC BY 4.0)</strong>.</p>
+<p>© Aridio Silva @aridiosilva · Outubro de 2026. O software e o artefato de pesquisa SGAEIA permanecem sujeitos à sua própria licença Apache License 2.0.</p>
+<p><strong>Autonomous AI. Governed by Design. Trusted by Evidence.</strong></p>
+<h2>Continuidade da Série</h2>
+<p>Este trabalho é o <strong>Artigo 24 da Série de Pesquisa SGAEIA</strong>. O catálogo público da série está disponível em <a href="https://aridiosilva.com" target="_blank" rel="noopener noreferrer">https://aridiosilva.com</a>, com a presença do projeto em <a href="https://aridiosilva.com/sgaeia" target="_blank" rel="noopener noreferrer">https://aridiosilva.com/sgaeia</a>.</p>
+<p><strong>Registro persistente do Artigo 24:</strong> <a href="https://doi.org/10.5281/zenodo.23763978" target="_blank" rel="noopener noreferrer">https://doi.org/10.5281/zenodo.23763978</a>. Artefato canônico do projeto SGAEIA: <a href="https://doi.org/10.5281/zenodo.22557796" target="_blank" rel="noopener noreferrer">https://doi.org/10.5281/zenodo.22557796</a>.</p>
+<ol>
+<li><p><a href="https://medium.com/@aridiosilva/from-edge-ai-to-governed-autonomous-edge-intelligence-9cbe487d853a" target="_blank" rel="noopener noreferrer"><em>From Edge AI to Governed Autonomous Edge Intelligence</em></a></p>
+</li>
+<li><p><a href="https://medium.com/@aridiosilva/why-autonomous-ai-agents-need-bounded-and-revocable-authority-da75656098f7" target="_blank" rel="noopener noreferrer"><em>Why Autonomous AI Agents Need Bounded and Revocable Authority</em></a></p>
+</li>
+<li><p><a href="https://medium.com/@aridiosilva/zero-trust-for-multi-agent-ai-systems-31747c850af4" target="_blank" rel="noopener noreferrer"><em>Zero Trust for Multi-Agent AI Systems</em></a></p>
+</li>
+<li><p><a href="https://medium.com/@aridiosilva/authenticated-delegation-between-autonomous-ai-agents-4c1281cd9e14" target="_blank" rel="noopener noreferrer"><em>Authenticated Delegation Between Autonomous AI Agents</em></a></p>
+</li>
+<li><p><a href="https://medium.com/@aridiosilva/continuous-grc-for-agentic-ai-ada11c2974d0" target="_blank" rel="noopener noreferrer"><em>Continuous GRC for Agentic AI</em></a></p>
+</li>
+<li><p><a href="https://medium.com/@aridiosilva/evidence-as-code-making-ai-governance-verifiable-db89e3105b87" target="_blank" rel="noopener noreferrer"><em>Evidence-as-Code: Making AI Governance Verifiable</em></a></p>
+</li>
+<li><p><a href="https://medium.com/@aridiosilva/security-by-design-for-distributed-agentic-ai-d8a00dfe1acd" target="_blank" rel="noopener noreferrer"><em>Security-by-Design for Distributed Agentic AI</em></a></p>
+</li>
+<li><p><a href="https://medium.com/@aridiosilva/sgaeia-a-reference-architecture-for-secure-governed-autonomous-edge-intelligence-cd5466cbc29c" target="_blank" rel="noopener noreferrer"><em>SGAEIA: A Reference Architecture for Secure Governed Autonomous Edge Intelligence</em></a></p>
+</li>
+<li><p><a href="https://medium.com/@aridiosilva/when-ai-begins-to-build-ai-f762df34afec" target="_blank" rel="noopener noreferrer"><em>When AI Begins to Build AI</em></a></p>
+</li>
+<li><p><a href="https://medium.com/@aridiosilva/rogue-ai-agents-when-autonomous-systems-become-a-collective-75ddaf685938" target="_blank" rel="noopener noreferrer"><em>Rogue AI Agents: When Autonomous Systems Become a Collective</em></a></p>
+</li>
+<li><p><a href="https://medium.com/@aridiosilva/from-model-capability-to-governed-action-an-architecture-for-secure-agentic-ai-de0bf29d0cdc" target="_blank" rel="noopener noreferrer"><em>From Model Capability to Governed Action: An Architecture for Secure Agentic AI</em></a></p>
+</li>
+<li><p><a href="https://medium.com/@aridiosilva/ten-days-that-exposed-the-governance-gap-in-frontier-ai-07fbd2c278d4" target="_blank" rel="noopener noreferrer"><em>Ten Days That Exposed the Governance Gap in Frontier AI</em></a></p>
+</li>
+<li><p><a href="https://medium.com/@aridiosilva/when-ai-hallucination-becomes-action-f04cc100b76a" target="_blank" rel="noopener noreferrer"><em>When AI Hallucination Becomes Action</em></a></p>
+</li>
+<li><p><a href="https://medium.com/@aridiosilva/ais-alien-mind-0c228fc0d320" target="_blank" rel="noopener noreferrer"><em>AI’s Alien Mind: How to Govern What We Cannot Fully Understand</em></a></p>
+</li>
+<li><p><a href="https://medium.com/@aridiosilva/when-ai-agents-form-societies-448a8d06d411" target="_blank" rel="noopener noreferrer"><em>When AI Agents Form Societies: Is Security a Property of the Model or the System?</em></a></p>
+</li>
+<li><p><a href="https://medium.com/@aridiosilva/when-ai-improves-ai-governing-recursive-intelligence-acceleration-6eb951abdbaf" target="_blank" rel="noopener noreferrer"><em>When AI Improves AI: Governing Recursive Intelligence Acceleration</em></a></p>
+</li>
+<li><p><a href="https://medium.com/@aridiosilva/ai-jailbreaks-from-bypassing-restrictions-to-governing-authority-b16efbf0c0ab" target="_blank" rel="noopener noreferrer"><em>AI Jailbreaks: From Bypassing Restrictions to Governing Authority</em></a></p>
+</li>
+<li><p><a href="https://medium.com/@aridiosilva/tracing-ai-agent-execution-foundations-state-of-the-art-and-implications-for-distributed-cf1cda3b9cd4" target="_blank" rel="noopener noreferrer"><em>Tracing AI Agent Execution: Foundations, State of the Art, and Implications for Distributed Multi-Agent Systems</em></a></p>
+</li>
+<li><p><a href="https://medium.com/@aridiosilva/lora-in-ai-agents-efficiency-security-risks-and-adapter-governance-e3cbdfb3e588" target="_blank" rel="noopener noreferrer"><em>LoRA in AI Agents: Efficiency, Security Risks, and Adapter Governance</em></a></p>
+</li>
+<li><p><a href="https://medium.com/@aridiosilva/ai-agents-and-agentic-ai-what-sets-them-apart-e7dcdf391fbc" target="_blank" rel="noopener noreferrer"><em>AI Agents and Agentic AI: What Sets Them Apart?</em></a></p>
+</li>
+<li><p><a href="https://medium.com/@aridiosilva/the-open-letter-on-ai-and-cybersecurity-and-the-evidence-for-agent-containment-071f1882f34d" target="_blank" rel="noopener noreferrer"><em>The Open Letter on AI and Cybersecurity and the Evidence for Agent Containment</em></a></p>
+</li>
+<li><p><a href="https://medium.com/@aridiosilva/opening-the-black-box-of-llm-inference-foundations-of-generative-ai-65f6d3563bd2" target="_blank" rel="noopener noreferrer"><em>Opening the Black Box of LLM Inference: Foundations of Generative AI</em></a></p>
+</li>
+<li><p><a href="https://medium.com/@aridiosilva/how-to-reduce-the-cost-of-ai-systems-with-llms-without-sacrificing-quality-b097cecce482" target="_blank" rel="noopener noreferrer"><em>How to Reduce the Cost of AI Systems with LLMs Without Sacrificing Quality</em></a></p>
+</li>
+<li><p><em><strong>Roteadores de LLMs para Sistemas de AI: Arquitetura, Governança, Multiagentes, Enxames e Segurança</strong></em> — artigo atual.</p>
+</li>
+</ol>
+<h2>Citação Sugerida</h2>
+<p>Silva, Aridio. (2026). <em>Roteadores de LLMs para Sistemas de AI: Arquitetura, Governança, Multiagentes, Enxames e Segurança</em>. Série de Pesquisa SGAEIA, Artigo 24. DOI: <a href="https://doi.org/10.5281/zenodo.23763978" target="_blank" rel="noopener noreferrer">10.5281/zenodo.23763978</a>.</p><h2>Canais de publicação</h2><p class="article-distribution-links"><a href="https://zenodo.org/records/23763978" target="_blank" rel="noopener noreferrer">Zenodo</a><a href="https://dev.to/aridiosilva/llm-routers-for-ai-systems-architecture-governance-multi-agent-systems-swarms-and-security-3g7f" target="_blank" rel="noopener noreferrer">DEV.to</a><a href="https://www.academia.edu/179879094/LLM_Routers_for_AI_Systems" target="_blank" rel="noopener noreferrer">Academia.edu</a><a href="https://medium.com/@aridiosilva/llm-routers-for-ai-systems-architecture-governance-multi-agent-systems-swarms-and-security-57b492be7cb8" target="_blank" rel="noopener noreferrer">Medium.com</a></p></article></section></main><footer class="site-footer footer-style-preview" id="footer">
+  <div class="shell">
+    <div class="footer-head">
+      <div class="footer-brand-lockup">
+        <img class="footer-sgaeia-logo" src="/assets/sgaeia-logo-transparent.png" alt="" aria-hidden="true" width="1254" height="1254" loading="lazy" decoding="async">
+        <a class="footer-wordmark footer-project-link" href="/sgaeia.html">SGAEIA</a>
+      </div>
+      <div class="footer-note">SGAEIA · Pesquisa sobre sistemas de IA autônomos e distribuídos sob governança.</div>
+    </div>
+
+    <nav class="brand-links footer-name-links" aria-label="Perfis de pesquisa e links do projeto">
+      <a class="footer-profile-link" aria-label="GitHub" title="GitHub" href="https://github.com/aridiosilva" target="_blank" rel="noopener noreferrer"><strong>GitHub</strong></a>
+      <a class="footer-profile-link" aria-label="ORCID" title="ORCID" href="https://orcid.org/0009-0008-2411-6995" target="_blank" rel="me noopener noreferrer"><strong>ORCID</strong></a>
+      <a class="footer-profile-link" aria-label="Google Scholar" title="Google Scholar" href="https://scholar.google.com/citations?user=rPn5O48AAAAJ" target="_blank" rel="noopener noreferrer"><strong>Google Scholar</strong></a>
+      <a class="footer-profile-link" aria-label="Registros do autor no Zenodo" title="Zenodo" href="https://zenodo.org/search?q=metadata.creators.person_or_org.name%3A%22Silva%2C%20Aridio%22" target="_blank" rel="noopener noreferrer"><strong>Zenodo</strong></a>
+      <a class="footer-profile-link" aria-label="Comunidade SGAEIA no Zenodo" title="SGAEIA — Comunidade Zenodo" href="https://zenodo.org/communities/sgaeia" target="_blank" rel="noopener noreferrer"><strong>SGAEIA · Comunidade Zenodo</strong></a>
+      <a class="footer-profile-link" aria-label="OpenAIRE" title="OpenAIRE" href="https://explore.openaire.eu/search/find?fv0=Aridio%20Silva&amp;f0=q" target="_blank" rel="noopener noreferrer"><strong>OpenAIRE</strong></a>
+      <a class="footer-profile-link" aria-label="Medium" title="Medium" href="https://medium.com/@aridiosilva" target="_blank" rel="noopener noreferrer"><strong>Medium</strong></a>
+      <a class="footer-profile-link" aria-label="Academia.edu" title="Academia.edu" href="https://independent.academia.edu/AridioSilva" target="_blank" rel="noopener noreferrer"><strong>Academia.edu</strong></a>
+      <a class="footer-profile-link" aria-label="Perfil na DEV Community" title="DEV Community" href="https://dev.to/aridiosilva" target="_blank" rel="me noopener noreferrer"><strong>DEV Community</strong></a>
+      <a class="footer-profile-link" aria-label="LinkedIn" title="LinkedIn" href="https://www.linkedin.com/in/aridio-silva-74997111/" target="_blank" rel="noopener noreferrer"><strong>LinkedIn</strong></a>
+      <a class="footer-profile-link" aria-label="SGAEIA LinkedIn" title="SGAEIA LinkedIn" href="https://www.linkedin.com/company/sgaeia/" target="_blank" rel="noopener noreferrer"><strong>SGAEIA · LinkedIn</strong></a>
+      <a class="footer-profile-link" aria-label="Repositório SGAEIA no GitHub" title="Repositório SGAEIA" href="https://github.com/aridiosilva/SGAEIA" target="_blank" rel="noopener noreferrer"><strong>Repositório SGAEIA</strong></a>
+      <a class="footer-profile-link" aria-label="Kaggle" title="Kaggle" href="https://www.kaggle.com/aridiosilva2" target="_blank" rel="noopener noreferrer"><strong>Kaggle</strong></a>
+      <a class="footer-profile-link" aria-label="DOI do artefato de pesquisa SGAEIA" title="Artefato de pesquisa SGAEIA / DOI" href="https://doi.org/10.5281/zenodo.22557796" target="_blank" rel="noopener noreferrer"><strong>SGAEIA DOI</strong></a>
+    </nav>
+
+    <div class="footer-bottom">
+      <span>© 2026 Aridio Silva · <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></span>
+      <span>Última atualização: 29 de outubro de 2026 — Versão 1.0.0</span>
+      <span>IA autônoma. Governada por concepção. Confiável pela evidência.</span>
+    </div>
+  </div>
+</footer></body></html>

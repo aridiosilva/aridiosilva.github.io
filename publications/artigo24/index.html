@@ -1,0 +1,943 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>LLM Routers for AI Systems: Architecture, Governance, Multi-Agent Systems, Swarms, and Security — Aridio Silva</title>
+  <meta name="description" content="A technical review of LLM routing architectures, benchmarks, gateways, governance, security, and trajectory-level evidence for agentic and multi-agent systems.">
+  <meta name="author" content="Aridio Silva">
+  <meta name="copyright" content="© 2026 Aridio Silva">
+  <meta name="keywords" content="AI, LLM routing, AI gateway, multi-agent systems, swarms, security, governance, evaluation, SGAEIA">
+  <link rel="canonical" href="https://aridiosilva.com/publications/artigo24/">
+  <link rel="license" href="https://creativecommons.org/licenses/by/4.0/">
+  <meta name="citation_title" content="LLM Routers for AI Systems: Architecture, Governance, Multi-Agent Systems, Swarms, and Security">
+  <meta name="citation_author" content="Silva, Aridio">
+  <meta name="citation_publication_date" content="2026/10/29">
+  <meta name="citation_online_date" content="2026/10/29">
+  <meta name="citation_language" content="en">
+  <meta name="citation_doi" content="10.5281/zenodo.23763978">
+  <meta name="citation_pdf_url" content="https://aridiosilva.com/assets/article24/article24-en.pdf">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://www.googletagmanager.com; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https://*.google-analytics.com; connect-src https://*.google-analytics.com https://www.googletagmanager.com; media-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'; upgrade-insecure-requests">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <link rel="sitemap" type="application/xml" href="/sitemap.xml">
+  <link rel="describedby" href="/llms.txt" type="text/markdown">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;family=Source+Serif+4:opsz,wght@8..60,500;6..60,700&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/publications.css?v=20261012-14">
+  <link rel="stylesheet" href="/assets/article-header.css">
+  <link rel="stylesheet" href="/assets/article-accessibility.css">
+  <link rel="stylesheet" href="/assets/article20.css?v=20261014">
+  <link rel="stylesheet" href="/assets/article24.css?v=20261029-1">
+  <script defer src="/assets/article20-accessibility.js?v=20261014"></script>
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="LLM Routers for AI Systems: Architecture, Governance, Multi-Agent Systems, Swarms, and Security">
+  <meta property="og:description" content="A technical review of LLM routing architectures, benchmarks, gateways, governance, security, and trajectory-level evidence for agentic and multi-agent systems.">
+  <meta property="og:url" content="https://aridiosilva.com/publications/artigo24/">
+  <meta property="og:image" content="https://aridiosilva.com/assets/article24/en/sgaeia-article-24-cover_EN.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="alternate" hreflang="en" href="https://aridiosilva.com/publications/artigo24/">
+  <link rel="alternate" hreflang="pt-BR" href="https://aridiosilva.com/publications/artigo24/pt/">
+  <link rel="alternate" hreflang="x-default" href="https://aridiosilva.com/publications/artigo24/">
+  <!-- GA4 G-MXMJ7Z3LS7: automatic cookieless audience measurement; analytics and advertising storage remain disabled. -->
+  <script defer src="/assets/analytics-consent.js?v=20261011"></script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"ScholarlyArticle","headline":"LLM Routers for AI Systems: Architecture, Governance, Multi-Agent Systems, Swarms, and Security","author":{"@type":"Person","name":"Aridio Silva","identifier":"https://orcid.org/0009-0008-2411-6995"},"datePublished":"2026-10-29","dateModified":"2026-10-29","inLanguage":"en","license":"https://creativecommons.org/licenses/by/4.0/","identifier":"https://doi.org/10.5281/zenodo.23763978","sameAs":["https://zenodo.org/records/23763978","https://doi.org/10.5281/zenodo.23763978","https://dev.to/aridiosilva/llm-routers-for-ai-systems-architecture-governance-multi-agent-systems-swarms-and-security-3g7f","https://medium.com/@aridiosilva/llm-routers-for-ai-systems-architecture-governance-multi-agent-systems-swarms-and-security-57b492be7cb8","https://www.academia.edu/179879094/LLM_Routers_for_AI_Systems"],"isPartOf":{"@type":"CreativeWorkSeries","name":"SGAEIA Research Series"},"url":"https://aridiosilva.com/publications/artigo24/","image":"https://aridiosilva.com/assets/article24/en/sgaeia-article-24-cover_EN.png","description":"A technical review of LLM routing architectures, benchmarks, gateways, governance, security, and trajectory-level evidence for agentic and multi-agent systems.","version":"1.0"}</script>
+  <link rel="stylesheet" href="/assets/fixed-site-header.css?v=20261029-2">
+  <link rel="stylesheet" href="/assets/editorial-hero.css?v=20261017-1">
+  <script defer src="/assets/fixed-site-header.js?v=20261016-1"></script>
+  <link rel="stylesheet" href="/assets/homepage-footer-preview.css?v=20261017-5">
+</head>
+<body class="article-page"><a class="skip" href="#main">Skip to main content</a><header class="site-header"><div class="shell header-inner"><a class="identity" href="/#top" aria-label="Aridio Silva home"><strong>Aridio Silva</strong><span>Independent Researcher · AI Systems Architecture</span></a><nav aria-label="Primary navigation"><a href="/">Home</a><a href="/sgaeia.html">SGAEIA</a><a href="/publications.html">Publications</a><a href="/infographics/">Infographics</a><a href="/challenges/">Challenges</a></nav><div class="reading-tools" role="group" aria-label="Reading controls"><button type="button" id="articleFontDecrease" aria-label="Decrease text size">A−</button><button type="button" id="articleFontIncrease" aria-label="Increase text size">A+</button><button type="button" id="articleEasyRead" aria-pressed="false">Easy read</button><button type="button" id="articleListen" aria-pressed="false">Listen</button></div></div></header><main id="main"><section class="hero"><div class="shell article"><h1>LLM Routers for AI Systems: Architecture, Governance, Multi-Agent Systems, Swarms, and Security</h1><p class="subtitle">From cost optimization to governed decisions about models, data, and trajectories</p><p class="meta">SGAEIA Research Series — Article 24 · 2026-10-29 · DOI 10.5281/zenodo.23763978</p><nav class="language-nav" aria-label="Article languages"><a href="/publications/artigo24/" aria-current="page">English</a> · <a href="/publications/artigo24/pt/">Português</a></nav></div></section><section class="content"><article class="shell article article-body"><p><strong>SGAEIA Research Series — Article 24</strong></p><p><strong>Aridio Silva</strong><br>Independent Researcher, Brazil<br>Creator of SGAEIA — Secure Governed Autonomous Edge Intelligence Architecture<br><strong>ORCID:</strong> <a href="https://orcid.org/0009-0008-2411-6995" target="_blank" rel="noopener noreferrer">0009-0008-2411-6995</a><br><strong>DOI:</strong> <a href="https://doi.org/10.5281/zenodo.23763978" target="_blank" rel="noopener noreferrer">10.5281/zenodo.23763978</a><br><strong>Published:</strong> 29 October 2026<br><strong>License:</strong> Creative Commons Attribution 4.0 International — CC BY 4.0</p><p class="article-downloads"><a href="/assets/article24/article24-en.pdf" target="_blank" rel="noopener noreferrer">Download English PDF</a><a href="/assets/article24/article24-pt.pdf" target="_blank" rel="noopener noreferrer">Download Portuguese PDF</a></p><figure class="article-figure cover-figure"><img src="/assets/article24/en/sgaeia-article-24-cover_EN.png" alt="Cover — LLM Routers for AI Systems: Architecture, Governance, Multi-Agent Systems, Swarms, and Security" width="1672" height="941" loading="eager" decoding="async" fetchpriority="high"><figcaption><strong>Cover — LLM Routers for AI Systems: Architecture, Governance, Multi-Agent Systems, Swarms, and Security</strong><span class="figure-credit">© Aridio Silva @aridiosilva · October 2026 · CC BY 4.0</span></figcaption></figure><h2>Abstract</h2>
+<p>Language model routing distributes requests across models, providers, and configurations with different capabilities, costs, and response times. Its usefulness, however, depends on two distinct decisions: establishing which alternatives are admissible for the task and selecting the most suitable configuration from that set. This article presents a technical review and argues that, in agentic and multi-agent systems, routing forms part of a decision boundary concerning authority, data, resources, and policy continuity. The analysis distinguishes routers, gateways, and control planes; compares rules, classifiers, similarity, cascades, and model-driven selection; and examines what benchmarks establish about quality, cost, latency, and robustness. Its analytical contribution is an SGAEIA-related framework for assessing governed routing, applied to model substitution, budgets, and multi-agent execution. The analysis explains why savings per call do not equal savings per task, availability does not establish admissible substitution, and average accuracy does not demonstrate trajectory integrity. Adoption should depend on observed gains against simple baselines, accompanied by sufficient evidence about the boundaries and consequences of decisions.</p>
+<p><strong>Keywords:</strong> AI; LLM routing; AI gateway; multi-agent systems; security; governance; evaluation; SGAEIA.</p>
+<h2>Contents</h2>
+<ol>
+<li><a href="#section-1">The problem extends beyond choosing the cheapest model</a></li>
+<li><a href="#section-2">Routers, gateways, and control planes</a></li>
+<li><a href="#section-3">How the evidence was organized</a></li>
+<li><a href="#section-4">Routing strategies and their trade-offs</a></li>
+<li><a href="#section-5">Quality, cost, and latency need a common unit of analysis</a></li>
+<li><a href="#section-6">Integration and infrastructure selection</a></li>
+<li><a href="#section-7">What benchmarks demonstrate</a></li>
+<li><a href="#section-8">Cross-cutting comparison of strategies</a></li>
+<li><a href="#section-9">Identity, authority, and governed substitution</a></li>
+<li><a href="#section-10">Agents, multi-agent systems, and swarms</a></li>
+<li><a href="#section-11">Governance, security, and evidence</a></li>
+<li><a href="#section-12">An SGAEIA framework for assessing governed routing</a></li>
+<li><a href="#section-13">Evolution and maturity should be assessed by dimension</a></li>
+<li><a href="#section-14">When to adopt routing and when to retain a simpler solution</a></li>
+<li><a href="#section-15">Discussion and analytical limits</a></li>
+<li><a href="#section-16">Conclusion</a></li>
+</ol>
+<p><a id="section-1"></a></p>
+<h2>1. The problem extends beyond choosing the cheapest model</h2>
+<p>An application using language models must decide where to invest inference capacity. A model suitable for extracting fields from a document may be insufficient to verify a complex solution; a model capable of that verification may have costs or response times unsuitable for repetitive work. Routing research explores this heterogeneity by distributing queries across alternatives rather than maintaining one choice for all traffic. The economic opportunity arises from model complementarity and task diversity, but depends on being able to anticipate or recognize where each alternative performs adequately [<a href="#ref-1">1</a>][<a href="#ref-5">5</a>][<a href="#ref-6">6</a>].</p>
+<p>The problem changes when the generated response participates in an action. In a question-answering assistant, an unsuitable selection may produce an unsatisfactory answer; in an agent that queries systems, writes code, or delegates work, the same decision may change the data transmitted, tools used, and subsequent effects. Model selection must therefore account for task state, the person or service authorizing execution, and the boundaries accompanying that authorization. SGAEIA provides the architectural perspective adopted here: the capability to produce a response and the authority to carry out an action are different properties [<a href="#ref-27">27</a>].</p>
+<p>The central thesis is that <strong>routing in agentic systems extends beyond inference optimization and forms part of a critical boundary for decisions, governance, and evidence production</strong>. This does not turn every router into a security system or make a learned algorithm mandatory. Shafran and colleagues already place routers within LLM control planes and demonstrate attacks targeting model selection [<a href="#ref-9">9</a>]. The step developed here is to organize the implications of that understanding into comparable criteria, engineering decisions, and verifiable evidence.</p>
+<p>Six questions guide the analysis: when routing saves money while preserving quality; when a strategy outperforms simple alternatives; what value a gateway provides independently of its algorithm; what risks follow from concentrating credentials and policies; what changes with agents and swarms; and what evidence supports governed selection, substitution, and revocation. The article contributes a synthesis of these questions within a common decision framework, presented and applied in Section 12. Its value is analytical: examining a configuration, identifying its assumptions, and explaining a decision to adopt or reject it. The effectiveness of a particular implementation requires evaluation in its intended environment.</p>
+<p><a id="section-2"></a></p>
+<h2>2. Routers, gateways, and control planes</h2>
+<p>An <strong>LLM router</strong> is a selection function: it receives information about a task and chooses a model, deployment, or execution configuration. The function may use local rules, a classifier, a similarity calculation, or a policy informed by intermediate results. It does not require an HTTP server or public API; selection can occur within the application process. The sequential-decision formulation used by LLMRouter helps explain cases involving history, personalization, and multiple steps [<a href="#ref-8">8</a>].</p>
+<p>An <strong>AI gateway</strong> mediates access to models. It may adapt protocols, check credentials, enforce limits, forward requests, and produce telemetry, while also hosting a routing function. These responsibilities remain useful even if every query goes to the same model. LiteLLM&#39;s virtual-key documentation, for example, describes control of model access and spend tracking; these are mediation capabilities, not evidence that its selector achieves the best cost-quality trade-off [<a href="#ref-10">10</a>].</p>
+<p>The <strong>control plane</strong> administers decisions governing the environment: policies, configurations, permissions, versions, and substitution criteria. The data plane carries the corresponding traffic. A gateway helps enforce these decisions, but its administrative components, inference path, and evidence storage need not share the same privilege domain. The distinction has practical consequences: compromising a client application should not permit editing gateway policies, and observing a response should not grant access to the credentials enabling it [<a href="#ref-16">16</a>].</p>
+<div class="article-table-wrap"><table>
+<thead>
+<tr>
+<th>Element</th>
+<th>Main question</th>
+<th>Responsibility</th>
+<th>Evaluation evidence</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Router</td>
+<td>Which alternative should handle this task?</td>
+<td>Select a model, configuration, or next step</td>
+<td>Selection quality, decision cost, and generalization</td>
+</tr>
+<tr>
+<td>Gateway</td>
+<td>How should authorized execution be mediated?</td>
+<td>Adapt access, enforce controls, and observe traffic</td>
+<td>Isolation, availability, limits, and records</td>
+</tr>
+<tr>
+<td>Control plane</td>
+<td>Who may define and change these decisions?</td>
+<td>Administer policies, permissions, and lifecycle</td>
+<td>Authorization of changes, versions, and revocability</td>
+</tr>
+</tbody></table></div>
+<figure class="article-figure"><img src="/assets/article24/en/sgaeia-article-24-figure-01-governed-routing-decision_EN.png" alt="Figure 1. Model selection conditioned on policies and validation" width="4800" height="2700" loading="lazy" decoding="async"><figcaption><strong>Figure 1.</strong> The flow distinguishes task analysis, routing decisions, and result validation. Selection should consider applicable constraints before optimizing performance. This is a conceptual diagram: the presence of these blocks does not establish correct policy enforcement in a deployment.<span class="figure-credit">© 2026 Aridio Silva · Project SGAEIA · CC BY 4.0</span></figcaption></figure>
+<p>Conflating these layers creates two evaluation errors. The first attributes infrastructure benefits, such as key inventories or centralized auditing, to the selection algorithm. The second assumes that a feature-rich gateway has already solved agent quality, authorization, and security. A coherent architecture defines each component&#39;s responsibility and verifies their interactions, including when a component is unavailable or operates with incomplete information.</p>
+<p><a id="section-3"></a></p>
+<h2>3. How the evidence was organized</h2>
+<p>The analysis is a narrative technical review guided by the six introductory questions. The starting corpus was the Article 24 material, supplemented by original studies, publication records, official documentation, risk-management references, and technical incident reports. Selection prioritizes sources that explain a mechanism, provide comparable evaluation, or document a relevant operating condition. The reference date is 29 October 2026; it does not represent an exhaustive search of all routing research.</p>
+<p>Four types of statement are distinguished. Method and benchmark results are attributed to their authors and evaluated conditions. Product features are described as capabilities documented by suppliers, while legal and risk-management requirements remain linked to their official sources. Cross-cutting comparisons, the governance matrix, and decision scenarios are analytical syntheses developed in this article. This separation distinguishes third-party observations from reasoned implications and proposed assessment approaches.</p>
+<p>An identical savings percentage can represent fewer calls to an expensive model, lower API charges, or reduced computational cost. Comparisons therefore retain the unit, baseline, and generalization boundary rather than ranking studies by their largest percentage. They also distinguish studies proposing a method from work re-evaluating several methods under a common protocol. Neither category removes the need to examine data, model pools, evaluators, and potential commercial interests.</p>
+<p>The article does not present published results as its own experiments. The calculations in Section 5 are hypothetical scenarios with explicit inputs and reproducible arithmetic. Its contribution is demonstrated through a consistent comparison and application of the governance framework to decisions for which isolated criteria yield insufficient conclusions. Empirical assessment of risk reduction, control performance, or production security belongs to a subsequent stage with its own protocol and results.</p>
+<p><a id="section-4"></a></p>
+<h2>4. Routing strategies and their trade-offs</h2>
+<h3>4.1 Selecting before generation</h3>
+<p>Predictive routing chooses a destination using information available before the response: query content, domain, length, identity, history, or a vector representation. Explicit rules can send documents of a particular class to an approved deployment or reserve a model for tasks requiring a specific capability. Their transparency helps explain decisions and examine exceptions; their limitation is representing complex boundaries without proliferating rules. A keyword rule, for example, may confuse a programming question with a request that merely mentions a programming language.</p>
+<p>Classifiers and preference models replace some rules with a learned estimate. RouteLLM uses preference data to estimate when the more capable model is worthwhile and investigates different selection architectures [<a href="#ref-1">1</a>]. Hybrid LLM likewise adjusts routing between smaller and larger alternatives according to a desired quality level [<a href="#ref-4">4</a>]. The advantage is selecting without generating all candidate responses; the dependency is representative supervision and recalibration when models, tasks, or quality criteria change.</p>
+<p>Similarity routing compares the current task with previous examples and uses their history to recommend a model. This exploits domain structure, but proximity in embedding space does not establish equal difficulty or consequences. A simple question and a critical question can share vocabulary while requiring different treatment. Similarity may inform expected performance; authorization to process the data must come from separate criteria.</p>
+<h3>4.2 Deciding after observing a response</h3>
+<p>A cascade consults a model before deciding whether to stop or escalate. FrugalGPT explores combinations of models and acceptance criteria to reduce inference cost [<a href="#ref-2">2</a>]. The strategy is attractive when the first alternative solves a substantial share of tasks and its result can be assessed reliably enough. When almost every task escalates, the system pays for the initial model and its successor, plus evaluation and accumulated latency.</p>
+<p>AutoMix combines an initial answer, self-verification, and decision-making under uncertainty, recognizing that intermediate assessment can be noisy [<a href="#ref-3">3</a>]. The central issue extends beyond the smaller model&#39;s capability to whether the verifier recognizes its errors. Valid JSON may contain incorrect data, and a confident response may lack support. Format validation, content assessment, and action authorization are different checks, even when they share infrastructure.</p>
+<p>An LLM judge offers flexible evaluation but adds cost, dependency, and potentially correlated errors. Changing the judge&#39;s supplier may increase diversity without establishing effective independence: instructions, references, and criteria may remain shared. For important tasks, the system must measure disagreements, false acceptances, and false rejections alongside average scores. Evaluator identity should be part of the decision record, especially when its score determines a subsequent action.</p>
+<h3>4.3 Adapting policies and using models to select models</h3>
+<p>Adaptive strategies may update decisions from observed results, while generative strategies use an LLM to interpret, decompose, or plan selection itself. Bandits and related approaches face an additional trade-off: exploring alternatives to learn may incur costs and inferior responses during exploration. A generative selector adds inference before the main inference and can make decisions harder to explain. These methods must justify their additional costs and risks against a simple alternative.</p>
+<p>Jiangeng and colleagues organize the field into predictive, adaptive, and generative operations and distinguish infrastructure work that evaluates or supports routing [<a href="#ref-7">7</a>]. This complements the distinction between decisions made before and after generation. A gateway may combine mandatory rules, a predictive classifier, and adaptive escalation without those mechanisms competing in every respect. A taxonomy should identify the decision each mechanism makes and the information it uses.</p>
+<figure class="article-figure"><img src="/assets/article24/en/sgaeia-article-24-figure-02-routing-taxonomy_EN.png" alt="Figure 2. Strategy families and decision timing" width="4800" height="2700" loading="lazy" decoding="async"><figcaption><strong>Figure 2.</strong> The taxonomy relates advance selection, cascades, and intermediate evaluation. It helps locate additional calls and supervision dependencies. Categories can coexist within an application; their presence establishes no universal ranking of quality.<span class="figure-credit">© 2026 Aridio Silva · Project SGAEIA · CC BY 4.0</span></figcaption></figure>
+<div class="article-table-wrap"><table>
+<thead>
+<tr>
+<th>Strategy</th>
+<th>Generation calls</th>
+<th>Training or supervision</th>
+<th>Main advantage</th>
+<th>Main dependency</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Rules</td>
+<td>Usually one</td>
+<td>Explicit policies and criteria</td>
+<td>Transparency and low selection cost</td>
+<td>Rule coverage and exception handling</td>
+</tr>
+<tr>
+<td>Classifier or preferences</td>
+<td>Usually one, plus any embeddings</td>
+<td>Labeled data and calibration</td>
+<td>Selection without generating alternative answers</td>
+<td>Representative data</td>
+</tr>
+<tr>
+<td>Similarity</td>
+<td>Usually one, plus vector representation</td>
+<td>Evaluated history</td>
+<td>Incremental use of examples</td>
+<td>Neighbor coverage and relevance</td>
+</tr>
+<tr>
+<td>Cascade</td>
+<td>One or more</td>
+<td>Acceptance criterion</td>
+<td>Escalation only when needed</td>
+<td>Validation reliability and cost</td>
+</tr>
+<tr>
+<td>Self-verification or judge</td>
+<td>Two or more operations, depending on design</td>
+<td>Examples, rubric, or evaluator</td>
+<td>Assessment conditioned on the result</td>
+<td>Correlated errors and additional cost</td>
+</tr>
+<tr>
+<td>Adaptive or generative</td>
+<td>Variable</td>
+<td>Observed feedback or selection instructions</td>
+<td>Adaptation to state and context</td>
+<td>Exploration cost, stability, and explanation</td>
+</tr>
+</tbody></table></div>
+<p><a id="section-5"></a></p>
+<h2>5. Quality, cost, and latency need a common unit of analysis</h2>
+<h3>5.1 The relevant cost is the cost of a completed task</h3>
+<p>The price of a call does not describe system cost. The total includes input and output tokens, retries, embeddings, verifiers, infrastructure, and operational work. In agentic workflows, it also depends on the number of calls needed to complete a task and how many trajectories must be repeated. A model with cheap tokens may make a task more expensive if it requires more corrections, generates unnecessarily long responses, or increases tool calls.</p>
+<p>A useful decomposition, proposed here for operational assessment, is:</p>
+<figure class="article-figure formula-figure"><img src="/assets/article24/en/publication/formulas/sgaeia-article-24-formula-01_EN.png" alt="Equation 1. Total task-cost decomposition." width="2640" height="242" loading="lazy" decoding="async"><figcaption><strong>Equation 1. Total task-cost decomposition.</strong><span class="figure-credit">© 2026 Aridio Silva · Project SGAEIA · CC BY 4.0</span></figcaption></figure>
+
+<p>This expression organizes the components to measure; it does not assume they are constant or independent. Retry cost depends on answer quality and recovery policy, while operating cost may contain a significant fixed component. Alternatives must be compared using the same definition of task completion and the same acceptance criteria. Otherwise, apparent savings may simply reflect accepting inferior responses or stopping tasks prematurely.</p>
+<p>Consider a hypothetical scenario in which a compact-model call costs US$0.002 and a more capable-model call costs US$0.020, with input and output lengths already incorporated into these prices. A selector sends 80% of queries to the former and 20% to the latter, adding US$0.0004 per query for selection. Average variable cost is US$0.006, 70% below sending all queries to the more expensive model. The calculation assumes unchanged traffic distribution, per-call costs, and required quality.</p>
+<figure class="article-figure formula-figure"><img src="/assets/article24/en/publication/formulas/sgaeia-article-24-formula-02_EN.png" alt="Equation 2. Average variable cost for the hypothetical routed configuration." width="2640" height="242" loading="lazy" decoding="async"><figcaption><strong>Equation 2. Average variable cost for the hypothetical routed configuration.</strong><span class="figure-credit">© 2026 Aridio Silva · Project SGAEIA · CC BY 4.0</span></figcaption></figure>
+
+<p>If operating the router adds US$500 monthly, the variable reduction does not translate fully into total savings. At 10,000 queries, spending rises from US$200 to US$560; at 50,000, it falls from US$1,000 to US$800. Break-even is approximately 35,715 monthly queries under these assumptions. The example demonstrates why volume and fixed cost must accompany a savings percentage presented to decision-makers.</p>
+<div class="article-table-wrap"><table>
+<thead>
+<tr>
+<th>Hypothetical monthly volume</th>
+<th>Always the more expensive model</th>
+<th>Routing, including US$500 fixed cost</th>
+<th>Difference from baseline</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>10,000 queries</td>
+<td>US$200</td>
+<td>US$560</td>
+<td>US$360 increase</td>
+</tr>
+<tr>
+<td>50,000 queries</td>
+<td>US$1,000</td>
+<td>US$800</td>
+<td>US$200 saving</td>
+</tr>
+<tr>
+<td>100,000 queries</td>
+<td>US$2,000</td>
+<td>US$1,100</td>
+<td>US$900 saving</td>
+</tr>
+</tbody></table></div>
+<figure class="article-figure formula-figure"><img src="/assets/article24/en/publication/formulas/sgaeia-article-24-formula-03_EN.png" alt="Equation 3. Break-even volume under a fixed operating cost." width="2640" height="242" loading="lazy" decoding="async"><figcaption><strong>Equation 3. Break-even volume under a fixed operating cost.</strong><span class="figure-credit">© 2026 Aridio Silva · Project SGAEIA · CC BY 4.0</span></figcaption></figure>
+
+<p>This break-even expression applies only when routed variable cost is lower than the baseline and the fixed component can be represented by F. It changes if the gateway serves other objectives, such as access management, whose costs would exist without dynamic selection. In that case, the incremental cost of enabling routing should be assessed, avoiding double allocation of infrastructure costs. The economic decision becomes more precise when mediation value and selector value are separated.</p>
+<h3>5.2 Measuring the trade-off without confusing its scales</h3>
+<p>RouteLLM defines PGR as the fraction of the performance gap between two models recovered by the router. APGR summarizes the recovery curve as expensive-model use varies, while CPT identifies the call fraction needed to achieve a specified recovery [<a href="#ref-1">1</a>]. These measures help assess a binary configuration but do not automatically equal lower dollar charges. Actual cost also depends on generated lengths, tariffs, and auxiliary operations.</p>
+<figure class="article-figure formula-figure"><img src="/assets/article24/en/publication/formulas/sgaeia-article-24-formula-04_EN.png" alt="Equation 4. Performance-gap recovery between compact and strong-model references." width="2640" height="242" loading="lazy" decoding="async"><figcaption><strong>Equation 4. Performance-gap recovery between compact and strong-model references.</strong><span class="figure-credit">© 2026 Aridio Silva · Project SGAEIA · CC BY 4.0</span></figcaption></figure>
+
+<p>The expression requires a meaningful, nonzero denominator. PGR of 50% means recovering half the gap between references, not achieving 50% of the stronger model&#39;s score. If reference scores are close, small evaluation changes may substantially alter the indicator. Absolute scores, variability, and the cost curve should therefore accompany the normalized value.</p>
+<p>RouterBench and LLMRouterBench extend the analysis to model pools and cost-quality frontiers [<a href="#ref-5">5</a>][<a href="#ref-6">6</a>]. A configuration is dominated when another provides at least equal quality at no greater cost, improving at least one dimension. The Pareto frontier contains non-dominated alternatives, but its position depends on the compared pool and chosen measures. Being on that frontier does not establish compliance with authorization, data-residency, or security requirements.</p>
+<p>Latency must include selection, queues, networking, generation, and validation. Cascades may accumulate waiting time; parallel execution may shorten time at the cost of simultaneous calls. Time to first token and total response time should both be observed, with percentiles such as p50, p95, and p99 under a stated load. Parameter count alone does not determine perceived speed: infrastructure, concurrency, context, and output length can change the comparison.</p>
+<p><a id="section-6"></a></p>
+<h2>6. Integration and infrastructure selection</h2>
+<p>A common API reduces integration work, but syntactic compatibility does not establish functional equivalence. Models and providers may differ in tool handling, structured outputs, images, context, sampling parameters, and reasoning configurations. Applications must verify the capabilities they use and define how missing features are handled. A successful transport-level substitution may fail at task semantics even when the HTTP response indicates success.</p>
+<figure class="article-figure"><img src="/assets/article24/en/sgaeia-article-24-figure-03-ai-gateway-reference-architecture_EN.png" alt="Figure 3. Separating applications, mediation, selection, and providers" width="4800" height="2700" loading="lazy" decoding="async"><figcaption><strong>Figure 3.</strong> The reference architecture organizes mediation and observation responsibilities around selection. Components represent conceptual roles that may be distributed across services and privilege domains. A gateway does not replace tool controls or authorization of actions performed by the application.<span class="figure-credit">© 2026 Aridio Silva · Project SGAEIA · CC BY 4.0</span></figcaption></figure>
+<p>Reasoning effort can be part of the selected configuration when the provider exposes that control. The evaluated unit then includes model, version, configuration, and execution conditions rather than just a model name. The same family may produce different costs and times depending on effort, context, and response length. Accepted values and their meaning must come from documentation for the version used, rather than being assumed from a multi-provider interface.</p>
+<p>The ecosystem also contains tools with different purposes. RouteLLM and LLMRouter support development and evaluation of selectors [<a href="#ref-1">1</a>][<a href="#ref-8">8</a>]; LiteLLM documents access mediation and key management [<a href="#ref-10">10</a>]; OpenRouter documents model fallback and provider selection [<a href="#ref-12">12</a>][<a href="#ref-13">13</a>]. Portkey describes gateway features including resilience and traffic-control options [<a href="#ref-15">15</a>]. Documentation establishes the advertised capability and its stated conditions, but does not independently establish suitability for the reader&#39;s environment.</p>
+<div class="article-table-wrap"><table>
+<thead>
+<tr>
+<th>Solution type</th>
+<th>Expected value</th>
+<th>Responsibility retained by the adopter</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Research library</td>
+<td>Comparable implementations and evaluation tools</td>
+<td>Integration, authorization, operations, and domain validation</td>
+</tr>
+<tr>
+<td>Organization-operated gateway</td>
+<td>Control of deployment, configuration, and policy integration</td>
+<td>Updates, capacity, isolation, observability, and incident response</td>
+</tr>
+<tr>
+<td>Managed service or aggregator</td>
+<td>Reduced integration work and access to alternatives</td>
+<td>Contracts, data processing, dependency, and recovery assessment</td>
+</tr>
+<tr>
+<td>Selection embedded in a product</td>
+<td>Adaptation integrated into the user experience</td>
+<td>Understanding available choice, visibility, and effective controls</td>
+</tr>
+</tbody></table></div>
+<p>Self-hosting does not establish sovereignty if embeddings, telemetry, or support mechanisms transmit data to third parties. A managed service should likewise not be assessed solely by model count: actual location, retention, subprocessors, administration, and evidence export matter. Candidate lists should identify deployments rather than only commercial model names. Two deployments of the same model may have different data-processing conditions.</p>
+<p>Gateway performance must be measured separately from model time. Tests against a mock server help isolate mediation overhead but do not describe the complete application; authentication, databases, logs, filters, and concurrency change the result. LiteLLM&#39;s benchmark documentation should be read with its configuration and load conditions [<a href="#ref-14">14</a>]. Supplier comparisons additionally require scrutiny of versions, configuration parity, and commercial interests before concluding that millisecond differences will persist in production.</p>
+<p><a id="section-7"></a></p>
+<h2>7. What benchmarks demonstrate</h2>
+<p>The reviewed studies support the possibility of saving through model selection, but their findings answer different questions. FrugalGPT reports cost reductions of up to 98% in cascade configurations studied by its authors [<a href="#ref-2">2</a>]. Hybrid LLM reports up to 40% fewer calls to the larger model, while AutoMix reports over 50% lower computational cost at comparable performance in its evaluated settings [<a href="#ref-3">3</a>][<a href="#ref-4">4</a>]. These numbers do not rank the methods: they measure different objects and use different tasks, models, and evaluators.</p>
+<p>RouteLLM demonstrates the potential of learning selection from preferences. Its matrix-factorization configuration augmented with judge data achieves MT-Bench CPT of 13.40% to recover 50% of the performance gap and 31.31% to recover 80% [<a href="#ref-1">1</a>]. Figure 4 represents this comparison between call fractions and gap recovery. The finding demonstrates efficiency under that protocol; it does not determine the appropriate fraction for another domain or generation of models.</p>
+<figure class="article-figure"><img src="/assets/article24/en/sgaeia-article-24-figure-04-routellm-cpt_EN.png" alt="Figure 4. Call fractions for recovery targets in RouteLLM" width="4800" height="2700" loading="lazy" decoding="async"><figcaption><strong>Figure 4.</strong> The comparison uses MT-Bench results from RouteLLM. CPT concerns recovery of the gap between two references rather than a percentage of the stronger model&#39;s absolute score. Values belong to the study&#39;s model pair, data, and evaluation [<a href="#ref-1">1</a>].<span class="figure-credit">© 2026 Aridio Silva · Project SGAEIA · CC BY 4.0</span></figcaption></figure>
+<p>RouterBench contributes precomputed inference outcomes and a protocol for comparing policies in cost-quality space [<a href="#ref-5">5</a>]. This design lowers the cost of testing selectors on the same responses and identifies gains without requiring new generation for every evaluation. A static matrix, however, does not automatically reproduce queues, outages, API changes, or adaptations within a real trajectory. The benchmark makes a comparison controllable; operational assessment must add missing dimensions.</p>
+<p>LLMRouterBench offers an important counterpoint to method-proposing studies. Its protocol covers 33 models and 21 datasets, confirms model complementarity, and finds several methods with similar performance, including cases that do not reliably beat simple baselines [<a href="#ref-6">6</a>]. The useful conclusion is that complementary alternatives do not ensure a selector can exploit them. Improving the model pool and data coverage may matter more than changing the algorithm&#39;s name.</p>
+<div class="article-table-wrap"><table>
+<thead>
+<tr>
+<th>Evidence</th>
+<th>What it supports</th>
+<th>What it does not establish</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>FrugalGPT, Hybrid LLM, and AutoMix [<a href="#ref-2">2</a>][<a href="#ref-3">3</a>][<a href="#ref-4">4</a>]</td>
+<td>Some selection or escalation configurations lower cost while preserving their chosen quality measure</td>
+<td>Transferable or directly comparable savings percentages</td>
+</tr>
+<tr>
+<td>RouteLLM [<a href="#ref-1">1</a>]</td>
+<td>Preferences can guide efficient selection between models</td>
+<td>A published threshold suitable for another organization&#39;s traffic</td>
+</tr>
+<tr>
+<td>RouterBench [<a href="#ref-5">5</a>]</td>
+<td>Precomputed responses allow comparison against common references</td>
+<td>Simulation of complete service behavior</td>
+</tr>
+<tr>
+<td>LLMRouterBench [<a href="#ref-6">6</a>]</td>
+<td>Complementarity can coexist with difficulty beating simple baselines</td>
+<td>Universal superiority of learned routing over a fixed policy</td>
+</tr>
+<tr>
+<td>LLMRouter [<a href="#ref-8">8</a>]</td>
+<td>Common infrastructure supports study of different routing formulations</td>
+<td>Operational readiness merely because an implementation exists</td>
+</tr>
+</tbody></table></div>
+<p>Local evaluation should include random routing, always the lowest-cost model, always the best fixed model for the sample, simple rules, and a small classifier. A retrospective oracle can estimate pool potential using response information unavailable before execution. Such an oracle is an analytical reference, not a cost-free deployable system. Comparisons must use the same data, models, and acceptance criteria, separating calibration data from the data used to decide whether the strategy delivered an improvement.</p>
+<p><a id="section-8"></a></p>
+<h2>8. Cross-cutting comparison of strategies</h2>
+<p>Strategies should not be selected solely by their best published score. The same method may suit a repetitive task and be unsuitable where verification is difficult or error consequences are substantial. The following framework makes that difference explicit by comparing operational needs, validation behavior, and governability. Classifications are an engineering synthesis based on the mechanisms discussed, not results of a common experiment conducted in this article.</p>
+<div class="article-table-wrap"><table>
+<thead>
+<tr>
+<th>Strategy</th>
+<th>Quality and calibration</th>
+<th>Cost and latency</th>
+<th>Generalization</th>
+<th>Auditability</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Rules</td>
+<td>Explicit criteria; exceptions require review</td>
+<td>Low decision cost; usually one generation</td>
+<td>Limited by policy coverage</td>
+<td>Clear explanation of the rule applied</td>
+</tr>
+<tr>
+<td>Classifier</td>
+<td>Depends on supervision and threshold</td>
+<td>Training and representation add cost; avoids alternative answers</td>
+<td>Requires out-of-distribution evaluation</td>
+<td>Needs recorded versions, signals, and decisions</td>
+</tr>
+<tr>
+<td>Similarity</td>
+<td>Depends on comparable examples</td>
+<td>Retrieval and embeddings may be significant</td>
+<td>Sensitive to database coverage</td>
+<td>Neighbors and criteria can be recorded</td>
+</tr>
+<tr>
+<td>Cascade</td>
+<td>Depends on detecting inadequate answers</td>
+<td>May accumulate generation, validation, and escalation</td>
+<td>Verifier must also generalize</td>
+<td>Acceptance and escalation can be traced</td>
+</tr>
+<tr>
+<td>Judge or self-verification</td>
+<td>Requires a rubric and false-acceptance measurement</td>
+<td>Additional calls can dominate cost</td>
+<td>May repeat generator errors</td>
+<td>Scores and explanations do not replace evidence</td>
+</tr>
+<tr>
+<td>Adaptive or generative</td>
+<td>Depends on feedback, stability, and context</td>
+<td>Exploration or planning adds operations</td>
+<td>May adapt, with instability risks</td>
+<td>Requires observation of policy and state changes</td>
+</tr>
+</tbody></table></div>
+<div class="article-table-wrap"><table>
+<thead>
+<tr>
+<th>Strategy</th>
+<th>Adversarial robustness</th>
+<th>Agents and swarms</th>
+<th>Maturity to verify</th>
+<th>Operating complexity</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Rules</td>
+<td>Inputs may exploit exceptions and boundaries</td>
+<td>Useful for mandatory constraints and limits</td>
+<td>Rule coverage and consistency</td>
+<td>Grows with exception count</td>
+</tr>
+<tr>
+<td>Classifier</td>
+<td>Selection signals can be manipulated [<a href="#ref-9">9</a>]</td>
+<td>Should consider role, state, and consequences</td>
+<td>Calibration in the real workflow</td>
+<td>Data, training, versions, and monitoring</td>
+</tr>
+<tr>
+<td>Similarity</td>
+<td>Adversarial content can influence neighborhoods</td>
+<td>History and context isolation are decisive</td>
+<td>Coverage and database updates</td>
+<td>Index and supervision-data management</td>
+</tr>
+<tr>
+<td>Cascade</td>
+<td>Escalation criteria may be exploited</td>
+<td>Needs a budget for the entire trajectory</td>
+<td>Escalation rate and acceptance quality</td>
+<td>State and partial-failure handling</td>
+</tr>
+<tr>
+<td>Judge or self-verification</td>
+<td>Evaluators also receive potentially hostile content</td>
+<td>Cross-review does not ensure independence</td>
+<td>Evaluator errors and correlation</td>
+<td>Rubrics, re-evaluation, and disagreements</td>
+</tr>
+<tr>
+<td>Adaptive or generative</td>
+<td>Control decisions may absorb task instructions</td>
+<td>More context does not remove authority limits</td>
+<td>Stability under changes and failures</td>
+<td>Exploration, rollback, and continuous observation</td>
+</tr>
+</tbody></table></div>
+<p>The comparison explains why auditability and quality are related but distinct. A rule can be easy to explain yet select poorly; a classifier can choose well within one distribution but be difficult to calibrate elsewhere. It also explains why useful complexity has no fixed order: maintaining hundreds of exceptions may cost more than operating a stable classifier. Selection should consider the full configuration, operation, investigation, and update lifecycle.</p>
+<p>For agents, the decisive question is whether a strategy considers information relevant to the next action. Swarms additionally involve concurrency, shared state, and accumulated consequences. Access policies and collective limits must remain applicable regardless of the selection method. This separation allows algorithm improvements without making every update an implicit expansion of authority.</p>
+<p><a id="section-9"></a></p>
+<h2>9. Identity, authority, and governed substitution</h2>
+<p>A valid key identifies a credential accepted by the gateway. By itself, it does not establish whether its holder may transmit particular data, use a deployment, or initiate an action. The distinction between authentication and authorization is central to Zero Trust architecture [<a href="#ref-16">16</a>]. Agentic systems must also identify on whose behalf an agent acts and which portion of authority it may delegate.</p>
+<figure class="article-figure"><img src="/assets/article24/en/sgaeia-article-24-figure-05-two-layer-authentication_EN.png" alt="Figure 5. Client and provider credentials in separate domains" width="4800" height="2700" loading="lazy" decoding="async"><figcaption><strong>Figure 5.</strong> Separating external and internal credentials reduces the need to distribute provider keys to clients. Effectiveness depends on gateway isolation, object-level authorization, and protection of administrative operations. A virtual key remains a secret with its own scope and lifecycle.<span class="figure-credit">© 2026 Aridio Silva · Project SGAEIA · CC BY 4.0</span></figcaption></figure>
+<p>A deployment should limit destinations accessible to each user, service, or agent while protecting credentials granting that access. Client-supplied parameters must not permit replacing administrative endpoints or redirecting secrets to arbitrary hosts. Authorization must also cover log access, budget changes, and credential issuance. Concentrating secrets in a gateway reduces their dispersion but increases the potential impact of mediator compromise.</p>
+<p>Fallback deserves particular attention because it is often presented as an availability feature. OpenRouter documents successive model attempts according to priority and error conditions, including moderation-related cases [<a href="#ref-12">12</a>]. For an organization, a technically accessible alternative is not necessarily admissible for the request. A safety refusal should likewise not automatically be treated as an outage to bypass through a less restrictive model.</p>
+<p>The admissible set can be represented as A(x, h, i, p), where x is the task, h relevant history, i the requester&#39;s identity and authority, and p current policies. Each member should represent a deployment and configuration permitted under current conditions. Quality, cost, and latency optimization takes place within that set, rather than compensating for mandatory violations with economic advantages. This high-level formalization is proposed to organize the analysis without specifying private SGAEIA mechanisms.</p>
+<figure class="article-figure formula-figure"><img src="/assets/article24/en/publication/formulas/sgaeia-article-24-formula-05_EN.png" alt="Equation 5. Governed routing objective over admissible configurations." width="2640" height="242" loading="lazy" decoding="async"><figcaption><strong>Equation 5. Governed routing objective over admissible configurations.</strong><span class="figure-credit">© 2026 Aridio Silva · Project SGAEIA · CC BY 4.0</span></figcaption></figure>
+
+<p>The weights express preferences among already admissible alternatives; they do not price missing authorization. If the set is empty, the application needs a defined response, such as suspension, reduction of permitted functionality, or referral to an authorized decision-maker. If policy, identity, or state changes, a previously valid choice may cease to be valid. Revocation must reach queues, caches, and ongoing execution according to the application&#39;s specified boundaries.</p>
+<p><a id="section-10"></a></p>
+<h2>10. Agents, multi-agent systems, and swarms</h2>
+<p>An agent may interact repeatedly with a model, use tools, and revise its plan. A multi-agent system distributes some work among agents exchanging information or sharing resources; a swarm may intensify decentralization and collective coordination. Agent count alone does not determine criticality. One broadly privileged action may be riskier than many limited queries, while the combination of apparently small actions may produce an effect not visible in any individual action.</p>
+<figure class="article-figure"><img src="/assets/article24/en/sgaeia-article-24-figure-06-multi-agent-swarm-routing_EN.png" alt="Figure 6. Roles, coordination, and shared resources" width="4800" height="2700" loading="lazy" decoding="async"><figcaption><strong>Figure 6.</strong> Role distribution illustrates how agents can need different capabilities. Planning, execution, and review do not by themselves establish effective separation of duties. Assessment must also consider authority, dependencies, memory, collective budgets, and execution containment.<span class="figure-credit">© 2026 Aridio Silva · Project SGAEIA · CC BY 4.0</span></figcaption></figure>
+<p>Selecting by role is a first approximation: triage may need low latency; planning, greater capacity to assess alternatives; execution, format adherence; review, verification capability. These associations must be evaluated by task, avoiding assumptions that the most expensive model is always the best reviewer or a small model sufficient for all triage. An early misclassification may route data or authority incorrectly before any review occurs. History-aware routing provides more information but does not replace access controls [<a href="#ref-8">8</a>].</p>
+<p>In long trajectories, measuring isolated calls can hide accumulated spending and risk. If a policy reduces cost per call by 30% but increases the number of calls required for completion by 60%, variable cost becomes 1.12 times its previous value under those assumptions. A local reduction becomes a 12% increase per task. This arithmetic example shows why completion, rework, tools, and validation belong in the unit of analysis.</p>
+<figure class="article-figure formula-figure"><img src="/assets/article24/en/publication/formulas/sgaeia-article-24-formula-06_EN.png" alt="Equation 6. Illustration of aggregate cost growth despite lower per-call cost." width="2640" height="242" loading="lazy" decoding="async"><figcaption><strong>Equation 6. Illustration of aggregate cost growth despite lower per-call cost.</strong><span class="figure-credit">© 2026 Aridio Silva · Project SGAEIA · CC BY 4.0</span></figcaption></figure>
+
+<p>Concurrency adds collective effects: many recovery attempts may create a request surge, compete for the same quota, and delay the critical path. Per-agent limits must be combined with task, team, and service limits because individual accounts do not prevent aggregate exhaustion. Queues, backpressure, concurrency caps, and controlled interruption should account for priorities and fairness across workloads. Failure handling must avoid all agents simultaneously repeating the same escalation decision.</p>
+<p>Caching requires similar care. LiteLLM warns that semantic caching designed for independent prompts can replay stale responses in multi-turn or agentic traffic [<a href="#ref-11">11</a>]. Similar prompts may involve different identities, permissions, documents, or states. Reuse is beneficial only when its scope preserves these conditions, including after revocation or policy changes.</p>
+<p>Trajectory integrity also requires observing relationships among actions. One agent may prepare data, another select a destination, and a third transmit the result; examining each step alone may miss the unauthorized transfer produced collectively. OWASP&#39;s agentic-application taxonomy reinforces the need to examine risks involving goals, tools, identity, memory, and coordination [<a href="#ref-24">24</a>]. The SGAEIA relationship concerns preserving limited authority and evidence across those relationships rather than only evaluating each response&#39;s linguistic quality [<a href="#ref-27">27</a>].</p>
+<p><a id="section-11"></a></p>
+<h2>11. Governance, security, and evidence</h2>
+<figure class="article-figure"><img src="/assets/article24/en/sgaeia-article-24-figure-07-governance-evidence-pipeline_EN.png" alt="Figure 7. Connecting controls with governance evidence" width="4800" height="2700" loading="lazy" decoding="async"><figcaption><strong>Figure 7.</strong> The relationship between classification, policy, execution, and evidence shows how a gateway can support risk management. Alignment with governance frameworks is interpretative and application-dependent. It does not demonstrate legal compliance or management-system certification.<span class="figure-credit">© 2026 Aridio Silva · Project SGAEIA · CC BY 4.0</span></figcaption></figure>
+<h3>11.1 A mediation point also concentrates risk</h3>
+<p>A gateway may reduce credential sprawl and enable consistent controls, while concentrating traffic, secrets, and decisions valuable to attackers. CVE-2026-42208 describes SQL injection in LiteLLM proxy API-key verification [<a href="#ref-25">25</a>]. The report concerning version 1.107.0 documents a compromised-package distribution incident in the project&#39;s ecosystem [<a href="#ref-26">26</a>]. These establish failure classes and particular conditions, not a comparative assessment of every gateway&#39;s security.</p>
+<p>Attacks can also target the selector independently of traditional software vulnerabilities. Shafran and colleagues demonstrate sequences altering routing toward more expensive models, including black-box conditions, and discuss limits of perplexity filtering [<a href="#ref-9">9</a>]. An input can preserve the apparent task meaning while changing execution cost. Monitoring should therefore observe routing decisions and consumption patterns alongside final response content.</p>
+<figure class="article-figure"><img src="/assets/article24/en/sgaeia-article-24-figure-08-gateway-router-threat-model_EN.png" alt="Figure 8. Gateway and routing threat surfaces" width="4800" height="2700" loading="lazy" decoding="async"><figcaption><strong>Figure 8.</strong> The model organizes threats affecting inputs, decisions, credentials, execution, and observation. Relationships indicate where a failure can affect other responsibilities. Associated controls require separate verification; a protection box in a diagram does not establish prevention of every attack.<span class="figure-credit">© 2026 Aridio Silva · Project SGAEIA · CC BY 4.0</span></figcaption></figure>
+<p>OWASP&#39;s unbounded-consumption taxonomy includes financial-exhaustion and service-degradation scenarios [<a href="#ref-23">23</a>]. Budgets, output and concurrency limits, deviation detection, and retry handling help constrain impact. They may also block legitimate use, particularly during peaks or unusually complex tasks. Evaluation should record false rejections, resources consumed before containment, and recovery without reopening the same abuse path.</p>
+<h3>11.2 Compliance requires context and responsibility</h3>
+<p>NIST AI RMF organizes risk management through Govern, Map, Measure, and Manage, while NIST AI 600-1 addresses generative AI [<a href="#ref-17">17</a>][<a href="#ref-18">18</a>]. ISO/IEC 42001 concerns organizational AI management systems [<a href="#ref-19">19</a>]. These references help distribute responsibilities and organize evidence, but do not automatically certify a tool or workflow because it has logs, filters, or virtual keys. Applicability must consider purpose, affected people, dependencies, and consequences.</p>
+<p>Data location also extends beyond a model&#39;s stated region. Processing may occur in embeddings, observability, support, and response storage as well as inference. In Brazil, the LGPD and ANPD&#39;s international-data-transfer regulation require examining applicable processing and transfer conditions and mechanisms [<a href="#ref-20">20</a>][<a href="#ref-21">21</a>]. A geographic gateway filter may support an engineering decision without replacing assessment of the operation and its legal basis.</p>
+<p>Article 12 of the AI Act addresses event recording for the high-risk systems to which it applies [<a href="#ref-22">22</a>]. It illustrates the importance of contextualized traceability without making every LLM application high risk or imposing the same log design everywhere. Regulatory schedules and applicability must be checked against the version governing the operation. A gateway produces part of the necessary technical evidence under responsibilities extending beyond the component.</p>
+<p>A useful record associates a task with identity, applicable policy, configuration version, actual destination, and validation outcome. Required content varies with risk and should respect minimization and retention requirements. Indiscriminately recording prompts, responses, and secrets can turn observability into an exposure surface. A trail is valuable when it reconstructs a relevant decision without collecting more data than its purpose requires.</p>
+<p>Hash chaining can reveal changes relative to a trusted reference but does not make storage immutable. A compromised administrator may rewrite records and recalculate a chain lacking independent protection or anchoring. Access controls, retention, key protection, and verification mechanisms must be assessed together. Evidence also loses value if it omits failed attempts, destination changes, or decisions made during outages.</p>
+<p><a id="section-12"></a></p>
+<h2>12. An SGAEIA framework for assessing governed routing</h2>
+<h3>12.1 The analytical contribution and its boundary</h3>
+<p>The <strong>SGAEIA Governed AI Routing Assurance Model</strong>, developed here as an analytical framework, relates four objects: a constraint that must remain valid, a routing decision that can affect it, evidence needed to examine the decision, and the response to a violation. It starts from the distinction between capability, authority, and evidence in SGAEIA&#39;s public perspective [<a href="#ref-27">27</a>]. Routing research supplies mechanisms and findings; Zero Trust and risk management provide precedents for separating access, decisions, and responsibility [<a href="#ref-16">16</a>][<a href="#ref-17">17</a>]. The framework connects these elements for assessing selection and substitution in model- and agent-based workflows.</p>
+<p>The contribution is not the assertion that routers have risks, nor a claim to have invented authorization or auditing. It makes explicit relationships that an exclusively economic evaluation does not represent and applies them to the same configuration being optimized. The comparison unit becomes an admissible decision with an observable consequence, including the option not to proceed when assumptions cannot be maintained. This is the author&#39;s proposed analytical synthesis for this article, without attributing normative implementation or operational validation to SGAEIA.</p>
+<div class="article-table-wrap"><table>
+<thead>
+<tr>
+<th>Threat or condition</th>
+<th>Affected decision</th>
+<th>Property to preserve</th>
+<th>Required evidence</th>
+<th>Evaluation measure</th>
+<th>Intended response</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Use beyond delegated scope</td>
+<td>Model, data, and tool selection</td>
+<td>Task-bounded authority</td>
+<td>Identity, delegation, and authorization decision</td>
+<td>Accepted decisions outside scope</td>
+<td>Block or interrupt unauthorized reach</td>
+</tr>
+<tr>
+<td>Fallback to a prohibited destination</td>
+<td>Deployment or provider substitution</td>
+<td>Constraint continuity</td>
+<td>Initial and actual destination, applicable rule, and change reason</td>
+<td>Policy-incompatible substitutions</td>
+<td>Use an admissible alternative or suspend</td>
+</tr>
+<tr>
+<td>Data exposure</td>
+<td>Inference, embedding, and telemetry selection</td>
+<td>Minimization and authorized processing</td>
+<td>Data class, destinations, and retention conditions</td>
+<td>Unauthorized transfers and excess data</td>
+<td>Prevent egress and address exposure</td>
+</tr>
+<tr>
+<td>Adversarial cost escalation</td>
+<td>Model, effort, and retries</td>
+<td>Task and organization limits</td>
+<td>Accumulated consumption and escalation decisions</td>
+<td>Spending before containment and false rejections</td>
+<td>Contain trajectory and review policy</td>
+</tr>
+<tr>
+<td>Revoked state or permission</td>
+<td>Cache, queues, or prior decisions</td>
+<td>Current authorization</td>
+<td>Policy version and revocation and execution times</td>
+<td>Post-revocation actions and propagation delay</td>
+<td>Invalidate reuse and interrupt affected actions</td>
+</tr>
+<tr>
+<td>Evaluator failure</td>
+<td>Accept, escalate, or authorize action</td>
+<td>Acceptance suitable for the effect</td>
+<td>Rubric, result, and subsequent verification</td>
+<td>False acceptances, false rejections, and disagreements</td>
+<td>Reassess and limit authorized effects</td>
+</tr>
+<tr>
+<td>Prohibited collective effect</td>
+<td>Subtask distribution</td>
+<td>Shared-trajectory boundaries</td>
+<td>Relationships among agents, actions, and resources</td>
+<td>Violations per task and containment time</td>
+<td>Contain affected participants and reconcile state</td>
+</tr>
+<tr>
+<td>Gateway compromise</td>
+<td>Selection, access, and recording</td>
+<td>Privilege separation and recovery</td>
+<td>Versions, changes, and protected records</td>
+<td>Compromise reach and revocation time</td>
+<td>Isolate components and recover credentials and policies</td>
+</tr>
+<tr>
+<td>Lost or altered evidence</td>
+<td>Investigation and continued operation</td>
+<td>Verifiability of critical decisions</td>
+<td>Trail integrity, provenance, and completeness</td>
+<td>Critical events lacking sufficient evidence</td>
+<td>Reduce permitted operation and reconstruct the incident</td>
+</tr>
+</tbody></table></div>
+<p>Matrix metrics require denominators and observation criteria. An incompatible-fallback rate must identify how many substitutions were examined and how incompatibility was established; revocation latency requires an initiation point and an observable enforcement event. A zero rate in a sample does not prove no failures across the operation. The framework exposes these questions and avoids treating the sheer number of records as a measure of evidence quality.</p>
+<h3>12.2 Application to three engineering decisions</h3>
+<p>Consider a task whose data policy permits only one approved deployment. An equivalent model is available in a prohibited region at a lower price and with higher availability. A comparison limited to cost, quality, and latency would favor the second alternative; admissibility analysis excludes it before optimization. If the approved deployment fails and no admissible alternative exists, preserving service at any cost changes the data-processing decision, not merely the provider.</p>
+<p>In the second scenario, an agent starts a task with a budget suited to a few calls but repeatedly corrects and reviews results across several models. Every call respects its individual limit, while the workflow exceeds the task budget. The matrix requires evidence associating consumption and results with the trajectory, exposing a failure invisible to per-call indicators. The appropriate response may stop attempts without progress, reduce permitted functionality, or obtain renewed authorization for additional work.</p>
+<p>In the third scenario, two agents use semantically similar responses to decide actions concerning different documents. The cache returns an answer produced under another permission state, and textual similarity appears to justify reuse. Analysis separates cache efficiency from decision validity: identity, state, and scope must remain compatible. A previously correct answer may be unsuitable for a new context even though its text has not changed.</p>
+<div class="article-table-wrap"><table>
+<thead>
+<tr>
+<th>Scenario</th>
+<th>Conclusion from an isolated indicator</th>
+<th>Conclusion using the framework</th>
+<th>Decisive evidence</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Deployment substitution</td>
+<td>Lower cost and higher availability justify substitution</td>
+<td>The alternative must satisfy task constraints</td>
+<td>Applicable policy and actual destination</td>
+</tr>
+<tr>
+<td>Multi-agent repetition</td>
+<td>Every call respects its limit</td>
+<td>Aggregate spending and task completion must be observed</td>
+<td>Trajectory consumption, attempts, and progress</td>
+</tr>
+<tr>
+<td>Response reuse</td>
+<td>High similarity favors caching</td>
+<td>Validity also depends on context and authorization</td>
+<td>State, identity, and scope of the reused response</td>
+</tr>
+</tbody></table></div>
+<p>These cases demonstrate the framework&#39;s analytical usefulness: it identifies missing information and explains why an economically attractive decision can be unsuitable. They do not measure incident frequency or quantify production risk reduction. Empirical verification should observe whether controls detect violations while preserving legitimate tasks, including their costs and errors. For this technical article, the contribution is bounded by the comparison, decision traceability, and counterexamples presented.</p>
+<p><a id="section-13"></a></p>
+<h2>13. Evolution and maturity should be assessed by dimension</h2>
+<p>The field combines lines of development maturing at different rates. Cascades and cost-based selection received explicit formulations in work such as FrugalGPT, AutoMix, and Hybrid LLM; RouteLLM extended preference-based selection; RouterBench and LLMRouterBench strengthened common comparisons [<a href="#ref-1">1</a>][<a href="#ref-2">2</a>][<a href="#ref-3">3</a>][<a href="#ref-4">4</a>][<a href="#ref-5">5</a>][<a href="#ref-6">6</a>]. In parallel, adversarial analysis showed that the selection layer itself can be manipulated [<a href="#ref-9">9</a>]. These developments do not describe automatic progress toward security: each capability needs its own evidence.</p>
+<figure class="article-figure"><img src="/assets/article24/en/sgaeia-article-24-figure-09-router-evolution_EN.png" alt="Figure 9. Selected milestones in routing development" width="4800" height="2700" loading="lazy" decoding="async"><figcaption><strong>Figure 9.</strong> The periodization highlights work on economy, comparison, and selection integrity. Milestones identify selected publications and topics rather than an exhaustive history or a measure of market adoption. The phase structure is the author&#39;s interpretative organization.<span class="figure-credit">© 2026 Aridio Silva · Project SGAEIA · CC BY 4.0</span></figcaption></figure>
+<figure class="article-figure"><img src="/assets/article24/en/sgaeia-article-24-figure-10-thematic-timeline_EN.png" alt="Figure 10. Research and governance milestones by year" width="4800" height="2700" loading="lazy" decoding="async"><figcaption><strong>Figure 10.</strong> Lanes show that methods, evaluation, security, and governance address complementary dimensions. Annual divisions support chronological reading; temporal proximity does not imply that one publication caused another. Dates identify milestones rather than product readiness.<span class="figure-credit">© 2026 Aridio Silva · Project SGAEIA · CC BY 4.0</span></figcaption></figure>
+<p>Documented feature availability is different evidence from stability under load, independent evaluation, or attack resistance. An organization may understand APIs, quotas, and fallback yet lack data to calibrate a learned selector. It may also achieve good average quality while lacking knowledge of behavior after revocation, model updates, or telemetry loss. Maturity should be recorded by dimension and observed environment rather than turning an editorial rating into external certification.</p>
+<figure class="article-figure"><img src="/assets/article24/en/sgaeia-article-24-figure-11-router-maturity_EN.png" alt="Figure 11. Readiness dimensions and required evidence" width="4800" height="3300" loading="lazy" decoding="async"><figcaption><strong>Figure 11.</strong> The framework distinguishes functional availability, local measurement, and verification under adverse conditions. It guides readiness questions without assigning a universal level to a product or market. Rows and columns expose gaps that a single classification would hide.<span class="figure-credit">© 2026 Aridio Silva · Project SGAEIA · CC BY 4.0</span></figcaption></figure>
+<p>Maintenance cost needs equal attention. Changes in models, prices, parameters, and traffic patterns can invalidate thresholds and make history less representative. Version management should associate a decision with the configuration actually executed, including when an alias points to an updated model. Updates need comparison, limited exposure, and recovery of a previous configuration when a new alternative fails defined criteria.</p>
+<p><a id="section-14"></a></p>
+<h2>14. When to adopt routing and when to retain a simpler solution</h2>
+<p>A gateway can be justified by access, budget, and observation needs even if traffic stays with a fixed model. A dynamic selector needs additional justification: gains from heterogeneous tasks must exceed its costs and complexity. If one model serves the domain adequately, volume is low, or calibration data are insufficient, a fixed policy may be more coherent. Adoption should address an observed problem such as spending, latency, or the ability to govern access.</p>
+<p>The first step is to define completion and acceptable quality for each task class. The second is to establish admissible destinations, data, and configurations before optimizing combinations. Simple baselines should then be measured and a candidate strategy assessed under the same conditions, including selection and validation costs. Comparisons must preserve difficult tasks and infrequent classes because a favorable average can hide degradation in an important subset.</p>
+<div class="article-table-wrap"><table>
+<thead>
+<tr>
+<th>Observed condition</th>
+<th>Reasonable initial decision</th>
+<th>Evidence needed to advance</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Need to centralize access and spending</td>
+<td>Assess mediation with a fixed model</td>
+<td>Isolation, limits, and operating cost</td>
+</tr>
+<tr>
+<td>Repetitive tasks and low volume</td>
+<td>Retain a model or simple rules</td>
+<td>Sufficient quality and demonstrated total savings</td>
+</tr>
+<tr>
+<td>Heterogeneous traffic and substantial volume</td>
+<td>Compare predictive selection against baselines</td>
+<td>Task-level quality-cost curve</td>
+</tr>
+<tr>
+<td>Reliably verifiable results</td>
+<td>Assess a cascade</td>
+<td>False acceptances, escalation, and total latency</td>
+</tr>
+<tr>
+<td>Significant data or action constraints</td>
+<td>Restrict candidates before selection</td>
+<td>Policy continuity and substitution evidence</td>
+</tr>
+<tr>
+<td>Agents with many steps</td>
+<td>Assess the complete trajectory</td>
+<td>Completion, aggregate cost, authority, and containment</td>
+</tr>
+<tr>
+<td>Limited visibility into failures and changes</td>
+<td>Improve observation before automating more decisions</td>
+<td>Actual-destination recording and verifiable recovery</td>
+</tr>
+</tbody></table></div>
+<p>Operational introduction should use gradual exposure and predefined continuation criteria. Cost per task, response acceptance, rework, tail latency, policy violations, and evidence completeness need joint observation. Behavior changes may require recalibration, a restricted model pool, or a return to a simpler policy. The ability to step back is part of adoption design, alongside the ability to scale.</p>
+<p><a id="section-15"></a></p>
+<h2>15. Discussion and analytical limits</h2>
+<p>The six opening questions bring the findings together without reducing the article to a catalog. Favorable conditions for savings exist, but model complementarity is an opportunity that a selector must successfully exploit. Gateways provide operational value while concentrating responsibilities and extending the reach of a failure. For agents, the relevant result is a task completed within its constraints rather than a collection of individually well-scored responses.</p>
+<div class="article-table-wrap"><table>
+<thead>
+<tr>
+<th>Guiding question</th>
+<th>Answer supported by the analysis</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>When does routing save while preserving quality?</td>
+<td>When heterogeneity, calibration, and validation capability offset selection, repetition, and operations</td>
+</tr>
+<tr>
+<td>When does it beat simple baselines?</td>
+<td>When gains appear under the same protocol and persist in relevant task classes; complexity does not ensure them</td>
+</tr>
+<tr>
+<td>What value is independent of the algorithm?</td>
+<td>Access mediation, resource management, observation, and consistent control enforcement</td>
+</tr>
+<tr>
+<td>What risk follows from concentration?</td>
+<td>A failure may reach credentials, data, configuration, and evidence across many applications</td>
+</tr>
+<tr>
+<td>What changes with agents and swarms?</td>
+<td>State, delegation, concurrency, and accumulated effects make trajectory-level evaluation necessary</td>
+</tr>
+<tr>
+<td>What evidence supports governance?</td>
+<td>Verifiable records of authority, policy, actual destination, consumption, validation, and responses to change</td>
+</tr>
+</tbody></table></div>
+<p>Published results remain bounded by their models, tasks, and evaluators. A response matrix can support economic analysis without capturing queues, tools, and partial failures; a judge score may measure preference without representing correctness or security. Product documentation describes supplier-stated conditions, and incident reports do not estimate market-wide vulnerability prevalence. Keeping these distinctions prevents localized evidence from becoming a general promise.</p>
+<p>The proposed framework also has limitations. It depends on identifiable policies, sufficient observation, and definitions of violations and valid completion. It does not eliminate risk-classification errors, policy gaps, or compromise of components expected to enforce controls. It structures evaluation and exposes missing information; demonstrating risk reduction requires observing controls succeeding and failing under predefined conditions.</p>
+<p>Open questions include joint model-configuration selection; revocation effects on ongoing trajectories; evaluator robustness; evidence cost and minimization; simultaneous failures; and transfer to new models and domains. These questions follow from identified limitations rather than being presented as achieved results. The article preserves its contribution by distinguishing currently useful guidance from hypotheses still requiring experimentation.</p>
+<p><a id="section-16"></a></p>
+<h2>16. Conclusion</h2>
+<p>LLM routers turn model heterogeneity into a task-level decision opportunity, but their presence alone ensures neither savings nor quality. Predictive strategies, cascades, and adaptive selection use different information and distribute costs and risks differently. Published evidence supports gains in particular configurations alongside difficulty beating simple baselines under common evaluation. The consequence is to require local comparisons with coherent completion, quality, and total-cost criteria.</p>
+<p>The analysis also establishes that decisions must operate over admissible alternatives. Fallback, model changes, response reuse, and increased effort can alter data processing, consumption, and authorization continuity. Multi-agent systems must track these changes across trajectories and shared resources. A component that improves availability while violating task conditions does not preserve the outcome the organization intended.</p>
+<p>The SGAEIA framework for assessing governed routing makes the connection between constraints, decisions, evidence, and response explicit. Its three scenarios expose information and consequences invisible to isolated per-call cost, textual similarity, or availability. This is the article&#39;s analytical contribution: bringing technical comparison and governance into the same evaluation process, with inspectable boundaries. Adopting routing therefore means demonstrating usefulness under defined conditions while retaining the ability to observe, constrain, revoke, and revise its decisions.</p>
+<h2>Appendix A — Technical glossary</h2>
+<p><strong>Admissibility</strong> — A deployment or configuration satisfying task constraints before optimization.</p>
+<p><strong>AI agent</strong> — A component using decision or generation capabilities to conduct task steps, potentially with tools and persistent state.</p>
+<p><strong>AI gateway</strong> — A mediation layer for model and service access that may combine adaptation, controls, and observability.</p>
+<p><strong>APGR</strong> — A summary of performance-gap recovery as expensive-model use varies in the RouteLLM protocol [<a href="#ref-1">1</a>].</p>
+<p><strong>Authentication</strong> — Verification of a presented identity or credential.</p>
+<p><strong>Authorization</strong> — A decision about the access or action permitted to an identity under applicable conditions.</p>
+<p><strong>Baseline</strong> — A comparison reference, such as a fixed policy, simple rules, or random selection.</p>
+<p><strong>Prefix caching</strong> — Reuse of processing for shared input prefixes when supported by the service.</p>
+<p><strong>Semantic caching</strong> — Response reuse based on input similarity, requiring assessment of the validity of the reused context.</p>
+<p><strong>Cascade</strong> — Execution that consults an alternative and then decides whether to escalate based on the result or its evaluation.</p>
+<p><strong>Virtual key</strong> — A mediation credential associated with permissions and limits, distinct from provider credentials.</p>
+<p><strong>Backpressure</strong> — A control that reduces or postpones incoming work when available capacity is insufficient.</p>
+<p><strong>CPT</strong> — The strong-model call fraction needed to achieve a target performance-gap recovery [<a href="#ref-1">1</a>].</p>
+<p><strong>Delegation</strong> — A bounded grant of authority to execute part of a task on behalf of another identity.</p>
+<p><strong>Denial of Wallet</strong> — Abusive consumption exploiting usage-based charges to exhaust financial resources [<a href="#ref-23">23</a>].</p>
+<p><strong>Embedding</strong> — A vector representation used to compare or characterize content; similarity does not establish authorization equivalence.</p>
+<p><strong>Reasoning effort</strong> — An inference-resource setting exposed by some models, whose meaning depends on the interface and version.</p>
+<p><strong>Fallback</strong> — Attempting an alternative when initial execution does not complete under defined conditions, while preserving task constraints.</p>
+<p><strong>Pareto frontier</strong> — The set of non-dominated alternatives under the considered criteria.</p>
+<p><strong>Deployment</strong> — A model-access instance associated with a provider, region, version, and operational conditions.</p>
+<p><strong>LLM-as-a-Judge</strong> — Using a language model to evaluate an answer or support an acceptance decision.</p>
+<p><strong>Oracle</strong> — A retrospective reference using information unavailable to the selector before execution or response observation.</p>
+<p><strong>PGR</strong> — The fraction of the performance gap between two references recovered by a router [<a href="#ref-1">1</a>].</p>
+<p><strong>Control plane</strong> — Responsibilities for administering policies, configuration, permissions, and lifecycle.</p>
+<p><strong>Data plane</strong> — The path executing requests and transporting data according to applicable decisions.</p>
+<p><strong>Revocation</strong> — Withdrawal of permission or an access condition, requiring propagation to affected executions.</p>
+<p><strong>Predictive router</strong> — A selector deciding before the main response is generated.</p>
+<p><strong>Adaptive routing</strong> — Selection adjusting decisions based on results or information observed during execution.</p>
+<p><strong>Generative routing</strong> — Use of a generative model to support or produce the selection decision.</p>
+<p><strong>Trajectory</strong> — A related sequence of decisions, interactions, tools, and state changes needed for a task.</p>
+<p><strong>TTFT</strong> — Time to first token, distinct from the time needed to complete a response or task.</p>
+<p><strong>Zero Trust</strong> — An architectural perspective avoiding implicit trust based on location or ownership and distinguishing authentication from authorization [<a href="#ref-16">16</a>].</p>
+<h2>References</h2>
+<p><a id="ref-1"></a></p>
+<ol>
+<li>ONG, Isaac et al. <em>RouteLLM: Learning to Route LLMs with Preference Data</em>. ICLR, 2025. arXiv:2406.18665v4. <a href="https://arxiv.org/html/2406.18665v4" target="_blank" rel="noopener noreferrer">Full text</a>.</li>
+</ol>
+<p><a id="ref-2"></a></p>
+<ol start="2">
+<li>CHEN, Lingjiao; ZAHARIA, Matei; ZOU, James. <em>FrugalGPT: How to Use Large Language Models While Reducing Cost and Improving Performance</em>. Preprint, 2023. <a href="https://arxiv.org/abs/2305.05176" target="_blank" rel="noopener noreferrer">arXiv:2305.05176</a>.</li>
+</ol>
+<p><a id="ref-3"></a></p>
+<ol start="3">
+<li>AGGARWAL, Pranjal et al. <em>AutoMix: Automatically Mixing Language Models</em>. NeurIPS, 2024; arXiv version v5, 2025. <a href="https://arxiv.org/abs/2310.12963" target="_blank" rel="noopener noreferrer">arXiv:2310.12963</a>.</li>
+</ol>
+<p><a id="ref-4"></a></p>
+<ol start="4">
+<li>DING, Dujian et al. <em>Hybrid LLM: Cost-Efficient and Quality-Aware Query Routing</em>. ICLR, 2024. <a href="https://arxiv.org/abs/2404.14618" target="_blank" rel="noopener noreferrer">arXiv:2404.14618</a>.</li>
+</ol>
+<p><a id="ref-5"></a></p>
+<ol start="5">
+<li>HU, Qitian Jason et al. <em>RouterBench: A Benchmark for Multi-LLM Routing System</em>. Preprint, 2024. <a href="https://arxiv.org/abs/2403.12031" target="_blank" rel="noopener noreferrer">arXiv:2403.12031</a>.</li>
+</ol>
+<p><a id="ref-6"></a></p>
+<ol start="6">
+<li>LI, Hao et al. <em>LLMRouterBench: A Massive Benchmark and Unified Framework for LLM Routing</em>. Findings of ACL, 2026, p. 37733–37754. <a href="https://aclanthology.org/2026.findings-acl.1881/" target="_blank" rel="noopener noreferrer">Record and text</a>.</li>
+</ol>
+<p><a id="ref-7"></a></p>
+<ol start="7">
+<li>JIANGENG, Chang; WU, Xingyu; TAN, KC; FENG, Mengling. <em>A Systematic Survey of Large Language Model Routing</em>. Findings of EMNLP, 2026, p. 44102–44134. <a href="https://aclanthology.org/2026.findings-emnlp.2072/" target="_blank" rel="noopener noreferrer">Record and text</a>.</li>
+</ol>
+<p><a id="ref-8"></a></p>
+<ol start="8">
+<li>FENG, Tao et al. <em>LLMRouter: Unified Infrastructure for Developing, Evaluating, and Deploying LLM Routers</em>. Preprint, 2026. <a href="https://arxiv.org/abs/2608.06867" target="_blank" rel="noopener noreferrer">arXiv:2608.06867</a>.</li>
+</ol>
+<p><a id="ref-9"></a></p>
+<ol start="9">
+<li>SHAFRAN, Avital; SCHUSTER, Roei; RISTENPART, Thomas; SHMATIKOV, Vitaly. <em>Rerouting LLM Routers</em>. Preprint, 2025. <a href="https://arxiv.org/abs/2501.01818" target="_blank" rel="noopener noreferrer">arXiv:2501.01818</a>.</li>
+</ol>
+<p><a id="ref-10"></a></p>
+<ol start="10">
+<li>BERRIAI. <em>Virtual Keys</em>. LiteLLM documentation. <a href="https://docs.litellm.ai/docs/proxy/virtual_keys" target="_blank" rel="noopener noreferrer">Official documentation</a>. Accessed: 29 Oct. 2026.</li>
+</ol>
+<p><a id="ref-11"></a></p>
+<ol start="11">
+<li>BERRIAI. <em>Semantic Caching</em>. LiteLLM documentation. <a href="https://docs.litellm.ai/docs/proxy/caching_semantic" target="_blank" rel="noopener noreferrer">Official documentation</a>. Accessed: 29 Oct. 2026.</li>
+</ol>
+<p><a id="ref-12"></a></p>
+<ol start="12">
+<li>OPENROUTER. <em>Model Fallbacks</em>. <a href="https://openrouter.ai/docs/guides/routing/model-fallbacks" target="_blank" rel="noopener noreferrer">Official documentation</a>. Accessed: 29 Oct. 2026.</li>
+</ol>
+<p><a id="ref-13"></a></p>
+<ol start="13">
+<li>OPENROUTER. <em>Provider Routing</em>. <a href="https://openrouter.ai/docs/guides/routing/provider-selection" target="_blank" rel="noopener noreferrer">Official documentation</a>. Accessed: 29 Oct. 2026.</li>
+</ol>
+<p><a id="ref-14"></a></p>
+<ol start="14">
+<li>BERRIAI. <em>Benchmarks</em>. LiteLLM documentation. <a href="https://docs.litellm.ai/docs/benchmarks" target="_blank" rel="noopener noreferrer">Official documentation</a>. Accessed: 29 Oct. 2026.</li>
+</ol>
+<p><a id="ref-15"></a></p>
+<ol start="15">
+<li>PORTKEY. <em>AI Gateway</em>. <a href="https://portkey.ai/docs/product/ai-gateway" target="_blank" rel="noopener noreferrer">Official documentation</a>. Accessed: 29 Oct. 2026.</li>
+</ol>
+<p><a id="ref-16"></a></p>
+<ol start="16">
+<li>ROSE, Scott; BORCHERT, Oliver; MITCHELL, Stu; CONNELLY, Sean. <em>Zero Trust Architecture</em>. NIST SP 800-207, 2020. DOI: <a href="https://doi.org/10.6028/NIST.SP.800-207" target="_blank" rel="noopener noreferrer">10.6028/NIST.SP.800-207</a>.</li>
+</ol>
+<p><a id="ref-17"></a></p>
+<ol start="17">
+<li>NIST. <em>Artificial Intelligence Risk Management Framework — AI RMF 1.0</em>. NIST AI 100-1, 2023. <a href="https://www.nist.gov/itl/ai-risk-management-framework" target="_blank" rel="noopener noreferrer">Official source</a>.</li>
+</ol>
+<p><a id="ref-18"></a></p>
+<ol start="18">
+<li>NIST. <em>Artificial Intelligence Risk Management Framework: Generative Artificial Intelligence Profile</em>. NIST AI 600-1, 2024. DOI: <a href="https://doi.org/10.6028/NIST.AI.600-1" target="_blank" rel="noopener noreferrer">10.6028/NIST.AI.600-1</a>.</li>
+</ol>
+<p><a id="ref-19"></a></p>
+<ol start="19">
+<li>ISO; IEC. <em>ISO/IEC 42001:2023 — Information technology — Artificial intelligence — Management system</em>. <a href="https://www.iso.org/standard/42001" target="_blank" rel="noopener noreferrer">Official record</a>.</li>
+</ol>
+<p><a id="ref-20"></a></p>
+<ol start="20">
+<li>BRASIL. <em>Lei nº 13.709/2018 — Lei Geral de Proteção de Dados Pessoais</em>, art. 33. <a href="https://normas.leg.br/?urn=urn%3Alex%3Abr%3Afederal%3Alei%3A2018-08-14%3B13709%21art33" target="_blank" rel="noopener noreferrer">Federal legislation</a>.</li>
+</ol>
+<p><a id="ref-21"></a></p>
+<ol start="21">
+<li>ANPD. <em>Resolução CD/ANPD nº 19, de 23 de agosto de 2024 — Regulamento de Transferência Internacional de Dados</em>. <a href="https://www.gov.br/anpd/pt-br/acesso-a-informacao/institucional/atos-normativos/regulamentacoes_anpd/resolucao-cd-anpd-no-19-de-23-de-agosto-de-2024" target="_blank" rel="noopener noreferrer">Official source</a>.</li>
+</ol>
+<p><a id="ref-22"></a></p>
+<ol start="22">
+<li>UNIÃO EUROPEIA. <em>Regulamento (UE) 2024/1689 — AI Act</em>, art. 12, consolidated version provided by the European Commission. <a href="https://ai-act-service-desk.ec.europa.eu/en/ai-act/article-12" target="_blank" rel="noopener noreferrer">AI Act Service Desk</a>.</li>
+</ol>
+<p><a id="ref-23"></a></p>
+<ol start="23">
+<li>OWASP GENAI SECURITY PROJECT. <em>LLM10:2025 — Unbounded Consumption</em>. <a href="https://genai.owasp.org/llmrisk/llm102025-unbounded-consumption/" target="_blank" rel="noopener noreferrer">Official source</a>.</li>
+</ol>
+<p><a id="ref-24"></a></p>
+<ol start="24">
+<li>OWASP GENAI SECURITY PROJECT. <em>OWASP Top 10 for Agentic Applications for 2026</em>. 9 dez. 2025. <a href="https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/" target="_blank" rel="noopener noreferrer">Official source</a>.</li>
+</ol>
+<p><a id="ref-25"></a></p>
+<ol start="25">
+<li>GITHUB ADVISORY DATABASE. <em>LiteLLM has SQL Injection in Proxy API key verification — CVE-2026-42208 / GHSA-r75f-5x8p-qvmc</em>. <a href="https://github.com/advisories/GHSA-r75f-5x8p-qvmc" target="_blank" rel="noopener noreferrer">Record</a>. Accessed: 29 Oct. 2026.</li>
+</ol>
+<p><a id="ref-26"></a></p>
+<ol start="26">
+<li>BERRIAI/LITELLM. <em>Security report concerning compromised litellm 1.107.0 distribution</em>. Issue nº 47826. Technical report and discussion in the project repository. <a href="https://github.com/BerriAI/litellm/issues/47826" target="_blank" rel="noopener noreferrer">Original record</a>. Accessed: 29 Oct. 2026.</li>
+</ol>
+<p><a id="ref-27"></a></p>
+<ol start="27">
+<li>SILVA, Aridio. <em>SGAEIA: Secure Governed Autonomous Edge Intelligence Architecture</em>. Version 0.3.4. Zenodo, 2026. DOI: <a href="https://doi.org/10.5281/zenodo.22557796" target="_blank" rel="noopener noreferrer">10.5281/zenodo.22557796</a>.</li>
+</ol>
+<h2>About the Author</h2>
+<p><strong>Aridio Silva</strong> is an independent researcher based in Brazil working on the architecture, security, governance, and trustworthiness of autonomous and distributed artificial intelligence systems.</p>
+<p>His research focuses on <strong>Agentic AI, Multi-Agent Systems, Edge AI, AI Security, Zero Trust, Security-by-Design, AI Governance, Spec-Driven Development, and continuous security assurance</strong>.</p>
+<p>He is the creator and lead researcher of <strong>SGAEIA — Secure Governed Autonomous Edge Intelligence Architecture</strong>, an open research initiative investigating architectural foundations for secure, governed, auditable, and trustworthy autonomous AI systems operating across distributed edge-cloud environments.</p>
+<h2>Research Profiles</h2>
+<p><strong>Aridio Silva</strong> — Independent Researcher, Brazil</p>
+<ul>
+<li><strong>ORCID:</strong> <a href="https://orcid.org/0009-0008-2411-6995" target="_blank" rel="noopener noreferrer">https://orcid.org/0009-0008-2411-6995</a></li>
+<li><strong>Google Scholar:</strong> <a href="https://scholar.google.com/citations?user=rPn5O48AAAAJ" target="_blank" rel="noopener noreferrer">https://scholar.google.com/citations?user=rPn5O48AAAAJ</a></li>
+<li><strong>Zenodo — SGAEIA Community:</strong> <a href="https://zenodo.org/communities/sgaeia" target="_blank" rel="noopener noreferrer">https://zenodo.org/communities/sgaeia</a></li>
+<li><strong>OpenAIRE:</strong> <a href="https://explore.openaire.eu/search/find?fv0=Aridio%20Silva&f0=q" target="_blank" rel="noopener noreferrer">https://explore.openaire.eu/search/find?fv0=Aridio%20Silva&amp;f0=q</a></li>
+<li><strong>Medium:</strong> <a href="https://medium.com/@aridiosilva" target="_blank" rel="noopener noreferrer">https://medium.com/@aridiosilva</a></li>
+<li><strong>GitHub:</strong> <a href="https://github.com/aridiosilva" target="_blank" rel="noopener noreferrer">https://github.com/aridiosilva</a></li>
+<li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/aridio-silva-74997111/" target="_blank" rel="noopener noreferrer">https://www.linkedin.com/in/aridio-silva-74997111/</a></li>
+<li><strong>SGAEIA Repository:</strong> <a href="https://github.com/aridiosilva/SGAEIA" target="_blank" rel="noopener noreferrer">https://github.com/aridiosilva/SGAEIA</a></li>
+<li><strong>SGAEIA Research Artifact / DOI:</strong> <a href="https://doi.org/10.5281/zenodo.22557796" target="_blank" rel="noopener noreferrer">https://doi.org/10.5281/zenodo.22557796</a></li>
+<li><strong>Homepage:</strong> <a href="https://aridiosilva.com" target="_blank" rel="noopener noreferrer">https://aridiosilva.com</a></li>
+<li><strong>SGAEIA Homepage:</strong> <a href="https://aridiosilva.com/sgaeia" target="_blank" rel="noopener noreferrer">https://aridiosilva.com/sgaeia</a></li>
+<li><strong>SGAEIA LinkedIn:</strong> <a href="https://www.linkedin.com/company/sgaeia/" target="_blank" rel="noopener noreferrer">https://www.linkedin.com/company/sgaeia/</a></li>
+<li><strong>Kaggle:</strong> <a href="https://www.kaggle.com/aridiosilva2" target="_blank" rel="noopener noreferrer">https://www.kaggle.com/aridiosilva2</a></li>
+<li><strong>DEV Community:</strong> <a href="https://dev.to/aridiosilva" target="_blank" rel="noopener noreferrer">https://dev.to/aridiosilva</a></li>
+<li><strong>Academia.edu:</strong> <a href="https://independent.academia.edu/AridioSilva" target="_blank" rel="noopener noreferrer">https://independent.academia.edu/AridioSilva</a></li>
+</ul>
+<h2>Figures</h2>
+<p>The cover is unnumbered. Figures 1–11 are numbered sequentially, cited in the text, and supplied in PNG and SVG. The conceptual assets remain within the public-disclosure boundary and are licensed under CC BY 4.0. AI assistance was used to compose the cover image.</p>
+<h2>License</h2>
+<p>Except where otherwise noted, the text and original conceptual illustrations in this article are licensed under the <strong>Creative Commons Attribution 4.0 International License (CC BY 4.0)</strong>.</p>
+<p>© Aridio Silva @aridiosilva · October 2026. The SGAEIA software and research artifact remain subject to their own Apache License 2.0.</p>
+<p><strong>Autonomous AI. Governed by Design. Trusted by Evidence.</strong></p>
+<h2>Series Continuity</h2>
+<p>This work is <strong>SGAEIA Research Series — Article 24</strong>. The public series catalogue is available at <a href="https://aridiosilva.com" target="_blank" rel="noopener noreferrer">https://aridiosilva.com</a>, with the project presence at <a href="https://aridiosilva.com/sgaeia" target="_blank" rel="noopener noreferrer">https://aridiosilva.com/sgaeia</a>.</p>
+<p><strong>Persistent record for Article 24:</strong> <a href="https://doi.org/10.5281/zenodo.23763978" target="_blank" rel="noopener noreferrer">https://doi.org/10.5281/zenodo.23763978</a>. Canonical SGAEIA project artifact: <a href="https://doi.org/10.5281/zenodo.22557796" target="_blank" rel="noopener noreferrer">https://doi.org/10.5281/zenodo.22557796</a>.</p>
+<ol>
+<li><p><a href="https://medium.com/@aridiosilva/from-edge-ai-to-governed-autonomous-edge-intelligence-9cbe487d853a" target="_blank" rel="noopener noreferrer"><em>From Edge AI to Governed Autonomous Edge Intelligence</em></a></p>
+</li>
+<li><p><a href="https://medium.com/@aridiosilva/why-autonomous-ai-agents-need-bounded-and-revocable-authority-da75656098f7" target="_blank" rel="noopener noreferrer"><em>Why Autonomous AI Agents Need Bounded and Revocable Authority</em></a></p>
+</li>
+<li><p><a href="https://medium.com/@aridiosilva/zero-trust-for-multi-agent-ai-systems-31747c850af4" target="_blank" rel="noopener noreferrer"><em>Zero Trust for Multi-Agent AI Systems</em></a></p>
+</li>
+<li><p><a href="https://medium.com/@aridiosilva/authenticated-delegation-between-autonomous-ai-agents-4c1281cd9e14" target="_blank" rel="noopener noreferrer"><em>Authenticated Delegation Between Autonomous AI Agents</em></a></p>
+</li>
+<li><p><a href="https://medium.com/@aridiosilva/continuous-grc-for-agentic-ai-ada11c2974d0" target="_blank" rel="noopener noreferrer"><em>Continuous GRC for Agentic AI</em></a></p>
+</li>
+<li><p><a href="https://medium.com/@aridiosilva/evidence-as-code-making-ai-governance-verifiable-db89e3105b87" target="_blank" rel="noopener noreferrer"><em>Evidence-as-Code: Making AI Governance Verifiable</em></a></p>
+</li>
+<li><p><a href="https://medium.com/@aridiosilva/security-by-design-for-distributed-agentic-ai-d8a00dfe1acd" target="_blank" rel="noopener noreferrer"><em>Security-by-Design for Distributed Agentic AI</em></a></p>
+</li>
+<li><p><a href="https://medium.com/@aridiosilva/sgaeia-a-reference-architecture-for-secure-governed-autonomous-edge-intelligence-cd5466cbc29c" target="_blank" rel="noopener noreferrer"><em>SGAEIA: A Reference Architecture for Secure Governed Autonomous Edge Intelligence</em></a></p>
+</li>
+<li><p><a href="https://medium.com/@aridiosilva/when-ai-begins-to-build-ai-f762df34afec" target="_blank" rel="noopener noreferrer"><em>When AI Begins to Build AI</em></a></p>
+</li>
+<li><p><a href="https://medium.com/@aridiosilva/rogue-ai-agents-when-autonomous-systems-become-a-collective-75ddaf685938" target="_blank" rel="noopener noreferrer"><em>Rogue AI Agents: When Autonomous Systems Become a Collective</em></a></p>
+</li>
+<li><p><a href="https://medium.com/@aridiosilva/from-model-capability-to-governed-action-an-architecture-for-secure-agentic-ai-de0bf29d0cdc" target="_blank" rel="noopener noreferrer"><em>From Model Capability to Governed Action: An Architecture for Secure Agentic AI</em></a></p>
+</li>
+<li><p><a href="https://medium.com/@aridiosilva/ten-days-that-exposed-the-governance-gap-in-frontier-ai-07fbd2c278d4" target="_blank" rel="noopener noreferrer"><em>Ten Days That Exposed the Governance Gap in Frontier AI</em></a></p>
+</li>
+<li><p><a href="https://medium.com/@aridiosilva/when-ai-hallucination-becomes-action-f04cc100b76a" target="_blank" rel="noopener noreferrer"><em>When AI Hallucination Becomes Action</em></a></p>
+</li>
+<li><p><a href="https://medium.com/@aridiosilva/ais-alien-mind-0c228fc0d320" target="_blank" rel="noopener noreferrer"><em>AI’s Alien Mind: How to Govern What We Cannot Fully Understand</em></a></p>
+</li>
+<li><p><a href="https://medium.com/@aridiosilva/when-ai-agents-form-societies-448a8d06d411" target="_blank" rel="noopener noreferrer"><em>When AI Agents Form Societies: Is Security a Property of the Model or the System?</em></a></p>
+</li>
+<li><p><a href="https://medium.com/@aridiosilva/when-ai-improves-ai-governing-recursive-intelligence-acceleration-6eb951abdbaf" target="_blank" rel="noopener noreferrer"><em>When AI Improves AI: Governing Recursive Intelligence Acceleration</em></a></p>
+</li>
+<li><p><a href="https://medium.com/@aridiosilva/ai-jailbreaks-from-bypassing-restrictions-to-governing-authority-b16efbf0c0ab" target="_blank" rel="noopener noreferrer"><em>AI Jailbreaks: From Bypassing Restrictions to Governing Authority</em></a></p>
+</li>
+<li><p><a href="https://medium.com/@aridiosilva/tracing-ai-agent-execution-foundations-state-of-the-art-and-implications-for-distributed-cf1cda3b9cd4" target="_blank" rel="noopener noreferrer"><em>Tracing AI Agent Execution: Foundations, State of the Art, and Implications for Distributed Multi-Agent Systems</em></a></p>
+</li>
+<li><p><a href="https://medium.com/@aridiosilva/lora-in-ai-agents-efficiency-security-risks-and-adapter-governance-e3cbdfb3e588" target="_blank" rel="noopener noreferrer"><em>LoRA in AI Agents: Efficiency, Security Risks, and Adapter Governance</em></a></p>
+</li>
+<li><p><a href="https://medium.com/@aridiosilva/ai-agents-and-agentic-ai-what-sets-them-apart-e7dcdf391fbc" target="_blank" rel="noopener noreferrer"><em>AI Agents and Agentic AI: What Sets Them Apart?</em></a></p>
+</li>
+<li><p><a href="https://medium.com/@aridiosilva/the-open-letter-on-ai-and-cybersecurity-and-the-evidence-for-agent-containment-071f1882f34d" target="_blank" rel="noopener noreferrer"><em>The Open Letter on AI and Cybersecurity and the Evidence for Agent Containment</em></a></p>
+</li>
+<li><p><a href="https://medium.com/@aridiosilva/opening-the-black-box-of-llm-inference-foundations-of-generative-ai-65f6d3563bd2" target="_blank" rel="noopener noreferrer"><em>Opening the Black Box of LLM Inference: Foundations of Generative AI</em></a></p>
+</li>
+<li><p><a href="https://medium.com/@aridiosilva/how-to-reduce-the-cost-of-ai-systems-with-llms-without-sacrificing-quality-b097cecce482" target="_blank" rel="noopener noreferrer"><em>How to Reduce the Cost of AI Systems with LLMs Without Sacrificing Quality</em></a></p>
+</li>
+<li><p><em><strong>LLM Routers for AI Systems: Architecture, Governance, Multi-Agent Systems, Swarms, and Security</strong></em> — current article.</p>
+</li>
+</ol>
+<h2>Suggested Citation</h2>
+<p>Silva, Aridio. (2026). <em>LLM Routers for AI Systems: Architecture, Governance, Multi-Agent Systems, Swarms, and Security</em>. SGAEIA Research Series, Article 24. DOI: <a href="https://doi.org/10.5281/zenodo.23763978" target="_blank" rel="noopener noreferrer">10.5281/zenodo.23763978</a>.</p><h2>Publication channels</h2><p class="article-distribution-links"><a href="https://zenodo.org/records/23763978" target="_blank" rel="noopener noreferrer">Zenodo</a><a href="https://dev.to/aridiosilva/llm-routers-for-ai-systems-architecture-governance-multi-agent-systems-swarms-and-security-3g7f" target="_blank" rel="noopener noreferrer">DEV.to</a><a href="https://www.academia.edu/179879094/LLM_Routers_for_AI_Systems" target="_blank" rel="noopener noreferrer">Academia.edu</a><a href="https://medium.com/@aridiosilva/llm-routers-for-ai-systems-architecture-governance-multi-agent-systems-swarms-and-security-57b492be7cb8" target="_blank" rel="noopener noreferrer">Medium.com</a></p></article></section></main><footer class="site-footer footer-style-preview" id="footer">
+  <div class="shell">
+    <div class="footer-head">
+      <div class="footer-brand-lockup">
+        <img class="footer-sgaeia-logo" src="/assets/sgaeia-logo-transparent.png" alt="" aria-hidden="true" width="1254" height="1254" loading="lazy" decoding="async">
+        <a class="footer-wordmark footer-project-link" href="/sgaeia.html">SGAEIA</a>
+      </div>
+      <div class="footer-note">SGAEIA · Research on governed autonomous and distributed AI systems.</div>
+    </div>
+
+    <nav class="brand-links footer-name-links" aria-label="Research profiles and project links">
+      <a class="footer-profile-link" aria-label="GitHub" title="GitHub" href="https://github.com/aridiosilva" target="_blank" rel="noopener noreferrer"><strong>GitHub</strong></a>
+      <a class="footer-profile-link" aria-label="ORCID" title="ORCID" href="https://orcid.org/0009-0008-2411-6995" target="_blank" rel="me noopener noreferrer"><strong>ORCID</strong></a>
+      <a class="footer-profile-link" aria-label="Google Scholar" title="Google Scholar" href="https://scholar.google.com/citations?user=rPn5O48AAAAJ" target="_blank" rel="noopener noreferrer"><strong>Google Scholar</strong></a>
+      <a class="footer-profile-link" aria-label="Zenodo author records" title="Zenodo" href="https://zenodo.org/search?q=metadata.creators.person_or_org.name%3A%22Silva%2C%20Aridio%22" target="_blank" rel="noopener noreferrer"><strong>Zenodo</strong></a>
+      <a class="footer-profile-link" aria-label="SGAEIA Zenodo Community" title="SGAEIA — Zenodo Community" href="https://zenodo.org/communities/sgaeia" target="_blank" rel="noopener noreferrer"><strong>SGAEIA · Zenodo Community</strong></a>
+      <a class="footer-profile-link" aria-label="OpenAIRE" title="OpenAIRE" href="https://explore.openaire.eu/search/find?fv0=Aridio%20Silva&amp;f0=q" target="_blank" rel="noopener noreferrer"><strong>OpenAIRE</strong></a>
+      <a class="footer-profile-link" aria-label="Medium" title="Medium" href="https://medium.com/@aridiosilva" target="_blank" rel="noopener noreferrer"><strong>Medium</strong></a>
+      <a class="footer-profile-link" aria-label="Academia.edu" title="Academia.edu" href="https://independent.academia.edu/AridioSilva" target="_blank" rel="noopener noreferrer"><strong>Academia.edu</strong></a>
+      <a class="footer-profile-link" aria-label="DEV Community profile" title="DEV Community" href="https://dev.to/aridiosilva" target="_blank" rel="me noopener noreferrer"><strong>DEV Community</strong></a>
+      <a class="footer-profile-link" aria-label="LinkedIn" title="LinkedIn" href="https://www.linkedin.com/in/aridio-silva-74997111/" target="_blank" rel="noopener noreferrer"><strong>LinkedIn</strong></a>
+      <a class="footer-profile-link" aria-label="SGAEIA LinkedIn" title="SGAEIA LinkedIn" href="https://www.linkedin.com/company/sgaeia/" target="_blank" rel="noopener noreferrer"><strong>SGAEIA · LinkedIn</strong></a>
+      <a class="footer-profile-link" aria-label="SGAEIA GitHub Repository" title="SGAEIA Repository" href="https://github.com/aridiosilva/SGAEIA" target="_blank" rel="noopener noreferrer"><strong>SGAEIA Repository</strong></a>
+      <a class="footer-profile-link" aria-label="Kaggle" title="Kaggle" href="https://www.kaggle.com/aridiosilva2" target="_blank" rel="noopener noreferrer"><strong>Kaggle</strong></a>
+      <a class="footer-profile-link" aria-label="SGAEIA research artifact DOI" title="SGAEIA Research Artifact / DOI" href="https://doi.org/10.5281/zenodo.22557796" target="_blank" rel="noopener noreferrer"><strong>SGAEIA DOI</strong></a>
+    </nav>
+
+    <div class="footer-bottom">
+      <span>© 2026 Aridio Silva · <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></span>
+      <span>Last updated: 29 October 2026 — Version 1.0.0</span>
+      <span>Autonomous AI. Governed by Design. Trusted by Evidence.</span>
+    </div>
+  </div>
+</footer></body></html>

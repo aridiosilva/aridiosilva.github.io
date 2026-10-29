@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="3400" height="939" viewBox="0 0 3400 939">
+<metadata id="sgaeia-publication-metadata"><rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#"><rdf:Description rdf:about=""><dc:title>Article 24 table 4</dc:title><dc:description>Tipo de solução | Valor esperado | Responsabilidade que permanece com o adotante; Biblioteca de pesquisa | Implementações comparáveis e instrumentos de avaliação | Integração, autorização, operação e validação no domínio; Gateway operado pela organização | Controle sobre implantação, configuração e integração de políticas | Atualização, capacidade, isolamento, observabilidade e resposta a incidentes; Serviço gerenciado ou agregador | Redução do trabalho de integração e acesso a alternativas | Avaliação contratual, tratamento de dados, dependência e recuperação; Seleção incorporada a um produto | Adaptação já integrada à experiência de uso | Compreender limites de escolha, visibilidade e controles efetivamente disponíveis</dc:description><dc:creator><rdf:Seq><rdf:li>Aridio Silva</rdf:li></rdf:Seq></dc:creator><dc:rights>© 2026 Aridio Silva — CC BY 4.0</dc:rights><dc:subject>SGAEIA</dc:subject><cc:license rdf:resource="https://creativecommons.org/licenses/by/4.0/"/></rdf:Description></rdf:RDF></metadata>
+<rect width="100%" height="100%" fill="white"/>
+<text x="55" y="68" font-family="Arial" font-size="41" font-weight="bold" fill="#b91c1c">Tabela 4</text>
+<rect x="55" y="110" width="1096" height="101" fill="#132742" stroke="#b9c7d8"/>
+<text x="72" y="165" font-family="Arial" font-size="41" font-weight="bold" fill="white">Tipo de solução</text>
+<rect x="1151" y="110" width="1096" height="101" fill="#132742" stroke="#b9c7d8"/>
+<text x="1168" y="165" font-family="Arial" font-size="41" font-weight="bold" fill="white">Valor esperado</text>
+<rect x="2247" y="110" width="1096" height="101" fill="#132742" stroke="#b9c7d8"/>
+<text x="2264" y="165" font-family="Arial" font-size="41" font-weight="bold" fill="white">Responsabilidade que permanece com o adotante</text>
+<rect x="55" y="211" width="1096" height="157" fill="#edf3fa" stroke="#b9c7d8"/>
+<text x="72" y="266" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">Biblioteca de pesquisa</text>
+<rect x="1151" y="211" width="1096" height="157" fill="#edf3fa" stroke="#b9c7d8"/>
+<text x="1168" y="266" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">Implementações comparáveis e instrumentos de</text>
+<text x="1168" y="322" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">avaliação</text>
+<rect x="2247" y="211" width="1096" height="157" fill="#edf3fa" stroke="#b9c7d8"/>
+<text x="2264" y="266" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">Integração, autorização, operação e validação no</text>
+<text x="2264" y="322" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">domínio</text>
+<rect x="55" y="368" width="1096" height="157" fill="#f8fafc" stroke="#b9c7d8"/>
+<text x="72" y="423" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">Gateway operado pela organização</text>
+<rect x="1151" y="368" width="1096" height="157" fill="#f8fafc" stroke="#b9c7d8"/>
+<text x="1168" y="423" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">Controle sobre implantação, configuração e</text>
+<text x="1168" y="479" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">integração de políticas</text>
+<rect x="2247" y="368" width="1096" height="157" fill="#f8fafc" stroke="#b9c7d8"/>
+<text x="2264" y="423" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">Atualização, capacidade, isolamento,</text>
+<text x="2264" y="479" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">observabilidade e resposta a incidentes</text>
+<rect x="55" y="525" width="1096" height="157" fill="#edf3fa" stroke="#b9c7d8"/>
+<text x="72" y="580" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">Serviço gerenciado ou agregador</text>
+<rect x="1151" y="525" width="1096" height="157" fill="#edf3fa" stroke="#b9c7d8"/>
+<text x="1168" y="580" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">Redução do trabalho de integração e acesso a</text>
+<text x="1168" y="636" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">alternativas</text>
+<rect x="2247" y="525" width="1096" height="157" fill="#edf3fa" stroke="#b9c7d8"/>
+<text x="2264" y="580" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">Avaliação contratual, tratamento de dados,</text>
+<text x="2264" y="636" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">dependência e recuperação</text>
+<rect x="55" y="682" width="1096" height="157" fill="#f8fafc" stroke="#b9c7d8"/>
+<text x="72" y="737" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">Seleção incorporada a um produto</text>
+<rect x="1151" y="682" width="1096" height="157" fill="#f8fafc" stroke="#b9c7d8"/>
+<text x="1168" y="737" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">Adaptação já integrada à experiência de uso</text>
+<rect x="2247" y="682" width="1096" height="157" fill="#f8fafc" stroke="#b9c7d8"/>
+<text x="2264" y="737" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">Compreender limites de escolha, visibilidade e</text>
+<text x="2264" y="793" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">controles efetivamente disponíveis</text>
+<text x="55" y="904" font-family="Arial" font-size="25" fill="#536476">© 2026 Aridio Silva | Project SGAEIA | CC BY 4.0 | DOI: 10.5281/zenodo.23763978</text>
+</svg>

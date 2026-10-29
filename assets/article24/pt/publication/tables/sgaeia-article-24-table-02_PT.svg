@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="3400" height="1253" viewBox="0 0 3400 1253">
+<metadata id="sgaeia-publication-metadata"><rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#"><rdf:Description rdf:about=""><dc:title>Article 24 table 2</dc:title><dc:description>Estratégia | Chamadas de geração | Treinamento ou supervisão | Principal vantagem | Principal dependência; Regras | Em geral, uma | Política e critérios explícitos | Transparência e baixo custo de seleção | Cobertura das regras e tratamento de exceções; Classificador ou preferência | Em geral, uma, além de eventuais embeddings | Dados rotulados e calibração | Seleção sem gerar respostas alternativas | Representatividade dos dados; Similaridade | Em geral, uma, além da representação vetorial | Histórico avaliado | Aproveitamento incremental de exemplos | Cobertura e relevância dos vizinhos; Cascata | Uma ou mais | Critério de aceitação | Escalar somente quando necessário | Confiabilidade e custo da validação; Autoverificação ou juiz | Duas ou mais operações, conforme o desenho | Exemplos, rubrica ou avaliador | Avaliação condicionada ao resultado | Erros correlacionados e custo adicional; Adaptativo ou generativo | Variável | Retorno observado ou instruções de seleção | Adaptação a estado e contexto | Custo de exploração, estabilidade e explicação</dc:description><dc:creator><rdf:Seq><rdf:li>Aridio Silva</rdf:li></rdf:Seq></dc:creator><dc:rights>© 2026 Aridio Silva — CC BY 4.0</dc:rights><dc:subject>SGAEIA</dc:subject><cc:license rdf:resource="https://creativecommons.org/licenses/by/4.0/"/></rdf:Description></rdf:RDF></metadata>
+<rect width="100%" height="100%" fill="white"/>
+<text x="55" y="68" font-family="Arial" font-size="41" font-weight="bold" fill="#b91c1c">Tabela 2</text>
+<rect x="55" y="110" width="658" height="101" fill="#132742" stroke="#b9c7d8"/>
+<text x="72" y="165" font-family="Arial" font-size="41" font-weight="bold" fill="white">Estratégia</text>
+<rect x="713" y="110" width="658" height="101" fill="#132742" stroke="#b9c7d8"/>
+<text x="730" y="165" font-family="Arial" font-size="41" font-weight="bold" fill="white">Chamadas de geração</text>
+<rect x="1371" y="110" width="658" height="101" fill="#132742" stroke="#b9c7d8"/>
+<text x="1388" y="165" font-family="Arial" font-size="41" font-weight="bold" fill="white">Treinamento ou supervisão</text>
+<rect x="2029" y="110" width="658" height="101" fill="#132742" stroke="#b9c7d8"/>
+<text x="2046" y="165" font-family="Arial" font-size="41" font-weight="bold" fill="white">Principal vantagem</text>
+<rect x="2687" y="110" width="658" height="101" fill="#132742" stroke="#b9c7d8"/>
+<text x="2704" y="165" font-family="Arial" font-size="41" font-weight="bold" fill="white">Principal dependência</text>
+<rect x="55" y="211" width="658" height="157" fill="#edf3fa" stroke="#b9c7d8"/>
+<text x="72" y="266" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">Regras</text>
+<rect x="713" y="211" width="658" height="157" fill="#edf3fa" stroke="#b9c7d8"/>
+<text x="730" y="266" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">Em geral, uma</text>
+<rect x="1371" y="211" width="658" height="157" fill="#edf3fa" stroke="#b9c7d8"/>
+<text x="1388" y="266" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">Política e critérios</text>
+<text x="1388" y="322" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">explícitos</text>
+<rect x="2029" y="211" width="658" height="157" fill="#edf3fa" stroke="#b9c7d8"/>
+<text x="2046" y="266" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">Transparência e baixo custo</text>
+<text x="2046" y="322" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">de seleção</text>
+<rect x="2687" y="211" width="658" height="157" fill="#edf3fa" stroke="#b9c7d8"/>
+<text x="2704" y="266" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">Cobertura das regras e</text>
+<text x="2704" y="322" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">tratamento de exceções</text>
+<rect x="55" y="368" width="658" height="157" fill="#f8fafc" stroke="#b9c7d8"/>
+<text x="72" y="423" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">Classificador ou preferência</text>
+<rect x="713" y="368" width="658" height="157" fill="#f8fafc" stroke="#b9c7d8"/>
+<text x="730" y="423" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">Em geral, uma, além de</text>
+<text x="730" y="479" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">eventuais embeddings</text>
+<rect x="1371" y="368" width="658" height="157" fill="#f8fafc" stroke="#b9c7d8"/>
+<text x="1388" y="423" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">Dados rotulados e calibração</text>
+<rect x="2029" y="368" width="658" height="157" fill="#f8fafc" stroke="#b9c7d8"/>
+<text x="2046" y="423" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">Seleção sem gerar respostas</text>
+<text x="2046" y="479" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">alternativas</text>
+<rect x="2687" y="368" width="658" height="157" fill="#f8fafc" stroke="#b9c7d8"/>
+<text x="2704" y="423" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">Representatividade dos dados</text>
+<rect x="55" y="525" width="658" height="157" fill="#edf3fa" stroke="#b9c7d8"/>
+<text x="72" y="580" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">Similaridade</text>
+<rect x="713" y="525" width="658" height="157" fill="#edf3fa" stroke="#b9c7d8"/>
+<text x="730" y="580" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">Em geral, uma, além da</text>
+<text x="730" y="636" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">representação vetorial</text>
+<rect x="1371" y="525" width="658" height="157" fill="#edf3fa" stroke="#b9c7d8"/>
+<text x="1388" y="580" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">Histórico avaliado</text>
+<rect x="2029" y="525" width="658" height="157" fill="#edf3fa" stroke="#b9c7d8"/>
+<text x="2046" y="580" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">Aproveitamento incremental de</text>
+<text x="2046" y="636" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">exemplos</text>
+<rect x="2687" y="525" width="658" height="157" fill="#edf3fa" stroke="#b9c7d8"/>
+<text x="2704" y="580" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">Cobertura e relevância dos</text>
+<text x="2704" y="636" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">vizinhos</text>
+<rect x="55" y="682" width="658" height="157" fill="#f8fafc" stroke="#b9c7d8"/>
+<text x="72" y="737" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">Cascata</text>
+<rect x="713" y="682" width="658" height="157" fill="#f8fafc" stroke="#b9c7d8"/>
+<text x="730" y="737" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">Uma ou mais</text>
+<rect x="1371" y="682" width="658" height="157" fill="#f8fafc" stroke="#b9c7d8"/>
+<text x="1388" y="737" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">Critério de aceitação</text>
+<rect x="2029" y="682" width="658" height="157" fill="#f8fafc" stroke="#b9c7d8"/>
+<text x="2046" y="737" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">Escalar somente quando</text>
+<text x="2046" y="793" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">necessário</text>
+<rect x="2687" y="682" width="658" height="157" fill="#f8fafc" stroke="#b9c7d8"/>
+<text x="2704" y="737" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">Confiabilidade e custo da</text>
+<text x="2704" y="793" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">validação</text>
+<rect x="55" y="839" width="658" height="157" fill="#edf3fa" stroke="#b9c7d8"/>
+<text x="72" y="894" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">Autoverificação ou juiz</text>
+<rect x="713" y="839" width="658" height="157" fill="#edf3fa" stroke="#b9c7d8"/>
+<text x="730" y="894" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">Duas ou mais operações,</text>
+<text x="730" y="950" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">conforme o desenho</text>
+<rect x="1371" y="839" width="658" height="157" fill="#edf3fa" stroke="#b9c7d8"/>
+<text x="1388" y="894" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">Exemplos, rubrica ou</text>
+<text x="1388" y="950" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">avaliador</text>
+<rect x="2029" y="839" width="658" height="157" fill="#edf3fa" stroke="#b9c7d8"/>
+<text x="2046" y="894" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">Avaliação condicionada ao</text>
+<text x="2046" y="950" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">resultado</text>
+<rect x="2687" y="839" width="658" height="157" fill="#edf3fa" stroke="#b9c7d8"/>
+<text x="2704" y="894" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">Erros correlacionados e custo</text>
+<text x="2704" y="950" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">adicional</text>
+<rect x="55" y="996" width="658" height="157" fill="#f8fafc" stroke="#b9c7d8"/>
+<text x="72" y="1051" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">Adaptativo ou generativo</text>
+<rect x="713" y="996" width="658" height="157" fill="#f8fafc" stroke="#b9c7d8"/>
+<text x="730" y="1051" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">Variável</text>
+<rect x="1371" y="996" width="658" height="157" fill="#f8fafc" stroke="#b9c7d8"/>
+<text x="1388" y="1051" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">Retorno observado ou</text>
+<text x="1388" y="1107" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">instruções de seleção</text>
+<rect x="2029" y="996" width="658" height="157" fill="#f8fafc" stroke="#b9c7d8"/>
+<text x="2046" y="1051" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">Adaptação a estado e contexto</text>
+<rect x="2687" y="996" width="658" height="157" fill="#f8fafc" stroke="#b9c7d8"/>
+<text x="2704" y="1051" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">Custo de exploração,</text>
+<text x="2704" y="1107" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">estabilidade e explicação</text>
+<text x="55" y="1218" font-family="Arial" font-size="25" fill="#536476">© 2026 Aridio Silva | Project SGAEIA | CC BY 4.0 | DOI: 10.5281/zenodo.23763978</text>
+</svg>

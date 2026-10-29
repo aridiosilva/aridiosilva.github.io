@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="3400" height="782" viewBox="0 0 3400 782">
+<metadata id="sgaeia-publication-metadata"><rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#"><rdf:Description rdf:about=""><dc:title>Article 24 table 1</dc:title><dc:description>Element | Main question | Responsibility | Evaluation evidence; Router | Which alternative should handle this task? | Select a model, configuration, or next step | Selection quality, decision cost, and generalization; Gateway | How should authorized execution be mediated? | Adapt access, enforce controls, and observe traffic | Isolation, availability, limits, and records; Control plane | Who may define and change these decisions? | Administer policies, permissions, and lifecycle | Authorization of changes, versions, and revocability</dc:description><dc:creator><rdf:Seq><rdf:li>Aridio Silva</rdf:li></rdf:Seq></dc:creator><dc:rights>© 2026 Aridio Silva — CC BY 4.0</dc:rights><dc:subject>SGAEIA</dc:subject><cc:license rdf:resource="https://creativecommons.org/licenses/by/4.0/"/></rdf:Description></rdf:RDF></metadata>
+<rect width="100%" height="100%" fill="white"/>
+<text x="55" y="68" font-family="Arial" font-size="41" font-weight="bold" fill="#b91c1c">Table 1</text>
+<rect x="55" y="110" width="822" height="101" fill="#132742" stroke="#b9c7d8"/>
+<text x="72" y="165" font-family="Arial" font-size="41" font-weight="bold" fill="white">Element</text>
+<rect x="877" y="110" width="822" height="101" fill="#132742" stroke="#b9c7d8"/>
+<text x="894" y="165" font-family="Arial" font-size="41" font-weight="bold" fill="white">Main question</text>
+<rect x="1699" y="110" width="822" height="101" fill="#132742" stroke="#b9c7d8"/>
+<text x="1716" y="165" font-family="Arial" font-size="41" font-weight="bold" fill="white">Responsibility</text>
+<rect x="2521" y="110" width="822" height="101" fill="#132742" stroke="#b9c7d8"/>
+<text x="2538" y="165" font-family="Arial" font-size="41" font-weight="bold" fill="white">Evaluation evidence</text>
+<rect x="55" y="211" width="822" height="157" fill="#edf3fa" stroke="#b9c7d8"/>
+<text x="72" y="266" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">Router</text>
+<rect x="877" y="211" width="822" height="157" fill="#edf3fa" stroke="#b9c7d8"/>
+<text x="894" y="266" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">Which alternative should handle this</text>
+<text x="894" y="322" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">task?</text>
+<rect x="1699" y="211" width="822" height="157" fill="#edf3fa" stroke="#b9c7d8"/>
+<text x="1716" y="266" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">Select a model, configuration, or</text>
+<text x="1716" y="322" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">next step</text>
+<rect x="2521" y="211" width="822" height="157" fill="#edf3fa" stroke="#b9c7d8"/>
+<text x="2538" y="266" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">Selection quality, decision cost, and</text>
+<text x="2538" y="322" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">generalization</text>
+<rect x="55" y="368" width="822" height="157" fill="#f8fafc" stroke="#b9c7d8"/>
+<text x="72" y="423" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">Gateway</text>
+<rect x="877" y="368" width="822" height="157" fill="#f8fafc" stroke="#b9c7d8"/>
+<text x="894" y="423" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">How should authorized execution be</text>
+<text x="894" y="479" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">mediated?</text>
+<rect x="1699" y="368" width="822" height="157" fill="#f8fafc" stroke="#b9c7d8"/>
+<text x="1716" y="423" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">Adapt access, enforce controls, and</text>
+<text x="1716" y="479" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">observe traffic</text>
+<rect x="2521" y="368" width="822" height="157" fill="#f8fafc" stroke="#b9c7d8"/>
+<text x="2538" y="423" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">Isolation, availability, limits, and</text>
+<text x="2538" y="479" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">records</text>
+<rect x="55" y="525" width="822" height="157" fill="#edf3fa" stroke="#b9c7d8"/>
+<text x="72" y="580" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">Control plane</text>
+<rect x="877" y="525" width="822" height="157" fill="#edf3fa" stroke="#b9c7d8"/>
+<text x="894" y="580" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">Who may define and change these</text>
+<text x="894" y="636" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">decisions?</text>
+<rect x="1699" y="525" width="822" height="157" fill="#edf3fa" stroke="#b9c7d8"/>
+<text x="1716" y="580" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">Administer policies, permissions, and</text>
+<text x="1716" y="636" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">lifecycle</text>
+<rect x="2521" y="525" width="822" height="157" fill="#edf3fa" stroke="#b9c7d8"/>
+<text x="2538" y="580" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">Authorization of changes, versions,</text>
+<text x="2538" y="636" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">and revocability</text>
+<text x="55" y="747" font-family="Arial" font-size="25" fill="#536476">© 2026 Aridio Silva | Project SGAEIA | CC BY 4.0 | DOI: 10.5281/zenodo.23763978</text>
+</svg>

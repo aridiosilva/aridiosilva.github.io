@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="3400" height="1152" viewBox="0 0 3400 1152">
+<metadata id="sgaeia-publication-metadata"><rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#"><rdf:Description rdf:about=""><dc:title>Article 24 table 5</dc:title><dc:description>Evidência | O que sustenta | O que não autoriza concluir; FrugalGPT, Hybrid LLM e AutoMix [[2](#ref-2)][[3](#ref-3)][[4](#ref-4)] | Existem configurações em que seleção ou escalonamento reduzem custo preservando a medida de qualidade adotada | Que os percentuais sejam transferíveis ou diretamente comparáveis; RouteLLM [[1](#ref-1)] | Preferências podem orientar seleção eficiente entre modelos | Que um limiar publicado sirva ao tráfego de outra organização; RouterBench [[5](#ref-5)] | Respostas pré-computadas permitem comparar políticas sob referências comuns | Que a simulação reproduza o comportamento completo do serviço; LLMRouterBench [[6](#ref-6)] | Complementaridade e dificuldade de superar referências simples podem coexistir | Que qualquer roteador aprendido supere uma política fixa; LLMRouter [[8](#ref-8)] | Uma infraestrutura comum permite estudar diferentes formulações de roteamento | Que disponibilidade de uma implementação demonstre prontidão operacional</dc:description><dc:creator><rdf:Seq><rdf:li>Aridio Silva</rdf:li></rdf:Seq></dc:creator><dc:rights>© 2026 Aridio Silva — CC BY 4.0</dc:rights><dc:subject>SGAEIA</dc:subject><cc:license rdf:resource="https://creativecommons.org/licenses/by/4.0/"/></rdf:Description></rdf:RDF></metadata>
+<rect width="100%" height="100%" fill="white"/>
+<text x="55" y="68" font-family="Arial" font-size="41" font-weight="bold" fill="#b91c1c">Tabela 5</text>
+<rect x="55" y="110" width="1096" height="101" fill="#132742" stroke="#b9c7d8"/>
+<text x="72" y="165" font-family="Arial" font-size="41" font-weight="bold" fill="white">Evidência</text>
+<rect x="1151" y="110" width="1096" height="101" fill="#132742" stroke="#b9c7d8"/>
+<text x="1168" y="165" font-family="Arial" font-size="41" font-weight="bold" fill="white">O que sustenta</text>
+<rect x="2247" y="110" width="1096" height="101" fill="#132742" stroke="#b9c7d8"/>
+<text x="2264" y="165" font-family="Arial" font-size="41" font-weight="bold" fill="white">O que não autoriza concluir</text>
+<rect x="55" y="211" width="1096" height="213" fill="#edf3fa" stroke="#b9c7d8"/>
+<text x="72" y="266" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">FrugalGPT, Hybrid LLM e AutoMix [2][3][4]</text>
+<rect x="1151" y="211" width="1096" height="213" fill="#edf3fa" stroke="#b9c7d8"/>
+<text x="1168" y="266" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">Existem configurações em que seleção ou</text>
+<text x="1168" y="322" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">escalonamento reduzem custo preservando a medida</text>
+<text x="1168" y="378" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">de qualidade adotada</text>
+<rect x="2247" y="211" width="1096" height="213" fill="#edf3fa" stroke="#b9c7d8"/>
+<text x="2264" y="266" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">Que os percentuais sejam transferíveis ou</text>
+<text x="2264" y="322" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">diretamente comparáveis</text>
+<rect x="55" y="424" width="1096" height="157" fill="#f8fafc" stroke="#b9c7d8"/>
+<text x="72" y="479" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">RouteLLM [1]</text>
+<rect x="1151" y="424" width="1096" height="157" fill="#f8fafc" stroke="#b9c7d8"/>
+<text x="1168" y="479" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">Preferências podem orientar seleção eficiente</text>
+<text x="1168" y="535" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">entre modelos</text>
+<rect x="2247" y="424" width="1096" height="157" fill="#f8fafc" stroke="#b9c7d8"/>
+<text x="2264" y="479" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">Que um limiar publicado sirva ao tráfego de outra</text>
+<text x="2264" y="535" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">organização</text>
+<rect x="55" y="581" width="1096" height="157" fill="#edf3fa" stroke="#b9c7d8"/>
+<text x="72" y="636" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">RouterBench [5]</text>
+<rect x="1151" y="581" width="1096" height="157" fill="#edf3fa" stroke="#b9c7d8"/>
+<text x="1168" y="636" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">Respostas pré-computadas permitem comparar</text>
+<text x="1168" y="692" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">políticas sob referências comuns</text>
+<rect x="2247" y="581" width="1096" height="157" fill="#edf3fa" stroke="#b9c7d8"/>
+<text x="2264" y="636" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">Que a simulação reproduza o comportamento completo</text>
+<text x="2264" y="692" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">do serviço</text>
+<rect x="55" y="738" width="1096" height="157" fill="#f8fafc" stroke="#b9c7d8"/>
+<text x="72" y="793" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">LLMRouterBench [6]</text>
+<rect x="1151" y="738" width="1096" height="157" fill="#f8fafc" stroke="#b9c7d8"/>
+<text x="1168" y="793" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">Complementaridade e dificuldade de superar</text>
+<text x="1168" y="849" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">referências simples podem coexistir</text>
+<rect x="2247" y="738" width="1096" height="157" fill="#f8fafc" stroke="#b9c7d8"/>
+<text x="2264" y="793" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">Que qualquer roteador aprendido supere uma</text>
+<text x="2264" y="849" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">política fixa</text>
+<rect x="55" y="895" width="1096" height="157" fill="#edf3fa" stroke="#b9c7d8"/>
+<text x="72" y="950" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">LLMRouter [8]</text>
+<rect x="1151" y="895" width="1096" height="157" fill="#edf3fa" stroke="#b9c7d8"/>
+<text x="1168" y="950" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">Uma infraestrutura comum permite estudar</text>
+<text x="1168" y="1006" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">diferentes formulações de roteamento</text>
+<rect x="2247" y="895" width="1096" height="157" fill="#edf3fa" stroke="#b9c7d8"/>
+<text x="2264" y="950" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">Que disponibilidade de uma implementação demonstre</text>
+<text x="2264" y="1006" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">prontidão operacional</text>
+<text x="55" y="1117" font-family="Arial" font-size="25" fill="#536476">© 2026 Aridio Silva | Project SGAEIA | CC BY 4.0 | DOI: 10.5281/zenodo.23763978</text>
+</svg>

@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="3400" height="1130" viewBox="0 0 3400 1130">
+<metadata id="sgaeia-publication-metadata"><rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#"><rdf:Description rdf:about=""><dc:title>Article 24 table 10</dc:title><dc:description>Observed condition | Reasonable initial decision | Evidence needed to advance; Need to centralize access and spending | Assess mediation with a fixed model | Isolation, limits, and operating cost; Repetitive tasks and low volume | Retain a model or simple rules | Sufficient quality and demonstrated total savings; Heterogeneous traffic and substantial volume | Compare predictive selection against baselines | Task-level quality-cost curve; Reliably verifiable results | Assess a cascade | False acceptances, escalation, and total latency; Significant data or action constraints | Restrict candidates before selection | Policy continuity and substitution evidence; Agents with many steps | Assess the complete trajectory | Completion, aggregate cost, authority, and containment; Limited visibility into failures and changes | Improve observation before automating more decisions | Actual-destination recording and verifiable recovery</dc:description><dc:creator><rdf:Seq><rdf:li>Aridio Silva</rdf:li></rdf:Seq></dc:creator><dc:rights>© 2026 Aridio Silva — CC BY 4.0</dc:rights><dc:subject>SGAEIA</dc:subject><cc:license rdf:resource="https://creativecommons.org/licenses/by/4.0/"/></rdf:Description></rdf:RDF></metadata>
+<rect width="100%" height="100%" fill="white"/>
+<text x="55" y="68" font-family="Arial" font-size="41" font-weight="bold" fill="#b91c1c">Table 10</text>
+<rect x="55" y="110" width="1096" height="101" fill="#132742" stroke="#b9c7d8"/>
+<text x="72" y="165" font-family="Arial" font-size="41" font-weight="bold" fill="white">Observed condition</text>
+<rect x="1151" y="110" width="1096" height="101" fill="#132742" stroke="#b9c7d8"/>
+<text x="1168" y="165" font-family="Arial" font-size="41" font-weight="bold" fill="white">Reasonable initial decision</text>
+<rect x="2247" y="110" width="1096" height="101" fill="#132742" stroke="#b9c7d8"/>
+<text x="2264" y="165" font-family="Arial" font-size="41" font-weight="bold" fill="white">Evidence needed to advance</text>
+<rect x="55" y="211" width="1096" height="101" fill="#edf3fa" stroke="#b9c7d8"/>
+<text x="72" y="266" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">Need to centralize access and spending</text>
+<rect x="1151" y="211" width="1096" height="101" fill="#edf3fa" stroke="#b9c7d8"/>
+<text x="1168" y="266" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">Assess mediation with a fixed model</text>
+<rect x="2247" y="211" width="1096" height="101" fill="#edf3fa" stroke="#b9c7d8"/>
+<text x="2264" y="266" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">Isolation, limits, and operating cost</text>
+<rect x="55" y="312" width="1096" height="101" fill="#f8fafc" stroke="#b9c7d8"/>
+<text x="72" y="367" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">Repetitive tasks and low volume</text>
+<rect x="1151" y="312" width="1096" height="101" fill="#f8fafc" stroke="#b9c7d8"/>
+<text x="1168" y="367" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">Retain a model or simple rules</text>
+<rect x="2247" y="312" width="1096" height="101" fill="#f8fafc" stroke="#b9c7d8"/>
+<text x="2264" y="367" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">Sufficient quality and demonstrated total savings</text>
+<rect x="55" y="413" width="1096" height="101" fill="#edf3fa" stroke="#b9c7d8"/>
+<text x="72" y="468" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">Heterogeneous traffic and substantial volume</text>
+<rect x="1151" y="413" width="1096" height="101" fill="#edf3fa" stroke="#b9c7d8"/>
+<text x="1168" y="468" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">Compare predictive selection against baselines</text>
+<rect x="2247" y="413" width="1096" height="101" fill="#edf3fa" stroke="#b9c7d8"/>
+<text x="2264" y="468" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">Task-level quality-cost curve</text>
+<rect x="55" y="514" width="1096" height="101" fill="#f8fafc" stroke="#b9c7d8"/>
+<text x="72" y="569" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">Reliably verifiable results</text>
+<rect x="1151" y="514" width="1096" height="101" fill="#f8fafc" stroke="#b9c7d8"/>
+<text x="1168" y="569" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">Assess a cascade</text>
+<rect x="2247" y="514" width="1096" height="101" fill="#f8fafc" stroke="#b9c7d8"/>
+<text x="2264" y="569" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">False acceptances, escalation, and total latency</text>
+<rect x="55" y="615" width="1096" height="101" fill="#edf3fa" stroke="#b9c7d8"/>
+<text x="72" y="670" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">Significant data or action constraints</text>
+<rect x="1151" y="615" width="1096" height="101" fill="#edf3fa" stroke="#b9c7d8"/>
+<text x="1168" y="670" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">Restrict candidates before selection</text>
+<rect x="2247" y="615" width="1096" height="101" fill="#edf3fa" stroke="#b9c7d8"/>
+<text x="2264" y="670" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">Policy continuity and substitution evidence</text>
+<rect x="55" y="716" width="1096" height="157" fill="#f8fafc" stroke="#b9c7d8"/>
+<text x="72" y="771" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">Agents with many steps</text>
+<rect x="1151" y="716" width="1096" height="157" fill="#f8fafc" stroke="#b9c7d8"/>
+<text x="1168" y="771" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">Assess the complete trajectory</text>
+<rect x="2247" y="716" width="1096" height="157" fill="#f8fafc" stroke="#b9c7d8"/>
+<text x="2264" y="771" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">Completion, aggregate cost, authority, and</text>
+<text x="2264" y="827" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">containment</text>
+<rect x="55" y="873" width="1096" height="157" fill="#edf3fa" stroke="#b9c7d8"/>
+<text x="72" y="928" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">Limited visibility into failures and changes</text>
+<rect x="1151" y="873" width="1096" height="157" fill="#edf3fa" stroke="#b9c7d8"/>
+<text x="1168" y="928" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">Improve observation before automating more</text>
+<text x="1168" y="984" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">decisions</text>
+<rect x="2247" y="873" width="1096" height="157" fill="#edf3fa" stroke="#b9c7d8"/>
+<text x="2264" y="928" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">Actual-destination recording and verifiable</text>
+<text x="2264" y="984" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">recovery</text>
+<text x="55" y="1095" font-family="Arial" font-size="25" fill="#536476">© 2026 Aridio Silva | Project SGAEIA | CC BY 4.0 | DOI: 10.5281/zenodo.23763978</text>
+</svg>

@@ -1,0 +1,184 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="3400" height="2228" viewBox="0 0 3400 2228">
+<metadata id="sgaeia-publication-metadata"><rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#"><rdf:Description rdf:about=""><dc:title>Article 24 table 8</dc:title><dc:description>Threat or condition | Affected decision | Property to preserve | Required evidence | Evaluation measure | Intended response; Use beyond delegated scope | Model, data, and tool selection | Task-bounded authority | Identity, delegation, and authorization decision | Accepted decisions outside scope | Block or interrupt unauthorized reach; Fallback to a prohibited destination | Deployment or provider substitution | Constraint continuity | Initial and actual destination, applicable rule, and change reason | Policy-incompatible substitutions | Use an admissible alternative or suspend; Data exposure | Inference, embedding, and telemetry selection | Minimization and authorized processing | Data class, destinations, and retention conditions | Unauthorized transfers and excess data | Prevent egress and address exposure; Adversarial cost escalation | Model, effort, and retries | Task and organization limits | Accumulated consumption and escalation decisions | Spending before containment and false rejections | Contain trajectory and review policy; Revoked state or permission | Cache, queues, or prior decisions | Current authorization | Policy version and revocation and execution times | Post-revocation actions and propagation delay | Invalidate reuse and interrupt affected actions; Evaluator failure | Accept, escalate, or authorize action | Acceptance suitable for the effect | Rubric, result, and subsequent verification | False acceptances, false rejections, and disagreements | Reassess and limit authorized effects; Prohibited collective effect | Subtask distribution | Shared-trajectory boundaries | Relationships among agents, actions, and resources | Violations per task and containment time | Contain affected participants and reconcile state; Gateway compromise | Selection, access, and recording | Privilege separation and recovery | Versions, changes, and protected records | Compromise reach and revocation time | Isolate components and recover credentials and policies; Lost or altered evidence | Investigation and continued operation | Verifiability of critical decisions | Trail integrity, provenance, and completeness | Critical events lacking sufficient evidence | Reduce permitted operation and reconstruct the incident</dc:description><dc:creator><rdf:Seq><rdf:li>Aridio Silva</rdf:li></rdf:Seq></dc:creator><dc:rights>© 2026 Aridio Silva — CC BY 4.0</dc:rights><dc:subject>SGAEIA</dc:subject><cc:license rdf:resource="https://creativecommons.org/licenses/by/4.0/"/></rdf:Description></rdf:RDF></metadata>
+<rect width="100%" height="100%" fill="white"/>
+<text x="55" y="68" font-family="Arial" font-size="41" font-weight="bold" fill="#b91c1c">Table 8</text>
+<rect x="55" y="110" width="548" height="101" fill="#132742" stroke="#b9c7d8"/>
+<text x="72" y="165" font-family="Arial" font-size="41" font-weight="bold" fill="white">Threat or condition</text>
+<rect x="603" y="110" width="548" height="101" fill="#132742" stroke="#b9c7d8"/>
+<text x="620" y="165" font-family="Arial" font-size="41" font-weight="bold" fill="white">Affected decision</text>
+<rect x="1151" y="110" width="548" height="101" fill="#132742" stroke="#b9c7d8"/>
+<text x="1168" y="165" font-family="Arial" font-size="41" font-weight="bold" fill="white">Property to preserve</text>
+<rect x="1699" y="110" width="548" height="101" fill="#132742" stroke="#b9c7d8"/>
+<text x="1716" y="165" font-family="Arial" font-size="41" font-weight="bold" fill="white">Required evidence</text>
+<rect x="2247" y="110" width="548" height="101" fill="#132742" stroke="#b9c7d8"/>
+<text x="2264" y="165" font-family="Arial" font-size="41" font-weight="bold" fill="white">Evaluation measure</text>
+<rect x="2795" y="110" width="548" height="101" fill="#132742" stroke="#b9c7d8"/>
+<text x="2812" y="165" font-family="Arial" font-size="41" font-weight="bold" fill="white">Intended response</text>
+<rect x="55" y="211" width="548" height="213" fill="#edf3fa" stroke="#b9c7d8"/>
+<text x="72" y="266" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">Use beyond delegated</text>
+<text x="72" y="322" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">scope</text>
+<rect x="603" y="211" width="548" height="213" fill="#edf3fa" stroke="#b9c7d8"/>
+<text x="620" y="266" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">Model, data, and tool</text>
+<text x="620" y="322" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">selection</text>
+<rect x="1151" y="211" width="548" height="213" fill="#edf3fa" stroke="#b9c7d8"/>
+<text x="1168" y="266" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">Task-bounded authority</text>
+<rect x="1699" y="211" width="548" height="213" fill="#edf3fa" stroke="#b9c7d8"/>
+<text x="1716" y="266" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">Identity, delegation,</text>
+<text x="1716" y="322" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">and authorization</text>
+<text x="1716" y="378" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">decision</text>
+<rect x="2247" y="211" width="548" height="213" fill="#edf3fa" stroke="#b9c7d8"/>
+<text x="2264" y="266" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">Accepted decisions</text>
+<text x="2264" y="322" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">outside scope</text>
+<rect x="2795" y="211" width="548" height="213" fill="#edf3fa" stroke="#b9c7d8"/>
+<text x="2812" y="266" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">Block or interrupt</text>
+<text x="2812" y="322" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">unauthorized reach</text>
+<rect x="55" y="424" width="548" height="213" fill="#f8fafc" stroke="#b9c7d8"/>
+<text x="72" y="479" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">Fallback to a prohibited</text>
+<text x="72" y="535" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">destination</text>
+<rect x="603" y="424" width="548" height="213" fill="#f8fafc" stroke="#b9c7d8"/>
+<text x="620" y="479" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">Deployment or provider</text>
+<text x="620" y="535" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">substitution</text>
+<rect x="1151" y="424" width="548" height="213" fill="#f8fafc" stroke="#b9c7d8"/>
+<text x="1168" y="479" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">Constraint continuity</text>
+<rect x="1699" y="424" width="548" height="213" fill="#f8fafc" stroke="#b9c7d8"/>
+<text x="1716" y="479" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">Initial and actual</text>
+<text x="1716" y="535" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">destination, applicable</text>
+<text x="1716" y="591" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">rule, and change reason</text>
+<rect x="2247" y="424" width="548" height="213" fill="#f8fafc" stroke="#b9c7d8"/>
+<text x="2264" y="479" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">Policy-incompatible</text>
+<text x="2264" y="535" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">substitutions</text>
+<rect x="2795" y="424" width="548" height="213" fill="#f8fafc" stroke="#b9c7d8"/>
+<text x="2812" y="479" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">Use an admissible</text>
+<text x="2812" y="535" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">alternative or suspend</text>
+<rect x="55" y="637" width="548" height="213" fill="#edf3fa" stroke="#b9c7d8"/>
+<text x="72" y="692" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">Data exposure</text>
+<rect x="603" y="637" width="548" height="213" fill="#edf3fa" stroke="#b9c7d8"/>
+<text x="620" y="692" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">Inference, embedding,</text>
+<text x="620" y="748" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">and telemetry selection</text>
+<rect x="1151" y="637" width="548" height="213" fill="#edf3fa" stroke="#b9c7d8"/>
+<text x="1168" y="692" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">Minimization and</text>
+<text x="1168" y="748" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">authorized processing</text>
+<rect x="1699" y="637" width="548" height="213" fill="#edf3fa" stroke="#b9c7d8"/>
+<text x="1716" y="692" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">Data class,</text>
+<text x="1716" y="748" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">destinations, and</text>
+<text x="1716" y="804" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">retention conditions</text>
+<rect x="2247" y="637" width="548" height="213" fill="#edf3fa" stroke="#b9c7d8"/>
+<text x="2264" y="692" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">Unauthorized transfers</text>
+<text x="2264" y="748" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">and excess data</text>
+<rect x="2795" y="637" width="548" height="213" fill="#edf3fa" stroke="#b9c7d8"/>
+<text x="2812" y="692" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">Prevent egress and</text>
+<text x="2812" y="748" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">address exposure</text>
+<rect x="55" y="850" width="548" height="213" fill="#f8fafc" stroke="#b9c7d8"/>
+<text x="72" y="905" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">Adversarial cost</text>
+<text x="72" y="961" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">escalation</text>
+<rect x="603" y="850" width="548" height="213" fill="#f8fafc" stroke="#b9c7d8"/>
+<text x="620" y="905" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">Model, effort, and</text>
+<text x="620" y="961" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">retries</text>
+<rect x="1151" y="850" width="548" height="213" fill="#f8fafc" stroke="#b9c7d8"/>
+<text x="1168" y="905" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">Task and organization</text>
+<text x="1168" y="961" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">limits</text>
+<rect x="1699" y="850" width="548" height="213" fill="#f8fafc" stroke="#b9c7d8"/>
+<text x="1716" y="905" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">Accumulated consumption</text>
+<text x="1716" y="961" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">and escalation decisions</text>
+<rect x="2247" y="850" width="548" height="213" fill="#f8fafc" stroke="#b9c7d8"/>
+<text x="2264" y="905" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">Spending before</text>
+<text x="2264" y="961" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">containment and false</text>
+<text x="2264" y="1017" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">rejections</text>
+<rect x="2795" y="850" width="548" height="213" fill="#f8fafc" stroke="#b9c7d8"/>
+<text x="2812" y="905" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">Contain trajectory and</text>
+<text x="2812" y="961" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">review policy</text>
+<rect x="55" y="1063" width="548" height="213" fill="#edf3fa" stroke="#b9c7d8"/>
+<text x="72" y="1118" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">Revoked state or</text>
+<text x="72" y="1174" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">permission</text>
+<rect x="603" y="1063" width="548" height="213" fill="#edf3fa" stroke="#b9c7d8"/>
+<text x="620" y="1118" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">Cache, queues, or prior</text>
+<text x="620" y="1174" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">decisions</text>
+<rect x="1151" y="1063" width="548" height="213" fill="#edf3fa" stroke="#b9c7d8"/>
+<text x="1168" y="1118" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">Current authorization</text>
+<rect x="1699" y="1063" width="548" height="213" fill="#edf3fa" stroke="#b9c7d8"/>
+<text x="1716" y="1118" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">Policy version and</text>
+<text x="1716" y="1174" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">revocation and execution</text>
+<text x="1716" y="1230" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">times</text>
+<rect x="2247" y="1063" width="548" height="213" fill="#edf3fa" stroke="#b9c7d8"/>
+<text x="2264" y="1118" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">Post-revocation actions</text>
+<text x="2264" y="1174" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">and propagation delay</text>
+<rect x="2795" y="1063" width="548" height="213" fill="#edf3fa" stroke="#b9c7d8"/>
+<text x="2812" y="1118" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">Invalidate reuse and</text>
+<text x="2812" y="1174" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">interrupt affected</text>
+<text x="2812" y="1230" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">actions</text>
+<rect x="55" y="1276" width="548" height="213" fill="#f8fafc" stroke="#b9c7d8"/>
+<text x="72" y="1331" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">Evaluator failure</text>
+<rect x="603" y="1276" width="548" height="213" fill="#f8fafc" stroke="#b9c7d8"/>
+<text x="620" y="1331" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">Accept, escalate, or</text>
+<text x="620" y="1387" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">authorize action</text>
+<rect x="1151" y="1276" width="548" height="213" fill="#f8fafc" stroke="#b9c7d8"/>
+<text x="1168" y="1331" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">Acceptance suitable for</text>
+<text x="1168" y="1387" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">the effect</text>
+<rect x="1699" y="1276" width="548" height="213" fill="#f8fafc" stroke="#b9c7d8"/>
+<text x="1716" y="1331" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">Rubric, result, and</text>
+<text x="1716" y="1387" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">subsequent verification</text>
+<rect x="2247" y="1276" width="548" height="213" fill="#f8fafc" stroke="#b9c7d8"/>
+<text x="2264" y="1331" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">False acceptances, false</text>
+<text x="2264" y="1387" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">rejections, and</text>
+<text x="2264" y="1443" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">disagreements</text>
+<rect x="2795" y="1276" width="548" height="213" fill="#f8fafc" stroke="#b9c7d8"/>
+<text x="2812" y="1331" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">Reassess and limit</text>
+<text x="2812" y="1387" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">authorized effects</text>
+<rect x="55" y="1489" width="548" height="213" fill="#edf3fa" stroke="#b9c7d8"/>
+<text x="72" y="1544" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">Prohibited collective</text>
+<text x="72" y="1600" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">effect</text>
+<rect x="603" y="1489" width="548" height="213" fill="#edf3fa" stroke="#b9c7d8"/>
+<text x="620" y="1544" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">Subtask distribution</text>
+<rect x="1151" y="1489" width="548" height="213" fill="#edf3fa" stroke="#b9c7d8"/>
+<text x="1168" y="1544" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">Shared-trajectory</text>
+<text x="1168" y="1600" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">boundaries</text>
+<rect x="1699" y="1489" width="548" height="213" fill="#edf3fa" stroke="#b9c7d8"/>
+<text x="1716" y="1544" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">Relationships among</text>
+<text x="1716" y="1600" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">agents, actions, and</text>
+<text x="1716" y="1656" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">resources</text>
+<rect x="2247" y="1489" width="548" height="213" fill="#edf3fa" stroke="#b9c7d8"/>
+<text x="2264" y="1544" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">Violations per task and</text>
+<text x="2264" y="1600" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">containment time</text>
+<rect x="2795" y="1489" width="548" height="213" fill="#edf3fa" stroke="#b9c7d8"/>
+<text x="2812" y="1544" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">Contain affected</text>
+<text x="2812" y="1600" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">participants and</text>
+<text x="2812" y="1656" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">reconcile state</text>
+<rect x="55" y="1702" width="548" height="213" fill="#f8fafc" stroke="#b9c7d8"/>
+<text x="72" y="1757" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">Gateway compromise</text>
+<rect x="603" y="1702" width="548" height="213" fill="#f8fafc" stroke="#b9c7d8"/>
+<text x="620" y="1757" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">Selection, access, and</text>
+<text x="620" y="1813" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">recording</text>
+<rect x="1151" y="1702" width="548" height="213" fill="#f8fafc" stroke="#b9c7d8"/>
+<text x="1168" y="1757" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">Privilege separation and</text>
+<text x="1168" y="1813" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">recovery</text>
+<rect x="1699" y="1702" width="548" height="213" fill="#f8fafc" stroke="#b9c7d8"/>
+<text x="1716" y="1757" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">Versions, changes, and</text>
+<text x="1716" y="1813" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">protected records</text>
+<rect x="2247" y="1702" width="548" height="213" fill="#f8fafc" stroke="#b9c7d8"/>
+<text x="2264" y="1757" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">Compromise reach and</text>
+<text x="2264" y="1813" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">revocation time</text>
+<rect x="2795" y="1702" width="548" height="213" fill="#f8fafc" stroke="#b9c7d8"/>
+<text x="2812" y="1757" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">Isolate components and</text>
+<text x="2812" y="1813" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">recover credentials and</text>
+<text x="2812" y="1869" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">policies</text>
+<rect x="55" y="1915" width="548" height="213" fill="#edf3fa" stroke="#b9c7d8"/>
+<text x="72" y="1970" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">Lost or altered evidence</text>
+<rect x="603" y="1915" width="548" height="213" fill="#edf3fa" stroke="#b9c7d8"/>
+<text x="620" y="1970" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">Investigation and</text>
+<text x="620" y="2026" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">continued operation</text>
+<rect x="1151" y="1915" width="548" height="213" fill="#edf3fa" stroke="#b9c7d8"/>
+<text x="1168" y="1970" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">Verifiability of</text>
+<text x="1168" y="2026" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">critical decisions</text>
+<rect x="1699" y="1915" width="548" height="213" fill="#edf3fa" stroke="#b9c7d8"/>
+<text x="1716" y="1970" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">Trail integrity,</text>
+<text x="1716" y="2026" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">provenance, and</text>
+<text x="1716" y="2082" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">completeness</text>
+<rect x="2247" y="1915" width="548" height="213" fill="#edf3fa" stroke="#b9c7d8"/>
+<text x="2264" y="1970" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">Critical events lacking</text>
+<text x="2264" y="2026" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">sufficient evidence</text>
+<rect x="2795" y="1915" width="548" height="213" fill="#edf3fa" stroke="#b9c7d8"/>
+<text x="2812" y="1970" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">Reduce permitted</text>
+<text x="2812" y="2026" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">operation and</text>
+<text x="2812" y="2082" font-family="Arial" font-size="41" font-weight="normal" fill="#17212b">reconstruct the incident</text>
+<text x="55" y="2193" font-family="Arial" font-size="25" fill="#536476">© 2026 Aridio Silva | Project SGAEIA | CC BY 4.0 | DOI: 10.5281/zenodo.23763978</text>
+</svg>
