@@ -17,11 +17,11 @@ O site reúne:
 
 ## Estado atual registrado
 
-A entrada consolidada mais recente do log é de **28 de outubro de 2026**. Nesse ponto, o repositório registrava:
+A entrada consolidada mais recente do log é de **30 de outubro de 2026**. Nesse ponto, o repositório registrava:
 
-- **71 páginas HTML públicas** usando o sistema compartilhado de navegação e rodapé;
-- publicações da SGAEIA Research Series até o **Artigo 23**;
-- infográficos bilíngues até o **Info_017**;
+- **75 páginas HTML públicas** usando o sistema compartilhado de navegação e rodapé;
+- publicações da SGAEIA Research Series até o **Artigo 24**;
+- infográficos bilíngues até o **Info_018**;
 - o índice **Challenges** e o **SlothGuard Challenge 001** em inglês e português;
 - inglês como edição canônica e `x-default` dos conteúdos bilíngues;
 - `hreflang` recíproco entre as edições em inglês e português;
@@ -92,6 +92,8 @@ Esta seção resume os registros detalhados existentes em [`docs/logs/`](docs/lo
 - **28 de outubro — Artigo 23.** Foram adicionadas as edições integrais em inglês — padrão — e português de *How to Reduce the Cost of AI Systems with LLMs Without Sacrificing Quality*, incluindo os dois PDFs de 26 páginas, capas e 13 figuras por idioma em PNG/SVG, 56 referências auditadas, GA4, CSP, metadados de citação, JSON-LD, navegação recíproca de idiomas, cards na homepage e no índice de publicações e descoberta coordenada em sitemap, robots e LLMs.
 - **28 de outubro — integração do Academia.edu nos rodapés.** `Academia.edu` foi adicionado à navegação compartilhada de perfis das 69 páginas HTML públicas, apontando para `https://independent.academia.edu/AridioSilva`. O item herda os comportamentos aprovados de hover, foco, contraste, quebra responsiva e movimento reduzido. Os registros de descoberta e as datas de modificação do sitemap foram atualizados.
 
+- **30 de outubro — Info_018.** Incluído *LLM Routers* / *Roteadores de LLMs*, com 41 slides por idioma, PDFs originais, os textos fornecidos do LinkedIn, carrosséis acessíveis e estilo editorial compartilhados, EN como destino padrão do índice, metadados recíprocos de idioma, GA4 e descoberta coordenada. O inventário público passa a conter 75 páginas HTML. Alterações preparadas localmente; comandos de stage, commit e push fornecidos ao proprietário.
+
 ## Índice dos logs detalhados
 
 ### Fundação, publicações e continuidade
@@ -131,6 +133,7 @@ Esta seção resume os registros detalhados existentes em [`docs/logs/`](docs/lo
 - [Info_013 — An Alien Mind](docs/logs/2026-10-14-INFO-013-AN-ALIEN-MIND.md)
 - [Info_014 — Quando a IA Começa a Construir a Si Mesma](docs/logs/2026-10-14-INFO-014-WHEN-AI-STARTS-BUILDING-ITSELF.md)
 - [Info_017 — Reduzir 70% do Custo com LLMs](docs/logs/2026-10-28-INFO-017-LLM-COST-REDUCTION.md)
+- [Info_018 — Roteadores de LLMs](docs/logs/2026-10-30-INFO-018-LLM-ROUTERS.md)
 
 ## Perfis de pesquisa e distribuição
 

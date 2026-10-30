@@ -17,16 +17,16 @@ The website brings together:
 
 ## Current recorded state
 
-The latest consolidated log entry is dated **29 October 2026**. At that point, the repository recorded:
+The latest consolidated log entry is dated **30 October 2026**. At that point, the repository recorded:
 
-- **73 public HTML pages** using the shared navigation and footer system;
+- **75 public HTML pages** using the shared navigation and footer system;
 - SGAEIA Research Series publications through **Article 24**;
-- bilingual infographics through **Info_017**;
+- bilingual infographics through **Info_018**;
 - the **Challenges** index and **SlothGuard Challenge 001** in English and Portuguese;
 - English as the canonical and `x-default` edition for bilingual content;
 - reciprocal `hreflang` navigation between English and Portuguese editions;
 - a shared GA4 loader with privacy-preserving default storage settings;
-- a compact fixed-header layout for mobile viewports, propagated through the shared stylesheet and cache-busted across all 73 HTML pages;
+- a compact fixed-header layout for mobile viewports, propagated through the shared stylesheet and cache-busted across all 75 HTML pages;
 - coordinated discovery through `sitemap.xml`, `robots.txt`, and `llms.txt`;
 - the Academia.edu profile in every HTML footer, after Medium and before DEV Community.
 
@@ -95,6 +95,8 @@ This section summarizes the detailed records under [`docs/logs/`](docs/logs/). T
 - **29 October — mobile fixed-header compaction and homepage card correction.** Reduced mobile-only header spacing, navigation gaps, and reading-control padding without changing desktop layout or responsive behavior. The cache-busted shared header stylesheet is referenced exactly once by all 73 HTML pages. Representative 320 px checks covered the homepage, SGAEIA, Publications, Article 24 EN/PT, Infographics, and Challenges with no header overlap or horizontal scrolling. The duplicate text-only Article 24 block was removed from the homepage Publications section; the single remaining publication card uses the original cover and established numbered-card layout.
 - **28 October — Academia.edu footer integration.** Added `Academia.edu` to the shared profile navigation of all 69 public HTML pages, linked to `https://independent.academia.edu/AridioSilva`. The item inherits the approved hover, focus, contrast, responsive wrapping, and reduced-motion behavior. Discovery records and sitemap modification dates were updated.
 
+- **30 October — Info_018.** Added *LLM Routers* / *Roteadores de LLMs* with 41 slides per language, original PDFs, the supplied LinkedIn text, shared accessible carousels and editorial styling, English as the default index destination, reciprocal language metadata, GA4 and coordinated discovery. The public HTML inventory now contains 75 pages. Changes were prepared locally; stage, commit and push commands were provided for the owner.
+
 ## Detailed log index
 
 ### Foundation, publications, and continuity
@@ -134,6 +136,7 @@ This section summarizes the detailed records under [`docs/logs/`](docs/logs/). T
 - [Info_013 — An Alien Mind](docs/logs/2026-10-14-INFO-013-AN-ALIEN-MIND.md)
 - [Info_014 — When AI Starts Building Itself](docs/logs/2026-10-14-INFO-014-WHEN-AI-STARTS-BUILDING-ITSELF.md)
 - [Info_017 — Cutting LLM Cost by 70%](docs/logs/2026-10-28-INFO-017-LLM-COST-REDUCTION.md)
+- [Info_018 — LLM Routers](docs/logs/2026-10-30-INFO-018-LLM-ROUTERS.md)
 
 ## Research profiles and distribution
 
