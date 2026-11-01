@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="color-scheme" content="light">
   <title>SlothGuard: um revisor de acessos preguiçoso que pede ao seu celular antes de revogar qualquer coisa — Aridio Silva</title>
-  <meta name="description" content="Submissão ao DEV Hacktoberfest 2026: regras determinísticas de segregação de funções detectam conflitos, o Gemma local os explica e o Auth0 pede aprovação humana antes de qualquer revogação.">
+  <meta name="description" content="Winner — Best Use of Auth0 for AI Agents no DEV Hacktoberfest 2026. O SlothGuard detecta conflitos, explica-os localmente e exige aprovação humana para revogar.">
   <meta name="author" content="Aridio Silva">
   <meta name="copyright" content="© 2026 Aridio Silva">
   <meta name="citation_title" content="SlothGuard: um revisor de acessos preguiçoso que pede ao seu celular antes de revogar qualquer coisa">
@@ -23,7 +23,7 @@
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <meta property="og:type" content="article">
   <meta property="og:title" content="SlothGuard: um revisor de acessos preguiçoso que pede ao seu celular antes de revogar qualquer coisa">
-  <meta property="og:description" content="Submissão ao DEV Hacktoberfest 2026: regras determinísticas de segregação de funções detectam conflitos, o Gemma local os explica e o Auth0 pede aprovação humana antes de qualquer revogação.">
+  <meta property="og:description" content="Winner — Best Use of Auth0 for AI Agents no DEV Hacktoberfest 2026. O SlothGuard mantém a revogação relevante sob aprovação humana.">
   <meta property="og:url" content="https://aridiosilva.com/challenges/challenge001/pt/">
   <meta property="og:image" content="https://aridiosilva.com/challenges/challenge001/assets/image_cover.webp">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -34,12 +34,12 @@
   <link rel="stylesheet" href="/assets/fixed-site-header.css?v=20261029-2">
   <link rel="stylesheet" href="/assets/editorial-hero.css?v=20261017-1">
   <link rel="stylesheet" href="/assets/homepage-footer-preview.css?v=20261017-5">
-  <link rel="stylesheet" href="/assets/challenges.css?v=20261026-1">
+  <link rel="stylesheet" href="/assets/challenges.css?v=20261101-1">
   <script defer src="/assets/article20-accessibility.js?v=20261014"></script>
   <script defer src="/assets/fixed-site-header.js?v=20261016-1"></script>
   <!-- GA4 G-MXMJ7Z3LS7: automatic cookieless audience measurement; analytics and advertising storage remain disabled. -->
   <script defer src="/assets/analytics-consent.js?v=20261011"></script>
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"SlothGuard: um revisor de acessos preguiçoso que pede ao seu celular antes de revogar qualquer coisa","author":{"@type":"Person","name":"Aridio Silva","identifier":"https://orcid.org/0009-0008-2411-6995"},"dateCreated":"2026-10-24","datePublished":"2026-10-26","dateModified":"2026-10-26","inLanguage":"pt-BR","identifier":"https://doi.org/10.5281/zenodo.23665904","url":"https://aridiosilva.com/challenges/challenge001/pt/","image":"https://aridiosilva.com/challenges/challenge001/assets/image_cover.webp","description":"Submissão ao DEV Hacktoberfest 2026: regras determinísticas de segregação de funções detectam conflitos, o Gemma local os explica e o Auth0 pede aprovação humana antes de qualquer revogação.","sameAs":["https://doi.org/10.5281/zenodo.23665904","https://dev.to/aridiosilva/slothguard-a-lazy-access-reviewer-that-asks-your-phone-before-it-revokes-anything-4k1a","https://github.com/aridiosilva/SlothGuard","https://youtu.be/9JlqE3jBITk"],"isPartOf":{"@type":"CollectionPage","name":"Challenges","url":"https://aridiosilva.com/challenges/"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"SlothGuard: um revisor de acessos preguiçoso que pede ao seu celular antes de revogar qualquer coisa","author":{"@type":"Person","name":"Aridio Silva","identifier":"https://orcid.org/0009-0008-2411-6995"},"dateCreated":"2026-10-24","datePublished":"2026-10-26","dateModified":"2026-11-01","inLanguage":"pt-BR","identifier":"https://doi.org/10.5281/zenodo.23665904","url":"https://aridiosilva.com/challenges/challenge001/pt/","image":"https://aridiosilva.com/challenges/challenge001/assets/image_cover.webp","description":"Winner — Best Use of Auth0 for AI Agents no DEV Hacktoberfest 2026. O SlothGuard mantém a revogação relevante sob aprovação humana.","award":"Winner — Best Use of Auth0 for AI Agents","sameAs":["https://doi.org/10.5281/zenodo.23665904","https://dev.to/aridiosilva/slothguard-a-lazy-access-reviewer-that-asks-your-phone-before-it-revokes-anything-4k1a","https://dev.to/devteam/congrats-to-the-hacktoberfest-open-source-ai-challenge-week-3-slow-and-steady-winners-3e4a","https://github.com/aridiosilva/SlothGuard","https://youtu.be/9JlqE3jBITk"],"isPartOf":{"@type":"CollectionPage","name":"Challenges","url":"https://aridiosilva.com/challenges/"}}</script>
 </head>
 <body class="article-page challenge-page">
   <a class="skip" href="#main">Ir para o conteúdo principal</a>
@@ -49,7 +49,7 @@
     <div class="reading-tools" role="group" aria-label="Controles de leitura"><button type="button" id="articleFontDecrease" aria-label="Diminuir tamanho do texto">A−</button><button type="button" id="articleFontIncrease" aria-label="Aumentar tamanho do texto">A+</button><button type="button" id="articleEasyRead" aria-pressed="false">Leitura fácil</button><button type="button" id="articleListen" aria-pressed="false">Ouvir</button></div>
   </div></header>
   <main id="main">
-    <section class="hero"><div class="shell article"><p class="eyebrow">Challenge 001 · DEV Hacktoberfest 2026</p><h1>SlothGuard: um revisor de acessos preguiçoso que pede ao seu celular antes de revogar qualquer coisa</h1><p class="subtitle">Regras detectam · Gemma explica · Uma pessoa aprova</p><p class="meta">DEV Hacktoberfest 2026 · Open-Source AI Challenge · Semana 3 · Outubro de 2026 · DOI 10.5281/zenodo.23665904</p><nav class="language-nav" aria-label="Idiomas do desafio"><a href="/challenges/challenge001/" lang="en">English</a><span aria-hidden="true">·</span><a href="/challenges/challenge001/pt/" lang="pt-BR" aria-current="page">Português</a></nav></div></section>
+    <section class="hero"><div class="shell article"><p class="eyebrow">Challenge 001 · DEV Hacktoberfest 2026</p><h1>SlothGuard: um revisor de acessos preguiçoso que pede ao seu celular antes de revogar qualquer coisa</h1><a class="challenge-winner" href="https://dev.to/devteam/congrats-to-the-hacktoberfest-open-source-ai-challenge-week-3-slow-and-steady-winners-3e4a#partner-category-winners" target="_blank" rel="noopener noreferrer" aria-label="Abrir o anúncio oficial da DEV para o vencedor de Best Use of Auth0 for AI Agents"><img src="/challenges/challenge001/assets/auth0-ai-agents-winner-badge.png" alt="" width="1000" height="1000" loading="eager" decoding="async"><span>Winner — Best Use of Auth0 for AI Agents</span></a><p class="subtitle">Regras detectam · Gemma explica · Uma pessoa aprova</p><p class="meta">DEV Hacktoberfest 2026 · Open-Source AI Challenge · Semana 3 · Outubro de 2026 · DOI 10.5281/zenodo.23665904</p><nav class="language-nav" aria-label="Idiomas do desafio"><a href="/challenges/challenge001/" lang="en">English</a><span aria-hidden="true">·</span><a href="/challenges/challenge001/pt/" lang="pt-BR" aria-current="page">Português</a></nav></div></section>
     <section class="content"><article class="shell article article-body">
       <figure class="challenge-cover cover-figure"><img src="/challenges/challenge001/assets/image_cover.webp" alt="SlothGuard — a lazy access reviewer" width="1000" height="420" loading="eager" decoding="async" fetchpriority="high"><figcaption><strong>Capa — SlothGuard</strong><span class="figure-credit">© 2026 Aridio Silva · DEV Hacktoberfest Open-Source AI Challenge</span></figcaption></figure>
 <p><em>Esta é uma submissão para o <a href="https://dev.to/challenges/hacktoberfest-week3-2026-10-19" target="_blank" rel="noopener noreferrer">Hacktoberfest Open-Source AI Challenge Week 3: Slow and Steady</a></em></p>
@@ -344,7 +344,7 @@
     </nav>
     <div class="footer-bottom">
       <span>© 2026 Aridio Silva</span>
-      <span>Atualizado em: 26 de outubro de 2026 — Versão 2.0</span>
+      <span>Atualizado em: 1º de novembro de 2026 — Versão 2.0</span>
       <span>Autonomous AI. Governed by Design. Trusted by Evidence.</span>
     </div>
   </div>
