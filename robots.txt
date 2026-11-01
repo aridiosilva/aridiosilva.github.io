@@ -1,7 +1,7 @@
 # © 2026 Aridio Silva
 # AI-readable publication index: https://aridiosilva.com/llms.txt
 # The URL above is an informational comment, not a robots directive.
-# Last updated: 2026-10-30 (Infographic 018 LLM Routers English and Portuguese editions)
+# Last updated: 2026-11-01 (Infographic 019 single-turn and multi-turn LLM interactions, English and Portuguese editions)
 User-agent: *
 Allow: /
 
