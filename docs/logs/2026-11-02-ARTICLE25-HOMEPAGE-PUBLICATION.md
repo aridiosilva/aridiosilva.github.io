@@ -55,4 +55,11 @@
 - Estado inicial: branch `main`, HEAD `309a0ef`, working tree limpo.
 - Remoto da homepage: `origin`, `https://github.com/aridiosilva/aridiosilva.github.io`.
 - Stage, commit e push autorizados explicitamente pelo proprietário. A política do remoto privado SGAEIA_2 não se aplica ao repositório da homepage.
-- Commit e resultado do push serão registrados após execução. Não há garantia de indexação por mecanismos de busca decorrente destes metadados.
+- Commit de implementação: `c3d12f7c2de9a3031a504f7e289cedb1a8d4b1e8` — `feat: publish bilingual Article 25 on single-turn and multi-turn AI`.
+- `git push origin main` concluído; `git ls-remote origin refs/heads/main` confirmou o mesmo hash, com working tree limpo após o commit.
+- Rodapés de homepage (cinco idiomas) e índice de publicações atualizados para 2 de novembro de 2026, preservando Version/Versão 2.0.
+- Esta confirmação operacional é preservada em commit de documentação posterior ao commit de implementação. Não há garantia de indexação por mecanismos de busca decorrente destes metadados.
+
+## Implantação pública verificada
+
+As quatro páginas públicas — homepage, índice e artigo EN/PT — responderam HTTP 200 e contêm o identificador do Artigo 25 após o push. A conferência foi realizada em 2 de novembro de 2026. Os PDFs recuperados do commit Git também foram comparados byte a byte com os originais preservados.

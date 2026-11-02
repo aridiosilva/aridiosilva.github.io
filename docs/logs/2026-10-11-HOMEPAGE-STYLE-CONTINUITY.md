@@ -1080,7 +1080,7 @@ Novos artigos e infográficos devem reutilizar esse rodapé compartilhado e sua 
 - Atualizados sitemap, llms e comentário de robots, este log e ambos os READMEs. Inventário: 79 HTMLs públicos e 79 URLs únicas no sitemap.
 - A versão atual de `sgaeia.html` contém plataformas de publicação, não cards individuais da série. Sua organização vigente foi preservada; não se restaurou a lista histórica descrita nos prompts antigos.
 - Registro detalhado de validação e publicação: `docs/logs/2026-11-02-ARTICLE25-HOMEPAGE-PUBLICATION.md`.
-- O proprietário autorizou stage, commit e push no remoto da homepage. O resultado da execução será registrado no log detalhado após confirmação do Git.
+- O proprietário autorizou stage, commit e push no remoto da homepage. Commit de implementação `c3d12f7`, push em `origin/main` concluído e confirmado no remoto; registro completo no log detalhado. Rodapés da homepage nos cinco idiomas e do índice atualizados para 2 de novembro, preservando a versão 2.0.
 
 ### Prévia local — diagnóstico e inicialização
 
@@ -1095,3 +1095,5 @@ python -m http.server 8765 --bind 127.0.0.1 --directory C:\Users\as294\aridiosil
 ```
 
 Confirmar resposta antes de abrir abas: `curl.exe --noproxy '*' --max-time 5 -I http://127.0.0.1:8765/`. Não é necessário alterar firewall, proxy ou configurações globais. O servidor deve continuar ativo enquanto o proprietário usa as abas de revisão.
+
+- Verificação pública posterior ao push: homepage, índice e artigo EN/PT retornaram HTTP 200 com o Artigo 25 presente.
