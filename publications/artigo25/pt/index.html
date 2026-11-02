@@ -1,0 +1,576 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>Interações de Turno Único e de Múltiplos Turnos em Modelos de AI Generativa de Fronteira (LLMs) — Aridio Silva</title>
+  <meta name="description" content="Uma revisão narrativa crítica de estado conversacional, custo de tokens, confiabilidade, segurança, roteamento governado e evidências de trajetória em interações de turno único e múltiplos turnos com LLMs.">
+  <meta name="author" content="Aridio Silva">
+  <meta name="copyright" content="© 2026 Aridio Silva">
+  <meta name="keywords" content="AI, LLM routing, AI gateway, multi-agent systems, swarms, security, governance, evaluation, SGAEIA">
+  <link rel="canonical" href="https://aridiosilva.com/publications/artigo25/pt/">
+  <link rel="license" href="https://creativecommons.org/licenses/by/4.0/">
+  <meta name="citation_title" content="Interações de Turno Único e de Múltiplos Turnos em Modelos de AI Generativa de Fronteira (LLMs)">
+  <meta name="citation_author" content="Silva, Aridio">
+  <meta name="citation_publication_date" content="2026/11/01">
+  <meta name="citation_online_date" content="2026/11/01">
+  <meta name="citation_language" content="pt-BR">
+  <meta name="citation_doi" content="10.5281/zenodo.23867630">
+  <meta name="citation_pdf_url" content="https://aridiosilva.com/assets/article25/article25-pt.pdf">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://www.googletagmanager.com; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https://*.google-analytics.com; connect-src https://*.google-analytics.com https://www.googletagmanager.com; media-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'; upgrade-insecure-requests">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <link rel="sitemap" type="application/xml" href="/sitemap.xml">
+  <link rel="describedby" href="/llms.txt" type="text/markdown">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;family=Source+Serif+4:opsz,wght@8..60,500;6..60,700&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/publications.css?v=20261012-14">
+  <link rel="stylesheet" href="/assets/article-header.css">
+  <link rel="stylesheet" href="/assets/article-accessibility.css">
+  <link rel="stylesheet" href="/assets/article20.css?v=20261014">
+  <link rel="stylesheet" href="/assets/article24.css?v=20261029-1">
+  <script defer src="/assets/article20-accessibility.js?v=20261014"></script>
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Interações de Turno Único e de Múltiplos Turnos em Modelos de AI Generativa de Fronteira (LLMs)">
+  <meta property="og:description" content="Uma revisão narrativa crítica de estado conversacional, custo de tokens, confiabilidade, segurança, roteamento governado e evidências de trajetória em interações de turno único e múltiplos turnos com LLMs.">
+  <meta property="og:url" content="https://aridiosilva.com/publications/artigo25/pt/">
+  <meta property="og:image" content="https://aridiosilva.com/assets/article25/pt/cover_article25_pt.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="alternate" hreflang="en" href="https://aridiosilva.com/publications/artigo25/">
+  <link rel="alternate" hreflang="pt-BR" href="https://aridiosilva.com/publications/artigo25/pt/">
+  <link rel="alternate" hreflang="x-default" href="https://aridiosilva.com/publications/artigo25/">
+  <!-- GA4 G-MXMJ7Z3LS7: automatic cookieless audience measurement; analytics and advertising storage remain disabled. -->
+  <script defer src="/assets/analytics-consent.js?v=20261011"></script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"ScholarlyArticle","headline":"Interações de Turno Único e de Múltiplos Turnos em Modelos de AI Generativa de Fronteira (LLMs)","alternativeHeadline":"Estado, custo, confiabilidade, segurança e governança","author":{"@type":"Person","name":"Aridio Silva","identifier":"https://orcid.org/0009-0008-2411-6995"},"datePublished":"2026-11-01","dateModified":"2026-11-02","inLanguage":"pt-BR","license":"https://creativecommons.org/licenses/by/4.0/","identifier":"https://doi.org/10.5281/zenodo.23867630","sameAs":["https://zenodo.org/records/23867630","https://dev.to/aridiosilva/single-turn-and-multi-turn-interactions-in-frontier-generative-ai-models-state-cost-reliability-1e8k","https://www.academia.edu/180041841/Single_Turn_and_Multi_Turn_Interactions_in_Frontier_Generative_AI_Models_LLMs_","https://medium.com/@aridiosilva/single-turn-and-multi-turn-interactions-in-frontier-generative-ai-models-f8b9a4e75a39","https://doi.org/10.5281/zenodo.23867630","https://zenodo.org/uploads/23867630"],"isPartOf":{"@type":"CreativeWorkSeries","name":"SGAEIA Research Series"},"url":"https://aridiosilva.com/publications/artigo25/pt/","image":"https://aridiosilva.com/assets/article25/pt/cover_article25_pt.jpg","description":"Uma revisão narrativa crítica de estado conversacional, custo de tokens, confiabilidade, segurança, roteamento governado e evidências de trajetória em interações de turno único e múltiplos turnos com LLMs.","version":"1.0"}</script>
+  <link rel="stylesheet" href="/assets/fixed-site-header.css?v=20261029-2">
+  <link rel="stylesheet" href="/assets/editorial-hero.css?v=20261017-1">
+  <script defer src="/assets/fixed-site-header.js?v=20261016-1"></script>
+  <link rel="stylesheet" href="/assets/homepage-footer-preview.css?v=20261017-5">
+</head>
+<body class="article-page"><a class="skip" href="#main">Ir para o conteúdo principal</a><header class="site-header"><div class="shell header-inner"><a class="identity" href="/#top" aria-label="Aridio Silva home"><strong>Aridio Silva</strong><span>Independent Researcher · AI Systems Architecture</span></a><nav aria-label="Navegação principal"><a href="/">Início</a><a href="/sgaeia.html">SGAEIA</a><a href="/publications.html">Publicações</a><a href="/infographics/">Infográficos</a><a href="/challenges/">Challenges</a></nav><div class="reading-tools" role="group" aria-label="Controles de leitura"><button type="button" id="articleFontDecrease" aria-label="Diminuir tamanho do texto">A−</button><button type="button" id="articleFontIncrease" aria-label="Aumentar tamanho do texto">A+</button><button type="button" id="articleEasyRead" aria-pressed="false">Leitura fácil</button><button type="button" id="articleListen" aria-pressed="false">Ouvir</button></div></div></header><main id="main"><section class="hero"><div class="shell article"><h1>Interações de Turno Único e de Múltiplos Turnos em Modelos de AI Generativa de Fronteira (LLMs)</h1><p class="subtitle">Estado, custo, confiabilidade, segurança e governança</p><p class="meta">Série de Pesquisa SGAEIA — Artigo 25 · 2026-11-01 · DOI 10.5281/zenodo.23867630</p><nav class="language-nav" aria-label="Article languages"><a href="/publications/artigo25/">English</a> · <a href="/publications/artigo25/pt/" aria-current="page">Português</a></nav></div></section><section class="content"><article class="shell article article-body"><p><strong>Série de Pesquisa SGAEIA — Artigo 25</strong></p><p><strong>Aridio Silva</strong><br>Pesquisador Independente, Brasil<br>ORCID: <a href="https://orcid.org/0009-0008-2411-6995" target="_blank" rel="noopener noreferrer">0009-0008-2411-6995</a><br>DOI: <a href="https://doi.org/10.5281/zenodo.23867630" target="_blank" rel="noopener noreferrer">10.5281/zenodo.23867630</a><br>Publicado: 1º de novembro de 2026<br>CC BY 4.0 · Versão 1.0</p><p class="article-downloads"><a href="/assets/article25/article25-en.pdf" target="_blank" rel="noopener noreferrer">Download English PDF</a><a href="/assets/article25/article25-pt.pdf" target="_blank" rel="noopener noreferrer">Baixar PDF em português</a></p><figure class="article-figure cover-figure"><img src="/assets/article25/pt/cover_article25_pt.jpg" alt="Capa — Interações de Turno Único e de Múltiplos Turnos em Modelos de AI Generativa de Fronteira (LLMs)" width="4800" height="2700" loading="eager" fetchpriority="high" decoding="async"><figcaption>Capa — Interações de Turno Único e de Múltiplos Turnos em Modelos de AI Generativa de Fronteira (LLMs)<span class="figure-credit">© 2026 Aridio Silva · CC BY 4.0</span></figcaption></figure><h2 id="section-1">Resumo</h2>
+<p>Este artigo examina como a passagem de uma interação de turno único para uma trajetória multi-turno altera o estado, o custo, a confiabilidade, a segurança e a governança de sistemas baseados em modelos de linguagem de grande porte. A análise é uma revisão narrativa crítica apoiada em artigos científicos, documentação oficial de provedores, normas, taxonomias de segurança e cálculos próprios explicitamente identificados. O modelo não possui memória conversacional intrínseca entre inferências; a continuidade é reconstruída pelo cliente ou por serviços de estado do provedor. Quando a aplicação reapresenta integralmente um histórico que cresce aproximadamente a uma taxa constante, a soma lógica dos tokens de entrada cresce quadraticamente com o número de chamadas, embora cache, truncamento, compactação e memória externa alterem custo faturado, latência e computação efetiva.</p>
+<p>Evidências de benchmarks mostram que fragmentação de requisitos, dependências entre turnos, mudanças de intenção, recuperação de informação e dependência de respostas anteriores produzem falhas distintas; não existe uma única condição “multi-turno”. A evidência sobre raciocínio explícito e técnicas de memória é mista e depende da tarefa e do protocolo. Em sistemas agênticos, o histórico também amplia ataques graduais, persistência de conteúdo malicioso, propagação de erro e consumo descontrolado. O artigo relaciona esses resultados ao roteamento governado e ao SGAEIA, defendendo a separação entre transcrição, estado operacional e evidência de assurance. Essa relação constitui interpretação arquitetural e agenda de validação, não prova empírica do framework.</p>
+<p><strong>Palavras-chave:</strong> LLM; turno único; multi-turno; estado conversacional; roteamento de LLM; cache de prompt; confiabilidade; segurança; governança em tempo de execução; SGAEIA.</p>
+<nav class="article-contents" aria-label="Sumário"><h2>Sumário</h2><ol><li><a href="#section-1">Resumo</a></li><li><a href="#section-2">1. Introdução, escopo e método</a></li><li><a href="#section-3">2. Fundamentos: turno, estado e mecânica</a></li><li><a href="#section-10">3. Histórico e evolução dos métodos e técnicas</a></li><li><a href="#section-18">4. Desempenho em multi-turno: a evidência</a></li><li><a href="#section-26">5. Economia de tokens e créditos</a></li><li><a href="#section-34">6. Segurança e risco em multi-turno</a></li><li><a href="#section-39">7. Estado da arte em gerenciamento de estado e mitigação de deriva</a></li><li><a href="#section-45">8. Arquitetura de conformidade e o framework SGAEIA</a></li><li><a href="#section-51">9. Confiabilidade da informação, verificação e auditoria</a></li><li><a href="#section-55">10. Estado da arte e perspectivas futuras</a></li><li><a href="#section-60">11. Conclusão</a></li><li><a href="#section-61">Apêndice A — Glossário técnico</a></li><li><a href="#section-62">Referências</a></li><li><a href="#section-68">Sobre o Autor</a></li><li><a href="#section-69">Perfis de Pesquisa</a></li><li><a href="#section-70">Figuras</a></li><li><a href="#section-71">Licença</a></li><li><a href="#section-72">Continuidade da Série</a></li><li><a href="#section-73">Citação Sugerida</a></li></ol></nav><h2 id="section-2">1. Introdução, escopo e método</h2>
+<p><strong>Definições.</strong> <strong>Mensagem</strong> é uma unidade atribuída a um papel, como usuário, assistente, sistema ou ferramenta. <strong>Chamada de inferência</strong> é uma execução do modelo que recebe uma representação do estado e produz uma saída. <strong>Rodada de interação</strong> é, neste artigo, o ciclo formado por uma nova entrada do usuário e a resposta correspondente do sistema, podendo incluir chamadas internas de ferramentas. Nas equações de custo, <code>T</code> representa o número de chamadas principais ou rodadas, conforme indicado; quando um benchmark adotar outra convenção, ela será declarada explicitamente.</p>
+<p><strong>Pergunta de pesquisa.</strong> Como a escolha entre turno único e multi-turno afeta (a) a mecânica de estado, (b) o custo em tokens e créditos, (c) o desempenho e a confiabilidade, e (d) a segurança e a governança, nos LLMs de fronteira?</p>
+<p><strong>Método e política de fontes.</strong> Priorizam-se fontes primárias: artigos (arXiv, anais), documentação e blogs oficiais dos provedores, normas e legislação. Fontes secundárias só entram quando sinalizadas. Cada referência foi conferida quanto a autoria, data, identificador e venue; o resultado da auditoria está na Seção 12 (Bibliografia), com os itens <strong>não verificados</strong> marcados como tais. Preços e níveis de raciocínio são um <em>retrato</em> de out./nov. de 2026, retirado das páginas oficiais, e mudam com frequência.</p>
+<p><strong>Limitações.</strong> Nenhum provedor publica o desempenho de cada modelo e de cada nível de raciocínio separado entre turno único e multi-turno. As tabelas de custo usam premissas explícitas e são <strong>cálculo próprio</strong>, não dado dos provedores.</p>
+<p><strong>Como ler.</strong> Cada seção termina com um quadro de análise. As equações estão em imagens numeradas; as figuras trazem descrição textual.</p>
+<h2 id="section-3">2. Fundamentos: turno, estado e mecânica</h2>
+<h3 id="section-4">2.1 O modelo não possui memória conversacional intrínseca</h3>
+<p>Um modelo de linguagem não preserva, por si mesmo, memória conversacional entre inferências independentes. A continuidade pode ser reconstruída pelo cliente, que reapresenta mensagens ou um estado derivado, ou por um serviço do provedor, que mantém itens, identificadores ou mecanismos de compactação no servidor. Em ambos os casos, a resposta atual depende de uma representação selecionada do passado. Essa representação deve ser tratada como entrada manipulável, sujeita a truncamento, resumo, erro, controle de acesso e auditoria, e não como registro automaticamente confiável. Três consequências práticas:</p>
+<ul>
+<li><strong>Custo e latência</strong> crescem a cada turno, porque o histórico é reprocessado, e a conversa fica limitada pela janela de contexto.</li>
+<li><strong>O cliente controla o "passado".</strong> Turnos anteriores podem ser sintéticos; para segurança, o histórico é uma superfície de entrada manipulável e não um registro confiável.</li>
+<li><strong>Multi-turno não é o mesmo que contexto longo.</strong> Um prompt único de 100 mil tokens é contexto longo em turno único; o que define o multi-turno é a revelação incremental de informação e a dependência das próprias respostas anteriores do modelo.</li>
+</ul>
+<figure class="article-figure"><a href="/assets/article25/pt/fig_turnos_pt.jpg" target="_blank" rel="noopener noreferrer" aria-label="Abrir imagem em tamanho integral: Turno único versus múltiplos turnos: o histórico é reenviado a cada chamada."><img src="/assets/article25/pt/fig_turnos_pt.jpg" alt="Turno único versus múltiplos turnos: o histórico é reenviado a cada chamada." width="2400" height="1320" loading="lazy" decoding="async"></a><figcaption><em>Figura 1. Esquema de turno único (uma chamada, sem estado) e de múltiplos turnos (histórico reenviado e crescente). Elaboração do autor.</em></figcaption>
+</figure>
+<h3 id="section-5">2.2 Turno único: eficiência isolada</h3>
+<p>No modelo de turno único a interação restringe-se a uma requisição e uma resposta, e o modelo não possui memória inerente de interações anteriores.</p>
+<ul>
+<li><strong>Isolamento e determinismo relativo.</strong> Cada chamada é um evento atômico, o que facilita teste unitário de prompts, reprodutibilidade e políticas estáticas de validação de entrada e saída.</li>
+<li><strong>Baixa latência e custo.</strong> Sem acumulação de histórico, o consumo de tokens de entrada é mínimo (o cache de prompt é tratado à parte), o que reduz custo por inferência e o <em>Time to First Token</em>.</li>
+<li><strong>Menor persistência entre chamadas.</strong> A ausência de histórico reduz a persistência de conteúdo malicioso entre inferências, mas não elimina injeção indireta em uma única chamada que contenha páginas, e-mails, documentos ou resultados RAG não confiáveis.</li>
+</ul>
+<p><em>Limitações arquiteturais:</em> ausência de refinamento iterativo (qualquer ajuste exige reescrever o prompt) e inviabilidade para tarefas que pedem planejamento passo a passo, depuração iterativa ou exploração do espaço de design.</p>
+<h3 id="section-6">2.3 Multi-turno: estado e gestão de contexto</h3>
+<p>No multi-turno o histórico acumulado (usuário, assistente e, opcionalmente, chamadas de ferramentas) é reprocessado ou gerido a cada nova interação. Em sessões longas, três estratégias evitam saturar a janela e degradar a atenção:</p>
+<ul>
+<li><strong>Janela deslizante (<em>sliding window</em>).</strong> Mantém apenas as N últimas interações; simples, mas sofre de "amnésia catastrófica" para dependências de longo prazo.</li>
+<li><strong>Sumarização dinâmica.</strong> Um subsistema (ou o próprio LLM em segundo plano) comprime o histórico antigo em resumos consolidados.</li>
+<li><strong>Memória externa / RAG conversacional.</strong> Histórico e artefatos ficam em bancos vetoriais ou relacionais e são recuperados por busca semântica conforme a intenção do turno atual.</li>
+</ul>
+<p>Uma linha de pesquisa relacionada trata a janela de contexto como memória principal de um sistema operacional. O MemGPT <a href="#ref-6">[6]</a> propõe <em>gestão de contexto virtual</em>: o contexto principal (instruções, <em>working context</em> e fila FIFO) é complementado por armazenamento externo, com paginação comandada por chamadas de função.</p>
+<h3 id="section-7">2.4 Complexidade: o que é quadrático e o que não é</h3>
+<p>Nos Transformers <a href="#ref-1">[1]</a>, a atenção tem custo O(n²·d) por camada (Equação 1). O crescimento quadrático é polinomial, não exponencial. Há ainda duas camadas a distinguir:</p>
+<ol>
+<li><strong>Dentro de uma chamada</strong>, o pré-preenchimento (<em>prefill</em>) do contexto tem custo quadrático no tamanho da entrada, e cada token gerado atende às chaves já em cache, com custo linear no contexto.</li>
+<li><strong>Ao longo da conversa</strong>, se cada rodada acrescenta quantidade aproximadamente constante de tokens e a aplicação reapresenta integralmente o histórico, sem truncamento ou compactação, a soma lógica dos tokens de entrada cresce como O(T²) no número de chamadas T (Equações 2 e 3). Cache, persistência no servidor e políticas de cobrança podem fazer o custo faturado e a computação efetiva seguirem curvas diferentes.</li>
+</ol>
+<figure class="article-figure"><a href="/assets/article25/pt/eq1_pt.jpg" target="_blank" rel="noopener noreferrer" aria-label="Abrir imagem em tamanho integral: Equação 1: atenção e custo por camada"><img src="/assets/article25/pt/eq1_pt.jpg" alt="Equação 1: atenção e custo por camada" width="2600" height="620" loading="lazy" decoding="async"></a><figcaption><em>Equação 1. Atenção escalonada por produto escalar e complexidade por camada, conforme Vaswani et al. <a href="#ref-1">[1]</a>.</em></figcaption>
+</figure>
+<figure class="article-figure"><a href="/assets/article25/pt/eq2_pt.jpg" target="_blank" rel="noopener noreferrer" aria-label="Abrir imagem em tamanho integral: Equação 2: tokens de entrada no turno t"><img src="/assets/article25/pt/eq2_pt.jpg" alt="Equação 2: tokens de entrada no turno t" width="2600" height="620" loading="lazy" decoding="async"></a><figcaption><em>Equação 2. Entrada do turno t, em que S é o prompt de sistema, u os tokens do usuário por turno, a os tokens visíveis do assistente, r os tokens de raciocínio e κ = 1 se o raciocínio é mantido no histórico (κ = 0 caso contrário).</em></figcaption>
+</figure>
+<figure class="article-figure"><a href="/assets/article25/pt/eq3_pt.jpg" target="_blank" rel="noopener noreferrer" aria-label="Abrir imagem em tamanho integral: Equação 3: soma acumulada"><img src="/assets/article25/pt/eq3_pt.jpg" alt="Equação 3: soma acumulada" width="2600" height="620" loading="lazy" decoding="async"></a><figcaption><em>Equação 3. Entrada acumulada em T turnos: quadrática em T.</em></figcaption>
+</figure>
+<h3 id="section-8">2.5 Matriz comparativa</h3>
+<figure class="article-figure"><a href="/assets/article25/pt/table_01_pt.jpg" target="_blank" rel="noopener noreferrer" aria-label="Abrir imagem em tamanho integral: Tabela 1 do Artigo 25"><img src="/assets/article25/pt/table_01_pt.jpg" alt="Tabela 1 do Artigo 25" width="3600" height="919" loading="lazy" decoding="async"></a><figcaption><em>Tabela 1 do Artigo 25. © 2026 Aridio Silva · SGAEIA Research Series — Article 25 · CC BY 4.0</em></figcaption>
+</figure>
+<h3 id="section-9">2.6 Análise da seção</h3>
+<figure class="article-figure"><a href="/assets/article25/pt/table_02_pt.jpg" target="_blank" rel="noopener noreferrer" aria-label="Abrir imagem em tamanho integral: Tabela 2 do Artigo 25"><img src="/assets/article25/pt/table_02_pt.jpg" alt="Tabela 2 do Artigo 25" width="3600" height="939" loading="lazy" decoding="async"></a><figcaption><em>Tabela 2 do Artigo 25. © 2026 Aridio Silva · SGAEIA Research Series — Article 25 · CC BY 4.0</em></figcaption>
+</figure>
+<h2 id="section-10">3. Histórico e evolução dos métodos e técnicas</h2>
+<p>A evolução recente de LLMs pode ser lida em <strong>sete dimensões</strong> que se influenciam mutuamente. A Figura 2 apresenta somente marcos com data conferida em fonte primária (Seção 12); marcos sem verificação foram deixados de fora de propósito.</p>
+<figure class="article-figure"><a href="/assets/article25/pt/timeline_pt.jpg" target="_blank" rel="noopener noreferrer" aria-label="Abrir imagem em tamanho integral: Linha do tempo multidimensional, 2017–2026."><img src="/assets/article25/pt/timeline_pt.jpg" alt="Linha do tempo multidimensional, 2017–2026." width="3400" height="2039" loading="lazy" decoding="async"></a><figcaption><em>Figura 2. Linha do tempo multidimensional (arquitetura e contexto; alinhamento e conversa; raciocínio na inferência; memória e agentes; custo e infraestrutura; avaliação multi-turno; segurança e governança). Elaboração do autor a partir das fontes <a href="#ref-1">[1]</a>–<a href="#ref-22">[22]</a>.</em></figcaption>
+</figure>
+<h3 id="section-11">3.1 Era 1 (2017–2021): arquitetura e prompting</h3>
+<p>O Transformer <a href="#ref-1">[1]</a>, publicado em junho de 2017, substituiu recorrência por atenção e tornou o treinamento paralelizável. Os modelos eram treinados com janelas pequenas, entre 512 e 2.048 tokens <a href="#ref-5">[5]</a>, e usados por <em>prompting</em>: dava-se um texto ou alguns exemplos e o modelo completava <a href="#ref-2">[2]</a>. Esse é, em essência, um regime de turno único.</p>
+<h3 id="section-12">3.2 Era 2 (2022): alinhamento e o formato de diálogo</h3>
+<p>O InstructGPT <a href="#ref-2">[2]</a> (mar./2022) mostrou que ajustar o modelo com feedback humano (RLHF) o torna preferível a um GPT-3 mais de cem vezes maior, em instruções do usuário. Em 30 de novembro de 2022 a OpenAI lançou o ChatGPT, cujo formato de diálogo permite responder perguntas de acompanhamento, admitir erros e contestar premissas incorretas <a href="#ref-18">[18]</a>. Aqui o multi-turno deixa de ser tema de pesquisa e se torna <strong>formato de produto</strong>.</p>
+<h3 id="section-13">3.3 Era 3 (2023): contexto, memória, avaliação e primeiros ataques</h3>
+<ul>
+<li><strong>Contexto.</strong> Em 2023 já havia modelos com 4 mil a 100 mil tokens, mas <em>Lost in the Middle</em> <a href="#ref-5">[5]</a> (jul./2023) mostrou que o desempenho cai quando a informação relevante está no meio e que mais contexto nem sempre melhora o resultado.</li>
+<li><strong>Memória.</strong> O MemGPT <a href="#ref-6">[6]</a> (out./2023) propôs paginação de contexto e armazenamento externo.</li>
+<li><strong>Avaliação.</strong> O MT-Bench <a href="#ref-4">[4]</a> (jun./2023) instituiu a avaliação de diálogo em dois turnos com juiz-LLM.</li>
+<li><strong>Segurança.</strong> Greshake et al. <a href="#ref-3">[3]</a> (fev./2023) introduziram a <em>injeção indireta de prompt</em>: dados recuperados passam a agir como "código arbitrário". O Google lançou o SAIF <a href="#ref-17">[17]</a> (jun./2023).</li>
+</ul>
+<h3 id="section-14">3.4 Era 4 (2024): contexto longo, cache, raciocínio e protocolos</h3>
+<ul>
+<li><strong>Contexto longo.</strong> O Gemini 1.5 <a href="#ref-22">[22]</a> (15/fev./2024) ofereceu janela experimental de 1 milhão de tokens (padrão de 128 mil); o próprio Google reconhece custo computacional elevado e necessidade de otimizar latência.</li>
+<li><strong>Cache.</strong> O <em>prompt caching</em> da Anthropic <a href="#ref-20">[20]</a> (ago./2024; disponibilidade geral em dez./2024) reportou até 90% menos custo e 85% menos latência em prompts longos; em conversa de 10 turnos com prompt de sistema longo, a latência caiu de ~10 s para ~2,5 s e o custo, 53%.</li>
+<li><strong>Raciocínio.</strong> O o1 <a href="#ref-19">[19]</a> (12/set./2024) treinou o modelo por reforço a produzir uma cadeia de pensamento antes de responder, com desempenho crescente em função do tempo de pensamento na inferência (<em>test-time compute</em>).</li>
+<li><strong>Agentes e protocolos.</strong> O MCP <a href="#ref-21">[21]</a> (25/nov./2024) padronizou a conexão entre assistentes e ferramentas/dados.</li>
+<li><strong>Avaliação e segurança.</strong> O MT-Bench-101 <a href="#ref-7">[7]</a> (ACL 2024) criou taxonomia hierárquica de 13 tarefas; o <em>Crescendo</em> <a href="#ref-8">[8]</a> mostrou jailbreak multi-turno com entradas benignas; o OWASP publicou a edição 2025 do Top 10 para LLMs <a href="#ref-16">[16]</a>; o Regulamento (UE) 2024/1689 <a href="#ref-14">[14]</a> foi publicado em 12/jul./2024.</li>
+</ul>
+<h3 id="section-15">3.5 Era 5 (2025–2026): confiabilidade, esforço de raciocínio e recalibração regulatória</h3>
+<ul>
+<li>O DeepSeek-R1 <a href="#ref-11">[11]</a> (jan./2025) difundiu o raciocínio treinado por reforço em modelos abertos.</li>
+<li>Laban et al. <a href="#ref-10">[10]</a>, publicado na ICLR 2026 e distinguido como <em>Outstanding Paper</em>, mostrou degradação em todos os modelos avaliados no protocolo de conversas subespecificadas; os dois modelos de raciocínio testados não eliminaram a perda.</li>
+<li>Em 2026, os provedores expõem <strong>níveis de esforço</strong> de raciocínio (low a max) como parâmetro de custo e qualidade <a href="#ref-24">[24]</a>–<a href="#ref-29">[29]</a> (Seção 5).</li>
+<li>O Regulamento (UE) 2026/1744 <a href="#ref-15">[15]</a>, em vigor desde 27/jul./2026, adiou as obrigações de alto risco do Anexo III para 2/dez./2027.</li>
+</ul>
+<h3 id="section-16">3.6 Leitura transversal da linha do tempo</h3>
+<p>Três padrões se destacam. (1) Cada avanço de <strong>capacidade</strong> (contexto longo, raciocínio) foi seguido por avanços de <strong>custo</strong> (cache) e de <strong>avaliação</strong>, mas a avaliação multi-turno chegou depois do produto. (2) A <strong>segurança</strong> acompanhou a conversa: o risco migrou do prompt isolado para o histórico e para os dados recuperados. (3) A <strong>governança</strong> passou de princípios para controles em tempo de execução, tema das Seções 7 e 8.</p>
+<h3 id="section-17">3.7 Análise da seção</h3>
+<figure class="article-figure"><a href="/assets/article25/pt/table_03_pt.jpg" target="_blank" rel="noopener noreferrer" aria-label="Abrir imagem em tamanho integral: Tabela 3 do Artigo 25"><img src="/assets/article25/pt/table_03_pt.jpg" alt="Tabela 3 do Artigo 25" width="3600" height="889" loading="lazy" decoding="async"></a><figcaption><em>Tabela 3 do Artigo 25. © 2026 Aridio Silva · SGAEIA Research Series — Article 25 · CC BY 4.0</em></figcaption>
+</figure>
+<h2 id="section-18">4. Desempenho em multi-turno: a evidência</h2>
+<h3 id="section-19">4.1 Benchmarks que introduziram o multi-turno</h3>
+<p>O MT-Bench <a href="#ref-4">[4]</a> avaliou conversas de dois turnos (por exemplo, pedir um texto e depois reexplicá-lo para uma criança); o MT-Bench-101 <a href="#ref-7">[7]</a> ampliou para 4.208 turnos em 1.388 diálogos e 13 tarefas, organizados em percepção, adaptabilidade e interatividade, e observou que técnicas usuais de alinhamento e desenhos específicos para chat não deram ganhos evidentes nas capacidades multi-turno. Esses benchmarks são, em geral, <strong>episódicos</strong>: cada turno traz uma subtarefa avaliável isoladamente.</p>
+<h3 id="section-20">4.2 Lost in Conversation (Laban et al., ICLR 2026)</h3>
+<p>Laban et al. <a href="#ref-10">[10]</a> (Microsoft Research e Salesforce Research) comparam turno único e multi-turno <strong>sobre as mesmas tarefas</strong>. O método de <em>sharding</em> fragmenta cada instrução em partes, e o usuário simulado revela no máximo uma por turno. Três condições principais: <strong>FULL</strong> (instrução completa em um turno), <strong>CONCAT</strong> (fragmentos concatenados em um turno) e <strong>SHARDED</strong> (um fragmento por turno).</p>
+<figure class="article-figure"><a href="/assets/article25/pt/fig_laban_pt.jpg" target="_blank" rel="noopener noreferrer" aria-label="Abrir imagem em tamanho integral: Desempenho médio em FULL, CONCAT e SHARDED."><img src="/assets/article25/pt/fig_laban_pt.jpg" alt="Desempenho médio em FULL, CONCAT e SHARDED." width="2800" height="1500" loading="lazy" decoding="async"></a><figcaption><em>Figura 3. Desempenho médio P (0 a 100) nas três condições, segundo <a href="#ref-10">[10]</a>. Barras: 90 (FULL), 85,6 (CONCAT = 95,1% de FULL) e 65 (SHARDED). Elaboração do autor.</em></figcaption>
+</figure>
+<p><strong>Métricas.</strong> Para cada instrução, com N simulações e escores S:</p>
+<figure class="article-figure"><a href="/assets/article25/pt/eq4_pt.jpg" target="_blank" rel="noopener noreferrer" aria-label="Abrir imagem em tamanho integral: Equação 4: métricas de Laban et al."><img src="/assets/article25/pt/eq4_pt.jpg" alt="Equação 4: métricas de Laban et al." width="2600" height="620" loading="lazy" decoding="async"></a><figcaption><em>Equação 4. Desempenho médio (P), aptidão (A⁹⁰, o desempenho de melhor caso) e não-confiabilidade (U, a distância entre os percentis 90 e 10) <a href="#ref-10">[10]</a>.</em></figcaption>
+</figure>
+<p><strong>Resultados (v1, 9/mai./2025).</strong> 15 LLMs de oito famílias, seis tarefas (código, banco de dados, ações/APIs, matemática, dados-para-texto e resumo), mais de 200 mil conversas simuladas. Média de 90% em turno único contra 65% em multi-turno; queda de 39% no resumo e no texto; aptidão −16% e não-confiabilidade +112%. A degradação aparece já com <strong>dois</strong> turnos. A condição CONCAT atinge 95,1% de FULL, logo a perda <strong>não</strong> vem da reformulação. Os dois modelos de raciocínio testados (o3 e DeepSeek-R1) pioram de modo semelhante e geram respostas em média 33% mais longas, com mais suposições.</p>
+<p><strong>Causas qualitativas:</strong> tentativas prematuras de resposta final; "inchaço" das respostas (respostas finais 20 a 300% maiores); <em>perda nos turnos do meio</em>; e verbosidade. <strong>Temperatura zero não resolve:</strong> com temperatura 0 de ambos os lados ainda restam cerca de 30 pontos de não-confiabilidade. <strong>Mitigações:</strong> repetir os requisitos a cada turno (SNOWBALL) recupera 15 a 20% da queda; o RECAP final é melhor, mas irrealista.</p>
+<p><strong>Limitações do estudo</strong> (apontadas pelos autores): simulação automática, tarefas analíticas, apenas inglês e texto. Os autores consideram que a degradação real tende a ser <strong>maior</strong> que a medida. <strong>Recomendações:</strong> tentar de novo em uma conversa nova e <strong>consolidar</strong> os requisitos num único prompt.</p>
+<h3 id="section-21">4.3 Contexto longo e atenção: Lost in the Middle</h3>
+<p>Liu et al. <a href="#ref-5">[5]</a> mostraram curva em U: o desempenho é maior quando a informação relevante está no início ou no fim do contexto e cai quando está no meio, e diminui conforme o contexto cresce, mesmo em modelos de contexto longo. Laban et al. observaram um análogo em turnos (<em>loss-in-middle-turns</em>).</p>
+<h4 id="section-22">4.4 Evidência convergente e divergente em benchmarks multi-turno</h4>
+<p><em>LLMs Get Lost in Multi-Turn Conversation</em> não é evidência isolada. A versão final foi publicada na ICLR 2026 e recebeu a distinção <em>Outstanding Paper</em> <a href="#ref-37">[37]</a>, <a href="#ref-38">[38]</a>. Seu resultado principal — queda média de 39% quando os requisitos da mesma tarefa são revelados gradualmente — deve ser interpretado dentro do desenho de <em>sharded simulation</em>: tarefas analíticas, conversas simuladas, texto em inglês e modelos de uma janela temporal específica.</p>
+<p>Outros benchmarks medem falhas parcialmente diferentes. <strong>MT-Eval</strong> organiza interações em recordação, expansão, refinamento e acompanhamento <a href="#ref-39">[39]</a>. <strong>MultiChallenge</strong>, publicado em <em>Findings of ACL 2025</em>, avalia quatro desafios realistas que exigem simultaneamente seguimento de instruções, alocação de contexto e raciocínio em contexto; todos os modelos avaliados ficaram abaixo de 50% de acurácia, com melhor média de 41,4% <a href="#ref-40">[40]</a>. <strong>StructFlowBench</strong> modela seis relações estruturais entre turnos e identifica dificuldades na compreensão do fluxo da conversa <a href="#ref-41">[41]</a>. <strong>mtRAG</strong>, publicado em TACL, acrescenta recuperação de informação por meio de 110 conversas humanas, média de 7,7 turnos e 842 tarefas <a href="#ref-42">[42]</a>.</p>
+<p>A evidência sobre raciocínio explícito é mista. No desenho de Laban et al., os dois modelos de raciocínio avaliados não eliminaram a degradação e produziram respostas mais longas. Em contraste, <strong>MARS-Bench</strong> relata que raciocínio explícito aumenta a robustez em diálogos longos com mudança de intenção e dependências cruzadas <a href="#ref-43">[43]</a>. A conclusão defensável não é que “mais raciocínio não funciona”, mas que seu efeito depende da tarefa, do protocolo, do gerenciamento de memória e da métrica.</p>
+<p>Em conjunto, esses estudos mostram que “multi-turno” não é uma única condição. Pelo menos cinco mecanismos devem ser separados: (1) requisitos revelados em fragmentos; (2) dependências estruturais entre turnos; (3) distração e mudança de intenção; (4) recuperação de evidência externa; e (5) dependência das próprias respostas anteriores do modelo. Uma mitigação eficaz para um deles — como recapitulação, memória compacta ou raciocínio explícito — pode falhar ou aumentar custo em outro.</p>
+<h4 id="section-23">4.5 Implicações para estado, custo e SGAEIA</h4>
+<p>Os resultados reforçam a necessidade de representar o estado da tarefa separadamente da transcrição. Requisitos confirmados, fatos validados, decisões revogadas, permissões e resultados de ferramentas não devem depender apenas de sua posição no histórico textual. Uma arquitetura de governança pode manter contratos tipados, proveniência e políticas determinísticas enquanto usa a conversa como interface. Essa relação é uma <strong>interpretação do autor e hipótese arquitetural do SGAEIA</strong>, não uma validação empírica do framework. Sua eficácia deve ser testada contra baselines como replay integral, janela deslizante, resumo rolante e memória recuperada.</p>
+<h3 id="section-24">4.6 Um modelo ilustrativo de propagação de erro</h3>
+<p>Para fixar a intuição (e <strong>não</strong> como resultado empírico), suponha que a cada turno exista probabilidade ε de o modelo introduzir uma premissa errada que o usuário aceita (cascata de alucinações). A probabilidade de uma conversa de T turnos sem erro acumulado é dada pela Equação 6. Com ε = 5% e T = 20, resta cerca de 36%.</p>
+<figure class="article-figure"><a href="/assets/article25/pt/eq6_pt.jpg" target="_blank" rel="noopener noreferrer" aria-label="Abrir imagem em tamanho integral: Equação 6: modelo ilustrativo de propagação de erro"><img src="/assets/article25/pt/eq6_pt.jpg" alt="Equação 6: modelo ilustrativo de propagação de erro" width="2600" height="620" loading="lazy" decoding="async"></a><figcaption><em>Equação 6. Modelo didático de erro composto; ε e T são parâmetros hipotéticos.</em></figcaption>
+</figure>
+<h3 id="section-25">4.7 Análise da seção</h3>
+<figure class="article-figure"><a href="/assets/article25/pt/table_04_pt.jpg" target="_blank" rel="noopener noreferrer" aria-label="Abrir imagem em tamanho integral: Tabela 4 do Artigo 25"><img src="/assets/article25/pt/table_04_pt.jpg" alt="Tabela 4 do Artigo 25" width="3600" height="885" loading="lazy" decoding="async"></a><figcaption><em>Tabela 4 do Artigo 25. © 2026 Aridio Silva · SGAEIA Research Series — Article 25 · CC BY 4.0</em></figcaption>
+</figure>
+<h2 id="section-26">5. Economia de tokens e créditos</h2>
+<h3 id="section-27">5.1 Mecânica de cobrança</h3>
+<p>A cobrança tem três componentes: tokens de <strong>entrada</strong>, tokens de <strong>saída</strong> (incluindo os de raciocínio, cobrados como saída) e a <strong>leitura de cache</strong> da entrada repetida. Em multi-turno, quase todo o histórico reenviado é lido do cache, por isso o preço de <strong>leitura de cache</strong> diferencia os provedores mais do que o preço de entrada.</p>
+<figure class="article-figure"><a href="/assets/article25/pt/eq5_pt.jpg" target="_blank" rel="noopener noreferrer" aria-label="Abrir imagem em tamanho integral: Equação 5: custo com cache"><img src="/assets/article25/pt/eq5_pt.jpg" alt="Equação 5: custo com cache" width="2600" height="620" loading="lazy" decoding="async"></a><figcaption><em>Equação 5. Custo de uma conversa de T turnos com cache: p_w (escrita), p_c (leitura de cache), p_o (saída), em US$ por milhão de tokens; N_novos é a parte nova da entrada em cada turno.</em></figcaption>
+</figure>
+<h3 id="section-28">5.2 Níveis de raciocínio por provedor (retrato de nov./2026)</h3>
+<figure class="article-figure"><a href="/assets/article25/pt/table_05_pt.jpg" target="_blank" rel="noopener noreferrer" aria-label="Abrir imagem em tamanho integral: Tabela 5 do Artigo 25"><img src="/assets/article25/pt/table_05_pt.jpg" alt="Tabela 5 do Artigo 25" width="3600" height="1145" loading="lazy" decoding="async"></a><figcaption><em>Tabela 5 do Artigo 25. © 2026 Aridio Silva · SGAEIA Research Series — Article 25 · CC BY 4.0</em></figcaption>
+</figure>
+<p>*A disponibilidade de cada nível varia por modelo; a Anthropic indica a página de <em>effort</em> como referência <a href="#ref-24">[24]</a>. Fontes: <a href="#ref-24">[24]</a>–<a href="#ref-29">[29]</a>. Os nomes e níveis mudam com frequência; confirme nas páginas oficiais.</p>
+<h3 id="section-29">5.3 Como cada provedor trata o raciocínio dos turnos anteriores</h3>
+<ul>
+<li><strong>OpenAI</strong> <a href="#ref-25">[25]</a>: nos modelos anteriores ao GPT-5.6, o raciocínio dos turnos passados não entra no contexto seguinte; a família GPT-5.6 passou a incluí-lo por padrão, e o parâmetro <code>reasoning.context</code> escolhe o comportamento (<code>all_turns</code> é suportado pelo GPT-5.6 e pelo GPT-6.1 Sol). Um item <code>configuration_update</code> altera o esforço entre respostas sem mudar o prefixo, preservando o cache.</li>
+<li><strong>Anthropic</strong> <a href="#ref-24">[24]</a>: blocos de raciocínio de turnos anteriores que permanecem no contexto são cobrados como entrada (todos os turnos em alguns modelos, só o último nos demais). Mudar o <em>effort</em> no topo da requisição <strong>invalida o cache</strong>; a mudança por mensagem (beta) preserva os pontos de cache. O raciocínio por requisição tende a diminuir à medida que a conversa fica longa.</li>
+<li><strong>Google</strong> <a href="#ref-27">[27]</a>: as <em>thought signatures</em> mantêm a continuidade do raciocínio; no modo sem estado, os blocos de pensamento devem ser reenviados exatamente como recebidos.</li>
+<li><strong>xAI</strong> <a href="#ref-28">[28]</a>: o grok-4.7 sempre devolve raciocínio criptografado, que deve ser reenviado sem alteração para manter o raciocínio entre turnos; o raciocínio não pode ser desligado.</li>
+<li><strong>DeepSeek</strong> <a href="#ref-29">[29]</a>: modo com e sem raciocínio; preços de pico e fora de pico.</li>
+</ul>
+<h3 id="section-30">5.4 Preços (US$ por milhão de tokens) e peso do cache</h3>
+<figure class="article-figure"><a href="/assets/article25/pt/table_06_pt.jpg" target="_blank" rel="noopener noreferrer" aria-label="Abrir imagem em tamanho integral: Tabela 6 do Artigo 25"><img src="/assets/article25/pt/table_06_pt.jpg" alt="Tabela 6 do Artigo 25" width="3600" height="1513" loading="lazy" decoding="async"></a><figcaption><em>Tabela 6 do Artigo 25. © 2026 Aridio Silva · SGAEIA Research Series — Article 25 · CC BY 4.0</em></figcaption>
+</figure>
+<p>Ressalvas dos provedores: o Haiku 5.5 tem preço maior acima de 100 mil tokens; o Gemini 4 Argon dobra o preço a partir de 1º/dez./2026 e só oferece cache implícito; o grok-4.7 dobra acima de 200 mil tokens; a DeepSeek cobra metade fora do pico; e os modelos Claude a partir da 4.7 usam um tokenizador que gera cerca de 30% mais tokens para o mesmo texto, o que torna o preço por token <strong>não comparável</strong> 1:1 entre provedores <a href="#ref-23">[23]</a>. Fontes: <a href="#ref-23">[23]</a>, <a href="#ref-25">[25]</a>, <a href="#ref-26">[26]</a>, <a href="#ref-28">[28]</a>, <a href="#ref-29">[29]</a>.</p>
+<h3 id="section-31">5.5 Exemplo de 20 turnos (cálculo próprio)</h3>
+<p><strong>Premissas:</strong> S = 2.000, u = 300, a = 700 tokens; raciocínio r = 1.000 (esforço baixo) ou 8.000 (alto); o cache acerta sempre; para este cenário simplificado, a escrita de cache não recebe sobretaxa. Essa premissa não é universal: provedores podem cobrar escrita, TTL ou modalidades distintas de cache. Pela Equação 3, a entrada acumulada em 20 turnos é de <strong>236 mil tokens</strong> (21,3 mil novos e 214,7 mil lidos do cache) com raciocínio descartado; se o raciocínio de 8.000 tokens fosse <strong>mantido</strong> no histórico, a entrada subiria para <strong>1,756 milhão</strong> (7,4 vezes), com 173,3 mil tokens de entrada no 20º turno.</p>
+<figure class="article-figure"><a href="/assets/article25/pt/fig_custo_pt.jpg" target="_blank" rel="noopener noreferrer" aria-label="Abrir imagem em tamanho integral: Crescimento da entrada e custo ilustrativo por modelo."><img src="/assets/article25/pt/fig_custo_pt.jpg" alt="Crescimento da entrada e custo ilustrativo por modelo." width="2800" height="1240" loading="lazy" decoding="async"></a><figcaption><em>Figura 4. À esquerda, tokens de entrada por turno em três cenários; à direita, custo ilustrativo de 20 turnos por modelo, com cache. Cálculo do autor sobre preços oficiais.</em></figcaption>
+</figure>
+<figure class="article-figure"><a href="/assets/article25/pt/table_07_pt.jpg" target="_blank" rel="noopener noreferrer" aria-label="Abrir imagem em tamanho integral: Tabela 7 do Artigo 25"><img src="/assets/article25/pt/table_07_pt.jpg" alt="Tabela 7 do Artigo 25" width="3600" height="1053" loading="lazy" decoding="async"></a><figcaption><em>Tabela 7 do Artigo 25. © 2026 Aridio Silva · SGAEIA Research Series — Article 25 · CC BY 4.0</em></figcaption>
+</figure>
+<p><strong>Leituras.</strong> Com cache, a <strong>saída</strong> (principalmente o raciocínio) domina: passar de esforço baixo a alto multiplica o custo por 3,4 a 4,5 vezes. O cache reduz o custo de entrada em cerca de 86% no exemplo (modelos com leitura de cache a 5% da entrada), e a documentação da Anthropic <a href="#ref-20">[20]</a> reporta ganhos da mesma ordem (−53% de custo e −75% de latência em 10 turnos). Em termos de segurança de custos, o OWASP lista <em>Unbounded Consumption</em> (LLM10:2025) como risco: consumo descontrolado de inferência vira ataque de custo <a href="#ref-16">[16]</a>.</p>
+<h3 id="section-32">5.6 Como comparar modelos e níveis de esforço (protocolo proposto)</h3>
+<ol>
+<li>Escolher tarefas com resposta verificável.</li>
+<li>Rodar três condições: instrução completa (FULL), fragmentos concatenados (CONCAT) e fragmentos por turno (SHARDED) <a href="#ref-10">[10]</a>.</li>
+<li>Cruzar modelo e nível de esforço, comparando provedores <strong>apenas em níveis equivalentes</strong> (por exemplo, high com high).</li>
+<li>Medir P, A⁹⁰ e U (Equação 4), repetindo N ≥ 10 simulações por par.</li>
+<li>Medir custo real pelos campos de uso das respostas (tokens de raciocínio, leituras e gravações de cache), <strong>mantendo o esforço fixo</strong> durante cada conversa, para não invalidar o cache.</li>
+</ol>
+<h3 id="section-33">5.7 Análise da seção</h3>
+<figure class="article-figure"><a href="/assets/article25/pt/table_08_pt.jpg" target="_blank" rel="noopener noreferrer" aria-label="Abrir imagem em tamanho integral: Tabela 8 do Artigo 25"><img src="/assets/article25/pt/table_08_pt.jpg" alt="Tabela 8 do Artigo 25" width="3600" height="939" loading="lazy" decoding="async"></a><figcaption><em>Tabela 8 do Artigo 25. © 2026 Aridio Silva · SGAEIA Research Series — Article 25 · CC BY 4.0</em></figcaption>
+</figure>
+<h2 id="section-34">6. Segurança e risco em multi-turno</h2>
+<p>Do ponto de vista de segurança e governança, o multi-turno altera o perfil de risco do sistema. Esta seção reúne a evidência científica e os riscos descritos no compêndio.</p>
+<h3 id="section-35">6.1 Ataques que dependem de vários turnos</h3>
+<ul>
+<li><strong>Escalonamento gradual (<em>Crescendo</em>).</strong> Russinovich, Salem e Eldan <a href="#ref-8">[8]</a> descrevem um jailbreak que usa apenas entradas benignas e explora a tendência do modelo de seguir padrões e dar atenção ao texto recente, sobretudo ao que ele próprio gerou. Em vez de pedir algo proibido de uma vez (o que seria recusado em turno único), o atacante escala aos poucos. Os autores apontam a lacuna de avaliação: os benchmarks de jailbreak existentes tratavam apenas de turno único.</li>
+<li><strong>Por que defesas de turno único falham.</strong> Um trabalho posterior da mesma equipe <a href="#ref-9">[9]</a> relata que modelos alinhados tendem a representar internamente as respostas do Crescendo como mais benignas que nocivas conforme os turnos aumentam, o que ajuda a explicar a falha de defesas pensadas para turno único, como os <em>circuit breakers</em> de representação.</li>
+<li><strong>Injeção indireta de prompt.</strong> Greshake et al. <a href="#ref-3">[3]</a> mostraram que dados recuperados (páginas, e-mails, documentos) podem funcionar como instruções, "borrando a linha entre dados e instruções", com impactos como furto de dados, <em>worming</em> e contaminação do ecossistema de informação. Em multi-turno, uma injeção inserida num turno intermediário pode <strong>persistir</strong> no histórico e sequestrar o comportamento do agente nos turnos seguintes.</li>
+</ul>
+<h3 id="section-36">6.2 Riscos específicos do histórico acumulado</h3>
+<ul>
+<li><strong>Persistência de estado malicioso.</strong> Num ambiente agêntico, o conteúdo de uma página lida por uma ferramenta pode contaminar o estado e reaparecer em todo turno posterior.</li>
+<li><strong>Cascata de alucinações (<em>error propagation</em>).</strong> Um erro sutil no turno 2, aceito implicitamente pelo usuário ("ok, continue"), é incorporado ao estado oficial da conversa e contamina os raciocínios seguintes (ver o modelo da Equação 6). O estudo de Laban et al. <a href="#ref-10">[10]</a> corrobora: os modelos "se apoiam em tentativas anteriores incorretas".</li>
+<li><strong>Dificuldade de auditar limites de autoridade.</strong> Em arquiteturas reguladas, garantir que uma diretriz de escopo fixo seja aplicada ao longo de dezenas de turnos é computacionalmente mais complexo que em chamadas isoladas.</li>
+<li><strong>Consumo descontrolado.</strong> Conversas longas com raciocínio alto são vetor de ataque de custo (LLM10:2025, <em>Unbounded Consumption</em>) <a href="#ref-16">[16]</a>.</li>
+</ul>
+<h3 id="section-37">6.3 Taxonomias de referência</h3>
+<p>O OWASP Top 10 para Aplicações com LLMs (edição 2025, 18/nov./2024) mantém a injeção de prompt em primeiro lugar (LLM01) e inclui <em>Excessive Agency</em> (LLM06), <em>Misinformation</em> (LLM09) e <em>Unbounded Consumption</em> (LLM10) <a href="#ref-16">[16]</a>. O Google SAIF <a href="#ref-17">[17]</a> é um arcabouço conceitual de seis elementos que cita, entre os riscos específicos de IA, o roubo de modelo, o envenenamento de dados, a injeção de prompt e a extração de dados.</p>
+<h3 id="section-38">6.4 Análise da seção</h3>
+<figure class="article-figure"><a href="/assets/article25/pt/table_09_pt.jpg" target="_blank" rel="noopener noreferrer" aria-label="Abrir imagem em tamanho integral: Tabela 9 do Artigo 25"><img src="/assets/article25/pt/table_09_pt.jpg" alt="Tabela 9 do Artigo 25" width="3600" height="885" loading="lazy" decoding="async"></a><figcaption><em>Tabela 9 do Artigo 25. © 2026 Aridio Silva · SGAEIA Research Series — Article 25 · CC BY 4.0</em></figcaption>
+</figure>
+<h2 id="section-39">7. Estado da arte em gerenciamento de estado e mitigação de deriva</h2>
+<p>Esta seção incorpora, de forma integral, o conteúdo do compêndio técnico do autor <a href="#ref-36">[36]</a> (Seções 2 a 4 do original), como base técnica desta análise.</p>
+<h3 id="section-40">7.1 Gerenciamento de estado</h3>
+<p>Sistemas de agentes baseados em grafos de execução podem tratar o estado como <strong>objeto tipado, imutável e persistente por eventos</strong>, e não como o histórico acoplado de um chat.</p>
+<ul>
+<li><strong>Memória hierárquica.</strong> <em>Working memory</em> (curto prazo): contexto imediato da tarefa, com limite estrito de tokens. <em>Episodic memory</em> (médio prazo): histórico comprimido de interações relevantes, em bases vetoriais com indexação temporal e semântica. <em>Semantic/procedural memory</em> (longo prazo): grafos de conhecimento estáticos ou regras de negócio validadas externamente, que o agente consulta em vez de memorizar no prompt. (Compare com a hierarquia do MemGPT <a href="#ref-6">[6]</a>.)</li>
+<li><strong>Máquinas de estado determinísticas (FSMs) com <em>event sourcing</em>.</strong> O fluxo do agente é modelado como máquina de estados finitos ou grafo dirigido acíclico (DAG); cada transição gera um evento auditável. Isso habilita o <em>time-travel debugging</em> (pausar, inspecionar, bifurcar ou reverter o estado a um turno exato) e <em>checkpoints</em> transacionais (persistência a cada nó, por exemplo em PostgreSQL com JSONB), com resiliência a quedas de infraestrutura.</li>
+<li><strong>Contratos de tipagem estrita por transição.</strong> As saídas de cada turno passam por parsers de validação estrita (Pydantic, Zod) antes de entrar no estado global. Se o modelo viola o esquema, o framework rejeita a transição e dispara um laço de autocorreção isolado.</li>
+</ul>
+<figure class="article-figure"><a href="/assets/article25/pt/fig_estado_pt.jpg" target="_blank" rel="noopener noreferrer" aria-label="Abrir imagem em tamanho integral: Ciclo de transição transacional."><img src="/assets/article25/pt/fig_estado_pt.jpg" alt="Ciclo de transição transacional." width="2600" height="1360" loading="lazy" decoding="async"></a><figcaption><em>Figura 5. Ciclo de transição transacional: comando, validação, checagem de deriva, commit imutável e checkpoint, com desvios de falha, circuit breaker e time-travel. Elaboração do autor a partir do compêndio.</em></figcaption>
+</figure>
+<h3 id="section-41">7.2 Mitigação de deriva (<em>drift</em>)</h3>
+<p>A deriva se manifesta de três formas: <strong>semântica</strong> (perda de foco no objetivo), <strong>comportamental</strong> (desvio das diretrizes de segurança e de sistema) e <strong>epistêmica</strong> (acúmulo de alucinações aceitas como verdade).</p>
+<p><strong>A. Deriva semântica e contextual</strong></p>
+<ul>
+<li><em>Ancoragem de instruções críticas (system prompt anchorage).</em> Diretrizes e restrições não são injetadas só no início; roteadores avançados reinjetam âncoras em pontos estratégicos do histórico ou usam atenção com viés posicional. Isso dialoga com a recomendação de repetir requisitos <a href="#ref-10">[10]</a> e com o efeito de posição <a href="#ref-5">[5]</a>.</li>
+<li><em>Sumarização baseada em grafos de metas.</em> Em vez de resumos lineares, o estado mantém uma árvore de objetivos pendentes e concluídos; o histórico antigo é descartado ou resumido em função do progresso rumo à meta original.</li>
+</ul>
+<p><strong>B. Deriva comportamental e de alinhamento</strong></p>
+<ul>
+<li><em>Guardrails em camadas (runtime circuit breakers).</em> O roteador atua como <em>proxy</em> de governança entre os turnos; classificadores leves inspecionam estado e saídas intermediárias e, havendo desvio de política, o circuito é interrompido, acionando <em>fallback</em> ou intervenção humana (HITL).</li>
+<li><em>Validação por agentes adversariais (critic loops).</em> Em fluxos críticos, o estado gerado por um executor é submetido a um agente crítico independente que o confronta com as restrições originais.</li>
+</ul>
+<p><strong>C. Deriva epistêmica (erro acumulativo)</strong></p>
+<ul>
+<li><em>Verificação externa de verdade (ground truth).</em> Quando um turno gera premissa nova (código, dado financeiro), o framework força a execução de uma ferramenta de validação (compiladores, linters, APIs oficiais, SQL) e grava no estado o <strong>resultado validado</strong>, não a suposição do LLM.</li>
+</ul>
+<h3 id="section-42">7.3 Implementação prática: contratos de estado e checagens em tempo de execução</h3>
+<p>A implementação requer a transição de dicionários maleáveis para <strong>contratos de estado imutáveis e tipados</strong>, com validação transacional. Segue o código do compêndio, preservado como no original.</p>
+<p><strong>Estrutura de estado com Pydantic</strong></p>
+<pre><code class="language-python">from enum import Enum
+from pydantic import BaseModel, Field, field_validator
+from typing import List, Dict, Any, Optional
+from datetime import datetime
+
+class AgentRole(str, Enum):
+    RESEARCHER = "researcher"
+    EXECUTOR = "executor"
+    CRITIC = "critic"
+    ROUTER = "router"
+
+class TaskStatus(str, Enum):
+    PENDING = "pending"
+    IN_PROGRESS = "progress"
+    VALIDATED = "validated"
+    REJECTED = "rejected"
+
+class GlobalState(BaseModel):
+    session_id: str
+    current_step: int = Field(ge=0, description="Contador estrito de turnos/transições")
+    goal_tree: Dict[str, TaskStatus] = Field(default_factory=dict)
+    execution_log: List[Dict[str, Any]] = Field(default_factory=list)
+    risk_score: float = Field(default=0.0, ge=0.0, le=1.0)
+
+    @field_validator('execution_log')
+    def validate_log_immutability(cls, v):
+        # Garante que o log apenas cresce, nunca é reescrito de forma destrutiva
+        return v
+
+    class Config:
+        frozen = True # Imutabilidade estrutural (requer cópia via model_copy para atualizar)
+</code></pre>
+<p><strong>O ciclo de transição transacional.</strong> (1) O agente produz um <em>Comando</em> (saída bruta). (2) O validador faz o <em>parse</em> para o esquema Pydantic correspondente. (3) Se bem-sucedido, o <em>State Manager</em> gera uma nova versão imutável do estado (<code>new_state = state.model_copy(update=...)</code>) e registra o evento em banco transacional.</p>
+<p><strong>Orquestrador resiliente</strong></p>
+<pre><code class="language-python">def orchestrate_turn(state: GlobalState, agent_input: str) -&gt; GlobalState:
+    # 1. Validação de pré-condições e estado
+    validate_circuit_breaker(state)
+
+    # 2. Execução isolada do agente
+    raw_output = run_agent_safely(agent_input, state)
+
+    # 3. Parse e Tipagem Estrita
+    try:
+        structured_output = AgentPayload.model_validate_json(raw_output)
+    except ValidationError as e:
+        return handle_malformed_output(state, e)
+
+    # 4. Checagem de Drift Semântico e de Risco
+    risk = evaluate_drift_and_risk(state, structured_output)
+    if risk &gt; 0.8:
+        return trigger_circuit_breaker_rollback(state)
+
+    # 5. Commit Transacional do Novo Estado
+    new_state = state.model_copy(update={
+        "current_step": state.current_step + 1,
+        "execution_log": state.execution_log + [structured_output.dict()],
+        "risk_score": risk
+    })
+
+    persist_checkpoint(new_state)
+    return new_state
+</code></pre>
+<p><strong>Variante mínima compatível com Pydantic v2</strong></p>
+<pre><code class="language-python">from pydantic import BaseModel, ConfigDict, Field
+
+class GlobalState(BaseModel):
+    model_config = ConfigDict(frozen=True)   # imutabilidade rasa
+    session_id: str
+    current_step: int = Field(ge=0)
+    goal_tree: dict[str, "TaskStatus"] = Field(default_factory=dict)
+    execution_log: tuple[dict, ...] = ()      # tupla: crescimento por nova cópia
+    risk_score: float = Field(default=0.0, ge=0.0, le=1.0)
+
+# commit: new_state = state.model_copy(update={"execution_log": state.execution_log + (payload.model_dump(),)})
+</code></pre>
+<h3 id="section-43">7.4 Time-travel debugging em agentes de IA</h3>
+<p>O <em>Time-Travel Debugging</em> é o mecanismo de congelar, inspecionar, reverter e bifurcar (<em>fork</em>) a execução de agentes por meio da gravação contínua de <em>snapshots</em> imutáveis do estado.</p>
+<ul>
+<li><strong>Fator não determinístico.</strong> Como os LLMs são estocásticos, reexecutar um prompt do zero pode tomar outro caminho; restaurar o <em>snapshot</em> do estado permite depurar a partir do ponto anterior à falha.</li>
+<li><strong>Combate ao efeito borboleta.</strong> Se uma alucinação ocorre no turno 2, o <em>time-travel</em> permite voltar a ele, ajustar a variável corrompida ou a saída da ferramenta e criar um <em>fork</em> sem reprocessar as etapas anteriores.</li>
+<li><strong>Explicabilidade e auditoria forense (<em>decision provenance</em>).</strong> Funciona como a "caixa-preta" do agente em cenários regulados: reconstrói o que o agente "sabia", quais ferramentas chamou e qual era o estado na falha.</li>
+</ul>
+<p><strong>Limitação operacional.</strong> Na documentação oficial do LangGraph <a href="#ref-31">[31]</a>, o <em>time travel</em> tem duas operações: <strong>replay</strong> (retomar de um checkpoint anterior) e <strong>fork</strong> (ramificar com estado modificado); os checkpoints são salvos a cada <em>super-step</em>. Mas o <strong>replay reexecuta</strong> os nós posteriores ao checkpoint: chamadas a LLMs e a APIs disparam de novo e <strong>podem retornar resultados diferentes</strong>. Logo, a depuração só é <em>determinística</em> se as saídas de LLM e de ferramentas forem <strong>gravadas</strong> (event sourcing das respostas) e reaproveitadas. A documentação não menciona restauração de <em>seeds</em>.</p>
+<h3 id="section-44">7.5 Análise da seção</h3>
+<figure class="article-figure"><a href="/assets/article25/pt/table_10_pt.jpg" target="_blank" rel="noopener noreferrer" aria-label="Abrir imagem em tamanho integral: Tabela 10 do Artigo 25"><img src="/assets/article25/pt/table_10_pt.jpg" alt="Tabela 10 do Artigo 25" width="3600" height="993" loading="lazy" decoding="async"></a><figcaption><em>Tabela 10 do Artigo 25. © 2026 Aridio Silva · SGAEIA Research Series — Article 25 · CC BY 4.0</em></figcaption>
+</figure>
+<h2 id="section-45">8. Arquitetura de conformidade e o framework SGAEIA</h2>
+<p>Esta seção incorpora as Seções 5 a 7 do compêndio <a href="#ref-36">[36]</a>, como base técnica desta análise. As afirmações sobre o SGAEIA são <strong>do autor</strong> (obra própria) e não passaram por avaliação independente.</p>
+<h3 id="section-46">8.1 Conformidade estrita e governança em tempo de execução</h3>
+<p>A arquitetura de conformidade estrita representa a transição da governança estática para uma <strong>engenharia de controle em tempo de execução (<em>runtime enforcement</em>)</strong>. O princípio fundamental: <strong>o LLM jamais faz parte do caminho crítico de autorização (<em>trust path</em>)</strong>; a segurança vem de invariantes determinísticas.</p>
+<figure class="article-figure"><a href="/assets/article25/pt/fig_planos_pt.jpg" target="_blank" rel="noopener noreferrer" aria-label="Abrir imagem em tamanho integral: Separação em planos."><img src="/assets/article25/pt/fig_planos_pt.jpg" alt="Separação em planos." width="2400" height="1320" loading="lazy" decoding="async"></a><figcaption><em>Figura 6. Plano de aplicação, plano de governança e controle e plano de infraestrutura. Elaboração do autor a partir do compêndio.</em></figcaption>
+</figure>
+<p><strong>Camadas fundamentais</strong></p>
+<ul>
+<li><strong>Identidade e atribuição verificável.</strong> Identidades criptográficas únicas por agente (X.509, SPIFFE, mTLS). A delegação impõe a <strong>restrição de subconjunto estrito</strong> (o agente B nunca herda mais permissões que o A).</li>
+<li><strong>Limites de autoridade (<em>bounded authority</em>).</strong> Acesso a ferramentas granular, temporário e orientado à tarefa; invariantes inegociáveis codificadas em motores determinísticos (OPA/Rego, Cedar).</li>
+<li><strong>Intercepção em tempo de execução.</strong> <em>Gate</em> pré-ação (parâmetros, permissões, assinaturas); <em>circuit breakers</em> durante a ação; auditores pós-ação que inspecionam respostas de ferramentas e previnem injeção indireta.</li>
+<li><strong>Trilha de auditoria <em>tamper-evident</em>.</strong> Registros <em>append-only</em> assinados criptograficamente contribuem para rastreabilidade, prestação de contas e demonstração de controles, sem garantir conformidade isoladamente.</li>
+</ul>
+<p><strong>Escopo regulatório.</strong> Os Arts. 12 (registro de eventos) e 14 (supervisão humana) do Regulamento (UE) 2024/1689 <a href="#ref-14">[14]</a> aplicam-se a sistemas de alto risco. Registros append-only e tamper-evident contribuem para a conformidade, mas não a garantem isoladamente. O NIST AI RMF 1.0 corresponde ao documento NIST AI 100-1 <a href="#ref-13">[13]</a>.
+<strong>Matriz de classificação de ações e supervisão humana</strong></p>
+<figure class="article-figure"><a href="/assets/article25/pt/table_11_pt.jpg" target="_blank" rel="noopener noreferrer" aria-label="Abrir imagem em tamanho integral: Tabela 11 do Artigo 25"><img src="/assets/article25/pt/table_11_pt.jpg" alt="Tabela 11 do Artigo 25" width="3600" height="885" loading="lazy" decoding="async"></a><figcaption><em>Tabela 11 do Artigo 25. © 2026 Aridio Silva · SGAEIA Research Series — Article 25 · CC BY 4.0</em></figcaption>
+</figure>
+<h3 id="section-47">8.2 O framework SGAEIA</h3>
+<p>O <strong>SGAEIA</strong> (<em>Secure Governed Autonomous Edge Intelligence Architecture</em>) é uma <strong>arquitetura de referência aberta e neutra</strong>, concebida por <strong>Aridio Silva</strong> <a href="#ref-34">[34]</a>, <a href="#ref-35">[35]</a>, voltada à governança, segurança e controle em tempo de execução de <strong>agentes autônomos e IA distribuída/de borda</strong>.</p>
+<p><strong>Premissa central.</strong> Em ambientes agênticos, o objeto de garantia (<em>assurance</em>) é o <strong>sistema completo em operação</strong>, e não o modelo de linguagem isolado; a governança é intrínseca à infraestrutura de execução, não um pós-processamento estático.</p>
+<figure class="article-figure"><a href="/assets/article25/pt/fig_sgaeia_pt.jpg" target="_blank" rel="noopener noreferrer" aria-label="Abrir imagem em tamanho integral: Planos e invariantes do SGAEIA."><img src="/assets/article25/pt/fig_sgaeia_pt.jpg" alt="Planos e invariantes do SGAEIA." width="2600" height="1480" loading="lazy" decoding="async"></a><figcaption><em>Figura 7. Os doze planos de responsabilidade e os sete invariantes transversais do SGAEIA, conforme o compêndio.</em></figcaption>
+</figure>
+<p><strong>Os doze planos:</strong> (1) agência e ciclo de vida do agente; (2) identidade e atribuição criptográfica (SPIFFE/X.509 únicas por agente); (3) delegação e escopo de autoridade (subconjunto estrito); (4) políticas e execução determinística (<em>policy-as-code</em>: OPA/Cedar/WASM); (5) comunicação inter-agente e barramento; (6) gerenciamento de estado e memória persistente (imutável, versionado, auditável); (7) integração de ferramentas e mediação de APIs (intercepção pré/durante/pós-ação); (8) contenção, limites e isolamento na borda (<em>sandboxing</em>, WASM, microVMs); (9) observabilidade, evidência e auditabilidade (<em>Evidence-as-Code</em>, <em>append-only</em>); (10) resiliência, reversão e recuperação (<em>circuit breaking</em> e <em>time-travel rollback</em>); (11) supervisão humana e interfaces de controle (portais HITL); (12) garantia contínua e avaliação de risco (monitoramento do <code>risk_score</code> e da conformidade).</p>
+<p><strong>Os sete invariantes transversais:</strong> <em>Bounded Authority</em> (autonomia restrita à tarefa corrente); <em>Revocable Trust</em> (revogação com latência delimitada, observável e testada); <em>Zero-Trust Runtime Enforcement</em> (nenhuma transição é implicitamente confiada); <em>Tamper-Evident Lineage</em> (trilha de auditoria verificável criptograficamente); <em>Deterministic Policy Mediation</em> (política mediada fora do caminho decisório do LLM e não modificável diretamente pelo conteúdo conversacional); <em>Least-Privilege Delegation</em> (restrições estritas na passagem de contexto entre agentes); <em>Continuous Assurance</em> (validação contínua de conformidade e mitigação de riscos).</p>
+<p><strong>Relação com este estudo.</strong> O Plano 6 (estado), o 10 (reversão) e o 12 (garantia contínua) respondem diretamente aos riscos do multi-turno das Seções 4 a 7; os Planos 3, 4 e 7 respondem ao risco de injeção e de escalonamento (Seção 6).</p>
+<h3 id="section-48">8.3 Mapeamento do ecossistema de conformidade e governança</h3>
+<ul>
+<li><strong>Regulatórios e normativos.</strong> <em>EU AI Act</em> (Regulamento 2024/1689) <a href="#ref-14">[14]</a>, com rastreabilidade por logs (Art. 12) e supervisão humana (Art. 14) para sistemas de alto risco; <em>NIST AI RMF 1.0</em> (funções <em>Govern, Map, Measure, Manage</em>) <a href="#ref-13">[13]</a>; <em>Google SAIF</em> <a href="#ref-17">[17]</a>.</li>
+<li><strong>Motores de política (<em>policy-as-code</em>).</strong> <em>Open Policy Agent</em> (OPA/Rego), linguagem declarativa da CNCF para autorização em microsserviços e <em>AI gateways</em>; e o <strong>Cedar</strong>, linguagem de autorização de código aberto originada na AWS, modelada formalmente em Lean e com análise por SMT, que superou OpenFGA e Rego em desempenho nos testes dos autores <a href="#ref-12">[12]</a>.</li>
+<li><strong>Gateways de IA e guardrails.</strong> <em>AI gateways</em> (Portkey, LiteLLM, Langfuse, TrueFoundry) para controle de custos, sanitização de PII e roteamento; <em>NeMo Guardrails</em> (NVIDIA) e <em>Llama Guard</em> (Meta) como camadas programáveis de filtragem semântica.</li>
+<li><strong>Posicionamento do SGAEIA.</strong> Diferente de proxies comerciais ou de regulamentos genéricos, posiciona-se como <strong>arquitetura de referência aberta e neutra</strong>: o <em>blueprint</em> de engenharia que integra motores de política, identidades criptográficas, máquinas de estado imutáveis e <em>Evidence-as-Code</em>.</li>
+</ul>
+<h3 id="section-49">8.4 Roteamento governado em trajetórias multi-turno</h3>
+<p>O Artigo 24 da SGAEIA Research Series tratou o roteamento como decisão governada sobre modelos, dados, recursos e trajetórias <a href="#ref-49">[49]</a>. O presente artigo aprofunda a unidade temporal dessa decisão. Em uma interação multi-turno, o roteador não recebe apenas uma nova pergunta: recebe uma representação do passado, possivelmente resumida, recuperada ou reconstruída. Se essa representação omitir uma restrição, incorporar um erro ou perder a cadeia de autoridade, a seleção pode ser tecnicamente eficiente e ainda assim inválida.</p>
+<p>O conjunto admissível de modelos e configurações pode mudar durante a conversa em razão da identidade ativa, da classificação dos dados, do orçamento restante, das ferramentas necessárias, de efeitos externos já executados e de políticas revogadas ou atualizadas. O roteador deve otimizar somente dentro desse conjunto. Fallback não deve transformar uma recusa de segurança em indisponibilidade a ser contornada, nem enviar dados a uma implantação que não satisfaz as mesmas condições.</p>
+<p>Uma troca de modelo também é uma transição de estado. Modelos diferem em tokenização, uso de ferramentas, formatos estruturados, preservação de raciocínio, interpretação de instruções e políticas operacionais. A substituição preserva a trajetória somente quando mantém restrições obrigatórias, capacidades requeridas, autoridade aplicável e evidência necessária, ou quando qualquer perda é detectada e tratada antes da execução.</p>
+<figure class="article-figure"><a href="/assets/article25/pt/table_12_pt.jpg" target="_blank" rel="noopener noreferrer" aria-label="Abrir imagem em tamanho integral: Tabela 12 do Artigo 25"><img src="/assets/article25/pt/table_12_pt.jpg" alt="Tabela 12 do Artigo 25" width="3600" height="1237" loading="lazy" decoding="async"></a><figcaption><em>Tabela 12 do Artigo 25. © 2026 Aridio Silva · SGAEIA Research Series — Article 25 · CC BY 4.0</em></figcaption>
+</figure>
+<p>Esse quadro é um modelo conceitual e não uma especificação normativa concluída do SGAEIA. A síntese central é: <strong>a transcrição é uma interface narrativa; o estado governado é um artefato operacional; a trilha de evidência é um artefato de assurance</strong>. Os três se relacionam, mas não devem ser confundidos.</p>
+<h3 id="section-50">8.5 Análise da seção</h3>
+<figure class="article-figure"><a href="/assets/article25/pt/table_13_pt.jpg" target="_blank" rel="noopener noreferrer" aria-label="Abrir imagem em tamanho integral: Tabela 13 do Artigo 25"><img src="/assets/article25/pt/table_13_pt.jpg" alt="Tabela 13 do Artigo 25" width="3600" height="885" loading="lazy" decoding="async"></a><figcaption><em>Tabela 13 do Artigo 25. © 2026 Aridio Silva · SGAEIA Research Series — Article 25 · CC BY 4.0</em></figcaption>
+</figure>
+<h2 id="section-51">9. Confiabilidade da informação, verificação e auditoria</h2>
+<h3 id="section-52">9.1 O que a Central de Ajuda da Anthropic diz</h3>
+<p>O artigo de suporte da Anthropic (5/mar./2026) <a href="#ref-33">[33]</a> reconhece que o Claude pode produzir respostas incorretas ou enganosas ("alucinação"), cita informações desatualizadas e citações que soam autoritativas sem base, e recomenda <strong>não tratar o modelo como fonte única de verdade</strong> e <strong>conferir as fontes</strong> nos resultados de busca. <strong>Pontos fortes:</strong> admite que o erro pode soar convincente e distingue o erro do modelo do erro de síntese sobre fontes reais. <strong>Limitações:</strong> não separa tipos de erro (desatualização, invenção, raciocínio, síntese), não quantifica a frequência, não menciona o efeito do multi-turno (Seção 4) e não ensina <strong>como</strong> verificar.</p>
+<h3 id="section-53">9.2 Protocolo de verificação aplicado a este trabalho</h3>
+<p>Para qualquer referência: (1) abrir o DOI ou o identificador e conferir título, autores e ano; (2) localizar o trecho que sustenta a afirmação; (3) confirmar o veículo (preprint não é artigo publicado); (4) sinalizar o que <strong>não</strong> foi verificado.</p>
+<h3 id="section-54">9.3 Análise da seção</h3>
+<figure class="article-figure"><a href="/assets/article25/pt/table_14_pt.jpg" target="_blank" rel="noopener noreferrer" aria-label="Abrir imagem em tamanho integral: Tabela 14 do Artigo 25"><img src="/assets/article25/pt/table_14_pt.jpg" alt="Tabela 14 do Artigo 25" width="3600" height="835" loading="lazy" decoding="async"></a><figcaption><em>Tabela 14 do Artigo 25. © 2026 Aridio Silva · SGAEIA Research Series — Article 25 · CC BY 4.0</em></figcaption>
+</figure>
+<h2 id="section-55">10. Estado da arte e perspectivas futuras</h2>
+<h3 id="section-56">10.1 Estado da arte (nov./2026)</h3>
+<ol>
+<li><strong>Confiabilidade multi-turno como meta explícita.</strong> Laban et al. propõem metas: aptidão similar em turno único e multi-turno e U &lt; 15 a T = 1,0 <a href="#ref-10">[10]</a>. Mitigações práticas: consolidar requisitos, recapitular (SNOWBALL), reiniciar conversas.</li>
+<li><strong>Economia por cache e por esforço.</strong> O cache de prompt reduz fortemente o custo de entrada repetida <a href="#ref-20">[20]</a>; o nível de esforço controla o custo de saída. As soluções dos provedores diferem quanto a preservar o raciocínio entre turnos (Seção 5.3).</li>
+<li><strong>Estado como engenharia.</strong> Estado tipado, imutável e versionado, com checkpoints, <em>fork</em> e verificação externa (Seção 7); memória hierárquica com paginação <a href="#ref-6">[6]</a>.</li>
+<li><strong>Governança em tempo de execução.</strong> Autorização determinística fora do LLM, identidade criptográfica, trilha imutável (Seção 8) e alinhamento com normas (NIST <a href="#ref-13">[13]</a>, EU AI Act [14, 15], OWASP <a href="#ref-16">[16]</a>).</li>
+<li><strong>Protocolos de integração.</strong> O MCP <a href="#ref-21">[21]</a> padroniza ferramentas e dados, ampliando tanto a utilidade quanto a superfície de injeção indireta <a href="#ref-3">[3]</a>.</li>
+</ol>
+<h3 id="section-57">10.2 Lacunas e problemas abertos</h3>
+<ul>
+<li>Falta avaliação <strong>pública</strong>, por modelo <strong>e</strong> por nível de esforço, em turno único e multi-turno para as gerações de 2026.</li>
+<li>Os efeitos de cache, de tokenizador e de nível de esforço raramente são normalizados nas comparações.</li>
+<li>Defesas contra ataques graduais ainda são frágeis <a href="#ref-9">[9]</a>.</li>
+<li>A eficácia empírica do SGAEIA e de arquiteturas similares carece de avaliação independente.</li>
+<li>Os resultados de Laban et al. cobrem tarefas analíticas em inglês; criatividade e outros idiomas (como o português) estão em aberto.</li>
+</ul>
+<h3 id="section-58">10.3 Perspectivas e agenda</h3>
+<figure class="article-figure"><a href="/assets/article25/pt/table_15_pt.jpg" target="_blank" rel="noopener noreferrer" aria-label="Abrir imagem em tamanho integral: Tabela 15 do Artigo 25"><img src="/assets/article25/pt/table_15_pt.jpg" alt="Tabela 15 do Artigo 25" width="3600" height="1027" loading="lazy" decoding="async"></a><figcaption><em>Tabela 15 do Artigo 25. © 2026 Aridio Silva · SGAEIA Research Series — Article 25 · CC BY 4.0</em></figcaption>
+</figure>
+<p><strong>Inferências analíticas do autor:</strong> (1) é provável que a vantagem competitiva migre de capacidade bruta para <strong>confiabilidade por custo</strong>; (2) o preço da leitura de cache tende a pesar mais que o preço de entrada nas comparações de produto; (3) a governança em tempo de execução tende a se tornar requisito de contratação em ambientes regulados à medida que os prazos de 2027 se aproximam.</p>
+<h3 id="section-59">10.4 Análise da seção e síntese final</h3>
+<figure class="article-figure"><a href="/assets/article25/pt/table_16_pt.jpg" target="_blank" rel="noopener noreferrer" aria-label="Abrir imagem em tamanho integral: Tabela 16 do Artigo 25"><img src="/assets/article25/pt/table_16_pt.jpg" alt="Tabela 16 do Artigo 25" width="3600" height="889" loading="lazy" decoding="async"></a><figcaption><em>Tabela 16 do Artigo 25. © 2026 Aridio Silva · SGAEIA Research Series — Article 25 · CC BY 4.0</em></figcaption>
+</figure>
+<h2 id="section-60">11. Conclusão</h2>
+<p>A passagem do turno único para o multi-turno não é apenas uma mudança de interface. Ela transforma o histórico em estado operacional, amplia o custo acumulado, introduz dependências entre decisões e cria mecanismos próprios de falha, persistência e ataque. O desempenho observado em uma chamada isolada, portanto, não é medida suficiente da confiabilidade de uma trajetória.</p>
+<p>As evidências examinadas mostram que a degradação multi-turno depende da tarefa, do protocolo, do modo como o contexto é apresentado, da memória empregada e da relação do modelo com suas próprias respostas anteriores. Cache, compactação, resumo, recuperação e troca de modelos podem reduzir custo ou ampliar capacidade, mas também alteram proveniência, autoridade e condições de reprodução.</p>
+<p>Para roteadores de LLM e para o SGAEIA, a consequência central é que seleção e governança devem operar sobre estado explícito e evidência verificável. Restrições, permissões, decisões revogadas, efeitos externos e orçamento restante precisam sobreviver às transições de modelo e aos fallbacks. O SGAEIA oferece uma hipótese arquitetural para essa separação entre transcrição, estado e assurance; sua eficácia deve ser avaliada empiricamente contra baselines e cenários de ameaça reproduzíveis.</p>
+<h2 id="section-61">Apêndice A — Glossário técnico</h2>
+<figure class="article-figure"><a href="/assets/article25/pt/table_17_pt.jpg" target="_blank" rel="noopener noreferrer" aria-label="Abrir imagem em tamanho integral: Tabela 17 do Artigo 25"><img src="/assets/article25/pt/table_17_pt.jpg" alt="Tabela 17 do Artigo 25" width="3600" height="4323" loading="lazy" decoding="async"></a><figcaption><em>Tabela 17 do Artigo 25. © 2026 Aridio Silva · SGAEIA Research Series — Article 25 · CC BY 4.0</em></figcaption>
+</figure>
+<h2 id="section-62">Referências</h2>
+<p><strong>Política de verificação bibliográfica.</strong> Cada referência foi conferida quanto a autoria, data, identificador e venue na etapa de pesquisa (30/out. a 1º/nov./2026). <strong>Legenda:</strong> ✔ verificada em fonte primária; ◐ verificada em parte ou por fonte secundária; ○ pendente de confirmação em fonte primária (informada pelo autor ou proveniente de registro preliminar). Os itens ◐ e ○ <strong>não devem ser tratados como validados</strong>. Acessos: 1º/nov./2026.</p>
+<h3 id="section-63">Artigos científicos, normas e taxonomias</h3>
+<p id="ref-1">[1] VASWANI, A.; SHAZEER, N.; PARMAR, N.; USZKOREIT, J.; JONES, L.; GOMEZ, A. N.; KAISER, Ł.; POLOSUKHIN, I. Attention is all you need. In: ADVANCES IN NEURAL INFORMATION PROCESSING SYSTEMS 30 (NeurIPS 2017), 2017, p. 5998–6008. arXiv:1706.03762, 12 jun. 2017. DOI 10.48550/arXiv.1706.03762. ✔</p>
+<p id="ref-2">[2] OUYANG, L. et al. Training language models to follow instructions with human feedback. arXiv:2203.02155, 4 mar. 2022. ✔ (preprint; publicação no NeurIPS 2022 <strong>não confirmada</strong>)</p>
+<p id="ref-3">[3] GRESHAKE, K.; ABDELNABI, S.; MISHRA, S.; ENDRES, C.; HOLZ, T.; FRITZ, M. Not what you've signed up for: compromising real-world LLM-integrated applications with indirect prompt injection. arXiv:2302.12173, 23 fev. 2023 (v2, 5 mai. 2023). ✔ (pôster no workshop de IA conversacional do ICML 2023; publicação no AISec'23 <strong>não confirmada</strong>)</p>
+<p id="ref-4">[4] ZHENG, L. et al. Judging LLM-as-a-judge with MT-Bench and Chatbot Arena. In: ADVANCES IN NEURAL INFORMATION PROCESSING SYSTEMS 36 (NeurIPS 2023), p. 46595–46623. arXiv:2306.05685. ✔ (venue e páginas conferidos pela lista de referências de [10])</p>
+<p id="ref-5">[5] LIU, N. F.; LIN, K.; HEWITT, J.; PARANJAPE, A.; BEVILACQUA, M.; PETRONI, F.; LIANG, P. Lost in the middle: how language models use long contexts. <em>Transactions of the Association for Computational Linguistics</em>, v. 12, p. 157–173, 2024. DOI 10.1162/tacl_a_00638. arXiv:2307.03172 (6 jul. 2023). ✔</p>
+<p id="ref-6">[6] PACKER, C.; FANG, V.; PATIL, S. G.; LIN, K.; WOODERS, S.; GONZALEZ, J. E. MemGPT: towards LLMs as operating systems. arXiv:2310.08560, 12 out. 2023 (v2, 12 fev. 2024). ✔</p>
+<p id="ref-7">[7] BAI, G. et al. MT-Bench-101: a fine-grained benchmark for evaluating large language models in multi-turn dialogues. In: ANNUAL MEETING OF THE ACL, 62., 2024, Bangkok. <em>Proceedings</em>… v. 1, p. 7421–7454. DOI 10.18653/v1/2024.acl-long.401. ✔</p>
+<p id="ref-8">[8] RUSSINOVICH, M.; SALEM, A.; ELDAN, R. Great, now write an article about that: the Crescendo multi-turn LLM jailbreak attack. In: USENIX SECURITY SYMPOSIUM, 34., 2025, Seattle. <em>Proceedings</em>… p. 2421–2440. arXiv:2404.01833. ✔</p>
+<p id="ref-9">[9] BULLWINKEL, B. et al. A representation engineering perspective on the effectiveness of multi-turn jailbreaks. In: ICML 2025 WORKSHOP DIG-BUGS, 2025. Pôster. ✔</p>
+<p id="ref-10">[10] LABAN, P.; HAYASHI, H.; ZHOU, Y.; NEVILLE, J. LLMs get lost in multi-turn conversation. <em>International Conference on Learning Representations (ICLR)</em>, 2026. Outstanding Paper. Versão inicial: arXiv:2505.06120. ✔</p>
+<p id="ref-11">[11] GUO, D. et al. DeepSeek-R1: incentivizing reasoning capability in LLMs via reinforcement learning. arXiv:2501.12948, 2025. ◐ (identificador confirmado indiretamente pela lista de referências de [10])</p>
+<p id="ref-12">[12] CUTLER, J. W.; DISSELKOEN, C.; ELINE, A.; HE, S.; HEADLEY, K.; HICKS, M.; HIETALA, K.; IOANNIDIS, E.; KASTNER, J.; MAMAT, A.; MCADAMS, D.; MCCUTCHEN, M.; RUNGTA, N.; TORLAK, E.; WELLS, A. M. Cedar: a new language for expressive, fast, safe, and analyzable authorization. <em>Proceedings of the ACM on Programming Languages</em>, v. 8, n. OOPSLA1, 2024. DOI 10.1145/3649835. arXiv:2403.04651. ✔</p>
+<p id="ref-13">[13] NATIONAL INSTITUTE OF STANDARDS AND TECHNOLOGY (NIST). <em>Artificial Intelligence Risk Management Framework (AI RMF 1.0)</em>. NIST AI 100-1. Gaithersburg: NIST, jan. 2023. DOI 10.6028/NIST.AI.100-1. ◐ (identificador e data confirmados por cópias do documento e fontes secundárias)</p>
+<p id="ref-14">[14] UNIÃO EUROPEIA. Regulamento (UE) 2024/1689 (Regulamento da Inteligência Artificial). <em>Jornal Oficial da União Europeia</em>, L, 12.7.2024. ◐ (conteúdo dos Arts. 12 e 14 conferido em cópias acessíveis do texto)</p>
+<p id="ref-15">[15] UNIÃO EUROPEIA. Regulamento (UE) 2026/1744 ("Digital Omnibus on AI"). <em>Jornal Oficial da União Europeia</em>, L, 24.7.2026; em vigor em 27.7.2026. ◐ (conferido por sete fontes secundárias concordantes)</p>
+<p id="ref-16">[16] OWASP GENAI SECURITY PROJECT. <em>OWASP Top 10 for LLM Applications 2025</em> (v2.0). 18 nov. 2024. Licença CC BY-SA 4.0. Disponível em: <a href="https://genai.owasp.org/" target="_blank" rel="noopener noreferrer">https://genai.owasp.org/</a>. ✔</p>
+<p id="ref-17">[17] GOOGLE. Introducing Google's Secure AI Framework. Jun. 2023. Disponível em: <a href="https://blog.google/technology/safety-security/introducing-googles-secure-ai-framework/" target="_blank" rel="noopener noreferrer">https://blog.google/technology/safety-security/introducing-googles-secure-ai-framework/</a>. ✔</p>
+<h3 id="section-64">Documentação e comunicados oficiais de provedores</h3>
+<p id="ref-18">[18] OPENAI. Introducing ChatGPT. 30 nov. 2022. Disponível em: <a href="https://openai.com/index/chatgpt/" target="_blank" rel="noopener noreferrer">https://openai.com/index/chatgpt/</a>. ✔</p>
+<p id="ref-19">[19] OPENAI. Learning to reason with LLMs. 12 set. 2024. Disponível em: <a href="https://openai.com/index/learning-to-reason-with-llms/" target="_blank" rel="noopener noreferrer">https://openai.com/index/learning-to-reason-with-llms/</a>. ✔</p>
+<p id="ref-20">[20] ANTHROPIC. Prompt caching with Claude. Ago. 2024 (disponibilidade geral em 17 dez. 2024). Disponível em: <a href="https://www.anthropic.com/news/prompt-caching" target="_blank" rel="noopener noreferrer">https://www.anthropic.com/news/prompt-caching</a>. ✔ (a página em claude.com exibe "14 ago. 2025", divergente da cobertura de 2024)</p>
+<p id="ref-21">[21] ANTHROPIC. Introducing the Model Context Protocol. 25 nov. 2024. Disponível em: <a href="https://www.anthropic.com/news/model-context-protocol" target="_blank" rel="noopener noreferrer">https://www.anthropic.com/news/model-context-protocol</a>. ✔</p>
+<p id="ref-22">[22] GOOGLE. Our next-generation model: Gemini 1.5. 15 fev. 2024. Disponível em: <a href="https://blog.google/technology/ai/google-gemini-next-generation-model-february-2024" target="_blank" rel="noopener noreferrer">https://blog.google/technology/ai/google-gemini-next-generation-model-february-2024</a>; e What is a long context window?, em <a href="https://blog.google/technology/ai/long-context-window-ai-models/" target="_blank" rel="noopener noreferrer">https://blog.google/technology/ai/long-context-window-ai-models/</a>. ✔</p>
+<p id="ref-23">[23] ANTHROPIC. Pricing. <em>Claude Platform Docs</em>. Disponível em: <a href="https://platform.claude.com/docs/en/about-claude/pricing" target="_blank" rel="noopener noreferrer">https://platform.claude.com/docs/en/about-claude/pricing</a>. ✔ (retrato de out.–nov./2026)</p>
+<p id="ref-24">[24] ANTHROPIC. Steering thinking; Effort. <em>Claude Platform Docs</em>. Disponível em: <a href="https://platform.claude.com/docs/en/build-with-claude/thinking-steering-and-cost" target="_blank" rel="noopener noreferrer">https://platform.claude.com/docs/en/build-with-claude/thinking-steering-and-cost</a>. ✔</p>
+<p id="ref-25">[25] OPENAI. Models; Pricing; Reasoning models. <em>OpenAI API Docs</em>. Disponível em: <a href="https://developers.openai.com/api/docs/models" target="_blank" rel="noopener noreferrer">https://developers.openai.com/api/docs/models</a>. ✔</p>
+<p id="ref-26">[26] GOOGLE. Gemini Developer API pricing. Disponível em: <a href="https://ai.google.dev/gemini-api/docs/pricing" target="_blank" rel="noopener noreferrer">https://ai.google.dev/gemini-api/docs/pricing</a>. ✔</p>
+<p id="ref-27">[27] GOOGLE. Gemini thinking. Disponível em: <a href="https://ai.google.dev/gemini-api/docs/thinking" target="_blank" rel="noopener noreferrer">https://ai.google.dev/gemini-api/docs/thinking</a>. ✔</p>
+<p id="ref-28">[28] XAI. Models; Pricing; Reasoning. <em>xAI Docs</em>. Disponível em: <a href="https://docs.x.ai/developers/models" target="_blank" rel="noopener noreferrer">https://docs.x.ai/developers/models</a>. ✔</p>
+<p id="ref-29">[29] DEEPSEEK. Models &amp; Pricing. <em>DeepSeek API Docs</em>. Disponível em: <a href="https://api-docs.deepseek.com/quick_start/pricing/" target="_blank" rel="noopener noreferrer">https://api-docs.deepseek.com/quick_start/pricing/</a>. ✔</p>
+<p id="ref-30">[30] ANTHROPIC. Using the Messages API. <em>Claude Platform Docs</em>. Disponível em: <a href="https://platform.claude.com/docs/en/build-with-claude/working-with-messages" target="_blank" rel="noopener noreferrer">https://platform.claude.com/docs/en/build-with-claude/working-with-messages</a>. ✔</p>
+<p id="ref-31">[31] LANGCHAIN. LangGraph: persistence; use time-travel. Disponível em: <a href="https://docs.langchain.com/oss/python/langgraph/persistence" target="_blank" rel="noopener noreferrer">https://docs.langchain.com/oss/python/langgraph/persistence</a> e <a href="https://docs.langchain.com/oss/python/langgraph/use-time-travel" target="_blank" rel="noopener noreferrer">https://docs.langchain.com/oss/python/langgraph/use-time-travel</a>. ✔</p>
+<p id="ref-32">[32] PYDANTIC. Migration guide (Pydantic V2). Disponível em: <a href="https://docs.pydantic.dev/" target="_blank" rel="noopener noreferrer">https://docs.pydantic.dev/</a>. ✔</p>
+<p id="ref-33">[33] ANTHROPIC. Claude está fornecendo respostas incorretas ou enganosas. O que está acontecendo? <em>Central de Ajuda da Anthropic</em>, 5 mar. 2026. Disponível em: <a href="https://support.claude.com/pt/articles/8525154" target="_blank" rel="noopener noreferrer">https://support.claude.com/pt/articles/8525154</a>. ✔</p>
+<h3 id="section-65">Obras do autor</h3>
+<p id="ref-34">[34] SILVA, A. <em>SGAEIA: Secure Governed Autonomous Edge Intelligence Architecture</em> (Version 0.3.4). Zenodo, 2026. DOI 10.5281/zenodo.22557796. Artefato público congelado sob Apache-2.0; desenvolvimento corrente mantido em repositório privado controlado. ✔</p>
+<p id="ref-35">[35] SILVA, A. Artigos no DEV Community (<a href="https://dev.to/aridiosilva" target="_blank" rel="noopener noreferrer">https://dev.to/aridiosilva</a>): <em>From Edge AI to Governed Autonomous Edge Intelligence</em> (1 out. 2026); <em>The Open Letter on AI and Cybersecurity and the Evidence for Agent Containment</em> (16 out. 2026); <em>Opening the Black Box of LLM Inference: Foundations of Generative AI</em> (21 out. 2026). Leituras relacionadas: <em>How to Reduce the Cost of AI Systems with LLMs Without Sacrificing Quality</em> (28 out. 2026) e <em>LLM Routers for AI Systems: Architecture, Governance, Multi-Agent Systems, Swarms, and Security</em> (29 out. 2026). ◐ (existência, títulos e datas confirmados no perfil público)</p>
+<p id="ref-36">[36] SILVA, A. <em>Compêndio técnico: análise aprofundada de LLMs, gerenciamento de estado, governança runtime e o framework SGAEIA</em>. Documento .docx, 1 nov. 2026 (material de origem incorporado nas Seções 2, 7 e 8).</p>
+<h3 id="section-66">Fontes complementares</h3>
+<p id="ref-37">[37] P. Laban, H. Hayashi, Y. Zhou, and J. Neville, “LLMs Get Lost in Multi-Turn Conversation,” <em>International Conference on Learning Representations (ICLR)</em>, 2026. Available: <a href="https://proceedings.iclr.cc/paper_files/paper/2026/hash/59f6421e64707225fdf5b28840679a07-Abstract-Conference.html" target="_blank" rel="noopener noreferrer">https://proceedings.iclr.cc/paper_files/paper/2026/hash/59f6421e64707225fdf5b28840679a07-Abstract-Conference.html</a></p>
+<p id="ref-38">[38] ICLR, “Announcing the ICLR 2026 Outstanding Papers,” 23 Apr. 2026. Available: <a href="https://blog.iclr.cc/2026/04/23/announcing-the-iclr-2026-outstanding-papers/" target="_blank" rel="noopener noreferrer">https://blog.iclr.cc/2026/04/23/announcing-the-iclr-2026-outstanding-papers/</a></p>
+<p id="ref-39">[39] W.-C. Kwan et al., “MT-Eval: A Multi-Turn Capabilities Evaluation Benchmark for Large Language Models,” <em>Proceedings of EMNLP</em>, pp. 20153–20177, 2024. Available: <a href="https://aclanthology.org/2024.emnlp-main.1124/" target="_blank" rel="noopener noreferrer">https://aclanthology.org/2024.emnlp-main.1124/</a></p>
+<p id="ref-40">[40] K. Deshpande et al., “MultiChallenge: A Realistic Multi-Turn Conversation Evaluation Benchmark Challenging to Frontier LLMs,” <em>Findings of ACL</em>, pp. 18632–18702, 2025. doi:10.18653/v1/2025.findings-acl.958.</p>
+<p id="ref-41">[41] “StructFlowBench: A Structured Flow Benchmark for Multi-turn Instruction Following,” <em>Findings of ACL</em>, pp. 9322–9341, 2025. doi:10.18653/v1/2025.findings-acl.486.</p>
+<p id="ref-42">[42] Y. Katsis et al., “mt RAG: A Multi-Turn Conversational Benchmark for Evaluating Retrieval-Augmented Generation Systems,” <em>Transactions of the Association for Computational Linguistics</em>, 2025. Available: <a href="https://aclanthology.org/2025.tacl-1.36/" target="_blank" rel="noopener noreferrer">https://aclanthology.org/2025.tacl-1.36/</a></p>
+<p id="ref-43">[43] C. Yang et al., “MARS-Bench: A Multi-turn Athletic Real-world Scenario Benchmark for Dialogue Evaluation,” <em>Findings of EMNLP</em>, pp. 5872–5898, 2025. doi:10.18653/v1/2025.findings-emnlp.314.</p>
+<p id="ref-44">[44] “One Battle After Another: Probing LLMs' Limits on Multi-Turn Instruction Following with a Benchmark Evolving Framework,” <em>Proceedings of ACL</em>, 2026. Available: <a href="https://aclanthology.org/2026.acl-long.433/" target="_blank" rel="noopener noreferrer">https://aclanthology.org/2026.acl-long.433/</a></p>
+<p id="ref-45">[45] J. Chen et al., “KnowMT-Bench: Benchmarking Knowledge-Intensive Long-Form Question Answering in Multi-Turn Dialogues,” <em>Findings of EMNLP</em>, 2026. Available: <a href="https://aclanthology.org/2026.findings-emnlp.845/" target="_blank" rel="noopener noreferrer">https://aclanthology.org/2026.findings-emnlp.845/</a></p>
+<p id="ref-46">[46] J. Myung, “Quantifying Conversational Reliability of Large Language Models under Multi-Turn Interaction,” arXiv:2603.01423, 2026. <strong>Preprint.</strong></p>
+<p id="ref-47">[47] R. Khraishi, I. Zafar, K. Myles, and G. A. Cowan, “Evaluating Performance Drift from Model Switching in Multi-Turn LLM Systems,” arXiv:2603.03111, 2026. <strong>Preprint.</strong></p>
+<p id="ref-48">[48] S. T. Luo, W. Liu, R. Liu, M. Gong, and J. Guo, “Multi-Turn Reasoning When Context Arrives in Pieces: Scalable Sharding and Memory-Augmented RL,” arXiv:2606.12941, 2026. <strong>Preprint.</strong></p>
+<p id="ref-49">[49] A. Silva, “LLM Routers for AI Systems: Architecture, Governance, Multi-Agent Systems, Swarms, and Security,” <em>SGAEIA Research Series</em>, Article 24, 2026. DOI: 10.5281/zenodo.23763978. Available: <a href="https://aridiosilva.com/publications/artigo24/" target="_blank" rel="noopener noreferrer">https://aridiosilva.com/publications/artigo24/</a></p>
+<h4 id="section-67">Related SGAEIA Research Series works / Trabalhos relacionados da série SGAEIA</h4>
+<p id="ref-50">[50] A. Silva, “From Model Capability to Governed Action: An Architecture for Secure Agentic AI,” <em>SGAEIA Research Series</em>, Article 11, 2026. Series catalogue: <a href="https://aridiosilva.com/sgaeia.html" target="_blank" rel="noopener noreferrer">https://aridiosilva.com/sgaeia.html</a>.</p>
+<p id="ref-51">[51] A. Silva, “Zero Trust for Multi-Agent AI Systems,” <em>SGAEIA Research Series</em>, Article 3, 2026. Series catalogue: <a href="https://aridiosilva.com/sgaeia.html" target="_blank" rel="noopener noreferrer">https://aridiosilva.com/sgaeia.html</a>.</p>
+<p id="ref-52">[52] A. Silva, “Evidence-as-Code: Making AI Governance Verifiable,” <em>SGAEIA Research Series</em>, Article 6, 2026. Series catalogue: <a href="https://aridiosilva.com/sgaeia.html" target="_blank" rel="noopener noreferrer">https://aridiosilva.com/sgaeia.html</a>.</p>
+<p id="ref-53">[53] A. Silva, “AI Jailbreaks: From Bypassing Restrictions to Governing Authority,” <em>SGAEIA Research Series</em>, Article 17, 2026. Series catalogue: <a href="https://aridiosilva.com/sgaeia.html" target="_blank" rel="noopener noreferrer">https://aridiosilva.com/sgaeia.html</a>.</p>
+<p id="ref-54">[54] A. Silva, “Tracing AI Agent Execution: Foundations, State of the Art, and Implications for Distributed Multi-Agent Systems,” <em>SGAEIA Research Series</em>, Article 18, 2026. Series catalogue: <a href="https://aridiosilva.com/sgaeia.html" target="_blank" rel="noopener noreferrer">https://aridiosilva.com/sgaeia.html</a>.</p>
+<p id="ref-55">[55] A. Silva, “When AI Agents Form Societies: Is Security a Property of the Model or the System?,” <em>SGAEIA Research Series</em>, Article 15, 2026. Series catalogue: <a href="https://aridiosilva.com/sgaeia.html" target="_blank" rel="noopener noreferrer">https://aridiosilva.com/sgaeia.html</a>.</p>
+<p id="ref-56">[56] A. Silva, “How to Reduce the Cost of AI Systems with LLMs Without Sacrificing Quality,” <em>SGAEIA Research Series</em>, Article 23, 2026. Series catalogue: <a href="https://aridiosilva.com/sgaeia.html" target="_blank" rel="noopener noreferrer">https://aridiosilva.com/sgaeia.html</a>.</p>
+<h2 id="section-68">Sobre o Autor</h2>
+<p>Aridio Silva é pesquisador independente no Brasil, com trabalho em arquitetura, segurança, governança e confiabilidade de sistemas autônomos e de inteligência artificial distribuída.</p>
+<p>Sua pesquisa concentra-se em IA agêntica, sistemas multiagentes, Edge AI, segurança de IA, Zero Trust, Security-by-Design, governança de IA, desenvolvimento orientado por especificações e garantia contínua.</p>
+<p>É criador e pesquisador principal do SGAEIA — Secure Governed Autonomous Edge Intelligence Architecture, iniciativa de pesquisa aberta voltada a fundamentos arquiteturais para sistemas autônomos seguros, governados, auditáveis e confiáveis em ambientes distribuídos de borda e nuvem.</p>
+<h2 id="section-69">Perfis de Pesquisa</h2>
+<ul>
+<li>ORCID: <a href="https://orcid.org/0009-0008-2411-6995" target="_blank" rel="noopener noreferrer">https://orcid.org/0009-0008-2411-6995</a></li>
+<li>Google Scholar: <a href="https://scholar.google.com/citations?user=rPn5O48AAAAJ" target="_blank" rel="noopener noreferrer">https://scholar.google.com/citations?user=rPn5O48AAAAJ</a></li>
+<li>Zenodo — SGAEIA Community: <a href="https://zenodo.org/communities/sgaeia" target="_blank" rel="noopener noreferrer">https://zenodo.org/communities/sgaeia</a></li>
+<li>OpenAIRE: <a href="https://explore.openaire.eu/search/find?fv0=Aridio%20Silva&amp;f0=q" target="_blank" rel="noopener noreferrer">https://explore.openaire.eu/search/find?fv0=Aridio%20Silva&amp;f0=q</a></li>
+<li>Medium: <a href="https://medium.com/@aridiosilva" target="_blank" rel="noopener noreferrer">https://medium.com/@aridiosilva</a></li>
+<li>LinkedIn: <a href="https://www.linkedin.com/in/aridio-silva-74997111/" target="_blank" rel="noopener noreferrer">https://www.linkedin.com/in/aridio-silva-74997111/</a></li>
+<li>SGAEIA Research Artifact: <a href="https://doi.org/10.5281/zenodo.22557796" target="_blank" rel="noopener noreferrer">https://doi.org/10.5281/zenodo.22557796</a></li>
+<li>Homepage: <a href="https://aridiosilva.com" target="_blank" rel="noopener noreferrer">https://aridiosilva.com</a></li>
+<li>SGAEIA: <a href="https://aridiosilva.com/sgaeia.html" target="_blank" rel="noopener noreferrer">https://aridiosilva.com/sgaeia.html</a></li>
+<li>DEV Community: <a href="https://dev.to/aridiosilva" target="_blank" rel="noopener noreferrer">https://dev.to/aridiosilva</a></li>
+<li>Academia.edu: <a href="https://independent.academia.edu/AridioSilva" target="_blank" rel="noopener noreferrer">https://independent.academia.edu/AridioSilva</a></li>
+</ul>
+<h2 id="section-70">Figuras</h2>
+<p>A capa não é numerada. Figuras, equações e tabelas são numeradas por tipo, citadas no texto e fornecidas como JPEGs de alta resolução. Os ativos conceituais originais permanecem licenciados sob CC BY 4.0 e contêm identificação de autoria e copyright visível e incorporada.</p>
+<h2 id="section-71">Licença</h2>
+<p>Salvo indicação em contrário, o texto e as ilustrações conceituais originais deste artigo estão licenciados sob a Creative Commons Attribution 4.0 International License (CC BY 4.0).</p>
+<p>© Aridio Silva (@aridiosilva) · Novembro de 2026. O artefato de software e pesquisa SGAEIA permanece sujeito à sua licença Apache 2.0.</p>
+<h2 id="section-72">Continuidade da Série</h2>
+<p>Este trabalho integra a <strong>SGAEIA Research Series — Artigo 25</strong>. O catálogo público está disponível em <a href="https://aridiosilva.com" target="_blank" rel="noopener noreferrer">https://aridiosilva.com</a>, com a presença do projeto em <a href="https://aridiosilva.com/sgaeia.html" target="_blank" rel="noopener noreferrer">https://aridiosilva.com/sgaeia.html</a>.</p>
+<p>Registro persistente do Artigo 25: <a href="https://doi.org/10.5281/zenodo.23867630" target="_blank" rel="noopener noreferrer">https://doi.org/10.5281/zenodo.23867630</a>. Artefato canônico do projeto SGAEIA: <a href="https://doi.org/10.5281/zenodo.22557796" target="_blank" rel="noopener noreferrer">https://doi.org/10.5281/zenodo.22557796</a>.</p>
+<ol>
+<li>From Edge AI to Governed Autonomous Edge Intelligence</li>
+<li>Why Autonomous AI Agents Need Bounded and Revocable Authority</li>
+<li>Zero Trust for Multi-Agent AI Systems</li>
+<li>Authenticated Delegation Between Autonomous AI Agents</li>
+<li>Continuous GRC for Agentic AI</li>
+<li>Evidence-as-Code: Making AI Governance Verifiable</li>
+<li>Security-by-Design for Distributed Agentic AI</li>
+<li>SGAEIA: A Reference Architecture for Secure Governed Autonomous Edge Intelligence</li>
+<li>When AI Begins to Build AI</li>
+<li>Rogue AI Agents: When Autonomous Systems Become a Collective</li>
+<li>From Model Capability to Governed Action: An Architecture for Secure Agentic AI</li>
+<li>Ten Days That Exposed the Governance Gap in Frontier AI</li>
+<li>When AI Hallucination Becomes Action</li>
+<li>AI’s Alien Mind: How to Govern What We Cannot Fully Understand</li>
+<li>When AI Agents Form Societies: Is Security a Property of the Model or the System?</li>
+<li>When AI Improves AI: Governing Recursive Intelligence Acceleration</li>
+<li>AI Jailbreaks: From Bypassing Restrictions to Governing Authority</li>
+<li>Tracing AI Agent Execution: Foundations, State of the Art, and Implications for Distributed Multi-Agent Systems</li>
+<li>LoRA in AI Agents: Efficiency, Security Risks, and Adapter Governance</li>
+<li>AI Agents and Agentic AI: What Sets Them Apart?</li>
+<li>The Open Letter on AI and Cybersecurity and the Evidence for Agent Containment</li>
+<li>Opening the Black Box of LLM Inference: Foundations of Generative AI</li>
+<li>How to Reduce the Cost of AI Systems with LLMs Without Sacrificing Quality</li>
+<li>LLM Routers for AI Systems: Architecture, Governance, Multi-Agent Systems, Swarms, and Security</li>
+<li>Single-Turn and Multi-Turn Interactions in Frontier Generative AI Models (LLMs)</li>
+</ol>
+<h2 id="section-73">Citação Sugerida</h2>
+<p>SILVA, Aridio. <em>Interações de Turno Único e de Múltiplos Turnos em Modelos de IA Generativa de Fronteira (LLMs): estado, custo, confiabilidade, segurança e governança</em>. SGAEIA Research Series, Artigo 25, 2026. DOI: <a href="https://doi.org/10.5281/zenodo.23867630" target="_blank" rel="noopener noreferrer">https://doi.org/10.5281/zenodo.23867630</a>.</p>
+<h2>Canais de publicação</h2><p>O Zenodo é a fonte persistente dos arquivos arquivados, da versão, da licença e dos metadados de citação.</p><p class="article-distribution-links"><a href="https://zenodo.org/records/23867630" target="_blank" rel="noopener noreferrer">Zenodo</a><a href="https://dev.to/aridiosilva/single-turn-and-multi-turn-interactions-in-frontier-generative-ai-models-state-cost-reliability-1e8k" target="_blank" rel="noopener noreferrer">DEV.to</a><a href="https://www.academia.edu/180041841/Single_Turn_and_Multi_Turn_Interactions_in_Frontier_Generative_AI_Models_LLMs_" target="_blank" rel="noopener noreferrer">Academia.edu</a><a href="https://medium.com/@aridiosilva/single-turn-and-multi-turn-interactions-in-frontier-generative-ai-models-f8b9a4e75a39" target="_blank" rel="noopener noreferrer">Medium.com</a><a href="https://zenodo.org/uploads/23867630" target="_blank" rel="noopener noreferrer">Zenodo — referência do upload</a></p></article></section></main><footer class="site-footer footer-style-preview" id="footer">
+  <div class="shell">
+    <div class="footer-head">
+      <div class="footer-brand-lockup">
+        <img class="footer-sgaeia-logo" src="/assets/sgaeia-logo-transparent.png" alt="" aria-hidden="true" width="1254" height="1254" loading="lazy" decoding="async">
+        <a class="footer-wordmark footer-project-link" href="/sgaeia.html">SGAEIA</a>
+      </div>
+      <div class="footer-note">SGAEIA · Pesquisa sobre sistemas de IA autônomos e distribuídos sob governança.</div>
+    </div>
+
+    <nav class="brand-links footer-name-links" aria-label="Perfis de pesquisa e links do projeto">
+      <a class="footer-profile-link" aria-label="GitHub" title="GitHub" href="https://github.com/aridiosilva" target="_blank" rel="noopener noreferrer"><strong>GitHub</strong></a>
+      <a class="footer-profile-link" aria-label="ORCID" title="ORCID" href="https://orcid.org/0009-0008-2411-6995" target="_blank" rel="me noopener noreferrer"><strong>ORCID</strong></a>
+      <a class="footer-profile-link" aria-label="Google Scholar" title="Google Scholar" href="https://scholar.google.com/citations?user=rPn5O48AAAAJ" target="_blank" rel="noopener noreferrer"><strong>Google Scholar</strong></a>
+      <a class="footer-profile-link" aria-label="Registros do autor no Zenodo" title="Zenodo" href="https://zenodo.org/search?q=metadata.creators.person_or_org.name%3A%22Silva%2C%20Aridio%22" target="_blank" rel="noopener noreferrer"><strong>Zenodo</strong></a>
+      <a class="footer-profile-link" aria-label="Comunidade SGAEIA no Zenodo" title="SGAEIA — Comunidade Zenodo" href="https://zenodo.org/communities/sgaeia" target="_blank" rel="noopener noreferrer"><strong>SGAEIA · Comunidade Zenodo</strong></a>
+      <a class="footer-profile-link" aria-label="OpenAIRE" title="OpenAIRE" href="https://explore.openaire.eu/search/find?fv0=Aridio%20Silva&amp;f0=q" target="_blank" rel="noopener noreferrer"><strong>OpenAIRE</strong></a>
+      <a class="footer-profile-link" aria-label="Medium" title="Medium" href="https://medium.com/@aridiosilva" target="_blank" rel="noopener noreferrer"><strong>Medium</strong></a>
+      <a class="footer-profile-link" aria-label="Academia.edu" title="Academia.edu" href="https://independent.academia.edu/AridioSilva" target="_blank" rel="noopener noreferrer"><strong>Academia.edu</strong></a>
+      <a class="footer-profile-link" aria-label="Perfil na DEV Community" title="DEV Community" href="https://dev.to/aridiosilva" target="_blank" rel="me noopener noreferrer"><strong>DEV Community</strong></a>
+      <a class="footer-profile-link" aria-label="LinkedIn" title="LinkedIn" href="https://www.linkedin.com/in/aridio-silva-74997111/" target="_blank" rel="noopener noreferrer"><strong>LinkedIn</strong></a>
+      <a class="footer-profile-link" aria-label="SGAEIA LinkedIn" title="SGAEIA LinkedIn" href="https://www.linkedin.com/company/sgaeia/" target="_blank" rel="noopener noreferrer"><strong>SGAEIA · LinkedIn</strong></a>
+      <a class="footer-profile-link" aria-label="Repositório SGAEIA no GitHub" title="Repositório SGAEIA" href="https://github.com/aridiosilva/SGAEIA" target="_blank" rel="noopener noreferrer"><strong>Repositório SGAEIA</strong></a>
+      <a class="footer-profile-link" aria-label="Kaggle" title="Kaggle" href="https://www.kaggle.com/aridiosilva2" target="_blank" rel="noopener noreferrer"><strong>Kaggle</strong></a>
+      <a class="footer-profile-link" aria-label="DOI do artefato de pesquisa SGAEIA" title="Artefato de pesquisa SGAEIA / DOI" href="https://doi.org/10.5281/zenodo.22557796" target="_blank" rel="noopener noreferrer"><strong>SGAEIA DOI</strong></a>
+    </nav>
+
+    <div class="footer-bottom">
+      <span>© 2026 Aridio Silva · <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></span>
+      <span>Última atualização: 2 de novembro de 2026 — Versão 1.0.0</span>
+      <span>IA autônoma. Governada por concepção. Confiável pela evidência.</span>
+    </div>
+  </div>
+</footer></body></html>

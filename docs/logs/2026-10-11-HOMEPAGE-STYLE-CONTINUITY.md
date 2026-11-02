@@ -1070,3 +1070,28 @@ Novos artigos e infográficos devem reutilizar esse rodapé compartilhado e sua 
 - Hashes SHA-256 preservados: master EN `03116B37C062E0C00A6F4A2E79E80BBCFD989F2ED7AD40368F0F0A7BDC646FE7`; master PT `3E0FBC2BCFE94F0B89EABC8A2341F001FC3CEBA6EB3A4BD6AFC57294F6C905B9`; PDF EN `F04C3EE10EDDE3FA6CBF0291107885B02F4A84E23C192D8D86F18E9E519B76B1`; PDF PT `E0B0D89013960F3F1C60EFD0E5155AD837A127D7E069E21715AE6BD3205513FB`.
 - Registro detalhado: `docs/logs/2026-10-28-ARTICLE23-HOMEPAGE-PUBLICATION.md`.
 - Nenhum stage, commit ou push foi executado pelo assistente.
+
+## Artigo 25 — integração EN/PT — 2 de novembro de 2026
+
+- Adicionadas as edições integrais `/publications/artigo25/` (EN, padrão e `x-default`) e `/publications/artigo25/pt/` (PT), a partir dos masters públicos do Artigo 25, com capa, sete figuras incluindo a cronologia, seis equações, dezessete tabelas em imagem, 56 referências e PDF original de 30 páginas por idioma.
+- DOI `10.5281/zenodo.23867630`; data editorial `2026-11-01`, versão `1.0`, licença CC BY 4.0; inclusão técnica `2026-11-02`. Metadados públicos do Zenodo conferidos pela API em 2 de novembro.
+- Cards no início de Publications e Writing da homepage e do índice de publicações; numeração sequencial preservada. Título, descrição e identificação do novo card traduzidos nos cinco idiomas existentes da homepage.
+- EN/PT usam o cabeçalho, hero azul, rodapé, controles de leitura, CSS e scripts compartilhados do Artigo 24, sem alteração dos ativos compartilhados. GA4 `G-MXMJ7Z3LS7` aparece pelo carregador canônico exatamente uma vez; CSP não foi relaxada.
+- Atualizados sitemap, llms e comentário de robots, este log e ambos os READMEs. Inventário: 79 HTMLs públicos e 79 URLs únicas no sitemap.
+- A versão atual de `sgaeia.html` contém plataformas de publicação, não cards individuais da série. Sua organização vigente foi preservada; não se restaurou a lista histórica descrita nos prompts antigos.
+- Registro detalhado de validação e publicação: `docs/logs/2026-11-02-ARTICLE25-HOMEPAGE-PUBLICATION.md`.
+- O proprietário autorizou stage, commit e push no remoto da homepage. O resultado da execução será registrado no log detalhado após confirmação do Git.
+
+### Prévia local — diagnóstico e inicialização
+
+`127.0.0.1` é o endereço de loopback; a prévia exige um servidor ativo na porta escolhida. Nesta sessão, a instância iniciada dentro do ambiente restrito não ficou acessível corretamente; após seu encerramento, a instância no host respondeu HTTP 200 e as páginas abriram no navegador interno. O processo observado era `python.exe`, servindo exclusivamente o repositório da homepage em `127.0.0.1:8765`. PIDs variam entre sessões e não devem ser usados como configuração permanente.
+
+Antes de iniciar outra instância, verificar `Get-NetTCPConnection -State Listen -LocalPort 8765` e o comando do processo com `Get-CimInstance Win32_Process -Filter "ProcessId = <PID>"`. Se a porta já responder com a homepage correta, reutilizar a instância; não iniciar servidores duplicados nem encerrar processos sem identificar seu comando e diretório.
+
+Comando de inicialização no PowerShell local do computador, ou execução autorizada no host quando houver sandbox:
+
+```powershell
+python -m http.server 8765 --bind 127.0.0.1 --directory C:\Users\as294\aridiosilva.github.io
+```
+
+Confirmar resposta antes de abrir abas: `curl.exe --noproxy '*' --max-time 5 -I http://127.0.0.1:8765/`. Não é necessário alterar firewall, proxy ou configurações globais. O servidor deve continuar ativo enquanto o proprietário usa as abas de revisão.

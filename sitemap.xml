@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://aridiosilva.com/</loc>
-    <lastmod>2026-10-29</lastmod>
+    <lastmod>2026-11-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -14,7 +14,7 @@
   </url>
   <url>
     <loc>https://aridiosilva.com/publications.html</loc>
-    <lastmod>2026-10-29</lastmod>
+    <lastmod>2026-11-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -702,5 +702,25 @@
     <xhtml:link rel="alternate" hreflang="pt-BR" href="https://aridiosilva.com/publications/artigo21/pt/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://aridiosilva.com/publications/artigo21/"/>
     <image:image><image:loc>https://aridiosilva.com/assets/article21/sgaeia-article21-ai-cybersecurity-cover.png</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://aridiosilva.com/publications/artigo25/</loc>
+    <lastmod>2026-11-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aridiosilva.com/publications/artigo25/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://aridiosilva.com/publications/artigo25/pt/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aridiosilva.com/publications/artigo25/"/>
+    <image:image><image:loc>https://aridiosilva.com/assets/article25/en/cover_article25_en.jpg</image:loc><image:title>Single-Turn and Multi-Turn Interactions in Frontier Generative AI Models (LLMs)</image:title><image:caption>© 2026 Aridio Silva · CC BY 4.0</image:caption></image:image>
+  </url>
+  <url>
+    <loc>https://aridiosilva.com/publications/artigo25/pt/</loc>
+    <lastmod>2026-11-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aridiosilva.com/publications/artigo25/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://aridiosilva.com/publications/artigo25/pt/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aridiosilva.com/publications/artigo25/"/>
+    <image:image><image:loc>https://aridiosilva.com/assets/article25/pt/cover_article25_pt.jpg</image:loc><image:title>Interações de Turno Único e de Múltiplos Turnos em Modelos de AI Generativa de Fronteira (LLMs)</image:title><image:caption>© 2026 Aridio Silva · CC BY 4.0</image:caption></image:image>
   </url>
 </urlset>

@@ -17,16 +17,16 @@ The website brings together:
 
 ## Current recorded state
 
-The latest consolidated log entry is dated **30 October 2026**. At that point, the repository recorded:
+The latest consolidated update is dated **2 November 2026**. The repository records:
 
-- **75 public HTML pages** using the shared navigation and footer system;
-- SGAEIA Research Series publications through **Article 24**;
-- bilingual infographics through **Info_018**;
+- **79 public HTML pages** using the shared navigation and footer system;
+- SGAEIA Research Series publications through **Article 25**;
+- bilingual infographics through **Info_019**;
 - the **Challenges** index and **SlothGuard Challenge 001** in English and Portuguese;
 - English as the canonical and `x-default` edition for bilingual content;
 - reciprocal `hreflang` navigation between English and Portuguese editions;
 - a shared GA4 loader with privacy-preserving default storage settings;
-- a compact fixed-header layout for mobile viewports, propagated through the shared stylesheet and cache-busted across all 75 HTML pages;
+- a compact fixed-header layout for mobile viewports, propagated through the shared stylesheet and cache-busted across the public HTML pages;
 - coordinated discovery through `sitemap.xml`, `robots.txt`, and `llms.txt`;
 - the Academia.edu profile in every HTML footer, after Medium and before DEV Community.
 
@@ -97,9 +97,16 @@ This section summarizes the detailed records under [`docs/logs/`](docs/logs/). T
 
 - **30 October — Info_018.** Added *LLM Routers* / *Roteadores de LLMs* with 41 slides per language, original PDFs, the supplied LinkedIn text, shared accessible carousels and editorial styling, English as the default index destination, reciprocal language metadata, GA4 and coordinated discovery. The public HTML inventory now contains 75 pages. Changes were prepared locally; stage, commit and push commands were provided for the owner.
 
+### November 2026
+
+- **1 November — Info_019.** Added the bilingual single-turn and multi-turn LLM infographic, as recorded in the existing detailed log.
+- **2 November — Article 25.** Added the complete English-default and Portuguese editions of *Single-Turn and Multi-Turn Interactions in Frontier Generative AI Models (LLMs)*, with localized covers, six equations, seven figures including the timeline, seventeen table images, 56 references and the original 30-page PDFs in each language. Added matching publication and writing cards on the homepage and a publication-index card with all supplied distribution links. Preserved shared analytics, security, accessibility and editorial styling; updated sitemap, robots, llms, continuity log and both READMEs. The public inventory now contains 79 HTML pages and 79 unique sitemap URLs. Stage, commit and push to the homepage remote are explicitly authorized for this update; execution evidence is recorded in the [Article 25 log](docs/logs/2026-11-02-ARTICLE25-HOMEPAGE-PUBLICATION.md).
+
 ## Detailed log index
 
 ### Foundation, publications, and continuity
+
+- [Article 25 publication](docs/logs/2026-11-02-ARTICLE25-HOMEPAGE-PUBLICATION.md)
 
 - [Version record and complete changelog — 22 September 2026](docs/logs/2026-09-22-1922-HOMEPAGE-VERSION-AND-CHANGELOG.md)
 - [Article 15 inclusion](docs/logs/2026-09-28-1800-HOMEPAGE-ARTICLE-15-INCLUSION.md)
@@ -121,6 +128,8 @@ This section summarizes the detailed records under [`docs/logs/`](docs/logs/). T
 - [Article 23 publication](docs/logs/2026-10-28-ARTICLE23-HOMEPAGE-PUBLICATION.md)
 
 ### Infographics
+
+- [Info_019 — Single-turn and multi-turn LLMs](docs/logs/2026-11-01-INFO-019-SINGLE-TURN-MULTI-TURN-LLMS.md)
 
 - [Operational log for new infographic inclusion](docs/logs/2026-10-12-HOMEPAGE-INCLUSAO-NOVOS-INFOGRAFICOS.md)
 - [Homepage header standardization](docs/logs/2026-10-12-HOMEPAGE-PADRONIZACAO-HEADERS.md)

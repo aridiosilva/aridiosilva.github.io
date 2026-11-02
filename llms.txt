@@ -21,6 +21,17 @@ The primary research themes are Agentic AI, multi-agent systems, AI security, Ze
 - [SlothGuard — full demo](https://youtu.be/9JlqE3jBITk): Full demonstration video with English captions.
 ## Publication index
 
+- [Single-Turn and Multi-Turn Interactions in Frontier Generative AI Models (LLMs) — Article 25, English](https://aridiosilva.com/publications/artigo25/): A critical narrative review of conversational state, token cost, reliability, security, governed routing, and trajectory-level evidence in single-turn and multi-turn LLM interactions. Complete edition, published 1 November 2026; version 1.0; CC BY 4.0; DOI 10.5281/zenodo.23867630.
+- [Article 25 — EN PDF](https://aridiosilva.com/assets/article25/article25-en.pdf): Original archived 30-page PDF.
+- [Interações de Turno Único e de Múltiplos Turnos em Modelos de AI Generativa de Fronteira (LLMs) — Article 25, Português](https://aridiosilva.com/publications/artigo25/pt/): Uma revisão narrativa crítica de estado conversacional, custo de tokens, confiabilidade, segurança, roteamento governado e evidências de trajetória em interações de turno único e múltiplos turnos com LLMs. Complete edition, published 1 November 2026; version 1.0; CC BY 4.0; DOI 10.5281/zenodo.23867630.
+- [Article 25 — PT PDF](https://aridiosilva.com/assets/article25/article25-pt.pdf): Original archived 30-page PDF.
+- [Article 25 — Zenodo](https://zenodo.org/records/23867630): Publication distribution record.
+- [Article 25 — DEV.to](https://dev.to/aridiosilva/single-turn-and-multi-turn-interactions-in-frontier-generative-ai-models-state-cost-reliability-1e8k): Publication distribution record.
+- [Article 25 — Academia.edu](https://www.academia.edu/180041841/Single_Turn_and_Multi_Turn_Interactions_in_Frontier_Generative_AI_Models_LLMs_): Publication distribution record.
+- [Article 25 — Medium.com](https://medium.com/@aridiosilva/single-turn-and-multi-turn-interactions-in-frontier-generative-ai-models-f8b9a4e75a39): Publication distribution record.
+- [Article 25 — DOI](https://doi.org/10.5281/zenodo.23867630): Persistent identifier.
+- [Article 25 — supplied Zenodo upload reference](https://zenodo.org/uploads/23867630): Additional upload reference; use the public record for persistent access.
+
 - [LLM Routers for AI Systems: Architecture, Governance, Multi-Agent Systems, Swarms, and Security — Article 24, English](https://aridiosilva.com/publications/artigo24/): Complete English edition with cover, 11 figures, 11 accessible comparison tables, six equations, glossary and 27 references; published 29 October 2026; DOI 10.5281/zenodo.23763978.
 - [Roteadores de LLMs para Sistemas de AI: Arquitetura, Governança, Multiagentes, Enxames e Segurança — Artigo 24, Português](https://aridiosilva.com/publications/artigo24/pt/): Edição integral em português com capa, 11 figuras, 11 tabelas comparativas acessíveis, seis equações, glossário e 27 referências; publicada em 29 de outubro de 2026; DOI 10.5281/zenodo.23763978.
 - [Article 24 — English PDF](https://aridiosilva.com/assets/article24/article24-en.pdf): English version-of-record PDF.
