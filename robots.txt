@@ -1,7 +1,7 @@
 # © 2026 Aridio Silva
 # AI-readable publication index: https://aridiosilva.com/llms.txt
 # The URL above is an informational comment, not a robots directive.
-# Last updated: 2026-11-02 (Article 25: English and Portuguese full-reading pages)
+# Last updated: 2026-11-03 (Info_020: AI THREATS NOV-2026, English and Portuguese)
 User-agent: *
 Allow: /
 

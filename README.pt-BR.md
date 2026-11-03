@@ -17,11 +17,11 @@ O site reúne:
 
 ## Estado atual registrado
 
-A atualização consolidada mais recente é de **2 de novembro de 2026**. O repositório registra:
+A atualização consolidada mais recente é de **3 de novembro de 2026**. O repositório registra:
 
-- **79 páginas HTML públicas** usando o sistema compartilhado de navegação e rodapé;
+- **81 páginas HTML públicas** usando o sistema compartilhado de navegação e rodapé;
 - publicações da SGAEIA Research Series até o **Artigo 25**;
-- infográficos bilíngues até o **Info_019**;
+- infográficos bilíngues até o **Info_020**;
 - o índice **Challenges** e o **SlothGuard Challenge 001** em inglês e português;
 - inglês como edição canônica e `x-default` dos conteúdos bilíngues;
 - `hreflang` recíproco entre as edições em inglês e português;
@@ -96,6 +96,7 @@ Esta seção resume os registros detalhados existentes em [`docs/logs/`](docs/lo
 
 ### Novembro de 2026
 
+- **3 de novembro — Info_020.** Incluído *AI THREATS NOV-2026* em inglês (padrão) e português: 20 slides por idioma, PDFs originais sem alteração, textos fornecidos do LinkedIn e miniaturas das capas localizadas. Adicionados o card mais recente no índice, GA4 compartilhado, metadados linguísticos recíprocos, dados estruturados e registros de descoberta. O inventário público contém 81 páginas HTML. Preparado localmente; stage, commit e push ficam a cargo do proprietário. Veja o [log do Info_020](docs/logs/2026-11-03-INFO-020-AI-THREATS-NOV-2026.md).
 - **1º de novembro — Info_019.** Incluído o infográfico bilíngue sobre interações de turno único e múltiplos turnos com LLMs, conforme o log detalhado existente.
 - **2 de novembro — Artigo 25.** Incluídas as edições integrais EN — padrão — e PT de *Single-Turn and Multi-Turn Interactions in Frontier Generative AI Models (LLMs)*, com capas localizadas, seis equações, sete figuras incluindo a cronologia, dezessete tabelas em imagem, 56 referências e os PDFs originais de 30 páginas em cada idioma. Adicionados cards de publicações e textos na homepage e um card no índice de publicações, com todos os canais fornecidos. Preservados Analytics, segurança, acessibilidade e estilo editorial compartilhados; atualizados sitemap, robots, llms, log de continuidade e ambos os READMEs. O inventário público passa a conter 79 HTMLs e 79 URLs únicas no sitemap. Stage, commit e push em `origin/main` concluídos no commit de implementação `c3d12f7`; a execução está registrada no [log do Artigo 25](docs/logs/2026-11-02-ARTICLE25-HOMEPAGE-PUBLICATION.md).
 
@@ -126,6 +127,7 @@ Esta seção resume os registros detalhados existentes em [`docs/logs/`](docs/lo
 
 ### Infográficos
 
+- [Info_020 — AI THREATS NOV-2026](docs/logs/2026-11-03-INFO-020-AI-THREATS-NOV-2026.md)
 - [Info_019 — Turno único e múltiplos turnos com LLMs](docs/logs/2026-11-01-INFO-019-SINGLE-TURN-MULTI-TURN-LLMS.md)
 
 - [Log operacional de inclusão de novos infográficos](docs/logs/2026-10-12-HOMEPAGE-INCLUSAO-NOVOS-INFOGRAFICOS.md)
