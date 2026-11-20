@@ -1,7 +1,7 @@
 # © 2026 Aridio Silva
 # AI-readable publication index: https://aridiosilva.com/llms.txt
 # The URL above is an informational comment, not a robots directive.
-# Last updated: 2026-11-20 (Homepage responsive header and Info_021 English and Portuguese)
+# Last updated: 2026-11-20 (Series continuity: 25 Medium links across all 34 English and Portuguese article pages)
 User-agent: *
 Allow: /
 
