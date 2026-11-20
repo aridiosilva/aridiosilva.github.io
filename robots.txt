@@ -1,7 +1,7 @@
 # © 2026 Aridio Silva
 # AI-readable publication index: https://aridiosilva.com/llms.txt
 # The URL above is an informational comment, not a robots directive.
-# Last updated: 2026-11-20 (Gemma 4 Challenge 002: English and Portuguese Paper Track pages)
+# Last updated: 2026-11-20 (Gemma 4 2026: complete PDFs and dated bilingual public-leaderboard progress)
 User-agent: *
 Allow: /
 

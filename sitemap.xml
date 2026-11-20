@@ -772,6 +772,7 @@
     <xhtml:link rel="alternate" hreflang="pt-BR" href="https://aridiosilva.com/challenges/challenge002/pt/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://aridiosilva.com/challenges/challenge002/"/>
     <image:image><image:loc>https://aridiosilva.com/challenges/challenge002/assets/paper-cover-en.png</image:loc><image:title>Budget-Bounded Software Repair with AI Agents</image:title><image:caption>© 2026 Aridio Silva</image:caption></image:image>
+    <image:image><image:loc>https://aridiosilva.com/challenges/challenge002/assets/leaderboard-progress-en.png</image:loc><image:title>Gemma 4 public leaderboard progress - 20 November 2026</image:title><image:caption>© 2026 Aridio Silva</image:caption></image:image>
   </url>
   <url>
     <loc>https://aridiosilva.com/challenges/challenge002/pt/</loc>
@@ -782,5 +783,6 @@
     <xhtml:link rel="alternate" hreflang="pt-BR" href="https://aridiosilva.com/challenges/challenge002/pt/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://aridiosilva.com/challenges/challenge002/"/>
     <image:image><image:loc>https://aridiosilva.com/challenges/challenge002/assets/paper-cover-pt.png</image:loc><image:title>Reparo de software com agentes de IA sob orçamento limitado</image:title><image:caption>© 2026 Aridio Silva</image:caption></image:image>
+    <image:image><image:loc>https://aridiosilva.com/challenges/challenge002/assets/leaderboard-progress-pt.png</image:loc><image:title>Gemma 4 public leaderboard progress - 20 November 2026</image:title><image:caption>© 2026 Aridio Silva</image:caption></image:image>
   </url>
 </urlset>

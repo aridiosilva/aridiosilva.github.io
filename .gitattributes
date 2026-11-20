@@ -1,2 +1,6 @@
 # Preserve the original Article 25 publication assets byte for byte.
 /assets/article25/** binary
+
+# Preserve the Gemma 4 publication assets byte for byte.
+/challenges/challenge002/assets/*.pdf binary
+/challenges/challenge002/assets/*.png binary

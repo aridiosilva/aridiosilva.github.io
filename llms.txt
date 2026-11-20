@@ -11,13 +11,17 @@ The primary research themes are Agentic AI, multi-agent systems, AI security, Ze
 
 ## Challenge index
 
+- [Gemma 4 public leaderboard progress, English](https://aridiosilva.com/challenges/challenge002/#leaderboard-progress): Dated update for 20 November 2026, showing scores 0.15 and 0.17, ranks 3,485 and 3,073, team denominators and official participation totals. This update follows the paper submission.
+- [Gemma 4 — evolução no placar público, Português](https://aridiosilva.com/challenges/challenge002/pt/#leaderboard-progress): Atualização posterior à submissão, com os dois melhores scores registrados, posições, totais de equipes e participantes e gráfico em português.
+- [Gemma 4 — aggregated chart data](https://aridiosilva.com/challenges/challenge002/assets/leaderboard-snapshot-20261120.json): Aggregate public score distributions; the private source workbook is not redistributed.
+
 - [Gemma 4 — Challenge 002, English paper](https://aridiosilva.com/challenges/challenge002/): Complete English edition of Budget-Bounded Software Repair with AI Agents, submitted to the Kaggle Paper Track. Final published REV4 text, original cover, three figures, 21 references, PDF with Kaggle DOI, tree-bound acceptance and benchmark-validity analysis. The reported 37/86 development-task resolutions are not a leaderboard score. CC BY 4.0; DOI 10.34740/KAGGLE/W/125650.
 - [Gemma 4 — Desafio 002, paper em português](https://aridiosilva.com/challenges/challenge002/pt/): Edição integral em português, com capa e três figuras localizadas, 21 referências e PDF da revisão final REV4 com DOI Kaggle. Tradução correspondente ao texto publicado no Kaggle.
 - [Gemma 4 — published Paper Track submission](https://www.kaggle.com/competitions/gemma-4-developer-agent-paper/writeups/budget-bounded-software-repair-with-ai-agents): Official Kaggle publication by Aridio Silva.
 - [Gemma 4 — competition](https://www.kaggle.com/competitions/gemma-4-developer-agent): Google DeepMind autonomous coding-agent competition.
 - [Gemma 4 — leaderboard](https://www.kaggle.com/competitions/gemma-4-developer-agent/leaderboard): Live official standings; consult Kaggle for current scores.
-- [Gemma 4 paper — English PDF](https://aridiosilva.com/challenges/challenge002/assets/paper-rev4-en.pdf): REV4 English PDF with the clickable Kaggle DOI added below the author block; scientific content and seven-page pagination preserved.
-- [Gemma 4 paper — PDF em português](https://aridiosilva.com/challenges/challenge002/assets/paper-rev4-pt.pdf): PDF REV4 em português com DOI Kaggle clicável acrescentado abaixo da autoria; conteúdo científico e paginação de sete páginas preservados.
+- [Gemma 4 paper — English PDF](https://aridiosilva.com/challenges/challenge002/assets/paper-rev4-en.pdf): Nine-page web PDF: original seven pages preserved, followed by Project Links, License and Citation, then a dated public-leaderboard chart. Includes the clickable Kaggle DOI.
+- [Gemma 4 paper — PDF em português](https://aridiosilva.com/challenges/challenge002/assets/paper-rev4-pt.pdf): PDF web de nove páginas: sete páginas originais preservadas, seguidas de Links do projeto, Licença e Citação e de gráfico datado do leaderboard público. Inclui DOI Kaggle clicável.
 - [Gemma 4 paper — English cover](https://aridiosilva.com/challenges/challenge002/assets/paper-cover-en.png): Original paper cover supplied by the author, preserved byte for byte.
 - [Gemma 4 paper — capa em português](https://aridiosilva.com/challenges/challenge002/assets/paper-cover-pt.png): Capa com título localizado em português, autoria e ORCID preservados.
 
