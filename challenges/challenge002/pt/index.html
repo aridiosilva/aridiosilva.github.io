@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>Reparo de software com agentes de IA sob orçamento limitado — Aridio Silva</title>
+  <meta name="description" content="Paper submetido à trilha de artigos do Gemma 4: reparo sob orçamento limitado, aceitação vinculada à árvore, validade do benchmark e 37 resoluções em 86 tarefas de desenvolvimento executadas.">
+  <meta name="author" content="Aridio Silva">
+  <meta name="copyright" content="© 2026 Aridio Silva">
+  <meta name="citation_title" content="Reparo de software com agentes de IA sob orçamento limitado">
+  <meta name="citation_author" content="Silva, Aridio">
+  <meta name="citation_publication_date" content="2026/11/11">
+  <meta name="citation_language" content="pt-BR">
+  <meta name="citation_doi" content="10.34740/KAGGLE/W/125650">
+  <meta name="citation_pdf_url" content="https://aridiosilva.com/challenges/challenge002/assets/paper-rev4-pt.pdf">
+  <link rel="canonical" href="https://aridiosilva.com/challenges/challenge002/pt/">
+  <link rel="alternate" hreflang="en" href="https://aridiosilva.com/challenges/challenge002/">
+  <link rel="alternate" hreflang="pt-BR" href="https://aridiosilva.com/challenges/challenge002/pt/">
+  <link rel="alternate" hreflang="x-default" href="https://aridiosilva.com/challenges/challenge002/">
+  <link rel="license" href="https://creativecommons.org/licenses/by/4.0/">
+  <link rel="sitemap" type="application/xml" href="/sitemap.xml">
+  <link rel="describedby" href="/llms.txt" type="text/markdown">
+  <meta http-equiv="Content-Security-Policy" content="default-src &#x27;self&#x27;; script-src &#x27;self&#x27; https://www.googletagmanager.com; style-src &#x27;self&#x27; https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src &#x27;self&#x27; data: https://*.google-analytics.com; connect-src https://*.google-analytics.com https://www.googletagmanager.com; media-src &#x27;self&#x27;; object-src &#x27;none&#x27;; base-uri &#x27;none&#x27;; form-action &#x27;none&#x27;; upgrade-insecure-requests">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Reparo de software com agentes de IA sob orçamento limitado">
+  <meta property="og:description" content="Paper submetido à trilha de artigos do Gemma 4: reparo sob orçamento limitado, aceitação vinculada à árvore, validade do benchmark e 37 resoluções em 86 tarefas de desenvolvimento executadas.">
+  <meta property="og:url" content="https://aridiosilva.com/challenges/challenge002/pt/">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:image" content="https://aridiosilva.com/challenges/challenge002/assets/paper-cover-pt.png">
+  <meta property="og:image:alt" content="Capa — Reparo de software com agentes de IA sob orçamento limitado">
+  <meta property="og:image:width" content="1774">
+  <meta property="og:image:height" content="887">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;family=Source+Serif+4:opsz,wght@8..60,500;6..60,700&amp;display=swap">
+<link rel="stylesheet" href="/assets/publications.css?v=20261012-14">
+<link rel="stylesheet" href="/assets/article-accessibility.css">
+<link rel="stylesheet" href="/assets/fixed-site-header.css?v=20261029-2">
+<link rel="stylesheet" href="/assets/editorial-hero.css?v=20261017-1">
+<link rel="stylesheet" href="/assets/homepage-footer-preview.css?v=20261017-5">
+<link rel="stylesheet" href="/assets/challenges.css?v=20261101-1">
+<link rel="stylesheet" href="/assets/challenge002.css?v=20261120-2">
+  <script defer src="/assets/article20-accessibility.js?v=20261014"></script>
+  <script defer src="/assets/fixed-site-header.js?v=20261016-1"></script>
+  <!-- GA4 G-MXMJ7Z3LS7: automatic cookieless audience measurement; analytics and advertising storage remain disabled. -->
+  <script defer src="/assets/analytics-consent.js?v=20261011"></script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"ScholarlyArticle","headline":"Reparo de software com agentes de IA sob orçamento limitado","alternativeHeadline":"Terminação, aceitação vinculada à árvore de código e validade do benchmark no desafio Gemma 4","author":{"@type":"Person","name":"Aridio Silva","identifier":"https://orcid.org/0009-0008-2411-6995"},"datePublished":"2026-11-11","dateModified":"2026-11-20","inLanguage":"pt-BR","url":"https://aridiosilva.com/challenges/challenge002/pt/","identifier":"https://doi.org/10.34740/KAGGLE/W/125650","sameAs":["https://www.kaggle.com/competitions/gemma-4-developer-agent-paper/writeups/budget-bounded-software-repair-with-ai-agents","https://doi.org/10.34740/KAGGLE/W/125650"],"license":"https://creativecommons.org/licenses/by/4.0/","image":"https://aridiosilva.com/challenges/challenge002/assets/paper-cover-pt.png","description":"Paper submetido à trilha de artigos do Gemma 4: reparo sob orçamento limitado, aceitação vinculada à árvore, validade do benchmark e 37 resoluções em 86 tarefas de desenvolvimento executadas.","isPartOf":{"@type":"CollectionPage","name":"Challenges","url":"https://aridiosilva.com/challenges/"},"translationOfWork":{"@type":"ScholarlyArticle","url":"https://aridiosilva.com/challenges/challenge002/","inLanguage":"en"}}</script>
+</head>
+<body class="article-page challenge-page gemma4-paper">
+  <a class="skip" href="#main">Ir para o conteúdo principal</a>
+  <header class="site-header"><div class="shell header-inner">
+    <a class="identity" href="/#top" aria-label="Aridio Silva home"><strong>Aridio Silva</strong><span>Independent Researcher · AI Systems Architecture</span></a>
+    <nav aria-label="Navegação principal"><a href="/">Início</a><a href="/sgaeia.html">SGAEIA</a><a href="/publications.html">Publicações</a><a href="/infographics/">Infográficos</a><a href="/challenges/" aria-current="page">Challenges</a></nav>
+    <div class="reading-tools" role="group" aria-label="Controles de leitura"><button type="button" id="articleFontDecrease" aria-label="Diminuir tamanho do texto">A−</button><button type="button" id="articleFontIncrease" aria-label="Aumentar tamanho do texto">A+</button><button type="button" id="articleEasyRead" aria-pressed="false">Leitura fácil</button><button type="button" id="articleListen" aria-pressed="false">Ouvir</button></div>
+  </div></header>
+
+  <main id="main">
+    <section class="hero"><div class="shell article"><p class="eyebrow">Challenge 002 · Kaggle · Gemma 4 Paper Track</p><h1>Reparo de software com agentes de IA sob orçamento limitado</h1><p class="subtitle">Terminação, aceitação vinculada à árvore de código e validade do benchmark no desafio Gemma 4</p><p class="meta">Paper Track · Submetido em 11 de novembro de 2026 · REV4 · <a href="https://doi.org/10.34740/KAGGLE/W/125650" target="_blank" rel="noopener noreferrer">DOI 10.34740/KAGGLE/W/125650</a></p><nav class="language-nav" aria-label="Idiomas do paper"><a href="/challenges/challenge002/" lang="en">English</a><span aria-hidden="true">·</span><a href="/challenges/challenge002/pt/" lang="pt-BR" aria-current="page">Português</a></nav></div></section>
+    <section class="content"><article class="shell article article-body">
+      <figure class="challenge-cover paper-illustration"><a href="/challenges/challenge002/assets/paper-cover-pt.png" target="_blank" rel="noopener noreferrer"><img src="/challenges/challenge002/assets/paper-cover-pt.png" alt="Capa — Reparo de software com agentes de IA sob orçamento limitado" width="1774" height="887" loading="eager" decoding="async" fetchpriority="high"></a><figcaption>Capa — Reparo de software com agentes de IA sob orçamento limitado<span class="figure-credit">© 2026 Aridio Silva</span></figcaption></figure>
+      <aside class="paper-source"><p>Edição em português do texto final publicado no Kaggle. A edição inglesa é a submissão principal da Paper Track. O paper relata os resultados do conjunto público de desenvolvimento; eles não são uma pontuação da classificação da competição.</p><nav class="paper-links" aria-label="Competição, paper e classificação"><a class="button" href="https://www.kaggle.com/competitions/gemma-4-developer-agent" target="_blank" rel="noopener noreferrer">Competição</a><a class="button" href="https://www.kaggle.com/competitions/gemma-4-developer-agent-paper/writeups/budget-bounded-software-repair-with-ai-agents" target="_blank" rel="noopener noreferrer">Paper publicado no Kaggle</a><a class="button" href="https://www.kaggle.com/competitions/gemma-4-developer-agent/leaderboard" target="_blank" rel="noopener noreferrer">Classificação — leaderboard</a><a class="button" href="https://www.kaggle.com/competitions/gemma-4-developer-agent-paper" target="_blank" rel="noopener noreferrer">Trilha de artigos — Paper Track</a></nav><div class="paper-links"><a class="button" href="/challenges/challenge002/assets/paper-rev4-en.pdf">English PDF · REV4 · DOI</a><a class="button" href="/challenges/challenge002/assets/paper-rev4-pt.pdf" lang="pt-BR">PDF em português · REV4 · DOI</a></div></aside>
+      <nav class="paper-toc" aria-label="Sumário do paper"><h2>Sumário</h2><ol><li><a href="#paper-section-1">Resumo</a></li><li><a href="#paper-section-2">1 Introdução</a></li><li><a href="#paper-section-3">2 Trabalhos relacionados</a></li><li><a href="#paper-section-4">3 Controlador de reparo</a></li><li><a href="#paper-section-6">4 Terminação e aceitação vinculada à árvore</a></li><li><a href="#paper-section-7">5 Avaliação</a></li><li><a href="#paper-section-13">6 Discussão e conclusão</a></li><li><a href="#paper-section-14">Referências</a></li><li><a href="#paper-section-15">Apêndice A Riscos de plataforma e avaliação</a></li></ol></nav>
+      <div data-paper-content lang="pt-BR">
+<p><strong>Autor:</strong> Aridio Silva, pesquisador independente, Brasil<br><strong>Citação preferencial:</strong> Silva, Aridio (2026) · <strong>ORCID:</strong> <a href="https://orcid.org/0009-0008-2411-6995" target="_blank" rel="noopener noreferrer">0009-0008-2411-6995</a><br><strong>Direitos autorais:</strong> © 2026 Aridio Silva<br></p>
+
+<h2 id="paper-section-1">Resumo</h2>
+
+<p>Propomos um controlador de reparo com orçamento limitado e aceitação vinculada à árvore de código. O controlador abstrato exige evidência de um validador separado para a árvore exata que foi congelada antes da entrega. Isso impede que alegações alucinadas de sucesso nos testes autorizem a entrega. Sob hipóteses explícitas de supervisão, o controlador abstrato termina em até 4M + 1 transições para um orçamento de M tentativas. Uma verificação de estados finitos explorou 556 estados e 953 transições e encontrou um caminho até a aceitação quando o modelo admitiu evidência falsa. Uma auditoria do benchmark público identificou uma tarefa com requisitos de teste obrigatórios incompatíveis e três falsas aceitações em nove casos sintéticos de identidade de teste. No Kaggle, 109 execuções cobriram 86 das 87 tarefas de correção de bugs selecionadas, em sete rodadas. O verificador registrou 37 resoluções (43,0% das tarefas executadas e 42,5% das selecionadas), incluindo 20 de 54 na S54M, o lote executado sob uma configuração comum.</p>
+
+<h2 id="paper-section-2">1 Introdução</h2>
+
+<p>Um agente de reparo examina um repositório e propõe um diff. O controlador gerencia o orçamento de tentativas, supervisiona a validação e vincula a autorização à árvore de código examinada pelo validador. Aplicamos princípios do programa de pesquisa SGAEIA [1] ao reparo de software com Gemma 4 [2].</p>
+
+<p>Apresentamos três contribuições.</p>
+
+<ol>
+<li><strong>Terminação e aceitação vinculada à árvore.</strong> Provamos um limite de transições e um invariante que vincula a aceitação à árvore exata validada. Uma verificação de estados finitos produz um contraexemplo quando o controlador admite evidência falsa.</li>
+<li><strong>Validade do benchmark.</strong> Documentamos uma tarefa cujos testes obrigatórios não podem ser satisfeitos em conjunto sob o perfil público fixo e mostramos como um comparador de identidades pode aceitar o resultado de outro teste.</li>
+<li><strong>Avaliação em tarefas públicas de desenvolvimento.</strong> Relatamos 37 resoluções em 86 tarefas de correção de bugs executadas em três repositórios. Apresentamos separadamente o resultado das 54 tarefas executadas sob uma configuração comum e analisamos os resultados do verificador.</li>
+</ol>
+
+<h2 id="paper-section-3">2 Trabalhos relacionados</h2>
+
+<p>Sistemas de reparo por geração e validação, como o GenProg, usam testes para avaliar patches candidatos [15]. Qi et al. distinguem o sucesso na suíte de testes da correção do patch em sentido mais amplo [4]. O SWE-agent fornece uma interface para interagir com repositórios e ferramentas [16]. O Agentless divide o processo em localização, reparo e validação [17], e o AutoCodeRover usa a estrutura do programa para orientar a busca no código [18]. Nosso controlador formaliza a decisão de entrega em um fluxo de reparo com orçamento limitado ao vincular a evidência do validador à árvore entregue.</p>
+
+<p>Algoritmos certificadores acompanham seus resultados de evidências verificáveis [5], o SWE-Proof estuda contratos de reparo verificados por máquina [6] e o in-toto vincula artefatos a etapas da cadeia de suprimentos de software [20]. A propriedade aqui estudada determina quando um controlador pode entregar um reparo. O SWE-bench avalia o reparo em problemas reais de repositórios [3], e o SWE-bench Verified seleciona tarefas segundo a qualidade da avaliação [19]. Para o perfil público de desenvolvimento do Gemma 4, examinamos se todos os testes obrigatórios podem passar em conjunto e se o verificador reconhece as identidades dos testes exigidos.</p>
+
+<h2 id="paper-section-4">3 Controlador de reparo</h2>
+
+<p>O perfil de avaliação fixa a tarefa, o commit de base, os caminhos permitidos, as dependências e o critério de aceitação. No projeto do controlador, cada tentativa é debitada do orçamento antes de acionar o gerador. O supervisor aplica o diff em uma cópia isolada e congela a árvore resultante. Um validador separado registra seu veredito e as identidades da tarefa, do perfil, da tentativa e da árvore. No caminho baseado em testes, o critério de aceitação exige que o comando de teste termine com sucesso e que cada nó parametrizado obrigatório passe. Falhas em outros pontos da suíte do verificador também podem impedir a aceitação. No caminho formal, o validador verifica a evidência de um contrato explícito.</p>
+
+<p>Para impedir que uma alegação alucinada de sucesso nos testes autorize a entrega, o supervisor obtém a evidência de aceitação do validador separado. Ele verifica se a evidência identifica a tentativa ativa e a árvore congelada e confirma a entrega dessa mesma árvore dentro do prazo autorizado. A Seção 4 prova essa propriedade para o controlador abstrato. A Seção 5 documenta a aplicação dos patches, os vereditos do verificador e as evidências de teste registradas nas execuções do Kaggle.</p>
+
+<p>Uma tentativa pode terminar sem patch, após uma falha de aplicação, com evidência rejeitada ou indisponível, ou sem confirmação de entrega no prazo. Nesses casos, o supervisor descarta o candidato, revoga qualquer autorização ativa e verifica novamente o orçamento. Se ainda houver uma tentativa e reserva suficiente, o controlador debita outra tentativa e retorna à geração. Caso contrário, registra ABSTENÇÃO (ABSTENTION).</p>
+
+<figure id="figure-1"><a href="/challenges/challenge002/assets/figure-1-pt.png" target="_blank" rel="noopener noreferrer" aria-label="Abrir figura em tamanho original 1"><img src="/challenges/challenge002/assets/figure-1-pt.png" alt="Fluxo do controlador de reparo" width="4800" height="2381" loading="lazy" decoding="async"></a><figcaption><strong>Figura 1.</strong> Fluxo do controlador abstrato de reparo. Uma tentativa encerrada sem aceitação retorna à verificação de tentativas e reserva. O estado ACEITO (ACCEPTED) exige a entrega da mesma árvore dentro do prazo. A S54M usou um orçamento operacional de uma sessão por tarefa (Seção 5).</figcaption></figure>
+<h3 id="paper-section-5">Correspondência com o executor da S54M</h3>
+
+<p>Na S54M, o executor avaliou patches sobre snapshots com hashes verificados, registrou os hashes dos patches e verificou separadamente as identidades dos nós JUnit obrigatórios. O resultado medido foi o veredito do verificador. A garantia de entrega da mesma árvore, provada na Seção 4, aplica-se ao controlador abstrato.</p>
+
+<h2 id="paper-section-6">4 Terminação e aceitação vinculada à árvore</h2>
+
+<p>O estado de controle é (r, b, q), em que r é o número de tentativas restantes, b é a reserva abstrata e q é a fase. As fases não terminais são pronto (ready), propor (propose), verificar (verify) e publicar (publish). O estado inicial é pronto, com r = M. Na instância verificada, o início exige b ≥ 4 para cobrir os quatro débitos de uma tentativa completa. Uma tentativa consome uma unidade de r antes de acionar o gerador. O supervisor retoma o controle quando cada operação termina ou é interrompida e executa um próximo passo permitido em tempo finito.</p>
+
+<p>A função de ranking mede o orçamento de transições restante. Cada tentativa ainda não iniciada contribui com quatro transições. O peso da fase indica quantas transições podem restar na tentativa em andamento. O início consome uma transição e deixa até três outras, correspondentes aos resultados da geração do patch, da validação e da entrega. Uma falha antecipada devolve o controle à fase pronto mais cedo.</p>
+
+<p>Definimos R(r, q) = 4r + w(q), com w igual a 0 em pronto, 3 em propor, 2 em verificar e 1 em publicar. Iniciar uma tentativa consome uma unidade de r e aumenta o peso da fase de 0 para 3, de modo que a variação de R é 4(−1) + 3 = −1. Avançar para a próxima fase não terminal reduz w em uma unidade. Retornar à fase pronto após uma falha zera w sem restaurar r. Assim, cada transição entre estados não terminais reduz R em pelo menos uma unidade.</p>
+
+<p>R começa em 4M e é não negativo. Portanto, pode haver no máximo 4M transições entre estados não terminais e uma transição final. Com reserva inicial de pelo menos 4M, o caminho de pior caso usa todas as M tentativas. Cada tentativa leva quatro transições, falha na entrega e retorna à fase pronto. A transição final registra ABSTENÇÃO, atingindo o limite de 4M + 1. Um limite de tempo decorrido também exige limites para a duração das operações, incluindo supervisão, cancelamento e limpeza.</p>
+
+<figure id="figure-2"><a href="/challenges/challenge002/assets/figure-2-pt.png" target="_blank" rel="noopener noreferrer" aria-label="Abrir figura em tamanho original 2"><img src="/challenges/challenge002/assets/figure-2-pt.png" alt="Máquina de estados do controlador abstrato de reparo" width="5280" height="4080" loading="lazy" decoding="async"></a><figcaption><strong>Figura 2.</strong> Modelo discreto do controlador. A fase verificar abrange a aplicação e a validação. E denota evidência elegível vinculada à árvore candidata.</figcaption></figure>
+<figure id="figure-3"><a href="/challenges/challenge002/assets/figure-3-pt.png" target="_blank" rel="noopener noreferrer" aria-label="Abrir figura em tamanho original 3"><img src="/challenges/challenge002/assets/figure-3-pt.png" alt="Decrescimento da função de ranking durante uma tentativa" width="4800" height="1695" loading="lazy" decoding="async"></a><figcaption><strong>Figura 3.</strong> A função de ranking decresce quando o controlador avança pelas fases e quando retorna após uma falha. Aqui, n é o valor de r no início da tentativa.</figcaption></figure>
+<p>O invariante de aceitação vinculada à árvore estabelece que toda transição para ACEITO confirma a entrega no prazo de uma árvore congelada, respaldada por evidência elegível emitida pelo validador autorizado para a tentativa ativa. A transição de verificar para publicar verifica essa evidência e fixa a identidade da árvore. A transição de publicar para ACEITO confirma a entrega da mesma árvore no prazo. Uma falha revoga a autorização antes que outra tentativa possa começar. Essas regras preservam o invariante por indução sobre as transições.</p>
+
+<p>No caminho baseado em contrato, a garantia depende da solidez do verificador. No caminho baseado em testes, a aceitação atesta o resultado da suíte sob o perfil registrado. Se a evidência exigida for inalcançável nesse perfil, ABSTENÇÃO é o único estado terminal alcançável.</p>
+
+<h2 id="paper-section-7">5 Avaliação</h2>
+
+<h3 id="paper-section-8">Verificação do modelo e piloto</h3>
+
+<p>Uma busca em largura em Python 3.12 partiu de 143 combinações iniciais de r entre 0 e 10 e b entre 0 e 12. Ela explorou 556 estados monitorados e 953 transições, verificando o orçamento, os estados sucessores, o decrescimento da função de ranking e a condição de evidência em ACEITO. Quando permitimos que um evento de evidência falsa levasse a publicar, a busca encontrou um caminho até ACEITO sem evidência elegível. O <a href="https://github.com/aridiosilva/Gemma4_Google_Deepmind_S1/blob/433e7508f713d947b417d8522bc84b96eae1da45/controller-check.py" target="_blank" rel="noopener noreferrer">verificador do modelo</a> cobre essa instância finita [13]. A prova por função de ranking cobre qualquer M finito sob as hipóteses de supervisão estabelecidas.</p>
+
+<p>A política P instrui o agente a mapear requisitos para obrigações de validação, preferir um subconjunto estrito de obrigações entre planos comparáveis nos demais aspectos e invalidar as evidências afetadas por edições. No piloto sintético de paginação, o fluxo gerou e aplicou um patch que passou nos dois testes [8]. A avaliação no Kaggle usou P em todas as rodadas R1–R6 e na S54M [10].</p>
+
+<h3 id="paper-section-9">Seleção de tarefas e desenho das rodadas</h3>
+
+<p>Classificamos as 129 tarefas públicas [7] segundo o trabalho predominante descrito em cada uma. O catálogo do estudo inclui 87 bugs, 21 funcionalidades, 10 tarefas de refatoração ou manutenção, cinco tarefas mistas, três de documentação, duas de testes ou automação e uma de desempenho. Selecionamos os bugs por formarem o maior grupo, com 67,4% do catálogo. A execução em lotes sequenciais permitiu investigar interrupções e ajustar a infraestrutura de execução dentro da cota disponível. As seis rodadas iniciais, R1–R6, cobriram 33 bugs catalogados, dos quais 32 foram executados. A S54M incluiu os outros 54 IDs de tarefa, sem sobreposição [10].</p>
+
+<p>Nas rodadas R1–R6, reexecutamos 16 tarefas não resolvidas enquanto ajustávamos o executor. As rodadas usaram limites de 24, 30 ou 35 requisições. A configuração comum da S54M usou o checkpoint gemma-4-31b-it-qat-w4a16-ct (revisão 2 do Kaggle), vLLM 0.19.1, temperatura de 0,2 e contexto de 32.768 tokens em quatro GPUs NVIDIA L4. Ela permitia até 30 requisições em uma sessão do agente por tarefa, sem nova tentativa automática [10]. As transições de nova tentativa são exercitadas no modelo discreto do controlador [13].</p>
+
+<p>Na S54M, o tempo do processo de cada tarefa, incluindo a limpeza, teve mediana de 317,5 s e máximo de 869,9 s. A célula inteira executou por 5 h 34 min 42 s, com média de 6 min 12 s por tarefa para as 54 tarefas [10]. Esses tempos de desenvolvimento incluem a validação do patch. A trilha de predição exclui a validação do patch do orçamento de 12 horas do agente [14].</p>
+
+<p>Cada tarefa foi contada uma vez, com o último resultado registrado em R1–R6 ou a única execução na S54M. As 109 execuções incluem 23 reexecuções. O executor usou o verificador do swegemma, pacote de software que executa a avaliação de patches do benchmark, com o perfil público de desenvolvimento. Para as 37 resoluções, os extratos congelados registram um patch aplicado, concordância entre os resultados registrados do verificador e execução bem-sucedida dos testes [10]. Os registros originais das execuções também documentam a confirmação das identidades JUnit obrigatórias por uma checagem separada do executor. Para a análise de falhas, comparamos os IDs obrigatórios do diff de testes com as falhas e os erros registrados pelo pytest, usando a raiz de coleta [10].</p>
+
+<h3 id="paper-section-10">Resoluções e falhas observadas</h3>
+
+<div class="table-wrap" role="region" tabindex="0" aria-label="Resultados de resolução — tabela com rolagem horizontal"><table><thead><tr><th scope="col">Escopo</th><th scope="col">Selecionadas</th><th scope="col">Executadas</th><th scope="col">Resolvidas</th><th scope="col">% das executadas</th></tr></thead><tbody><tr><td><strong>Total por tarefa</strong></td><td><strong>87</strong></td><td><strong>86</strong></td><td><strong>37</strong></td><td><strong>43,0%</strong></td></tr><tr><td>R1–R6, última execução</td><td>33</td><td>32</td><td>17</td><td>53,1%</td></tr><tr><td>S54M, configuração comum</td><td>54</td><td>54</td><td>20</td><td>37,0%</td></tr></tbody></table>
+</div>
+<p>Considerando FastAPI, Rich e Requests, o verificador produziu vereditos utilizáveis para 81 das 86 tarefas executadas. As 37 resoluções representam 43,0% das tarefas executadas e 42,5% das selecionadas, incluindo a tarefa adiada neste último denominador. O intervalo nominal de Wilson de 95% para 37/86, de 33,1% a 53,6%, fornece uma referência descritiva para o conjunto observado. O FastAPI teve 19 resoluções em 36 tarefas executadas, o Rich teve 12 em 39 e o Requests teve 6 em 11 [10].</p>
+
+<p>As 86 tarefas corresponderam a 109 execuções, com 55 registros para 32 tarefas em R1–R6 e 54 registros para 54 tarefas na S54M. Na ordem, R1 a R6 registraram 0/2, 0/1, 1/6, 13/26, 3/15 e 0/5 resoluções por execução. Das 17 resoluções em R1–R6, 14 ocorreram na primeira execução registrada e três em R5, quando as tarefas foram reexecutadas após mudanças no executor. Essas três estão incluídas nas 37 resoluções do estudo. A S54M produziu 20 resoluções sob uma configuração comum. A seleção de tarefas por lote, as mudanças de configuração e a reexecução seletiva de 16 tarefas limitam as comparações de desempenho entre rodadas [10].</p>
+
+<p>Das 49 tarefas não resolvidas, 44 produziram patches que foram aplicados e rejeitados, 14 em R1–R6 e 30 na S54M. Um teste obrigatório falhou em 36 casos, 13 e 23, respectivamente. Em sete casos da S54M, foram identificadas falhas fora dos IDs obrigatórios. Uma rejeição das rodadas iniciais tinha informações insuficientes sobre a identidade dos testes para ser classificada. Das cinco tarefas sem veredito utilizável, uma terminou sem patch em R1–R6. Na S54M, o mecanismo de proteção de memória interrompeu dois testes e o lote prosseguiu. Em outro caso, após a aplicação do patch, um erro de sintaxe impediu a importação e o verificador retornou o código de erro de avaliação −1. No caso restante, a saída truncada deixou o patch vazio [10].</p>
+
+<h3 id="paper-section-11">Validade do benchmark</h3>
+
+<p><strong>Identidade dos testes.</strong> Em nove casos sintéticos de JUnit, o comparador do swegemma 0.2.11 aceitou indevidamente três divergências de módulo, nome de função ou parâmetro. Um comparador estrito rejeitou essas três divergências no mesmo experimento local. O <a href="https://github.com/aridiosilva/Gemma4_Google_Deepmind_S1/blob/433e7508f713d947b417d8522bc84b96eae1da45/evidence/w18-synthetic-receipt.json" target="_blank" rel="noopener noreferrer">registro congelado do JUnit</a> documenta cada identidade exigida e os resultados de ambos os comparadores [12].</p>
+
+<p><strong>Satisfatibilidade do perfil.</strong> A tarefa <code>fastapi_14186</code> permaneceu no inventário como adiada. O perfil público fixo exige <code>test_model_description_escaped_with_formfeed</code>, habilitado apenas com Pydantic v1, e <code>test_model_field_default_required</code>, habilitado apenas com v2. É impossível que ambos passem no mesmo ambiente fixo. Um diagnóstico local com o patch de referência registrou 52 casos e três testes pulados sob Pydantic 2.13.4. O pytest encerrou com código zero, e o verificador rejeitou o resultado porque um teste obrigatório foi pulado. O <a href="https://github.com/aridiosilva/Gemma4_Google_Deepmind_S1/blob/433e7508f713d947b417d8522bc84b96eae1da45/evidence/ref-09.md" target="_blank" rel="noopener noreferrer">diagnóstico e o veredito congelados</a> documentam as condições e os resultados dos testes [7, 9].</p>
+
+<h3 id="paper-section-12">Robustez operacional</h3>
+
+<p>Em uma reprodução local, três arrays malformados excederam o limite de cinco segundos no parser do vLLM 0.19.1. A camada de compatibilidade retornou um erro explícito para cada um, e uma entrada de controle com delimitadores corretos obteve resposta nas duas versões. O <a href="https://github.com/aridiosilva/Gemma4_Google_Deepmind_S1/blob/433e7508f713d947b417d8522bc84b96eae1da45/evidence/parser-forum-receipt.json" target="_blank" rel="noopener noreferrer">registro congelado do parser</a> documenta esses casos [11]. Na S54M, o mecanismo de proteção de memória interrompeu duas árvores de processos de teste e o lote foi concluído, conforme documentado nos <a href="https://github.com/aridiosilva/Gemma4_Google_Deepmind_S1/blob/433e7508f713d947b417d8522bc84b96eae1da45/evidence/kaggle-bugs-2026-11-11/operations.json" target="_blank" rel="noopener noreferrer">registros operacionais congelados</a> [10]. O Apêndice A vincula riscos selecionados de plataforma e avaliação às respectivas evidências congeladas.</p>
+
+<h2 id="paper-section-13">6 Discussão e conclusão</h2>
+
+<p>O controlador e a auditoria do benchmark resultam em duas regras de projeto para o reparo de software com agentes. Primeiro, vincular a decisão de entrega à evidência de um validador autorizado para a árvore exata a ser entregue. Isso impede que uma alegação alucinada de sucesso nos testes autorize a entrega. Segundo, verificar se todos os testes obrigatórios podem passar sob o perfil configurado e se o verificador reconhece suas identidades completas. A tarefa adiada e o experimento com JUnit mostram como cada checagem afeta o que um veredito do benchmark permite concluir.</p>
+
+<p>As execuções com Gemma 4 registraram 37 resoluções em 86 tarefas de correção de bugs executadas, incluindo 20 no lote S54M de 54 tarefas sob uma configuração comum. Os resultados de terminação e aceitação do controlador aplicam-se a fluxos de reparo capazes de impor o mesmo orçamento de tentativas, a mesma supervisão e as mesmas verificações de evidência.</p>
+
+<p>Uma execução de referência (baseline) nas mesmas 54 tarefas da S54M, com o mesmo modelo, orçamento e verificador, permitiria uma estimativa pareada do efeito da política P sobre a resolução de tarefas. Estamos ampliando a avaliação para os demais tipos de tarefa no conjunto público de desenvolvimento de 129 tarefas. À medida que essas execuções forem concluídas e verificadas, relataremos os resultados por tipo de tarefa em uma revisão posterior.</p>
+
+<p><strong>Rastreabilidade.</strong> O <a href="https://github.com/aridiosilva/Gemma4_Google_Deepmind_S1/blob/433e7508f713d947b417d8522bc84b96eae1da45/evidence/kaggle-bugs-2026-11-11/README.md" target="_blank" rel="noopener noreferrer">suplemento congelado</a> contém o inventário, 109 registros de execução, dois eventos de proteção de memória e os hashes dos sete ZIPs de origem. O <a href="https://github.com/aridiosilva/Gemma4_Google_Deepmind_S1/blob/433e7508f713d947b417d8522bc84b96eae1da45/evidence/kaggle-bugs-2026-11-11/verify.py" target="_blank" rel="noopener noreferrer">script de verificação</a> verifica os extratos e recalcula os totais de tarefas, as taxas de resolução e as contagens de falhas em testes obrigatórios. Os hashes dos arquivos compactados e de seus membros vinculam os extratos aos registros originais preservados [10].</p>
+
+<h2 id="paper-section-14">Referências</h2>
+
+<p>[1] Silva, Aridio. SGAEIA, programa de pesquisa e arquitetura de referência aberta. <a href="https://aridiosilva.com/sgaeia.html" target="_blank" rel="noopener noreferrer">Site do projeto</a>.</p>
+
+<p>[2] Gemma Team (2026). <a href="https://arxiv.org/abs/2607.02770v2" target="_blank" rel="noopener noreferrer">Gemma 4 Technical Report</a>.</p>
+
+<p>[3] Jimenez, C. E. et al. (2024). <a href="https://arxiv.org/abs/2310.06770" target="_blank" rel="noopener noreferrer">SWE-bench: Can Language Models Resolve Real-World GitHub Issues?</a>. ICLR.</p>
+
+<p>[4] Qi, Z. et al. (2015). <a href="https://dspace.mit.edu/entities/publication/be2585fa-6bc5-48bd-8e29-8a56d1814033" target="_blank" rel="noopener noreferrer">An Analysis of Patch Plausibility and Correctness for Generate-And-Validate Patch Generation Systems</a>. ISSTA.</p>
+
+<p>[5] McConnell, R. M. et al. (2011). <a href="https://www.sciencedirect.com/science/article/pii/S1574013710000560" target="_blank" rel="noopener noreferrer">Certifying Algorithms</a>. Computer Science Review.</p>
+
+<p>[6] Ma, G. et al. (2026). <a href="https://arxiv.org/abs/2609.21190v2" target="_blank" rel="noopener noreferrer">SWE-Proof: Can Language Models Resolve Real-World Issues with Machine-Checked Proofs?</a>.</p>
+
+<p>[7] Kaggle (2026). <a href="https://www.kaggle.com/competitions/gemma-4-developer-agent/data" target="_blank" rel="noopener noreferrer">Dados da competição Gemma 4 Developer Agent</a>. SHA-256 de tasks.jsonl e4b3fd60f69dbc2b9213e54eeb9636db78aefe92c1d06269d73d9f5f8f3c8ad6.</p>
+
+<p>[8] Silva, Aridio (2026). <a href="https://github.com/aridiosilva/Gemma4_Google_Deepmind_S1/blob/42a1c723e4390f2759e08cae0370d60231b4d05b/evidence/ref-08.md" target="_blank" rel="noopener noreferrer">Piloto sintético de paginação, extratos dos registros</a>. Extrato congelado, 7 de novembro.</p>
+
+<p>[9] Silva, Aridio (2026). <a href="https://github.com/aridiosilva/Gemma4_Google_Deepmind_S1/blob/433e7508f713d947b417d8522bc84b96eae1da45/evidence/ref-09.md" target="_blank" rel="noopener noreferrer">fastapi_14186, perfil público e veredito</a>. Extratos de teste e avaliação, 7 de novembro.</p>
+
+<p>[10] Silva, Aridio (2026). <a href="https://github.com/aridiosilva/Gemma4_Google_Deepmind_S1/blob/433e7508f713d947b417d8522bc84b96eae1da45/evidence/kaggle-bugs-2026-11-11/README.md" target="_blank" rel="noopener noreferrer">Suplemento congelado das execuções no Kaggle até 11 de novembro</a>. GitHub, paper-evidence-v1.2.0. SHA-256 do ZIP da S54M d9b1145ba1c78582797d29a0d1bd16466c8e9e1f0b2170d635374693d0aa3d60.</p>
+
+<p>[11] Silva, Aridio (2026). <a href="https://github.com/aridiosilva/Gemma4_Google_Deepmind_S1/blob/433e7508f713d947b417d8522bc84b96eae1da45/evidence/parser-forum-receipt.json" target="_blank" rel="noopener noreferrer">Registro dos testes com arrays malformados no vLLM 0.19.1 e com a camada de compatibilidade</a>. 4 de novembro.</p>
+
+<p>[12] Silva, Aridio (2026). <a href="https://github.com/aridiosilva/Gemma4_Google_Deepmind_S1/blob/433e7508f713d947b417d8522bc84b96eae1da45/evidence/w18-synthetic-receipt.json" target="_blank" rel="noopener noreferrer">Registro dos testes sintéticos de identidade JUnit</a>. 2 de novembro.</p>
+
+<p>[13] Silva, Aridio (2026). <a href="https://github.com/aridiosilva/Gemma4_Google_Deepmind_S1/blob/433e7508f713d947b417d8522bc84b96eae1da45/controller-check.py" target="_blank" rel="noopener noreferrer">Verificador de estados finitos do controlador de reparo</a>. Versão congelada das evidências.</p>
+
+<p>[14] Kaggle (2026). <a href="https://www.kaggle.com/competitions/gemma-4-developer-agent/overview" target="_blank" rel="noopener noreferrer">Regras de avaliação e de tempo da competição Gemma 4 Developer Agent</a>.</p>
+
+<p>[15] Le Goues, C., Nguyen, T., Forrest, S., and Weimer, W. (2012). <a href="https://ieeexplore.ieee.org/abstract/document/6035728" target="_blank" rel="noopener noreferrer">GenProg: A Generic Method for Automated Software Repair</a>. IEEE Transactions on Software Engineering.</p>
+
+<p>[16] Yang, J. et al. (2024). <a href="https://arxiv.org/abs/2405.15793" target="_blank" rel="noopener noreferrer">SWE-agent: Agent-Computer Interfaces Enable Automated Software Engineering</a>.</p>
+
+<p>[17] Xia, C. S., Deng, Y., Dunn, S., and Zhang, L. (2024). <a href="https://arxiv.org/abs/2407.01489" target="_blank" rel="noopener noreferrer">Agentless: Demystifying LLM-based Software Engineering Agents</a>.</p>
+
+<p>[18] Zhang, Y. et al. (2024). <a href="https://arxiv.org/abs/2404.05427" target="_blank" rel="noopener noreferrer">AutoCodeRover: Autonomous Program Improvement</a>.</p>
+
+<p>[19] OpenAI (2024). <a href="https://openai.com/index/introducing-swe-bench-verified/" target="_blank" rel="noopener noreferrer">Introducing SWE-bench Verified</a>.</p>
+
+<p>[20] Torres-Arias, S. et al. (2019). <a href="https://www.usenix.org/conference/usenixsecurity19/presentation/torres-arias" target="_blank" rel="noopener noreferrer">in-toto: Providing farm-to-table guarantees for bits and bytes</a>. USENIX Security.</p>
+
+<p>[21] Silva, Aridio (2026). <a href="https://github.com/aridiosilva/Gemma4_Google_Deepmind_S1/blob/3d44290accbe796bbcaffeeae382645f00547ed9/evidence/r01-r72-risk-catalog-en.md" target="_blank" rel="noopener noreferrer">Catálogo R01–R72 de riscos de plataforma e ambiente no desafio Gemma 4</a>. Edição em inglês. Versão congelada v1.2.2.</p>
+
+<h2 id="paper-section-15">Apêndice A Riscos de plataforma e avaliação</h2>
+
+<p>O relatório R01–R72 [21] cataloga riscos ligados à operação da plataforma, a dependências, à avaliação e a decisões de projeto. Os casos abaixo remetem às respectivas evidências congeladas.</p>
+
+<p><strong>R65, parser sem progresso.</strong> Três arrays malformados excederam o limite de cinco segundos no vLLM 0.19.1. A camada de compatibilidade retornou erros explícitos. <a href="https://github.com/aridiosilva/Gemma4_Google_Deepmind_S1/blob/433e7508f713d947b417d8522bc84b96eae1da45/evidence/parser-forum-receipt.json" target="_blank" rel="noopener noreferrer">Registro do parser</a></p>
+
+<p><strong>R69, testes sensíveis à rede.</strong> Duas tarefas passaram em ensaios locais com patches de referência e acesso à rede e foram posteriormente resolvidas no Kaggle [10]. O isolamento estrito de rede não foi testado nesses ensaios. <a href="https://github.com/aridiosilva/Gemma4_Google_Deepmind_S1/blob/433e7508f713d947b417d8522bc84b96eae1da45/evidence/ref-11.md" target="_blank" rel="noopener noreferrer">Checagens locais</a></p>
+
+<p><strong>R70, testes obrigatórios incompatíveis.</strong> O perfil público fixo de <code>fastapi_14186</code> exige testes habilitados por versões mutuamente excludentes do Pydantic. <a href="https://github.com/aridiosilva/Gemma4_Google_Deepmind_S1/blob/433e7508f713d947b417d8522bc84b96eae1da45/evidence/ref-09.md" target="_blank" rel="noopener noreferrer">Diagnóstico da tarefa</a></p>
+
+<p><strong>Checagens relacionadas.</strong> O <a href="https://github.com/aridiosilva/Gemma4_Google_Deepmind_S1/blob/433e7508f713d947b417d8522bc84b96eae1da45/evidence/w18-synthetic-receipt.json" target="_blank" rel="noopener noreferrer">registro do JUnit</a> documenta três falsas aceitações sintéticas. Os <a href="https://github.com/aridiosilva/Gemma4_Google_Deepmind_S1/blob/433e7508f713d947b417d8522bc84b96eae1da45/evidence/kaggle-bugs-2026-11-11/operations.json" target="_blank" rel="noopener noreferrer">registros operacionais da S54M</a> documentam duas interrupções pelo mecanismo de proteção de memória.</p>
+      </div>
+      <section class="citation paper-citation" aria-label="Citação e licença"><h2>Citação e licença</h2><p>Silva, Aridio (2026). Reparo de software com agentes de IA sob orçamento limitado. Gemma 4 Developer Agent Paper Track. Kaggle. DOI: 10.34740/KAGGLE/W/125650.</p><p>Texto e figuras do paper: <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer">CC BY 4.0</a> · © 2026 Aridio Silva.</p></section>
+      <nav class="challenge-distribution-links" aria-label="Links do desafio"><a class="button" href="https://www.kaggle.com/competitions/gemma-4-developer-agent" target="_blank" rel="noopener noreferrer">Competição</a><a class="button" href="https://www.kaggle.com/competitions/gemma-4-developer-agent-paper/writeups/budget-bounded-software-repair-with-ai-agents" target="_blank" rel="noopener noreferrer">Paper publicado no Kaggle</a><a class="button" href="https://www.kaggle.com/competitions/gemma-4-developer-agent/leaderboard" target="_blank" rel="noopener noreferrer">Classificação — leaderboard</a><a class="button" href="https://www.kaggle.com/competitions/gemma-4-developer-agent-paper" target="_blank" rel="noopener noreferrer">Trilha de artigos — Paper Track</a><a class="button" href="/challenges/">Todos os challenges</a></nav>
+    </article></section>
+  </main>
+  <footer class="site-footer footer-style-preview" id="footer">
+  <div class="shell">
+    <div class="footer-head">
+      <div class="footer-brand-lockup">
+        <img class="footer-sgaeia-logo" src="/assets/sgaeia-logo-transparent.png" alt="" aria-hidden="true" width="1254" height="1254" loading="lazy" decoding="async">
+        <a class="footer-wordmark footer-project-link" href="/sgaeia.html">SGAEIA</a>
+      </div>
+      <div class="footer-note">SGAEIA · Pesquisa sobre sistemas de IA autônomos e distribuídos governados.</div>
+    </div>
+    <nav class="brand-links footer-name-links" aria-label="Perfis de pesquisa e links do projeto">
+      <a class="footer-profile-link" aria-label="GitHub" title="GitHub" href="https://github.com/aridiosilva" target="_blank" rel="noopener noreferrer"><strong>GitHub</strong></a>
+      <a class="footer-profile-link" aria-label="ORCID" title="ORCID" href="https://orcid.org/0009-0008-2411-6995" target="_blank" rel="me noopener noreferrer"><strong>ORCID</strong></a>
+      <a class="footer-profile-link" aria-label="Google Scholar" title="Google Scholar" href="https://scholar.google.com/citations?user=rPn5O48AAAAJ" target="_blank" rel="noopener noreferrer"><strong>Google Scholar</strong></a>
+      <a class="footer-profile-link" aria-label="Zenodo author records" title="Zenodo" href="https://zenodo.org/search?q=metadata.creators.person_or_org.name%3A%22Silva%2C%20Aridio%22" target="_blank" rel="noopener noreferrer"><strong>Zenodo</strong></a>
+      <a class="footer-profile-link" aria-label="SGAEIA Zenodo Community" title="SGAEIA — Zenodo Community" href="https://zenodo.org/communities/sgaeia" target="_blank" rel="noopener noreferrer"><strong>SGAEIA · Zenodo Community</strong></a>
+      <a class="footer-profile-link" aria-label="OpenAIRE" title="OpenAIRE" href="https://explore.openaire.eu/search/find?fv0=Aridio%20Silva&amp;f0=q" target="_blank" rel="noopener noreferrer"><strong>OpenAIRE</strong></a>
+      <a class="footer-profile-link" aria-label="Medium" title="Medium" href="https://medium.com/@aridiosilva" target="_blank" rel="noopener noreferrer"><strong>Medium</strong></a>
+      <a class="footer-profile-link" aria-label="Academia.edu" title="Academia.edu" href="https://independent.academia.edu/AridioSilva" target="_blank" rel="noopener noreferrer"><strong>Academia.edu</strong></a>
+      <a class="footer-profile-link" aria-label="DEV Community profile" title="DEV Community" href="https://dev.to/aridiosilva" target="_blank" rel="me noopener noreferrer"><strong>DEV Community</strong></a>
+      <a class="footer-profile-link" aria-label="LinkedIn" title="LinkedIn" href="https://www.linkedin.com/in/aridio-silva-74997111/" target="_blank" rel="noopener noreferrer"><strong>LinkedIn</strong></a>
+      <a class="footer-profile-link" aria-label="SGAEIA LinkedIn" title="SGAEIA LinkedIn" href="https://www.linkedin.com/company/sgaeia/" target="_blank" rel="noopener noreferrer"><strong>SGAEIA · LinkedIn</strong></a>
+      <a class="footer-profile-link" aria-label="SGAEIA GitHub Repository" title="SGAEIA Repository" href="https://github.com/aridiosilva/SGAEIA" target="_blank" rel="noopener noreferrer"><strong>SGAEIA Repository</strong></a>
+      <a class="footer-profile-link" aria-label="Kaggle" title="Kaggle" href="https://www.kaggle.com/aridiosilva2" target="_blank" rel="noopener noreferrer"><strong>Kaggle</strong></a>
+      <a class="footer-profile-link" aria-label="SGAEIA research artifact DOI" title="SGAEIA Research Artifact / DOI" href="https://doi.org/10.5281/zenodo.22557796" target="_blank" rel="noopener noreferrer"><strong>SGAEIA DOI</strong></a>
+    </nav>
+    <div class="footer-bottom">
+      <span>© 2026 Aridio Silva</span>
+      <span>Última atualização: 20 de novembro de 2026 — Edição web 1.0 · Paper REV4</span>
+      <span>Autonomous AI. Governed by Design. Trusted by Evidence.</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

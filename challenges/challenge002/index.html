@@ -1,0 +1,297 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>Budget-Bounded Software Repair with AI Agents — Aridio Silva</title>
+  <meta name="description" content="Paper submitted to the Gemma 4 Developer Agent Paper Track: budget-bounded repair, tree-bound acceptance, benchmark validity, and 37 resolutions in 86 executed development tasks.">
+  <meta name="author" content="Aridio Silva">
+  <meta name="copyright" content="© 2026 Aridio Silva">
+  <meta name="citation_title" content="Budget-Bounded Software Repair with AI Agents">
+  <meta name="citation_author" content="Silva, Aridio">
+  <meta name="citation_publication_date" content="2026/11/11">
+  <meta name="citation_language" content="en">
+  <meta name="citation_doi" content="10.34740/KAGGLE/W/125650">
+  <meta name="citation_pdf_url" content="https://aridiosilva.com/challenges/challenge002/assets/paper-rev4-en.pdf">
+  <link rel="canonical" href="https://aridiosilva.com/challenges/challenge002/">
+  <link rel="alternate" hreflang="en" href="https://aridiosilva.com/challenges/challenge002/">
+  <link rel="alternate" hreflang="pt-BR" href="https://aridiosilva.com/challenges/challenge002/pt/">
+  <link rel="alternate" hreflang="x-default" href="https://aridiosilva.com/challenges/challenge002/">
+  <link rel="license" href="https://creativecommons.org/licenses/by/4.0/">
+  <link rel="sitemap" type="application/xml" href="/sitemap.xml">
+  <link rel="describedby" href="/llms.txt" type="text/markdown">
+  <meta http-equiv="Content-Security-Policy" content="default-src &#x27;self&#x27;; script-src &#x27;self&#x27; https://www.googletagmanager.com; style-src &#x27;self&#x27; https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src &#x27;self&#x27; data: https://*.google-analytics.com; connect-src https://*.google-analytics.com https://www.googletagmanager.com; media-src &#x27;self&#x27;; object-src &#x27;none&#x27;; base-uri &#x27;none&#x27;; form-action &#x27;none&#x27;; upgrade-insecure-requests">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Budget-Bounded Software Repair with AI Agents">
+  <meta property="og:description" content="Paper submitted to the Gemma 4 Developer Agent Paper Track: budget-bounded repair, tree-bound acceptance, benchmark validity, and 37 resolutions in 86 executed development tasks.">
+  <meta property="og:url" content="https://aridiosilva.com/challenges/challenge002/">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:image" content="https://aridiosilva.com/challenges/challenge002/assets/paper-cover-en.png">
+  <meta property="og:image:alt" content="Cover — Budget-Bounded Software Repair with AI Agents">
+  <meta property="og:image:width" content="560">
+  <meta property="og:image:height" content="280">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;family=Source+Serif+4:opsz,wght@8..60,500;6..60,700&amp;display=swap">
+<link rel="stylesheet" href="/assets/publications.css?v=20261012-14">
+<link rel="stylesheet" href="/assets/article-accessibility.css">
+<link rel="stylesheet" href="/assets/fixed-site-header.css?v=20261029-2">
+<link rel="stylesheet" href="/assets/editorial-hero.css?v=20261017-1">
+<link rel="stylesheet" href="/assets/homepage-footer-preview.css?v=20261017-5">
+<link rel="stylesheet" href="/assets/challenges.css?v=20261101-1">
+<link rel="stylesheet" href="/assets/challenge002.css?v=20261120-2">
+  <script defer src="/assets/article20-accessibility.js?v=20261014"></script>
+  <script defer src="/assets/fixed-site-header.js?v=20261016-1"></script>
+  <!-- GA4 G-MXMJ7Z3LS7: automatic cookieless audience measurement; analytics and advertising storage remain disabled. -->
+  <script defer src="/assets/analytics-consent.js?v=20261011"></script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"ScholarlyArticle","headline":"Budget-Bounded Software Repair with AI Agents","alternativeHeadline":"Termination, tree-bound acceptance, and benchmark validity in the Gemma 4 challenge","author":{"@type":"Person","name":"Aridio Silva","identifier":"https://orcid.org/0009-0008-2411-6995"},"datePublished":"2026-11-11","dateModified":"2026-11-20","inLanguage":"en","url":"https://aridiosilva.com/challenges/challenge002/","identifier":"https://doi.org/10.34740/KAGGLE/W/125650","sameAs":["https://www.kaggle.com/competitions/gemma-4-developer-agent-paper/writeups/budget-bounded-software-repair-with-ai-agents","https://doi.org/10.34740/KAGGLE/W/125650"],"license":"https://creativecommons.org/licenses/by/4.0/","image":"https://aridiosilva.com/challenges/challenge002/assets/paper-cover-en.png","description":"Paper submitted to the Gemma 4 Developer Agent Paper Track: budget-bounded repair, tree-bound acceptance, benchmark validity, and 37 resolutions in 86 executed development tasks.","isPartOf":{"@type":"CollectionPage","name":"Challenges","url":"https://aridiosilva.com/challenges/"},"workTranslation":{"@type":"ScholarlyArticle","url":"https://aridiosilva.com/challenges/challenge002/pt/","inLanguage":"pt-BR"}}</script>
+</head>
+<body class="article-page challenge-page gemma4-paper">
+  <a class="skip" href="#main">Skip to main content</a>
+  <header class="site-header"><div class="shell header-inner">
+    <a class="identity" href="/#top" aria-label="Aridio Silva home"><strong>Aridio Silva</strong><span>Independent Researcher · AI Systems Architecture</span></a>
+    <nav aria-label="Primary navigation"><a href="/">Home</a><a href="/sgaeia.html">SGAEIA</a><a href="/publications.html">Publications</a><a href="/infographics/">Infographics</a><a href="/challenges/" aria-current="page">Challenges</a></nav>
+    <div class="reading-tools" role="group" aria-label="Reading controls"><button type="button" id="articleFontDecrease" aria-label="Decrease text size">A−</button><button type="button" id="articleFontIncrease" aria-label="Increase text size">A+</button><button type="button" id="articleEasyRead" aria-pressed="false">Easy read</button><button type="button" id="articleListen" aria-pressed="false">Listen</button></div>
+  </div></header>
+
+  <main id="main">
+    <section class="hero"><div class="shell article"><p class="eyebrow">Challenge 002 · Kaggle · Gemma 4 Paper Track</p><h1>Budget-Bounded Software Repair with AI Agents</h1><p class="subtitle">Termination, tree-bound acceptance, and benchmark validity in the Gemma 4 challenge</p><p class="meta">Paper Track · Submitted 11 November 2026 · REV4 · <a href="https://doi.org/10.34740/KAGGLE/W/125650" target="_blank" rel="noopener noreferrer">DOI 10.34740/KAGGLE/W/125650</a></p><nav class="language-nav" aria-label="Paper languages"><a href="/challenges/challenge002/" lang="en" aria-current="page">English</a><span aria-hidden="true">·</span><a href="/challenges/challenge002/pt/" lang="pt-BR">Português</a></nav></div></section>
+    <section class="content"><article class="shell article article-body">
+      <figure class="challenge-cover paper-illustration"><a href="/challenges/challenge002/assets/paper-cover-en.png" target="_blank" rel="noopener noreferrer"><img src="/challenges/challenge002/assets/paper-cover-en.png" alt="Cover — Budget-Bounded Software Repair with AI Agents" width="560" height="280" loading="eager" decoding="async" fetchpriority="high"></a><figcaption>Cover — Budget-Bounded Software Repair with AI Agents<span class="figure-credit">© 2026 Aridio Silva</span></figcaption></figure>
+      <aside class="paper-source"><p>English web edition of the paper published on Kaggle and submitted to the Paper Track. The paper reports results on the public development tasks; these are not competition leaderboard scores.</p><nav class="paper-links" aria-label="Competition, paper, and leaderboard"><a class="button" href="https://www.kaggle.com/competitions/gemma-4-developer-agent" target="_blank" rel="noopener noreferrer">Competition</a><a class="button" href="https://www.kaggle.com/competitions/gemma-4-developer-agent-paper/writeups/budget-bounded-software-repair-with-ai-agents" target="_blank" rel="noopener noreferrer">Published paper on Kaggle</a><a class="button" href="https://www.kaggle.com/competitions/gemma-4-developer-agent/leaderboard" target="_blank" rel="noopener noreferrer">Leaderboard</a><a class="button" href="https://www.kaggle.com/competitions/gemma-4-developer-agent-paper" target="_blank" rel="noopener noreferrer">Paper Track</a></nav><div class="paper-links"><a class="button" href="/challenges/challenge002/assets/paper-rev4-en.pdf">English PDF · REV4 · DOI</a><a class="button" href="/challenges/challenge002/assets/paper-rev4-pt.pdf" lang="pt-BR">PDF em português · REV4 · DOI</a></div></aside>
+      <nav class="paper-toc" aria-label="Paper contents"><h2>Contents</h2><ol><li><a href="#paper-section-1">Abstract</a></li><li><a href="#paper-section-2">1 Introduction</a></li><li><a href="#paper-section-3">2 Related work</a></li><li><a href="#paper-section-4">3 Repair controller</a></li><li><a href="#paper-section-6">4 Termination and tree-bound acceptance</a></li><li><a href="#paper-section-7">5 Evaluation</a></li><li><a href="#paper-section-13">6 Discussion and conclusion</a></li><li><a href="#paper-section-14">References</a></li><li><a href="#paper-section-15">Appendix A Platform and evaluation risks</a></li></ol></nav>
+      <div data-paper-content lang="en">
+<p><strong>Author:</strong> Aridio Silva — Independent Researcher, Brazil<br>
+<strong>Preferred citation:</strong> Silva, Aridio (2026) · <strong>ORCID:</strong> <a href="https://orcid.org/0009-0008-2411-6995" target="_blank" rel="noopener noreferrer">0009-0008-2411-6995</a><br>
+<strong>Copyright:</strong> © 2026 Aridio Silva  </p>
+
+<h2 id="paper-section-1">Abstract</h2>
+
+<p>We propose a budget-bounded repair controller with tree-bound acceptance. The abstract controller requires a separate validator's evidence for the exact frozen tree before delivery, preventing hallucinated claims of test success from authorizing release. Under explicit supervision assumptions, the abstract controller terminates within 4M + 1 transitions for an attempt budget of M. A finite-state check explored 556 states and 953 transitions and found a path to acceptance when the model allowed false evidence. An audit of the public benchmark identified one task with incompatible mandatory test requirements and three false acceptances in nine synthetic test-identity cases. On Kaggle, 109 executions covered 86 of 87 selected bug tasks across seven rounds. The verifier recorded 37 resolutions (43.0% of executed tasks and 42.5% of selected tasks), including 20 of 54 in S54M, the batch run under a common configuration.</p>
+
+<h2 id="paper-section-2">1 Introduction</h2>
+
+<p>A repair agent examines a repository and proposes a diff. The controller then budgets attempts, supervises validation, and ties authorization to the code tree examined by the validator. We apply principles from the SGAEIA research program [1] to software repair with Gemma 4 [2].</p>
+
+<p>We make three contributions.</p>
+
+<ol>
+<li><strong>Termination and tree-bound acceptance.</strong> We prove a transition bound and an invariant linking acceptance to the exact validated tree. A finite-state check produces a counterexample when the controller allows false evidence.</li>
+<li><strong>Benchmark validity.</strong> We document a task whose mandatory tests are jointly unsatisfiable under the fixed public profile and show how a test-identity comparator can accept results for the wrong test.</li>
+<li><strong>Evaluation on public development tasks.</strong> We report 37 resolutions across 86 executed bug tasks in three repositories, with a separate result for 54 tasks run under a common configuration and an analysis of verifier outcomes.</li>
+</ol>
+
+<h2 id="paper-section-3">2 Related work</h2>
+
+<p>Generate-and-validate repair systems such as GenProg use tests to screen candidate patches [15]. Qi et al. distinguish test-suite success from broader patch correctness [4]. SWE-agent provides an interface for repository and tool interactions [16]. Agentless stages localization, repair, and validation [17], and AutoCodeRover uses program structure to guide code search [18]. Our controller formalizes the release decision for a budgeted repair workflow by binding validator evidence to the delivered tree.</p>
+
+<p>Certifying algorithms accompany results with checkable evidence [5], SWE-Proof studies machine-checked repair contracts [6], and in-toto links artifacts to software supply-chain steps [20]. The property here governs when a controller may deliver a repair. SWE-bench evaluates repair on real repository issues [3], and SWE-bench Verified screens tasks for evaluation quality [19]. For the Gemma 4 public development profile, we examine whether mandatory tests can pass together and whether the verifier matches the required test identities.</p>
+
+<h2 id="paper-section-4">3 Repair controller</h2>
+
+<p>The evaluation profile fixes the task, base commit, allowed paths, dependencies, and acceptance criterion. In the controller design, each attempt debits the budget before invoking the generator. The supervisor applies the diff in an isolated copy and freezes the resulting tree. A separate validator records its verdict and the identities of the task, profile, attempt, and tree. On the test path, the acceptance criterion requires a successful test command and a passing result for each required parameterized test node. Failures elsewhere in the verifier's suite can also prevent acceptance. On the formal path, the validator checks evidence for an explicit contract.</p>
+
+<p>To prevent a hallucinated claim of test success from authorizing delivery, the supervisor takes the acceptance evidence from the separate validator. It checks that the evidence names the active attempt and frozen tree, then confirms delivery of that same tree within the authorized deadline. Section 4 proves this property for the abstract controller. Section 5 documents the patch application, verifier verdicts, and test evidence recorded in the Kaggle runs.</p>
+
+<p>An attempt may end without a patch, after an application failure, with rejected or unavailable evidence, or without timely delivery confirmation. In these cases, the supervisor discards the candidate, revokes any active authorization, and rechecks the budget. If an attempt and sufficient reserve remain, the controller debits another attempt and returns to generation. Otherwise, it records ABSTENTION.</p>
+
+<figure id="figure-1"><a href="/challenges/challenge002/assets/figure-1-en.png" target="_blank" rel="noopener noreferrer" aria-label="Open full-size figure 1"><img src="/challenges/challenge002/assets/figure-1-en.png" alt="Repair controller workflow" width="4800" height="2381" loading="lazy" decoding="async"></a><figcaption><strong>Figure 1.</strong> Abstract repair controller workflow. An attempt that ends without acceptance returns to the attempt and reserve check. ACCEPTED requires delivery of the same tree within the deadline. S54M used an operational budget of one session per task (Section 5).</figcaption></figure>
+<h3 id="paper-section-5">Mapping to the S54M executor</h3>
+
+<p>In S54M, the executor evaluated patches against hash-checked snapshots, recorded the patch hashes, and separately checked the identities of the required JUnit test nodes. The measured outcome was the verifier's verdict. The same-tree delivery guarantee proved in Section 4 applies to the abstract controller.</p>
+
+<h2 id="paper-section-6">4 Termination and tree-bound acceptance</h2>
+
+<p>The control state is (r, b, q), with r attempts remaining, abstract reserve b, and phase q. The nonterminal phases are ready, propose, verify, and publish. The initial state is ready, with r = M. In the checked instance, starting requires b ≥ 4 to cover the four debits of a full attempt. An attempt consumes one unit of r before calling the generator. The supervisor regains control when each operation completes or is interrupted and takes a permitted next step in finite time.</p>
+
+<p>The ranking function measures the remaining transition budget. Each unstarted attempt contributes four transitions. The phase weight counts how many transitions may remain in the current attempt. Starting consumes one transition and leaves up to three more, for the patch outcome, the validation outcome, and the delivery outcome. An early failure returns control to ready sooner.</p>
+
+<p>Define R(r, q) = 4r + w(q), where w is 0 in ready, 3 in propose, 2 in verify, and 1 in publish. Starting an attempt spends one unit of r and increases the phase weight from 0 to 3, so R changes by 4(−1) + 3 = −1. Advancing to the next nonterminal phase decreases w by one. Returning to ready after a failure sets w to zero without restoring r. Thus, every transition between nonterminal states decreases R by at least one.</p>
+
+<p>R starts at 4M and is nonnegative, so there can be at most 4M transitions between nonterminal states and one final transition. With initial reserve of at least 4M, the worst-case path uses all M attempts. Each attempt takes four transitions, fails at delivery, and returns to ready. The final transition records ABSTENTION, attaining the 4M + 1 bound. A wall-clock bound also requires bounds on operation durations, including supervision, cancellation, and cleanup.</p>
+
+<figure id="figure-2"><a href="/challenges/challenge002/assets/figure-2-en.png" target="_blank" rel="noopener noreferrer" aria-label="Open full-size figure 2"><img src="/challenges/challenge002/assets/figure-2-en.png" alt="Abstract repair controller state machine" width="5280" height="4080" loading="lazy" decoding="async"></a><figcaption><strong>Figure 2.</strong> Discrete controller model. Verify covers application and validation. E denotes eligible evidence bound to the candidate tree.</figcaption></figure>
+<figure id="figure-3"><a href="/challenges/challenge002/assets/figure-3-en.png" target="_blank" rel="noopener noreferrer" aria-label="Open full-size figure 3"><img src="/challenges/challenge002/assets/figure-3-en.png" alt="Decrease in the ranking function during an attempt" width="4800" height="1695" loading="lazy" decoding="async"></a><figcaption><strong>Figure 3.</strong> The ranking function decreases as the controller advances through phases and when it returns after failure. Here n is the value of r when the attempt starts.</figcaption></figure>
+<p>The tree-bound acceptance invariant states that every transition into ACCEPTED confirms timely delivery of a frozen tree backed by eligible evidence from the authorized validator for the active attempt. The transition from verify to publish checks that evidence and fixes the tree identity. The transition from publish to ACCEPTED checks timely delivery of that same tree. A failure revokes authorization before another attempt can begin. These rules preserve the invariant by induction over the transitions.</p>
+
+<p>On the contract path, the guarantee depends on verifier soundness. On the test path, acceptance attests to the suite outcome under the recorded profile. If the required evidence is unobtainable in that profile, the only reachable terminal state is ABSTENTION.</p>
+
+<h2 id="paper-section-7">5 Evaluation</h2>
+
+<h3 id="paper-section-8">Model checking and pilot</h3>
+
+<p>A breadth-first search in Python 3.12 started from 143 initial combinations of r from 0 to 10 and b from 0 to 12. It explored 556 monitored states and 953 transitions, checking the budget, successor states, ranking decrease, and the evidence condition in ACCEPTED. When we allowed a false-evidence event to enter publish, the search found a path to ACCEPTED without eligible evidence. The <a href="https://github.com/aridiosilva/Gemma4_Google_Deepmind_S1/blob/433e7508f713d947b417d8522bc84b96eae1da45/controller-check.py" target="_blank" rel="noopener noreferrer">model checker</a> covers this finite instance [13]. The ranking proof covers arbitrary finite M under the stated supervision assumptions.</p>
+
+<p>Policy P instructs the agent to map requirements to validation obligations, prefer a strict subset of obligations among otherwise comparable plans, and invalidate evidence affected by edits. In the synthetic pagination pilot, the workflow produced and applied a patch that passed both tests [8]. The Kaggle evaluation used P throughout R1–R6 and S54M [10].</p>
+
+<h3 id="paper-section-9">Task selection and round design</h3>
+
+<p>We classified the 129 public tasks [7] by the predominant work described in each task. The study catalog comprises 87 bugs, 21 features, 10 refactoring or maintenance tasks, five mixed tasks, three documentation tasks, two testing or automation tasks, and one performance task. We selected bugs because they formed the largest group, at 67.4% of the catalog. Sequential batches let us investigate interruptions and adjust the harness within the available quota. The initial six rounds, R1–R6, covered 33 cataloged bugs, of which 32 were executed. S54M contained the other 54 task IDs, with no overlap [10].</p>
+
+<p>In R1–R6, we reran 16 unresolved tasks while adjusting the executor. The rounds used limits of 24, 30, or 35 requests. The common S54M configuration used the gemma-4-31b-it-qat-w4a16-ct checkpoint (Kaggle revision 2), vLLM 0.19.1, temperature 0.2, and a 32,768-token context on four NVIDIA L4 GPUs. It allowed up to 30 requests in one agent session per task, with no automatic retry [10]. The retry transitions are exercised in the discrete controller model [13].</p>
+
+<p>In S54M, task-worker time through cleanup had a median of 317.5 s and a maximum of 869.9 s. The full cell ran for 5 h 34 min 42 s, averaging 6 min 12 s per task across 54 tasks [10]. These development timings include patch validation. The prediction track excludes patch validation from its 12-hour agent budget [14].</p>
+
+<p>Each task counted once, using its last recorded outcome in R1–R6 or its sole execution in S54M. The 109 executions include 23 reruns. The executor used the verifier in swegemma, the software package that runs the benchmark’s patch evaluation, with the public development profile. For the 37 resolutions, the frozen extracts record an applied patch, agreement across recorded verifier outcomes, and successful test execution [10]. The underlying run receipts also record confirmation of required JUnit identities by a separate executor check. For the failure analysis, we matched required IDs from the test diff against recorded pytest failures and errors using the collection root [10].</p>
+
+<h3 id="paper-section-10">Resolution and observed failures</h3>
+
+<div class="table-wrap" role="region" tabindex="0" aria-label="Resolution results — scroll table horizontally"><table>
+<thead>
+<tr>
+<th scope="col">Scope</th>
+<th scope="col">Selected</th>
+<th scope="col">Executed</th>
+<th scope="col">Resolved</th>
+<th scope="col">% of executed</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Total by task</strong></td>
+<td><strong>87</strong></td>
+<td><strong>86</strong></td>
+<td><strong>37</strong></td>
+<td><strong>43.0%</strong></td>
+</tr>
+<tr>
+<td>R1–R6, last execution</td>
+<td>33</td>
+<td>32</td>
+<td>17</td>
+<td>53.1%</td>
+</tr>
+<tr>
+<td>S54M, common configuration</td>
+<td>54</td>
+<td>54</td>
+<td>20</td>
+<td>37.0%</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Across FastAPI, Rich, and Requests, the verifier produced usable verdicts for 81 of the 86 executed tasks. The 37 resolutions represent 43.0% of executed tasks and 42.5% of selected tasks, including the deferred task in the latter denominator. The nominal 95% Wilson interval for 37/86, 33.1% to 53.6%, provides a descriptive reference for the observed set. FastAPI had 19 resolutions in 36 executed tasks, Rich 12 in 39, and Requests 6 in 11 [10].</p>
+
+<p>The 86 tasks accounted for 109 executions: 55 records for 32 tasks in R1–R6 and 54 records for 54 tasks in S54M. In order, R1 through R6 recorded 0/2, 0/1, 1/6, 13/26, 3/15, and 0/5 resolutions per execution. Of the 17 resolutions in R1–R6, 14 occurred on the first recorded execution and three in R5, when the tasks were rerun after changes to the executor. Those three are included in the study's 37 resolutions. S54M yielded 20 resolutions under a common configuration. Task selection by batch, configuration changes, and selective reruns of 16 tasks limit comparisons of performance across rounds [10].</p>
+
+<p>Of the 49 unresolved tasks, 44 produced applied patches that were rejected, 14 in R1–R6 and 30 in S54M. A required test failed in 36 cases, 13 and 23, respectively. Seven S54M cases had identified failures outside the required IDs. One historical rejection had insufficient test identity information for classification. Of the five tasks without a usable verdict, one ended without a patch in R1–R6. In S54M, the memory guard interrupted two tests and the batch continued. After patch application in another case, a syntax error blocked import and the verifier returned evaluation error code −1. Truncated output left the patch empty in the remaining case [10].</p>
+
+<h3 id="paper-section-11">Benchmark validity</h3>
+
+<p><strong>Test identity.</strong> In nine synthetic JUnit cases, the swegemma 0.2.11 comparator falsely accepted three mismatches involving the module, function name, or parameter. A strict comparator rejected those three in the same local experiment. The <a href="https://github.com/aridiosilva/Gemma4_Google_Deepmind_S1/blob/433e7508f713d947b417d8522bc84b96eae1da45/evidence/w18-synthetic-receipt.json" target="_blank" rel="noopener noreferrer">frozen JUnit receipt</a> records each required identity and both comparator outcomes [12].</p>
+
+<p><strong>Profile satisfiability.</strong> Task <code>fastapi_14186</code> remained in the inventory as deferred. The fixed public profile requires <code>test_model_description_escaped_with_formfeed</code>, enabled only with Pydantic v1, and <code>test_model_field_default_required</code>, enabled only with v2. Both cannot pass in the same fixed environment. A local diagnostic with the reference patch recorded 52 cases and three skips under Pydantic 2.13.4. Pytest exited with code zero, and the verifier rejected the result because a mandatory test was skipped. The <a href="https://github.com/aridiosilva/Gemma4_Google_Deepmind_S1/blob/433e7508f713d947b417d8522bc84b96eae1da45/evidence/ref-09.md" target="_blank" rel="noopener noreferrer">frozen diagnostic and verdict</a> document the test conditions and outcomes [7, 9].</p>
+
+<h3 id="paper-section-12">Operational robustness</h3>
+
+<p>In a local reproduction, three malformed arrays exceeded the five-second limit in the vLLM 0.19.1 parser. The compatibility layer returned an explicit error for each, and a correctly delimited control returned under both versions. The <a href="https://github.com/aridiosilva/Gemma4_Google_Deepmind_S1/blob/433e7508f713d947b417d8522bc84b96eae1da45/evidence/parser-forum-receipt.json" target="_blank" rel="noopener noreferrer">frozen parser receipt</a> records those cases [11]. In S54M, the memory guard stopped two test process trees and the batch completed, as recorded in the <a href="https://github.com/aridiosilva/Gemma4_Google_Deepmind_S1/blob/433e7508f713d947b417d8522bc84b96eae1da45/evidence/kaggle-bugs-2026-11-11/operations.json" target="_blank" rel="noopener noreferrer">frozen operational receipts</a> [10]. Appendix A links selected platform and evaluation risks to their frozen evidence.</p>
+
+<h2 id="paper-section-13">6 Discussion and conclusion</h2>
+
+<p>The controller and benchmark audit yield two design rules for agentic software repair. First, bind the release decision to evidence from an authorized validator for the exact tree being delivered. This keeps a hallucinated claim of test success from authorizing release. Second, check that all mandatory tests can pass under the configured profile and that the verifier matches their full identities. The deferred task and the JUnit experiment show how each check changes what a benchmark verdict can establish.</p>
+
+<p>The Gemma 4 runs recorded 37 resolutions in 86 executed bug tasks, including 20 in the 54-task S54M batch under a common configuration. The controller's termination and acceptance results apply to repair workflows that can enforce the same attempt budget, supervision, and evidence checks.</p>
+
+<p>A matched baseline on the 54 S54M tasks, using the same model, budget, and verifier, would allow a paired estimate of the effect of policy P on task resolution. We are extending the evaluation to the remaining task types in the 129-task public development set. As these runs are completed and verified, we will report the results by task type in a subsequent revision.</p>
+
+<p><strong>Traceability.</strong> The <a href="https://github.com/aridiosilva/Gemma4_Google_Deepmind_S1/blob/433e7508f713d947b417d8522bc84b96eae1da45/evidence/kaggle-bugs-2026-11-11/README.md" target="_blank" rel="noopener noreferrer">frozen supplement</a> contains the inventory, 109 execution records, two memory-guard events, and fingerprints of the seven source ZIPs. The <a href="https://github.com/aridiosilva/Gemma4_Google_Deepmind_S1/blob/433e7508f713d947b417d8522bc84b96eae1da45/evidence/kaggle-bugs-2026-11-11/verify.py" target="_blank" rel="noopener noreferrer">verification script</a> checks the extracts and recomputes the task totals, resolution rates, and required-test failure counts. Archive and member hashes link the extracts to the retained original records [10].</p>
+
+<h2 id="paper-section-14">References</h2>
+
+<p>[1] Silva, Aridio. SGAEIA, a research program and open reference architecture. <a href="https://aridiosilva.com/sgaeia.html" target="_blank" rel="noopener noreferrer">Project website</a>.</p>
+
+<p>[2] Gemma Team (2026). <a href="https://arxiv.org/abs/2607.02770v2" target="_blank" rel="noopener noreferrer">Gemma 4 Technical Report</a>.</p>
+
+<p>[3] Jimenez, C. E. et al. (2024). <a href="https://arxiv.org/abs/2310.06770" target="_blank" rel="noopener noreferrer">SWE-bench: Can Language Models Resolve Real-World GitHub Issues?</a>. ICLR.</p>
+
+<p>[4] Qi, Z. et al. (2015). <a href="https://dspace.mit.edu/entities/publication/be2585fa-6bc5-48bd-8e29-8a56d1814033" target="_blank" rel="noopener noreferrer">An Analysis of Patch Plausibility and Correctness for Generate-And-Validate Patch Generation Systems</a>. ISSTA.</p>
+
+<p>[5] McConnell, R. M. et al. (2011). <a href="https://www.sciencedirect.com/science/article/pii/S1574013710000560" target="_blank" rel="noopener noreferrer">Certifying Algorithms</a>. Computer Science Review.</p>
+
+<p>[6] Ma, G. et al. (2026). <a href="https://arxiv.org/abs/2609.21190v2" target="_blank" rel="noopener noreferrer">SWE-Proof: Can Language Models Resolve Real-World Issues with Machine-Checked Proofs?</a>.</p>
+
+<p>[7] Kaggle (2026). <a href="https://www.kaggle.com/competitions/gemma-4-developer-agent/data" target="_blank" rel="noopener noreferrer">Gemma 4 Developer Agent Competition data</a>. SHA-256 of tasks.jsonl e4b3fd60f69dbc2b9213e54eeb9636db78aefe92c1d06269d73d9f5f8f3c8ad6.</p>
+
+<p>[8] Silva, Aridio (2026). <a href="https://github.com/aridiosilva/Gemma4_Google_Deepmind_S1/blob/42a1c723e4390f2759e08cae0370d60231b4d05b/evidence/ref-08.md" target="_blank" rel="noopener noreferrer">Synthetic pagination pilot, receipt extracts</a>. Frozen extract, November 7.</p>
+
+<p>[9] Silva, Aridio (2026). <a href="https://github.com/aridiosilva/Gemma4_Google_Deepmind_S1/blob/433e7508f713d947b417d8522bc84b96eae1da45/evidence/ref-09.md" target="_blank" rel="noopener noreferrer">fastapi_14186, public profile and verdict</a>. Test and evaluation extracts, November 7.</p>
+
+<p>[10] Silva, Aridio (2026). <a href="https://github.com/aridiosilva/Gemma4_Google_Deepmind_S1/blob/433e7508f713d947b417d8522bc84b96eae1da45/evidence/kaggle-bugs-2026-11-11/README.md" target="_blank" rel="noopener noreferrer">Frozen supplement for Kaggle executions through November 11</a>. GitHub, paper-evidence-v1.2.0. S54M ZIP SHA-256 d9b1145ba1c78582797d29a0d1bd16466c8e9e1f0b2170d635374693d0aa3d60.</p>
+
+<p>[11] Silva, Aridio (2026). <a href="https://github.com/aridiosilva/Gemma4_Google_Deepmind_S1/blob/433e7508f713d947b417d8522bc84b96eae1da45/evidence/parser-forum-receipt.json" target="_blank" rel="noopener noreferrer">vLLM 0.19.1 malformed-array and compatibility-layer test receipt</a>. November 4.</p>
+
+<p>[12] Silva, Aridio (2026). <a href="https://github.com/aridiosilva/Gemma4_Google_Deepmind_S1/blob/433e7508f713d947b417d8522bc84b96eae1da45/evidence/w18-synthetic-receipt.json" target="_blank" rel="noopener noreferrer">Synthetic JUnit identity test receipt</a>. November 2.</p>
+
+<p>[13] Silva, Aridio (2026). <a href="https://github.com/aridiosilva/Gemma4_Google_Deepmind_S1/blob/433e7508f713d947b417d8522bc84b96eae1da45/controller-check.py" target="_blank" rel="noopener noreferrer">Finite-state repair controller checker</a>. Frozen evidence release.</p>
+
+<p>[14] Kaggle (2026). <a href="https://www.kaggle.com/competitions/gemma-4-developer-agent/overview" target="_blank" rel="noopener noreferrer">Gemma 4 Developer Agent Competition evaluation and timing rules</a>.</p>
+
+<p>[15] Le Goues, C., Nguyen, T., Forrest, S., and Weimer, W. (2012). <a href="https://ieeexplore.ieee.org/abstract/document/6035728" target="_blank" rel="noopener noreferrer">GenProg: A Generic Method for Automated Software Repair</a>. IEEE Transactions on Software Engineering.</p>
+
+<p>[16] Yang, J. et al. (2024). <a href="https://arxiv.org/abs/2405.15793" target="_blank" rel="noopener noreferrer">SWE-agent: Agent-Computer Interfaces Enable Automated Software Engineering</a>.</p>
+
+<p>[17] Xia, C. S., Deng, Y., Dunn, S., and Zhang, L. (2024). <a href="https://arxiv.org/abs/2407.01489" target="_blank" rel="noopener noreferrer">Agentless: Demystifying LLM-based Software Engineering Agents</a>.</p>
+
+<p>[18] Zhang, Y. et al. (2024). <a href="https://arxiv.org/abs/2404.05427" target="_blank" rel="noopener noreferrer">AutoCodeRover: Autonomous Program Improvement</a>.</p>
+
+<p>[19] OpenAI (2024). <a href="https://openai.com/index/introducing-swe-bench-verified/" target="_blank" rel="noopener noreferrer">Introducing SWE-bench Verified</a>.</p>
+
+<p>[20] Torres-Arias, S. et al. (2019). <a href="https://www.usenix.org/conference/usenixsecurity19/presentation/torres-arias" target="_blank" rel="noopener noreferrer">in-toto: Providing farm-to-table guarantees for bits and bytes</a>. USENIX Security.</p>
+
+<p>[21] Silva, Aridio (2026). <a href="https://github.com/aridiosilva/Gemma4_Google_Deepmind_S1/blob/3d44290accbe796bbcaffeeae382645f00547ed9/evidence/r01-r72-risk-catalog-en.md" target="_blank" rel="noopener noreferrer">R01–R72 catalog of platform and environment risks in the Gemma 4 challenge</a>. English edition. Frozen release v1.2.2.</p>
+
+<h2 id="paper-section-15">Appendix A Platform and evaluation risks</h2>
+
+<p>The R01–R72 report [21] catalogs risks involving platform operations, dependencies, evaluation, and project decisions. The cases below link to their frozen evidence.</p>
+
+<p><strong>R65, parser non-progress.</strong> Three malformed arrays exceeded a five-second limit in vLLM 0.19.1. The compatibility layer returned explicit errors. <a href="https://github.com/aridiosilva/Gemma4_Google_Deepmind_S1/blob/433e7508f713d947b417d8522bc84b96eae1da45/evidence/parser-forum-receipt.json" target="_blank" rel="noopener noreferrer">Parser receipt</a></p>
+
+<p><strong>R69, network-sensitive tests.</strong> Two tasks passed local reference-patch rehearsals with network access and were later resolved on Kaggle [10]. Strict network isolation remains untested. <a href="https://github.com/aridiosilva/Gemma4_Google_Deepmind_S1/blob/433e7508f713d947b417d8522bc84b96eae1da45/evidence/ref-11.md" target="_blank" rel="noopener noreferrer">Local checks</a></p>
+
+<p><strong>R70, incompatible mandatory tests.</strong> The fixed public profile for <code>fastapi_14186</code> requires tests gated on opposing Pydantic versions. <a href="https://github.com/aridiosilva/Gemma4_Google_Deepmind_S1/blob/433e7508f713d947b417d8522bc84b96eae1da45/evidence/ref-09.md" target="_blank" rel="noopener noreferrer">Task diagnostic</a></p>
+
+<p><strong>Related checks.</strong> The <a href="https://github.com/aridiosilva/Gemma4_Google_Deepmind_S1/blob/433e7508f713d947b417d8522bc84b96eae1da45/evidence/w18-synthetic-receipt.json" target="_blank" rel="noopener noreferrer">JUnit receipt</a> records three synthetic false acceptances. The <a href="https://github.com/aridiosilva/Gemma4_Google_Deepmind_S1/blob/433e7508f713d947b417d8522bc84b96eae1da45/evidence/kaggle-bugs-2026-11-11/operations.json" target="_blank" rel="noopener noreferrer">S54M operational receipts</a> record two memory-guard interruptions.</p>
+      </div>
+      <section class="citation paper-citation" aria-label="Citation and license"><h2>Citation and license</h2><p>Silva, Aridio (2026). Budget-Bounded Software Repair with AI Agents. Gemma 4 Developer Agent Paper Track. Kaggle. DOI: 10.34740/KAGGLE/W/125650.</p><p>Paper text and figures: <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer">CC BY 4.0</a> · © 2026 Aridio Silva.</p></section>
+      <nav class="challenge-distribution-links" aria-label="Challenge links"><a class="button" href="https://www.kaggle.com/competitions/gemma-4-developer-agent" target="_blank" rel="noopener noreferrer">Competition</a><a class="button" href="https://www.kaggle.com/competitions/gemma-4-developer-agent-paper/writeups/budget-bounded-software-repair-with-ai-agents" target="_blank" rel="noopener noreferrer">Published paper on Kaggle</a><a class="button" href="https://www.kaggle.com/competitions/gemma-4-developer-agent/leaderboard" target="_blank" rel="noopener noreferrer">Leaderboard</a><a class="button" href="https://www.kaggle.com/competitions/gemma-4-developer-agent-paper" target="_blank" rel="noopener noreferrer">Paper Track</a><a class="button" href="/challenges/">All challenges</a></nav>
+    </article></section>
+  </main>
+  <footer class="site-footer footer-style-preview" id="footer">
+  <div class="shell">
+    <div class="footer-head">
+      <div class="footer-brand-lockup">
+        <img class="footer-sgaeia-logo" src="/assets/sgaeia-logo-transparent.png" alt="" aria-hidden="true" width="1254" height="1254" loading="lazy" decoding="async">
+        <a class="footer-wordmark footer-project-link" href="/sgaeia.html">SGAEIA</a>
+      </div>
+      <div class="footer-note">SGAEIA · Research on governed autonomous and distributed AI systems.</div>
+    </div>
+    <nav class="brand-links footer-name-links" aria-label="Research profiles and project links">
+      <a class="footer-profile-link" aria-label="GitHub" title="GitHub" href="https://github.com/aridiosilva" target="_blank" rel="noopener noreferrer"><strong>GitHub</strong></a>
+      <a class="footer-profile-link" aria-label="ORCID" title="ORCID" href="https://orcid.org/0009-0008-2411-6995" target="_blank" rel="me noopener noreferrer"><strong>ORCID</strong></a>
+      <a class="footer-profile-link" aria-label="Google Scholar" title="Google Scholar" href="https://scholar.google.com/citations?user=rPn5O48AAAAJ" target="_blank" rel="noopener noreferrer"><strong>Google Scholar</strong></a>
+      <a class="footer-profile-link" aria-label="Zenodo author records" title="Zenodo" href="https://zenodo.org/search?q=metadata.creators.person_or_org.name%3A%22Silva%2C%20Aridio%22" target="_blank" rel="noopener noreferrer"><strong>Zenodo</strong></a>
+      <a class="footer-profile-link" aria-label="SGAEIA Zenodo Community" title="SGAEIA — Zenodo Community" href="https://zenodo.org/communities/sgaeia" target="_blank" rel="noopener noreferrer"><strong>SGAEIA · Zenodo Community</strong></a>
+      <a class="footer-profile-link" aria-label="OpenAIRE" title="OpenAIRE" href="https://explore.openaire.eu/search/find?fv0=Aridio%20Silva&amp;f0=q" target="_blank" rel="noopener noreferrer"><strong>OpenAIRE</strong></a>
+      <a class="footer-profile-link" aria-label="Medium" title="Medium" href="https://medium.com/@aridiosilva" target="_blank" rel="noopener noreferrer"><strong>Medium</strong></a>
+      <a class="footer-profile-link" aria-label="Academia.edu" title="Academia.edu" href="https://independent.academia.edu/AridioSilva" target="_blank" rel="noopener noreferrer"><strong>Academia.edu</strong></a>
+      <a class="footer-profile-link" aria-label="DEV Community profile" title="DEV Community" href="https://dev.to/aridiosilva" target="_blank" rel="me noopener noreferrer"><strong>DEV Community</strong></a>
+      <a class="footer-profile-link" aria-label="LinkedIn" title="LinkedIn" href="https://www.linkedin.com/in/aridio-silva-74997111/" target="_blank" rel="noopener noreferrer"><strong>LinkedIn</strong></a>
+      <a class="footer-profile-link" aria-label="SGAEIA LinkedIn" title="SGAEIA LinkedIn" href="https://www.linkedin.com/company/sgaeia/" target="_blank" rel="noopener noreferrer"><strong>SGAEIA · LinkedIn</strong></a>
+      <a class="footer-profile-link" aria-label="SGAEIA GitHub Repository" title="SGAEIA Repository" href="https://github.com/aridiosilva/SGAEIA" target="_blank" rel="noopener noreferrer"><strong>SGAEIA Repository</strong></a>
+      <a class="footer-profile-link" aria-label="Kaggle" title="Kaggle" href="https://www.kaggle.com/aridiosilva2" target="_blank" rel="noopener noreferrer"><strong>Kaggle</strong></a>
+      <a class="footer-profile-link" aria-label="SGAEIA research artifact DOI" title="SGAEIA Research Artifact / DOI" href="https://doi.org/10.5281/zenodo.22557796" target="_blank" rel="noopener noreferrer"><strong>SGAEIA DOI</strong></a>
+    </nav>
+    <div class="footer-bottom">
+      <span>© 2026 Aridio Silva</span>
+      <span>Last updated: 20 November 2026 — Web edition 1.0 · Paper REV4</span>
+      <span>Autonomous AI. Governed by Design. Trusted by Evidence.</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

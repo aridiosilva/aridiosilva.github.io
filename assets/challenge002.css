@@ -1,0 +1,23 @@
+/* Gemma 4 paper and its competition card; shared homepage styles remain authoritative. */
+body.challenges-index .grid { align-items: stretch; grid-auto-rows: 1fr; }
+body.challenges-index .card { display: flex; flex-direction: column; min-width: 0; }
+body.challenges-index .card .links { margin-top: auto; padding-top: 18px; }
+body.challenges-index .card .meta { overflow-wrap: anywhere; }
+body.challenges-index .card-cover-link { display: flex; align-items: center; justify-content: center; aspect-ratio: 2 / 1; }
+body.challenges-index .card-cover { width: 100%; height: 100%; object-fit: contain; }
+.gemma4-card .card-cover { aspect-ratio: 2 / 1; object-fit: contain; background: #071125; }
+.gemma4-paper .article-body { overflow-wrap: anywhere; }
+.gemma4-paper .paper-links { display: flex; flex-wrap: wrap; gap: 12px; margin: 1.4rem 0; font-family: var(--sans); }
+.gemma4-paper .paper-links .button { max-width: 100%; }
+.gemma4-paper .paper-source { margin: 1.7rem 0; padding: 18px 20px; border-left: 5px solid var(--accent2); background: var(--soft); font-family: var(--sans); font-size: .95rem; }
+.gemma4-paper .paper-source p { margin: 0 0 .7rem; }
+.gemma4-paper .paper-source p:last-child { margin-bottom: 0; }
+.gemma4-paper .paper-toc { display: block; margin: 2rem 0; padding: 18px 22px; border: 1px solid var(--rule); border-radius: 10px; font-family: var(--sans); }
+.gemma4-paper .paper-toc h2 { margin-top: 0; font-size: 1.4rem; }
+.gemma4-paper .paper-toc ol { margin-bottom: 0; padding-left: 1.5rem; }
+.gemma4-paper .paper-toc a { font-weight: 400; }
+.gemma4-paper [data-paper-content] > p:first-child { font-family: var(--sans); font-size: .95rem; }
+.gemma4-paper .article-body img { display: block; width: 100%; height: auto; }
+.gemma4-paper .paper-illustration { margin-top: 0; }
+.gemma4-paper .paper-citation { margin-top: 2.6rem; }
+@media (max-width: 430px) { .gemma4-paper .paper-links { gap: 9px; } .gemma4-paper .paper-links .button { padding: 9px 11px; font-size: .9rem; } .gemma4-paper .paper-toc { padding: 16px; } }

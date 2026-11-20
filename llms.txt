@@ -11,6 +11,16 @@ The primary research themes are Agentic AI, multi-agent systems, AI security, Ze
 
 ## Challenge index
 
+- [Gemma 4 — Challenge 002, English paper](https://aridiosilva.com/challenges/challenge002/): Complete English edition of Budget-Bounded Software Repair with AI Agents, submitted to the Kaggle Paper Track. Final published REV4 text, original cover, three figures, 21 references, PDF with Kaggle DOI, tree-bound acceptance and benchmark-validity analysis. The reported 37/86 development-task resolutions are not a leaderboard score. CC BY 4.0; DOI 10.34740/KAGGLE/W/125650.
+- [Gemma 4 — Desafio 002, paper em português](https://aridiosilva.com/challenges/challenge002/pt/): Edição integral em português, com capa e três figuras localizadas, 21 referências e PDF da revisão final REV4 com DOI Kaggle. Tradução correspondente ao texto publicado no Kaggle.
+- [Gemma 4 — published Paper Track submission](https://www.kaggle.com/competitions/gemma-4-developer-agent-paper/writeups/budget-bounded-software-repair-with-ai-agents): Official Kaggle publication by Aridio Silva.
+- [Gemma 4 — competition](https://www.kaggle.com/competitions/gemma-4-developer-agent): Google DeepMind autonomous coding-agent competition.
+- [Gemma 4 — leaderboard](https://www.kaggle.com/competitions/gemma-4-developer-agent/leaderboard): Live official standings; consult Kaggle for current scores.
+- [Gemma 4 paper — English PDF](https://aridiosilva.com/challenges/challenge002/assets/paper-rev4-en.pdf): REV4 English PDF with the clickable Kaggle DOI added below the author block; scientific content and seven-page pagination preserved.
+- [Gemma 4 paper — PDF em português](https://aridiosilva.com/challenges/challenge002/assets/paper-rev4-pt.pdf): PDF REV4 em português com DOI Kaggle clicável acrescentado abaixo da autoria; conteúdo científico e paginação de sete páginas preservados.
+- [Gemma 4 paper — English cover](https://aridiosilva.com/challenges/challenge002/assets/paper-cover-en.png): Original paper cover supplied by the author, preserved byte for byte.
+- [Gemma 4 paper — capa em português](https://aridiosilva.com/challenges/challenge002/assets/paper-cover-pt.png): Capa com título localizado em português, autoria e ORCID preservados.
+
 - [Challenges](https://aridiosilva.com/challenges/): Index of Kaggle and hackathon projects, with English default editions and Portuguese alternatives when available.
 - [SlothGuard — Challenge 001, English](https://aridiosilva.com/challenges/challenge001/): Complete English challenge report for the DEV Hacktoberfest 2026 Open-Source AI Challenge, Week 3. Deterministic segregation-of-duties rules detect conflicts, Gemma 4 E2B explains each finding locally, and Auth0 CIBA with Guardian asks a human to approve any revocation.
 - [SlothGuard — Desafio 001, Português](https://aridiosilva.com/challenges/challenge001/pt/): Relato integral em português do desafio DEV Hacktoberfest 2026. Regras determinísticas detectam conflitos de segregação de funções, o Gemma 4 E2B explica cada achado localmente e o Auth0 CIBA com Guardian pede aprovação humana antes de qualquer revogação.
