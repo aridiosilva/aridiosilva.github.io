@@ -1,0 +1,41 @@
+/* Homepage header: preserve the identity and wrap navigation by available space. */
+.site-header .header-main {
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 10px 28px;
+  padding-block: 12px;
+}
+
+.site-header .header-main > .identity {
+  flex: 0 0 auto;
+  width: max-content;
+  max-width: 100%;
+}
+
+.site-header .header-main > .identity strong {
+  white-space: nowrap;
+}
+
+.site-header .header-main > .identity span {
+  overflow-wrap: normal;
+  word-break: normal;
+  text-wrap: balance;
+}
+
+.site-header .header-right {
+  flex: 0 1 auto;
+  min-width: 0;
+  max-width: 100%;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px 22px;
+}
+
+.site-header .site-nav,
+.site-header .utility-bar {
+  min-width: 0;
+  max-width: 100%;
+  flex-wrap: wrap;
+  justify-content: center;
+}

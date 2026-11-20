@@ -17,11 +17,11 @@ The website brings together:
 
 ## Current recorded state
 
-The latest consolidated update is dated **3 November 2026**. The repository records:
+The latest consolidated update is dated **20 November 2026**. The repository records:
 
-- **81 public HTML pages** using the shared navigation and footer system;
+- **83 public HTML pages** using the shared navigation and footer system;
 - SGAEIA Research Series publications through **Article 25**;
-- bilingual infographics through **Info_020**;
+- bilingual infographics through **Info_021**;
 - the **Challenges** index and **SlothGuard Challenge 001** in English and Portuguese;
 - English as the canonical and `x-default` edition for bilingual content;
 - reciprocal `hreflang` navigation between English and Portuguese editions;
@@ -99,6 +99,8 @@ This section summarizes the detailed records under [`docs/logs/`](docs/logs/). T
 
 ### November 2026
 
+- **20 November — responsive homepage header.** Prevented the identity from shrinking into a narrow column. Navigation and reading controls now wrap naturally while preserving the existing colors, typography, language controls and compact mobile rules. The homepage loads a scoped, versioned stylesheet; other pages keep their shared styles. See the [header correction log](docs/logs/2026-11-20-HOMEPAGE-RESPONSIVE-HEADER.md).
+- **19 November — Info_021.** Added *US Airspace Chaos: AI at the Center of the Crisis* and its Portuguese edition, with 18 slides per language, original PDFs, supplied LinkedIn texts, localized covers and shared accessible carousels. The newest index card defaults to English. Preserved the editorial style and shared GA4; updated reciprocal language metadata, sitemap, llms and robots. The public inventory contains 83 HTML pages. See the [Info_021 log](docs/logs/2026-11-19-INFO-021-US-AIRSPACE-CHAOS.md).
 - **3 November — Info_020.** Added *AI THREATS NOV-2026* in English (default) and Portuguese: 20 slides per language, unmodified original PDFs, supplied LinkedIn texts and localized cover thumbnails. Added the newest index card, shared GA4, reciprocal language metadata, structured metadata and discovery records. The public inventory contains 81 HTML pages. Prepared locally; stage, commit and push remain for the owner. See the [Info_020 log](docs/logs/2026-11-03-INFO-020-AI-THREATS-NOV-2026.md).
 - **1 November — Info_019.** Added the bilingual single-turn and multi-turn LLM infographic, as recorded in the existing detailed log.
 - **2 November — Article 25.** Added the complete English-default and Portuguese editions of *Single-Turn and Multi-Turn Interactions in Frontier Generative AI Models (LLMs)*, with localized covers, six equations, seven figures including the timeline, seventeen table images, 56 references and the original 30-page PDFs in each language. Added matching publication and writing cards on the homepage and a publication-index card with all supplied distribution links. Preserved shared analytics, security, accessibility and editorial styling; updated sitemap, robots, llms, continuity log and both READMEs. The public inventory now contains 79 HTML pages and 79 unique sitemap URLs. Stage, commit and push to `origin/main` completed in implementation commit `c3d12f7`; execution evidence is recorded in the [Article 25 log](docs/logs/2026-11-02-ARTICLE25-HOMEPAGE-PUBLICATION.md).
@@ -130,6 +132,7 @@ This section summarizes the detailed records under [`docs/logs/`](docs/logs/). T
 
 ### Infographics
 
+- [Info_021 — US Airspace Chaos](docs/logs/2026-11-19-INFO-021-US-AIRSPACE-CHAOS.md)
 - [Info_020 — AI THREATS NOV-2026](docs/logs/2026-11-03-INFO-020-AI-THREATS-NOV-2026.md)
 - [Info_019 — Single-turn and multi-turn LLMs](docs/logs/2026-11-01-INFO-019-SINGLE-TURN-MULTI-TURN-LLMS.md)
 
